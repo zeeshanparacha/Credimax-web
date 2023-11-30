@@ -1,0 +1,101 @@
+{
+  "id": "qtgHXAfUioI4O7zEgIEjK",
+  "_id": "9fpKuWa-6yW0G1xJSNVik",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "VerifyRegistrationData_Flow_01",
+  "old_name": "VerifyRegistrationData_Flow_01",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "verifyRegistrationDataResponse",
+          "successMessageBindingKey": "successKey",
+          "url": "/prelogin/v1/verifyRegistrationData",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "termAndCondition",
+              "value": "termAndCondition"
+            },
+            { "type": 1, "name": "Form", "key": "email", "value": "email" },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "mobileNumber",
+              "value": "number"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "registrationType",
+              "value": "Merchant"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "retrieveBbkAccount",
+              "value": "true"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "isCardHolder",
+              "value": "card holder"
+            },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "device",
+              "value": "device"
+            },
+            { "type": 1, "name": "Form", "key": "cpr", "value": "cpr" }
+          ],
+          "baseURL": "6566efa5a131d92664c8dd76",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "NAVIGATE_SIGN_UP_01_T_02_SCREEN",
+            "triggerId": "DxfCxwaSlbjUHbIUqpACq",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "triggerName": "Login_Error_TOAST_TRIGGER",
+            "triggerId": "l9oOTSzEMb7I3ZSguK69Z"
+          },
+          {
+            "httpStatus": 403,
+            "triggerName": "Login_Error_TOAST_TRIGGER",
+            "triggerId": "l9oOTSzEMb7I3ZSguK69Z",
+            "logic": true
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.affnswfv28lgHtytirAYzm7y5GYqldSB",
+  "updatedAt": "11/30/2023",
+  "createdAt": "11/30/2023",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}

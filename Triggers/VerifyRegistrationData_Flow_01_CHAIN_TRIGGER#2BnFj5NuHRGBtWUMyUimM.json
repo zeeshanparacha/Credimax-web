@@ -1,0 +1,188 @@
+{
+  "_id": "2BnFj5NuHRGBtWUMyUimM",
+  "id": "_d74zSWi2K0o8LooY4PNo",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "VerifyRegistrationData_Flow_01_CHAIN_TRIGGER",
+  "old_name": "VerifyRegistrationData_Flow_01_CHAIN_TRIGGER",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "triggers": [
+            {
+              "id": "r9Cc9nQwLYXRhik7ZSwKM",
+              "name": "Device_Mapping_TRIGGER",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "device",
+                      "sourceBindingKey": "device",
+                      "sourceStoreType": 3,
+                      "destinationStoreType": 3,
+                      "filterList": [
+                        {
+                          "key": "deviceKey",
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentSession.device.deviceKey" }
+                        },
+                        {
+                          "key": "isNotificationEnabled",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, false, false] }
+                        },
+                        {
+                          "key": "name",
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentSession.device.name" }
+                        },
+                        {
+                          "key": "os",
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentSession.device.os" }
+                        },
+                        {
+                          "key": "osType",
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentSession.device.osType" }
+                        },
+                        {
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, "123145", "123145"] },
+                          "key": "fcmToken"
+                        }
+                      ],
+                      "targettedType": "object"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+              "_id": "4i7qlB9gqKCxY2TEuYJAa",
+              "updatedAt": "11/29/2023",
+              "createdAt": "11/29/2023",
+              "createdBy": "muhammad.asad",
+              "updatedBy": "muhammad.asad"
+            },
+            {
+              "id": "qtgHXAfUioI4O7zEgIEjK",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "VerifyRegistrationData_Flow_01",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "verifyRegistrationDataResponse",
+                      "successMessageBindingKey": "successKey",
+                      "url": "/prelogin/v1/verifyRegistrationData",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "termAndCondition",
+                          "value": "termAndCondition"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "email",
+                          "value": "email"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "mobileNumber",
+                          "value": "phone.number"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "cpr",
+                          "value": "cpr"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "registrationType",
+                          "value": "Merchant"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "retrieveBbkAccount",
+                          "value": "true"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "isCardHolder",
+                          "value": "card holder"
+                        },
+                        {
+                          "type": 3,
+                          "name": "Current session",
+                          "key": "device",
+                          "value": "device"
+                        }
+                      ],
+                      "baseURL": "6566efa5a131d92664c8dd76",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "NAVIGATE_SIGN_UP_01_T_02_SCREEN",
+                        "triggerId": "DxfCxwaSlbjUHbIUqpACq",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+              "_id": "9fpKuWa-6yW0G1xJSNVik",
+              "updatedAt": "11/29/2023",
+              "createdAt": "11/29/2023",
+              "createdBy": "muhammad.asad",
+              "updatedBy": "muhammad.asad"
+            }
+          ],
+          "triggerIds": ["r9Cc9nQwLYXRhik7ZSwKM", "qtgHXAfUioI4O7zEgIEjK"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+  "updatedAt": "11/29/2023",
+  "createdAt": "11/29/2023",
+  "createdBy": "muhammad.asad",
+  "updatedBy": "muhammad.asad"
+}

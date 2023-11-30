@@ -1,0 +1,71 @@
+{
+  "id": "rQqjnRJ9i1K_xIDWJlZ7m",
+  "_id": "NLMr8WqgXidtA0wzLrzZl",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "LOGIN_TRIGGER",
+  "old_name": "LOGIN_TRIGGER",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "validateLoginPasswordResponse",
+          "successMessageBindingKey": "successKey",
+          "url": "/security/v6/validateLoginPassword",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "loginType",
+              "value": "CREDENTIALS"
+            },
+            { "type": 4, "name": "Static", "key": "loginPin" },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "device",
+              "value": "device"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "password",
+              "value": "password"
+            },
+            { "type": 1, "name": "Form", "key": "username", "value": "email" }
+          ],
+          "baseURL": "6566efa5a131d92664c8dd76",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "triggerName": "Login_Error_TOAST_TRIGGER",
+            "triggerId": "l9oOTSzEMb7I3ZSguK69Z"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.hniav3nqb2byUDyFyRTouEg-AO2KGdG6",
+  "updatedAt": "11/30/2023",
+  "createdAt": "11/30/2023",
+  "createdBy": "muhammad.asad",
+  "updatedBy": "muhammad.asad"
+}

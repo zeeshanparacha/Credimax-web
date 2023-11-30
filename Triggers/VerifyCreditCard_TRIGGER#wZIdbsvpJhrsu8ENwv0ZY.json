@@ -1,0 +1,89 @@
+{
+  "id": "pBToRocfazCmckHVdRkrD",
+  "_id": "wZIdbsvpJhrsu8ENwv0ZY",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "VerifyCreditCard_TRIGGER",
+  "old_name": "VerifyCreditCard_TRIGGER",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "verifyCreditCardResponse",
+          "successMessageBindingKey": "successKey",
+          "url": "/prelogin/v1/verifyCreditCard",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            { "type": 1, "name": "Form", "key": "email", "value": "email" },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "mobileNumber",
+              "value": "number"
+            },
+            { "type": 1, "name": "Form", "key": "cpr", "value": "cpr" },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "registrationType",
+              "value": "cardholder"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "termAndCondition",
+              "value": "termAndCondition"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "retrieveBbkAccount",
+              "value": "1"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "lastFourDigitOfCard",
+              "value": "lastFourDigit"
+            },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "device",
+              "value": "device"
+            }
+          ],
+          "baseURL": "6566efa5a131d92664c8dd76",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "NAVIGATE_SIGN_UP_04_T_05_SCREEN",
+            "triggerId": "V1Lp8j1qou59s0WQWFIL0",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.tfnlk9hmbptOaFtIwJjYyEnQS25A_QN",
+  "updatedAt": "11/30/2023",
+  "createdAt": "11/30/2023",
+  "createdBy": "muhammad.asad",
+  "updatedBy": "muhammad.asad"
+}
