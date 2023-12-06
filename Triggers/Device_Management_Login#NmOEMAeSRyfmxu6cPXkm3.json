@@ -1,0 +1,65 @@
+{
+  "id": "U9vBHaH_AnvrMafmzYn-M",
+  "_id": "NmOEMAeSRyfmxu6cPXkm3",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "Device_Management_Login",
+  "old_name": "Device_Management_Login",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "validateDeviceResponse",
+          "successMessageBindingKey": "successKey",
+          "url": "/security/v1/deviceManagement",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": "loginTrigger",
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            { "type": 4, "name": "Static", "key": "action", "value": "A" },
+            { "type": 4, "name": "Static", "key": "channelId", "value": "2" },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "validation",
+              "value": "validation"
+            },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "trustedDevice",
+              "value": "device"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "MARK_DEVICE_TRUSTED_CHAIN_TRIGGER",
+            "triggerId": "WbTH5cZ3ssZkLxUU1BfZ9"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.li2y25ya4gHa_dk7if0CdJLM1OXEBxr",
+  "updatedAt": "12/6/2023",
+  "createdAt": "12/6/2023",
+  "createdBy": "muhammad.asad",
+  "updatedBy": "muhammad.asad"
+}
