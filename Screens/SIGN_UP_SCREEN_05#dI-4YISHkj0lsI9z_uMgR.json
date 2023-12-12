@@ -455,7 +455,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "j5bjXyeQ6FRH_uW7p1MXj",
+                            "id": "v0My8Zkihi_sLUnv7e0l_",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1607,7 +1607,23 @@
                                                                         "gitBranchName": "master",
                                                                         "updatedTimestamp": "0000-00-00T00:00:00+00:00"
                                                                       }
-                                                                    ]
+                                                                    ],
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "!=": [
+                                                                            {
+                                                                              "var": "form.password"
+                                                                            },
+                                                                            {
+                                                                              "var": "form.cpassword"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        true,
+                                                                        false
+                                                                      ]
+                                                                    }
                                                                   },
                                                                   "cssClassNames": [
                                                                     {
@@ -3512,8 +3528,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-1-0-0-0-0"
+                            }
                           }
                         ],
                         "path": "0-1-0-0-0",
@@ -3662,8 +3677,8 @@
     "gitBranchName": "master",
     "_id": "dI-4YISHkj0lsI9z_uMgR",
     "createdBy": "muhammad.asad",
-    "updatedAt": "12/6/2023",
-    "createdAt": "12/6/2023",
+    "updatedAt": "12/11/2023",
+    "createdAt": "12/11/2023",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5526,7 +5541,14 @@
             "gitBranchName": "master",
             "updatedTimestamp": "0000-00-00T00:00:00+00:00"
           }
-        ]
+        ],
+        "logic": {
+          "if": [
+            { "!=": [{ "var": "form.password" }, { "var": "form.cpassword" }] },
+            true,
+            false
+          ]
+        }
       },
       "cssClassNames": [{ "cssClassName": "Input_Box_Css " }],
       "passwordValidationType": "custom"
