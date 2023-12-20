@@ -4,7 +4,7 @@
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "GET CARDS LIST DATA AND SLIDER DATA CHAIN TRIGGER",
-  "old_name": "GET CARDS LIST DATA AND SLIDER DATA",
+  "old_name": "GET CARDS LIST DATA AND SLIDER DATA CHAIN TRIGGER",
   "status": "ACTIVE",
   "services": [
     {
@@ -61,6 +61,67 @@
               "updatedBy": "basitahmed1199"
             },
             {
+              "id": "PF7RClgYkkKqxfypr7xt9",
+              "name": "SLIDER_CARD_INDEX_INCREMENT",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "14",
+                    "attributes": {
+                      "destinationBindingKey": "SLIDER_CARD_INDEX",
+                      "sourceBindingKey": "SLIDER_CARD_INDEX",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "counterType": "increment"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
+              "_id": "rglvXT5bRJtLdWIZXW9a1",
+              "updatedAt": "12/20/2023",
+              "createdAt": "12/20/2023",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "Yg6bPrf7eN8GksoM11VyL",
+              "_id": "BkWmqgBmOaIuLan7E3ZLI",
+              "name": "CURRENT_CARD_SLIDER",
+              "old_name": "CURRENT_CARD_SLIDER",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "13",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "CURRENT_CARD",
+                      "sourceBindingKey": "cards.cardList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "indexBindingKey": "0",
+                      "indexStoreType": 2,
+                      "indexType": "static"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
+              "updatedAt": "12/20/2023",
+              "createdAt": "12/20/2023",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
               "_id": "R9dYoH295UJwpaIjdrXv9",
               "id": "g5fHC43VY53QNdwz5zUw5",
               "projectId": "652fcbce09869c3c809b3097",
@@ -75,31 +136,6 @@
                     "type": "1",
                     "attributes": {
                       "triggers": [
-                        {
-                          "logic": {
-                            ">": [
-                              { "var": "currentScreen.cards.cardList.length" },
-                              "1"
-                            ]
-                          },
-                          "triggerName": "SHOW_MULTIPLE_CARD_SLIDER",
-                          "triggerId": "tQXXqPTi45Nz2gZE6H9Id",
-                          "services": [
-                            {
-                              "type": "1",
-                              "command": {
-                                "type": "2",
-                                "attributes": {
-                                  "fromWidgetId": "a2o4reogaZ9qjFTPTAz_a",
-                                  "nextWidgetId": "lPD-7h6_XS-VQ8oRrtGFP",
-                                  "gridRadioValue": "Grid",
-                                  "selectedObjectBindingKey": "selectedObject",
-                                  "editableForm": false
-                                }
-                              }
-                            }
-                          ]
-                        },
                         {
                           "logic": {
                             "==": [
@@ -124,27 +160,57 @@
                               }
                             }
                           ]
+                        },
+                        {
+                          "logic": {
+                            ">": [
+                              { "var": "currentScreen.cards.cardList.length" },
+                              "1"
+                            ]
+                          },
+                          "triggerName": "SHOW_MULTIPLE_CARD_SLIDER",
+                          "triggerId": "E183eRJvHBu4FFHTEb6yq",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "fromWidgetId": "9naXfXYGeWk_I3jlR3otf",
+                                  "nextWidgetId": "lPD-7h6_XS-VQ8oRrtGFP",
+                                  "gridRadioValue": "Grid",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ]
                         }
                       ]
                     }
                   }
                 }
               ],
-              "csrf": "0.usppx41tgt2P6mbvdDsxiE9Fwd-HLxo",
+              "csrf": "0.szjkon2xrg7waPGTc0hWuyif4GB0J0o",
               "updatedAt": "12/18/2023",
               "createdAt": "12/18/2023",
-              "createdBy": "basitahmed1199",
-              "updatedBy": "basitahmed1199"
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
             }
           ],
-          "triggerIds": ["HoTkYGonpJcbFC-AO_rEP", "g5fHC43VY53QNdwz5zUw5"]
+          "triggerIds": [
+            "HoTkYGonpJcbFC-AO_rEP",
+            "PF7RClgYkkKqxfypr7xt9",
+            "Yg6bPrf7eN8GksoM11VyL",
+            "g5fHC43VY53QNdwz5zUw5"
+          ]
         }
       }
     }
   ],
-  "csrf": "0.1mypqflhdi6jhAucnw_RyH7o6SXPAOL2",
-  "updatedAt": "12/18/2023",
-  "createdAt": "12/18/2023",
+  "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
+  "updatedAt": "12/21/2023",
+  "createdAt": "12/21/2023",
   "createdBy": "zeeshan",
   "updatedBy": "zeeshan"
 }
