@@ -1,10 +1,8 @@
 {
-  "id": "HoTkYGonpJcbFC-AO_rEP",
-  "_id": "0HN4La83DjHQn59bH64wM",
+  "id": "20ErfyD_k5eiE9cfBsXlF",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
-  "name": "GET_SLIDER_CARDS",
-  "old_name": "GET_SLIDER_CARDS",
+  "name": "GET_CARD_LIST_TRIGGER",
   "status": "ACTIVE",
   "services": [
     {
@@ -14,9 +12,10 @@
         "attributes": {
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
-          "responseStateKey": "cards",
+          "responseStateKey": "getCardListResponse",
           "responseReturnValue": "content",
-          "url": "/card/v1/web/cardList",
+          "successMessageBindingKey": "successKey",
+          "url": "/card/v1/cardList",
           "checksum": true,
           "encryption": true,
           "isDeviceDetails": false,
@@ -31,11 +30,19 @@
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "triggerName": "Login_Error_TOAST_TRIGGER",
+            "triggerId": "l9oOTSzEMb7I3ZSguK69Z"
+          }
+        ]
       }
     }
   ],
   "csrf": "0.99ss65b63jNL3tiJuWvSufvfeByTw8L",
+  "_id": "tkztC8DErLk86XIlRgBzY",
   "updatedAt": "12/27/2023",
   "createdAt": "12/27/2023",
   "createdBy": "muhammad.asad",
