@@ -223,7 +223,29 @@
                                                                           "imageAssetId": "MGtH5w-noBHFJCvGCBnz4",
                                                                           "stateName": null,
                                                                           "storeType": null,
-                                                                          "useFullLink": null
+                                                                          "useFullLink": null,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "or": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.isVirtual"
+                                                                                    },
+                                                                                    true
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "!=": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.cardStatus"
+                                                                                    },
+                                                                                    "ActivationRequired"
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "group": "Form",
                                                                         "updatedAt": "23-Aug-2021",
@@ -286,11 +308,41 @@
                                                                             "__v": 0,
                                                                             "uri": "web/warning_triangle_circle.svg"
                                                                           },
-                                                                          "hideComponent": true,
+                                                                          "hideComponent": false,
                                                                           "imageAssetId": "r53oi77OnGwW-CMMgSqMd",
                                                                           "stateName": null,
                                                                           "storeType": null,
-                                                                          "useFullLink": null
+                                                                          "useFullLink": null,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "or": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.isVirtual"
+                                                                                    },
+                                                                                    true
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "!=": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.accountStatus"
+                                                                                    },
+                                                                                    "Frozen"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.cardStatus"
+                                                                                    },
+                                                                                    "ActivationRequired"
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "group": "Form",
                                                                         "updatedAt": "23-Aug-2021",
@@ -357,7 +409,37 @@
                                                                           "stateName": null,
                                                                           "storeType": null,
                                                                           "useFullLink": null,
-                                                                          "hideComponent": true
+                                                                          "hideComponent": false,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "or": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.isVirtual"
+                                                                                    },
+                                                                                    true
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "!=": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.accountStatus"
+                                                                                    },
+                                                                                    "Overdue"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.CURRENT_CARD.cardStatus"
+                                                                                    },
+                                                                                    "ActivationRequired"
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "group": "Form",
                                                                         "updatedAt": "23-Aug-2021",
@@ -398,7 +480,17 @@
                                                                             "xs": 12
                                                                           },
                                                                           "label": "Virtual",
-                                                                          "hideComponent": true
+                                                                          "hideComponent": false,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "currentScreen.CURRENT_CARD.isVirtual"
+                                                                                },
+                                                                                false
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -693,11 +785,73 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "** / **"
+                                                                                  "label": "** / **",
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      ">": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cardExpiry.length"
+                                                                                        },
+                                                                                        0
+                                                                                      ]
+                                                                                    }
+                                                                                  }
                                                                                 },
                                                                                 "events": [],
                                                                                 "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-0-0-0-1",
                                                                                 "version": "1.0.0"
+                                                                              },
+                                                                              {
+                                                                                "id": "jRuj1UJa32KMntBbcROXm",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component.",
+                                                                                      "font-size": "12px",
+                                                                                      "font-weight": "600",
+                                                                                      "color": "#FFFFFF"
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "cardDetails.content.cardDetail.cardExpiry",
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "<": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cardExpiry.length"
+                                                                                        },
+                                                                                        1
+                                                                                      ]
+                                                                                    }
+                                                                                  },
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-0-0-0-2"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -839,7 +993,17 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "***"
+                                                                                  "label": "***",
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      ">": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                        },
+                                                                                        0
+                                                                                      ]
+                                                                                    }
+                                                                                  }
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -856,6 +1020,58 @@
                                                                                 },
                                                                                 "events": [],
                                                                                 "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-1-0-0-1"
+                                                                              },
+                                                                              {
+                                                                                "id": "oSfxhQU3WBy_5zC31BEbv",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component.",
+                                                                                      "font-size": "12px",
+                                                                                      "font-weight": "600",
+                                                                                      "color": "#FFFFFF"
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "cardDetails.content.cardDetail.cvv",
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "<": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                        },
+                                                                                        1
+                                                                                      ]
+                                                                                    }
+                                                                                  },
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-1-0-0-2"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -1321,7 +1537,46 @@
                                                                   "content": "Image",
                                                                   "type": "20012"
                                                                 },
-                                                                "events": [],
+                                                                "events": [
+                                                                  {
+                                                                    "triggerId": "xhxjVYrsprTmAJhceB67E",
+                                                                    "triggerName": "CARD_DETAILS_TRIGGER",
+                                                                    "serviceType": "8",
+                                                                    "attributes": {
+                                                                      "loaderWidgetIds": [
+                                                                        906070
+                                                                      ],
+                                                                      "messageWidgetIds": [
+                                                                        906070
+                                                                      ],
+                                                                      "responseStateKey": "cardDetails",
+                                                                      "url": "/card/v1/getCardDetails",
+                                                                      "checksum": true,
+                                                                      "encryption": true,
+                                                                      "isDeviceDetails": false,
+                                                                      "loginTrigger": false,
+                                                                      "formData": false,
+                                                                      "logoutTrigger": false,
+                                                                      "headers": {
+                                                                        "Content-Type": "application/json",
+                                                                        "channel_key": "002"
+                                                                      },
+                                                                      "requestBody": [
+                                                                        {
+                                                                          "type": 2,
+                                                                          "name": "Current screen",
+                                                                          "key": "cardNumber",
+                                                                          "value": "CURRENT_CARD.cardNumber"
+                                                                        }
+                                                                      ],
+                                                                      "baseURL": "656f0b4398e9df55f0499597",
+                                                                      "storeType": 2
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "1"
+                                                                  }
+                                                                ],
                                                                 "path": "0-0-0-0-0-0-0-0-0-0-0-1-0-0-0"
                                                               }
                                                             ],
@@ -2114,7 +2369,17 @@
                             "__v": 0,
                             "uri": "web/arrow_back_dark.svg"
                           },
-                          "assetId": "qXrNLR3JahOEy88pmOQ6K"
+                          "assetId": "qXrNLR3JahOEy88pmOQ6K",
+                          "hideCondition": {
+                            "logic": {
+                              "<": [
+                                {
+                                  "var": "currentScreen.cards.cardList.length"
+                                },
+                                "2"
+                              ]
+                            }
+                          }
                         },
                         "events": [
                           {
@@ -2441,9 +2706,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "bH-fDr8R-qjw1yumQ5tlk",
-    "createdBy": "muhammad.asad",
-    "updatedAt": "12/26/2023",
-    "createdAt": "12/26/2023",
+    "createdBy": "zeeshan",
+    "updatedAt": "12/28/2023",
+    "createdAt": "12/28/2023",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3068,7 +3333,20 @@
       "imageAssetId": "MGtH5w-noBHFJCvGCBnz4",
       "stateName": null,
       "storeType": null,
-      "useFullLink": null
+      "useFullLink": null,
+      "hideCondition": {
+        "logic": {
+          "or": [
+            { "==": [{ "var": "currentScreen.CURRENT_CARD.isVirtual" }, true] },
+            {
+              "!=": [
+                { "var": "currentScreen.CURRENT_CARD.cardStatus" },
+                "ActivationRequired"
+              ]
+            }
+          ]
+        }
+      }
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -3131,11 +3409,30 @@
         "__v": 0,
         "uri": "web/warning_triangle_circle.svg"
       },
-      "hideComponent": true,
+      "hideComponent": false,
       "imageAssetId": "r53oi77OnGwW-CMMgSqMd",
       "stateName": null,
       "storeType": null,
-      "useFullLink": null
+      "useFullLink": null,
+      "hideCondition": {
+        "logic": {
+          "or": [
+            { "==": [{ "var": "currentScreen.CURRENT_CARD.isVirtual" }, true] },
+            {
+              "!=": [
+                { "var": "currentScreen.CURRENT_CARD.accountStatus" },
+                "Frozen"
+              ]
+            },
+            {
+              "==": [
+                { "var": "currentScreen.CURRENT_CARD.cardStatus" },
+                "ActivationRequired"
+              ]
+            }
+          ]
+        }
+      }
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -3202,7 +3499,26 @@
       "stateName": null,
       "storeType": null,
       "useFullLink": null,
-      "hideComponent": true
+      "hideComponent": false,
+      "hideCondition": {
+        "logic": {
+          "or": [
+            { "==": [{ "var": "currentScreen.CURRENT_CARD.isVirtual" }, true] },
+            {
+              "!=": [
+                { "var": "currentScreen.CURRENT_CARD.accountStatus" },
+                "Overdue"
+              ]
+            },
+            {
+              "==": [
+                { "var": "currentScreen.CURRENT_CARD.cardStatus" },
+                "ActivationRequired"
+              ]
+            }
+          ]
+        }
+      }
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -3245,7 +3561,12 @@
         "xs": 12
       },
       "label": "Virtual",
-      "hideComponent": true
+      "hideComponent": false,
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.CURRENT_CARD.isVirtual" }, false]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -3533,6 +3854,18 @@
           "componentId": "iv1xRKfzhJjKiQ8ivDFMd",
           "componentType": "20002",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "jRuj1UJa32KMntBbcROXm",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -3619,11 +3952,75 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "** / **"
+      "label": "** / **",
+      "hideCondition": {
+        "logic": {
+          ">": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cardExpiry.length"
+            },
+            0
+          ]
+        }
+      }
     },
     "events": [],
     "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-0-0-0-1",
     "version": "1.0.0",
+    "screenId": "bH-fDr8R-qjw1yumQ5tlk",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "jRuj1UJa32KMntBbcROXm",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "font-size": "12px",
+          "font-weight": "600",
+          "color": "#FFFFFF"
+        },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "cardDetails.content.cardDetail.cardExpiry",
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cardExpiry.length"
+            },
+            1
+          ]
+        }
+      },
+      "searchInState": true,
+      "storeType": 2
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-0-0-0-2",
     "screenId": "bH-fDr8R-qjw1yumQ5tlk",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3657,6 +4054,18 @@
             "xs": 12
           },
           "componentId": "UcTNjmagszcKkooVwAZcv",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "oSfxhQU3WBy_5zC31BEbv",
           "componentType": "20002",
           "order": 1
         }
@@ -3752,7 +4161,17 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "***"
+      "label": "***",
+      "hideCondition": {
+        "logic": {
+          ">": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            0
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -3766,6 +4185,60 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-1-0-0-1",
+    "screenId": "bH-fDr8R-qjw1yumQ5tlk",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "oSfxhQU3WBy_5zC31BEbv",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "font-size": "12px",
+          "font-weight": "600",
+          "color": "#FFFFFF"
+        },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "cardDetails.content.cardDetail.cvv",
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            1
+          ]
+        }
+      },
+      "searchInState": true,
+      "storeType": 2
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-0-0-0-0-0-0-0-0-2-1-0-0-2",
     "screenId": "bH-fDr8R-qjw1yumQ5tlk",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3970,7 +4443,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Image", "type": "20012" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "xhxjVYrsprTmAJhceB67E",
+        "triggerName": "CARD_DETAILS_TRIGGER",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "8"
+      }
+    ],
     "path": "0-0-0-0-0-0-0-0-0-0-0-1-0-0-0",
     "screenId": "bH-fDr8R-qjw1yumQ5tlk",
     "subType": "component",
@@ -4481,7 +4962,12 @@
         "__v": 0,
         "uri": "web/arrow_back_dark.svg"
       },
-      "assetId": "qXrNLR3JahOEy88pmOQ6K"
+      "assetId": "qXrNLR3JahOEy88pmOQ6K",
+      "hideCondition": {
+        "logic": {
+          "<": [{ "var": "currentScreen.cards.cardList.length" }, "2"]
+        }
+      }
     },
     "events": [
       {
