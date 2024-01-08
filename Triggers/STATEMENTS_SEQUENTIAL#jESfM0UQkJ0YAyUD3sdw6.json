@@ -1,0 +1,271 @@
+{
+  "_id": "jESfM0UQkJ0YAyUD3sdw6",
+  "id": "lU2xBaMqSx4SFl9ObOm3r",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "STATEMENTS_SEQUENTIAL",
+  "old_name": "STATEMENTS_SEQUENTIAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "triggers": [
+            {
+              "id": "Y6hzU9vJYEj4YB684iHOO",
+              "_id": "Pl_eGgVbOufJa_5u1LVZH",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "GET_CARD_LIST_PAY_CARDS",
+              "old_name": "GET_CARD_LIST",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cards",
+                      "responseReturnValue": "content",
+                      "url": "/card/v1/web/cardList",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "logic": true,
+                        "triggerName": "SELECT_FIRST_CARD_AFTER_DELAY",
+                        "triggerId": "jt2teNh5IJsmOy39y4Sjb"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.tjzb0k39kvf0fmQmfevGJPxig4m1u3m",
+              "updatedAt": "1/7/2024",
+              "createdAt": "1/7/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            },
+            {
+              "id": "2bie3Q8uM9encsMg2pVkY",
+              "name": "FILL_STATEMENT_TYPE_ALL",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "STATEMENT_TYPE",
+                      "sourceBindingKey": "STATEMENT_TYPE",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "logic": { "if": [{ "==": [true, true] }, "all", ""] },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+              "_id": "mM10tWE6ulXdcXnUMlPGq",
+              "updatedAt": "1/8/2024",
+              "createdAt": "1/8/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            },
+            {
+              "id": "H2x9-A2OSau7vqkqfQz7U",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "GET_STATEMENTS_FILTER_API",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cardStatementsFilter",
+                      "url": "/card/v1/getStatementFilters",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+              "_id": "fQmk00EURbHM_58BtYO6X",
+              "updatedAt": "1/8/2024",
+              "createdAt": "1/8/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            },
+            {
+              "id": "RFesO16-sP156pSkU3g-E",
+              "name": "SET_CURRENT_STATEMENT_FILTER",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "name",
+                      "sourceBindingKey": "name",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "if": [{ "==": [true, true] }, "Current Statement", ""]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+              "_id": "s9z7UHuNLQuWp3GaOgJX2",
+              "updatedAt": "1/8/2024",
+              "createdAt": "1/8/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            },
+            {
+              "id": "h_HDXNk9RMDiEA8RtKOd0",
+              "_id": "kAnXOv-MbAF_YEH7YBwic",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "STATEMENTS_WITH_TYPES",
+              "old_name": "STATEMENTS_WITH_TYPES",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cardStatements",
+                      "url": "/card/v1/web/cardList",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "name",
+                          "value": "name"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "date",
+                          "value": "date"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardType",
+                          "value": "CURRENT_CARD.cardType"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "type",
+                          "value": "STATEMENT_TYPE"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+              "updatedAt": "1/8/2024",
+              "createdAt": "1/8/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": [
+            "Y6hzU9vJYEj4YB684iHOO",
+            "2bie3Q8uM9encsMg2pVkY",
+            "H2x9-A2OSau7vqkqfQz7U",
+            "RFesO16-sP156pSkU3g-E",
+            "h_HDXNk9RMDiEA8RtKOd0"
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+  "updatedAt": "1/8/2024",
+  "createdAt": "1/8/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}
