@@ -27,7 +27,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "4bTFDbJOPhqob6m6AjTl5",
+            "id": "xnC4blFuKtTnZroCkMrGT",
             "gridProps": [
               {
                 "type": "10001",
@@ -36,7 +36,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "Pa8t9mEkS8JAaei-q7Qd4",
+                    "id": "rXG3H5Flc1wghRGdOcu3e",
                     "gridProps": [
                       {
                         "id": "a98Cw5i30dGJsJNeH-1dn",
@@ -116,24 +116,290 @@
                 },
                 "events": [
                   {
-                    "triggerId": "2bie3Q8uM9encsMg2pVkY",
-                    "triggerName": "FILL_STATEMENT_TYPE_ALL",
-                    "serviceType": "11",
+                    "triggerId": "aXW67C7YSApXEd0-x2kjc",
+                    "triggerName": "FILL_STATEMENT_TYPE_ALL_WITH_API",
+                    "serviceType": "2",
                     "attributes": {
-                      "storeType": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "value",
-                      "destinationBindingKey": "STATEMENT_TYPE",
-                      "sourceBindingKey": "STATEMENT_TYPE",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 2,
-                      "logic": { "if": [{ "==": [true, true] }, "all", ""] },
-                      "changeValueConditonally": true,
-                      "targettedType": "value"
+                      "delay": "",
+                      "triggers": [
+                        {
+                          "id": "2bie3Q8uM9encsMg2pVkY",
+                          "name": "FILL_STATEMENT_TYPE_ALL",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "6",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "value",
+                                  "destinationBindingKey": "STATEMENT_TYPE",
+                                  "sourceBindingKey": "STATEMENT_TYPE",
+                                  "sourceStoreType": 2,
+                                  "destinationStoreType": 2,
+                                  "logic": {
+                                    "if": [{ "==": [true, true] }, "all", ""]
+                                  },
+                                  "changeValueConditonally": true,
+                                  "targettedType": "value"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+                          "_id": "mM10tWE6ulXdcXnUMlPGq",
+                          "updatedAt": "1/8/2024",
+                          "createdAt": "1/8/2024",
+                          "createdBy": "basitahmed1199",
+                          "updatedBy": "basitahmed1199"
+                        },
+                        {
+                          "_id": "U70ClNgdwHyV1QzaGK_6R",
+                          "id": "bsBp3W5X_Ge5yPijYcFeD",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "NEXT_CARD_STATEMENTS_SEQUENTIAL",
+                          "old_name": "NEXT_CARD_STATEMENTS_SEQUENTIAL",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "2",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "delay": "",
+                                  "triggers": [
+                                    {
+                                      "id": "k_r65UUXxPmYKWd6vwpdH",
+                                      "name": "DELETE_STATEMENT_FILTER_FROM_STORE",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "services": [
+                                        {
+                                          "type": "11",
+                                          "command": {
+                                            "type": "4",
+                                            "attributes": {
+                                              "stateName": "current_statement_filter",
+                                              "storeType": 1,
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "dataType": "",
+                                              "sourceBindingKey": ""
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                                      "_id": "Hp3QxnF7AFYryD5KbAYAl",
+                                      "updatedAt": "1/11/2024",
+                                      "createdAt": "1/11/2024",
+                                      "createdBy": "zeeshan",
+                                      "updatedBy": "zeeshan"
+                                    },
+                                    {
+                                      "id": "RFesO16-sP156pSkU3g-E",
+                                      "_id": "s9z7UHuNLQuWp3GaOgJX2",
+                                      "name": "SET_CURRENT_STATEMENT_FILTER",
+                                      "old_name": "SET_CURRENT_STATEMENT_FILTER",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "services": [
+                                        {
+                                          "type": "11",
+                                          "command": {
+                                            "type": "6",
+                                            "attributes": {
+                                              "requestBody": [],
+                                              "storeType": "",
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "dataType": "object",
+                                              "destinationBindingKey": "current_statement_filter",
+                                              "sourceBindingKey": "current_statement_filter",
+                                              "sourceStoreType": 1,
+                                              "destinationStoreType": 1,
+                                              "filterList": [
+                                                {
+                                                  "key": "type",
+                                                  "changeValueConditonally": true,
+                                                  "logic": {
+                                                    "if": [
+                                                      { "==": [true, true] },
+                                                      "Current Statement",
+                                                      ""
+                                                    ]
+                                                  }
+                                                }
+                                              ],
+                                              "logic": {
+                                                "if": [
+                                                  { "==": [true, true] },
+                                                  "Current Statement",
+                                                  ""
+                                                ]
+                                              },
+                                              "changeValueConditonally": true,
+                                              "targettedType": "object"
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                                      "updatedAt": "1/11/2024",
+                                      "createdAt": "1/11/2024",
+                                      "createdBy": "zeeshan",
+                                      "updatedBy": "zeeshan"
+                                    },
+                                    {
+                                      "id": "H2x9-A2OSau7vqkqfQz7U",
+                                      "_id": "fQmk00EURbHM_58BtYO6X",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "name": "GET_STATEMENTS_FILTER_API",
+                                      "old_name": "GET_STATEMENTS_FILTER_API",
+                                      "status": "ACTIVE",
+                                      "services": [
+                                        {
+                                          "type": "8",
+                                          "command": {
+                                            "type": "1",
+                                            "attributes": {
+                                              "loaderWidgetIds": [906070],
+                                              "messageWidgetIds": [906070],
+                                              "responseStateKey": "cardStatementsFilter",
+                                              "url": "/card/v1/getStatementFilters",
+                                              "checksum": true,
+                                              "encryption": true,
+                                              "isDeviceDetails": false,
+                                              "loginTrigger": false,
+                                              "formData": false,
+                                              "logoutTrigger": false,
+                                              "headers": {
+                                                "Content-Type": "application/json",
+                                                "channel_key": "002"
+                                              },
+                                              "requestBody": [
+                                                {
+                                                  "type": 1,
+                                                  "name": "Form",
+                                                  "key": "cardNumber",
+                                                  "value": "current_card.cardNumber"
+                                                }
+                                              ],
+                                              "baseURL": "656f0b4398e9df55f0499597",
+                                              "storeType": 2
+                                            },
+                                            "responseHandler": []
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                                      "updatedAt": "1/11/2024",
+                                      "createdAt": "1/11/2024",
+                                      "createdBy": "zeeshan",
+                                      "updatedBy": "zeeshan"
+                                    },
+                                    {
+                                      "id": "h_HDXNk9RMDiEA8RtKOd0",
+                                      "_id": "kAnXOv-MbAF_YEH7YBwic",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "name": "STATEMENTS_WITH_TYPES",
+                                      "old_name": "STATEMENTS_WITH_TYPES",
+                                      "status": "ACTIVE",
+                                      "services": [
+                                        {
+                                          "type": "8",
+                                          "command": {
+                                            "type": "1",
+                                            "attributes": {
+                                              "loaderWidgetIds": [906070],
+                                              "messageWidgetIds": [906070],
+                                              "responseStateKey": "cardStatements",
+                                              "url": "/card/v1/getCardStatements",
+                                              "checksum": true,
+                                              "encryption": true,
+                                              "isDeviceDetails": false,
+                                              "loginTrigger": false,
+                                              "formData": false,
+                                              "logoutTrigger": false,
+                                              "headers": {
+                                                "Content-Type": "application/json",
+                                                "channel_key": "002"
+                                              },
+                                              "requestBody": [
+                                                {
+                                                  "type": 1,
+                                                  "name": "Form",
+                                                  "key": "name",
+                                                  "value": "current_statement_filter.type"
+                                                },
+                                                {
+                                                  "type": 1,
+                                                  "name": "Form",
+                                                  "key": "date",
+                                                  "value": "current_statement_filter.date"
+                                                },
+                                                {
+                                                  "type": 1,
+                                                  "name": "Form",
+                                                  "key": "cardNumber",
+                                                  "value": "current_card.cardNumber"
+                                                },
+                                                {
+                                                  "type": 1,
+                                                  "name": "Form",
+                                                  "key": "cardType",
+                                                  "value": "current_card.cardType"
+                                                },
+                                                {
+                                                  "type": 2,
+                                                  "name": "Current screen",
+                                                  "key": "type",
+                                                  "value": "STATEMENT_TYPE"
+                                                }
+                                              ],
+                                              "baseURL": "656f0b4398e9df55f0499597",
+                                              "storeType": 2
+                                            },
+                                            "responseHandler": []
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                                      "updatedAt": "1/11/2024",
+                                      "createdAt": "1/11/2024",
+                                      "createdBy": "zeeshan",
+                                      "updatedBy": "zeeshan"
+                                    }
+                                  ],
+                                  "triggerIds": [
+                                    "k_r65UUXxPmYKWd6vwpdH",
+                                    "RFesO16-sP156pSkU3g-E",
+                                    "H2x9-A2OSau7vqkqfQz7U",
+                                    "h_HDXNk9RMDiEA8RtKOd0"
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                          "updatedAt": "1/11/2024",
+                          "createdAt": "1/11/2024",
+                          "createdBy": "zeeshan",
+                          "updatedBy": "zeeshan"
+                        }
+                      ],
+                      "triggerIds": [
+                        "2bie3Q8uM9encsMg2pVkY",
+                        "bsBp3W5X_Ge5yPijYcFeD"
+                      ]
                     },
                     "type": "2",
                     "name": "On click",
-                    "commandType": "6"
+                    "commandType": "1"
                   }
                 ],
                 "component": { "type": "10001", "content": "Grid layout" },
@@ -156,7 +422,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "5fE801zTUZ0X6ey7zAaB0",
+                    "id": "Sf37UU_tFr_AFfjsUmMwb",
                     "gridProps": [
                       {
                         "id": "VjCntoStcqe5-8XQk7eDh",
@@ -236,22 +502,126 @@
                 },
                 "events": [
                   {
-                    "triggerId": "zraefx7_YhGXYNlHVOaOU",
-                    "triggerName": "FILL_STATEMENT_TYPE_ONHOLD",
-                    "serviceType": "11",
+                    "triggerId": "UsCHf9VgjMYwNSzN3sSmN",
+                    "triggerName": "FILL_STATEMENT_TYPE_ONHOLD_WITH_API",
+                    "serviceType": "2",
                     "attributes": {
-                      "dataType": "value",
-                      "destinationBindingKey": "STATEMENT_TYPE",
-                      "sourceBindingKey": "STATEMENT_TYPE",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 2,
-                      "logic": { "if": [{ "==": [true, true] }, "onHold", ""] },
-                      "changeValueConditonally": true,
-                      "targettedType": "value"
+                      "delay": "",
+                      "triggers": [
+                        {
+                          "id": "zraefx7_YhGXYNlHVOaOU",
+                          "name": "FILL_STATEMENT_TYPE_ONHOLD",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "6",
+                                "attributes": {
+                                  "dataType": "value",
+                                  "destinationBindingKey": "STATEMENT_TYPE",
+                                  "sourceBindingKey": "STATEMENT_TYPE",
+                                  "sourceStoreType": 2,
+                                  "destinationStoreType": 2,
+                                  "logic": {
+                                    "if": [{ "==": [true, true] }, "onHold", ""]
+                                  },
+                                  "changeValueConditonally": true,
+                                  "targettedType": "value"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+                          "_id": "DYK0ppQZoaJWlcWXxBBu_",
+                          "updatedAt": "1/8/2024",
+                          "createdAt": "1/8/2024",
+                          "createdBy": "basitahmed1199",
+                          "updatedBy": "basitahmed1199"
+                        },
+                        {
+                          "id": "h_HDXNk9RMDiEA8RtKOd0",
+                          "_id": "kAnXOv-MbAF_YEH7YBwic",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "STATEMENTS_WITH_TYPES",
+                          "old_name": "STATEMENTS_WITH_TYPES",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "cardStatements",
+                                  "url": "/card/v1/getCardStatements",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "name",
+                                      "value": "current_statement_filter.type"
+                                    },
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "date",
+                                      "value": "current_statement_filter.date"
+                                    },
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "cardNumber",
+                                      "value": "current_card.cardNumber"
+                                    },
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "cardType",
+                                      "value": "current_card.cardType"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "type",
+                                      "value": "STATEMENT_TYPE"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": []
+                              }
+                            }
+                          ],
+                          "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                          "updatedAt": "1/11/2024",
+                          "createdAt": "1/11/2024",
+                          "createdBy": "zeeshan",
+                          "updatedBy": "zeeshan"
+                        }
+                      ],
+                      "triggerIds": [
+                        "zraefx7_YhGXYNlHVOaOU",
+                        "h_HDXNk9RMDiEA8RtKOd0"
+                      ]
                     },
                     "type": "2",
                     "name": "On click",
-                    "commandType": "6"
+                    "commandType": "1"
                   }
                 ],
                 "component": { "type": "10001", "content": "Grid layout" },
@@ -296,7 +666,7 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "STATEMENT_POSTED_POPOVER_WIDGET",
+          "name": "Grid layout",
           "cssClassNames": [{ "cssClassName": "STATEMENT_DISPUTE_POPUP " }]
         },
         "component": { "type": "10001", "content": "Grid layout" },
@@ -311,9 +681,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "g1Bhj_a0mtobssY9zXpNY",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "1/8/2024",
-    "createdAt": "1/8/2024",
+    "createdBy": "zeeshan",
+    "updatedAt": "1/11/2024",
+    "createdAt": "1/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -376,7 +746,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "STATEMENT_POSTED_POPOVER_WIDGET",
+      "name": "Grid layout",
       "cssClassNames": [{ "cssClassName": "STATEMENT_DISPUTE_POPUP " }]
     },
     "layout": null,
@@ -428,8 +798,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "2bie3Q8uM9encsMg2pVkY",
-        "triggerName": "FILL_STATEMENT_TYPE_ALL",
+        "triggerId": "aXW67C7YSApXEd0-x2kjc",
+        "triggerName": "FILL_STATEMENT_TYPE_ALL_WITH_API",
         "name": "On click",
         "type": "2"
       }
@@ -525,8 +895,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "zraefx7_YhGXYNlHVOaOU",
-        "triggerName": "FILL_STATEMENT_TYPE_ONHOLD",
+        "triggerId": "UsCHf9VgjMYwNSzN3sSmN",
+        "triggerName": "FILL_STATEMENT_TYPE_ONHOLD_WITH_API",
         "name": "On click",
         "type": "2"
       }
