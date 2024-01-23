@@ -142,7 +142,8 @@
                                                   },
                                                   "layoutProperties": {
                                                     "image": {
-                                                      "//": "Use this class to style image component."
+                                                      "//": "Use this class to style image component.",
+                                                      "cursor": "pointer"
                                                     },
                                                     "mainContainer": "image",
                                                     "xl": 12,
@@ -186,7 +187,23 @@
                                                   "content": "Image",
                                                   "type": "20012"
                                                 },
-                                                "events": [],
+                                                "events": [
+                                                  {
+                                                    "triggerId": "LTUglv0JbErfRSxHvG_VO",
+                                                    "triggerName": "NAVIGATE_FROM_SIGN_UP_03_TO_LOGIN_IN_TRIGGER",
+                                                    "serviceType": "1",
+                                                    "attributes": {
+                                                      "fromWidgetId": "xGYiXn5LynEEIq4YrBWYn",
+                                                      "nextWidgetId": "Y8K1eost7v3cPvop6sgsG",
+                                                      "gridRadioValue": "Screen",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "editableForm": false
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "2"
+                                                  }
+                                                ],
                                                 "path": "0-0-0-0-0-0-0-1-0-0-0"
                                               }
                                             ],
@@ -1044,7 +1061,101 @@
                                                                   "content": "OTP",
                                                                   "type": "20052"
                                                                 },
-                                                                "events": [],
+                                                                "events": [
+                                                                  {
+                                                                    "triggerId": "J3k7sIjz7jlIFpJIoXfCV",
+                                                                    "triggerName": "DELETE_SIGN_UP_OTP_ERROR_CONDITIONAL",
+                                                                    "serviceType": "13",
+                                                                    "attributes": {
+                                                                      "triggers": [
+                                                                        {
+                                                                          "triggerName": "DELETE_SIGN_UP_OTP_ERROR",
+                                                                          "triggerId": "n6srX-fiESigsgqPoeQdO",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "4",
+                                                                                "attributes": {
+                                                                                  "stateName": "form.otpError.error",
+                                                                                  "storeType": 2,
+                                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                                  "dataType": "",
+                                                                                  "sourceBindingKey": ""
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ],
+                                                                          "logic": {
+                                                                            ">": [
+                                                                              {
+                                                                                "var": "currentScreen.verifyOTPForRegistrationResponse.message.length"
+                                                                              },
+                                                                              0
+                                                                            ]
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "1"
+                                                                  },
+                                                                  {
+                                                                    "triggerId": "S7SGOOWkqYR8DEbWsF27T",
+                                                                    "triggerName": "DELETE_FORM_OTP_ERROR",
+                                                                    "serviceType": "11",
+                                                                    "attributes": {
+                                                                      "stateName": "form.otpError.error",
+                                                                      "storeType": 2,
+                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                      "dataType": "",
+                                                                      "sourceBindingKey": ""
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "4"
+                                                                  },
+                                                                  {
+                                                                    "triggerId": "R1HjoxLRE44g_7-F72geu",
+                                                                    "triggerName": "DELETE_SIGN_UP_SMS_PIN_ERROR_CONDITIONAL",
+                                                                    "serviceType": "13",
+                                                                    "attributes": {
+                                                                      "triggers": [
+                                                                        {
+                                                                          "triggerName": "DELETE_SIGN_UP_SMS_PIN_ERROR",
+                                                                          "triggerId": "OODdUIBi9AehJLDXbs6nP",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "4",
+                                                                                "attributes": {
+                                                                                  "stateName": "smsPin",
+                                                                                  "storeType": 1,
+                                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                                  "dataType": "",
+                                                                                  "sourceBindingKey": ""
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ],
+                                                                          "logic": {
+                                                                            ">": [
+                                                                              {
+                                                                                "var": "currentScreen.verifyOTPForRegistrationResponse.message.length"
+                                                                              },
+                                                                              0
+                                                                            ]
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "1"
+                                                                  }
+                                                                ],
                                                                 "path": "0-0-0-1-0-0-0-0-1-1-0-0-1-0-0"
                                                               }
                                                             ],
@@ -1566,48 +1677,6 @@
                                                                         "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-0"
                                                                       },
                                                                       {
-                                                                        "id": "vDf0cv-IdjRvlkSWFb9O3",
-                                                                        "status": "ACTIVE",
-                                                                        "name": "Label",
-                                                                        "attributes": {
-                                                                          "variant": "body1",
-                                                                          "name": "Label",
-                                                                          "mandatory": false,
-                                                                          "layoutProperties": {
-                                                                            "label": {
-                                                                              "//": "Use this class to style label component.",
-                                                                              "font-weight": "bold",
-                                                                              "text-align": "right !important",
-                                                                              "font-size": "0.8rem",
-                                                                              "margin": "0px 0px 0px 2px"
-                                                                            },
-                                                                            "mainContainer": "label",
-                                                                            "xl": 12,
-                                                                            "lg": 12,
-                                                                            "md": 12,
-                                                                            "sm": 12,
-                                                                            "xs": 12
-                                                                          },
-                                                                          "label": "+",
-                                                                          "hideComponent": true
-                                                                        },
-                                                                        "icon": "FaFont",
-                                                                        "group": "Form",
-                                                                        "type": "20002",
-                                                                        "updatedAt": "23-Aug-2021",
-                                                                        "createdAt": "23-Aug-2021",
-                                                                        "order": 15,
-                                                                        "version": "1.0.0",
-                                                                        "isLatest": true,
-                                                                        "projectType": "web",
-                                                                        "component": {
-                                                                          "content": "Label",
-                                                                          "type": "20002"
-                                                                        },
-                                                                        "events": [],
-                                                                        "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-1"
-                                                                      },
-                                                                      {
                                                                         "id": "Y-mAQo31QsD-b7Op-WN-l",
                                                                         "type": "20002",
                                                                         "name": "Label",
@@ -1625,7 +1694,8 @@
                                                                               "font-weight": "bold",
                                                                               "text-align": "left !important",
                                                                               "font-size": "0.8rem",
-                                                                              "margin": "0px 0px 0px 4px"
+                                                                              "margin": "0px 0px 0px 4px",
+                                                                              "width": "max-content"
                                                                             },
                                                                             "mainContainer": "label",
                                                                             "xl": 12,
@@ -1635,11 +1705,11 @@
                                                                             "xs": 12
                                                                           },
                                                                           "label": "number",
-                                                                          "searchInState": false,
+                                                                          "searchInState": true,
                                                                           "storeType": 1
                                                                         },
                                                                         "events": [],
-                                                                        "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-2",
+                                                                        "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-1",
                                                                         "version": "1.0.0"
                                                                       }
                                                                     ],
@@ -4081,9 +4151,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "xGYiXn5LynEEIq4YrBWYn",
-    "createdBy": "muhammad.asad",
-    "updatedAt": "12/26/2023",
-    "createdAt": "12/26/2023",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "1/19/2024",
+    "createdAt": "1/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4448,7 +4518,10 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "cursor": "pointer"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -4488,7 +4561,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Image", "type": "20012" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "LTUglv0JbErfRSxHvG_VO",
+        "triggerName": "NAVIGATE_FROM_SIGN_UP_03_TO_LOGIN_IN_TRIGGER",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "1"
+      }
+    ],
     "path": "0-0-0-0-0-0-0-1-0-0-0",
     "screenId": "xGYiXn5LynEEIq4YrBWYn",
     "subType": "component",
@@ -5407,7 +5488,29 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "OTP", "type": "20052" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "J3k7sIjz7jlIFpJIoXfCV",
+        "triggerName": "DELETE_SIGN_UP_OTP_ERROR_CONDITIONAL",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
+      },
+      {
+        "triggerId": "S7SGOOWkqYR8DEbWsF27T",
+        "triggerName": "DELETE_FORM_OTP_ERROR",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      },
+      {
+        "triggerId": "R1HjoxLRE44g_7-F72geu",
+        "triggerName": "DELETE_SIGN_UP_SMS_PIN_ERROR_CONDITIONAL",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
+      }
+    ],
     "path": "0-0-0-1-0-0-0-0-1-1-0-0-1-0-0",
     "screenId": "xGYiXn5LynEEIq4YrBWYn",
     "subType": "component",
@@ -5781,18 +5884,6 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "vDf0cv-IdjRvlkSWFb9O3",
-          "componentType": "20002",
-          "order": 1
-        },
-        {
-          "layoutProperties": {
-            "xl": 12,
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          },
           "componentId": "Y-mAQo31QsD-b7Op-WN-l",
           "componentType": "20002",
           "order": 1
@@ -5869,50 +5960,6 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "vDf0cv-IdjRvlkSWFb9O3",
-    "status": "ACTIVE",
-    "name": "Label",
-    "attributes": {
-      "variant": "body1",
-      "name": "Label",
-      "mandatory": false,
-      "layoutProperties": {
-        "label": {
-          "//": "Use this class to style label component.",
-          "font-weight": "bold",
-          "text-align": "right !important",
-          "font-size": "0.8rem",
-          "margin": "0px 0px 0px 2px"
-        },
-        "mainContainer": "label",
-        "xl": 12,
-        "lg": 12,
-        "md": 12,
-        "sm": 12,
-        "xs": 12
-      },
-      "label": "+",
-      "hideComponent": true
-    },
-    "icon": "FaFont",
-    "group": "Form",
-    "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
-    "order": 15,
-    "version": "1.0.0",
-    "isLatest": true,
-    "projectType": "web",
-    "component": { "content": "Label", "type": "20002" },
-    "events": [],
-    "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-1",
-    "screenId": "xGYiXn5LynEEIq4YrBWYn",
-    "subType": "component",
-    "projectId": "652fcbce09869c3c809b3097",
-    "gitBranchName": "master",
-    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
-  },
-  {
     "id": "Y-mAQo31QsD-b7Op-WN-l",
     "type": "20002",
     "name": "Label",
@@ -5927,7 +5974,8 @@
           "font-weight": "bold",
           "text-align": "left !important",
           "font-size": "0.8rem",
-          "margin": "0px 0px 0px 4px"
+          "margin": "0px 0px 0px 4px",
+          "width": "max-content"
         },
         "mainContainer": "label",
         "xl": 12,
@@ -5937,11 +5985,11 @@
         "xs": 12
       },
       "label": "number",
-      "searchInState": false,
+      "searchInState": true,
       "storeType": 1
     },
     "events": [],
-    "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-2",
+    "path": "0-0-0-1-0-0-0-0-1-1-0-0-3-1-0-0-1",
     "version": "1.0.0",
     "screenId": "xGYiXn5LynEEIq4YrBWYn",
     "subType": "component",

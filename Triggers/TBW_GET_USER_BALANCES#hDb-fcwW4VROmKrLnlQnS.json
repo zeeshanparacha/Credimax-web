@@ -1,0 +1,65 @@
+{
+  "id": "yfqjRu-bDPwh6Lx_Fc5-9",
+  "_id": "hDb-fcwW4VROmKrLnlQnS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TBW_GET_USER_BALANCES",
+  "old_name": "TBW_GET_USER_BALANCES",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "balances",
+          "responseReturnValue": "content",
+          "successMessageBindingKey": "balancesError",
+          "errorMessageBindingKey": "balancesSuccess",
+          "url": "/payment/cardyex/v1/balances",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "cardNumber",
+              "value": "CURRENT_CARD.cardNumber"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": true,
+            "httpStatus": 200,
+            "triggerName": "TBW_SELECT_FIRST_BALANCE_FOR_FROM_WALLET",
+            "triggerId": "nv67SjqUsEowXX6aTIARW"
+          },
+          {
+            "logic": true,
+            "httpStatus": 200,
+            "triggerName": "TBW_SELECT_SECOND_BALANCE_FOR_TO_WALLET",
+            "triggerId": "8toM0Rl_UAv1hXjYN6na5"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.8lody1rhin9UwMLRfxmO_HDk0P0bBvRy",
+  "updatedAt": "1/18/2024",
+  "createdAt": "1/18/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

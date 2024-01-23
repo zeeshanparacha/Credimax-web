@@ -1,0 +1,95 @@
+{
+  "id": "zgabLFguehKPXTiZc2-lB",
+  "_id": "gE0UP1YuFC1E4ZS6v7B4p",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TBW_GET_QUOTES",
+  "old_name": "TBW_GET_QUOTES",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "quotes",
+          "responseReturnValue": "content",
+          "successMessageBindingKey": "quotesSuccess",
+          "errorMessageBindingKey": "quotesError",
+          "url": "/payment/cardyex/v1/getQuotes",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "cardNumber",
+              "value": "balances.cardNumber"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "sourceCurrency",
+              "value": "form.from_wallet.currency"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "sourceCurrencyCode",
+              "value": "form.from_wallet.currencyCode"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "destinationCurrency",
+              "value": "form.to_wallet.currency"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "destinationCurrencyCode",
+              "value": "form.to_wallet.currencyCode"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "sourceAmount",
+              "value": "form.source"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "destinationAmount",
+              "value": "form.target"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": true,
+            "httpStatus": 200,
+            "triggerName": "UPDATE_SOURCE_AND_TARGET_AFTER_QUOTES",
+            "triggerId": "WEnh1WriPEzbRp5ABCWjm"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+  "updatedAt": "1/18/2024",
+  "createdAt": "1/18/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

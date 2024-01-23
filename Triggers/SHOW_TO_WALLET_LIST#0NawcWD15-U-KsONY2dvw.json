@@ -1,0 +1,89 @@
+{
+  "id": "m6arFL9wNsfzBsrsf8Ksu",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SHOW_TO_WALLET_LIST",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "if": [{ "var": "currentScreen.form.from_wallet" }, true, false]
+              },
+              "triggerName": "FILTER_FOR_TO_WALLETS",
+              "triggerId": "e7149BrjFUsP58tWnyEvD",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "10",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "to_wallet_list",
+                      "sourceBindingKey": "balances.toBalanceList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "logic": {
+                        "if": [
+                          {
+                            "==": [
+                              { "var": "currencyCode" },
+                              {
+                                "var": "currentScreen.form.from_wallet.currencyCode"
+                              }
+                            ]
+                          },
+                          false,
+                          true
+                        ]
+                      },
+                      "targetValue": "currencyCode"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "if": [{ "var": "currentScreen.form.from_wallet" }, false, true]
+              },
+              "triggerName": "COPY_TO_WALLET_LIST",
+              "triggerId": "eeIgfIx7EhQsMlWJ1B1a-",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "dataType": "value",
+                      "destinationBindingKey": "to_wallet_list",
+                      "sourceBindingKey": "balances.toBalanceList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+  "_id": "0NawcWD15-U-KsONY2dvw",
+  "updatedAt": "1/18/2024",
+  "createdAt": "1/18/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

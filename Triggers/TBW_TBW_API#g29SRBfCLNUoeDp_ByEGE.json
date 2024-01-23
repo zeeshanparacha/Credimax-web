@@ -1,0 +1,124 @@
+{
+  "id": "oc_u1EwwBRz63PdOsb4Az",
+  "_id": "g29SRBfCLNUoeDp_ByEGE",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TBW_TBW_API",
+  "old_name": "TBW_TBW_API",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "tbw",
+          "successMessageBindingKey": "tbwsuccess",
+          "errorMessageBindingKey": "tbwerror",
+          "url": "/payment/cardyex/v1/transferBetweenWallet",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "cardNumber",
+              "value": "balances.cardNumber"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "fees",
+              "value": "quotes.transactionFees"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "sourceWallet",
+              "value": "form.from_wallet.currencyCode"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "transactionFees",
+              "value": "quotes.transactionFees"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "destinationWallet",
+              "value": "form.to_wallet.currencyCode"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "sourceAmount",
+              "value": "form.source"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "destinationAmount",
+              "value": "0"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "destinationAmountWithFees",
+              "value": "destinationAmountWithFees"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "CLEAR_SOURCE",
+            "triggerId": "BHQcqmlvRJR4o4N0MmyFD"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "CLEAR_TARGET",
+            "triggerId": "Zt-_pHoq86Dp22xI4UBOp"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "TBW_GET_USER_BALANCES",
+            "triggerId": "yfqjRu-bDPwh6Lx_Fc5-9"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "TBW_CLEAR_QUOTES",
+            "triggerId": "B_KnpY0fM9xhGIv2kQfsD"
+          },
+          {
+            "logic": true,
+            "httpStatus": 200,
+            "triggerName": "TBW_RESPONSE_MODAL_2",
+            "triggerId": "XiOULaGY7yYXSCwULHq9J"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.wx7i1bl2cwlY3DmjxZu39b2ObjmcV7LF",
+  "updatedAt": "1/18/2024",
+  "createdAt": "1/18/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

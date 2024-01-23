@@ -1,0 +1,308 @@
+{
+  "id": "SbUJcpacJMXIZsjyKb06O",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "STATEMENTS_SEQUENTIAL_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "triggers": [
+            {
+              "_id": "HVAkIcsWfbr5StMYxyEU0",
+              "id": "4hVeehqHqTE6C4D8ETXay",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "CHECK_CARD_LIST_LENGTH_AND_SAVE_FIRST_CARD",
+              "old_name": "CHECK_CARD_LIST_LENGTH_AND_SAVE_FIRST_CARD",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "logic": {
+                            "if": [
+                              {
+                                "and": [
+                                  { "var": "currentScreen.cards.cardList" },
+                                  {
+                                    ">": [
+                                      {
+                                        "var": "currentScreen.cards.cardList.length"
+                                      },
+                                      0
+                                    ]
+                                  }
+                                ]
+                              },
+                              true,
+                              false
+                            ]
+                          },
+                          "triggerName": "SAVE_FIRST_CARD_AS_CURRENT_CARD",
+                          "triggerId": "OjYjs4p88jBQR6Xr-GNqg",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "6",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "value",
+                                  "destinationBindingKey": "current_card",
+                                  "sourceBindingKey": "form",
+                                  "sourceStoreType": 2,
+                                  "destinationStoreType": 1,
+                                  "logic": {
+                                    "var": "currentScreen.cards.cardList.0"
+                                  },
+                                  "changeValueConditonally": true,
+                                  "targettedType": "value"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.tjzb0k39kvf0fmQmfevGJPxig4m1u3m",
+              "updatedAt": "1/7/2024",
+              "createdAt": "1/7/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            },
+            {
+              "id": "2bie3Q8uM9encsMg2pVkY",
+              "name": "FILL_STATEMENT_TYPE_ALL",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "STATEMENT_TYPE",
+                      "sourceBindingKey": "STATEMENT_TYPE",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "logic": { "if": [{ "==": [true, true] }, "all", ""] },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+              "_id": "mM10tWE6ulXdcXnUMlPGq",
+              "updatedAt": "1/8/2024",
+              "createdAt": "1/8/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            },
+            {
+              "id": "H2x9-A2OSau7vqkqfQz7U",
+              "_id": "fQmk00EURbHM_58BtYO6X",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "GET_STATEMENTS_FILTER_API",
+              "old_name": "GET_STATEMENTS_FILTER_API",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cardStatementsFilter",
+                      "url": "/card/v1/getStatementFilters",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "cardNumber",
+                          "value": "current_card.cardNumber"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+              "updatedAt": "1/11/2024",
+              "createdAt": "1/11/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "RFesO16-sP156pSkU3g-E",
+              "_id": "s9z7UHuNLQuWp3GaOgJX2",
+              "name": "SET_CURRENT_STATEMENT_FILTER",
+              "old_name": "SET_CURRENT_STATEMENT_FILTER",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "object",
+                      "destinationBindingKey": "current_statement_filter",
+                      "sourceBindingKey": "current_statement_filter",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "filterList": [
+                        {
+                          "key": "type",
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "if": [
+                              { "==": [true, true] },
+                              "Current Statement",
+                              ""
+                            ]
+                          }
+                        }
+                      ],
+                      "logic": {
+                        "if": [{ "==": [true, true] }, "Current Statement", ""]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "object"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+              "updatedAt": "1/11/2024",
+              "createdAt": "1/11/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "h_HDXNk9RMDiEA8RtKOd0",
+              "_id": "kAnXOv-MbAF_YEH7YBwic",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "STATEMENTS_WITH_TYPES",
+              "old_name": "STATEMENTS_WITH_TYPES",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cardStatements",
+                      "url": "/card/v1/getCardStatements",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "name",
+                          "value": "current_statement_filter.type"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "date",
+                          "value": "current_statement_filter.date"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "cardNumber",
+                          "value": "current_card.cardNumber"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "cardType",
+                          "value": "current_card.cardType"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "type",
+                          "value": "STATEMENT_TYPE"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+              "updatedAt": "1/11/2024",
+              "createdAt": "1/11/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            }
+          ],
+          "triggerIds": [
+            "4hVeehqHqTE6C4D8ETXay",
+            "2bie3Q8uM9encsMg2pVkY",
+            "H2x9-A2OSau7vqkqfQz7U",
+            "RFesO16-sP156pSkU3g-E",
+            "h_HDXNk9RMDiEA8RtKOd0"
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.1r0ixknyq2dMX6M8ftr4mK19NJxH4vT7",
+  "_id": "bb_r3wsff8mKWlJeWpOpU",
+  "updatedAt": "1/15/2024",
+  "createdAt": "1/15/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}
