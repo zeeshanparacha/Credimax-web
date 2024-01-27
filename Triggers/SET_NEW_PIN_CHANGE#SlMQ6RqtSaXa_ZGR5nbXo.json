@@ -1,0 +1,75 @@
+{
+  "id": "P_n3FFyCYc_SsVSPXQoKV",
+  "_id": "SlMQ6RqtSaXa_ZGR5nbXo",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SET_NEW_PIN_CHANGE",
+  "old_name": "SET_NEW_PIN_CHANGE",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "newPinChangeResponse",
+          "url": "/card/v1/setCardPin",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "cardNumber",
+              "value": "CURRENT_CARD.cardNumber"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "validation",
+              "value": "validation"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "oldPin",
+              "value": "existingPin"
+            },
+            { "type": 1, "name": "Form", "key": "newPin", "value": "pinChange" }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_01_FROM_SCREEN_02",
+            "triggerId": "WbvhWdSQqBlYE7q5crUyr",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "triggerName": "CHANGE_PIN_ERROR_TOAST",
+            "triggerId": "JUP3Ff16w5q_dQkhuVtEy",
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 0] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.ojo16fhfnxl5btT6msmytRlfaM64Plhs",
+  "updatedAt": "1/27/2024",
+  "createdAt": "1/27/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

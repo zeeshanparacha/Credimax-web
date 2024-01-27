@@ -1,0 +1,74 @@
+{
+  "_id": "MXTW1Z2rTycbwkU57dfmU",
+  "id": "zjstLbFLxC2mtw6cMg1wO",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PIN_CHANGE_VALIDATIONS_DELETE_CONDITIONAL",
+  "old_name": "PIN_CHANGE_VALIDATIONS_DELETE_CONDITIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "DELETE_PIN_CHANGE_VALIDATION",
+              "triggerId": "SMVHPDiilH-ayOeNI9sPo",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "4",
+                    "attributes": {
+                      "stateName": "pinChangeValidationResponse",
+                      "storeType": 2,
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": ""
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                ">": [
+                  {
+                    "var": "currentScreen.pinChangeValidationResponse.message.length"
+                  },
+                  0
+                ]
+              }
+            },
+            {
+              "logic": {
+                ">": [
+                  {
+                    "var": "currentScreen.pinChangeValidationResponse.message.length"
+                  },
+                  0
+                ]
+              },
+              "triggerName": "DELETE_PIN_CHANGE_SMS_PIN",
+              "triggerId": "fCnLRx3GXxWdmCwzz97En",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "4",
+                    "attributes": { "stateName": "smsPin", "storeType": 1 }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.saimpwfdgqrGyyOoxdrYHL6_zxtyQZ7z",
+  "updatedAt": "1/27/2024",
+  "createdAt": "1/27/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

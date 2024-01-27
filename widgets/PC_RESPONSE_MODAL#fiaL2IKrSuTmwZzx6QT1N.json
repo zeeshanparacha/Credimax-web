@@ -43,7 +43,7 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "PC_RESPONSE_MODAL"
+          "name": "Grid layout"
         },
         "group": "Layout",
         "type": "sidebarItem",
@@ -61,7 +61,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "qaK5tSfOylKt03Y8FGFLd",
+            "id": "XTEaQ2ECqtEN7CscZ0VLU",
             "gridProps": [
               {
                 "id": "CqmlzslD-mL4kFx70VSZ_",
@@ -807,7 +807,18 @@
                                     { "cssClassName": "PC_SUCCESS_MODAL_BODY " }
                                   ],
                                   "searchInState": true,
-                                  "storeType": 2
+                                  "storeType": 2,
+                                  "hideCondition": {
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "var": "currentScreen.pc_release_payment.message"
+                                        },
+                                        false,
+                                        true
+                                      ]
+                                    }
+                                  }
                                 },
                                 "icon": "FaFont",
                                 "group": "Form",
@@ -835,7 +846,19 @@
                                   "mandatory": false,
                                   "layoutProperties": {
                                     "label": {
-                                      "//": "Use this class to style label component."
+                                      "//": "Use this class to style label component.",
+                                      "color": "black!important",
+                                      "fontWeight": "bold"
+                                    },
+                                    "prefix": {
+                                      "//": "Use this class to style label component.",
+                                      "color": "#838383!important",
+                                      "fontWeight": "300"
+                                    },
+                                    "postfix": {
+                                      "//": "Use this class to style label component.",
+                                      "color": "black!important",
+                                      "fontWeight": "bold"
                                     },
                                     "mainContainer": "label",
                                     "xl": 12,
@@ -844,8 +867,8 @@
                                     "sm": 12,
                                     "xs": 12
                                   },
-                                  "label": "pc_release_payment.content.reference",
-                                  "searchInState": true,
+                                  "label": "Error Code:",
+                                  "searchInState": false,
                                   "storeType": 2,
                                   "hideCondition": {
                                     "logic": {
@@ -857,7 +880,14 @@
                                         true
                                       ]
                                     }
-                                  }
+                                  },
+                                  "postfix": "pc_release_payment.content.reference",
+                                  "searchInStatePostfix": true,
+                                  "addSpacesPostfix": true,
+                                  "prefix": "Please try again. ",
+                                  "cssClassNames": [
+                                    { "cssClassName": "PC_SUCCESS_MODAL_BODY " }
+                                  ]
                                 },
                                 "icon": "FaFont",
                                 "group": "Form",
@@ -986,6 +1016,42 @@
                             "type": "2",
                             "name": "On click",
                             "commandType": "2"
+                          },
+                          {
+                            "triggerId": "GSX94vgAydNxYSCnYW64E",
+                            "triggerName": "PC_CLEAR_ALL_FIELDS",
+                            "serviceType": "11",
+                            "attributes": {
+                              "storeType": "",
+                              "selectedObjectBindingKey": "selectedObject",
+                              "dataType": "",
+                              "sourceBindingKey": "",
+                              "filterList": [
+                                {
+                                  "key": "selectedAmountType",
+                                  "changeValueConditonally": false,
+                                  "storeType": 2,
+                                  "logic": null
+                                },
+                                { "key": "pc_custom_amount", "storeType": 1 },
+                                {
+                                  "key": "selected_payment_method",
+                                  "storeType": 1
+                                },
+                                { "key": "pc_card_number", "storeType": 1 },
+                                { "key": "pc_name_on_card", "storeType": 1 },
+                                { "key": "pc_expiry_date", "storeType": 1 },
+                                { "key": "save_card", "storeType": 2 },
+                                { "key": "pc_nikname", "storeType": 1 },
+                                { "key": "pc_custom_amount_2", "storeType": 1 },
+                                { "key": "pc_card_number_2", "storeType": 1 },
+                                { "key": "pc_cpr", "storeType": 1 },
+                                { "key": "pc_request", "storeType": 2 }
+                              ]
+                            },
+                            "type": "2",
+                            "name": "On click",
+                            "commandType": "15"
                           }
                         ],
                         "path": "0-0-1-0-2"
@@ -997,7 +1063,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "rVQHpKqJXh_lNSetzCsVK",
+                            "id": "vLBxMZ10xcWrZHbM4Ys8Y",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1006,7 +1072,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "AwyyUMtFm6uQS1e0BAZD8",
+                                    "id": "DOHCo8koHFAo58a9kVBCX",
                                     "gridProps": [
                                       {
                                         "id": "2Hb51jJUkrwO9g8IVxtdm",
@@ -1057,7 +1123,87 @@
                                           "content": "Button",
                                           "type": "20006"
                                         },
-                                        "events": [],
+                                        "events": [
+                                          {
+                                            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+                                            "triggerName": "HIDE_MODAL_TRIGGER",
+                                            "serviceType": "9",
+                                            "attributes": {
+                                              "content": "",
+                                              "type": "",
+                                              "modalId": "Hnd2p3GlKp2devIkjLNIH"
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "2"
+                                          },
+                                          {
+                                            "triggerId": "GSX94vgAydNxYSCnYW64E",
+                                            "triggerName": "PC_CLEAR_ALL_FIELDS",
+                                            "serviceType": "11",
+                                            "attributes": {
+                                              "storeType": "",
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "dataType": "",
+                                              "sourceBindingKey": "",
+                                              "filterList": [
+                                                {
+                                                  "key": "selectedAmountType",
+                                                  "changeValueConditonally": false,
+                                                  "storeType": 2,
+                                                  "logic": null
+                                                },
+                                                {
+                                                  "key": "pc_custom_amount",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "selected_payment_method",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_card_number",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_name_on_card",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_expiry_date",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "save_card",
+                                                  "storeType": 2
+                                                },
+                                                {
+                                                  "key": "pc_nikname",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_custom_amount_2",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_card_number_2",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_cpr",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "pc_request",
+                                                  "storeType": 2
+                                                }
+                                              ]
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "15"
+                                          }
+                                        ],
                                         "path": "0-0-1-0-3-0-0-0-0"
                                       }
                                     ],
@@ -1084,7 +1230,7 @@
                                     "gridLayout": {
                                       "//": "Use this class to style grid layout component.",
                                       "spacing": 0,
-                                      "padding": "0 5px 0 0"
+                                      "padding": "0 10px 0 0"
                                     },
                                     "mainContainer": "gridLayout"
                                   },
@@ -1114,7 +1260,7 @@
                           },
                           {
                             "type": "column",
-                            "id": "14ehwmATlIf0SJ5V11FDP",
+                            "id": "fbEEj6aZ_EXiSGeYUL_lo",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1123,7 +1269,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "E12byYLjTfDiU9mIVylm3",
+                                    "id": "ydQ7MLLxQr0nNj6fkNyZl",
                                     "gridProps": [
                                       {
                                         "id": "4ZYcX0UkJs0_GQmuRRZh4",
@@ -1174,7 +1320,21 @@
                                           "content": "Button",
                                           "type": "20006"
                                         },
-                                        "events": [],
+                                        "events": [
+                                          {
+                                            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+                                            "triggerName": "HIDE_MODAL_TRIGGER",
+                                            "serviceType": "9",
+                                            "attributes": {
+                                              "content": "",
+                                              "type": "",
+                                              "modalId": "Hnd2p3GlKp2devIkjLNIH"
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "2"
+                                          }
+                                        ],
                                         "path": "0-0-1-0-3-1-0-0-0"
                                       }
                                     ],
@@ -1201,7 +1361,7 @@
                                     "gridLayout": {
                                       "//": "Use this class to style grid layout component.",
                                       "spacing": 0,
-                                      "height": "0 0 0 5px"
+                                      "height": "0 0 0 10px"
                                     },
                                     "mainContainer": "gridLayout"
                                   },
@@ -1243,7 +1403,8 @@
                           "layoutProperties": {
                             "gridLayout": {
                               "//": "Use this class to style grid layout component.",
-                              "spacing": 0
+                              "width": "calc(100% - 64px)",
+                              "margin": "32px"
                             },
                             "mainContainer": "gridLayout"
                           },
@@ -1313,8 +1474,7 @@
               "md": 12,
               "sm": 12,
               "xs": 12
-            },
-            "path": "0-0"
+            }
           }
         ],
         "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
@@ -1327,9 +1487,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "fiaL2IKrSuTmwZzx6QT1N",
-    "createdBy": "talha2",
-    "updatedAt": "1/22/2024",
-    "createdAt": "1/22/2024",
+    "createdBy": "talha",
+    "updatedAt": "1/25/2024",
+    "createdAt": "1/25/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1391,7 +1551,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "PC_RESPONSE_MODAL"
+      "name": "Grid layout"
     },
     "layout": null,
     "events": [],
@@ -2249,7 +2409,16 @@
       "label": "pc_release_payment.message",
       "cssClassNames": [{ "cssClassName": "PC_SUCCESS_MODAL_BODY " }],
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          "if": [
+            { "var": "currentScreen.pc_release_payment.message" },
+            false,
+            true
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -2278,7 +2447,21 @@
       "name": "Label",
       "mandatory": false,
       "layoutProperties": {
-        "label": { "//": "Use this class to style label component." },
+        "label": {
+          "//": "Use this class to style label component.",
+          "color": "black!important",
+          "fontWeight": "bold"
+        },
+        "prefix": {
+          "//": "Use this class to style label component.",
+          "color": "#838383!important",
+          "fontWeight": "300"
+        },
+        "postfix": {
+          "//": "Use this class to style label component.",
+          "color": "black!important",
+          "fontWeight": "bold"
+        },
         "mainContainer": "label",
         "xl": 12,
         "lg": 12,
@@ -2286,8 +2469,8 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "pc_release_payment.content.reference",
-      "searchInState": true,
+      "label": "Error Code:",
+      "searchInState": false,
       "storeType": 2,
       "hideCondition": {
         "logic": {
@@ -2297,7 +2480,12 @@
             true
           ]
         }
-      }
+      },
+      "postfix": "pc_release_payment.content.reference",
+      "searchInStatePostfix": true,
+      "addSpacesPostfix": true,
+      "prefix": "Please try again. ",
+      "cssClassNames": [{ "cssClassName": "PC_SUCCESS_MODAL_BODY " }]
     },
     "icon": "FaFont",
     "group": "Form",
@@ -2371,6 +2559,13 @@
         "name": "On click",
         "type": "2",
         "serviceType": "9"
+      },
+      {
+        "triggerId": "GSX94vgAydNxYSCnYW64E",
+        "triggerName": "PC_CLEAR_ALL_FIELDS",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
       }
     ],
     "path": "0-0-1-0-2",
@@ -2417,7 +2612,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "width": "calc(100% - 64px)",
+          "margin": "32px"
         },
         "mainContainer": "gridLayout"
       },
@@ -2471,7 +2667,7 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "0 5px 0 0"
+          "padding": "0 10px 0 0"
         },
         "mainContainer": "gridLayout"
       },
@@ -2530,7 +2726,22 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Button", "type": "20006" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+        "triggerName": "HIDE_MODAL_TRIGGER",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
+      },
+      {
+        "triggerId": "GSX94vgAydNxYSCnYW64E",
+        "triggerName": "PC_CLEAR_ALL_FIELDS",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      }
+    ],
     "path": "0-0-1-0-3-0-0-0-0",
     "screenId": "fiaL2IKrSuTmwZzx6QT1N",
     "subType": "component",
@@ -2562,7 +2773,7 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "height": "0 0 0 5px"
+          "height": "0 0 0 10px"
         },
         "mainContainer": "gridLayout"
       },
@@ -2621,7 +2832,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Button", "type": "20006" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+        "triggerName": "HIDE_MODAL_TRIGGER",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
+      }
+    ],
     "path": "0-0-1-0-3-1-0-0-0",
     "screenId": "fiaL2IKrSuTmwZzx6QT1N",
     "subType": "component",

@@ -241,6 +241,54 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "NJyw53BPzd3PLGg_qlLrd",
+            "triggerName": "PC_SAVE_OTP_VALIDATE_OBJ",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": ""
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
+          },
+          {
+            "triggerId": "I50qjsCYW_G4PjFktBPYS",
+            "triggerName": "PC_CHECK_IF_OTP_REQUIRED",
+            "serviceType": "8",
+            "attributes": {
+              "loaderWidgetIds": [906070],
+              "messageWidgetIds": [906070],
+              "responseStateKey": "pc_check_otp",
+              "url": "/v1/getCheckOTPRequired",
+              "checksum": true,
+              "encryption": true,
+              "isDeviceDetails": false,
+              "loginTrigger": false,
+              "formData": false,
+              "logoutTrigger": false,
+              "headers": {
+                "Content-Type": "application/json",
+                "channel_key": "002"
+              },
+              "requestBody": [
+                {
+                  "type": 4,
+                  "name": "Static",
+                  "key": "tranCode",
+                  "value": "0047"
+                }
+              ],
+              "baseURL": "656f0b4398e9df55f0499597",
+              "storeType": 2
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "order": 1,
@@ -253,14 +301,14 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "Q7vfmfF4N9DrIOuDGQMoL",
+            "id": "9E6hp3fmNNhtMOEpg9Rla",
             "gridProps": [
               {
-                "id": "sPJCtcvlqTb0R-9vY8i1T",
-                "name": "PC_SHOW_RESPONSE",
+                "id": "3WI5u8ga4ikq4k2JCP2xh",
+                "name": "PC_SHOW_REVIEW_PAYMENT_MODAL",
                 "type": "20031",
                 "attributes": {
-                  "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                  "widgetId": "TLxBhe9FKBGjVomH7ojh7",
                   "layoutProperties": {
                     "xl": 12,
                     "lg": 12,
@@ -278,8 +326,24 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "y5kWJeLegJvQhZ_AFheOK",
+                    "id": "IjXDkpabGncwrUZi-w_an",
                     "gridProps": [
+                      {
+                        "id": "sPJCtcvlqTb0R-9vY8i1T",
+                        "name": "PC_SHOW_RESPONSE",
+                        "type": "20031",
+                        "attributes": {
+                          "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                          "layoutProperties": {
+                            "xl": 12,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "xs": 12
+                          }
+                        },
+                        "component": { "type": "20031" }
+                      },
                       {
                         "type": "10001",
                         "name": "TITLE_GRID",
@@ -287,7 +351,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "hN4c9KTQXAKVh7_llyWzC",
+                            "id": "Yc0g0kLDlfJXM0fgriFji",
                             "gridProps": [
                               {
                                 "id": "npCVZ2bMqG1rghfAFIcP9",
@@ -338,8 +402,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-0-0-0-0"
+                            }
                           }
                         ],
                         "allowedContainers": [
@@ -377,7 +440,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-0-0-0",
+                        "path": "3-0-0-0-1",
                         "dimensions": {
                           "rows": 1,
                           "columns": 1,
@@ -390,13 +453,29 @@
                         "readOnly": true
                       },
                       {
+                        "id": "Cm2PtP4rELRCywsCcv72s",
+                        "name": "PC_SHOW_OTP_MODAL",
+                        "type": "20031",
+                        "attributes": {
+                          "widgetId": "wxqeXI1zuyZbvPx6p8J_N",
+                          "layoutProperties": {
+                            "xl": 12,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "xs": 12
+                          }
+                        },
+                        "component": { "type": "20031" }
+                      },
+                      {
                         "type": "10001",
                         "name": "Grid layout",
                         "id": "TawjGN_U1ZrHyD4jf5UQE",
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "Cm5eJU5a5qHQmsY-Q-Owx",
+                            "id": "OIo9A7th4mePBjgODwxvW",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -789,13 +868,28 @@
                               "md": 3,
                               "sm": 4,
                               "xs": 6
-                            },
-                            "path": "0-0-0-0-1-0"
+                            }
                           },
                           {
                             "type": "column",
-                            "id": "HLNHqYxM-jIyCrqGmY_jC",
+                            "id": "XSRI4uAbC28pdSu7OcVMt",
                             "gridProps": [
+                              {
+                                "id": "NiHT5TUhuAgZWhccK__Tq",
+                                "name": "PC_SHOW_BBK_OTP_WIDGET",
+                                "type": "20031",
+                                "attributes": {
+                                  "widgetId": "V0d5k_O8ah57-RANaCNNo",
+                                  "layoutProperties": {
+                                    "xl": 9,
+                                    "lg": 9,
+                                    "md": 9,
+                                    "sm": 8,
+                                    "xs": 6
+                                  }
+                                },
+                                "component": { "type": "20031" }
+                              },
                               {
                                 "type": "10001",
                                 "name": "Grid layout",
@@ -803,7 +897,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "S_I1nzSs8KQ3Kyz_yYN13",
+                                    "id": "L7a7W4-kWoSVsspk3GwRT",
                                     "gridProps": [],
                                     "layoutProperties": {
                                       "xl": 12,
@@ -811,8 +905,7 @@
                                       "md": 12,
                                       "sm": 12,
                                       "xs": 12
-                                    },
-                                    "path": "0-0-0-0-1-1-0-0"
+                                    }
                                   }
                                 ],
                                 "allowedContainers": [
@@ -846,7 +939,7 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "0-0-0-0-1-1-0"
+                                "path": "3-0-0-0-2-1-1"
                               }
                             ],
                             "layoutProperties": {
@@ -855,8 +948,7 @@
                               "md": 9,
                               "sm": 8,
                               "xs": 6
-                            },
-                            "path": "0-0-0-0-1-1"
+                            }
                           }
                         ],
                         "allowedContainers": [
@@ -890,7 +982,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-0-0-1",
+                        "path": "3-0-0-0-3",
                         "dimensions": {
                           "rows": 1,
                           "columns": 2,
@@ -945,25 +1037,9 @@
                     { "cssClassName": "PAGE_HEADER_WITH_TABS_MAIN_CLASS " }
                   ]
                 },
-                "events": [
-                  {
-                    "triggerId": "0ng9Cais2R8XaYCuWV8sW",
-                    "triggerName": "PC_SHOW_RESPONSE",
-                    "serviceType": "9",
-                    "attributes": {
-                      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
-                      "content": "",
-                      "type": "",
-                      "modalId": "sPJCtcvlqTb0R-9vY8i1T",
-                      "toastContentType": "custom"
-                    },
-                    "type": "1",
-                    "name": "On initialization",
-                    "commandType": "1"
-                  }
-                ],
+                "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
-                "path": "3-0-0",
+                "path": "3-0-1",
                 "dimensions": {
                   "rows": 1,
                   "columns": 1,
@@ -1042,7 +1118,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "XWM92Yd6sQubcojzeFT6v",
+                                    "id": "VDJUt8IQ_pvY1gFNxlp3u",
                                     "gridProps": [
                                       {
                                         "type": "20009",
@@ -1856,8 +1932,7 @@
                                       "md": 12,
                                       "sm": 12,
                                       "xs": 12
-                                    },
-                                    "path": "0-0-1-0-0-0-0-0"
+                                    }
                                   }
                                 ],
                                 "allowedContainers": [
@@ -1874,7 +1949,7 @@
                                     "gridLayout": {
                                       "//": "Use this class to style grid layout component.",
                                       "spacing": 0,
-                                      "width": "calc(100% - 128px)",
+                                      "width": "100%",
                                       "padding": "24px 64px 0",
                                       "margin": "0 0 -8px 0"
                                     },
@@ -1893,7 +1968,7 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "0-0-1-0-0-0-0",
+                                "path": "3-0-1-0-0-0-0",
                                 "dimensions": {
                                   "rows": 1,
                                   "columns": 1,
@@ -8516,7 +8591,7 @@
                                                                                 "gridProps": [
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "jqiTO85CYaEhUNWl6HcgL",
+                                                                                    "id": "y-IA2lNO11pFr3zRTxyjt",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -8623,7 +8698,7 @@
                                                                                   },
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "D_-Xng0uBof0SECcwxLgh",
+                                                                                    "id": "Vdx2F4sF6G6PdFvBLyjCb",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -9871,7 +9946,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "L_yDHWm8yo4Zj7Sxs5UPG",
+                                                                            "id": "4NU-0999hrk4rGwJBfPu3",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -9889,7 +9964,7 @@
                                                                                           "label": "",
                                                                                           "name": "Text box",
                                                                                           "label-locale-key": "",
-                                                                                          "maxLength": 20,
+                                                                                          "maxLength": "16",
                                                                                           "type": "number",
                                                                                           "variant": "standard",
                                                                                           "value": "",
@@ -9939,8 +10014,111 @@
                                                                                           "content": "Text Box",
                                                                                           "type": "20004"
                                                                                         },
-                                                                                        "events": [],
-                                                                                        "path": "0-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0"
+                                                                                        "events": [
+                                                                                          {
+                                                                                            "triggerId": "FD0EFVk7s0A6V6OVvhqyn",
+                                                                                            "triggerName": "PC_CHECK_CARD_AND_CPR",
+                                                                                            "serviceType": "13",
+                                                                                            "attributes": {
+                                                                                              "triggers": [
+                                                                                                {
+                                                                                                  "logic": {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_card_number"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.pc_card_number.length"
+                                                                                                          },
+                                                                                                          "16"
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_cpr"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  "triggerName": "PC_CHECK_CARD_NO",
+                                                                                                  "triggerId": "YHShH87ac6iZZjtuD4OQI",
+                                                                                                  "services": [
+                                                                                                    {
+                                                                                                      "type": "8",
+                                                                                                      "command": {
+                                                                                                        "type": "1",
+                                                                                                        "attributes": {
+                                                                                                          "loaderWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "messageWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "responseStateKey": "validate_card",
+                                                                                                          "responseReturnValue": "content",
+                                                                                                          "successMessageBindingKey": "validate_card_success",
+                                                                                                          "errorMessageBindingKey": "validate_card_failure",
+                                                                                                          "url": "/payment/payCard/v1/validateCard",
+                                                                                                          "checksum": true,
+                                                                                                          "encryption": true,
+                                                                                                          "isDeviceDetails": false,
+                                                                                                          "loginTrigger": false,
+                                                                                                          "formData": false,
+                                                                                                          "logoutTrigger": false,
+                                                                                                          "headers": {
+                                                                                                            "Content-Type": "application/json",
+                                                                                                            "channel_key": "002"
+                                                                                                          },
+                                                                                                          "requestBody": [
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "cardNumber",
+                                                                                                              "value": "pc_card_number_2"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "cprOfOtherCardHolder",
+                                                                                                              "value": "pc_cpr"
+                                                                                                            }
+                                                                                                          ],
+                                                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                          "storeType": 2
+                                                                                                        },
+                                                                                                        "responseHandler": []
+                                                                                                      }
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            "type": "6",
+                                                                                            "name": "On blur"
+                                                                                          },
+                                                                                          {
+                                                                                            "triggerId": "vlHjIXZEnn4MGKo_KCZg5",
+                                                                                            "triggerName": "PC_CLEAR_CARD_VALIDATION",
+                                                                                            "serviceType": "11",
+                                                                                            "attributes": {
+                                                                                              "storeType": "",
+                                                                                              "selectedObjectBindingKey": "selectedObject",
+                                                                                              "dataType": "",
+                                                                                              "sourceBindingKey": "",
+                                                                                              "filterList": [
+                                                                                                {
+                                                                                                  "key": "validate_card",
+                                                                                                  "changeValueConditonally": false,
+                                                                                                  "storeType": 2,
+                                                                                                  "logic": null
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            "type": "3",
+                                                                                            "name": "On change"
+                                                                                          }
+                                                                                        ],
+                                                                                        "path": "3-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0"
                                                                                       }
                                                                                     ],
                                                                                     "layoutProperties": {
@@ -9953,7 +10131,7 @@
                                                                                     "path": "0-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0"
                                                                                   }
                                                                                 ],
-                                                                                "path": "0-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0",
+                                                                                "path": "3-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0",
                                                                                 "events": [],
                                                                                 "attributes": {
                                                                                   "gridProps": [],
@@ -9993,8 +10171,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "allowedContainers": [
@@ -10026,6 +10203,19 @@
                                                                             {
                                                                               "cssClassName": "PC_GENERIC_TEXTFIELD_GRID "
                                                                             }
+                                                                          ],
+                                                                          "conditionalClasses": [
+                                                                            {
+                                                                              "cssClassName": "COLOR_TEXT_ERROR ",
+                                                                              "logic": {
+                                                                                "===": [
+                                                                                  {
+                                                                                    "var": "currentScreen.validate_card.code"
+                                                                                  },
+                                                                                  0
+                                                                                ]
+                                                                              }
+                                                                            }
                                                                           ]
                                                                         },
                                                                         "events": [],
@@ -10033,7 +10223,7 @@
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1",
+                                                                        "path": "3-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-1",
                                                                         "dimensions": {
                                                                           "rows": 1,
                                                                           "columns": 2,
@@ -10049,6 +10239,62 @@
                                                                           "colSize1xl": 10.5
                                                                         },
                                                                         "readOnly": false
+                                                                      },
+                                                                      {
+                                                                        "id": "_GUGZupdCrcpRGMCgo0nF",
+                                                                        "type": "20002",
+                                                                        "name": "Label",
+                                                                        "component": {
+                                                                          "content": "Label",
+                                                                          "type": "20002"
+                                                                        },
+                                                                        "attributes": {
+                                                                          "variant": "body1",
+                                                                          "name": "Label",
+                                                                          "mandatory": false,
+                                                                          "layoutProperties": {
+                                                                            "label": {
+                                                                              "//": "Use this class to style label component."
+                                                                            },
+                                                                            "prefix": {
+                                                                              "//": "Use this class to style prefix."
+                                                                            },
+                                                                            "postfix": {
+                                                                              "//": "Use this class to style postfix."
+                                                                            },
+                                                                            "mainContainer": "label",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "label": "Please enter a valid CrediMax card number",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "PC_ERROR_MESSAGE_LABEL"
+                                                                            }
+                                                                          ],
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "if": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.validate_card.code"
+                                                                                    },
+                                                                                    0
+                                                                                  ]
+                                                                                },
+                                                                                false,
+                                                                                true
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "events": [],
+                                                                        "path": "3-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-2",
+                                                                        "version": "1.0.0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -10303,7 +10549,7 @@
                                                                                           "label": "",
                                                                                           "name": "Text box",
                                                                                           "label-locale-key": "",
-                                                                                          "maxLength": 20,
+                                                                                          "maxLength": "9",
                                                                                           "type": "number",
                                                                                           "variant": "standard",
                                                                                           "value": "",
@@ -10353,8 +10599,90 @@
                                                                                           "content": "Text Box",
                                                                                           "type": "20004"
                                                                                         },
-                                                                                        "events": [],
-                                                                                        "path": "0-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0"
+                                                                                        "events": [
+                                                                                          {
+                                                                                            "triggerId": "FD0EFVk7s0A6V6OVvhqyn",
+                                                                                            "triggerName": "PC_CHECK_CARD_AND_CPR",
+                                                                                            "serviceType": "13",
+                                                                                            "attributes": {
+                                                                                              "triggers": [
+                                                                                                {
+                                                                                                  "logic": {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_card_number"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.pc_card_number.length"
+                                                                                                          },
+                                                                                                          "16"
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_cpr"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  "triggerName": "PC_CHECK_CARD_NO",
+                                                                                                  "triggerId": "YHShH87ac6iZZjtuD4OQI",
+                                                                                                  "services": [
+                                                                                                    {
+                                                                                                      "type": "8",
+                                                                                                      "command": {
+                                                                                                        "type": "1",
+                                                                                                        "attributes": {
+                                                                                                          "loaderWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "messageWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "responseStateKey": "validate_card",
+                                                                                                          "responseReturnValue": "content",
+                                                                                                          "successMessageBindingKey": "validate_card_success",
+                                                                                                          "errorMessageBindingKey": "validate_card_failure",
+                                                                                                          "url": "/payment/payCard/v1/validateCard",
+                                                                                                          "checksum": true,
+                                                                                                          "encryption": true,
+                                                                                                          "isDeviceDetails": false,
+                                                                                                          "loginTrigger": false,
+                                                                                                          "formData": false,
+                                                                                                          "logoutTrigger": false,
+                                                                                                          "headers": {
+                                                                                                            "Content-Type": "application/json",
+                                                                                                            "channel_key": "002"
+                                                                                                          },
+                                                                                                          "requestBody": [
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "cardNumber",
+                                                                                                              "value": "pc_card_number_2"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "cprOfOtherCardHolder",
+                                                                                                              "value": "pc_cpr"
+                                                                                                            }
+                                                                                                          ],
+                                                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                          "storeType": 2
+                                                                                                        },
+                                                                                                        "responseHandler": []
+                                                                                                      }
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            },
+                                                                                            "type": "6",
+                                                                                            "name": "On blur"
+                                                                                          }
+                                                                                        ],
+                                                                                        "path": "3-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0"
                                                                                       }
                                                                                     ],
                                                                                     "layoutProperties": {
@@ -14197,7 +14525,7 @@
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "3-0-1-0-1-0-1-0-1-0-1-0-1-1-0-0-1"
+                                                                        "path": "3-0-1-0-1-0-1-0-1-0-1-0-1-1-0-0-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -14527,9 +14855,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "_IlGsB-95yo7FYr3ysZwT",
-    "createdBy": "talha2",
-    "updatedAt": "1/22/2024",
-    "createdAt": "1/22/2024",
+    "createdBy": "talha",
+    "updatedAt": "1/28/2024",
+    "createdAt": "1/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14611,7 +14939,7 @@
     "type": "20031",
     "attributes": {
       "widgetId": "TLxBhe9FKBGjVomH7ojh7",
-      "layoutProperties": {}
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
     },
     "component": { "type": "20031" },
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
@@ -14635,7 +14963,7 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "sPJCtcvlqTb0R-9vY8i1T",
+          "componentId": "3WI5u8ga4ikq4k2JCP2xh",
           "componentType": "20031",
           "order": 1
         },
@@ -14721,26 +15049,22 @@
         "triggerName": "GET_CARD_LIST_PAY_CARDS",
         "name": "On initialization",
         "type": "1"
+      },
+      {
+        "triggerId": "NJyw53BPzd3PLGg_qlLrd",
+        "triggerName": "PC_SAVE_OTP_VALIDATE_OBJ",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "I50qjsCYW_G4PjFktBPYS",
+        "triggerName": "PC_CHECK_IF_OTP_REQUIRED",
+        "name": "On initialization",
+        "type": "1"
       }
     ],
     "subType": "component",
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
-    "projectId": "652fcbce09869c3c809b3097",
-    "version": "1.0.0",
-    "gitBranchName": "master",
-    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
-  },
-  {
-    "id": "sPJCtcvlqTb0R-9vY8i1T",
-    "name": "PC_SHOW_RESPONSE",
-    "type": "20031",
-    "attributes": {
-      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
-      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
-    },
-    "component": { "type": "20031" },
-    "screenId": "_IlGsB-95yo7FYr3ysZwT",
-    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -14752,6 +15076,18 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "sPJCtcvlqTb0R-9vY8i1T",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "componentId": "EeDb4UrRmKyP8sD7QuMmQ",
           "componentType": "10001",
@@ -14770,6 +15106,18 @@
             "sm": 12,
             "xs": 12
           }
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "Cm2PtP4rELRCywsCcv72s",
+          "componentType": "20031",
+          "order": 1
         },
         {
           "componentId": "TawjGN_U1ZrHyD4jf5UQE",
@@ -14809,16 +15157,25 @@
       "cssClassNames": [{ "cssClassName": "PAGE_HEADER_WITH_TABS_MAIN_CLASS " }]
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "0ng9Cais2R8XaYCuWV8sW",
-        "triggerName": "PC_SHOW_RESPONSE",
-        "name": "On initialization",
-        "type": "1"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "sPJCtcvlqTb0R-9vY8i1T",
+    "name": "PC_SHOW_RESPONSE",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -14912,6 +15269,22 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "Cm2PtP4rELRCywsCcv72s",
+    "name": "PC_SHOW_OTP_MODAL",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "wxqeXI1zuyZbvPx6p8J_N",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "TawjGN_U1ZrHyD4jf5UQE",
     "name": "Grid layout",
     "type": "10001",
@@ -14929,6 +15302,12 @@
             "h": null
           },
           "layoutProperties": { "xl": 3, "lg": 3, "md": 3, "sm": 4, "xs": 6 }
+        },
+        {
+          "layoutProperties": { "xl": 9, "lg": 9, "md": 9, "sm": 8, "xs": 6 },
+          "componentId": "NiHT5TUhuAgZWhccK__Tq",
+          "componentType": "20031",
+          "order": 1
         },
         {
           "componentId": "vfGeQyEGUQz6Be9A7TUZ9",
@@ -15260,6 +15639,22 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "NiHT5TUhuAgZWhccK__Tq",
+    "name": "PC_SHOW_BBK_OTP_WIDGET",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "V0d5k_O8ah57-RANaCNNo",
+      "layoutProperties": { "xl": 9, "lg": 9, "md": 9, "sm": 8, "xs": 6 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "vfGeQyEGUQz6Be9A7TUZ9",
     "name": "Grid layout",
     "type": "10001",
@@ -15474,7 +15869,7 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "width": "calc(100% - 128px)",
+          "width": "100%",
           "padding": "24px 64px 0",
           "margin": "0 0 -8px 0"
         },
@@ -22643,6 +23038,18 @@
             "sm": 12,
             "xs": 12
           }
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "_GUGZupdCrcpRGMCgo0nF",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -22795,7 +23202,13 @@
       "direction": "row",
       "name": "Grid layout",
       "columns": "1",
-      "cssClassNames": [{ "cssClassName": "PC_GENERIC_TEXTFIELD_GRID " }]
+      "cssClassNames": [{ "cssClassName": "PC_GENERIC_TEXTFIELD_GRID " }],
+      "conditionalClasses": [
+        {
+          "cssClassName": "COLOR_TEXT_ERROR ",
+          "logic": { "===": [{ "var": "currentScreen.validate_card.code" }, 0] }
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -22858,7 +23271,7 @@
       "label": "",
       "name": "Text box",
       "label-locale-key": "",
-      "maxLength": 20,
+      "maxLength": "16",
       "type": "number",
       "variant": "standard",
       "value": "",
@@ -22894,8 +23307,64 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Text Box", "type": "20004" },
+    "events": [
+      {
+        "triggerId": "FD0EFVk7s0A6V6OVvhqyn",
+        "triggerName": "PC_CHECK_CARD_AND_CPR",
+        "name": "On blur",
+        "type": "6",
+        "serviceType": "13"
+      },
+      {
+        "triggerId": "vlHjIXZEnn4MGKo_KCZg5",
+        "triggerName": "PC_CLEAR_CARD_VALIDATION",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "11"
+      }
+    ],
+    "path": "3-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0",
+    "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "_GUGZupdCrcpRGMCgo0nF",
+    "type": "20002",
+    "name": "Label",
+    "component": { "content": "Label", "type": "20002" },
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Please enter a valid CrediMax card number",
+      "cssClassNames": [{ "cssClassName": "PC_ERROR_MESSAGE_LABEL" }],
+      "hideCondition": {
+        "logic": {
+          "if": [
+            { "==": [{ "var": "currentScreen.validate_card.code" }, 0] },
+            false,
+            true
+          ]
+        }
+      }
+    },
     "events": [],
-    "path": "0-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0",
+    "path": "3-0-1-0-1-0-0-0-1-0-0-0-0-0-0-0-2",
+    "version": "1.0.0",
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -23212,7 +23681,7 @@
       "label": "",
       "name": "Text box",
       "label-locale-key": "",
-      "maxLength": 20,
+      "maxLength": "9",
       "type": "number",
       "variant": "standard",
       "value": "",
@@ -23248,8 +23717,16 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Text Box", "type": "20004" },
-    "events": [],
-    "path": "0-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "FD0EFVk7s0A6V6OVvhqyn",
+        "triggerName": "PC_CHECK_CARD_AND_CPR",
+        "name": "On blur",
+        "type": "6",
+        "serviceType": "13"
+      }
+    ],
+    "path": "3-0-1-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0",
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

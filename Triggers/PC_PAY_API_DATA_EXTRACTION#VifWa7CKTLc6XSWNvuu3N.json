@@ -215,6 +215,47 @@
                   { "var": "currentScreen.form.current_card.cardCurrencyType" }
                 ]
               }
+            },
+            {
+              "key": "validation",
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "and": [
+                      {
+                        "==": [
+                          { "var": "currentScreen.selected_tab" },
+                          "other cards"
+                        ]
+                      },
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.form.selected_payment_method.type"
+                          },
+                          "DebitCard"
+                        ]
+                      }
+                    ]
+                  },
+                  { "var": "currentScreen.pc_validation_object" },
+                  {
+                    "if": [
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.pc_check_otp.content.reference"
+                          },
+                          1
+                        ]
+                      },
+                      { "var": "currentScreen.pc_validation_object" },
+                      null
+                    ]
+                  }
+                ]
+              }
             }
           ],
           "targettedType": "value"
@@ -222,9 +263,9 @@
       }
     }
   ],
-  "csrf": "0.qha3ja7d6viJoYrIPC_gYCsCUPEZh0TE",
-  "updatedAt": "1/17/2024",
-  "createdAt": "1/17/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.f4448fcf8utl41mwURgxq8GnPKh23F7i",
+  "updatedAt": "1/28/2024",
+  "createdAt": "1/28/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
 }

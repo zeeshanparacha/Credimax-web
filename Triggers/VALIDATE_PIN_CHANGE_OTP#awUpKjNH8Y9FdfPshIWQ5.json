@@ -1,0 +1,62 @@
+{
+  "id": "BzV19ja-lgLH9eeAkaOua",
+  "_id": "awUpKjNH8Y9FdfPshIWQ5",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "VALIDATE_PIN_CHANGE_OTP",
+  "old_name": "VALIDATE_PIN_CHANGE_OTP",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "pinChangeValidationResponse",
+          "url": "/card/v1/verifyChangeOrGeneratePin",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "cardNumber",
+              "value": "CURRENT_CARD.cardNumber"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "validation",
+              "value": "validation"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_02",
+            "triggerId": "bsKnfGjvJVWr40qOTbERl",
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.7dbrupfivzRhVvEPCEwP5Ta8nO-bBaC",
+  "updatedAt": "1/27/2024",
+  "createdAt": "1/27/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

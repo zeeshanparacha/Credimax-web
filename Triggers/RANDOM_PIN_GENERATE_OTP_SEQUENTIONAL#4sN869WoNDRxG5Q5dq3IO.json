@@ -1,0 +1,175 @@
+{
+  "_id": "4sN869WoNDRxG5Q5dq3IO",
+  "id": "BOu-ykvEszb7g91IJO4a6",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "RANDOM_PIN_GENERATE_OTP_SEQUENTIONAL",
+  "old_name": "RANDOM_PIN_GENERATE_OTP_SEQUENTIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "triggers": [
+            {
+              "id": "t2Nv3Et0WeTNkBPvBOvrE",
+              "_id": "wbQP-Fp696z4hT5xssq27",
+              "name": "Validation Values Mapping",
+              "old_name": "Validation Values Mapping",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "validation",
+                      "sourceBindingKey": "validation",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "filterList": [
+                        {
+                          "key": "tranCode",
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentScreen.tranCode" }
+                        },
+                        {
+                          "changeValueConditonally": true,
+                          "key": "validationType",
+                          "logic": { "if": [true, "OTP", "OTP"] }
+                        },
+                        {
+                          "key": "isOtp",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, true, true] }
+                        },
+                        {
+                          "key": "splitOtp",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, true, true] }
+                        },
+                        {
+                          "key": "generationType",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, "2", "2"] }
+                        },
+                        {
+                          "key": "otpExpiry",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, "4", "4"] }
+                        },
+                        {
+                          "key": "is2FA",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, "1", "1"] }
+                        },
+                        {
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentScreen.form.smsPin" },
+                          "key": "smsPin"
+                        },
+                        {
+                          "key": "emailPin",
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentScreen.form.smsPin" }
+                        }
+                      ],
+                      "targettedType": "object"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+              "updatedAt": "11/29/2023",
+              "createdAt": "11/29/2023",
+              "createdBy": "muhammad.asad",
+              "updatedBy": "muhammad.asad"
+            },
+            {
+              "id": "DYs1RqKfG4mjSZpn57c__",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "RANDOM_PIN_GENERATE_OTP",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "randomPinGenerateOTP",
+                      "url": "/card/v1/generateTempPinRequest",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "validation"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "triggerName": "RANDOM_PIN_CHANGE_OTP_SUCCESS_TOAST",
+                        "triggerId": "f6gGGkbNn_ZYBu-kQ0ySh",
+                        "httpStatus": 200,
+                        "logic": {
+                          ">": [
+                            {
+                              "var": "currentScreen.randomPinGenerateOTP.message.length"
+                            },
+                            0
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.saimpwfdgqrGyyOoxdrYHL6_zxtyQZ7z",
+              "_id": "E16SM3eH2V-qcpYblCyeu",
+              "updatedAt": "1/27/2024",
+              "createdAt": "1/27/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": ["t2Nv3Et0WeTNkBPvBOvrE", "DYs1RqKfG4mjSZpn57c__"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.31z8hrto6wlcF2r2rHGsa2ANnJ778g47",
+  "updatedAt": "1/28/2024",
+  "createdAt": "1/28/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}
