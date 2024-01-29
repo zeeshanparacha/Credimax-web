@@ -219,13 +219,29 @@
                     "id": "oQPiNYGjK9oeZFw7VbylT",
                     "gridProps": [
                       {
+                        "id": "sPJCtcvlqTb0R-9vY8i1T",
+                        "name": "PC_SHOW_RESPONSE",
+                        "type": "20031",
+                        "attributes": {
+                          "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                          "layoutProperties": {
+                            "xl": 12,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "xs": 12
+                          }
+                        },
+                        "component": { "type": "20031" }
+                      },
+                      {
                         "type": "10001",
                         "name": "Grid layout",
                         "id": "hBSU4qEcrhzP87D2yER4j",
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "FsDoEyWrymIG_VeO-hNmO",
+                            "id": "Wi39oyIBYTG38HucEaXRA",
                             "gridProps": [
                               {
                                 "id": "7mFqXDwjj8jeNp2XovujC",
@@ -346,7 +362,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "3-0-0-0-1",
+                        "path": "3-0-1-0-1",
                         "dimensions": {
                           "rows": 1,
                           "columns": 1,
@@ -804,7 +820,7 @@
                                                                                   "label": "",
                                                                                   "name": "Text box",
                                                                                   "label-locale-key": "",
-                                                                                  "maxLength": 20,
+                                                                                  "maxLength": "16",
                                                                                   "type": "number",
                                                                                   "variant": "standard",
                                                                                   "value": "",
@@ -855,7 +871,7 @@
                                                                                   "type": "20004"
                                                                                 },
                                                                                 "events": [],
-                                                                                "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0"
+                                                                                "path": "3-0-2-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -1268,8 +1284,446 @@
                                                                                   "content": "Text Box",
                                                                                   "type": "20004"
                                                                                 },
-                                                                                "events": [],
-                                                                                "path": "0-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0"
+                                                                                "events": [
+                                                                                  {
+                                                                                    "triggerId": "6MsQXRpBjswK6CedNXEe2",
+                                                                                    "triggerName": "PC_CHECK_ELIGIBILITY",
+                                                                                    "serviceType": "13",
+                                                                                    "attributes": {
+                                                                                      "triggers": [
+                                                                                        {
+                                                                                          "logic": {
+                                                                                            "if": [
+                                                                                              {
+                                                                                                "==": [
+                                                                                                  {
+                                                                                                    "var": "currentScreen.page_name"
+                                                                                                  },
+                                                                                                  "Pay using debit card"
+                                                                                                ]
+                                                                                              },
+                                                                                              {
+                                                                                                "if": [
+                                                                                                  {
+                                                                                                    "==": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.save_card"
+                                                                                                      },
+                                                                                                      "1"
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.pc_card_number_2.length"
+                                                                                                          },
+                                                                                                          16
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_expiry_date"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_nikname"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.pc_card_number_2.length"
+                                                                                                          },
+                                                                                                          16
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_expiry_date"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              false
+                                                                                            ]
+                                                                                          },
+                                                                                          "triggerName": "PC_CHECK_FOR_OTP",
+                                                                                          "triggerId": "rrQqlNSadFwk8ZuCTZ0h2",
+                                                                                          "services": [
+                                                                                            {
+                                                                                              "type": "13",
+                                                                                              "command": {
+                                                                                                "type": "1",
+                                                                                                "attributes": {
+                                                                                                  "triggers": [
+                                                                                                    {
+                                                                                                      "logic": {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.pc_check_otp.content.otpRequired"
+                                                                                                          },
+                                                                                                          "0"
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      "triggerName": "PC_PAY_API_DATA_EXTRACTION",
+                                                                                                      "triggerId": "d1CIMs_GuPR1t1d3RvvpI",
+                                                                                                      "services": [
+                                                                                                        {
+                                                                                                          "type": "11",
+                                                                                                          "command": {
+                                                                                                            "type": "6",
+                                                                                                            "attributes": {
+                                                                                                              "requestBody": [],
+                                                                                                              "storeType": "",
+                                                                                                              "selectedObjectBindingKey": "selectedObject",
+                                                                                                              "dataType": "object",
+                                                                                                              "destinationBindingKey": "pc_request",
+                                                                                                              "sourceBindingKey": "form",
+                                                                                                              "sourceStoreType": 2,
+                                                                                                              "destinationStoreType": 2,
+                                                                                                              "filterList": [
+                                                                                                                {
+                                                                                                                  "key": "creditCardNumber",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.selected_tab"
+                                                                                                                          },
+                                                                                                                          "my cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.current_card.cardNumber"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_card_number"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "type",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.selected_payment_method.type"
+                                                                                                                      },
+                                                                                                                      "DebitCard"
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "accountOrDebitCardNumber",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "cprOfOtherCardHolder",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.selected_tab"
+                                                                                                                          },
+                                                                                                                          "other cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_cpr"
+                                                                                                                      },
+                                                                                                                      null
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "accountType",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.selected_payment_method.accountType"
+                                                                                                                      },
+                                                                                                                      null
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "saveNewCard",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.save_card"
+                                                                                                                              },
+                                                                                                                              "1"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          "1",
+                                                                                                                          null
+                                                                                                                        ]
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "cardHolderName",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "cardNickName",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.save_card"
+                                                                                                                              },
+                                                                                                                              "1"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.form.pc_nikname"
+                                                                                                                          },
+                                                                                                                          null
+                                                                                                                        ]
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "expiry",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_expiry_date"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "amount",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.selected_tab"
+                                                                                                                              },
+                                                                                                                              "other cards"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "if": [
+                                                                                                                              {
+                                                                                                                                "==": [
+                                                                                                                                  {
+                                                                                                                                    "var": "currentScreen.form.current_card.cardType"
+                                                                                                                                  },
+                                                                                                                                  "VISA CARDY-EX"
+                                                                                                                                ]
+                                                                                                                              },
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                              },
+                                                                                                                              {
+                                                                                                                                "if": [
+                                                                                                                                  {
+                                                                                                                                    "==": [
+                                                                                                                                      {
+                                                                                                                                        "var": "currentScreen.selectedAmountType"
+                                                                                                                                      },
+                                                                                                                                      "D"
+                                                                                                                                    ]
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                    "var": "currentScreen.form.pc_custom_amount"
+                                                                                                                                  }
+                                                                                                                                ]
+                                                                                                                              }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "currency",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "and": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.selected_tab"
+                                                                                                                              },
+                                                                                                                              "other cards"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.page_name"
+                                                                                                                              },
+                                                                                                                              "Pay cards"
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.current_card.cardCurrencyType"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              ],
+                                                                                                              "targettedType": "value"
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    "type": "1",
+                                                                                    "name": "On initialization"
+                                                                                  }
+                                                                                ],
+                                                                                "path": "3-0-2-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -1668,7 +2122,7 @@
                                                                           "name": "Calendar",
                                                                           "label": "",
                                                                           "stateName": "pc_expiry_date",
-                                                                          "format": "dd/MM/yyyy",
+                                                                          "format": "MM/yy",
                                                                           "variant": "standard",
                                                                           "validate": {
                                                                             "required": false,
@@ -1702,7 +2156,7 @@
                                                                           "type": "20027"
                                                                         },
                                                                         "event": [],
-                                                                        "path": "0-0-1-0-0-0-1-0-1-0-0-0-0-0-1-0-0",
+                                                                        "path": "3-0-2-0-0-0-1-0-1-0-0-0-0-0-1-0-0",
                                                                         "events": []
                                                                       }
                                                                     ],
@@ -2182,6 +2636,54 @@
                                                           "content": "Grid layout"
                                                         },
                                                         "path": "0-0-1-0-0-0-1-0-2-0-0-0-0"
+                                                      },
+                                                      {
+                                                        "id": "WSGGwYez-tr8Pq0O5T9pG",
+                                                        "status": "ACTIVE",
+                                                        "name": "Label",
+                                                        "attributes": {
+                                                          "variant": "body1",
+                                                          "name": "Label",
+                                                          "mandatory": false,
+                                                          "layoutProperties": {
+                                                            "label": {
+                                                              "//": "Use this class to style label component."
+                                                            },
+                                                            "prefix": {
+                                                              "//": "Use this class to style prefix."
+                                                            },
+                                                            "postfix": {
+                                                              "//": "Use this class to style postfix."
+                                                            },
+                                                            "mainContainer": "label",
+                                                            "xl": 12,
+                                                            "lg": 12,
+                                                            "md": 12,
+                                                            "sm": 12,
+                                                            "xs": 12
+                                                          },
+                                                          "label": "Save card for later use",
+                                                          "cssClassNames": [
+                                                            {
+                                                              "cssClassName": "PC_SAVE_CARD_FOR_LATER_USE "
+                                                            }
+                                                          ]
+                                                        },
+                                                        "icon": "FaFont",
+                                                        "group": "Form",
+                                                        "type": "20002",
+                                                        "updatedAt": "23-Aug-2021",
+                                                        "createdAt": "23-Aug-2021",
+                                                        "order": 15,
+                                                        "version": "1.0.0",
+                                                        "isLatest": true,
+                                                        "projectType": "web",
+                                                        "component": {
+                                                          "content": "Label",
+                                                          "type": "20002"
+                                                        },
+                                                        "events": [],
+                                                        "path": "3-0-2-0-0-0-1-0-2-0-0-0-1"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -2246,50 +2748,7 @@
                                                   {
                                                     "type": "column",
                                                     "id": "um_LPAUrogvEdSgRocX7S",
-                                                    "gridProps": [
-                                                      {
-                                                        "id": "ML3fDTCgSRfSPdAqn2zP7",
-                                                        "status": "ACTIVE",
-                                                        "name": "Label",
-                                                        "attributes": {
-                                                          "variant": "body1",
-                                                          "name": "Label",
-                                                          "mandatory": false,
-                                                          "layoutProperties": {
-                                                            "label": {
-                                                              "//": "Use this class to style label component."
-                                                            },
-                                                            "mainContainer": "label",
-                                                            "xl": 12,
-                                                            "lg": 12,
-                                                            "md": 12,
-                                                            "sm": 12,
-                                                            "xs": 12
-                                                          },
-                                                          "label": "Save card for later use",
-                                                          "cssClassNames": [
-                                                            {
-                                                              "cssClassName": "PC_SAVE_CARD_FOR_LATER_USE "
-                                                            }
-                                                          ]
-                                                        },
-                                                        "icon": "FaFont",
-                                                        "group": "Form",
-                                                        "type": "20002",
-                                                        "updatedAt": "23-Aug-2021",
-                                                        "createdAt": "23-Aug-2021",
-                                                        "order": 15,
-                                                        "version": "1.0.0",
-                                                        "isLatest": true,
-                                                        "projectType": "web",
-                                                        "component": {
-                                                          "content": "Label",
-                                                          "type": "20002"
-                                                        },
-                                                        "events": [],
-                                                        "path": "0-0-1-0-0-0-1-0-2-1-0-0-0"
-                                                      }
-                                                    ],
+                                                    "gridProps": [],
                                                     "layoutProperties": {
                                                       "xl": 12,
                                                       "lg": 12,
@@ -2631,8 +3090,446 @@
                                                                                   "content": "Text Box",
                                                                                   "type": "20004"
                                                                                 },
-                                                                                "events": [],
-                                                                                "path": "0-0-1-0-0-0-1-0-3-0-0-0-0-0-1-0-0-0-0"
+                                                                                "events": [
+                                                                                  {
+                                                                                    "triggerId": "6MsQXRpBjswK6CedNXEe2",
+                                                                                    "triggerName": "PC_CHECK_ELIGIBILITY",
+                                                                                    "serviceType": "13",
+                                                                                    "attributes": {
+                                                                                      "triggers": [
+                                                                                        {
+                                                                                          "logic": {
+                                                                                            "if": [
+                                                                                              {
+                                                                                                "==": [
+                                                                                                  {
+                                                                                                    "var": "currentScreen.page_name"
+                                                                                                  },
+                                                                                                  "Pay using debit card"
+                                                                                                ]
+                                                                                              },
+                                                                                              {
+                                                                                                "if": [
+                                                                                                  {
+                                                                                                    "==": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.save_card"
+                                                                                                      },
+                                                                                                      "1"
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.pc_card_number_2.length"
+                                                                                                          },
+                                                                                                          16
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_expiry_date"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_nikname"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.pc_card_number_2.length"
+                                                                                                          },
+                                                                                                          16
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_expiry_date"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              false
+                                                                                            ]
+                                                                                          },
+                                                                                          "triggerName": "PC_CHECK_FOR_OTP",
+                                                                                          "triggerId": "rrQqlNSadFwk8ZuCTZ0h2",
+                                                                                          "services": [
+                                                                                            {
+                                                                                              "type": "13",
+                                                                                              "command": {
+                                                                                                "type": "1",
+                                                                                                "attributes": {
+                                                                                                  "triggers": [
+                                                                                                    {
+                                                                                                      "logic": {
+                                                                                                        "==": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.pc_check_otp.content.otpRequired"
+                                                                                                          },
+                                                                                                          "0"
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      "triggerName": "PC_PAY_API_DATA_EXTRACTION",
+                                                                                                      "triggerId": "d1CIMs_GuPR1t1d3RvvpI",
+                                                                                                      "services": [
+                                                                                                        {
+                                                                                                          "type": "11",
+                                                                                                          "command": {
+                                                                                                            "type": "6",
+                                                                                                            "attributes": {
+                                                                                                              "requestBody": [],
+                                                                                                              "storeType": "",
+                                                                                                              "selectedObjectBindingKey": "selectedObject",
+                                                                                                              "dataType": "object",
+                                                                                                              "destinationBindingKey": "pc_request",
+                                                                                                              "sourceBindingKey": "form",
+                                                                                                              "sourceStoreType": 2,
+                                                                                                              "destinationStoreType": 2,
+                                                                                                              "filterList": [
+                                                                                                                {
+                                                                                                                  "key": "creditCardNumber",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.selected_tab"
+                                                                                                                          },
+                                                                                                                          "my cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.current_card.cardNumber"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_card_number"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "type",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.selected_payment_method.type"
+                                                                                                                      },
+                                                                                                                      "DebitCard"
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "accountOrDebitCardNumber",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "cprOfOtherCardHolder",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.selected_tab"
+                                                                                                                          },
+                                                                                                                          "other cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_cpr"
+                                                                                                                      },
+                                                                                                                      null
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "accountType",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.selected_payment_method.accountType"
+                                                                                                                      },
+                                                                                                                      null
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "saveNewCard",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.save_card"
+                                                                                                                              },
+                                                                                                                              "1"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          "1",
+                                                                                                                          null
+                                                                                                                        ]
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "cardHolderName",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "cardNickName",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.save_card"
+                                                                                                                              },
+                                                                                                                              "1"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.form.pc_nikname"
+                                                                                                                          },
+                                                                                                                          null
+                                                                                                                        ]
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "expiry",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_expiry_date"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "amount",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "==": [
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.page_name"
+                                                                                                                          },
+                                                                                                                          "Pay cards"
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "if": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.selected_tab"
+                                                                                                                              },
+                                                                                                                              "other cards"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "if": [
+                                                                                                                              {
+                                                                                                                                "==": [
+                                                                                                                                  {
+                                                                                                                                    "var": "currentScreen.form.current_card.cardType"
+                                                                                                                                  },
+                                                                                                                                  "VISA CARDY-EX"
+                                                                                                                                ]
+                                                                                                                              },
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                              },
+                                                                                                                              {
+                                                                                                                                "if": [
+                                                                                                                                  {
+                                                                                                                                    "==": [
+                                                                                                                                      {
+                                                                                                                                        "var": "currentScreen.selectedAmountType"
+                                                                                                                                      },
+                                                                                                                                      "D"
+                                                                                                                                    ]
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                                  },
+                                                                                                                                  {
+                                                                                                                                    "var": "currentScreen.form.pc_custom_amount"
+                                                                                                                                  }
+                                                                                                                                ]
+                                                                                                                              }
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                },
+                                                                                                                {
+                                                                                                                  "key": "currency",
+                                                                                                                  "changeValueConditonally": true,
+                                                                                                                  "logic": {
+                                                                                                                    "if": [
+                                                                                                                      {
+                                                                                                                        "and": [
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.selected_tab"
+                                                                                                                              },
+                                                                                                                              "other cards"
+                                                                                                                            ]
+                                                                                                                          },
+                                                                                                                          {
+                                                                                                                            "==": [
+                                                                                                                              {
+                                                                                                                                "var": "currentScreen.page_name"
+                                                                                                                              },
+                                                                                                                              "Pay cards"
+                                                                                                                            ]
+                                                                                                                          }
+                                                                                                                        ]
+                                                                                                                      },
+                                                                                                                      null,
+                                                                                                                      {
+                                                                                                                        "var": "currentScreen.form.current_card.cardCurrencyType"
+                                                                                                                      }
+                                                                                                                    ]
+                                                                                                                  }
+                                                                                                                }
+                                                                                                              ],
+                                                                                                              "targettedType": "value"
+                                                                                                            }
+                                                                                                          }
+                                                                                                        }
+                                                                                                      ]
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    "type": "1",
+                                                                                    "name": "On initialization"
+                                                                                  }
+                                                                                ],
+                                                                                "path": "3-0-2-0-0-0-1-0-3-0-0-0-0-0-1-0-0-0-0"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -3105,7 +4002,7 @@
                                                             }
                                                           }
                                                         ],
-                                                        "path": "0-0-1-0-0-0-1-0-4-1-0-0-0",
+                                                        "path": "3-0-2-0-0-0-1-0-4-1-0-0-0",
                                                         "events": [
                                                           {
                                                             "triggerId": "UFA2TfzcJX-Frio45Fhbr",
@@ -3235,7 +4132,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "A5Nn7B0nCxBbYB_nfFKa9",
+                                                            "id": "18Tm9Z2hQpVFh9eptVerA",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3342,7 +4239,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "6O9678CewMjUKjGAST6o9",
+                                                            "id": "nsCaIKV_Ztb1xIP1xf-br",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3509,40 +4406,69 @@
                                                                   {
                                                                     "==": [
                                                                       {
-                                                                        "var": "currentScreen.save_card"
+                                                                        "var": "currentScreen.page_name"
                                                                       },
-                                                                      "1"
+                                                                      "Pay using debit card"
                                                                     ]
                                                                   },
                                                                   {
-                                                                    "and": [
+                                                                    "if": [
                                                                       {
-                                                                        "var": "currentScreen.form.pc_card_number_2"
+                                                                        "==": [
+                                                                          {
+                                                                            "var": "currentScreen.save_card"
+                                                                          },
+                                                                          "1"
+                                                                        ]
                                                                       },
                                                                       {
-                                                                        "var": "currentScreen.form.pc_name_on_card"
+                                                                        "and": [
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_card_number_2"
+                                                                          },
+                                                                          {
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "currentScreen.form.pc_card_number_2.length"
+                                                                              },
+                                                                              16
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_name_on_card"
+                                                                          },
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_expiry_date"
+                                                                          },
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_nikname"
+                                                                          }
+                                                                        ]
                                                                       },
                                                                       {
-                                                                        "var": "currentScreen.form.pc_expiry_date"
-                                                                      },
-                                                                      {
-                                                                        "var": "currentScreen.form.pc_nikname"
+                                                                        "and": [
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_card_number_2"
+                                                                          },
+                                                                          {
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "currentScreen.form.pc_card_number_2.length"
+                                                                              },
+                                                                              16
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_name_on_card"
+                                                                          },
+                                                                          {
+                                                                            "var": "currentScreen.form.pc_expiry_date"
+                                                                          }
+                                                                        ]
                                                                       }
                                                                     ]
                                                                   },
-                                                                  {
-                                                                    "and": [
-                                                                      {
-                                                                        "var": "currentScreen.form.pc_card_number"
-                                                                      },
-                                                                      {
-                                                                        "var": "currentScreen.form.pc_name_on_card"
-                                                                      },
-                                                                      {
-                                                                        "var": "currentScreen.form.pc_expiry_date"
-                                                                      }
-                                                                    ]
-                                                                  }
+                                                                  false
                                                                 ]
                                                               }
                                                             }
@@ -3940,7 +4866,7 @@
                                                           "type": "10001",
                                                           "content": "Grid layout"
                                                         },
-                                                        "path": "3-0-1-0-0-0-1-0-4-2-0-0-0",
+                                                        "path": "3-0-2-0-0-0-1-0-4-2-0-0-0",
                                                         "dimensions": {
                                                           "rows": 1,
                                                           "columns": 2,
@@ -4445,6 +5371,18 @@
     "attributes": {
       "gridProps": [
         {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "sPJCtcvlqTb0R-9vY8i1T",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
           "componentId": "hBSU4qEcrhzP87D2yER4j",
           "componentType": "10001",
           "id": "hBSU4qEcrhzP87D2yER4j",
@@ -4516,6 +5454,22 @@
     "events": [],
     "subType": "component",
     "screenId": "GRf2mui3_rjt7EUFhwj2g",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "sPJCtcvlqTb0R-9vY8i1T",
+    "name": "PC_SHOW_RESPONSE",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "GRf2mui3_rjt7EUFhwj2g",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5442,7 +6396,7 @@
       "label": "",
       "name": "Text box",
       "label-locale-key": "",
-      "maxLength": 20,
+      "maxLength": "16",
       "type": "number",
       "variant": "standard",
       "value": "",
@@ -5479,7 +6433,7 @@
     "projectType": "web",
     "component": { "content": "Text Box", "type": "20004" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0",
+    "path": "3-0-2-0-0-0-1-0-0-0-0-0-0-0-1-0-0-0-0",
     "screenId": "GRf2mui3_rjt7EUFhwj2g",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -5832,8 +6786,16 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Text Box", "type": "20004" },
-    "events": [],
-    "path": "0-0-1-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "6MsQXRpBjswK6CedNXEe2",
+        "triggerName": "PC_CHECK_ELIGIBILITY",
+        "name": "On initialization",
+        "type": "1",
+        "serviceType": "13"
+      }
+    ],
+    "path": "3-0-2-0-0-0-1-0-0-1-0-0-0-0-1-0-0-0-0",
     "screenId": "GRf2mui3_rjt7EUFhwj2g",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6163,7 +7125,7 @@
       "name": "Calendar",
       "label": "",
       "stateName": "pc_expiry_date",
-      "format": "dd/MM/yyyy",
+      "format": "MM/yy",
       "variant": "standard",
       "validate": { "required": false, "errorMsg": "", "isCalendar": true },
       "layoutProperties": {
@@ -6184,7 +7146,7 @@
     "projectType": "web",
     "component": { "content": "Date picker", "type": "20027" },
     "event": [],
-    "path": "0-0-1-0-0-0-1-0-1-0-0-0-0-0-1-0-0",
+    "path": "3-0-2-0-0-0-1-0-1-0-0-0-0-0-1-0-0",
     "events": [],
     "screenId": "GRf2mui3_rjt7EUFhwj2g",
     "subType": "component",
@@ -6319,6 +7281,18 @@
             "sm": 12,
             "xs": 12
           }
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "WSGGwYez-tr8Pq0O5T9pG",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -6463,24 +7437,51 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "WSGGwYez-tr8Pq0O5T9pG",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Save card for later use",
+      "cssClassNames": [{ "cssClassName": "PC_SAVE_CARD_FOR_LATER_USE " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "3-0-2-0-0-0-1-0-2-0-0-0-1",
+    "screenId": "GRf2mui3_rjt7EUFhwj2g",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "MaYbduhqUbo0gMhtNeeWd",
     "name": "Grid layout",
     "type": "10001",
     "attributes": {
-      "gridProps": [
-        {
-          "layoutProperties": {
-            "xl": 12,
-            "lg": 12,
-            "md": 12,
-            "sm": 12,
-            "xs": 12
-          },
-          "componentId": "ML3fDTCgSRfSPdAqn2zP7",
-          "componentType": "20002",
-          "order": 1
-        }
-      ],
+      "gridProps": [],
       "label": "Header",
       "layoutProperties": {
         "gridLayout": {
@@ -6503,44 +7504,6 @@
     "screenId": "GRf2mui3_rjt7EUFhwj2g",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
-    "gitBranchName": "master",
-    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
-  },
-  {
-    "id": "ML3fDTCgSRfSPdAqn2zP7",
-    "status": "ACTIVE",
-    "name": "Label",
-    "attributes": {
-      "variant": "body1",
-      "name": "Label",
-      "mandatory": false,
-      "layoutProperties": {
-        "label": { "//": "Use this class to style label component." },
-        "mainContainer": "label",
-        "xl": 12,
-        "lg": 12,
-        "md": 12,
-        "sm": 12,
-        "xs": 12
-      },
-      "label": "Save card for later use",
-      "cssClassNames": [{ "cssClassName": "PC_SAVE_CARD_FOR_LATER_USE " }]
-    },
-    "icon": "FaFont",
-    "group": "Form",
-    "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
-    "order": 15,
-    "version": "1.0.0",
-    "isLatest": true,
-    "projectType": "web",
-    "component": { "content": "Label", "type": "20002" },
-    "events": [],
-    "path": "0-0-1-0-0-0-1-0-2-1-0-0-0",
-    "screenId": "GRf2mui3_rjt7EUFhwj2g",
-    "subType": "component",
-    "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
@@ -6989,8 +7952,16 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Text Box", "type": "20004" },
-    "events": [],
-    "path": "0-0-1-0-0-0-1-0-3-0-0-0-0-0-1-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "6MsQXRpBjswK6CedNXEe2",
+        "triggerName": "PC_CHECK_ELIGIBILITY",
+        "name": "On initialization",
+        "type": "1",
+        "serviceType": "13"
+      }
+    ],
+    "path": "3-0-2-0-0-0-1-0-3-0-0-0-0-0-1-0-0-0-0",
     "screenId": "GRf2mui3_rjt7EUFhwj2g",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7378,22 +8349,49 @@
           "cssClassName": "PC_BUTTON_ACTIVE ",
           "logic": {
             "if": [
-              { "==": [{ "var": "currentScreen.save_card" }, "1"] },
               {
-                "and": [
-                  { "var": "currentScreen.form.pc_card_number_2" },
-                  { "var": "currentScreen.form.pc_name_on_card" },
-                  { "var": "currentScreen.form.pc_expiry_date" },
-                  { "var": "currentScreen.form.pc_nikname" }
+                "==": [
+                  { "var": "currentScreen.page_name" },
+                  "Pay using debit card"
                 ]
               },
               {
-                "and": [
-                  { "var": "currentScreen.form.pc_card_number" },
-                  { "var": "currentScreen.form.pc_name_on_card" },
-                  { "var": "currentScreen.form.pc_expiry_date" }
+                "if": [
+                  { "==": [{ "var": "currentScreen.save_card" }, "1"] },
+                  {
+                    "and": [
+                      { "var": "currentScreen.form.pc_card_number_2" },
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.form.pc_card_number_2.length"
+                          },
+                          16
+                        ]
+                      },
+                      { "var": "currentScreen.form.pc_name_on_card" },
+                      { "var": "currentScreen.form.pc_expiry_date" },
+                      { "var": "currentScreen.form.pc_nikname" }
+                    ]
+                  },
+                  {
+                    "and": [
+                      { "var": "currentScreen.form.pc_card_number_2" },
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.form.pc_card_number_2.length"
+                          },
+                          16
+                        ]
+                      },
+                      { "var": "currentScreen.form.pc_name_on_card" },
+                      { "var": "currentScreen.form.pc_expiry_date" }
+                    ]
+                  }
                 ]
-              }
+              },
+              false
             ]
           }
         }

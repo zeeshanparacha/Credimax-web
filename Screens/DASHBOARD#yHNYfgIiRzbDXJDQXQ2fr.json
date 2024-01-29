@@ -119,7 +119,246 @@
         "updatedAt": "23-Sep-2021",
         "Documentation": "<div>\n<table style=\"border-collapse: collapse; width: 99.8899%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 48.4024%;\">1</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">2</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">43</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">6</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">7</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>\nWrite your Docu7mentationtestsdfasd</div>",
         "createdAt": "24-Aug-2021",
-        "events": [],
+        "events": [
+          {
+            "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+            "triggerName": "PC_SHOW_RESPONSE_AFTER_REDIRECTION",
+            "serviceType": "2",
+            "attributes": {
+              "delay": "",
+              "triggers": [
+                {
+                  "id": "41gSb3bfIaosn_s21751x",
+                  "name": "PC_READ_TRANSACTION_STATUS",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "16",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "destinationBindingKey": "pc_transaction_status",
+                          "sourceBindingKey": "",
+                          "destinationStoreType": 2,
+                          "value": "pc_transaction_status"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "BGBiFX61hc8IgoSFmMV0s",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                },
+                {
+                  "id": "DsKdwEaMcbJZNndkv07lY",
+                  "name": "PC_READ_MODE",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "16",
+                        "attributes": {
+                          "destinationBindingKey": "app_mode",
+                          "destinationStoreType": 3,
+                          "value": "app_mode"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "7ps-7PMyghI3mrXjlGWsE",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                },
+                {
+                  "id": "byX4GDV7kEZpfvxZXvX7t",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "PC_SAVE_STATIC_RESPONSE",
+                  "old_name": "",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "13",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "triggers": [
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.pc_transaction_status"
+                                      },
+                                      "failed"
+                                    ]
+                                  },
+                                  true,
+                                  false
+                                ]
+                              },
+                              "triggerName": "PC_SAVE_FAILURE_MODAL_RESPONSE",
+                              "triggerId": "wOfF937GfHbJ6F7wt1OEG",
+                              "services": [
+                                {
+                                  "type": "11",
+                                  "command": {
+                                    "type": "15",
+                                    "attributes": {
+                                      "storeType": "",
+                                      "selectedObjectBindingKey": "selectedObject",
+                                      "dataType": "",
+                                      "sourceBindingKey": ""
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.pc_transaction_status"
+                                      },
+                                      "success"
+                                    ]
+                                  },
+                                  true,
+                                  false
+                                ]
+                              },
+                              "triggerName": "PC_SAVE_SUCCESS_MODAL_RESPONSE",
+                              "triggerId": "qN-UaEfhN3fbzBuJp_DAc",
+                              "services": [
+                                {
+                                  "type": "11",
+                                  "command": { "type": "15", "attributes": {} }
+                                }
+                              ]
+                            },
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "var": "currentScreen.pc_transaction_status"
+                                  },
+                                  true,
+                                  false
+                                ]
+                              },
+                              "triggerName": "PC_RELOAD_PAGE_AFTER_DELAY",
+                              "triggerId": "uj98091livMT1MfLL_aVa",
+                              "services": [
+                                {
+                                  "type": "2",
+                                  "command": {
+                                    "type": "2",
+                                    "attributes": {
+                                      "delay": "5000",
+                                      "triggers": [
+                                        {
+                                          "id": "OcnazYFSytTu9R47beP4a",
+                                          "name": "PC_RELOAD_PAGE",
+                                          "projectId": "652fcbce09869c3c809b3097",
+                                          "gitBranchName": "master",
+                                          "services": [
+                                            {
+                                              "type": "11",
+                                              "command": {
+                                                "type": "17",
+                                                "attributes": {
+                                                  "storeType": "",
+                                                  "selectedObjectBindingKey": "selectedObject",
+                                                  "dataType": "",
+                                                  "sourceBindingKey": "",
+                                                  "link": "http://172.16.11.67:9992/?id=652fcbce09869c3c809b3097&branch=master&dev=true",
+                                                  "linkType": 2,
+                                                  "targetType": "_self"
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                                          "_id": "YMkySnJCQ8s90tWlzsxmW",
+                                          "updatedAt": "1/28/2024",
+                                          "createdAt": "1/28/2024",
+                                          "createdBy": "talha",
+                                          "updatedBy": "talha"
+                                        }
+                                      ],
+                                      "triggerIds": ["OcnazYFSytTu9R47beP4a"]
+                                    }
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "var": "currentScreen.pc_transaction_status"
+                                  },
+                                  true,
+                                  false
+                                ]
+                              },
+                              "triggerName": "PC_SHOW_RESPONSE",
+                              "triggerId": "0ng9Cais2R8XaYCuWV8sW",
+                              "services": [
+                                {
+                                  "type": "9",
+                                  "command": {
+                                    "type": "1",
+                                    "attributes": {
+                                      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                                      "content": "",
+                                      "type": "",
+                                      "modalId": "sPJCtcvlqTb0R-9vY8i1T",
+                                      "toastContentType": "custom"
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "6AZQSLHA5mQo7J_tICIRv",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                }
+              ],
+              "triggerIds": [
+                "41gSb3bfIaosn_s21751x",
+                "DsKdwEaMcbJZNndkv07lY",
+                "byX4GDV7kEZpfvxZXvX7t"
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
+          }
+        ],
         "order": 1,
         "version": "1.0.0",
         "isLatest": true,
@@ -130,7 +369,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "z_GVKYHDT9R2YY3zkM7lL",
+            "id": "mOUubXb1242dB3ktaZ8RK",
             "gridProps": [
               {
                 "id": "iGHYdoorU5umkRN8dVfc0",
@@ -250,6 +489,22 @@
                 "type": "20031",
                 "attributes": {
                   "widgetId": "XFWHY7F6Y_OPC6Me67DYK",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
+                "id": "sPJCtcvlqTb0R-9vY8i1T",
+                "name": "PC_SHOW_RESPONSE",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
                   "layoutProperties": {
                     "xl": 12,
                     "lg": 12,
@@ -644,11 +899,11 @@
                   "widget"
                 ],
                 "component": { "content": "Grid layout", "type": "10001" },
-                "path": "2-0-8",
+                "path": "2-0-9",
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "6jIMDOrG27Uu5AMZcsP3P",
+                    "id": "z_SttB9OukVkoqqQ0kSPS",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -11565,9 +11820,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "yHNYfgIiRzbDXJDQXQ2fr",
-    "createdBy": "zeeshan",
-    "updatedAt": "1/21/2024",
-    "createdAt": "1/21/2024",
+    "createdBy": "talha",
+    "updatedAt": "1/28/2024",
+    "createdAt": "1/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11686,6 +11941,18 @@
           "order": 1
         },
         {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "sPJCtcvlqTb0R-9vY8i1T",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
           "componentId": "TMLsgRG__GSNRN9TgLsC0",
           "componentType": "10001",
           "id": "TMLsgRG__GSNRN9TgLsC0",
@@ -11724,7 +11991,14 @@
       "isSwappable": true
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+        "triggerName": "PC_SHOW_RESPONSE_AFTER_REDIRECTION",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
     "screenId": "yHNYfgIiRzbDXJDQXQ2fr",
     "projectId": "652fcbce09869c3c809b3097",
@@ -11753,6 +12027,22 @@
     "type": "20031",
     "attributes": {
       "widgetId": "4ICI1lP2JO4z56157hkWC",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "yHNYfgIiRzbDXJDQXQ2fr",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "sPJCtcvlqTb0R-9vY8i1T",
+    "name": "PC_SHOW_RESPONSE",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
       "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
     },
     "component": { "type": "20031" },

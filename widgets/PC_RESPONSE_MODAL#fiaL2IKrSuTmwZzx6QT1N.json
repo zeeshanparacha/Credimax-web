@@ -43,7 +43,7 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "Grid layout"
+          "name": "PC_RESPONSE_MODAL"
         },
         "group": "Layout",
         "type": "sidebarItem",
@@ -762,7 +762,7 @@
                                     "sm": 12,
                                     "xs": 12
                                   },
-                                  "label": "Payment uncussessful",
+                                  "label": "Payment unsuccessful",
                                   "cssClassNames": [
                                     { "cssClassName": "PC_SUCCESS_TITLE " }
                                   ]
@@ -781,7 +781,7 @@
                                   "type": "20002"
                                 },
                                 "events": [],
-                                "path": "1-0-1-0-0"
+                                "path": "0-0-1-0-1-0-0"
                               },
                               {
                                 "id": "v_DPleTfYSNvmXB6PoXiQ",
@@ -1138,70 +1138,146 @@
                                             "commandType": "2"
                                           },
                                           {
-                                            "triggerId": "GSX94vgAydNxYSCnYW64E",
-                                            "triggerName": "PC_CLEAR_ALL_FIELDS",
-                                            "serviceType": "11",
+                                            "triggerId": "t8Pdop3ytIZi0OuqoMkM-",
+                                            "triggerName": "PC_CLEAR_FIELDS_CONDITIONALLY",
+                                            "serviceType": "13",
                                             "attributes": {
-                                              "storeType": "",
-                                              "selectedObjectBindingKey": "selectedObject",
-                                              "dataType": "",
-                                              "sourceBindingKey": "",
-                                              "filterList": [
+                                              "triggers": [
                                                 {
-                                                  "key": "selectedAmountType",
-                                                  "changeValueConditonally": false,
-                                                  "storeType": 2,
-                                                  "logic": null
+                                                  "triggerName": "PC_CLEAR_DEBIT_CARDS_FIELDS",
+                                                  "triggerId": "9YzuodWiLbb8jq01EvCEW",
+                                                  "services": [
+                                                    {
+                                                      "type": "11",
+                                                      "command": {
+                                                        "type": "15",
+                                                        "attributes": {
+                                                          "storeType": "",
+                                                          "selectedObjectBindingKey": "selectedObject",
+                                                          "dataType": "",
+                                                          "sourceBindingKey": "",
+                                                          "filterList": [
+                                                            {
+                                                              "key": "pc_card_number_2",
+                                                              "changeValueConditonally": false,
+                                                              "storeType": 1,
+                                                              "logic": null
+                                                            },
+                                                            {
+                                                              "key": "pc_name_on_card",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_nikname",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_expiry_date",
+                                                              "storeType": 1,
+                                                              "logic": null
+                                                            },
+                                                            {
+                                                              "key": "save_card",
+                                                              "storeType": 2,
+                                                              "logic": null
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "logic": {
+                                                    "==": [
+                                                      {
+                                                        "var": "currentScreen.page_name"
+                                                      },
+                                                      "Pay using debit card"
+                                                    ]
+                                                  }
                                                 },
                                                 {
-                                                  "key": "pc_custom_amount",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "selected_payment_method",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_card_number",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_name_on_card",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_expiry_date",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "save_card",
-                                                  "storeType": 2
-                                                },
-                                                {
-                                                  "key": "pc_nikname",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_custom_amount_2",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_card_number_2",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_cpr",
-                                                  "storeType": 1
-                                                },
-                                                {
-                                                  "key": "pc_request",
-                                                  "storeType": 2
+                                                  "logic": {
+                                                    "==": [
+                                                      {
+                                                        "var": "currentScreen.page_name"
+                                                      },
+                                                      "Pay cards"
+                                                    ]
+                                                  },
+                                                  "triggerName": "PC_CLEAR_ALL_FIELDS",
+                                                  "triggerId": "GSX94vgAydNxYSCnYW64E",
+                                                  "services": [
+                                                    {
+                                                      "type": "11",
+                                                      "command": {
+                                                        "type": "15",
+                                                        "attributes": {
+                                                          "storeType": "",
+                                                          "selectedObjectBindingKey": "selectedObject",
+                                                          "dataType": "",
+                                                          "sourceBindingKey": "",
+                                                          "filterList": [
+                                                            {
+                                                              "key": "selectedAmountType",
+                                                              "changeValueConditonally": false,
+                                                              "storeType": 2,
+                                                              "logic": null
+                                                            },
+                                                            {
+                                                              "key": "pc_custom_amount",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "selected_payment_method",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_card_number",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_name_on_card",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_expiry_date",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "save_card",
+                                                              "storeType": 2
+                                                            },
+                                                            {
+                                                              "key": "pc_nikname",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_custom_amount_2",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_card_number_2",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_cpr",
+                                                              "storeType": 1
+                                                            },
+                                                            {
+                                                              "key": "pc_request",
+                                                              "storeType": 2
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
                                                 }
                                               ]
                                             },
                                             "type": "2",
                                             "name": "On click",
-                                            "commandType": "15"
+                                            "commandType": "1"
                                           }
                                         ],
                                         "path": "0-0-1-0-3-0-0-0-0"
@@ -1488,8 +1564,8 @@
     "gitBranchName": "master",
     "_id": "fiaL2IKrSuTmwZzx6QT1N",
     "createdBy": "talha",
-    "updatedAt": "1/25/2024",
-    "createdAt": "1/25/2024",
+    "updatedAt": "1/28/2024",
+    "createdAt": "1/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1551,7 +1627,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "PC_RESPONSE_MODAL"
     },
     "layout": null,
     "events": [],
@@ -2368,7 +2444,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Payment uncussessful",
+      "label": "Payment unsuccessful",
       "cssClassNames": [{ "cssClassName": "PC_SUCCESS_TITLE " }]
     },
     "icon": "FaFont",
@@ -2382,7 +2458,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "1-0-1-0-0",
+    "path": "0-0-1-0-1-0-0",
     "screenId": "fiaL2IKrSuTmwZzx6QT1N",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2735,11 +2811,11 @@
         "serviceType": "9"
       },
       {
-        "triggerId": "GSX94vgAydNxYSCnYW64E",
-        "triggerName": "PC_CLEAR_ALL_FIELDS",
+        "triggerId": "t8Pdop3ytIZi0OuqoMkM-",
+        "triggerName": "PC_CLEAR_FIELDS_CONDITIONALLY",
         "name": "On click",
         "type": "2",
-        "serviceType": "11"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-1-0-3-0-0-0-0",
