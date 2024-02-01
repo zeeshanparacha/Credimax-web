@@ -50,7 +50,30 @@
         "updatedAt": "23-Sep-2021",
         "Documentation": "<div>\n<table style=\"border-collapse: collapse; width: 99.8899%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 48.4024%;\">1</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">2</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">43</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">6</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">7</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>\nWrite your Docu7mentationtestsdfasd</div>",
         "createdAt": "24-Aug-2021",
-        "events": [],
+        "events": [
+          {
+            "triggerId": "9b25ITWNdWsa6vxRy_iZQ",
+            "triggerName": "PC_CLEAR_SMS_PIN",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "smsPin",
+                  "changeValueConditonally": false,
+                  "storeType": 1,
+                  "logic": null
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
+          }
+        ],
         "order": 1,
         "version": "1.0.0",
         "isLatest": true,
@@ -61,7 +84,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "md5RQkh0exDIx5BoHuVRh",
+            "id": "QzRgXx1V8s7nN7z4jjdlW",
             "gridProps": [
               {
                 "id": "sfcB82_mAdLJjnCKaJ7dm",
@@ -577,7 +600,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "QqBhHN1VM3c1NWZqcZRIc",
+                                            "id": "vp6pA-mALOZTBi2h-cKvf",
                                             "gridProps": [
                                               {
                                                 "id": "KCxpLcS6q9wy5lykkDmtN",
@@ -655,10 +678,7 @@
                                             "alignItems": "flex-start"
                                           },
                                           "direction": "row",
-                                          "name": "Grid layout",
-                                          "cssClassNames": [
-                                            { "cssClassName": "PC_LABEL_L1 " }
-                                          ]
+                                          "name": "Grid layout"
                                         },
                                         "events": [],
                                         "component": {
@@ -716,7 +736,7 @@
                                                   "width": "56",
                                                   "height": "64",
                                                   "isOtpExpiry": false,
-                                                  "otpErrorBindingKey": "bbk_otp_validation_response.message",
+                                                  "otpErrorBindingKey": "pc_validate_otp_res.message",
                                                   "otpTime": "4"
                                                 },
                                                 "version": "1.0.0",
@@ -726,71 +746,7 @@
                                                   "content": "OTP",
                                                   "type": "20052"
                                                 },
-                                                "events": [
-                                                  {
-                                                    "triggerId": "zjstLbFLxC2mtw6cMg1wO",
-                                                    "triggerName": "PIN_CHANGE_VALIDATIONS_DELETE_CONDITIONAL",
-                                                    "serviceType": "13",
-                                                    "attributes": {
-                                                      "triggers": [
-                                                        {
-                                                          "triggerName": "DELETE_PIN_CHANGE_VALIDATION",
-                                                          "triggerId": "SMVHPDiilH-ayOeNI9sPo",
-                                                          "services": [
-                                                            {
-                                                              "type": "11",
-                                                              "command": {
-                                                                "type": "4",
-                                                                "attributes": {
-                                                                  "stateName": "pinChangeValidationResponse",
-                                                                  "storeType": 2,
-                                                                  "selectedObjectBindingKey": "selectedObject",
-                                                                  "dataType": "",
-                                                                  "sourceBindingKey": ""
-                                                                }
-                                                              }
-                                                            }
-                                                          ],
-                                                          "logic": {
-                                                            "==": [
-                                                              {
-                                                                "var": "currentScreen.pinChangeValidationResponse.code"
-                                                              },
-                                                              0
-                                                            ]
-                                                          }
-                                                        },
-                                                        {
-                                                          "logic": {
-                                                            "==": [
-                                                              {
-                                                                "var": "currentScreen.pinChangeValidationResponse.code"
-                                                              },
-                                                              0
-                                                            ]
-                                                          },
-                                                          "triggerName": "DELETE_PIN_CHANGE_SMS_PIN",
-                                                          "triggerId": "fCnLRx3GXxWdmCwzz97En",
-                                                          "services": [
-                                                            {
-                                                              "type": "11",
-                                                              "command": {
-                                                                "type": "4",
-                                                                "attributes": {
-                                                                  "stateName": "smsPin",
-                                                                  "storeType": 1
-                                                                }
-                                                              }
-                                                            }
-                                                          ]
-                                                        }
-                                                      ]
-                                                    },
-                                                    "type": "2",
-                                                    "name": "On click",
-                                                    "commandType": "1"
-                                                  }
-                                                ],
+                                                "events": [],
                                                 "path": "0-0-0-0-0-0-0-0-3-0-0"
                                               }
                                             ],
@@ -867,8 +823,7 @@
                                                     "label": {
                                                       "//": "Use this class to style label component.",
                                                       "color": "#A31B1E",
-                                                      "font-size": "14px",
-                                                      "font-weight": 500
+                                                      "font-size": "14px"
                                                     },
                                                     "prefix": {
                                                       "//": "Use this class to style prefix."
@@ -901,7 +856,7 @@
                                                   "type": "20002"
                                                 },
                                                 "events": [],
-                                                "path": "0-0-0-0-4-0-0"
+                                                "path": "0-0-0-0-0-0-0-0-4-0-0"
                                               }
                                             ],
                                             "layoutProperties": {
@@ -945,7 +900,7 @@
                                           "type": "10001",
                                           "content": "Grid layout"
                                         },
-                                        "path": "0-0-0-0-4",
+                                        "path": "0-0-0-0-0-0-0-0-4",
                                         "dimensions": {
                                           "rows": 1,
                                           "columns": 1,
@@ -973,7 +928,8 @@
                                               "font-size": "14px",
                                               "lineHeight": "16px",
                                               "color": "#004986",
-                                              "textAlign": "center"
+                                              "textAlign": "center",
+                                              "marginTop": "8px"
                                             },
                                             "prefix": {
                                               "//": "Use this class to style prefix.",
@@ -1058,14 +1014,14 @@
                                         },
                                         "events": [
                                           {
-                                            "triggerId": "wwHfXcJn1bitVyMijsxh6",
-                                            "triggerName": "PC_GENERATE_OTP",
+                                            "triggerId": "YjS5Fdttw-oItIrwEm1LU",
+                                            "triggerName": "PC_GENERATE_BBK_OTP",
                                             "serviceType": "8",
                                             "attributes": {
                                               "loaderWidgetIds": [906070],
                                               "messageWidgetIds": [906070],
-                                              "responseStateKey": "pc_check_otp",
-                                              "url": "/security/v1/generateOTP",
+                                              "responseStateKey": "pc_gen_bbk_otp",
+                                              "url": "/payment/payCard/v1/generateBBKOTP",
                                               "checksum": true,
                                               "encryption": true,
                                               "isDeviceDetails": false,
@@ -1076,32 +1032,7 @@
                                                 "Content-Type": "application/json",
                                                 "channel_key": "002"
                                               },
-                                              "requestBody": [
-                                                {
-                                                  "type": 3,
-                                                  "name": "Current session",
-                                                  "key": "mobileNumber",
-                                                  "value": "userProfile.content.mobileNumber"
-                                                },
-                                                {
-                                                  "type": 3,
-                                                  "name": "Current session",
-                                                  "key": "email",
-                                                  "value": "userProfile.content.emailAddress"
-                                                },
-                                                {
-                                                  "type": 3,
-                                                  "name": "Current session",
-                                                  "key": "cpr",
-                                                  "value": "userProfile.content.userIdenValue"
-                                                },
-                                                {
-                                                  "type": 4,
-                                                  "name": "Static",
-                                                  "key": "tranCode",
-                                                  "value": "1503"
-                                                }
-                                              ],
+                                              "requestBody": [],
                                               "baseURL": "656f0b4398e9df55f0499597",
                                               "storeType": 2
                                             },
@@ -1200,7 +1131,131 @@
                                                   "content": "Button",
                                                   "type": "20006"
                                                 },
-                                                "events": [],
+                                                "events": [
+                                                  {
+                                                    "triggerId": "KTjbORHprIlrV1J9FBzYB",
+                                                    "triggerName": "PC_SAVE_SMS_OTP_PIN_IN_VALIDATION_OBJ",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "requestBody": [],
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "",
+                                                      "sourceBindingKey": "",
+                                                      "filterList": [
+                                                        {
+                                                          "key": "pc_validation_object.smsPin",
+                                                          "changeValueConditonally": true,
+                                                          "storeType": 2,
+                                                          "logic": {
+                                                            "if": [
+                                                              true,
+                                                              {
+                                                                "var": "currentScreen.form.smsPin"
+                                                              },
+                                                              {
+                                                                "var": "currentScreen.form.smsPin"
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "15"
+                                                  },
+                                                  {
+                                                    "triggerId": "4QnR86Jjxw99EvLxgHVoV",
+                                                    "triggerName": "PC_VALIDATE_BBK_AFTER_DELAY",
+                                                    "serviceType": "2",
+                                                    "attributes": {
+                                                      "delay": "500",
+                                                      "triggers": [
+                                                        {
+                                                          "id": "PnPWQY97O-yNC2uZ_byyZ",
+                                                          "_id": "Lxh1YD5wwQxFIsDhcQu_b",
+                                                          "projectId": "652fcbce09869c3c809b3097",
+                                                          "gitBranchName": "master",
+                                                          "name": "PC_VALIDATE_BBK_OTP",
+                                                          "old_name": "PC_VALIDATE_BBK_OTP",
+                                                          "status": "ACTIVE",
+                                                          "services": [
+                                                            {
+                                                              "type": "8",
+                                                              "command": {
+                                                                "type": "1",
+                                                                "attributes": {
+                                                                  "loaderWidgetIds": [
+                                                                    906070
+                                                                  ],
+                                                                  "messageWidgetIds": [
+                                                                    906070
+                                                                  ],
+                                                                  "responseStateKey": "pc_validate_otp_res",
+                                                                  "url": "/payment/payCard/v1/validateBBKOTP",
+                                                                  "checksum": true,
+                                                                  "encryption": true,
+                                                                  "isDeviceDetails": false,
+                                                                  "loginTrigger": false,
+                                                                  "formData": false,
+                                                                  "logoutTrigger": false,
+                                                                  "headers": {
+                                                                    "Content-Type": "application/json",
+                                                                    "Accept": "application/json",
+                                                                    "channel_key": "002"
+                                                                  },
+                                                                  "requestBody": [
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "reference",
+                                                                      "value": "pc_gen_bbk_otp.content.reference"
+                                                                    },
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "validation",
+                                                                      "value": "pc_validation_object"
+                                                                    }
+                                                                  ],
+                                                                  "baseURL": "656f0b4398e9df55f0499597",
+                                                                  "storeType": 2
+                                                                },
+                                                                "responseHandler": [
+                                                                  {
+                                                                    "httpStatus": 200,
+                                                                    "logic": {
+                                                                      "==": [
+                                                                        {
+                                                                          "var": "code"
+                                                                        },
+                                                                        1
+                                                                      ]
+                                                                    },
+                                                                    "triggerName": "PC_DATA_EXTRACTION_AND_REVIEW_PAYMENT",
+                                                                    "triggerId": "iURAigA6NRiOh2i-5iCxv"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ],
+                                                          "csrf": "0.amxcesprtuhIfoVkZZ9_80fP0c9JsQ0I",
+                                                          "updatedAt": "1/29/2024",
+                                                          "createdAt": "1/29/2024",
+                                                          "createdBy": "talha2",
+                                                          "updatedBy": "talha2"
+                                                        }
+                                                      ],
+                                                      "triggerIds": [
+                                                        "PnPWQY97O-yNC2uZ_byyZ"
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "2"
+                                                  }
+                                                ],
                                                 "path": "0-0-0-0-0-0-0-0-7-0-0"
                                               }
                                             ],
@@ -1347,8 +1402,7 @@
               "md": 12,
               "sm": 12,
               "xs": 12
-            },
-            "path": "0-0"
+            }
           }
         ],
         "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
@@ -1362,8 +1416,8 @@
     "gitBranchName": "master",
     "_id": "V0d5k_O8ah57-RANaCNNo",
     "createdBy": "talha",
-    "updatedAt": "1/29/2024",
-    "createdAt": "1/29/2024",
+    "updatedAt": "2/1/2024",
+    "createdAt": "2/1/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1409,7 +1463,14 @@
       "name": "PC_BBK_OTP_WIDGET"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "9b25ITWNdWsa6vxRy_iZQ",
+        "triggerName": "PC_CLEAR_SMS_PIN",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
     "screenId": "V0d5k_O8ah57-RANaCNNo",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2045,8 +2106,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout",
-      "cssClassNames": [{ "cssClassName": "PC_LABEL_L1 " }]
+      "name": "Grid layout"
     },
     "layout": null,
     "events": [],
@@ -2167,22 +2227,14 @@
       "width": "56",
       "height": "64",
       "isOtpExpiry": false,
-      "otpErrorBindingKey": "bbk_otp_validation_response.message",
+      "otpErrorBindingKey": "pc_validate_otp_res.message",
       "otpTime": "4"
     },
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "OTP", "type": "20052" },
-    "events": [
-      {
-        "triggerId": "zjstLbFLxC2mtw6cMg1wO",
-        "triggerName": "PIN_CHANGE_VALIDATIONS_DELETE_CONDITIONAL",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "13"
-      }
-    ],
+    "events": [],
     "path": "0-0-0-0-0-0-0-0-3-0-0",
     "screenId": "V0d5k_O8ah57-RANaCNNo",
     "subType": "component",
@@ -2248,8 +2300,7 @@
         "label": {
           "//": "Use this class to style label component.",
           "color": "#A31B1E",
-          "font-size": "14px",
-          "font-weight": 500
+          "font-size": "14px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -2275,7 +2326,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-0-0-4-0-0",
+    "path": "0-0-0-0-0-0-0-0-4-0-0",
     "screenId": "V0d5k_O8ah57-RANaCNNo",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2298,7 +2349,8 @@
           "font-size": "14px",
           "lineHeight": "16px",
           "color": "#004986",
-          "textAlign": "center"
+          "textAlign": "center",
+          "marginTop": "8px"
         },
         "prefix": {
           "//": "Use this class to style prefix.",
@@ -2378,8 +2430,8 @@
     },
     "events": [
       {
-        "triggerId": "wwHfXcJn1bitVyMijsxh6",
-        "triggerName": "PC_GENERATE_OTP",
+        "triggerId": "YjS5Fdttw-oItIrwEm1LU",
+        "triggerName": "PC_GENERATE_BBK_OTP",
         "name": "On click",
         "type": "2",
         "serviceType": "8"
@@ -2499,7 +2551,22 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Button", "type": "20006" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "KTjbORHprIlrV1J9FBzYB",
+        "triggerName": "PC_SAVE_SMS_OTP_PIN_IN_VALIDATION_OBJ",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      },
+      {
+        "triggerId": "4QnR86Jjxw99EvLxgHVoV",
+        "triggerName": "PC_VALIDATE_BBK_AFTER_DELAY",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "2"
+      }
+    ],
     "path": "0-0-0-0-0-0-0-0-7-0-0",
     "screenId": "V0d5k_O8ah57-RANaCNNo",
     "subType": "component",

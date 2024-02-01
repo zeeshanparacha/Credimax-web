@@ -17,9 +17,16 @@
               "logic": {
                 "if": [
                   {
-                    "==": [
-                      { "var": "currentScreen.pc_transaction_status" },
-                      "failed"
+                    "and": [
+                      {
+                        "==": [
+                          { "var": "currentScreen.pc_transaction_status" },
+                          "failed"
+                        ]
+                      },
+                      {
+                        "!": [{ "var": "currentScreen.pc_benifit_transaction" }]
+                      }
                     ]
                   },
                   true,
@@ -60,9 +67,16 @@
               "logic": {
                 "if": [
                   {
-                    "==": [
-                      { "var": "currentScreen.pc_transaction_status" },
-                      "success"
+                    "and": [
+                      {
+                        "==": [
+                          { "var": "currentScreen.pc_transaction_status" },
+                          "success"
+                        ]
+                      },
+                      {
+                        "!": [{ "var": "currentScreen.pc_benifit_transaction" }]
+                      }
                     ]
                   },
                   true,
@@ -98,61 +112,14 @@
             {
               "logic": {
                 "if": [
-                  { "var": "currentScreen.pc_transaction_status" },
-                  true,
-                  false
-                ]
-              },
-              "triggerName": "PC_RELOAD_PAGE_AFTER_DELAY",
-              "triggerId": "uj98091livMT1MfLL_aVa",
-              "services": [
-                {
-                  "type": "2",
-                  "command": {
-                    "type": "2",
-                    "attributes": {
-                      "delay": "5000",
-                      "triggers": [
-                        {
-                          "id": "OcnazYFSytTu9R47beP4a",
-                          "name": "PC_RELOAD_PAGE",
-                          "projectId": "652fcbce09869c3c809b3097",
-                          "gitBranchName": "master",
-                          "services": [
-                            {
-                              "type": "11",
-                              "command": {
-                                "type": "17",
-                                "attributes": {
-                                  "storeType": "",
-                                  "selectedObjectBindingKey": "selectedObject",
-                                  "dataType": "",
-                                  "sourceBindingKey": "",
-                                  "link": "http://172.16.11.67:9992/?id=652fcbce09869c3c809b3097&branch=master&dev=true",
-                                  "linkType": 2,
-                                  "targetType": "_self"
-                                }
-                              }
-                            }
-                          ],
-                          "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
-                          "_id": "YMkySnJCQ8s90tWlzsxmW",
-                          "updatedAt": "1/28/2024",
-                          "createdAt": "1/28/2024",
-                          "createdBy": "talha",
-                          "updatedBy": "talha"
-                        }
-                      ],
-                      "triggerIds": ["OcnazYFSytTu9R47beP4a"]
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "logic": {
-                "if": [
-                  { "var": "currentScreen.pc_transaction_status" },
+                  {
+                    "and": [
+                      { "var": "currentScreen.pc_transaction_status" },
+                      {
+                        "!": [{ "var": "currentScreen.pc_benifit_transaction" }]
+                      }
+                    ]
+                  },
                   true,
                   false
                 ]
@@ -180,9 +147,9 @@
       }
     }
   ],
-  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
-  "updatedAt": "1/28/2024",
-  "createdAt": "1/28/2024",
+  "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+  "updatedAt": "2/1/2024",
+  "createdAt": "2/1/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

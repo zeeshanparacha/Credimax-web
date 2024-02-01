@@ -1,0 +1,91 @@
+{
+  "_id": "kh95o9ER235PHi6x-gQIe",
+  "id": "4QnR86Jjxw99EvLxgHVoV",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PC_VALIDATE_BBK_AFTER_DELAY",
+  "old_name": "PC_VALIDATE_BBK_AFTER_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "",
+          "triggers": [
+            {
+              "id": "PnPWQY97O-yNC2uZ_byyZ",
+              "_id": "Lxh1YD5wwQxFIsDhcQu_b",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "PC_VALIDATE_BBK_OTP",
+              "old_name": "PC_VALIDATE_BBK_OTP",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "pc_validate_otp_res",
+                      "url": "/payment/payCard/v1/validateBBKOTP",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "reference",
+                          "value": "pc_gen_bbk_otp.content.reference"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "pc_validation_object"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "triggerName": "PC_DATA_EXTRACTION_AND_REVIEW_PAYMENT",
+                        "triggerId": "iURAigA6NRiOh2i-5iCxv"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.amxcesprtuhIfoVkZZ9_80fP0c9JsQ0I",
+              "updatedAt": "1/29/2024",
+              "createdAt": "1/29/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
+            }
+          ],
+          "triggerIds": ["PnPWQY97O-yNC2uZ_byyZ"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.amxcesprtuhIfoVkZZ9_80fP0c9JsQ0I",
+  "updatedAt": "1/29/2024",
+  "createdAt": "1/29/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

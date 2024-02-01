@@ -1,0 +1,182 @@
+{
+  "id": "VYNiUt31ZC6urv4urOYu2",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PC_RELEASE_PAYMENT_AFTER_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "triggers": [
+            {
+              "id": "elnEko_omNaCE0qTjGx8U",
+              "_id": "lGLkQ-27hdNQPshR1Z4_g",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "PC_RELEASE_PAYMENT",
+              "old_name": "PC_RELEASE_PAYMENT",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "pc_release_payment",
+                      "successMessageBindingKey": "pc_release_payment_success",
+                      "errorMessageBindingKey": "pc_release_payment_error",
+                      "url": "/payment/payCard/v1/pay",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "amount",
+                          "value": "pc_request.amount"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "creditCardNumber",
+                          "value": "pc_request.creditCardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "type",
+                          "value": "pc_request.type"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "accountOrDebitCardNumber",
+                          "value": "pc_request.accountOrDebitCardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cprOfOtherCardHolder",
+                          "value": "pc_request.cprOfOtherCardHolder"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "accountType",
+                          "value": "pc_request.accountType"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "saveNewCard",
+                          "value": "pc_request.saveNewCard"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardHolderName",
+                          "value": "pc_request.cardHolderName"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNickName",
+                          "value": "pc_request.cardNickName"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "expiry",
+                          "value": "pc_request.expiry"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "currency",
+                          "value": "pc_request.currency"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "pc_request.validation"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": {
+                          "if": [
+                            { "var": "content.benefitRedirectUrl" },
+                            false,
+                            true
+                          ]
+                        },
+                        "httpStatus": 200,
+                        "triggerName": "PC_SHOW_RESPONSE",
+                        "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+                      },
+                      {
+                        "logic": {
+                          "if": [
+                            { "var": "content.benefitRedirectUrl" },
+                            true,
+                            false
+                          ]
+                        },
+                        "httpStatus": 200,
+                        "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+                        "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+                      },
+                      {
+                        "logic": {
+                          "if": [
+                            { "var": "content.benefitRedirectUrl" },
+                            true,
+                            false
+                          ]
+                        },
+                        "httpStatus": 200,
+                        "triggerName": "PC_REDIRECT_TO_BENIFIT",
+                        "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+              "updatedAt": "2/1/2024",
+              "createdAt": "2/1/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["elnEko_omNaCE0qTjGx8U"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+  "_id": "Nhdtnx_pDb2aBZX9-ElQR",
+  "updatedAt": "2/1/2024",
+  "createdAt": "2/1/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

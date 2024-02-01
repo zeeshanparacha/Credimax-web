@@ -1,8 +1,10 @@
 {
   "id": "PnPWQY97O-yNC2uZ_byyZ",
+  "_id": "Lxh1YD5wwQxFIsDhcQu_b",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "PC_VALIDATE_BBK_OTP",
+  "old_name": "PC_VALIDATE_BBK_OTP",
   "status": "ACTIVE",
   "services": [
     {
@@ -13,6 +15,7 @@
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
           "responseStateKey": "pc_validate_otp_res",
+          "errorMessageBindingKey": "pc_validate_otp_res_error",
           "url": "/payment/payCard/v1/validateBBKOTP",
           "checksum": true,
           "encryption": true,
@@ -36,20 +39,32 @@
               "type": 2,
               "name": "Current screen",
               "key": "validation",
-              "value": "pc_validation_object"
+              "value": "pc_request.validation"
             }
           ],
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "triggerName": "PC_CLEAR_VALIDATION_IN_PAY_REQ",
+            "triggerId": "CUQoS6M6bTHxzWRsDwSUT"
+          },
+          {
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "triggerName": "PC_RELEASE_PAYMENT_AFTER_DELAY",
+            "triggerId": "VYNiUt31ZC6urv4urOYu2"
+          }
+        ]
       }
     }
   ],
-  "csrf": "0.wgkwm8se3yktsJQ2gZLIcUIfhY_qv9cw",
-  "_id": "Lxh1YD5wwQxFIsDhcQu_b",
-  "updatedAt": "1/27/2024",
-  "createdAt": "1/27/2024",
+  "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+  "updatedAt": "2/1/2024",
+  "createdAt": "2/1/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

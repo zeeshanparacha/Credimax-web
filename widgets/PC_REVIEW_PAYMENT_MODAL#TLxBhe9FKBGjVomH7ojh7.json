@@ -43,7 +43,7 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "Grid layout",
+          "name": "PC_REVIEW_PAYMENT_MODAL",
           "cssClassNames": [{ "cssClassName": "PC_REVIEW_MAIN " }]
         },
         "group": "Layout",
@@ -1940,96 +1940,276 @@
                     "commandType": "2"
                   },
                   {
-                    "triggerId": "elnEko_omNaCE0qTjGx8U",
-                    "triggerName": "PC_RELEASE_PAYMENT",
-                    "serviceType": "8",
+                    "triggerId": "rrQqlNSadFwk8ZuCTZ0h2",
+                    "triggerName": "PC_CHECK_FOR_OTP",
+                    "serviceType": "13",
                     "attributes": {
-                      "loaderWidgetIds": [906070],
-                      "messageWidgetIds": [906070],
-                      "responseStateKey": "pc_release_payment",
-                      "successMessageBindingKey": "pc_release_payment_success",
-                      "errorMessageBindingKey": "pc_release_payment_error",
-                      "url": "/payment/payCard/v1/pay",
-                      "checksum": true,
-                      "encryption": true,
-                      "isDeviceDetails": false,
-                      "loginTrigger": false,
-                      "formData": false,
-                      "logoutTrigger": false,
-                      "headers": {
-                        "Content-Type": "application/json",
-                        "channel_key": "002"
-                      },
-                      "requestBody": [
+                      "triggers": [
                         {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "amount",
-                          "value": "pc_request.amount"
+                          "logic": {
+                            "and": [
+                              {
+                                "if": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.selected_tab"
+                                          },
+                                          "other cards"
+                                        ]
+                                      },
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "DebitCard"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  false,
+                                  true
+                                ]
+                              },
+                              {
+                                "!=": [
+                                  {
+                                    "var": "currentScreen.pc_check_otp.content.otpRequired"
+                                  },
+                                  1
+                                ]
+                              }
+                            ]
+                          },
+                          "triggerName": "PC_RELEASE_PAYMENT",
+                          "triggerId": "elnEko_omNaCE0qTjGx8U",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "pc_release_payment",
+                                  "successMessageBindingKey": "pc_release_payment_success",
+                                  "errorMessageBindingKey": "pc_release_payment_error",
+                                  "url": "/payment/payCard/v1/pay",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "amount",
+                                      "value": "pc_request.amount"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "creditCardNumber",
+                                      "value": "pc_request.creditCardNumber"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "type",
+                                      "value": "pc_request.type"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "accountOrDebitCardNumber",
+                                      "value": "pc_request.accountOrDebitCardNumber"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "cprOfOtherCardHolder",
+                                      "value": "pc_request.cprOfOtherCardHolder"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "accountType",
+                                      "value": "pc_request.accountType"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "saveNewCard",
+                                      "value": "pc_request.saveNewCard"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "cardHolderName",
+                                      "value": "pc_request.cardHolderName"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "cardNickName",
+                                      "value": "pc_request.cardNickName"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "expiry",
+                                      "value": "pc_request.expiry"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "currency",
+                                      "value": "pc_request.currency"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "validation",
+                                      "value": "pc_request.validation"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": [
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        false,
+                                        true
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_SHOW_RESPONSE",
+                                    "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+                                  },
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        true,
+                                        false
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_REDIRECT_TO_BENIFIT",
+                                    "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
                         },
                         {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "creditCardNumber",
-                          "value": "pc_request.creditCardNumber"
+                          "logic": {
+                            "and": [
+                              {
+                                "if": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.selected_tab"
+                                          },
+                                          "other cards"
+                                        ]
+                                      },
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "DebitCard"
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  false,
+                                  true
+                                ]
+                              },
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.pc_check_otp.content.otpRequired"
+                                  },
+                                  1
+                                ]
+                              }
+                            ]
+                          },
+                          "triggerName": "PC_SHOW_OTP_MODAL",
+                          "triggerId": "dhxrwQzOC693OTYj7UAkp",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "widgetId": "wxqeXI1zuyZbvPx6p8J_N",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "Cm2PtP4rELRCywsCcv72s",
+                                  "toastContentType": "custom"
+                                }
+                              }
+                            }
+                          ]
                         },
                         {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "type",
-                          "value": "pc_request.type"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "accountOrDebitCardNumber",
-                          "value": "pc_request.accountOrDebitCardNumber"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "cprOfOtherCardHolder",
-                          "value": "pc_request.cprOfOtherCardHolder"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "accountType",
-                          "value": "pc_request.accountType"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "saveNewCard",
-                          "value": "pc_request.saveNewCard"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "cardHolderName",
-                          "value": "pc_request.cardHolderName"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "cardNickName",
-                          "value": "pc_request.cardNickName"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "expiry",
-                          "value": "pc_request.expiry"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "currency",
-                          "value": "pc_request.currency"
+                          "logic": {
+                            "and": [
+                              {
+                                "==": [
+                                  { "var": "currentScreen.selected_tab" },
+                                  "other cards"
+                                ]
+                              },
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.type"
+                                  },
+                                  "Account"
+                                ]
+                              }
+                            ]
+                          },
+                          "triggerName": "PC_SHOW_BBK_OTP_WIDGET",
+                          "triggerId": "jBcl4lS-_3bF9Jgyiq9lN",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "widgetId": "V0d5k_O8ah57-RANaCNNo",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "NiHT5TUhuAgZWhccK__Tq",
+                                  "toastContentType": "custom"
+                                }
+                              }
+                            }
+                          ]
                         }
-                      ],
-                      "baseURL": "656f0b4398e9df55f0499597",
-                      "storeType": 2
+                      ]
                     },
                     "type": "2",
                     "name": "On click",
@@ -2059,8 +2239,8 @@
     "gitBranchName": "master",
     "_id": "TLxBhe9FKBGjVomH7ojh7",
     "createdBy": "talha",
-    "updatedAt": "1/15/2024",
-    "createdAt": "1/15/2024",
+    "updatedAt": "1/31/2024",
+    "createdAt": "1/31/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2191,7 +2371,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout",
+      "name": "PC_REVIEW_PAYMENT_MODAL",
       "cssClassNames": [{ "cssClassName": "PC_REVIEW_MAIN " }]
     },
     "layout": null,
@@ -3418,11 +3598,11 @@
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-4-0-0-0-1",
     "screenId": "TLxBhe9FKBGjVomH7ojh7",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
@@ -3542,11 +3722,11 @@
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-4-0-0-0-3",
     "screenId": "TLxBhe9FKBGjVomH7ojh7",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
@@ -3590,11 +3770,11 @@
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-4-0-0-0-4",
     "screenId": "TLxBhe9FKBGjVomH7ojh7",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
@@ -3789,11 +3969,11 @@
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Image", "type": "20012" },
     "events": [],
     "path": "0-0-4-1-0-0-1",
     "screenId": "TLxBhe9FKBGjVomH7ojh7",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
@@ -3845,11 +4025,11 @@
         "serviceType": "9"
       },
       {
-        "triggerId": "elnEko_omNaCE0qTjGx8U",
-        "triggerName": "PC_RELEASE_PAYMENT",
+        "triggerId": "rrQqlNSadFwk8ZuCTZ0h2",
+        "triggerName": "PC_CHECK_FOR_OTP",
         "name": "On click",
         "type": "2",
-        "serviceType": "8"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-5",

@@ -25,6 +25,19 @@
                   {
                     "and": [
                       { "var": "currentScreen.form.pc_custom_amount_2" },
+                      {
+                        ">": [
+                          {
+                            "+": [
+                              {
+                                "var": "currentScreen.form.pc_custom_amount_2"
+                              },
+                              0
+                            ]
+                          },
+                          0
+                        ]
+                      },
                       { "var": "currentScreen.form.selected_payment_method" }
                     ]
                   },
@@ -41,12 +54,40 @@
                                   "D"
                                 ]
                               },
-                              { "var": "currentScreen.form.pc_custom_amount_2" }
+                              {
+                                "var": "currentScreen.form.pc_custom_amount_2"
+                              },
+                              {
+                                ">": [
+                                  {
+                                    "+": [
+                                      {
+                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                      },
+                                      0
+                                    ]
+                                  },
+                                  0
+                                ]
+                              }
                             ]
                           },
                           {
                             "and": [
                               { "var": "currentScreen.form.pc_custom_amount" },
+                              {
+                                ">": [
+                                  {
+                                    "+": [
+                                      {
+                                        "var": "currentScreen.form.pc_custom_amount"
+                                      },
+                                      0
+                                    ]
+                                  },
+                                  0
+                                ]
+                              },
                               {
                                 "in": [
                                   { "var": "currentScreen.selectedAmountType" },
@@ -61,62 +102,23 @@
                   }
                 ]
               },
-              "triggerName": "PC_CHECK_FOR_OTP",
-              "triggerId": "rrQqlNSadFwk8ZuCTZ0h2",
+              "triggerName": "PC_DATA_EXTRACTION_AND_REVIEW_PAYMENT",
+              "triggerId": "iURAigA6NRiOh2i-5iCxv",
               "services": [
                 {
-                  "type": "13",
+                  "type": "2",
                   "command": {
                     "type": "1",
                     "attributes": {
+                      "delay": "",
                       "triggers": [
                         {
-                          "logic": {
-                            "and": [
-                              {
-                                "if": [
-                                  {
-                                    "and": [
-                                      {
-                                        "==": [
-                                          { "var": "currentScreen.page_name" },
-                                          "Pay cards"
-                                        ]
-                                      },
-                                      {
-                                        "==": [
-                                          {
-                                            "var": "currentScreen.selected_tab"
-                                          },
-                                          "other cards"
-                                        ]
-                                      },
-                                      {
-                                        "==": [
-                                          {
-                                            "var": "currentScreen.form.selected_payment_method.type"
-                                          },
-                                          "DebitCard"
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  false,
-                                  true
-                                ]
-                              },
-                              {
-                                "==": [
-                                  {
-                                    "var": "currentScreen.pc_check_otp.content.otpRequired"
-                                  },
-                                  "0"
-                                ]
-                              }
-                            ]
-                          },
-                          "triggerName": "PC_PAY_API_DATA_EXTRACTION",
-                          "triggerId": "d1CIMs_GuPR1t1d3RvvpI",
+                          "id": "d1CIMs_GuPR1t1d3RvvpI",
+                          "_id": "VifWa7CKTLc6XSWNvuu3N",
+                          "name": "PC_PAY_API_DATA_EXTRACTION",
+                          "old_name": "PC_PAY_API_DATA_EXTRACTION",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
                           "services": [
                             {
                               "type": "11",
@@ -132,6 +134,73 @@
                                   "sourceStoreType": 2,
                                   "destinationStoreType": 2,
                                   "filterList": [
+                                    {
+                                      "key": "amount",
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "if": [
+                                          {
+                                            "==": [
+                                              {
+                                                "var": "currentScreen.page_name"
+                                              },
+                                              "Pay cards"
+                                            ]
+                                          },
+                                          {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.selected_tab"
+                                                  },
+                                                  "other cards"
+                                                ]
+                                              },
+                                              {
+                                                "var": "currentScreen.pc_custom_amount_2"
+                                              },
+                                              {
+                                                "if": [
+                                                  {
+                                                    "==": [
+                                                      {
+                                                        "var": "currentScreen.form.current_card.cardType"
+                                                      },
+                                                      "VISA CARDY-EX"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                                  },
+                                                  {
+                                                    "if": [
+                                                      {
+                                                        "==": [
+                                                          {
+                                                            "var": "currentScreen.selectedAmountType"
+                                                          },
+                                                          "D"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                                      },
+                                                      {
+                                                        "var": "currentScreen.form.pc_custom_amount"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "var": "currentScreen.form.pc_custom_amount_2"
+                                          }
+                                        ]
+                                      }
+                                    },
                                     {
                                       "key": "creditCardNumber",
                                       "changeValueConditonally": true,
@@ -341,95 +410,16 @@
                                       }
                                     },
                                     {
-                                      "key": "amount",
+                                      "key": "currency",
                                       "changeValueConditonally": true,
                                       "logic": {
                                         "if": [
                                           {
                                             "==": [
                                               {
-                                                "var": "currentScreen.page_name"
+                                                "var": "currentScreen.selected_tab"
                                               },
-                                              "Pay cards"
-                                            ]
-                                          },
-                                          {
-                                            "if": [
-                                              {
-                                                "==": [
-                                                  {
-                                                    "var": "currentScreen.selected_tab"
-                                                  },
-                                                  "other cards"
-                                                ]
-                                              },
-                                              {
-                                                "var": "currentScreen.form.pc_custom_amount_2"
-                                              },
-                                              {
-                                                "if": [
-                                                  {
-                                                    "==": [
-                                                      {
-                                                        "var": "currentScreen.form.current_card.cardType"
-                                                      },
-                                                      "VISA CARDY-EX"
-                                                    ]
-                                                  },
-                                                  {
-                                                    "var": "currentScreen.form.pc_custom_amount_2"
-                                                  },
-                                                  {
-                                                    "if": [
-                                                      {
-                                                        "==": [
-                                                          {
-                                                            "var": "currentScreen.selectedAmountType"
-                                                          },
-                                                          "D"
-                                                        ]
-                                                      },
-                                                      {
-                                                        "var": "currentScreen.form.pc_custom_amount_2"
-                                                      },
-                                                      {
-                                                        "var": "currentScreen.form.pc_custom_amount"
-                                                      }
-                                                    ]
-                                                  }
-                                                ]
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "var": "currentScreen.form.pc_custom_amount_2"
-                                          }
-                                        ]
-                                      }
-                                    },
-                                    {
-                                      "key": "currency",
-                                      "changeValueConditonally": true,
-                                      "logic": {
-                                        "if": [
-                                          {
-                                            "and": [
-                                              {
-                                                "==": [
-                                                  {
-                                                    "var": "currentScreen.selected_tab"
-                                                  },
-                                                  "other cards"
-                                                ]
-                                              },
-                                              {
-                                                "==": [
-                                                  {
-                                                    "var": "currentScreen.page_name"
-                                                  },
-                                                  "Pay cards"
-                                                ]
-                                              }
+                                              "other cards"
                                             ]
                                           },
                                           null,
@@ -444,71 +434,44 @@
                                 }
                               }
                             }
-                          ]
+                          ],
+                          "csrf": "0.hbfw8rscq1cIqFRy6iHheKl--XcuZt_U",
+                          "updatedAt": "1/11/2024",
+                          "createdAt": "1/11/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
                         },
                         {
-                          "logic": {
-                            "and": [
-                              {
-                                "if": [
-                                  {
-                                    "and": [
-                                      {
-                                        "==": [
-                                          { "var": "currentScreen.page_name" },
-                                          "Pay cards"
-                                        ]
-                                      },
-                                      {
-                                        "==": [
-                                          {
-                                            "var": "currentScreen.selected_tab"
-                                          },
-                                          "other cards"
-                                        ]
-                                      },
-                                      {
-                                        "==": [
-                                          {
-                                            "var": "currentScreen.form.selected_payment_method.type"
-                                          },
-                                          "DebitCard"
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  false,
-                                  true
-                                ]
-                              },
-                              {
-                                "==": [
-                                  {
-                                    "var": "currentScreen.pc_check_otp.content.otpRequired"
-                                  },
-                                  "1"
-                                ]
-                              }
-                            ]
-                          },
-                          "triggerName": "PC_SHOW_OTP_MODAL",
-                          "triggerId": "dhxrwQzOC693OTYj7UAkp",
+                          "id": "iOqQaI2yK_Quc4Ia4CXcd",
+                          "gitBranchName": "master",
+                          "name": "PC_SHOW_REVIEW_PAYMENT_MODAL",
+                          "projectId": "652fcbce09869c3c809b3097",
                           "services": [
                             {
                               "type": "9",
                               "command": {
                                 "type": "1",
                                 "attributes": {
-                                  "widgetId": "wxqeXI1zuyZbvPx6p8J_N",
+                                  "widgetId": "TLxBhe9FKBGjVomH7ojh7",
                                   "content": "",
                                   "type": "",
-                                  "modalId": "Cm2PtP4rELRCywsCcv72s",
+                                  "modalId": "3WI5u8ga4ikq4k2JCP2xh",
                                   "toastContentType": "custom"
                                 }
                               }
                             }
-                          ]
+                          ],
+                          "csrf": "0.ma41t70l15Xzeg-BNNZGDJDtsz5fR8T",
+                          "_id": "rNzeKo5evvy7ZdtalDfcp",
+                          "updatedAt": "1/15/2024",
+                          "createdAt": "1/15/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
                         }
+                      ],
+                      "triggerIds": [
+                        "d1CIMs_GuPR1t1d3RvvpI",
+                        "iOqQaI2yK_Quc4Ia4CXcd"
                       ]
                     }
                   }
@@ -520,9 +483,9 @@
       }
     }
   ],
-  "csrf": "0.s7xxrueo8481LG1lI4dfN-r_ivdzbMlc",
-  "updatedAt": "1/27/2024",
-  "createdAt": "1/27/2024",
+  "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+  "updatedAt": "1/31/2024",
+  "createdAt": "1/31/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

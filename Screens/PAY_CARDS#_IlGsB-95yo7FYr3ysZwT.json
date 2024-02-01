@@ -289,6 +289,156 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "byX4GDV7kEZpfvxZXvX7t",
+            "triggerName": "PC_SAVE_STATIC_RESPONSE",
+            "serviceType": "13",
+            "attributes": {
+              "triggers": [
+                {
+                  "logic": {
+                    "if": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.pc_transaction_status" },
+                              "failed"
+                            ]
+                          },
+                          {
+                            "==": [
+                              { "var": "currentScreen.pc_benifit_transaction" },
+                              "pending"
+                            ]
+                          }
+                        ]
+                      },
+                      true,
+                      false
+                    ]
+                  },
+                  "triggerName": "PC_SAVE_FAILURE_MODAL_RESPONSE",
+                  "triggerId": "wOfF937GfHbJ6F7wt1OEG",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "15",
+                        "attributes": {
+                          "requestBody": [],
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "sourceBindingKey": "",
+                          "filterList": [
+                            {
+                              "key": "pc_release_payment",
+                              "changeValueConditonally": false,
+                              "storeType": 2,
+                              "logic": {
+                                "code": 0,
+                                "message": "Payment failed, please try again",
+                                "content": {}
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "logic": {
+                    "if": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.pc_transaction_status" },
+                              "success"
+                            ]
+                          },
+                          {
+                            "==": [
+                              { "var": "currentScreen.pc_benifit_transaction" },
+                              "pending"
+                            ]
+                          }
+                        ]
+                      },
+                      true,
+                      false
+                    ]
+                  },
+                  "triggerName": "PC_SAVE_SUCCESS_MODAL_RESPONSE",
+                  "triggerId": "qN-UaEfhN3fbzBuJp_DAc",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "15",
+                        "attributes": {
+                          "requestBody": [],
+                          "filterList": [
+                            {
+                              "key": "pc_release_payment",
+                              "changeValueConditonally": false,
+                              "storeType": 2,
+                              "logic": {
+                                "code": 1,
+                                "message": "Transaction successful",
+                                "content": {}
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "logic": {
+                    "if": [
+                      {
+                        "and": [
+                          { "var": "currentScreen.pc_transaction_status" },
+                          {
+                            "==": [
+                              { "var": "currentScreen.pc_benifit_transaction" },
+                              "pending"
+                            ]
+                          }
+                        ]
+                      },
+                      true,
+                      false
+                    ]
+                  },
+                  "triggerName": "PC_SHOW_RESPONSE",
+                  "triggerId": "0ng9Cais2R8XaYCuWV8sW",
+                  "services": [
+                    {
+                      "type": "9",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                          "content": "",
+                          "type": "",
+                          "modalId": "sPJCtcvlqTb0R-9vY8i1T",
+                          "toastContentType": "custom"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "order": 1,
@@ -301,7 +451,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "9E6hp3fmNNhtMOEpg9Rla",
+            "id": "XAFsDVs3MpGaxu1kYkb79",
             "gridProps": [
               {
                 "id": "3WI5u8ga4ikq4k2JCP2xh",
@@ -897,7 +1047,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "L7a7W4-kWoSVsspk3GwRT",
+                                    "id": "_DPAK1PPgh6zkNCM3z9iz",
                                     "gridProps": [],
                                     "layoutProperties": {
                                       "xl": 12,
@@ -921,7 +1071,6 @@
                                   "layoutProperties": {
                                     "gridLayout": {
                                       "//": "Use this class to style grid layout component.",
-                                      "padding": "5px",
                                       "spacing": 0
                                     },
                                     "mainContainer": "gridLayout"
@@ -939,7 +1088,7 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "3-0-0-0-2-1-1"
+                                "path": "3-0-1-0-3-1-1"
                               }
                             ],
                             "layoutProperties": {
@@ -2178,7 +2327,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "0udAS0HFTeNQTGH5O6fjD",
+                                                    "id": "wqRr7yCG71grZt0_Z3ZOg",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -5871,8 +6020,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-1-0-0-0-1-0-0-0-1-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -5926,7 +6074,7 @@
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-1-0-0-0-1-0-0-0-1"
+                                                "path": "3-0-2-0-0-0-1-0-0-0-1"
                                               },
                                               {
                                                 "type": "10001",
@@ -7615,7 +7763,7 @@
                                                                                                     "sm": 12,
                                                                                                     "xs": 12
                                                                                                   },
-                                                                                                  "label": "accountType",
+                                                                                                  "label": "accountTypeName",
                                                                                                   "searchInState": true,
                                                                                                   "storeType": 2,
                                                                                                   "cssClassNames": [
@@ -7638,7 +7786,7 @@
                                                                                                   "type": "20002"
                                                                                                 },
                                                                                                 "events": [],
-                                                                                                "path": "0-0-1-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1"
+                                                                                                "path": "3-0-2-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1"
                                                                                               }
                                                                                             ],
                                                                                             "layoutProperties": {
@@ -8856,7 +9004,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "aBdwi-oWakYdDvVwJng6y",
+                                                                            "id": "FJYyw0LTC8-iS2C7YvANI",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -8864,7 +9012,7 @@
                                                                                 "gridProps": [
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "sdaRY40XPuljrmu36pds0",
+                                                                                    "id": "8qxBkGaoM9TpfyUVYfUSk",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -8998,7 +9146,7 @@
                                                                                   },
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "mE6tFvVs964NJ82TjavAv",
+                                                                                    "id": "KfiC_x9Dqev6KJ6PN8vMS",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -9152,7 +9300,7 @@
                                                                                   },
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "v1eiTcmZfL2vSiQljSp7I",
+                                                                                    "id": "Tt-XZK6Yrof8QYrCfsH1u",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -9216,7 +9364,7 @@
                                                                                     }
                                                                                   }
                                                                                 ],
-                                                                                "path": "0-0-1-0-0-0-1-0-1-0-1-0-1-0-0-0-0-0-0",
+                                                                                "path": "3-0-2-0-0-0-1-0-1-0-1-0-1-0-0-0-0-0-0",
                                                                                 "events": [
                                                                                   {
                                                                                     "triggerId": "eYaHZ6ZKOnER41P7_Jfic",
@@ -9383,8 +9531,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-0-0-1-0-1-0-1-0-1-0-0-0-0-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "allowedContainers": [
@@ -9411,14 +9558,37 @@
                                                                             "alignItems": "flex-start"
                                                                           },
                                                                           "direction": "row",
-                                                                          "name": "Grid layout"
+                                                                          "name": "Grid layout",
+                                                                          "conditionalClasses": [
+                                                                            {
+                                                                              "cssClassName": "PC_CARD_POSITION_CLASS",
+                                                                              "logic": {
+                                                                                "and": [
+                                                                                  {
+                                                                                    "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard"
+                                                                                  },
+                                                                                  {
+                                                                                    "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+                                                                                  },
+                                                                                  {
+                                                                                    "%": [
+                                                                                      {
+                                                                                        "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+                                                                                      },
+                                                                                      2
+                                                                                    ]
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            }
+                                                                          ]
                                                                         },
                                                                         "events": [],
                                                                         "component": {
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-1-0-0-0-1-0-1-0-1-0-1-0-0-0-0"
+                                                                        "path": "3-0-2-0-0-0-1-0-1-0-1-0-1-0-0-0-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -9566,7 +9736,7 @@
                                                                                 "gridProps": [
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "y-IA2lNO11pFr3zRTxyjt",
+                                                                                    "id": "phLG0O46UeOaL0XyOJg2F",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -9673,7 +9843,7 @@
                                                                                   },
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "Vdx2F4sF6G6PdFvBLyjCb",
+                                                                                    "id": "rpKuDbtw9Z855EEa43Wvz",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "type": "10001",
@@ -9851,6 +10021,19 @@
                                                                                                 "var": "currentScreen.form.pc_custom_amount_2"
                                                                                               },
                                                                                               {
+                                                                                                ">": [
+                                                                                                  {
+                                                                                                    "+": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                      },
+                                                                                                      0
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  0
+                                                                                                ]
+                                                                                              },
+                                                                                              {
                                                                                                 "var": "currentScreen.form.selected_payment_method"
                                                                                               }
                                                                                             ]
@@ -9874,6 +10057,19 @@
                                                                                                       },
                                                                                                       {
                                                                                                         "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        ">": [
+                                                                                                          {
+                                                                                                            "+": [
+                                                                                                              {
+                                                                                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                              },
+                                                                                                              0
+                                                                                                            ]
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
                                                                                                       }
                                                                                                     ]
                                                                                                   },
@@ -9881,6 +10077,19 @@
                                                                                                     "and": [
                                                                                                       {
                                                                                                         "var": "currentScreen.form.pc_custom_amount"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        ">": [
+                                                                                                          {
+                                                                                                            "+": [
+                                                                                                              {
+                                                                                                                "var": "currentScreen.form.pc_custom_amount"
+                                                                                                              },
+                                                                                                              0
+                                                                                                            ]
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
                                                                                                       },
                                                                                                       {
                                                                                                         "in": [
@@ -13926,7 +14135,7 @@
                                                                                             "sm": 12,
                                                                                             "xs": 12
                                                                                           },
-                                                                                          "label": "accountType",
+                                                                                          "label": "accountTypeName",
                                                                                           "searchInState": true,
                                                                                           "storeType": 2,
                                                                                           "cssClassNames": [
@@ -13949,7 +14158,7 @@
                                                                                           "type": "20002"
                                                                                         },
                                                                                         "events": [],
-                                                                                        "path": "0-0-1-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1"
+                                                                                        "path": "3-0-2-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1"
                                                                                       }
                                                                                     ],
                                                                                     "layoutProperties": {
@@ -15003,7 +15212,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "-WDWmpGFsv97X4DgrtM-h",
+                                                                    "id": "l91Tbrvktur3t3ovL1WZ2",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -15362,7 +15571,7 @@
                                                                             }
                                                                           }
                                                                         ],
-                                                                        "path": "0-0-1-0-1-0-1-0-1-0-1-0-0-0-0-0-0",
+                                                                        "path": "3-0-2-0-1-0-1-0-1-0-1-0-0-0-0-0-0",
                                                                         "events": [
                                                                           {
                                                                             "triggerId": "yN2tlnUQBuMCM8jN3xKND",
@@ -15489,8 +15698,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-1-0-1-0-1-0-1-0-1-0-0-0-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -15517,14 +15725,37 @@
                                                                     "alignItems": "flex-start"
                                                                   },
                                                                   "direction": "row",
-                                                                  "name": "Grid layout"
+                                                                  "name": "Grid layout",
+                                                                  "conditionalClasses": [
+                                                                    {
+                                                                      "cssClassName": "PC_CARD_POSITION_CLASS",
+                                                                      "logic": {
+                                                                        "and": [
+                                                                          {
+                                                                            "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard"
+                                                                          },
+                                                                          {
+                                                                            "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+                                                                          },
+                                                                          {
+                                                                            "%": [
+                                                                              {
+                                                                                "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+                                                                              },
+                                                                              2
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ]
                                                                 },
                                                                 "events": [],
                                                                 "component": {
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-1-0-1-0-1-0-1-0-1-0-0-0-0"
+                                                                "path": "3-0-2-0-1-0-1-0-1-0-1-0-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -15672,7 +15903,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "mlquaMQ2I8jyD6F5b1T0D",
+                                                                            "id": "Vte8KXjCGYuGBzMwX8Zsj",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -15779,7 +16010,7 @@
                                                                           },
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "OXdHk4pUguABdiXTjKWaS",
+                                                                            "id": "_RX98asTbBst6r6R7dacu",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -15945,6 +16176,19 @@
                                                                                 "and": [
                                                                                   {
                                                                                     "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                  },
+                                                                                  {
+                                                                                    ">": [
+                                                                                      {
+                                                                                        "+": [
+                                                                                          {
+                                                                                            "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                          },
+                                                                                          0
+                                                                                        ]
+                                                                                      },
+                                                                                      0
+                                                                                    ]
                                                                                   },
                                                                                   {
                                                                                     "var": "currentScreen.form.pc_cpr"
@@ -16669,8 +16913,8 @@
     "gitBranchName": "master",
     "_id": "_IlGsB-95yo7FYr3ysZwT",
     "createdBy": "talha",
-    "updatedAt": "1/28/2024",
-    "createdAt": "1/28/2024",
+    "updatedAt": "2/1/2024",
+    "createdAt": "2/1/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16872,6 +17116,12 @@
       {
         "triggerId": "I50qjsCYW_G4PjFktBPYS",
         "triggerName": "PC_CHECK_IF_OTP_REQUIRED",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "byX4GDV7kEZpfvxZXvX7t",
+        "triggerName": "PC_SAVE_STATIC_RESPONSE",
         "name": "On initialization",
         "type": "1"
       }
@@ -17477,7 +17727,6 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px",
           "spacing": 0
         },
         "mainContainer": "gridLayout"
@@ -22710,7 +22959,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "accountType",
+      "label": "accountTypeName",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "PC_RADIO_LABEL " }]
@@ -22726,7 +22975,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1",
+    "path": "3-0-2-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1",
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -23552,7 +23801,28 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "conditionalClasses": [
+        {
+          "cssClassName": "PC_CARD_POSITION_CLASS",
+          "logic": {
+            "and": [
+              { "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard" },
+              {
+                "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+              },
+              {
+                "%": [
+                  {
+                    "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+                  },
+                  2
+                ]
+              }
+            ]
+          }
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -24151,6 +24421,17 @@
               {
                 "and": [
                   { "var": "currentScreen.form.pc_custom_amount_2" },
+                  {
+                    ">": [
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          0
+                        ]
+                      },
+                      0
+                    ]
+                  },
                   { "var": "currentScreen.form.selected_payment_method" }
                 ]
               },
@@ -24167,12 +24448,38 @@
                               "D"
                             ]
                           },
-                          { "var": "currentScreen.form.pc_custom_amount_2" }
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          {
+                            ">": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          }
                         ]
                       },
                       {
                         "and": [
                           { "var": "currentScreen.form.pc_custom_amount" },
+                          {
+                            ">": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          },
                           {
                             "in": [
                               { "var": "currentScreen.selectedAmountType" },
@@ -26871,7 +27178,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "accountType",
+      "label": "accountTypeName",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "PC_RADIO_LABEL " }]
@@ -26887,7 +27194,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1",
+    "path": "3-0-2-0-1-0-1-0-1-0-0-0-0-0-0-0-0-1-0-0-1",
     "screenId": "_IlGsB-95yo7FYr3ysZwT",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -27650,7 +27957,28 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "conditionalClasses": [
+        {
+          "cssClassName": "PC_CARD_POSITION_CLASS",
+          "logic": {
+            "and": [
+              { "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard" },
+              {
+                "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+              },
+              {
+                "%": [
+                  {
+                    "var": "currentScreen.paymentMethods.bbkAccountsAndDebitCard.length"
+                  },
+                  2
+                ]
+              }
+            ]
+          }
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -28238,6 +28566,14 @@
           "logic": {
             "and": [
               { "var": "currentScreen.form.pc_custom_amount_2" },
+              {
+                ">": [
+                  {
+                    "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0]
+                  },
+                  0
+                ]
+              },
               { "var": "currentScreen.form.pc_cpr" },
               { "var": "currentScreen.form.pc_card_number" },
               {

@@ -85,7 +85,35 @@
         "updatedAt": "23-Sep-2021",
         "Documentation": "<div>\n<table style=\"border-collapse: collapse; width: 99.8899%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 48.4024%;\">1</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">2</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">43</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">6</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">7</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>\nWrite your Docu7mentationtestsdfasd</div>",
         "createdAt": "24-Aug-2021",
-        "events": [],
+        "events": [
+          {
+            "triggerId": "1ppNxOr0Iz7Mj8jlMya2x",
+            "triggerName": "PNC_CLEAR_LAST_PINS_STATES",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "newPin",
+                  "changeValueConditonally": true,
+                  "storeType": 1,
+                  "logic": null
+                },
+                {
+                  "key": "confirmPin",
+                  "storeType": 1,
+                  "changeValueConditonally": true
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
+          }
+        ],
         "order": 1,
         "version": "1.0.0",
         "isLatest": true,
@@ -96,7 +124,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "fKaIZGfk0hyQvnquU5H3w",
+            "id": "o685Yolqd_SOyn6BK2Im1",
             "gridProps": [
               {
                 "type": "10001",
@@ -319,7 +347,8 @@
                                   "label": "CURRENT_CARD.cardLastNumber",
                                   "enablePaginationSortingFilter": false,
                                   "searchInState": true,
-                                  "storeType": 2
+                                  "storeType": 2,
+                                  "prefix": "Card ending "
                                 },
                                 "icon": "FaFont",
                                 "group": "Form",
@@ -722,7 +751,23 @@
                                                                         "updatedTimestamp": "0000-00-00T00:00:00+00:00"
                                                                       }
                                                                     ],
-                                                                    "logic": ""
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "!=": [
+                                                                            {
+                                                                              "var": "form.pinChange"
+                                                                            },
+                                                                            {
+                                                                              "var": "form.oldPin"
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        true,
+                                                                        false
+                                                                      ]
+                                                                    },
+                                                                    "jsonLogicErrorMessage": "New PIN must be different from your existing PIN"
                                                                   },
                                                                   "passwordValidationType": "custom"
                                                                 },
@@ -738,7 +783,7 @@
                                                                   "type": "20008"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-0-0-0-0-1-0-0-0-1"
+                                                                "path": "1-0-1-0-0-0-0-0-0-0-1-0-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1014,7 +1059,7 @@
                                                                   "type": "20008"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-0-0-0-0-1-1-0-0-1"
+                                                                "path": "1-0-1-0-0-0-0-0-0-0-1-1-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1648,9 +1693,135 @@
                                                             "type": "2",
                                                             "name": "On click",
                                                             "commandType": "3"
+                                                          },
+                                                          {
+                                                            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+                                                            "triggerName": "HIDE_MODAL_TRIGGER",
+                                                            "serviceType": "9",
+                                                            "attributes": {
+                                                              "content": "",
+                                                              "type": "",
+                                                              "modalId": "Hnd2p3GlKp2devIkjLNIH"
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "2"
+                                                          },
+                                                          {
+                                                            "triggerId": "zjstLbFLxC2mtw6cMg1wO",
+                                                            "triggerName": "PIN_CHANGE_VALIDATIONS_DELETE_CONDITIONAL",
+                                                            "serviceType": "13",
+                                                            "attributes": {
+                                                              "triggers": [
+                                                                {
+                                                                  "triggerName": "DELETE_PIN_CHANGE_VALIDATION",
+                                                                  "triggerId": "SMVHPDiilH-ayOeNI9sPo",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "11",
+                                                                      "command": {
+                                                                        "type": "4",
+                                                                        "attributes": {
+                                                                          "stateName": "pinChangeValidationResponse",
+                                                                          "storeType": 2,
+                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                          "dataType": "",
+                                                                          "sourceBindingKey": ""
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "logic": {
+                                                                    ">": [
+                                                                      {
+                                                                        "var": "currentScreen.pinChangeValidationResponse.message.length"
+                                                                      },
+                                                                      0
+                                                                    ]
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "logic": {
+                                                                    ">": [
+                                                                      {
+                                                                        "var": "currentScreen.pinChangeValidationResponse.message.length"
+                                                                      },
+                                                                      0
+                                                                    ]
+                                                                  },
+                                                                  "triggerName": "DELETE_PIN_CHANGE_SMS_PIN",
+                                                                  "triggerId": "fCnLRx3GXxWdmCwzz97En",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "11",
+                                                                      "command": {
+                                                                        "type": "4",
+                                                                        "attributes": {
+                                                                          "stateName": "smsPin",
+                                                                          "storeType": 1
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "1"
+                                                          },
+                                                          {
+                                                            "triggerId": "1ppNxOr0Iz7Mj8jlMya2x",
+                                                            "triggerName": "PNC_CLEAR_LAST_PINS_STATES",
+                                                            "serviceType": "11",
+                                                            "attributes": {
+                                                              "requestBody": [],
+                                                              "storeType": "",
+                                                              "selectedObjectBindingKey": "selectedObject",
+                                                              "dataType": "",
+                                                              "sourceBindingKey": "",
+                                                              "filterList": [
+                                                                {
+                                                                  "key": "pinChange",
+                                                                  "changeValueConditonally": true,
+                                                                  "storeType": 1,
+                                                                  "logic": null
+                                                                },
+                                                                {
+                                                                  "key": "pinConfirm",
+                                                                  "storeType": 1,
+                                                                  "changeValueConditonally": true
+                                                                }
+                                                              ]
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "15"
+                                                          },
+                                                          {
+                                                            "triggerId": "Xfl-2Tej3gl9s_taumVw8",
+                                                            "triggerName": "PNC_CLEAR_OLD_PIN_STATE",
+                                                            "serviceType": "11",
+                                                            "attributes": {
+                                                              "storeType": "",
+                                                              "selectedObjectBindingKey": "selectedObject",
+                                                              "dataType": "",
+                                                              "sourceBindingKey": "",
+                                                              "filterList": [
+                                                                {
+                                                                  "key": "oldPin",
+                                                                  "changeValueConditonally": true,
+                                                                  "storeType": 1,
+                                                                  "logic": null
+                                                                }
+                                                              ]
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "15"
                                                           }
                                                         ],
-                                                        "path": "0-0-1-0-0-0-1-5-0-0-0-0-0"
+                                                        "path": "1-0-1-0-0-0-1-5-0-0-0-0-0"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -2179,8 +2350,8 @@
     "gitBranchName": "master",
     "_id": "8WcofbPwBketq5CZeJghf",
     "createdBy": "basitahmed1199",
-    "updatedAt": "1/28/2024",
-    "createdAt": "1/28/2024",
+    "updatedAt": "2/1/2024",
+    "createdAt": "2/1/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2283,7 +2454,14 @@
       "name": "Grid layout"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "1ppNxOr0Iz7Mj8jlMya2x",
+        "triggerName": "PNC_CLEAR_LAST_PINS_STATES",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
     "screenId": "8WcofbPwBketq5CZeJghf",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2601,7 +2779,8 @@
       "label": "CURRENT_CARD.cardLastNumber",
       "enablePaginationSortingFilter": false,
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "prefix": "Card ending "
     },
     "icon": "FaFont",
     "group": "Form",
@@ -3190,7 +3369,14 @@
             "updatedTimestamp": "0000-00-00T00:00:00+00:00"
           }
         ],
-        "logic": ""
+        "logic": {
+          "if": [
+            { "!=": [{ "var": "form.pinChange" }, { "var": "form.oldPin" }] },
+            true,
+            false
+          ]
+        },
+        "jsonLogicErrorMessage": "New PIN must be different from your existing PIN"
       },
       "passwordValidationType": "custom"
     },
@@ -3203,7 +3389,7 @@
     "projectType": "web",
     "component": { "content": "Password", "type": "20008" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-0-0-1-0-0-0-1",
+    "path": "1-0-1-0-0-0-0-0-0-0-1-0-0-0-1",
     "screenId": "8WcofbPwBketq5CZeJghf",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3448,7 +3634,7 @@
     "projectType": "web",
     "component": { "content": "Password", "type": "20008" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-0-0-1-1-0-0-1",
+    "path": "1-0-1-0-0-0-0-0-0-0-1-1-0-0-1",
     "screenId": "8WcofbPwBketq5CZeJghf",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3899,9 +4085,37 @@
         "name": "On click",
         "type": "2",
         "serviceType": "1"
+      },
+      {
+        "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+        "triggerName": "HIDE_MODAL_TRIGGER",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
+      },
+      {
+        "triggerId": "zjstLbFLxC2mtw6cMg1wO",
+        "triggerName": "PIN_CHANGE_VALIDATIONS_DELETE_CONDITIONAL",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
+      },
+      {
+        "triggerId": "1ppNxOr0Iz7Mj8jlMya2x",
+        "triggerName": "PNC_CLEAR_LAST_PINS_STATES",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      },
+      {
+        "triggerId": "Xfl-2Tej3gl9s_taumVw8",
+        "triggerName": "PNC_CLEAR_OLD_PIN_STATE",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
       }
     ],
-    "path": "0-0-1-0-0-0-1-5-0-0-0-0-0",
+    "path": "1-0-1-0-0-0-1-5-0-0-0-0-0",
     "screenId": "8WcofbPwBketq5CZeJghf",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
