@@ -138,7 +138,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "s0ILjvQaRrIWXAFGX70dZ",
+                    "id": "rSkLNqtawPznTtdbVdXJK",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -1667,15 +1667,95 @@
                                                 },
                                                 "events": [
                                                   {
-                                                    "triggerId": "9U2vDdLGC-kXKtHiLnimY",
-                                                    "triggerName": "GENERATE_OTP_PIN_CODE_MODAL",
-                                                    "serviceType": "9",
+                                                    "triggerId": "-i3TmJ9eRBceSIxV9_M7O",
+                                                    "triggerName": "PNC_CHECK_FOR_OTP",
+                                                    "serviceType": "13",
                                                     "attributes": {
-                                                      "widgetId": "KSHSwla05UroT5UF8gh5r",
-                                                      "content": "",
-                                                      "type": "",
-                                                      "modalId": "Oo5megsCA47jZaOhVt2-Z",
-                                                      "toastContentType": "custom"
+                                                      "triggers": [
+                                                        {
+                                                          "triggerName": "PNC_GENERATE_OTP",
+                                                          "triggerId": "W09ImsV0b8E1RkOedAs4Y",
+                                                          "services": [
+                                                            {
+                                                              "type": "11",
+                                                              "command": {
+                                                                "type": "15",
+                                                                "attributes": {
+                                                                  "requestBody": [],
+                                                                  "storeType": "",
+                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                  "dataType": "",
+                                                                  "sourceBindingKey": "",
+                                                                  "filterList": [
+                                                                    {
+                                                                      "key": "pinOTP",
+                                                                      "changeValueConditonally": false,
+                                                                      "storeType": 2,
+                                                                      "logic": {
+                                                                        "cardNumber": "5599440000001852",
+                                                                        "validation": {
+                                                                          "tranCode": "1503",
+                                                                          "validationType": "OTP",
+                                                                          "isOtp": true,
+                                                                          "splitOtp": true,
+                                                                          "generationType": "2",
+                                                                          "otpExpiry": "4",
+                                                                          "smsPin": "252525",
+                                                                          "emailPin": "252525",
+                                                                          "is2FA": "1"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            }
+                                                          ],
+                                                          "logic": {
+                                                            "if": [
+                                                              {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                                                                  },
+                                                                  1
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        },
+                                                        {
+                                                          "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_02",
+                                                          "triggerId": "bsKnfGjvJVWr40qOTbERl",
+                                                          "services": [
+                                                            {
+                                                              "type": "1",
+                                                              "command": {
+                                                                "type": "3",
+                                                                "attributes": {
+                                                                  "fromWidgetId": "btRIBYETZIQ0IEIEW511E",
+                                                                  "nextWidgetId": "8WcofbPwBketq5CZeJghf",
+                                                                  "gridRadioValue": "Screen",
+                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                  "editableForm": false
+                                                                }
+                                                              }
+                                                            }
+                                                          ],
+                                                          "logic": {
+                                                            "if": [
+                                                              {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                                                                  },
+                                                                  0
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        }
+                                                      ]
                                                     },
                                                     "type": "2",
                                                     "name": "On click",
@@ -2044,6 +2124,55 @@
                     "type": "1",
                     "name": "On initialization",
                     "commandType": "6"
+                  },
+                  {
+                    "triggerId": "PTc0wvkuA50jIUPFfzVKJ",
+                    "triggerName": "DELETE_RANDOM_PIN_STATE",
+                    "serviceType": "11",
+                    "attributes": {
+                      "stateName": "randomPinGenerate",
+                      "storeType": 2,
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": ""
+                    },
+                    "type": "1",
+                    "name": "On initialization",
+                    "commandType": "4"
+                  },
+                  {
+                    "triggerId": "fQ-bbtqmYigzAlaeVouW1",
+                    "triggerName": "PNC_CHECK_OTP",
+                    "serviceType": "8",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "pncCheckOTP",
+                      "url": "v1/getCheckOTPRequired",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "transCode",
+                          "value": "transCode"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "type": "1",
+                    "name": "On initialization",
+                    "commandType": "1"
                   }
                 ],
                 "component": { "type": "10001", "content": "Grid layout" },
@@ -2346,6 +2475,18 @@
       {
         "triggerId": "vxHEuuvuSyBIQ3MbCwngH",
         "triggerName": "PNC_HIDE_NOTICE_GRID",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "PTc0wvkuA50jIUPFfzVKJ",
+        "triggerName": "DELETE_RANDOM_PIN_STATE",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "fQ-bbtqmYigzAlaeVouW1",
+        "triggerName": "PNC_CHECK_OTP",
         "name": "On initialization",
         "type": "1"
       }
@@ -3928,11 +4069,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "9U2vDdLGC-kXKtHiLnimY",
-        "triggerName": "GENERATE_OTP_PIN_CODE_MODAL",
+        "triggerId": "-i3TmJ9eRBceSIxV9_M7O",
+        "triggerName": "PNC_CHECK_FOR_OTP",
         "name": "On click",
         "type": "2",
-        "serviceType": "9"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-4-0-1-0-0-0-1-0-0",

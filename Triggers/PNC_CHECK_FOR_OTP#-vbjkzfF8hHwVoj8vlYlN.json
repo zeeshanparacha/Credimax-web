@@ -1,0 +1,109 @@
+{
+  "id": "-i3TmJ9eRBceSIxV9_M7O",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PNC_CHECK_FOR_OTP",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "PNC_GENERATE_OTP",
+              "triggerId": "W09ImsV0b8E1RkOedAs4Y",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "pinOTP",
+                          "changeValueConditonally": false,
+                          "storeType": 2,
+                          "logic": {
+                            "cardNumber": "5599440000001852",
+                            "validation": {
+                              "tranCode": "1503",
+                              "validationType": "OTP",
+                              "isOtp": true,
+                              "splitOtp": true,
+                              "generationType": "2",
+                              "otpExpiry": "4",
+                              "smsPin": "252525",
+                              "emailPin": "252525",
+                              "is2FA": "1"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_02",
+              "triggerId": "bsKnfGjvJVWr40qOTbERl",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "fromWidgetId": "btRIBYETZIQ0IEIEW511E",
+                      "nextWidgetId": "8WcofbPwBketq5CZeJghf",
+                      "gridRadioValue": "Screen",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.4odqnuo5gb9jHBo2wFGK5njV5wamyUT3",
+  "_id": "-vbjkzfF8hHwVoj8vlYlN",
+  "updatedAt": "2/1/2024",
+  "createdAt": "2/1/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}
