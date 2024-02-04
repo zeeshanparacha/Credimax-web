@@ -1,0 +1,99 @@
+{
+  "id": "yPMPd1OSfVOhhoKD0QeQZ",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "BBK_VALIDATE_OTP_AFTER_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "triggers": [
+            {
+              "id": "mFeMrN9uvpJwZEFTG-De2",
+              "_id": "VBoLDUR3HNE1Ff2f-kIZ1",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "BBK_VALIDATE_OTP",
+              "old_name": "BBK_VALIDATE_OTP",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "bbk_validate_otp_res",
+                      "successMessageBindingKey": "bbk_validate_otp_res_sccess",
+                      "errorMessageBindingKey": "bbk_validate_otp_res_error",
+                      "url": "/v1/validateBBKOTP",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "cpr",
+                          "value": "cpr"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "reference",
+                          "value": "bbk_gen_otp_res.content.reference"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "pc_validation_object"
+                        }
+                      ],
+                      "baseURL": "6566efa5a131d92664c8dd76",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "GO_TO_SIGNUP5_FROM_BBK_OTP",
+                        "triggerId": "3k4FJykvcXHht-JPS7m7h"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.brue7l9fuztZ_ha48-JujpkF69HnAxsP",
+              "updatedAt": "2/4/2024",
+              "createdAt": "2/4/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["mFeMrN9uvpJwZEFTG-De2"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.brue7l9fuztZ_ha48-JujpkF69HnAxsP",
+  "_id": "9WWGXa6CukTiLcxcM5B40",
+  "updatedAt": "2/4/2024",
+  "createdAt": "2/4/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

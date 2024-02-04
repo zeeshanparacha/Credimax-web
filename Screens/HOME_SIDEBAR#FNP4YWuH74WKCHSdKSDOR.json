@@ -128,6 +128,140 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "6"
+          },
+          {
+            "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+            "triggerName": "PC_SHOW_RESPONSE_AFTER_REDIRECTION",
+            "serviceType": "2",
+            "attributes": {
+              "delay": "",
+              "triggers": [
+                {
+                  "id": "41gSb3bfIaosn_s21751x",
+                  "name": "PC_READ_TRANSACTION_STATUS",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "16",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "destinationBindingKey": "pc_transaction_status",
+                          "sourceBindingKey": "",
+                          "destinationStoreType": 2,
+                          "value": "pc_transaction_status"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "BGBiFX61hc8IgoSFmMV0s",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                },
+                {
+                  "id": "DsKdwEaMcbJZNndkv07lY",
+                  "name": "PC_READ_MODE",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "16",
+                        "attributes": {
+                          "destinationBindingKey": "app_mode",
+                          "destinationStoreType": 3,
+                          "value": "app_mode"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "7ps-7PMyghI3mrXjlGWsE",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                },
+                {
+                  "_id": "JL-KLTK5AB91c2y9iOmte",
+                  "id": "YAD0VBWe_MQ8WP0vGAyH9",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "PC_REDIRECT_TO_PAY_CARDS_FOR_BENIFIT_RES",
+                  "old_name": "PC_REDIRECT_TO_PAY_CARDS_FOR_BENIFIT_RES",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "13",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "triggers": [
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "and": [
+                                      {
+                                        "var": "currentScreen.pc_transaction_status"
+                                      },
+                                      {
+                                        "!": {
+                                          "var": "currentScreen.pc_benifit_transaction"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  true,
+                                  false
+                                ]
+                              },
+                              "triggerName": "GO_TO_PAY_CARDS",
+                              "triggerId": "UFA2TfzcJX-Frio45Fhbr",
+                              "services": [
+                                {
+                                  "type": "1",
+                                  "command": {
+                                    "type": "3",
+                                    "attributes": {
+                                      "nextWidgetId": "_IlGsB-95yo7FYr3ysZwT",
+                                      "gridRadioValue": "Grid",
+                                      "selectedObjectBindingKey": "",
+                                      "editableForm": false
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+                  "updatedAt": "2/1/2024",
+                  "createdAt": "2/1/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                }
+              ],
+              "triggerIds": [
+                "41gSb3bfIaosn_s21751x",
+                "DsKdwEaMcbJZNndkv07lY",
+                "YAD0VBWe_MQ8WP0vGAyH9"
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "order": 1,
@@ -140,7 +274,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "srD7OCt-lmBkzc3wGkhWP",
+            "id": "iojqiVn4oZvRLWhCISm2p",
             "gridProps": [
               {
                 "id": "FZN5XJNMRzipvETtOJ0BG",
@@ -1439,7 +1573,7 @@
             },
             "subMenuItemClass": {
               "color": "#99B5CF",
-              "height": "47px",
+              "height": "42px",
               "fontSize": "12px",
               "background": "transparent"
             },
@@ -1487,7 +1621,9 @@
           "togglerStoreType": 3,
           "permissions": {
             "1507": "f13AvBz-MxRN_G3tIFHUF",
+            "1527": "rYtDbsberGXV4Pu90LA2-",
             "87353": "yHNYfgIiRzbDXJDQXQ2fr",
+            "87453": "dskyIH1JZwmsPb7LCOc0e",
             "87745": "_IlGsB-95yo7FYr3ysZwT"
           },
           "homePageID": "yHNYfgIiRzbDXJDQXQ2fr",
@@ -1506,10 +1642,21 @@
                 "id": "f13AvBz-MxRN_G3tIFHUF",
                 "name": "TRANSFER_BETWEEN_WALLETS"
               }
+            },
+            {
+              "permission": "87453",
+              "screen": { "id": "dskyIH1JZwmsPb7LCOc0e", "name": "CONTACT_US" }
+            },
+            {
+              "permission": "1527",
+              "screen": { "id": "rYtDbsberGXV4Pu90LA2-", "name": "BBK_SERVICE" }
             }
           ],
           "iconType": "dynamic",
-          "submenuIconKey": "transCode"
+          "submenuIconKey": "transCode",
+          "hideChildIcons": true,
+          "menuActiveIconKey": "activeIcon",
+          "submenuActiveIconKey": "activeIcon"
         },
         "path": "2",
         "version": "1.0.0",
@@ -1584,8 +1731,8 @@
     "gitBranchName": "master",
     "_id": "FNP4YWuH74WKCHSdKSDOR",
     "createdBy": "talha",
-    "updatedAt": "2/1/2024",
-    "createdAt": "2/1/2024",
+    "updatedAt": "2/4/2024",
+    "createdAt": "2/4/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1673,6 +1820,12 @@
       {
         "triggerId": "RByfz427GmCcEwMZgpDBe",
         "triggerName": "SIDEBAR_TOGGLER",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+        "triggerName": "PC_SHOW_RESPONSE_AFTER_REDIRECTION",
         "name": "On initialization",
         "type": "1"
       }
@@ -2726,7 +2879,7 @@
         },
         "subMenuItemClass": {
           "color": "#99B5CF",
-          "height": "47px",
+          "height": "42px",
           "fontSize": "12px",
           "background": "transparent"
         },
@@ -2774,7 +2927,9 @@
       "togglerStoreType": 3,
       "permissions": {
         "1507": "f13AvBz-MxRN_G3tIFHUF",
+        "1527": "rYtDbsberGXV4Pu90LA2-",
         "87353": "yHNYfgIiRzbDXJDQXQ2fr",
+        "87453": "dskyIH1JZwmsPb7LCOc0e",
         "87745": "_IlGsB-95yo7FYr3ysZwT"
       },
       "homePageID": "yHNYfgIiRzbDXJDQXQ2fr",
@@ -2793,10 +2948,21 @@
             "id": "f13AvBz-MxRN_G3tIFHUF",
             "name": "TRANSFER_BETWEEN_WALLETS"
           }
+        },
+        {
+          "permission": "87453",
+          "screen": { "id": "dskyIH1JZwmsPb7LCOc0e", "name": "CONTACT_US" }
+        },
+        {
+          "permission": "1527",
+          "screen": { "id": "rYtDbsberGXV4Pu90LA2-", "name": "BBK_SERVICE" }
         }
       ],
       "iconType": "dynamic",
       "submenuIconKey": "transCode",
+      "hideChildIcons": true,
+      "menuActiveIconKey": "activeIcon",
+      "submenuActiveIconKey": "activeIcon",
       "gridProps": [
         {
           "componentId": "uM4PpBmLAbJljgV_qFAzD",

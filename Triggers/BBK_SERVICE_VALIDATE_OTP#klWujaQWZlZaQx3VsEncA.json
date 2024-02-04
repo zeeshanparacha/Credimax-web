@@ -1,0 +1,70 @@
+{
+  "id": "gZ_c-zWcTZW0XOUB_dqI1",
+  "_id": "klWujaQWZlZaQx3VsEncA",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "BBK_SERVICE_VALIDATE_OTP",
+  "old_name": "BBK_SERVICE_VALIDATE_OTP",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "bbk_validate_otp_res",
+          "errorMessageBindingKey": "bbk_validate_otp_res",
+          "url": "/payment/payCard/v1/validateBBKOTP",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "reference",
+              "value": "pc_gen_bbk_otp.content.reference"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "validation",
+              "value": "pc_validation_object"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "BBK_SHOW_MESSAGE",
+            "triggerId": "7LeqdCqwhI8ztfgf-OsKZ"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "BBK_SET_CONCENT",
+            "triggerId": "eyco1kJhsuky2rSt96Uw9"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.tlotrhwz0cobJ83inwAY0QUnTL59rxy",
+  "updatedAt": "2/5/2024",
+  "createdAt": "2/5/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

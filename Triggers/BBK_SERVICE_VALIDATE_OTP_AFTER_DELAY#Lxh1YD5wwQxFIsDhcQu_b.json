@@ -1,0 +1,98 @@
+{
+  "_id": "Lxh1YD5wwQxFIsDhcQu_b",
+  "id": "PnPWQY97O-yNC2uZ_byyZ",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "BBK_SERVICE_VALIDATE_OTP_AFTER_DELAY",
+  "old_name": "PC_VALIDATE_BBK_OTP",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "triggers": [
+            {
+              "id": "gZ_c-zWcTZW0XOUB_dqI1",
+              "_id": "klWujaQWZlZaQx3VsEncA",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "BBK_SERVICE_VALIDATE_OTP",
+              "old_name": "PC_VALIDATE_BBK_OTP",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "pc_validate_otp_res",
+                      "errorMessageBindingKey": "pc_validate_otp_res_error",
+                      "url": "/payment/payCard/v1/validateBBKOTP",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "reference",
+                          "value": "pc_gen_bbk_otp.content.reference"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "pc_request.validation"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "triggerName": "PC_CLEAR_VALIDATION_IN_PAY_REQ",
+                        "triggerId": "CUQoS6M6bTHxzWRsDwSUT"
+                      },
+                      {
+                        "httpStatus": 200,
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "triggerName": "PC_RELEASE_PAYMENT_AFTER_DELAY",
+                        "triggerId": "VYNiUt31ZC6urv4urOYu2"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
+              "updatedAt": "2/4/2024",
+              "createdAt": "2/4/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["gZ_c-zWcTZW0XOUB_dqI1"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.1hmu4r06rk1lCuXn_SpxTenSAXyYv4DU",
+  "updatedAt": "2/4/2024",
+  "createdAt": "2/4/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

@@ -12,15 +12,13 @@
       "command": {
         "type": "2",
         "attributes": {
-          "delay": "",
+          "delay": "500",
           "triggers": [
             {
-              "id": "PnPWQY97O-yNC2uZ_byyZ",
-              "_id": "Lxh1YD5wwQxFIsDhcQu_b",
+              "id": "Bny_PwKs4RaRec2RWtF3U",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
-              "name": "PC_VALIDATE_BBK_OTP",
-              "old_name": "PC_VALIDATE_BBK_OTP",
+              "name": "PC_VALIDATE_BBK_OTP_API",
               "status": "ACTIVE",
               "services": [
                 {
@@ -30,7 +28,7 @@
                     "attributes": {
                       "loaderWidgetIds": [906070],
                       "messageWidgetIds": [906070],
-                      "responseStateKey": "pc_validate_otp_res",
+                      "responseStateKey": " pc_validate_otp_res",
                       "url": "/payment/payCard/v1/validateBBKOTP",
                       "checksum": true,
                       "encryption": true,
@@ -62,30 +60,37 @@
                     },
                     "responseHandler": [
                       {
-                        "httpStatus": 200,
                         "logic": { "==": [{ "var": "code" }, 1] },
-                        "triggerName": "PC_DATA_EXTRACTION_AND_REVIEW_PAYMENT",
-                        "triggerId": "iURAigA6NRiOh2i-5iCxv"
+                        "httpStatus": 200,
+                        "triggerName": "PC_RELEASE_PAYMENT",
+                        "triggerId": "elnEko_omNaCE0qTjGx8U"
+                      },
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "HIDE_MODAL_TRIGGER",
+                        "triggerId": "0jfXBfYTEBK8TaReZW9Xd"
                       }
                     ]
                   }
                 }
               ],
-              "csrf": "0.amxcesprtuhIfoVkZZ9_80fP0c9JsQ0I",
-              "updatedAt": "1/29/2024",
-              "createdAt": "1/29/2024",
-              "createdBy": "talha2",
-              "updatedBy": "talha2"
+              "csrf": "0.tlotrhwz0cobJ83inwAY0QUnTL59rxy",
+              "_id": "ton06X8SYd1TD0VGPqz2q",
+              "updatedAt": "2/5/2024",
+              "createdAt": "2/5/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
             }
           ],
-          "triggerIds": ["PnPWQY97O-yNC2uZ_byyZ"]
+          "triggerIds": ["Bny_PwKs4RaRec2RWtF3U"]
         }
       }
     }
   ],
-  "csrf": "0.amxcesprtuhIfoVkZZ9_80fP0c9JsQ0I",
-  "updatedAt": "1/29/2024",
-  "createdAt": "1/29/2024",
-  "createdBy": "talha2",
-  "updatedBy": "talha2"
+  "csrf": "0.tlotrhwz0cobJ83inwAY0QUnTL59rxy",
+  "updatedAt": "2/5/2024",
+  "createdAt": "2/5/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }
