@@ -1,0 +1,79 @@
+{
+  "id": "0ZbxBIbQe-kc1jzAlHypC",
+  "_id": "ltGD8dbqnXty39WjBkDFd",
+  "name": "VALIDATION_FOR_SUPPLEMENTARY_LIMIT",
+  "old_name": "VALIDATION_FOR_SUPPLEMENTARY_LIMIT",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "6",
+        "attributes": {
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "destinationBindingKey": "setLimitValidation",
+          "sourceBindingKey": "form",
+          "sourceStoreType": 2,
+          "destinationStoreType": 2,
+          "filterList": [
+            {
+              "key": "tranCode",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "1546", "1546"] }
+            },
+            {
+              "key": "validationType",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "OTP", "OTP"] }
+            },
+            {
+              "key": "isOtp",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, true, true] }
+            },
+            {
+              "key": "splitOtp",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, true, true] }
+            },
+            {
+              "key": "generationType",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "2", "2"] }
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "4", "4"] },
+              "key": "otpExpiry"
+            },
+            {
+              "changeValueConditonally": true,
+              "key": "is2FA",
+              "logic": { "if": [true, "1", "1"] }
+            },
+            {
+              "key": "smsPin",
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.validation.smsPin" }
+            },
+            {
+              "key": "emailPin",
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.validation.smsPin" }
+            }
+          ],
+          "targettedType": "object"
+        }
+      }
+    }
+  ],
+  "csrf": "0.pzh7x5isz7nl1eezia17hw26HvKHSmh5",
+  "updatedAt": "2/11/2024",
+  "createdAt": "2/11/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

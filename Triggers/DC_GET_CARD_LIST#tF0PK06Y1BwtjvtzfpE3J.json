@@ -1,8 +1,10 @@
 {
   "id": "rF_hYyId1goAuvX9SsoEJ",
+  "_id": "tF0PK06Y1BwtjvtzfpE3J",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "DC_GET_CARD_LIST",
+  "old_name": "DC_GET_CARD_LIST",
   "status": "ACTIVE",
   "services": [
     {
@@ -13,7 +15,7 @@
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
           "responseStateKey": "dc_list_response",
-          "url": "/cardList",
+          "url": "/payment/payCard/v1/getBBKAccountAndDebitCards",
           "checksum": true,
           "encryption": true,
           "isDeviceDetails": true,
@@ -22,23 +24,28 @@
           "logoutTrigger": false,
           "headers": {
             "Content-Type": "application/json",
-            "Accept": "application/json",
-            "channel_key": "001",
-            "CSRF_TOKEN": "4c6e939d-db00-4697-82d8-b69bb05aef5a",
-            "locale": "en-ltr"
+            "channel_key": "002"
           },
-          "requestBody": [],
-          "baseURL": "65bce13f956b4d4044b9b859",
+          "requestBody": [
+            { "type": 4, "name": "Static", "key": "type", "value": "DebitCard" }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "DC_Filterred_Array",
+            "triggerId": "ebmk5P5ViFaKyPsC4kNTB"
+          }
+        ]
       }
     }
   ],
-  "csrf": "0.zmg578xeobc6xaMZuZx_oB78T2Hh_9oz",
-  "_id": "tF0PK06Y1BwtjvtzfpE3J",
-  "updatedAt": "2/2/2024",
-  "createdAt": "2/2/2024",
+  "csrf": "0.l7h5po3o9xhoTzbp1PzxxWuN6iApyIbA",
+  "updatedAt": "2/10/2024",
+  "createdAt": "2/10/2024",
   "createdBy": "masood",
   "updatedBy": "masood"
 }

@@ -1,0 +1,80 @@
+{
+  "id": "GkwL0R3MEqTC6JyMAMcUW",
+  "_id": "En3dCVutziJrg-6GGxpCy",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SET_SUPPLEMENTARY_CARD_LIMIT",
+  "old_name": "SET_SUPPLEMENTARY_CARD_LIMIT",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "setSupplementaryCardLimit",
+          "url": "/api-designer/api/setSupplementaryCardLimit/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.cardNumber",
+              "value": "current_card.cardNumber"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.currentlimit",
+              "value": "newLimit"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.validation",
+              "value": "setLimitValidation"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "SUPPLEMENTARY_CARD_LIMITE_SUCCES_POPUP",
+            "triggerId": "s6tgNfdkUE9waYAMjkzly",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "triggerName": "SUPPLEMENTARY_SET_LIMIT_ERROR_TOAST",
+            "triggerId": "7sUGiOlOK-xRxcNY1_IMF",
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "GENERAL_CLEAR_CACHE",
+            "triggerId": "1D7ugBJk5g1PUavcboBpb"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.uao5lgyznxnGn8PyhAnFp64Xy6zL2aZU",
+  "updatedAt": "2/13/2024",
+  "createdAt": "2/13/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

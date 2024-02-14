@@ -1,0 +1,74 @@
+{
+  "id": "2NiW0vDcdjesrtroGXr_7",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SUPPLEMENTARY_DELETE_STATES_CONDIONALLY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "DELETE_SUPPLEMENTARY_SMSPIN_STATE",
+              "triggerId": "6xVSAQIieldnTAVYBFGiR",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "4",
+                    "attributes": { "stateName": "smsPin", "storeType": 1 }
+                  }
+                }
+              ],
+              "logic": {
+                ">": [
+                  {
+                    "var": "currentScreen.supplementaryLimitOTP.message.length"
+                  },
+                  0
+                ]
+              }
+            },
+            {
+              "triggerName": "DELETE_SUPPLEMENTARY_OTP_STATE",
+              "triggerId": "4pp0VgjIgGxTAxP1IVwO1",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "4",
+                    "attributes": {
+                      "stateName": "supplementaryLimitOTP",
+                      "storeType": 2,
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": ""
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                ">": [
+                  {
+                    "var": "currentScreen.supplementaryLimitOTP.message.length"
+                  },
+                  0
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.sze66gfsmxLm8EuyQiZgVNdOm_FCw3G",
+  "_id": "einUpRyEEI209BiIIGtxc",
+  "updatedAt": "2/7/2024",
+  "createdAt": "2/7/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

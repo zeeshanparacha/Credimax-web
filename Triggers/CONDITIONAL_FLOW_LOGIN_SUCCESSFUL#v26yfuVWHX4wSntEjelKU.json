@@ -1,9 +1,10 @@
 {
+  "_id": "v26yfuVWHX4wSntEjelKU",
   "id": "YSFJGiyJZH9XMGTuvQyvZ",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "CONDITIONAL_FLOW_LOGIN_SUCCESSFUL",
-  "old_name": "",
+  "old_name": "CONDITIONAL_FLOW_LOGIN_SUCCESSFUL",
   "status": "ACTIVE",
   "services": [
     {
@@ -13,7 +14,14 @@
         "attributes": {
           "triggers": [
             {
-              "logic": { "==": [{ "var": "content.trustedDevice" }, "Y"] },
+              "logic": {
+                "==": [
+                  {
+                    "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                  },
+                  "Y"
+                ]
+              },
               "triggerName": "NAVIGATE_LOGIN_TO_DASHBOARD_TRIGGER",
               "triggerId": "fAQ_Y50rERWJ4mD8VyNMl",
               "services": [
@@ -33,7 +41,14 @@
               ]
             },
             {
-              "logic": { "!=": [{ "var": "content.isTrustedDevice" }, "Y"] },
+              "logic": {
+                "!=": [
+                  {
+                    "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                  },
+                  "Y"
+                ]
+              },
               "triggerName": "NAVIGATE_LOGIN_TO_OTP_TRIGGER",
               "triggerId": "vSaMOz0zeg6PmcGwS7TN2",
               "services": [
@@ -57,10 +72,9 @@
       }
     }
   ],
-  "csrf": "0.kmqyh97ntcMDr8hriuT8ucEQns0Wt4L",
-  "_id": "v26yfuVWHX4wSntEjelKU",
-  "updatedAt": "12/5/2023",
-  "createdAt": "12/5/2023",
-  "createdBy": "muhammad.asad",
-  "updatedBy": "muhammad.asad"
+  "csrf": "0.m69z60tig5rG5SO2mXlbd3u0t_RDWdOA",
+  "updatedAt": "2/12/2024",
+  "createdAt": "2/12/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }

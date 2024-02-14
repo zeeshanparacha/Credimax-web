@@ -1,0 +1,87 @@
+{
+  "id": "pY8IYnNO86BMMm979hYzG",
+  "_id": "7Il-I7og-IJLiwvVG-YU2",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "DC_UPDATE_API_TRIGGER",
+  "old_name": "DC_UPDATE_API_TRIGGER",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "dcAddCardResponse",
+          "url": "/user/debitCard/v1/saveOrUpdateCard",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "cardNumber",
+              "value": "accountOrDebitCardNumber"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "nameOnCard",
+              "value": "title"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "cardExpiryDate",
+              "value": "cardExpiry"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "nickName",
+              "value": "nickName"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "cardFlag",
+              "value": "cardFlag"
+            },
+            { "type": 1, "name": "Form", "key": "id", "value": "id" }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "DC_LIST LAYOUT_NAVIGATE",
+            "triggerId": "NpEMe_ZW9tB5EHnW61LKZ"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "DC_ERROR_TOAST",
+            "triggerId": "V2zp5FB_qAGrw_2Uo7hSu"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.8jw433h1kcIlQd2CHMTiKjtViG4Q3tv",
+  "updatedAt": "2/9/2024",
+  "createdAt": "2/9/2024",
+  "createdBy": "masood",
+  "updatedBy": "masood"
+}

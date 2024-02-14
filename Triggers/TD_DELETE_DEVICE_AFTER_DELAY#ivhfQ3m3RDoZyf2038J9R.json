@@ -1,0 +1,90 @@
+{
+  "id": "EsKPdEjdz-r2bsQD9fhPG",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TD_DELETE_DEVICE_AFTER_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "triggers": [
+            {
+              "id": "zZsPG2wx64Tf9g4aSV5DW",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "TD_DELETE_DEVICE",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "td_delete_device_res",
+                      "url": "/security/v1/deleteDevices",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "deviceList",
+                          "value": "td_delete_device_list"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "pc_validation_object"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "triggerName": "TD_GET_ALL_DEVICES",
+                        "triggerId": "dL8SWmkinxQ6rORf4l4Ma",
+                        "httpStatus": 200
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.9q98t1cjjcwT8TVMGzUpv0I6IqNQ3E5l",
+              "_id": "kQVgA1X-GrxFSfGLA_TJJ",
+              "updatedAt": "2/9/2024",
+              "createdAt": "2/9/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["zZsPG2wx64Tf9g4aSV5DW"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.9q98t1cjjcwT8TVMGzUpv0I6IqNQ3E5l",
+  "_id": "ivhfQ3m3RDoZyf2038J9R",
+  "updatedAt": "2/9/2024",
+  "createdAt": "2/9/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}
