@@ -1,0 +1,163 @@
+{
+  "id": "2ugiUOv9NoXiwZQqA8Qsm",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "BC_BLOCK_AND_REPLACEMENT_CARD_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "150",
+          "triggers": [
+            {
+              "id": "eKgOYOEyfpQyj-CbIc97X",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "BC_BLOCK_CARD_AND_BLOCK_REPLACEMENT_CONDITIONAL",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "triggerName": "BC_BLOCK_CARD",
+                          "triggerId": "9SDkout-e74BvZWnfkufY",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "bc_block_card",
+                                  "url": "/api-designer/api/blockCard/execute",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.cardNumber",
+                                      "value": "CURRENT_CARD.cardNumber"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.replacement",
+                                      "value": "bc_replacement"
+                                    },
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "request.reasonCode",
+                                      "value": "bc_reason_selected.key"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.validation",
+                                      "value": "bc_set_validations"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": []
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "if": [
+                              {
+                                "==": [
+                                  { "var": "currentScreen.bc_replacement" },
+                                  "1"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "logic": {
+                            "if": [
+                              {
+                                "==": [
+                                  { "var": "currentScreen.bc_replacement" },
+                                  "0"
+                                ]
+                              }
+                            ]
+                          },
+                          "triggerName": "BC_BLOCK_CARD_REPLACEMENT",
+                          "triggerId": "PChZrnatwX2gFwaH9RiYS",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "bc_block_card_replacement",
+                                  "url": "api-designer/api/blockCard/execute",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": []
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.sztsuyn64eP6_IjreA6v0kwZbAF8iR6",
+              "_id": "erKncu8ia27Mtdz-agUNH",
+              "updatedAt": "2/15/2024",
+              "createdAt": "2/15/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": ["eKgOYOEyfpQyj-CbIc97X"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.sztsuyn64eP6_IjreA6v0kwZbAF8iR6",
+  "_id": "F96oar9W6Kv4lSYWwkO2F",
+  "updatedAt": "2/15/2024",
+  "createdAt": "2/15/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

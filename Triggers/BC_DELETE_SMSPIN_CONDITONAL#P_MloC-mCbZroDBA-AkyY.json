@@ -3,8 +3,8 @@
   "id": "Kxdijv5MiAFoAq7Q-QL07",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
-  "name": "BC_DELETE_STATES_CONDITONAL",
-  "old_name": "BLOCK_CARD_DELETE_STATES_CONDITONAL",
+  "name": "BC_DELETE_SMSPIN_CONDITONAL",
+  "old_name": "BC_DELETE_STATES_CONDITONAL",
   "status": "ACTIVE",
   "services": [
     {
@@ -13,28 +13,6 @@
         "type": "1",
         "attributes": {
           "triggers": [
-            {
-              "triggerName": "BLOCK_CARD_DELETE_OTP_RESPONSE",
-              "triggerId": "BYCmieiywwf7Jc9vJ9j2h",
-              "services": [
-                {
-                  "type": "11",
-                  "command": {
-                    "type": "4",
-                    "attributes": {
-                      "stateName": "blockCardOTP",
-                      "storeType": 2,
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "",
-                      "sourceBindingKey": ""
-                    }
-                  }
-                }
-              ],
-              "logic": {
-                ">": [{ "var": "currentScreen.blockCardOTP.message.length" }, 0]
-              }
-            },
             {
               "triggerName": "BLOCK_CARD_DELETE_SMSPIN",
               "triggerId": "5HVT7IY1maJpF2kLwrdmn",
@@ -54,7 +32,16 @@
                 }
               ],
               "logic": {
-                ">": [{ "var": "currentScreen.blockCardOTP.message.length" }, 0]
+                "if": [
+                  {
+                    ">": [
+                      { "var": "currentScreen.blockCardOTP.message.length" },
+                      0
+                    ]
+                  },
+                  true,
+                  false
+                ]
               }
             }
           ]
@@ -62,9 +49,9 @@
       }
     }
   ],
-  "csrf": "0.h5pq15sbf6dVmyaMgverW8oOZWCPfKkE",
-  "updatedAt": "2/13/2024",
-  "createdAt": "2/13/2024",
+  "csrf": "0.0up8kfw51r7f9qs12sYMb-iiBCxu9KpdK",
+  "updatedAt": "2/18/2024",
+  "createdAt": "2/18/2024",
   "createdBy": "basitahmed1199",
   "updatedBy": "basitahmed1199"
 }

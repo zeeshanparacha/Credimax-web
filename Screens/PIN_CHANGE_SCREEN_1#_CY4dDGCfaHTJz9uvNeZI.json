@@ -58,7 +58,7 @@
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": 0,
+        "path": "0",
         "gridProps": [
           {
             "type": "column",
@@ -138,7 +138,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "tzKivYu5W91tFW6OHXalP",
+                    "id": "VyxtmqRPGcFDahCc-Y9X6",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -1646,7 +1646,7 @@
                                                   ],
                                                   "cssClassNames": [
                                                     {
-                                                      "cssClassName": "Round_Button_Css "
+                                                      "cssClassName": "PIN_CHANGE_BUTTON_STYLE "
                                                     }
                                                   ]
                                                 },
@@ -2173,6 +2173,52 @@
                     "type": "1",
                     "name": "On initialization",
                     "commandType": "1"
+                  },
+                  {
+                    "triggerId": "e-gc88nLiubxyD7vMJTCu",
+                    "triggerName": "PNC_GET_CARD_FEES",
+                    "serviceType": "8",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "pnc_get_card_fees",
+                      "url": "/card/v1/requestForCardFee",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "plasticCode",
+                          "value": "CURRENT_CARD.plasticCode"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "productType",
+                          "value": "CURRENT_CARD.productType"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "isVirtual",
+                          "value": "CURRENT_CARD;isVirtual"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "type": "1",
+                    "name": "On initialization",
+                    "commandType": "1"
                   }
                 ],
                 "component": { "type": "10001", "content": "Grid layout" },
@@ -2220,8 +2266,8 @@
     "gitBranchName": "master",
     "_id": "_CY4dDGCfaHTJz9uvNeZI",
     "createdBy": "basitahmed1199",
-    "updatedAt": "2/4/2024",
-    "createdAt": "2/4/2024",
+    "updatedAt": "2/19/2024",
+    "createdAt": "2/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2487,6 +2533,12 @@
       {
         "triggerId": "fQ-bbtqmYigzAlaeVouW1",
         "triggerName": "PNC_CHECK_OTP",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "e-gc88nLiubxyD7vMJTCu",
+        "triggerName": "PNC_GET_CARD_FEES",
         "name": "On initialization",
         "type": "1"
       }
@@ -4053,7 +4105,7 @@
         }
       },
       "cssDisableClassNames": [{ "cssClassName": "PIN_DISABLE_BUTTON " }],
-      "cssClassNames": [{ "cssClassName": "Round_Button_Css " }]
+      "cssClassNames": [{ "cssClassName": "PIN_CHANGE_BUTTON_STYLE " }]
     },
     "name": "Button",
     "icon": "FaBimobject",

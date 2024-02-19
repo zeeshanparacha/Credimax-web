@@ -1,0 +1,68 @@
+{
+  "id": "rVJmmbkC3xU-7qsBIMHtN",
+  "_id": "DHDk-Y1EMdVJw6ghGGwiO",
+  "name": "FA_UPDATE_TOGGLE",
+  "old_name": "FA_UPDATE_TOGGLE",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "15",
+        "attributes": {
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "sourceBindingKey": "",
+          "filterList": [
+            {
+              "key": "FA_TRUSTED_DEVICE",
+              "changeValueConditonally": true,
+              "storeType": 1,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.trustedDeviceFlag"
+                      },
+                      "true"
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              }
+            },
+            {
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.nonTrustedDeviceFlag"
+                      },
+                      "true"
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              },
+              "key": "NON_TRUSTED_DEVICE",
+              "storeType": 1,
+              "changeValueConditonally": true
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.4tw17w5gdcvL-hEgm4AzHMLRbumOoEsh",
+  "updatedAt": "2/18/2024",
+  "createdAt": "2/18/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

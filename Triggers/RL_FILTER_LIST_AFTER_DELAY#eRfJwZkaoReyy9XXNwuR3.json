@@ -1,0 +1,99 @@
+{
+  "id": "MEhE3FRw5G9szBa3p6nZg",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "RL_FILTER_LIST_AFTER_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "triggers": [
+            {
+              "id": "3jRJDJH2tTmNKkRg8GY97",
+              "_id": "WVTLiTnrxqkt0u45Y4GxK",
+              "name": "RL_FILTER_LIST",
+              "old_name": "RL_FILTER_LIST",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "10",
+                    "attributes": {
+                      "stateName": "abc",
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "rl_list",
+                      "sourceBindingKey": "rl_list_from_api.content.recentLoginList.0.loginHistoryList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "logic": {
+                        "if": [
+                          { "var": "currentScreen.td_platform" },
+                          {
+                            "or": [
+                              {
+                                "==": [
+                                  { "var": "currentScreen.td_platform" },
+                                  "All platforms"
+                                ]
+                              },
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      { "var": "currentScreen.td_platform" },
+                                      "Mobile apps"
+                                    ]
+                                  },
+                                  { "==": [{ "var": "channelId" }, "005"] }
+                                ]
+                              },
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      { "var": "currentScreen.td_platform" },
+                                      "Web app"
+                                    ]
+                                  },
+                                  { "==": [{ "var": "channelId" }, "002"] }
+                                ]
+                              }
+                            ]
+                          },
+                          true
+                        ]
+                      },
+                      "targetValue": "key"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.bea6ss98r4vxbn9LVsw_vINeCDzC16zU",
+              "updatedAt": "2/16/2024",
+              "createdAt": "2/16/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["3jRJDJH2tTmNKkRg8GY97"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.bea6ss98r4vxbn9LVsw_vINeCDzC16zU",
+  "_id": "eRfJwZkaoReyy9XXNwuR3",
+  "updatedAt": "2/16/2024",
+  "createdAt": "2/16/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

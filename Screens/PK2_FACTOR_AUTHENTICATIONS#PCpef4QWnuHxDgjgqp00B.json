@@ -52,18 +52,47 @@
         "updatedAt": "23-Sep-2021",
         "Documentation": "<div>\n<table style=\"border-collapse: collapse; width: 99.8899%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 48.4024%;\">1</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">2</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">43</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">6</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">7</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>\nWrite your Docu7mentationtestsdfasd</div>",
         "createdAt": "24-Aug-2021",
-        "events": [],
+        "events": [
+          {
+            "triggerId": "il33TKvtW3rAOBfZzMVIf",
+            "triggerName": "FA_GET_FLAG_API_DATA",
+            "serviceType": "8",
+            "attributes": {
+              "loaderWidgetIds": [906070],
+              "messageWidgetIds": [906070],
+              "responseStateKey": "FA_RESPONSE_GET_FLAG",
+              "url": "/getFlagFor2FA/execute",
+              "checksum": true,
+              "encryption": true,
+              "isDeviceDetails": false,
+              "loginTrigger": false,
+              "formData": false,
+              "logoutTrigger": false,
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "channel_key": "002"
+              },
+              "requestBody": [],
+              "baseURL": "656f0b4398e9df55f0499597",
+              "storeType": 2
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
+          }
+        ],
         "order": 1,
         "version": "1.0.0",
         "isLatest": true,
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": 0,
+        "path": "0",
         "gridProps": [
           {
             "type": "column",
-            "id": "BfB3C4hO4W1PB3Jp7uhjh",
+            "id": "G7l1CMD5BdKI5tcTUBF38",
             "gridProps": [
               {
                 "type": "10001",
@@ -244,7 +273,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "0BfplnFmeouKIWsVCP5LB",
+                                            "id": "bAKYy_Y9i5eiun4GRVhLo",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -785,7 +814,17 @@
                                             "alignItems": "flex-start"
                                           },
                                           "direction": "row",
-                                          "name": "Grid layout"
+                                          "name": "Grid layout",
+                                          "hideCondition": {
+                                            "logic": {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                },
+                                                "1"
+                                              ]
+                                            }
+                                          }
                                         },
                                         "component": {
                                           "type": "10001",
@@ -798,7 +837,17 @@
                                           "20010",
                                           "widget"
                                         ],
-                                        "name": "Grid layout"
+                                        "name": "Grid layout",
+                                        "dimensions": {
+                                          "rows": 1,
+                                          "columns": 1,
+                                          "colSize0xs": 12,
+                                          "colSize0sm": 12,
+                                          "colSize0md": 12,
+                                          "colSize0lg": 12,
+                                          "colSize0xl": 12
+                                        },
+                                        "readOnly": true
                                       },
                                       {
                                         "type": "10001",
@@ -1270,7 +1319,7 @@
                                                                                   "size": "",
                                                                                   "name": "Toggle Switch",
                                                                                   "label": "",
-                                                                                  "stateName": " ",
+                                                                                  "stateName": "FA_TRUSTED_DEVICE",
                                                                                   "layoutProperties": {
                                                                                     "toggleSwitch": {
                                                                                       "//": "Use this class to style checkbox component."
@@ -1284,6 +1333,17 @@
                                                                                     "md": 12,
                                                                                     "sm": 12,
                                                                                     "xs": 12
+                                                                                  },
+                                                                                  "statename": "FA_TRUSTED_DEVICE",
+                                                                                  "disableCondition": {
+                                                                                    "logic": {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                        },
+                                                                                        "0"
+                                                                                      ]
+                                                                                    }
                                                                                   }
                                                                                 },
                                                                                 "icon": "FaToggleOn",
@@ -1299,7 +1359,52 @@
                                                                                   "content": "Toggle switch",
                                                                                   "type": "20039"
                                                                                 },
-                                                                                "events": [],
+                                                                                "events": [
+                                                                                  {
+                                                                                    "triggerId": "FcvOURIRK-YRdeT0ZJIzR",
+                                                                                    "triggerName": "FA_FACTOR_AUTHENTICATION_TRUSTED_DEVICE",
+                                                                                    "serviceType": "8",
+                                                                                    "attributes": {
+                                                                                      "loaderWidgetIds": [
+                                                                                        906070
+                                                                                      ],
+                                                                                      "messageWidgetIds": [
+                                                                                        906070
+                                                                                      ],
+                                                                                      "responseStateKey": "FA_FACTOR_AUTHENTICATION_RESPONSE",
+                                                                                      "url": "/api-designer/api/setFlagFor2FA/execute",
+                                                                                      "checksum": true,
+                                                                                      "encryption": true,
+                                                                                      "isDeviceDetails": false,
+                                                                                      "loginTrigger": false,
+                                                                                      "formData": false,
+                                                                                      "logoutTrigger": false,
+                                                                                      "headers": {
+                                                                                        "Content-Type": "application/json",
+                                                                                        "Accept": "application/json",
+                                                                                        "channel_key": "002"
+                                                                                      },
+                                                                                      "requestBody": [
+                                                                                        {
+                                                                                          "type": 1,
+                                                                                          "name": "Form",
+                                                                                          "key": "request.trustedDeviceFlag",
+                                                                                          "value": "FA_TRUSTED_DEVICE"
+                                                                                        },
+                                                                                        {
+                                                                                          "type": 1,
+                                                                                          "name": "Form",
+                                                                                          "key": "request.nonTrustedDeviceFlag",
+                                                                                          "value": "FA_NON_TRUSTED_DEVICE"
+                                                                                        }
+                                                                                      ],
+                                                                                      "baseURL": "656f0b4398e9df55f0499597",
+                                                                                      "storeType": 2
+                                                                                    },
+                                                                                    "type": "3",
+                                                                                    "name": "On change"
+                                                                                  }
+                                                                                ],
                                                                                 "path": "0-0-1-0-0-0-0-0-2-0-0-0-0-0-0-2-0-0-0"
                                                                               }
                                                                             ],
@@ -1865,7 +1970,7 @@
                                                                                           "size": "",
                                                                                           "name": "Toggle Switch",
                                                                                           "label": "",
-                                                                                          "stateName": " ",
+                                                                                          "stateName": "NON_TRUSTED_DEVICE",
                                                                                           "layoutProperties": {
                                                                                             "toggleSwitch": {
                                                                                               "//": "Use this class to style checkbox component."
@@ -1879,6 +1984,17 @@
                                                                                             "md": 12,
                                                                                             "sm": 12,
                                                                                             "xs": 12
+                                                                                          },
+                                                                                          "statename": "NON_TRUSTED_DEVICE",
+                                                                                          "disableCondition": {
+                                                                                            "logic": {
+                                                                                              "==": [
+                                                                                                {
+                                                                                                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                                },
+                                                                                                "0"
+                                                                                              ]
+                                                                                            }
                                                                                           }
                                                                                         },
                                                                                         "icon": "FaToggleOn",
@@ -1894,7 +2010,52 @@
                                                                                           "content": "Toggle switch",
                                                                                           "type": "20039"
                                                                                         },
-                                                                                        "events": [],
+                                                                                        "events": [
+                                                                                          {
+                                                                                            "triggerId": "FcvOURIRK-YRdeT0ZJIzR",
+                                                                                            "triggerName": "FA_FACTOR_AUTHENTICATION_TRUSTED_DEVICE",
+                                                                                            "serviceType": "8",
+                                                                                            "attributes": {
+                                                                                              "loaderWidgetIds": [
+                                                                                                906070
+                                                                                              ],
+                                                                                              "messageWidgetIds": [
+                                                                                                906070
+                                                                                              ],
+                                                                                              "responseStateKey": "FA_FACTOR_AUTHENTICATION_RESPONSE",
+                                                                                              "url": "/api-designer/api/setFlagFor2FA/execute",
+                                                                                              "checksum": true,
+                                                                                              "encryption": true,
+                                                                                              "isDeviceDetails": false,
+                                                                                              "loginTrigger": false,
+                                                                                              "formData": false,
+                                                                                              "logoutTrigger": false,
+                                                                                              "headers": {
+                                                                                                "Content-Type": "application/json",
+                                                                                                "Accept": "application/json",
+                                                                                                "channel_key": "002"
+                                                                                              },
+                                                                                              "requestBody": [
+                                                                                                {
+                                                                                                  "type": 1,
+                                                                                                  "name": "Form",
+                                                                                                  "key": "request.trustedDeviceFlag",
+                                                                                                  "value": "FA_TRUSTED_DEVICE"
+                                                                                                },
+                                                                                                {
+                                                                                                  "type": 1,
+                                                                                                  "name": "Form",
+                                                                                                  "key": "request.nonTrustedDeviceFlag",
+                                                                                                  "value": "FA_NON_TRUSTED_DEVICE"
+                                                                                                }
+                                                                                              ],
+                                                                                              "baseURL": "656f0b4398e9df55f0499597",
+                                                                                              "storeType": 2
+                                                                                            },
+                                                                                            "type": "3",
+                                                                                            "name": "On change"
+                                                                                          }
+                                                                                        ],
                                                                                         "path": "0-0-1-0-0-0-0-0-2-0-0-1-0-0-0-2-0-0-0-0-0"
                                                                                       }
                                                                                     ],
@@ -2345,8 +2506,7 @@
               "md": 12,
               "sm": 12,
               "xs": 12
-            },
-            "path": "0-0"
+            }
           }
         ],
         "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 },
@@ -2370,8 +2530,8 @@
     "gitBranchName": "master",
     "_id": "PCpef4QWnuHxDgjgqp00B",
     "createdBy": "mubashar",
-    "updatedAt": "2/13/2024",
-    "createdAt": "2/13/2024",
+    "updatedAt": "2/18/2024",
+    "createdAt": "2/18/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2438,7 +2598,14 @@
       "name": "Grid layout"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "il33TKvtW3rAOBfZzMVIf",
+        "triggerName": "FA_GET_FLAG_API_DATA",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
     "screenId": "PCpef4QWnuHxDgjgqp00B",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2827,7 +2994,17 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "hideCondition": {
+        "logic": {
+          "==": [
+            {
+              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+            },
+            "1"
+          ]
+        }
+      }
     },
     "layout": null,
     "events": [],
@@ -3911,7 +4088,7 @@
       "size": "",
       "name": "Toggle Switch",
       "label": "",
-      "stateName": " ",
+      "stateName": "FA_TRUSTED_DEVICE",
       "layoutProperties": {
         "toggleSwitch": { "//": "Use this class to style checkbox component." },
         "formControlLabel": { "//": "Use this class to style checkbox label." },
@@ -3921,6 +4098,17 @@
         "md": 12,
         "sm": 12,
         "xs": 12
+      },
+      "statename": "FA_TRUSTED_DEVICE",
+      "disableCondition": {
+        "logic": {
+          "==": [
+            {
+              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+            },
+            "0"
+          ]
+        }
       }
     },
     "icon": "FaToggleOn",
@@ -3933,7 +4121,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Toggle switch", "type": "20039" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "FcvOURIRK-YRdeT0ZJIzR",
+        "triggerName": "FA_FACTOR_AUTHENTICATION_TRUSTED_DEVICE",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "8"
+      }
+    ],
     "path": "0-0-1-0-0-0-0-0-2-0-0-0-0-0-0-2-0-0-0",
     "screenId": "PCpef4QWnuHxDgjgqp00B",
     "subType": "component",
@@ -4472,7 +4668,7 @@
       "size": "",
       "name": "Toggle Switch",
       "label": "",
-      "stateName": " ",
+      "stateName": "NON_TRUSTED_DEVICE",
       "layoutProperties": {
         "toggleSwitch": { "//": "Use this class to style checkbox component." },
         "formControlLabel": { "//": "Use this class to style checkbox label." },
@@ -4482,6 +4678,17 @@
         "md": 12,
         "sm": 12,
         "xs": 12
+      },
+      "statename": "NON_TRUSTED_DEVICE",
+      "disableCondition": {
+        "logic": {
+          "==": [
+            {
+              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+            },
+            "0"
+          ]
+        }
       }
     },
     "icon": "FaToggleOn",
@@ -4494,7 +4701,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Toggle switch", "type": "20039" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "FcvOURIRK-YRdeT0ZJIzR",
+        "triggerName": "FA_FACTOR_AUTHENTICATION_TRUSTED_DEVICE",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "8"
+      }
+    ],
     "path": "0-0-1-0-0-0-0-0-2-0-0-1-0-0-0-2-0-0-0-0-0",
     "screenId": "PCpef4QWnuHxDgjgqp00B",
     "subType": "component",

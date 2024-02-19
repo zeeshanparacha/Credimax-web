@@ -1,0 +1,79 @@
+{
+  "_id": "JB57fWw_qHC2rUNV4hdL7",
+  "id": "wLQV3PGpcca4Z2jaWcTOh",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "BC_SAVE_REASONS_CONDITIONAL",
+  "old_name": "BC_SAVE_REASONS_CONDITIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "BC_SAVE_REASON_RESPONSE",
+              "triggerId": "xHa3KWBJCHuFtkvLByacV",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "bc_save_reason_response",
+                      "sourceBindingKey": "form",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "if": [
+                          true,
+                          {
+                            "var": "bc_reasons_for_card.Reason for Replacement .0"
+                          },
+                          false
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "and": [
+                      {
+                        "var": "currentScreen.bc_reasons_for_card.reasonForReplacement"
+                      },
+                      {
+                        ">": [
+                          {
+                            "var": "currentScreen.bc_reasons_for_card.reasonForReplacement.length"
+                          },
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.5fs82c56d8nnxx_nKS-ajZdPuRsfOJFB",
+  "updatedAt": "2/15/2024",
+  "createdAt": "2/15/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

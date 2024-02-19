@@ -1,0 +1,116 @@
+{
+  "id": "PChZrnatwX2gFwaH9RiYS",
+  "_id": "JoeRLpkM3G4zb_EYqMNMs",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "BC_BLOCK_CARD_REPLACEMENT",
+  "old_name": "BC_BLOCK_CARD_REPLACEMENT",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "bc_block_card_replacement",
+          "url": "/api-designer/api/blockCard/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.cardNumber",
+              "value": "CURRENT_CARD.cardNumber"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.emboseName",
+              "value": "CURRENT_CARD.embossingName"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.shadowAccountNumber",
+              "value": "CURRENT_CARD.shadowAccountNBR"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.replacement",
+              "value": "bc_replacement"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.branchCode",
+              "value": "bc_save_branch_response.id"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.reasonCode",
+              "value": "bc_save_reason_response.key"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.collectionType",
+              "value": "bc_selected_address"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.fees",
+              "value": "bc_get_card_fees.content.cardReplacementFee"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.expiry",
+              "value": "CURRENT_CARD.completeExpiryDate"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.validation",
+              "value": "bc_set_validations"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "triggerName": "BC_BLOCK_CARD_REPLACEMENT_ERROR_TOAST",
+            "triggerId": "nDzK-dRau3-SrbobBXuqs",
+            "httpStatus": 200,
+            "logic": { "!=": [{ "var": "code" }, 1] }
+          },
+          {
+            "triggerName": "BC_SUCCES_POPUP",
+            "triggerId": "s_ah7gJGwqTKy3zeFrE48",
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.0up8kfw51r7f9qs12sYMb-iiBCxu9KpdK",
+  "updatedAt": "2/18/2024",
+  "createdAt": "2/18/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

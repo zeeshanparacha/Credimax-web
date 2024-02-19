@@ -1,0 +1,76 @@
+{
+  "id": "No2fyE3CD5UYrlGyCm-q7",
+  "_id": "TOo9ZcOh4LnBg8dBZ60lA",
+  "name": "BC_SET_VALIDATION",
+  "old_name": "BC_SET_VALIDATION",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "6",
+        "attributes": {
+          "requestBody": [],
+          "destinationBindingKey": "bc_set_validations",
+          "sourceBindingKey": "form",
+          "sourceStoreType": 2,
+          "destinationStoreType": 2,
+          "filterList": [
+            {
+              "key": "validationType",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "OTP", "OTP"] }
+            },
+            {
+              "key": "isOtp",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, true, true] }
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, true, true] },
+              "key": "splitOtp"
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "2", "2"] },
+              "key": "generationType"
+            },
+            {
+              "key": "otpExpiry",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "4", "4"] }
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "1", "1"] },
+              "key": "is2FA"
+            },
+            {
+              "key": "tranCode",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "1216", "1216"] }
+            },
+            {
+              "key": "smsPin",
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.smsPin" }
+            },
+            {
+              "key": "emailPin",
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.smsPin" }
+            }
+          ],
+          "targettedType": "object"
+        }
+      }
+    }
+  ],
+  "csrf": "0.nnwr23x4ogvLE3ij4KM_FtJpbLOd6s9",
+  "updatedAt": "2/18/2024",
+  "createdAt": "2/18/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}
