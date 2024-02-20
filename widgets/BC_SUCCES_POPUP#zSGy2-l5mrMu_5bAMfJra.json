@@ -475,20 +475,6 @@
                                 },
                                 "events": [
                                   {
-                                    "triggerId": "SoJkY647RyhZPvMuZIClp",
-                                    "triggerName": "GO_BACK_TO_DASHBOARD",
-                                    "serviceType": "1",
-                                    "attributes": {
-                                      "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
-                                      "gridRadioValue": "",
-                                      "selectedObjectBindingKey": "selectedObject",
-                                      "editableForm": false
-                                    },
-                                    "type": "2",
-                                    "name": "On click",
-                                    "commandType": "3"
-                                  },
-                                  {
                                     "triggerId": "giawnPmONPfjaqE9fC2_w",
                                     "triggerName": "DELETE_SLIDER_CARD_INDEX",
                                     "serviceType": "11",
@@ -532,6 +518,82 @@
                                     "type": "2",
                                     "name": "On click",
                                     "commandType": "4"
+                                  },
+                                  {
+                                    "triggerId": "ABoJMN3s58hiNvJvb2guH",
+                                    "triggerName": "NAVIGATE_TO_SPT_AND_DASHBOARD_CONDITIONALLY",
+                                    "serviceType": "13",
+                                    "attributes": {
+                                      "triggers": [
+                                        {
+                                          "triggerName": "GO_BACK_TO_DASHBOARD",
+                                          "triggerId": "SoJkY647RyhZPvMuZIClp",
+                                          "services": [
+                                            {
+                                              "type": "1",
+                                              "command": {
+                                                "type": "3",
+                                                "attributes": {
+                                                  "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
+                                                  "gridRadioValue": "",
+                                                  "selectedObjectBindingKey": "selectedObject",
+                                                  "editableForm": false
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.last_location"
+                                                  },
+                                                  "DASHBOARD"
+                                                ]
+                                              },
+                                              true,
+                                              false
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "triggerName": "GO_TO_SUPPLEMENTARY_SCREEN",
+                                          "triggerId": "B3DCvSJAL2Z5HvEzad9np",
+                                          "services": [
+                                            {
+                                              "type": "1",
+                                              "command": {
+                                                "type": "3",
+                                                "attributes": {
+                                                  "nextWidgetId": "QPdvyRNNvuI54xiQtwD-a",
+                                                  "gridRadioValue": "",
+                                                  "selectedObjectBindingKey": "selectedObject",
+                                                  "editableForm": false
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.last_location"
+                                                  },
+                                                  "SUPPLEMENTARY"
+                                                ]
+                                              },
+                                              true,
+                                              false
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "type": "2",
+                                    "name": "On click",
+                                    "commandType": "1"
                                   }
                                 ],
                                 "path": "0-0-0-0-3-0-0"
@@ -656,8 +718,8 @@
     "gitBranchName": "master",
     "_id": "zSGy2-l5mrMu_5bAMfJra",
     "createdBy": "basitahmed1199",
-    "updatedAt": "2/18/2024",
-    "createdAt": "2/18/2024",
+    "updatedAt": "2/20/2024",
+    "createdAt": "2/20/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1197,13 +1259,6 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "SoJkY647RyhZPvMuZIClp",
-        "triggerName": "GO_BACK_TO_DASHBOARD",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "1"
-      },
-      {
         "triggerId": "giawnPmONPfjaqE9fC2_w",
         "triggerName": "DELETE_SLIDER_CARD_INDEX",
         "name": "On click",
@@ -1223,6 +1278,13 @@
         "name": "On click",
         "type": "2",
         "serviceType": "11"
+      },
+      {
+        "triggerId": "ABoJMN3s58hiNvJvb2guH",
+        "triggerName": "NAVIGATE_TO_SPT_AND_DASHBOARD_CONDITIONALLY",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
       }
     ],
     "path": "0-0-0-0-3-0-0",

@@ -3119,29 +3119,41 @@
                                                           "onEnterKey": true,
                                                           "disableCondition": {
                                                             "logic": {
-                                                              "or": [
+                                                              "if": [
                                                                 {
-                                                                  "<": [
+                                                                  "or": [
                                                                     {
-                                                                      "var": "currentScreen.form.email.length"
+                                                                      "<": [
+                                                                        {
+                                                                          "var": "currentScreen.form.email.length"
+                                                                        },
+                                                                        1
+                                                                      ]
                                                                     },
-                                                                    1
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "<": [
                                                                     {
-                                                                      "var": "currentScreen.form.cpr.length"
+                                                                      "<": [
+                                                                        {
+                                                                          "var": "currentScreen.form.cpr.length"
+                                                                        },
+                                                                        1
+                                                                      ]
                                                                     },
-                                                                    1
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "<": [
                                                                     {
-                                                                      "var": "currentScreen.form.number.length"
+                                                                      "<": [
+                                                                        {
+                                                                          "var": "currentScreen.form.number.length"
+                                                                        },
+                                                                        1
+                                                                      ]
                                                                     },
-                                                                    1
+                                                                    {
+                                                                      "!=": [
+                                                                        {
+                                                                          "var": "currentScreen.form.termAndCondition"
+                                                                        },
+                                                                        "true"
+                                                                      ]
+                                                                    }
                                                                   ]
                                                                 }
                                                               ]
@@ -3747,9 +3759,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "UHCu1EFN24DFyT3IPinFz",
-    "createdBy": "talha",
-    "updatedAt": "2/2/2024",
-    "createdAt": "2/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "2/20/2024",
+    "createdAt": "2/20/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6852,10 +6864,20 @@
       "onEnterKey": true,
       "disableCondition": {
         "logic": {
-          "or": [
-            { "<": [{ "var": "currentScreen.form.email.length" }, 1] },
-            { "<": [{ "var": "currentScreen.form.cpr.length" }, 1] },
-            { "<": [{ "var": "currentScreen.form.number.length" }, 1] }
+          "if": [
+            {
+              "or": [
+                { "<": [{ "var": "currentScreen.form.email.length" }, 1] },
+                { "<": [{ "var": "currentScreen.form.cpr.length" }, 1] },
+                { "<": [{ "var": "currentScreen.form.number.length" }, 1] },
+                {
+                  "!=": [
+                    { "var": "currentScreen.form.termAndCondition" },
+                    "true"
+                  ]
+                }
+              ]
+            }
           ]
         }
       },

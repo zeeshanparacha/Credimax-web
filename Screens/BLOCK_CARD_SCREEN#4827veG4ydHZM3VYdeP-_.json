@@ -598,20 +598,6 @@
                                 },
                                 "events": [
                                   {
-                                    "triggerId": "SoJkY647RyhZPvMuZIClp",
-                                    "triggerName": "GO_BACK_TO_DASHBOARD",
-                                    "serviceType": "1",
-                                    "attributes": {
-                                      "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
-                                      "gridRadioValue": "",
-                                      "selectedObjectBindingKey": "selectedObject",
-                                      "editableForm": false
-                                    },
-                                    "type": "2",
-                                    "name": "On click",
-                                    "commandType": "3"
-                                  },
-                                  {
                                     "triggerId": "5gLM4iFRSRC5KbXyV5eeV",
                                     "triggerName": "DELETE_CARDS_FROM_STORE",
                                     "serviceType": "11",
@@ -655,6 +641,82 @@
                                     "type": "2",
                                     "name": "On click",
                                     "commandType": "4"
+                                  },
+                                  {
+                                    "triggerId": "ABoJMN3s58hiNvJvb2guH",
+                                    "triggerName": "NAVIGATE_TO_SPT_AND_DASHBOARD_CONDITIONALLY",
+                                    "serviceType": "13",
+                                    "attributes": {
+                                      "triggers": [
+                                        {
+                                          "triggerName": "GO_BACK_TO_DASHBOARD",
+                                          "triggerId": "SoJkY647RyhZPvMuZIClp",
+                                          "services": [
+                                            {
+                                              "type": "1",
+                                              "command": {
+                                                "type": "3",
+                                                "attributes": {
+                                                  "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
+                                                  "gridRadioValue": "",
+                                                  "selectedObjectBindingKey": "selectedObject",
+                                                  "editableForm": false
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.last_location"
+                                                  },
+                                                  "DASHBOARD"
+                                                ]
+                                              },
+                                              false,
+                                              true
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "triggerName": "GO_TO_SUPPLEMENTARY_SCREEN",
+                                          "triggerId": "B3DCvSJAL2Z5HvEzad9np",
+                                          "services": [
+                                            {
+                                              "type": "1",
+                                              "command": {
+                                                "type": "3",
+                                                "attributes": {
+                                                  "nextWidgetId": "QPdvyRNNvuI54xiQtwD-a",
+                                                  "gridRadioValue": "",
+                                                  "selectedObjectBindingKey": "selectedObject",
+                                                  "editableForm": false
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.last_location"
+                                                  },
+                                                  "SUPPLEMENTARY"
+                                                ]
+                                              },
+                                              false,
+                                              true
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    },
+                                    "type": "2",
+                                    "name": "On click",
+                                    "commandType": "1"
                                   }
                                 ],
                                 "path": "2-0-4-0-0-0-0"
@@ -2147,7 +2209,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "fRM-mlm3Koe3XEETRH1yR",
+                                                    "id": "JZZokT8tc2z14VH0rnBMz",
                                                     "gridProps": [
                                                       {
                                                         "id": "Ur5CfiLkBGVzs0QMQgEgF",
@@ -2195,8 +2257,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "2-0-5-0-0-0-0-0-3-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -2212,7 +2273,7 @@
                                                   "layoutProperties": {
                                                     "gridLayout": {
                                                       "//": "Use this class to style grid layout component.",
-                                                      "padding": "0px 0px 10px 5px",
+                                                      "padding": "30px 0px 0px 5px",
                                                       "spacing": 0
                                                     },
                                                     "mainContainer": "gridLayout"
@@ -2249,7 +2310,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "X51kb5hxHI8pGPhE3yUTq",
+                                                    "id": "D4z4UeOGwIQnC-AqDVWLa",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -2258,7 +2319,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "E_5rTUyZgPQs-4dVsVKuU",
+                                                            "id": "K0yxRZAHxya9EJGmUKmqQ",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2810,8 +2871,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "2-0-5-0-0-0-0-0-3-0-1-0-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -2853,8 +2913,7 @@
                                                           "colSize0sm": 12,
                                                           "colSize0md": 12,
                                                           "colSize0lg": 12,
-                                                          "colSize0xl": 12,
-                                                          "name": null
+                                                          "colSize0xl": 12
                                                         },
                                                         "readOnly": true
                                                       }
@@ -2865,12 +2924,11 @@
                                                       "md": 6,
                                                       "sm": 6,
                                                       "xs": 6
-                                                    },
-                                                    "path": "2-0-5-0-0-0-0-0-3-0-1-0"
+                                                    }
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "J8jueZRdHZ3CziQRoOAvt",
+                                                    "id": "7WNOJS-8gfhNMTreEFgA1",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -3486,8 +3544,7 @@
                                                       "md": 6,
                                                       "sm": 6,
                                                       "xs": 6
-                                                    },
-                                                    "path": "2-0-5-0-0-0-0-0-3-0-1-1"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -3503,7 +3560,7 @@
                                                   "layoutProperties": {
                                                     "gridLayout": {
                                                       "//": "Use this class to style grid layout component.",
-                                                      "padding": "5px 0px",
+                                                      "padding": "0px 5px 5px 5px",
                                                       "spacing": 0
                                                     },
                                                     "mainContainer": "gridLayout"
@@ -5369,8 +5426,8 @@
     "gitBranchName": "master",
     "_id": "4827veG4ydHZM3VYdeP-_",
     "createdBy": "basitahmed1199",
-    "updatedAt": "2/18/2024",
-    "createdAt": "2/18/2024",
+    "updatedAt": "2/19/2024",
+    "createdAt": "2/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5841,13 +5898,6 @@
     "component": { "content": "Image", "type": "20012" },
     "events": [
       {
-        "triggerId": "SoJkY647RyhZPvMuZIClp",
-        "triggerName": "GO_BACK_TO_DASHBOARD",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "1"
-      },
-      {
         "triggerId": "5gLM4iFRSRC5KbXyV5eeV",
         "triggerName": "DELETE_CARDS_FROM_STORE",
         "name": "On click",
@@ -5867,6 +5917,13 @@
         "name": "On click",
         "type": "2",
         "serviceType": "11"
+      },
+      {
+        "triggerId": "ABoJMN3s58hiNvJvb2guH",
+        "triggerName": "NAVIGATE_TO_SPT_AND_DASHBOARD_CONDITIONALLY",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
       }
     ],
     "path": "2-0-4-0-0-0-0",
@@ -7393,7 +7450,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "0px 0px 10px 5px",
+          "padding": "30px 0px 0px 5px",
           "spacing": 0
         },
         "mainContainer": "gridLayout"
@@ -7493,7 +7550,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px 0px",
+          "padding": "0px 5px 5px 5px",
           "spacing": 0
         },
         "mainContainer": "gridLayout"

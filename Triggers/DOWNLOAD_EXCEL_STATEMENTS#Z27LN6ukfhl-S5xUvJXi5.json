@@ -1,21 +1,24 @@
 {
   "id": "aSunQpY1NdGbpIYYP-kut",
+  "_id": "Z27LN6ukfhl-S5xUvJXi5",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "DOWNLOAD_EXCEL_STATEMENTS",
+  "old_name": "DOWNLOAD_EXCEL_STATEMENTS",
   "status": "ACTIVE",
   "services": [
     {
       "type": "8",
       "command": {
-        "type": "2",
+        "type": "1",
         "attributes": {
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
-          "responseStateKey": "DOWNLOAD_EXCEL_STATEMENTS",
+          "responseStateKey": "statement_download_file",
           "url": "/card/v1/sendOrDownloadStatement",
           "checksum": true,
           "encryption": true,
+          "fileName": "credimax_statement.xlsx",
           "isDeviceDetails": false,
           "loginTrigger": false,
           "formData": false,
@@ -54,14 +57,26 @@
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "ST_DOWNLOAD_FAILED_TOAST",
+            "triggerId": "_vLaG0xgEQUwRN_CuJ6p-"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ST_DOWNLOAD_REPORT_AFTER_DELAY",
+            "triggerId": "2HPrDhlG7wMiVZjvFOcyF"
+          }
+        ]
       }
     }
   ],
-  "csrf": "0.9pmcg4lj7mlCCjPyuiPTtS0rZwHoEVYk",
-  "_id": "Z27LN6ukfhl-S5xUvJXi5",
-  "updatedAt": "1/18/2024",
-  "createdAt": "1/18/2024",
-  "createdBy": "zeeshan",
-  "updatedBy": "zeeshan"
+  "csrf": "0.0h6wkoukv8w92lPIrgPvRfw05o96JMrQ3",
+  "updatedAt": "2/20/2024",
+  "createdAt": "2/20/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }
