@@ -2746,7 +2746,7 @@
                                                                           "name": "Text box",
                                                                           "label-locale-key": "",
                                                                           "maxLength": 20,
-                                                                          "type": "number",
+                                                                          "type": "amount_only",
                                                                           "variant": "standard",
                                                                           "value": "",
                                                                           "readOnly": false,
@@ -2779,7 +2779,18 @@
                                                                               "cssClassName": "PC_GENERIC_TEXTFIELD "
                                                                             }
                                                                           ],
-                                                                          "disableUnderline": true
+                                                                          "disableUnderline": true,
+                                                                          "decimalPlaces": "3",
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "!=": [
+                                                                                {
+                                                                                  "var": "currentScreen.form.from_wallet.currency"
+                                                                                },
+                                                                                "BHD"
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "icon": "FaWindowMinimize",
                                                                         "group": "Form",
@@ -2875,7 +2886,238 @@
                                                                             "name": "On blur"
                                                                           }
                                                                         ],
-                                                                        "path": "0-0-2-0-1-0-0-0-0-0-0-0-1-1-0-0-0"
+                                                                        "path": "4-0-3-0-1-0-0-0-0-0-0-0-1-1-0-0-0"
+                                                                      },
+                                                                      {
+                                                                        "id": "_thnOi_ruB2djFPge5lbw",
+                                                                        "type": "20004",
+                                                                        "name": "Text Box",
+                                                                        "component": {
+                                                                          "content": "Text Box",
+                                                                          "type": "20004"
+                                                                        },
+                                                                        "attributes": {
+                                                                          "label": "",
+                                                                          "name": "Text box",
+                                                                          "label-locale-key": "",
+                                                                          "maxLength": 20,
+                                                                          "type": "amount_only",
+                                                                          "variant": "standard",
+                                                                          "value": "",
+                                                                          "readOnly": false,
+                                                                          "tooltip": "",
+                                                                          "font-family": "Verdana",
+                                                                          "mandatory": true,
+                                                                          "tooltipState": "",
+                                                                          "layoutProperties": {
+                                                                            "textField": {
+                                                                              "//": "Use this class to style text field component."
+                                                                            },
+                                                                            "inputProps": {
+                                                                              "//": "Use this class to style  text field element."
+                                                                            },
+                                                                            "mainContainer": "textField",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "validate": {
+                                                                            "required": false,
+                                                                            "errorMsg": "This field is required"
+                                                                          },
+                                                                          "placeholder": "",
+                                                                          "stateName": "source",
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "currentScreen.form.from_wallet.currency"
+                                                                                },
+                                                                                "BHD"
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          "decimalPlaces": "2",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "PC_GENERIC_TEXTFIELD "
+                                                                            }
+                                                                          ],
+                                                                          "disableUnderline": true
+                                                                        },
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "Bbz2IuzMNSeQynbEtDJsJ",
+                                                                            "triggerName": "TBW_CHECK_CONDITION_TO_GET_QUOTES_1",
+                                                                            "serviceType": "13",
+                                                                            "attributes": {
+                                                                              "triggers": [
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        ">": [
+                                                                                          {
+                                                                                            "+": [
+                                                                                              {
+                                                                                                "var": "currentScreen.form.source"
+                                                                                              },
+                                                                                              0
+                                                                                            ]
+                                                                                          },
+                                                                                          0
+                                                                                        ]
+                                                                                      },
+                                                                                      true,
+                                                                                      false
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "CLEAR_TARGET_AND_GET_QUOTES",
+                                                                                  "triggerId": "3urTBanpqnuyhjupCKg9P",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "2",
+                                                                                      "command": {
+                                                                                        "type": "1",
+                                                                                        "attributes": {
+                                                                                          "delay": "",
+                                                                                          "triggers": [
+                                                                                            {
+                                                                                              "id": "Zt-_pHoq86Dp22xI4UBOp",
+                                                                                              "name": "CLEAR_TARGET",
+                                                                                              "projectId": "652fcbce09869c3c809b3097",
+                                                                                              "gitBranchName": "master",
+                                                                                              "services": [
+                                                                                                {
+                                                                                                  "type": "11",
+                                                                                                  "command": {
+                                                                                                    "type": "6",
+                                                                                                    "attributes": {
+                                                                                                      "storeType": "",
+                                                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                                                      "dataType": "value",
+                                                                                                      "destinationBindingKey": "target",
+                                                                                                      "sourceBindingKey": "form",
+                                                                                                      "sourceStoreType": 2,
+                                                                                                      "destinationStoreType": 1,
+                                                                                                      "logic": {
+                                                                                                        "if": [
+                                                                                                          true,
+                                                                                                          "",
+                                                                                                          ""
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      "changeValueConditonally": true,
+                                                                                                      "targettedType": "value"
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              ],
+                                                                                              "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                                                                                              "_id": "_xrKj0GEATt4PK6FGjBtJ",
+                                                                                              "updatedAt": "1/18/2024",
+                                                                                              "createdAt": "1/18/2024",
+                                                                                              "createdBy": "talha2",
+                                                                                              "updatedBy": "talha2"
+                                                                                            }
+                                                                                          ],
+                                                                                          "triggerIds": [
+                                                                                            "Zt-_pHoq86Dp22xI4UBOp"
+                                                                                          ]
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.source"
+                                                                                      },
+                                                                                      false,
+                                                                                      true
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "TBW_CLEAR_QUOTES",
+                                                                                  "triggerId": "B_KnpY0fM9xhGIv2kQfsD",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "11",
+                                                                                      "command": {
+                                                                                        "type": "6",
+                                                                                        "attributes": {
+                                                                                          "storeType": "",
+                                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                                          "dataType": "value",
+                                                                                          "destinationBindingKey": "quotes",
+                                                                                          "sourceBindingKey": "form",
+                                                                                          "sourceStoreType": 2,
+                                                                                          "destinationStoreType": 2,
+                                                                                          "logic": {
+                                                                                            "if": [
+                                                                                              true,
+                                                                                              "",
+                                                                                              ""
+                                                                                            ]
+                                                                                          },
+                                                                                          "changeValueConditonally": true,
+                                                                                          "targettedType": "value"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.source"
+                                                                                      },
+                                                                                      false,
+                                                                                      true
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "CLEAR_TARGET",
+                                                                                  "triggerId": "Zt-_pHoq86Dp22xI4UBOp",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "11",
+                                                                                      "command": {
+                                                                                        "type": "6",
+                                                                                        "attributes": {
+                                                                                          "requestBody": [],
+                                                                                          "storeType": "",
+                                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                                          "dataType": "value",
+                                                                                          "destinationBindingKey": "target",
+                                                                                          "sourceBindingKey": "form",
+                                                                                          "sourceStoreType": 2,
+                                                                                          "destinationStoreType": 1,
+                                                                                          "logic": {
+                                                                                            "if": [
+                                                                                              true,
+                                                                                              "0",
+                                                                                              "0"
+                                                                                            ]
+                                                                                          },
+                                                                                          "changeValueConditonally": true,
+                                                                                          "targettedType": "value"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "type": "6",
+                                                                            "name": "On blur"
+                                                                          }
+                                                                        ],
+                                                                        "path": "4-0-3-0-1-0-0-0-0-0-0-0-1-1-0-0-1",
+                                                                        "version": "1.0.0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -2917,7 +3159,7 @@
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-1-0-0-0-1-0-0-0-2-0-0-0-0-0-0-0-1-1-0"
+                                                                "path": "4-0-3-0-1-0-0-0-0-0-0-0-1-1-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3416,7 +3658,7 @@
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-2-0-1-0-0-1-0-0-0-0-1-0-0"
+                                                                "path": "4-0-3-0-1-0-0-1-0-0-0-0-1-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3449,7 +3691,7 @@
                                                                           "name": "Text box",
                                                                           "label-locale-key": "",
                                                                           "maxLength": 20,
-                                                                          "type": "number",
+                                                                          "type": "amount_only",
                                                                           "variant": "standard",
                                                                           "value": "",
                                                                           "readOnly": false,
@@ -3482,7 +3724,18 @@
                                                                               "cssClassName": "PC_GENERIC_TEXTFIELD "
                                                                             }
                                                                           ],
-                                                                          "disableUnderline": true
+                                                                          "disableUnderline": true,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "!=": [
+                                                                                {
+                                                                                  "var": "currentScreen.form.to_wallet.currency"
+                                                                                },
+                                                                                "BHD"
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          "decimalPlaces": "3"
                                                                         },
                                                                         "icon": "FaWindowMinimize",
                                                                         "group": "Form",
@@ -3550,7 +3803,348 @@
                                                                             "name": "On blur"
                                                                           }
                                                                         ],
-                                                                        "path": "4-0-4-0-1-0-0-1-0-0-0-0-1-1-0-0-0"
+                                                                        "path": "4-0-3-0-1-0-0-1-0-0-0-0-1-1-0-0-0"
+                                                                      },
+                                                                      {
+                                                                        "id": "5zJ7wbXN_-JLfmaqO29Q8",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Text Box",
+                                                                        "attributes": {
+                                                                          "label": "",
+                                                                          "name": "Text box",
+                                                                          "label-locale-key": "",
+                                                                          "maxLength": 20,
+                                                                          "type": "amount_only",
+                                                                          "variant": "standard",
+                                                                          "value": "",
+                                                                          "readOnly": false,
+                                                                          "tooltip": "",
+                                                                          "font-family": "Verdana",
+                                                                          "mandatory": true,
+                                                                          "tooltipState": "",
+                                                                          "layoutProperties": {
+                                                                            "textField": {
+                                                                              "//": "Use this class to style text field component."
+                                                                            },
+                                                                            "inputProps": {
+                                                                              "//": "Use this class to style  text field element."
+                                                                            },
+                                                                            "mainContainer": "textField",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "validate": {
+                                                                            "required": false,
+                                                                            "errorMsg": "This field is required"
+                                                                          },
+                                                                          "placeholder": "",
+                                                                          "stateName": "target",
+                                                                          "decimalPlaces": "2",
+                                                                          "disableUnderline": true,
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "PC_GENERIC_TEXTFIELD "
+                                                                            }
+                                                                          ],
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "currentScreen.form.to_wallet.currency"
+                                                                                },
+                                                                                "BHD"
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "icon": "FaWindowMinimize",
+                                                                        "group": "Form",
+                                                                        "type": "20004",
+                                                                        "Documentation": "<div>components 12344</div>",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 20,
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Text Box",
+                                                                          "type": "20004"
+                                                                        },
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "AJZIbiefQpY_vSOSRNjXM",
+                                                                            "triggerName": "TBW_CHECK_CONDITION_TO_GET_QUOTES_2",
+                                                                            "serviceType": "13",
+                                                                            "attributes": {
+                                                                              "triggers": [
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        ">": [
+                                                                                          {
+                                                                                            "+": [
+                                                                                              {
+                                                                                                "var": "currentScreen.form.target"
+                                                                                              },
+                                                                                              0
+                                                                                            ]
+                                                                                          },
+                                                                                          0
+                                                                                        ]
+                                                                                      },
+                                                                                      true,
+                                                                                      false
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "CLEAR_SOURCE_AND_GET_QUOTES",
+                                                                                  "triggerId": "H7QerxSVOH31hz6DvCGTT",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "2",
+                                                                                      "command": {
+                                                                                        "type": "1",
+                                                                                        "attributes": {
+                                                                                          "delay": "",
+                                                                                          "triggers": [
+                                                                                            {
+                                                                                              "id": "BHQcqmlvRJR4o4N0MmyFD",
+                                                                                              "_id": "_1dmmoB2WjXgPEv48TUdw",
+                                                                                              "name": "CLEAR_SOURCE",
+                                                                                              "old_name": "CLEAR_SOURCE",
+                                                                                              "projectId": "652fcbce09869c3c809b3097",
+                                                                                              "gitBranchName": "master",
+                                                                                              "services": [
+                                                                                                {
+                                                                                                  "type": "11",
+                                                                                                  "command": {
+                                                                                                    "type": "6",
+                                                                                                    "attributes": {
+                                                                                                      "requestBody": [],
+                                                                                                      "storeType": "",
+                                                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                                                      "dataType": "value",
+                                                                                                      "destinationBindingKey": "source",
+                                                                                                      "sourceBindingKey": "form",
+                                                                                                      "sourceStoreType": 2,
+                                                                                                      "destinationStoreType": 1,
+                                                                                                      "logic": {
+                                                                                                        "if": [
+                                                                                                          true,
+                                                                                                          "0",
+                                                                                                          "0"
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      "changeValueConditonally": true,
+                                                                                                      "targettedType": "value"
+                                                                                                    }
+                                                                                                  }
+                                                                                                }
+                                                                                              ],
+                                                                                              "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                                                                                              "updatedAt": "1/18/2024",
+                                                                                              "createdAt": "1/18/2024",
+                                                                                              "createdBy": "talha2",
+                                                                                              "updatedBy": "talha2"
+                                                                                            },
+                                                                                            {
+                                                                                              "id": "zgabLFguehKPXTiZc2-lB",
+                                                                                              "projectId": "652fcbce09869c3c809b3097",
+                                                                                              "gitBranchName": "master",
+                                                                                              "name": "TBW_GET_QUOTES",
+                                                                                              "status": "ACTIVE",
+                                                                                              "services": [
+                                                                                                {
+                                                                                                  "type": "8",
+                                                                                                  "command": {
+                                                                                                    "type": "1",
+                                                                                                    "attributes": {
+                                                                                                      "loaderWidgetIds": [
+                                                                                                        906070
+                                                                                                      ],
+                                                                                                      "messageWidgetIds": [
+                                                                                                        906070
+                                                                                                      ],
+                                                                                                      "responseStateKey": "quotes",
+                                                                                                      "responseReturnValue": "content",
+                                                                                                      "successMessageBindingKey": "quotesSuccess",
+                                                                                                      "errorMessageBindingKey": "quotesError",
+                                                                                                      "url": "/payment/cardiex/v1/getQuotes",
+                                                                                                      "checksum": true,
+                                                                                                      "encryption": true,
+                                                                                                      "isDeviceDetails": false,
+                                                                                                      "loginTrigger": false,
+                                                                                                      "formData": false,
+                                                                                                      "logoutTrigger": false,
+                                                                                                      "headers": {
+                                                                                                        "Content-Type": "application/json",
+                                                                                                        "channel_key": "002"
+                                                                                                      },
+                                                                                                      "requestBody": [
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "cardNumber",
+                                                                                                          "value": "balances.cardNumber"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "sourceCurrency",
+                                                                                                          "value": "form.from_wallet.currency"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "sourceCurrencyCode",
+                                                                                                          "value": "form.from_wallet.currencyCode"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "destinationCurrency",
+                                                                                                          "value": "form.to_wallet.currency"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "destinationCurrencyCode",
+                                                                                                          "value": "form.to_wallet.currencyCode"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "sourceAmount",
+                                                                                                          "value": "form.source"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 2,
+                                                                                                          "name": "Current screen",
+                                                                                                          "key": "destinationAmount",
+                                                                                                          "value": "form.target"
+                                                                                                        }
+                                                                                                      ],
+                                                                                                      "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                      "storeType": 2
+                                                                                                    },
+                                                                                                    "responseHandler": [
+                                                                                                      {
+                                                                                                        "logic": true,
+                                                                                                        "httpStatus": 200,
+                                                                                                        "triggerName": "UPDATE_SOURCE_OR_TARGET_AFTER_QUOTES",
+                                                                                                        "triggerId": "h0zDB9MlKmvQ0NoarycJJ"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                }
+                                                                                              ],
+                                                                                              "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                                                                                              "_id": "gE0UP1YuFC1E4ZS6v7B4p",
+                                                                                              "updatedAt": "1/18/2024",
+                                                                                              "createdAt": "1/18/2024",
+                                                                                              "createdBy": "talha2",
+                                                                                              "updatedBy": "talha2"
+                                                                                            }
+                                                                                          ],
+                                                                                          "triggerIds": [
+                                                                                            "BHQcqmlvRJR4o4N0MmyFD",
+                                                                                            "zgabLFguehKPXTiZc2-lB"
+                                                                                          ]
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.target"
+                                                                                      },
+                                                                                      false,
+                                                                                      true
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "TBW_CLEAR_QUOTES",
+                                                                                  "triggerId": "B_KnpY0fM9xhGIv2kQfsD",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "11",
+                                                                                      "command": {
+                                                                                        "type": "6",
+                                                                                        "attributes": {
+                                                                                          "storeType": "",
+                                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                                          "dataType": "value",
+                                                                                          "destinationBindingKey": "quotes",
+                                                                                          "sourceBindingKey": "form",
+                                                                                          "sourceStoreType": 2,
+                                                                                          "destinationStoreType": 2,
+                                                                                          "logic": {
+                                                                                            "if": [
+                                                                                              true,
+                                                                                              "",
+                                                                                              ""
+                                                                                            ]
+                                                                                          },
+                                                                                          "changeValueConditonally": true,
+                                                                                          "targettedType": "value"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.target"
+                                                                                      },
+                                                                                      false,
+                                                                                      true
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "CLEAR_SOURCE",
+                                                                                  "triggerId": "BHQcqmlvRJR4o4N0MmyFD",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "11",
+                                                                                      "command": {
+                                                                                        "type": "6",
+                                                                                        "attributes": {
+                                                                                          "requestBody": [],
+                                                                                          "storeType": "",
+                                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                                          "dataType": "value",
+                                                                                          "destinationBindingKey": "source",
+                                                                                          "sourceBindingKey": "form",
+                                                                                          "sourceStoreType": 2,
+                                                                                          "destinationStoreType": 1,
+                                                                                          "logic": {
+                                                                                            "if": [
+                                                                                              true,
+                                                                                              "0",
+                                                                                              "0"
+                                                                                            ]
+                                                                                          },
+                                                                                          "changeValueConditonally": true,
+                                                                                          "targettedType": "value"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "type": "6",
+                                                                            "name": "On blur"
+                                                                          }
+                                                                        ],
+                                                                        "path": "4-0-3-0-1-0-0-1-0-0-0-0-1-1-0-0-1"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -5625,8 +6219,8 @@
     "gitBranchName": "master",
     "_id": "f13AvBz-MxRN_G3tIFHUF",
     "createdBy": "talha",
-    "updatedAt": "2/18/2024",
-    "createdAt": "2/18/2024",
+    "updatedAt": "2/21/2024",
+    "createdAt": "2/21/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8429,6 +9023,18 @@
           "componentId": "uk1xJXIN7C7g4jfXt9GoD",
           "componentType": "20004",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "_thnOi_ruB2djFPge5lbw",
+          "componentType": "20004",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -8465,7 +9071,7 @@
       "name": "Text box",
       "label-locale-key": "",
       "maxLength": 20,
-      "type": "number",
+      "type": "amount_only",
       "variant": "standard",
       "value": "",
       "readOnly": false,
@@ -8487,7 +9093,13 @@
       "placeholder": "",
       "stateName": "source",
       "cssClassNames": [{ "cssClassName": "PC_GENERIC_TEXTFIELD " }],
-      "disableUnderline": true
+      "disableUnderline": true,
+      "decimalPlaces": "3",
+      "hideCondition": {
+        "logic": {
+          "!=": [{ "var": "currentScreen.form.from_wallet.currency" }, "BHD"]
+        }
+      }
     },
     "icon": "FaWindowMinimize",
     "group": "Form",
@@ -8509,9 +9121,66 @@
         "serviceType": "13"
       }
     ],
-    "path": "0-0-2-0-1-0-0-0-0-0-0-0-1-1-0-0-0",
+    "path": "4-0-3-0-1-0-0-0-0-0-0-0-1-1-0-0-0",
     "screenId": "f13AvBz-MxRN_G3tIFHUF",
     "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "_thnOi_ruB2djFPge5lbw",
+    "type": "20004",
+    "name": "Text Box",
+    "component": { "content": "Text Box", "type": "20004" },
+    "attributes": {
+      "label": "",
+      "name": "Text box",
+      "label-locale-key": "",
+      "maxLength": 20,
+      "type": "amount_only",
+      "variant": "standard",
+      "value": "",
+      "readOnly": false,
+      "tooltip": "",
+      "font-family": "Verdana",
+      "mandatory": true,
+      "tooltipState": "",
+      "layoutProperties": {
+        "textField": { "//": "Use this class to style text field component." },
+        "inputProps": { "//": "Use this class to style  text field element." },
+        "mainContainer": "textField",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "validate": { "required": false, "errorMsg": "This field is required" },
+      "placeholder": "",
+      "stateName": "source",
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.form.from_wallet.currency" }, "BHD"]
+        }
+      },
+      "decimalPlaces": "2",
+      "cssClassNames": [{ "cssClassName": "PC_GENERIC_TEXTFIELD " }],
+      "disableUnderline": true
+    },
+    "events": [
+      {
+        "triggerId": "Bbz2IuzMNSeQynbEtDJsJ",
+        "triggerName": "TBW_CHECK_CONDITION_TO_GET_QUOTES_1",
+        "name": "On blur",
+        "type": "6",
+        "serviceType": "13"
+      }
+    ],
+    "path": "4-0-3-0-1-0-0-0-0-0-0-0-1-1-0-0-1",
+    "version": "1.0.0",
+    "subType": "component",
+    "screenId": "f13AvBz-MxRN_G3tIFHUF",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
@@ -8955,6 +9624,18 @@
           "componentId": "4tJE0IKEV9QQ8PlsQtQ6Z",
           "componentType": "20004",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "5zJ7wbXN_-JLfmaqO29Q8",
+          "componentType": "20004",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -8991,7 +9672,7 @@
       "name": "Text box",
       "label-locale-key": "",
       "maxLength": 20,
-      "type": "number",
+      "type": "amount_only",
       "variant": "standard",
       "value": "",
       "readOnly": false,
@@ -9013,7 +9694,13 @@
       "placeholder": "",
       "stateName": "target",
       "cssClassNames": [{ "cssClassName": "PC_GENERIC_TEXTFIELD " }],
-      "disableUnderline": true
+      "disableUnderline": true,
+      "hideCondition": {
+        "logic": {
+          "!=": [{ "var": "currentScreen.form.to_wallet.currency" }, "BHD"]
+        }
+      },
+      "decimalPlaces": "3"
     },
     "icon": "FaWindowMinimize",
     "group": "Form",
@@ -9035,9 +9722,75 @@
         "serviceType": "13"
       }
     ],
-    "path": "4-0-4-0-1-0-0-1-0-0-0-0-1-1-0-0-0",
+    "path": "4-0-3-0-1-0-0-1-0-0-0-0-1-1-0-0-0",
     "screenId": "f13AvBz-MxRN_G3tIFHUF",
     "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "5zJ7wbXN_-JLfmaqO29Q8",
+    "status": "ACTIVE",
+    "name": "Text Box",
+    "attributes": {
+      "label": "",
+      "name": "Text box",
+      "label-locale-key": "",
+      "maxLength": 20,
+      "type": "amount_only",
+      "variant": "standard",
+      "value": "",
+      "readOnly": false,
+      "tooltip": "",
+      "font-family": "Verdana",
+      "mandatory": true,
+      "tooltipState": "",
+      "layoutProperties": {
+        "textField": { "//": "Use this class to style text field component." },
+        "inputProps": { "//": "Use this class to style  text field element." },
+        "mainContainer": "textField",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "validate": { "required": false, "errorMsg": "This field is required" },
+      "placeholder": "",
+      "stateName": "target",
+      "decimalPlaces": "2",
+      "disableUnderline": true,
+      "cssClassNames": [{ "cssClassName": "PC_GENERIC_TEXTFIELD " }],
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.form.to_wallet.currency" }, "BHD"]
+        }
+      }
+    },
+    "icon": "FaWindowMinimize",
+    "group": "Form",
+    "type": "20004",
+    "Documentation": "<div>components 12344</div>",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 20,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "subType": "component",
+    "component": { "content": "Text Box", "type": "20004" },
+    "events": [
+      {
+        "triggerId": "AJZIbiefQpY_vSOSRNjXM",
+        "triggerName": "TBW_CHECK_CONDITION_TO_GET_QUOTES_2",
+        "name": "On blur",
+        "type": "6",
+        "serviceType": "13"
+      }
+    ],
+    "path": "4-0-3-0-1-0-0-1-0-0-0-0-1-1-0-0-1",
+    "screenId": "f13AvBz-MxRN_G3tIFHUF",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"

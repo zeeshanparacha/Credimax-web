@@ -1,0 +1,78 @@
+{
+  "id": "AF6jR4g16faskKCVD9gO9",
+  "_id": "JriIRH2mewH0wIDdh_LZG",
+  "name": "REFRESH_TOKEN_TIMERS",
+  "old_name": "REFRESH_TOKEN_TIMERS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "15",
+        "attributes": {
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "sourceBindingKey": "",
+          "filterList": [
+            {
+              "key": "token_timeout",
+              "logic": {
+                "-": [
+                  {
+                    "+": [
+                      {
+                        "var": "currentSession.userProfile.content.tokenTimeoutDuration"
+                      },
+                      0
+                    ]
+                  },
+                  11970000
+                ]
+              },
+              "storeType": 3,
+              "changeValueConditonally": true
+            },
+            {
+              "key": "refresh_token_delay",
+              "changeValueConditonally": true,
+              "storeType": 3,
+              "logic": {
+                "-": [
+                  {
+                    "+": [
+                      {
+                        "var": "currentSession.userProfile.content.tokenTimeoutDuration"
+                      },
+                      0
+                    ]
+                  },
+                  11880000
+                ]
+              }
+            },
+            {
+              "key": "display_session_modal",
+              "changeValueConditonally": false,
+              "storeType": 3,
+              "logic": "1"
+            },
+            {
+              "key": "kill_session",
+              "changeValueConditonally": false,
+              "storeType": 3,
+              "logic": "0"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.82z4vm0slmuWIfLU6zR-nTUFU_oe4uUY",
+  "updatedAt": "2/22/2024",
+  "createdAt": "2/22/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}
