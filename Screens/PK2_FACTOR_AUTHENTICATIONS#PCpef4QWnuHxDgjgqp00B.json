@@ -273,7 +273,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "rBpc0noJfXhviVNzvjcHh",
+                                            "id": "wNEQdHxYCE0zai4JaFZ1o",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -282,7 +282,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "r0YxQdoLD3tOX8MGFXqYW",
+                                                    "id": "P6AhxxFyYLYwXqPpfqdHL",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -300,7 +300,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "Y0jX1dpqjC1f3VX509HYo",
+                                                                    "id": "tRyui94X83zNh0qCc7YJX",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "LDpZOzoaQRe9tMHwFtWmM",
@@ -316,7 +316,9 @@
                                                                           },
                                                                           "layoutProperties": {
                                                                             "image": {
-                                                                              "//": "Use this class to style image component."
+                                                                              "//": "Use this class to style image component.",
+                                                                              "width": "20px",
+                                                                              "marginTop": "20px"
                                                                             },
                                                                             "mainContainer": "image",
                                                                             "xl": 12,
@@ -370,8 +372,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-0-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -388,8 +389,7 @@
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
                                                                       "spacing": 0,
-                                                                      "text-align": "right",
-                                                                      "padding": "20px 10px 0px 0px"
+                                                                      "text-align": "center"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -508,7 +508,41 @@
                                                                             {
                                                                               "cssClassName": "FA_LABEL_ALERT "
                                                                             }
-                                                                          ]
+                                                                          ],
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "and": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                    },
+                                                                                    "1"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "or": [
+                                                                                    {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                                                                                        },
+                                                                                        "False"
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                                                                                        },
+                                                                                        "False"
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -525,6 +559,186 @@
                                                                         },
                                                                         "events": [],
                                                                         "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-0-1"
+                                                                      },
+                                                                      {
+                                                                        "id": "uAtYrTvFTSTPqQR5yWHVA",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Label",
+                                                                        "attributes": {
+                                                                          "variant": "body1",
+                                                                          "name": "Label",
+                                                                          "mandatory": false,
+                                                                          "layoutProperties": {
+                                                                            "label": {
+                                                                              "//": "Use this class to style label component."
+                                                                            },
+                                                                            "prefix": {
+                                                                              "//": "Use this class to style prefix."
+                                                                            },
+                                                                            "postfix": {
+                                                                              "//": "Use this class to style postfix."
+                                                                            },
+                                                                            "mainContainer": "label",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "label": "For your security 2FA cannot be disabled for trusted devices at the moment",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "FA_LABEL_ALERT "
+                                                                            }
+                                                                          ],
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "or": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                    },
+                                                                                    "0"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                                                                                    },
+                                                                                    "False"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "and": [
+                                                                                    {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                                                                                        },
+                                                                                        "True"
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                                                                                        },
+                                                                                        "True"
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "icon": "FaFont",
+                                                                        "group": "Form",
+                                                                        "type": "20002",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 15,
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Label",
+                                                                          "type": "20002"
+                                                                        },
+                                                                        "events": [],
+                                                                        "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-0-2"
+                                                                      },
+                                                                      {
+                                                                        "id": "pXROwmm1e_fGtTUWvM2aJ",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Label",
+                                                                        "attributes": {
+                                                                          "variant": "body1",
+                                                                          "name": "Label",
+                                                                          "mandatory": false,
+                                                                          "layoutProperties": {
+                                                                            "label": {
+                                                                              "//": "Use this class to style label component."
+                                                                            },
+                                                                            "prefix": {
+                                                                              "//": "Use this class to style prefix."
+                                                                            },
+                                                                            "postfix": {
+                                                                              "//": "Use this class to style postfix."
+                                                                            },
+                                                                            "mainContainer": "label",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "label": "For your security 2FA cannot be disabled for non-trusted devices at the moment",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "FA_LABEL_ALERT "
+                                                                            }
+                                                                          ],
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "or": [
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                    },
+                                                                                    "0"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "==": [
+                                                                                    {
+                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                                                                                    },
+                                                                                    "False"
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "and": [
+                                                                                    {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                                                                                        },
+                                                                                        "True"
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                                                                                        },
+                                                                                        "True"
+                                                                                      ]
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "icon": "FaFont",
+                                                                        "group": "Form",
+                                                                        "type": "20002",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 15,
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Label",
+                                                                          "type": "20002"
+                                                                        },
+                                                                        "events": [],
+                                                                        "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-0-3"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -678,16 +892,16 @@
                                                       }
                                                     ],
                                                     "layoutProperties": {
-                                                      "xl": 8,
-                                                      "lg": 8,
-                                                      "md": 8,
-                                                      "sm": 8,
-                                                      "xs": 8
+                                                      "xl": 11,
+                                                      "lg": 11,
+                                                      "md": 11,
+                                                      "sm": 11,
+                                                      "xs": 11
                                                     }
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "534fIQDA9gXxASQ3FxJwc",
+                                                    "id": "6ErdFm9D8TUS8F17qtUuC",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -742,11 +956,11 @@
                                                       }
                                                     ],
                                                     "layoutProperties": {
-                                                      "xl": 4,
-                                                      "lg": 4,
-                                                      "md": 4,
-                                                      "sm": 4,
-                                                      "xs": 4
+                                                      "xl": 1,
+                                                      "lg": 1,
+                                                      "md": 1,
+                                                      "sm": 1,
+                                                      "xs": 1
                                                     }
                                                   }
                                                 ],
@@ -817,11 +1031,31 @@
                                           "name": "Grid layout",
                                           "hideCondition": {
                                             "logic": {
-                                              "==": [
+                                              "and": [
                                                 {
-                                                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                  "!=": [
+                                                    {
+                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                    },
+                                                    "0"
+                                                  ]
                                                 },
-                                                "1"
+                                                {
+                                                  "!=": [
+                                                    {
+                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                                                    },
+                                                    "True"
+                                                  ]
+                                                },
+                                                {
+                                                  "!=": [
+                                                    {
+                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                                                    },
+                                                    "True"
+                                                  ]
+                                                }
                                               ]
                                             }
                                           }
@@ -1337,11 +1571,23 @@
                                                                                   "statename": "FA_TRUSTED_DEVICE",
                                                                                   "disableCondition": {
                                                                                     "logic": {
-                                                                                      "!=": [
+                                                                                      "or": [
                                                                                         {
-                                                                                          "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                          "!=": [
+                                                                                            {
+                                                                                              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                            },
+                                                                                            "1"
+                                                                                          ]
                                                                                         },
-                                                                                        "1"
+                                                                                        {
+                                                                                          "==": [
+                                                                                            {
+                                                                                              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                                                                                            },
+                                                                                            "True"
+                                                                                          ]
+                                                                                        }
                                                                                       ]
                                                                                     }
                                                                                   }
@@ -1988,11 +2234,23 @@
                                                                                           "statename": "NON_TRUSTED_DEVICE",
                                                                                           "disableCondition": {
                                                                                             "logic": {
-                                                                                              "!=": [
+                                                                                              "or": [
                                                                                                 {
-                                                                                                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                                  "!=": [
+                                                                                                    {
+                                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                                                                                                    },
+                                                                                                    "1"
+                                                                                                  ]
                                                                                                 },
-                                                                                                "1"
+                                                                                                {
+                                                                                                  "==": [
+                                                                                                    {
+                                                                                                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                                                                                                    },
+                                                                                                    "True"
+                                                                                                  ]
+                                                                                                }
                                                                                               ]
                                                                                             }
                                                                                           }
@@ -2530,8 +2788,8 @@
     "gitBranchName": "master",
     "_id": "PCpef4QWnuHxDgjgqp00B",
     "createdBy": "talha",
-    "updatedAt": "2/19/2024",
-    "createdAt": "2/19/2024",
+    "updatedAt": "2/25/2024",
+    "createdAt": "2/25/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2997,11 +3255,31 @@
       "name": "Grid layout",
       "hideCondition": {
         "logic": {
-          "==": [
+          "and": [
             {
-              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+              "!=": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                },
+                "0"
+              ]
             },
-            "1"
+            {
+              "!=": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                },
+                "True"
+              ]
+            },
+            {
+              "!=": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                },
+                "True"
+              ]
+            }
           ]
         }
       }
@@ -3032,7 +3310,13 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 8, "lg": 8, "md": 8, "sm": 8, "xs": 8 }
+          "layoutProperties": {
+            "xl": 11,
+            "lg": 11,
+            "md": 11,
+            "sm": 11,
+            "xs": 11
+          }
         },
         {
           "componentId": "QQLzVbXF7_bPjw8U6uG30",
@@ -3045,7 +3329,7 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 4, "lg": 4, "md": 4, "sm": 4, "xs": 4 }
+          "layoutProperties": { "xl": 1, "lg": 1, "md": 1, "sm": 1, "xs": 1 }
         }
       ],
       "label": "Header",
@@ -3174,8 +3458,7 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "text-align": "right",
-          "padding": "20px 10px 0px 0px"
+          "text-align": "center"
         },
         "mainContainer": "gridLayout"
       },
@@ -3209,7 +3492,11 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "20px",
+          "marginTop": "20px"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -3284,6 +3571,30 @@
             "xs": 12
           },
           "componentId": "X0jkSlGmDDHuI6Jklx39z",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "uAtYrTvFTSTPqQR5yWHVA",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "pXROwmm1e_fGtTUWvM2aJ",
           "componentType": "20002",
           "order": 1
         }
@@ -3374,7 +3685,41 @@
         "xs": 12
       },
       "label": "For your security 2FA cannot be disabled at the moment",
-      "cssClassNames": [{ "cssClassName": "FA_LABEL_ALERT " }]
+      "cssClassNames": [{ "cssClassName": "FA_LABEL_ALERT " }],
+      "hideCondition": {
+        "logic": {
+          "and": [
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                },
+                "1"
+              ]
+            },
+            {
+              "or": [
+                {
+                  "==": [
+                    {
+                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                    },
+                    "False"
+                  ]
+                },
+                {
+                  "==": [
+                    {
+                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                    },
+                    "False"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -3388,6 +3733,170 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-0-1",
+    "screenId": "PCpef4QWnuHxDgjgqp00B",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "uAtYrTvFTSTPqQR5yWHVA",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "For your security 2FA cannot be disabled for trusted devices at the moment",
+      "cssClassNames": [{ "cssClassName": "FA_LABEL_ALERT " }],
+      "hideCondition": {
+        "logic": {
+          "or": [
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                },
+                "0"
+              ]
+            },
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                },
+                "False"
+              ]
+            },
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                    },
+                    "True"
+                  ]
+                },
+                {
+                  "==": [
+                    {
+                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                    },
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-0-2",
+    "screenId": "PCpef4QWnuHxDgjgqp00B",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "pXROwmm1e_fGtTUWvM2aJ",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "For your security 2FA cannot be disabled for non-trusted devices at the moment",
+      "cssClassNames": [{ "cssClassName": "FA_LABEL_ALERT " }],
+      "hideCondition": {
+        "logic": {
+          "or": [
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                },
+                "0"
+              ]
+            },
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                },
+                "False"
+              ]
+            },
+            {
+              "and": [
+                {
+                  "==": [
+                    {
+                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                    },
+                    "True"
+                  ]
+                },
+                {
+                  "==": [
+                    {
+                      "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                    },
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-0-3",
     "screenId": "PCpef4QWnuHxDgjgqp00B",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -4102,11 +4611,23 @@
       "statename": "FA_TRUSTED_DEVICE",
       "disableCondition": {
         "logic": {
-          "!=": [
+          "or": [
             {
-              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+              "!=": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                },
+                "1"
+              ]
             },
-            "1"
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAlltrusted"
+                },
+                "True"
+              ]
+            }
           ]
         }
       }
@@ -4682,11 +5203,23 @@
       "statename": "NON_TRUSTED_DEVICE",
       "disableCondition": {
         "logic": {
-          "!=": [
+          "or": [
             {
-              "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+              "!=": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.allowTwoFaConfiguration"
+                },
+                "1"
+              ]
             },
-            "1"
+            {
+              "==": [
+                {
+                  "var": "currentScreen.FA_RESPONSE_GET_FLAG.content.forceOtpAllUntrusted"
+                },
+                "True"
+              ]
+            }
           ]
         }
       }

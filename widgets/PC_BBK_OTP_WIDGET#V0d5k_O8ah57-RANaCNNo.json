@@ -736,7 +736,7 @@
                                                   "width": "56",
                                                   "height": "64",
                                                   "isOtpExpiry": false,
-                                                  "otpErrorBindingKey": "pc_validate_otp_res.message",
+                                                  "otpErrorBindingKey": " pc_validate_otp_res.message",
                                                   "otpTime": "4"
                                                 },
                                                 "version": "1.0.0",
@@ -746,7 +746,59 @@
                                                   "content": "OTP",
                                                   "type": "20052"
                                                 },
-                                                "events": [],
+                                                "events": [
+                                                  {
+                                                    "triggerId": "9b25ITWNdWsa6vxRy_iZQ",
+                                                    "triggerName": "PC_CLEAR_SMS_PIN",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "requestBody": [],
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "",
+                                                      "sourceBindingKey": "",
+                                                      "filterList": [
+                                                        {
+                                                          "key": "smsPin",
+                                                          "changeValueConditonally": false,
+                                                          "storeType": 1,
+                                                          "logic": null
+                                                        },
+                                                        {
+                                                          "key": "pc_validate_otp_res",
+                                                          "changeValueConditonally": false,
+                                                          "storeType": 2,
+                                                          "logic": null
+                                                        }
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "15"
+                                                  },
+                                                  {
+                                                    "triggerId": "1tl70v4ugTzr7nSxSuOCk",
+                                                    "triggerName": "PC_CLEAR_BBK_OTP_RES",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "",
+                                                      "sourceBindingKey": "",
+                                                      "filterList": [
+                                                        {
+                                                          "key": " pc_validate_otp_res",
+                                                          "changeValueConditonally": false,
+                                                          "storeType": 2,
+                                                          "logic": null
+                                                        }
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "15"
+                                                  }
+                                                ],
                                                 "path": "0-0-0-0-0-0-0-0-3-0-0"
                                               }
                                             ],
@@ -1415,8 +1467,8 @@
     "gitBranchName": "master",
     "_id": "V0d5k_O8ah57-RANaCNNo",
     "createdBy": "talha",
-    "updatedAt": "2/21/2024",
-    "createdAt": "2/21/2024",
+    "updatedAt": "2/25/2024",
+    "createdAt": "2/25/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2226,14 +2278,29 @@
       "width": "56",
       "height": "64",
       "isOtpExpiry": false,
-      "otpErrorBindingKey": "pc_validate_otp_res.message",
+      "otpErrorBindingKey": " pc_validate_otp_res.message",
       "otpTime": "4"
     },
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "OTP", "type": "20052" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "9b25ITWNdWsa6vxRy_iZQ",
+        "triggerName": "PC_CLEAR_SMS_PIN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      },
+      {
+        "triggerId": "1tl70v4ugTzr7nSxSuOCk",
+        "triggerName": "PC_CLEAR_BBK_OTP_RES",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      }
+    ],
     "path": "0-0-0-0-0-0-0-0-3-0-0",
     "screenId": "V0d5k_O8ah57-RANaCNNo",
     "subType": "component",

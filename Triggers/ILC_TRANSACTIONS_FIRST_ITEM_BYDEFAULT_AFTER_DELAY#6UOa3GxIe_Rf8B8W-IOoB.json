@@ -1,0 +1,151 @@
+{
+  "_id": "6UOa3GxIe_Rf8B8W-IOoB",
+  "id": "HNadK4zO1RBuK2edAYZ90",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILC_TRANSACTIONS_FIRST_ITEM_BYDEFAULT_AFTER_DELAY",
+  "old_name": "ILC_TRANSACTIONS_FIRST_ITEM_BYDEFAULT_AFTER_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "92_2F-PHBURLBnYC1xpw2",
+              "name": "ILC_TRANSACTIONS_FIRST_ITEM_BYDEFAULT",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "ILC_SELECTED_TRANSACTIONS",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": {
+                            "var": "currentScreen.IL_TRANSACTIONS_LIST.[0]"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.q0ovhz22z0d-S8tkncpuk734zXVQ1n_Y",
+              "_id": "3SKi71C8Oocp0D1vL0gjo",
+              "updatedAt": "2/25/2024",
+              "createdAt": "2/25/2024",
+              "createdBy": "mubashar",
+              "updatedBy": "mubashar"
+            },
+            {
+              "id": "nNbg8Ec2ZhXGtMRJc81Lf",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "delay": "500",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "cM9zuhYt4W9lL2XwwJUNS",
+                          "name": "ILC_T_FILTER_LIST_ITEMS",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "9",
+                                "attributes": {
+                                  "stateName": "none",
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "none",
+                                  "dataType": "",
+                                  "destinationBindingKey": "ilc_t_Filtered_items",
+                                  "sourceBindingKey": "ILC_SELECTED_TRANSACTIONS. transactions",
+                                  "sourceStoreType": 1,
+                                  "destinationStoreType": 2,
+                                  "logic": {
+                                    "if": [
+                                      {
+                                        "!": {
+                                          "Var": "currentScreen.form.ilc_t_type"
+                                        }
+                                      },
+                                      true,
+                                      {
+                                        "if": [
+                                          {
+                                            "==": [
+                                              { "var": "transactionType" },
+                                              {
+                                                "var": "currentScreen.form.ilc_t_type"
+                                              }
+                                            ]
+                                          },
+                                          true,
+                                          false
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "targetValue": "none"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.ldwkjmpiewEmUGZi3Zw1Lek6eiO8_Mz",
+                          "_id": "j2z3L0CZxzFqxdVqRJxQ7",
+                          "updatedAt": "2/26/2024",
+                          "createdAt": "2/26/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        }
+                      ],
+                      "triggerIds": ["cM9zuhYt4W9lL2XwwJUNS"]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.ldwkjmpiewEmUGZi3Zw1Lek6eiO8_Mz",
+              "_id": "3cX5awjsJunoLzS5nj9ww",
+              "updatedAt": "2/26/2024",
+              "createdAt": "2/26/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["92_2F-PHBURLBnYC1xpw2", "nNbg8Ec2ZhXGtMRJc81Lf"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.ldwkjmpiewEmUGZi3Zw1Lek6eiO8_Mz",
+  "updatedAt": "2/26/2024",
+  "createdAt": "2/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

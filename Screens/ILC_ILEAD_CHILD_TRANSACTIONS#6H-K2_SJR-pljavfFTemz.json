@@ -1,7 +1,7 @@
 [
   {
-    "id": "MES3JaOsWVjYgPPVtwU33",
-    "name": "IL_ILEAD_CHILD_TRANSACTIONS",
+    "id": "6H-K2_SJR-pljavfFTemz",
+    "name": "ILC_ILEAD_CHILD_TRANSACTIONS",
     "type": "10001",
     "attributes": {
       "gridProps": [
@@ -45,7 +45,166 @@
           "name": "Grid layout",
           "cssClassNames": []
         },
-        "events": [],
+        "events": [
+          {
+            "triggerId": "HNadK4zO1RBuK2edAYZ90",
+            "triggerName": "ILC_TRANSACTIONS_FIRST_ITEM_BYDEFAULT_AFTER_DELAY",
+            "serviceType": "2",
+            "attributes": {
+              "delay": "500",
+              "storeType": "",
+              "searchInState": false,
+              "triggers": [
+                {
+                  "id": "92_2F-PHBURLBnYC1xpw2",
+                  "name": "ILC_TRANSACTIONS_FIRST_ITEM_BYDEFAULT",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "15",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "sourceBindingKey": "",
+                          "filterList": [
+                            {
+                              "key": "ILC_SELECTED_TRANSACTIONS",
+                              "changeValueConditonally": true,
+                              "storeType": 1,
+                              "logic": {
+                                "var": "currentScreen.IL_TRANSACTIONS_LIST.[0]"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.q0ovhz22z0d-S8tkncpuk734zXVQ1n_Y",
+                  "_id": "3SKi71C8Oocp0D1vL0gjo",
+                  "updatedAt": "2/25/2024",
+                  "createdAt": "2/25/2024",
+                  "createdBy": "mubashar",
+                  "updatedBy": "mubashar"
+                }
+              ],
+              "triggerIds": ["92_2F-PHBURLBnYC1xpw2"]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "2"
+          },
+          {
+            "triggerId": "ZFrEr2_d6vNjp1Tu_Kgok",
+            "triggerName": "DELETE_LATER",
+            "serviceType": "11",
+            "attributes": {
+              "requestBody": [],
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "IL_TRANSACTIONS_LIST",
+                  "changeValueConditonally": false,
+                  "storeType": 2,
+                  "logic": [
+                    {
+                      "durations": "15 Jun - 15 July",
+                      "transactions": [
+                        {
+                          "Merchantname": "SuperMarket",
+                          "TransactionDate": "15-12-2024",
+                          "TransactionTime": "08:15 PM",
+                          "Amount": "BHD 100",
+                          "statements": "Current Statement",
+                          "durations": "15 Jun - 15 July",
+                          "transactionType": "Success"
+                        },
+                        {
+                          "Merchantname": "HyperSuperMarket",
+                          "TransactionDate": "23-11-2024",
+                          "TransactionTime": "03:15 PM",
+                          "Amount": "BHD 200",
+                          "transactionType": "S",
+                          "statements": "June Statement",
+                          "durations": "15 May - 15 Jun"
+                        },
+                        {
+                          "Merchantname": "DiamondSuperMarket",
+                          "TransactionDate": "3-3-2024",
+                          "TransactionTime": "04:15 PM",
+                          "Amount": "BHD 300",
+                          "transactionType": "Failed",
+                          "statements": "April Statement",
+                          "durations": "15 March - 15 April"
+                        },
+                        {
+                          "Merchantname": "IbsSuperMarket",
+                          "TransactionDate": "28-8-2024",
+                          "TransactionTime": "3:15 PM",
+                          "Amount": "BHD 120",
+                          "statements": "April Statement",
+                          "durations": "15 March - 15 April"
+                        }
+                      ]
+                    },
+                    {
+                      "durations": "20 Aug - 20 Sep",
+                      "transactions": [
+                        {
+                          "Merchantname": "CityMarket",
+                          "TransactionDate": "10-10-2024",
+                          "TransactionTime": "12:30 PM",
+                          "Amount": "BHD 150",
+                          "statements": "September Statement",
+                          "durations": "20 Aug - 20 Sep"
+                        },
+                        {
+                          "Merchantname": "TownMart",
+                          "TransactionDate": "5-9-2024",
+                          "TransactionTime": "10:45 AM",
+                          "Amount": "BHD 180",
+                          "statements": "August Statement",
+                          "durations": "20 Jul - 20 Aug"
+                        }
+                      ]
+                    },
+                    {
+                      "durations": "25 Nov - 25 Dec",
+                      "transactions": [
+                        {
+                          "Merchantname": "MegaMart",
+                          "TransactionDate": "12-11-2024",
+                          "TransactionTime": "02:00 PM",
+                          "Amount": "BHD 250",
+                          "statements": "November Statement",
+                          "durations": "25 Oct - 25 Nov"
+                        },
+                        {
+                          "Merchantname": "GlobalSuperMarket",
+                          "TransactionDate": "17-12-2024",
+                          "TransactionTime": "11:20 AM",
+                          "Amount": "BHD 220",
+                          "statements": "December Statement",
+                          "durations": "25 Nov - 25 Dec"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
+          }
+        ],
         "path": "0",
         "version": "1.0.0",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
@@ -61,7 +220,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "KMyi131CHzXEh6E6o6ii8",
+            "id": "XkuLE_64ImmrxBkcLYskr",
             "gridProps": [
               {
                 "id": "-e06cAfe0iFChBGdxHGof",
@@ -280,7 +439,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "VPTW5EnkREr3pArfkgZ1f",
+                            "id": "jV1nXiuCtXbILPspanyG4",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -306,7 +465,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "MQWG_LfI-ZHWRqH77v8Jn",
+                                                    "id": "u1liIPrI7L7G40_o7mxSm",
                                                     "gridProps": [
                                                       {
                                                         "id": "AphUKuH1xzzwbxfNgm8Iv",
@@ -318,7 +477,7 @@
                                                           "label-locale-key": "",
                                                           "maxLength": "100",
                                                           "type": "text",
-                                                          "variant": "outlined",
+                                                          "variant": "standard",
                                                           "value": "",
                                                           "readOnly": false,
                                                           "tooltip": "",
@@ -327,8 +486,7 @@
                                                           "tooltipState": "",
                                                           "layoutProperties": {
                                                             "textField": {
-                                                              "//": "Use this class to style text field component.",
-                                                              "background": "#F2F2F2"
+                                                              "//": "Use this class to style text field component."
                                                             },
                                                             "inputProps": {
                                                               "//": "Use this class to style  text field element."
@@ -344,16 +502,12 @@
                                                             "required": false,
                                                             "errorMsg": "This field is required"
                                                           },
-                                                          "placeholder": "SEARCH",
+                                                          "placeholder": "Search",
                                                           "buttonIconPosition": "end",
-                                                          "stateName": "SearchData",
+                                                          "stateName": "ilc_t_SearchData",
                                                           "asset": null,
                                                           "iconname": "RiSearch2Line",
-                                                          "cssClassNames": [
-                                                            {
-                                                              "cssClassName": "IL_TRANSACTION_SEARCH_BAR_GRID "
-                                                            }
-                                                          ],
+                                                          "cssClassNames": [],
                                                           "disableUnderline": true
                                                         },
                                                         "icon": "FaWindowMinimize",
@@ -380,8 +534,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-1-0-0-0-0-0-0-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "path": "0-0-1-0-0-0-0-0-0-0-0",
@@ -402,7 +555,11 @@
                                                   },
                                                   "direction": "row",
                                                   "name": "Grid layout",
-                                                  "cssClassNames": []
+                                                  "cssClassNames": [
+                                                    {
+                                                      "cssClassName": "TD_SEARCH_GRID "
+                                                    }
+                                                  ]
                                                 },
                                                 "component": {
                                                   "type": "10001",
@@ -535,7 +692,7 @@
                                                                 "createdAt": "23-Aug-2021",
                                                                 "attributes": {
                                                                   "name": "Drop down",
-                                                                  "stateName": "fromInstrument",
+                                                                  "stateName": "ilc_t_type",
                                                                   "allValues": true,
                                                                   "dataSource": "",
                                                                   "dataKey": "",
@@ -553,14 +710,16 @@
                                                                       "//": "Use this class to style textField component in dropdown."
                                                                     },
                                                                     "inputProps": {
-                                                                      "//": "Use this class to style dropdown element."
+                                                                      "//": "Use this class to style dropdown element.",
+                                                                      "height": "48px"
                                                                     },
                                                                     "mainContainer": "autocomplete",
                                                                     "options": {
                                                                       "//": "Use this class to style dropdown options."
                                                                     },
                                                                     "optionItems": {
-                                                                      "//": "Use this class to style dropdown option items."
+                                                                      "//": "Use this class to style dropdown option items.",
+                                                                      "color": "#838383"
                                                                     },
                                                                     "popupIcon": {
                                                                       "//": "Use this class to style dropdown popup icon."
@@ -576,12 +735,12 @@
                                                                   },
                                                                   "dropdownOptions": [
                                                                     {
-                                                                      "code": "posted",
-                                                                      "name": "Posted"
-                                                                    },
-                                                                    {
                                                                       "code": "failed",
                                                                       "name": "Failed"
+                                                                    },
+                                                                    {
+                                                                      "code": "success",
+                                                                      "name": "Success"
                                                                     }
                                                                   ],
                                                                   "variant": "outlined",
@@ -606,7 +765,82 @@
                                                                   "placeholder": "Posted"
                                                                 },
                                                                 "type": "20003",
-                                                                "events": [],
+                                                                "events": [
+                                                                  {
+                                                                    "triggerId": "nNbg8Ec2ZhXGtMRJc81Lf",
+                                                                    "triggerName": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+                                                                    "serviceType": "2",
+                                                                    "attributes": {
+                                                                      "delay": "500",
+                                                                      "storeType": "",
+                                                                      "searchInState": false,
+                                                                      "triggers": [
+                                                                        {
+                                                                          "id": "cM9zuhYt4W9lL2XwwJUNS",
+                                                                          "name": "ILC_T_FILTER_LIST_ITEMS",
+                                                                          "projectId": "652fcbce09869c3c809b3097",
+                                                                          "gitBranchName": "master",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "9",
+                                                                                "attributes": {
+                                                                                  "stateName": "none",
+                                                                                  "storeType": "",
+                                                                                  "selectedObjectBindingKey": "none",
+                                                                                  "dataType": "",
+                                                                                  "destinationBindingKey": "ilc_t_Filtered_items",
+                                                                                  "sourceBindingKey": "ILC_SELECTED_TRANSACTIONS. transactions",
+                                                                                  "sourceStoreType": 1,
+                                                                                  "destinationStoreType": 2,
+                                                                                  "logic": {
+                                                                                    "if": [
+                                                                                      {
+                                                                                        "!": {
+                                                                                          "Var": "currentScreen.form.ilc_t_type"
+                                                                                        }
+                                                                                      },
+                                                                                      true,
+                                                                                      {
+                                                                                        "if": [
+                                                                                          {
+                                                                                            "==": [
+                                                                                              {
+                                                                                                "var": "transactionType"
+                                                                                              },
+                                                                                              {
+                                                                                                "var": "currentScreen.form.ilc_t_type"
+                                                                                              }
+                                                                                            ]
+                                                                                          },
+                                                                                          true,
+                                                                                          false
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  "targetValue": "none"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ],
+                                                                          "csrf": "0.ldwkjmpiewEmUGZi3Zw1Lek6eiO8_Mz",
+                                                                          "_id": "j2z3L0CZxzFqxdVqRJxQ7",
+                                                                          "updatedAt": "2/26/2024",
+                                                                          "createdAt": "2/26/2024",
+                                                                          "createdBy": "talha",
+                                                                          "updatedBy": "talha"
+                                                                        }
+                                                                      ],
+                                                                      "triggerIds": [
+                                                                        "cM9zuhYt4W9lL2XwwJUNS"
+                                                                      ]
+                                                                    },
+                                                                    "type": "3",
+                                                                    "name": "On change"
+                                                                  }
+                                                                ],
                                                                 "order": 10,
                                                                 "version": "1.0.0",
                                                                 "isLatest": true,
@@ -724,15 +958,15 @@
                                                                     },
                                                                     "inputProps": {
                                                                       "//": "Use this class to style dropdown element.",
-                                                                      "height": "48px",
-                                                                      "width": "140px"
+                                                                      "height": "48px"
                                                                     },
                                                                     "mainContainer": "autocomplete",
                                                                     "options": {
                                                                       "//": "Use this class to style dropdown options."
                                                                     },
                                                                     "optionItems": {
-                                                                      "//": "Use this class to style dropdown option items."
+                                                                      "//": "Use this class to style dropdown option items.",
+                                                                      "color": "#838383"
                                                                     },
                                                                     "popupIcon": {
                                                                       "//": "Use this class to style dropdown popup icon."
@@ -999,7 +1233,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "_b9qJrqNKkLR1P0nhmXLf",
+                                                    "id": "LTsizKe2MbqEXNSAwCtHG",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1008,7 +1242,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "YSRjJBRD6QdSawNMDar-w",
+                                                            "id": "MmHoN0hfu5r9v7JWFYpaC",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1024,7 +1258,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "YGaOvbhVeDeW23IZNB7Wc",
+                                                                            "id": "l2FasWKNNU06AFnErcw5T",
                                                                             "gridProps": [
                                                                               {
                                                                                 "id": "cl4B6UMyOLHL_HvLA1H2F",
@@ -1051,9 +1285,14 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "statements",
-                                                                                  "searchInState": true,
-                                                                                  "storeType": 2
+                                                                                  "label": "Statements",
+                                                                                  "searchInState": false,
+                                                                                  "storeType": 2,
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "ILC_STATEMENT_LABEL "
+                                                                                    }
+                                                                                  ]
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -1078,8 +1317,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0-0-0-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0-0-0",
@@ -1090,7 +1328,8 @@
                                                                           "layoutProperties": {
                                                                             "gridLayout": {
                                                                               "//": "Use this class to style grid layout component.",
-                                                                              "spacing": 0
+                                                                              "spacing": 0,
+                                                                              "color": "#838383"
                                                                             },
                                                                             "mainContainer": "gridLayout"
                                                                           },
@@ -1100,7 +1339,22 @@
                                                                             "alignItems": "flex-start"
                                                                           },
                                                                           "direction": "row",
-                                                                          "name": "Grid layout"
+                                                                          "name": "Grid layout",
+                                                                          "conditionalClasses": [
+                                                                            {
+                                                                              "cssClassName": "ILC_SELECTED_IITEM_STATEMENT ",
+                                                                              "logic": {
+                                                                                "==": [
+                                                                                  {
+                                                                                    "var": "currentScreen.form.ILC_SELECTED_TRANSACTIONS.durations"
+                                                                                  },
+                                                                                  {
+                                                                                    "var": "durations"
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            }
+                                                                          ]
                                                                         },
                                                                         "component": {
                                                                           "type": "10001",
@@ -1164,7 +1418,12 @@
                                                                                           "label": "durations",
                                                                                           "storeType": 2,
                                                                                           "enablePaginationSortingFilter": false,
-                                                                                          "searchInState": true
+                                                                                          "searchInState": true,
+                                                                                          "cssClassNames": [
+                                                                                            {
+                                                                                              "cssClassName": "ILC_TRANSACTIONS_STATEMENT_CLASS "
+                                                                                            }
+                                                                                          ]
                                                                                         },
                                                                                         "events": [],
                                                                                         "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0-0-1-0-0-0-0",
@@ -1337,7 +1596,8 @@
                                                             "gridLayout": {
                                                               "//": "Use this class to style grid layout component.",
                                                               "spacing": 0,
-                                                              "padding": "8px 0px 8px 16px"
+                                                              "padding": "8px 0px 8px 16px",
+                                                              "color": "#838383"
                                                             },
                                                             "mainContainer": "gridLayout"
                                                           },
@@ -1347,9 +1607,100 @@
                                                             "alignItems": "flex-start"
                                                           },
                                                           "direction": "row",
-                                                          "name": "Grid layout"
+                                                          "name": "Grid layout",
+                                                          "conditionalClasses": [
+                                                            {
+                                                              "cssClassName": "ILC_SELECTED_ITEM_CLASS ",
+                                                              "logic": {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentScreen.form.ILC_SELECTED_TRANSACTIONS.durations"
+                                                                  },
+                                                                  {
+                                                                    "var": "durations"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
                                                         },
-                                                        "events": [],
+                                                        "events": [
+                                                          {
+                                                            "triggerId": "nNbg8Ec2ZhXGtMRJc81Lf",
+                                                            "triggerName": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+                                                            "serviceType": "2",
+                                                            "attributes": {
+                                                              "delay": "500",
+                                                              "storeType": "",
+                                                              "searchInState": false,
+                                                              "triggers": [
+                                                                {
+                                                                  "id": "cM9zuhYt4W9lL2XwwJUNS",
+                                                                  "name": "ILC_T_FILTER_LIST_ITEMS",
+                                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                                  "gitBranchName": "master",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "11",
+                                                                      "command": {
+                                                                        "type": "9",
+                                                                        "attributes": {
+                                                                          "stateName": "none",
+                                                                          "storeType": "",
+                                                                          "selectedObjectBindingKey": "none",
+                                                                          "dataType": "",
+                                                                          "destinationBindingKey": "ilc_t_Filtered_items",
+                                                                          "sourceBindingKey": "ILC_SELECTED_TRANSACTIONS. transactions",
+                                                                          "sourceStoreType": 1,
+                                                                          "destinationStoreType": 2,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              {
+                                                                                "!": {
+                                                                                  "Var": "currentScreen.form.ilc_t_type"
+                                                                                }
+                                                                              },
+                                                                              true,
+                                                                              {
+                                                                                "if": [
+                                                                                  {
+                                                                                    "==": [
+                                                                                      {
+                                                                                        "var": "transactionType"
+                                                                                      },
+                                                                                      {
+                                                                                        "var": "currentScreen.form.ilc_t_type"
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  true,
+                                                                                  false
+                                                                                ]
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          "targetValue": "none"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "csrf": "0.ldwkjmpiewEmUGZi3Zw1Lek6eiO8_Mz",
+                                                                  "_id": "j2z3L0CZxzFqxdVqRJxQ7",
+                                                                  "updatedAt": "2/26/2024",
+                                                                  "createdAt": "2/26/2024",
+                                                                  "createdBy": "talha",
+                                                                  "updatedBy": "talha"
+                                                                }
+                                                              ],
+                                                              "triggerIds": [
+                                                                "cM9zuhYt4W9lL2XwwJUNS"
+                                                              ]
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "2"
+                                                          }
+                                                        ],
                                                         "component": {
                                                           "type": "10001",
                                                           "content": "Grid layout"
@@ -1404,8 +1755,7 @@
                                                   },
                                                   "storeType": 2,
                                                   "dataSource": "IL_TRANSACTIONS_LIST",
-                                                  "bindingKey": "SELECTED-TRANSACTIONS",
-                                                  "selectedColor": "#E7F0F7"
+                                                  "bindingKey": "ILC_SELECTED_TRANSACTIONS"
                                                 },
                                                 "events": [],
                                                 "component": {
@@ -1556,7 +1906,7 @@
                                                                           "label": "Merchant name",
                                                                           "enablePaginationSortingFilter": true,
                                                                           "paginationSortingKey": "Merchantname",
-                                                                          "paginationListDataKey": "IL_TRANSACTIONS_LIST",
+                                                                          "paginationListDataKey": "ilc_t_Filtered_items",
                                                                           "storeType": 2,
                                                                           "cssClassNames": [
                                                                             {
@@ -1672,11 +2022,11 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "Transaction Date",
+                                                                          "label": "Transaction date",
                                                                           "enablePaginationSortingFilter": true,
                                                                           "paginationSortingKey": "TransactionDate",
                                                                           "storeType": 2,
-                                                                          "paginationListDataKey": "IL_TRANSACTIONS_LIST",
+                                                                          "paginationListDataKey": "ilc_t_Filtered_items",
                                                                           "cssClassNames": [
                                                                             {
                                                                               "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL "
@@ -1794,7 +2144,7 @@
                                                                           "label": "Amount",
                                                                           "enablePaginationSortingFilter": true,
                                                                           "paginationSortingKey": "Amount",
-                                                                          "paginationListDataKey": "IL_TRANSACTIONS_LIST",
+                                                                          "paginationListDataKey": "ilc_t_Filtered_items",
                                                                           "storeType": 2,
                                                                           "cssClassNames": [
                                                                             {
@@ -2045,7 +2395,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "__BAnuspL8su2FsXE3cPg",
+                                                            "id": "tUkwAwyUlXoYMm8aiedNc",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2621,7 +2971,12 @@
                                                                                   },
                                                                                   "label": "Amount",
                                                                                   "searchInState": true,
-                                                                                  "storeType": 2
+                                                                                  "storeType": 2,
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "IL_TRANSACTIONS_AMOUNT_BHD_LABEL "
+                                                                                    }
+                                                                                  ]
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -2891,6 +3246,551 @@
                                                               "sm": 12,
                                                               "xs": 12
                                                             }
+                                                          },
+                                                          {
+                                                            "type": "column",
+                                                            "id": "CgID2jzT2TReSAex7HVYo",
+                                                            "isPaginationColumn": true,
+                                                            "gridProps": [
+                                                              {
+                                                                "type": "10001",
+                                                                "name": "GENERAL_PAGINATION_",
+                                                                "id": "GDfXQNiUjQlkJxqhLU0nw",
+                                                                "gridProps": [
+                                                                  {
+                                                                    "type": "column",
+                                                                    "id": "ql-U0UngeBcossbzExrLS",
+                                                                    "gridProps": [
+                                                                      {
+                                                                        "type": "10001",
+                                                                        "name": "Grid layout",
+                                                                        "id": "xPhPn8c_hIbo0o4Vq9q5M",
+                                                                        "gridProps": [
+                                                                          {
+                                                                            "type": "column",
+                                                                            "id": "Wov9OWP7FnLWYHe5KhRdw",
+                                                                            "gridProps": [
+                                                                              {
+                                                                                "id": "33ryjhJhmyyQHLXKnYZ0s",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component.",
+                                                                                      "color": "black",
+                                                                                      "fontWeight": "bold"
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix."
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": " - ",
+                                                                                  "prefix": "pagination.currentPageStartRowCount",
+                                                                                  "postfix": "pagination.currentPageLastRowCount",
+                                                                                  "searchInState": false,
+                                                                                  "searchInStatePrefix": true,
+                                                                                  "searchInStatePostfix": true,
+                                                                                  "storeType": 2,
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "SMALL_LABEL "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-0-0-0"
+                                                                              },
+                                                                              {
+                                                                                "id": "m6VXIVw_jwHPSkCrVB9sV",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component.",
+                                                                                      "marginLeft": "4px"
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix."
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "pagination.totalRows",
+                                                                                  "prefix": "of ",
+                                                                                  "postfix": " results",
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2,
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "SMALL_LABEL "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-0-0-1"
+                                                                              }
+                                                                            ],
+                                                                            "layoutProperties": {
+                                                                              "xl": 12,
+                                                                              "lg": 12,
+                                                                              "md": 12,
+                                                                              "sm": 12,
+                                                                              "xs": 12
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "allowedContainers": [
+                                                                          "10001",
+                                                                          "20030",
+                                                                          "noLayout",
+                                                                          "20010",
+                                                                          "widget"
+                                                                        ],
+                                                                        "attributes": {
+                                                                          "gridProps": [],
+                                                                          "label": "Header",
+                                                                          "layoutProperties": {
+                                                                            "gridLayout": {
+                                                                              "//": "Use this class to style grid layout component.",
+                                                                              "spacing": 0
+                                                                            },
+                                                                            "mainContainer": "gridLayout"
+                                                                          },
+                                                                          "layoutProps": {
+                                                                            "direction": "row",
+                                                                            "justifyContent": "flex-start",
+                                                                            "alignItems": "flex-start"
+                                                                          },
+                                                                          "direction": "row",
+                                                                          "name": "Grid layout",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "RL_PAGE_LEFT_MG "
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        "events": [],
+                                                                        "component": {
+                                                                          "type": "10001",
+                                                                          "content": "Grid layout"
+                                                                        },
+                                                                        "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-0"
+                                                                      },
+                                                                      {
+                                                                        "type": "10001",
+                                                                        "name": "Grid layout",
+                                                                        "id": "ZRzNdIzN5xytvZq0Bq4Rx",
+                                                                        "gridProps": [
+                                                                          {
+                                                                            "type": "column",
+                                                                            "id": "rRgWLfklBoW4z44FRIT6G",
+                                                                            "gridProps": [
+                                                                              {
+                                                                                "id": "rHwYVF5XPqKyLKEpqI6Oz",
+                                                                                "status": "ACTIVE",
+                                                                                "attributes": {
+                                                                                  "label": "",
+                                                                                  "variant": "contained",
+                                                                                  "name": "Button",
+                                                                                  "label-locale-key": "",
+                                                                                  "fullWidth": true,
+                                                                                  "layoutProperties": {
+                                                                                    "button": {
+                                                                                      "//": "Use this class to style button component."
+                                                                                    },
+                                                                                    "iconButton": {
+                                                                                      "//": "Use this class to style icon button component.",
+                                                                                      "width": "20px",
+                                                                                      "height": "20px"
+                                                                                    },
+                                                                                    "inputProps": {
+                                                                                      "//": "Use this class to style button element."
+                                                                                    },
+                                                                                    "mainContainer": "button",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "enablePaginationEvents": true,
+                                                                                  "PAGINATION_EVENT": "PAGINATION_BACK",
+                                                                                  "icon": null,
+                                                                                  "asset": {
+                                                                                    "createdBy": "user",
+                                                                                    "_id": "657964a598858b37c4bfe5fa",
+                                                                                    "name": "arrow_back_dark.svg",
+                                                                                    "type": "svg",
+                                                                                    "projectId": "652fcbce09869c3c809b3097",
+                                                                                    "id": "qXrNLR3JahOEy88pmOQ6K",
+                                                                                    "gitBranchName": "master",
+                                                                                    "folderType": "web",
+                                                                                    "platform": "web",
+                                                                                    "url": "652fcbce09869c3c809b3097/web/arrow_back_dark.svg",
+                                                                                    "canvasUrl": "652fcbce09869c3c809b3097/web/arrow_back_dark.svg",
+                                                                                    "createdAt": "2023-12-13T08:00:37.467Z",
+                                                                                    "updatedAt": "2023-12-21T13:01:15.669Z",
+                                                                                    "__v": 0,
+                                                                                    "uri": "652fcbce09869c3c809b3097/web/arrow_back_dark.svg"
+                                                                                  },
+                                                                                  "assetId": "qXrNLR3JahOEy88pmOQ6K",
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "RL_PAGINATION_BUTTONS "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "name": "Button",
+                                                                                "icon": "FaBimobject",
+                                                                                "group": "Form",
+                                                                                "type": "20006",
+                                                                                "Documentation": "<div>components 12344</div>",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 1,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Button",
+                                                                                  "type": "20006"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-0"
+                                                                              },
+                                                                              {
+                                                                                "id": "PmewO2yKJo1wDuwhunPxp",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component."
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix.",
+                                                                                      "color": "transparent"
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "Page",
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "SMALL_LABEL "
+                                                                                    }
+                                                                                  ],
+                                                                                  "postfix": "i"
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-1"
+                                                                              },
+                                                                              {
+                                                                                "id": "oj40UMdAEfUdUz9ZwMwCS",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component."
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix."
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": " of ",
+                                                                                  "prefix": "pagination.currentPage",
+                                                                                  "postfix": "pagination.totalPages",
+                                                                                  "searchInStatePrefix": true,
+                                                                                  "storeType": 2,
+                                                                                  "searchInStatePostfix": true,
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "SMALL_LABEL "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-2"
+                                                                              },
+                                                                              {
+                                                                                "id": "npwgx17XBkKCtNVWVBco9",
+                                                                                "status": "ACTIVE",
+                                                                                "attributes": {
+                                                                                  "label": "",
+                                                                                  "variant": "contained",
+                                                                                  "name": "Button",
+                                                                                  "label-locale-key": "",
+                                                                                  "fullWidth": true,
+                                                                                  "layoutProperties": {
+                                                                                    "button": {
+                                                                                      "//": "Use this class to style button component."
+                                                                                    },
+                                                                                    "iconButton": {
+                                                                                      "//": "Use this class to style icon button component.",
+                                                                                      "width": "20px",
+                                                                                      "height": "20px"
+                                                                                    },
+                                                                                    "inputProps": {
+                                                                                      "//": "Use this class to style button element."
+                                                                                    },
+                                                                                    "mainContainer": "button",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "enablePaginationEvents": true,
+                                                                                  "PAGINATION_EVENT": "PAGINATION_FORWARD",
+                                                                                  "icon": null,
+                                                                                  "asset": {
+                                                                                    "createdBy": "user",
+                                                                                    "_id": "65781898d6f84b282c428d1f",
+                                                                                    "name": "arrow_next_dark.svg",
+                                                                                    "type": "svg",
+                                                                                    "projectId": "652fcbce09869c3c809b3097",
+                                                                                    "id": "2qDtzDxU2Niq97wRSu_VY",
+                                                                                    "gitBranchName": "master",
+                                                                                    "folderType": "web",
+                                                                                    "platform": "web",
+                                                                                    "url": "652fcbce09869c3c809b3097/web/arrow_next_dark.svg",
+                                                                                    "canvasUrl": "652fcbce09869c3c809b3097/web/arrow_next_dark.svg",
+                                                                                    "createdAt": "2023-12-12T08:23:52.199Z",
+                                                                                    "updatedAt": "2023-12-21T13:01:15.669Z",
+                                                                                    "__v": 0,
+                                                                                    "uri": "652fcbce09869c3c809b3097/web/arrow_next_dark.svg"
+                                                                                  },
+                                                                                  "assetId": "2qDtzDxU2Niq97wRSu_VY",
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "RL_PAGINATION_BUTTONS "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "name": "Button",
+                                                                                "icon": "FaBimobject",
+                                                                                "group": "Form",
+                                                                                "type": "20006",
+                                                                                "Documentation": "<div>components 12344</div>",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 1,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Button",
+                                                                                  "type": "20006"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-3"
+                                                                              }
+                                                                            ],
+                                                                            "layoutProperties": {
+                                                                              "xl": 12,
+                                                                              "lg": 12,
+                                                                              "md": 12,
+                                                                              "sm": 12,
+                                                                              "xs": 12
+                                                                            }
+                                                                          }
+                                                                        ],
+                                                                        "allowedContainers": [
+                                                                          "10001",
+                                                                          "20030",
+                                                                          "noLayout",
+                                                                          "20010",
+                                                                          "widget"
+                                                                        ],
+                                                                        "attributes": {
+                                                                          "gridProps": [],
+                                                                          "label": "Header",
+                                                                          "layoutProperties": {
+                                                                            "gridLayout": {
+                                                                              "//": "Use this class to style grid layout component.",
+                                                                              "spacing": 0
+                                                                            },
+                                                                            "mainContainer": "gridLayout"
+                                                                          },
+                                                                          "layoutProps": {
+                                                                            "direction": "row",
+                                                                            "justifyContent": "flex-start",
+                                                                            "alignItems": "flex-start"
+                                                                          },
+                                                                          "direction": "row",
+                                                                          "name": "Grid layout",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "RL_PAGE_RIGHT_MG "
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        "events": [],
+                                                                        "component": {
+                                                                          "type": "10001",
+                                                                          "content": "Grid layout"
+                                                                        },
+                                                                        "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1"
+                                                                      }
+                                                                    ],
+                                                                    "layoutProperties": {
+                                                                      "xl": 12,
+                                                                      "lg": 12,
+                                                                      "md": 12,
+                                                                      "sm": 12,
+                                                                      "xs": 12
+                                                                    }
+                                                                  }
+                                                                ],
+                                                                "allowedContainers": [
+                                                                  "10001",
+                                                                  "20030",
+                                                                  "noLayout",
+                                                                  "20010",
+                                                                  "widget"
+                                                                ],
+                                                                "attributes": {
+                                                                  "gridProps": [],
+                                                                  "label": "Header",
+                                                                  "layoutProperties": {
+                                                                    "gridLayout": {
+                                                                      "//": "Use this class to style grid layout component.",
+                                                                      "spacing": 0
+                                                                    },
+                                                                    "mainContainer": "gridLayout"
+                                                                  },
+                                                                  "layoutProps": {
+                                                                    "direction": "row",
+                                                                    "justifyContent": "flex-start",
+                                                                    "alignItems": "flex-start"
+                                                                  },
+                                                                  "direction": "row",
+                                                                  "name": "GENERAL_PAGINATION_",
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "RL_PAGE_MG"
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "events": [],
+                                                                "component": {
+                                                                  "type": "10001",
+                                                                  "content": "Grid layout"
+                                                                },
+                                                                "path": "0-0-0-0-1-0-1-0-1-0-0-1-0",
+                                                                "dimensions": {
+                                                                  "rows": 1,
+                                                                  "columns": 1,
+                                                                  "colSize0xs": 12,
+                                                                  "colSize0sm": 12,
+                                                                  "colSize0md": 12,
+                                                                  "colSize0lg": 12,
+                                                                  "colSize0xl": 12
+                                                                }
+                                                              }
+                                                            ],
+                                                            "layoutProperties": {
+                                                              "md": 12
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -2920,13 +3820,13 @@
                                                             "mainContainer": "listLayout"
                                                           },
                                                           "storeType": 2,
-                                                          "dataSource": "IL_TRANSACTIONS_LIST",
-                                                          "bindingKey": "SELECTED-TRANSACTIONS",
-                                                          "searchKeyword": "SearchData",
+                                                          "dataSource": "ilc_t_Filtered_items",
+                                                          "bindingKey": "ILC_SELECTED_TRANSACTION",
                                                           "searchableField": "Merchantname",
                                                           "searchStoreType": 1,
                                                           "isSearchable": false,
-                                                          "cssClass": "#E7F0F7"
+                                                          "searchKeyword": "ilc_t_SearchData",
+                                                          "isPagination": true
                                                         },
                                                         "events": [],
                                                         "component": {
@@ -3096,8 +3996,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-1-0-0-0"
+                            }
                           }
                         ],
                         "allowedContainers": [
@@ -3128,45 +4027,7 @@
                           "direction": "row",
                           "name": "Grid layout"
                         },
-                        "events": [
-                          {
-                            "triggerId": "ZFrEr2_d6vNjp1Tu_Kgok",
-                            "triggerName": "DELETE_LATER",
-                            "serviceType": "11",
-                            "attributes": {
-                              "storeType": "",
-                              "selectedObjectBindingKey": "selectedObject",
-                              "dataType": "",
-                              "sourceBindingKey": "",
-                              "filterList": [
-                                {
-                                  "key": "IL_TRANSACTIONS_LIST",
-                                  "changeValueConditonally": false,
-                                  "storeType": 2,
-                                  "logic": [
-                                    {
-                                      "Merchantname": "SuperMarket",
-                                      "Date": "15-12-2024",
-                                      "Type": "debit",
-                                      "Amount": "100",
-                                      "Currency": "PKR"
-                                    },
-                                    {
-                                      "Merchantname": "HyperMarket",
-                                      "Date": "2-2-2024",
-                                      "Type": "credit",
-                                      "Amount": "200",
-                                      "Currency": "BHD"
-                                    }
-                                  ]
-                                }
-                              ]
-                            },
-                            "type": "1",
-                            "name": "On initialization",
-                            "commandType": "15"
-                          }
-                        ],
+                        "events": [],
                         "component": {
                           "type": "10001",
                           "content": "Grid layout"
@@ -3211,14 +4072,14 @@
     ],
     "events": [],
     "subType": "screen",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "_id": "MES3JaOsWVjYgPPVtwU33",
-    "createdBy": "mubashar",
-    "updatedAt": "2/23/2024",
-    "createdAt": "2/23/2024",
+    "_id": "6H-K2_SJR-pljavfFTemz",
+    "createdBy": "talha",
+    "updatedAt": "2/26/2024",
+    "createdAt": "2/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3284,9 +4145,22 @@
       "cssClassNames": []
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "HNadK4zO1RBuK2edAYZ90",
+        "triggerName": "ILC_TRANSACTIONS_FIRST_ITEM_BYDEFAULT_AFTER_DELAY",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "ZFrEr2_d6vNjp1Tu_Kgok",
+        "triggerName": "DELETE_LATER",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3342,7 +4216,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3403,7 +4277,7 @@
     "component": { "content": "Image", "type": "20012" },
     "events": [],
     "path": "0-0-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -3443,7 +4317,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-0-1",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -3494,7 +4368,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3565,16 +4439,9 @@
       "name": "Grid layout"
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "ZFrEr2_d6vNjp1Tu_Kgok",
-        "triggerName": "DELETE_LATER",
-        "name": "On initialization",
-        "type": "1"
-      }
-    ],
+    "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3625,7 +4492,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3683,7 +4550,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3722,12 +4589,12 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "cssClassNames": []
+      "cssClassNames": [{ "cssClassName": "TD_SEARCH_GRID " }]
     },
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3743,7 +4610,7 @@
       "label-locale-key": "",
       "maxLength": "100",
       "type": "text",
-      "variant": "outlined",
+      "variant": "standard",
       "value": "",
       "readOnly": false,
       "tooltip": "",
@@ -3751,10 +4618,7 @@
       "mandatory": true,
       "tooltipState": "",
       "layoutProperties": {
-        "textField": {
-          "//": "Use this class to style text field component.",
-          "background": "#F2F2F2"
-        },
+        "textField": { "//": "Use this class to style text field component." },
         "inputProps": { "//": "Use this class to style  text field element." },
         "mainContainer": "textField",
         "xl": 12,
@@ -3764,12 +4628,12 @@
         "xs": 12
       },
       "validate": { "required": false, "errorMsg": "This field is required" },
-      "placeholder": "SEARCH",
+      "placeholder": "Search",
       "buttonIconPosition": "end",
-      "stateName": "SearchData",
+      "stateName": "ilc_t_SearchData",
       "asset": null,
       "iconname": "RiSearch2Line",
-      "cssClassNames": [{ "cssClassName": "IL_TRANSACTION_SEARCH_BAR_GRID " }],
+      "cssClassNames": [],
       "disableUnderline": true
     },
     "icon": "FaWindowMinimize",
@@ -3785,7 +4649,7 @@
     "component": { "content": "Text Box", "type": "20004" },
     "events": [],
     "path": "0-0-1-0-0-0-0-0-0-0-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -3856,7 +4720,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3887,7 +4751,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3932,7 +4796,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3948,7 +4812,7 @@
     "createdAt": "23-Aug-2021",
     "attributes": {
       "name": "Drop down",
-      "stateName": "fromInstrument",
+      "stateName": "ilc_t_type",
       "allValues": true,
       "dataSource": "",
       "dataKey": "",
@@ -3962,11 +4826,15 @@
         "textField": {
           "//": "Use this class to style textField component in dropdown."
         },
-        "inputProps": { "//": "Use this class to style dropdown element." },
+        "inputProps": {
+          "//": "Use this class to style dropdown element.",
+          "height": "48px"
+        },
         "mainContainer": "autocomplete",
         "options": { "//": "Use this class to style dropdown options." },
         "optionItems": {
-          "//": "Use this class to style dropdown option items."
+          "//": "Use this class to style dropdown option items.",
+          "color": "#838383"
         },
         "popupIcon": { "//": "Use this class to style dropdown popup icon." },
         "outlinedInput": { "//": "Use this class to style dropdown outline." },
@@ -3977,8 +4845,8 @@
         "xs": 12
       },
       "dropdownOptions": [
-        { "code": "posted", "name": "Posted" },
-        { "code": "failed", "name": "Failed" }
+        { "code": "failed", "name": "Failed" },
+        { "code": "success", "name": "Success" }
       ],
       "variant": "outlined",
       "selectedDataType": 1,
@@ -4002,14 +4870,22 @@
       "placeholder": "Posted"
     },
     "type": "20003",
-    "events": [],
+    "events": [
+      {
+        "triggerId": "nNbg8Ec2ZhXGtMRJc81Lf",
+        "triggerName": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "2"
+      }
+    ],
     "order": 10,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Drop down", "type": "20003" },
     "path": "0-0-1-0-0-0-0-0-0-1-0-1-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -4054,7 +4930,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4086,13 +4962,13 @@
         },
         "inputProps": {
           "//": "Use this class to style dropdown element.",
-          "height": "48px",
-          "width": "140px"
+          "height": "48px"
         },
         "mainContainer": "autocomplete",
         "options": { "//": "Use this class to style dropdown options." },
         "optionItems": {
-          "//": "Use this class to style dropdown option items."
+          "//": "Use this class to style dropdown option items.",
+          "color": "#838383"
         },
         "popupIcon": { "//": "Use this class to style dropdown popup icon." },
         "outlinedInput": { "//": "Use this class to style dropdown outline." },
@@ -4137,7 +5013,7 @@
     "projectType": "web",
     "component": { "content": "Drop down", "type": "20003" },
     "path": "0-0-1-0-0-0-0-0-0-1-0-2-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -4196,7 +5072,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4249,7 +5125,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4300,13 +5176,12 @@
       },
       "storeType": 2,
       "dataSource": "IL_TRANSACTIONS_LIST",
-      "bindingKey": "SELECTED-TRANSACTIONS",
-      "selectedColor": "#E7F0F7"
+      "bindingKey": "ILC_SELECTED_TRANSACTIONS"
     },
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4343,7 +5218,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "8px 0px 8px 16px"
+          "padding": "8px 0px 8px 16px",
+          "color": "#838383"
         },
         "mainContainer": "gridLayout"
       },
@@ -4353,12 +5229,32 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "conditionalClasses": [
+        {
+          "cssClassName": "ILC_SELECTED_ITEM_CLASS ",
+          "logic": {
+            "==": [
+              {
+                "var": "currentScreen.form.ILC_SELECTED_TRANSACTIONS.durations"
+              },
+              { "var": "durations" }
+            ]
+          }
+        }
+      ]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "nNbg8Ec2ZhXGtMRJc81Lf",
+        "triggerName": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4429,7 +5325,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4458,7 +5354,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "color": "#838383"
         },
         "mainContainer": "gridLayout"
       },
@@ -4468,12 +5365,25 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "conditionalClasses": [
+        {
+          "cssClassName": "ILC_SELECTED_IITEM_STATEMENT ",
+          "logic": {
+            "==": [
+              {
+                "var": "currentScreen.form.ILC_SELECTED_TRANSACTIONS.durations"
+              },
+              { "var": "durations" }
+            ]
+          }
+        }
+      ]
     },
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4498,9 +5408,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "statements",
-      "searchInState": true,
-      "storeType": 2
+      "label": "Statements",
+      "searchInState": false,
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "ILC_STATEMENT_LABEL " }]
     },
     "icon": "FaFont",
     "group": "Form",
@@ -4514,7 +5425,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0-0-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -4565,7 +5476,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4609,7 +5520,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4638,12 +5549,13 @@
       "label": "durations",
       "storeType": 2,
       "enablePaginationSortingFilter": false,
-      "searchInState": true
+      "searchInState": true,
+      "cssClassNames": [{ "cssClassName": "ILC_TRANSACTIONS_STATEMENT_CLASS " }]
     },
     "events": [],
     "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0-0-1-0-0-0-0",
     "version": "1.0.0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -4713,7 +5625,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4769,7 +5681,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4853,7 +5765,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4897,7 +5809,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -4925,7 +5837,7 @@
       "label": "Merchant name",
       "enablePaginationSortingFilter": true,
       "paginationSortingKey": "Merchantname",
-      "paginationListDataKey": "IL_TRANSACTIONS_LIST",
+      "paginationListDataKey": "ilc_t_Filtered_items",
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL " }]
     },
@@ -4941,7 +5853,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-0-0-0-0-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -4985,7 +5897,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5013,11 +5925,11 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Transaction Date",
+      "label": "Transaction date",
       "enablePaginationSortingFilter": true,
       "paginationSortingKey": "TransactionDate",
       "storeType": 2,
-      "paginationListDataKey": "IL_TRANSACTIONS_LIST",
+      "paginationListDataKey": "ilc_t_Filtered_items",
       "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL " }]
     },
     "icon": "FaFont",
@@ -5032,7 +5944,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-0-0-0-1-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5076,7 +5988,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5107,7 +6019,7 @@
       "label": "Amount",
       "enablePaginationSortingFilter": true,
       "paginationSortingKey": "Amount",
-      "paginationListDataKey": "IL_TRANSACTIONS_LIST",
+      "paginationListDataKey": "ilc_t_Filtered_items",
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL " }]
     },
@@ -5123,7 +6035,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-0-0-0-2-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5154,7 +6066,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5205,7 +6117,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5235,6 +6147,19 @@
             "sm": 12,
             "xs": 12
           }
+        },
+        {
+          "componentId": "GDfXQNiUjQlkJxqhLU0nw",
+          "componentType": "10001",
+          "id": "GDfXQNiUjQlkJxqhLU0nw",
+          "position": {
+            "i": "GDfXQNiUjQlkJxqhLU0nw",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "md": 12 }
         }
       ],
       "label": "Header",
@@ -5255,18 +6180,18 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "IL_TRANSACTIONS_LIST",
-      "bindingKey": "SELECTED-TRANSACTIONS",
-      "searchKeyword": "SearchData",
+      "dataSource": "ilc_t_Filtered_items",
+      "bindingKey": "ILC_SELECTED_TRANSACTION",
       "searchableField": "Merchantname",
       "searchStoreType": 1,
       "isSearchable": false,
-      "cssClass": "#E7F0F7"
+      "searchKeyword": "ilc_t_SearchData",
+      "isPagination": true
     },
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5364,7 +6289,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5408,7 +6333,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5473,7 +6398,7 @@
     "component": { "content": "Image", "type": "20012" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0-0-0-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5517,7 +6442,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5559,7 +6484,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0-0-1-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5617,7 +6542,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5661,7 +6586,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5703,7 +6628,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0-0-2-0-0-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5747,7 +6672,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5789,7 +6714,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0-0-2-0-1-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5833,7 +6758,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5860,7 +6785,8 @@
       },
       "label": "Amount",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_AMOUNT_BHD_LABEL " }]
     },
     "icon": "FaFont",
     "group": "Form",
@@ -5874,7 +6800,7 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0-0-3-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
@@ -5918,7 +6844,7 @@
     "layout": null,
     "events": [],
     "subType": "component",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -5979,7 +6905,536 @@
     "component": { "content": "Image", "type": "20012" },
     "events": [],
     "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0-0-4-0-0-0",
-    "screenId": "MES3JaOsWVjYgPPVtwU33",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "GDfXQNiUjQlkJxqhLU0nw",
+    "name": "GENERAL_PAGINATION_",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "componentId": "xPhPn8c_hIbo0o4Vq9q5M",
+          "componentType": "10001",
+          "id": "xPhPn8c_hIbo0o4Vq9q5M",
+          "position": {
+            "i": "xPhPn8c_hIbo0o4Vq9q5M",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        },
+        {
+          "componentId": "ZRzNdIzN5xytvZq0Bq4Rx",
+          "componentType": "10001",
+          "id": "ZRzNdIzN5xytvZq0Bq4Rx",
+          "position": {
+            "i": "ZRzNdIzN5xytvZq0Bq4Rx",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout"
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "GENERAL_PAGINATION_",
+      "cssClassNames": [{ "cssClassName": "RL_PAGE_MG" }]
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "xPhPn8c_hIbo0o4Vq9q5M",
+    "name": "Grid layout",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "33ryjhJhmyyQHLXKnYZ0s",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "m6VXIVw_jwHPSkCrVB9sV",
+          "componentType": "20002",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout"
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout",
+      "cssClassNames": [{ "cssClassName": "RL_PAGE_LEFT_MG " }]
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "33ryjhJhmyyQHLXKnYZ0s",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "color": "black",
+          "fontWeight": "bold"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": " - ",
+      "prefix": "pagination.currentPageStartRowCount",
+      "postfix": "pagination.currentPageLastRowCount",
+      "searchInState": false,
+      "searchInStatePrefix": true,
+      "searchInStatePostfix": true,
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "SMALL_LABEL " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-0-0-0",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "m6VXIVw_jwHPSkCrVB9sV",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "marginLeft": "4px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "pagination.totalRows",
+      "prefix": "of ",
+      "postfix": " results",
+      "searchInState": true,
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "SMALL_LABEL " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-0-0-1",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "ZRzNdIzN5xytvZq0Bq4Rx",
+    "name": "Grid layout",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "rHwYVF5XPqKyLKEpqI6Oz",
+          "componentType": "20006",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "PmewO2yKJo1wDuwhunPxp",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "oj40UMdAEfUdUz9ZwMwCS",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "npwgx17XBkKCtNVWVBco9",
+          "componentType": "20006",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout"
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout",
+      "cssClassNames": [{ "cssClassName": "RL_PAGE_RIGHT_MG " }]
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "rHwYVF5XPqKyLKEpqI6Oz",
+    "status": "ACTIVE",
+    "attributes": {
+      "label": "",
+      "variant": "contained",
+      "name": "Button",
+      "label-locale-key": "",
+      "fullWidth": true,
+      "layoutProperties": {
+        "button": { "//": "Use this class to style button component." },
+        "iconButton": {
+          "//": "Use this class to style icon button component.",
+          "width": "20px",
+          "height": "20px"
+        },
+        "inputProps": { "//": "Use this class to style button element." },
+        "mainContainer": "button",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "enablePaginationEvents": true,
+      "PAGINATION_EVENT": "PAGINATION_BACK",
+      "icon": null,
+      "asset": {
+        "createdBy": "user",
+        "_id": "657964a598858b37c4bfe5fa",
+        "name": "arrow_back_dark.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "qXrNLR3JahOEy88pmOQ6K",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/arrow_back_dark.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/arrow_back_dark.svg",
+        "createdAt": "2023-12-13T08:00:37.467Z",
+        "updatedAt": "2023-12-21T13:01:15.669Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/arrow_back_dark.svg"
+      },
+      "assetId": "qXrNLR3JahOEy88pmOQ6K",
+      "cssClassNames": [{ "cssClassName": "RL_PAGINATION_BUTTONS " }]
+    },
+    "name": "Button",
+    "icon": "FaBimobject",
+    "group": "Form",
+    "type": "20006",
+    "Documentation": "<div>components 12344</div>",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 1,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Button", "type": "20006" },
+    "events": [],
+    "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-0",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "PmewO2yKJo1wDuwhunPxp",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": {
+          "//": "Use this class to style postfix.",
+          "color": "transparent"
+        },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Page",
+      "cssClassNames": [{ "cssClassName": "SMALL_LABEL " }],
+      "postfix": "i"
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-1",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "oj40UMdAEfUdUz9ZwMwCS",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": " of ",
+      "prefix": "pagination.currentPage",
+      "postfix": "pagination.totalPages",
+      "searchInStatePrefix": true,
+      "storeType": 2,
+      "searchInStatePostfix": true,
+      "cssClassNames": [{ "cssClassName": "SMALL_LABEL " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-2",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "npwgx17XBkKCtNVWVBco9",
+    "status": "ACTIVE",
+    "attributes": {
+      "label": "",
+      "variant": "contained",
+      "name": "Button",
+      "label-locale-key": "",
+      "fullWidth": true,
+      "layoutProperties": {
+        "button": { "//": "Use this class to style button component." },
+        "iconButton": {
+          "//": "Use this class to style icon button component.",
+          "width": "20px",
+          "height": "20px"
+        },
+        "inputProps": { "//": "Use this class to style button element." },
+        "mainContainer": "button",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "enablePaginationEvents": true,
+      "PAGINATION_EVENT": "PAGINATION_FORWARD",
+      "icon": null,
+      "asset": {
+        "createdBy": "user",
+        "_id": "65781898d6f84b282c428d1f",
+        "name": "arrow_next_dark.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "2qDtzDxU2Niq97wRSu_VY",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/arrow_next_dark.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/arrow_next_dark.svg",
+        "createdAt": "2023-12-12T08:23:52.199Z",
+        "updatedAt": "2023-12-21T13:01:15.669Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/arrow_next_dark.svg"
+      },
+      "assetId": "2qDtzDxU2Niq97wRSu_VY",
+      "cssClassNames": [{ "cssClassName": "RL_PAGINATION_BUTTONS " }]
+    },
+    "name": "Button",
+    "icon": "FaBimobject",
+    "group": "Form",
+    "type": "20006",
+    "Documentation": "<div>components 12344</div>",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 1,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Button", "type": "20006" },
+    "events": [],
+    "path": "0-0-0-0-1-0-1-0-1-0-0-1-0-0-1-0-3",
+    "screenId": "6H-K2_SJR-pljavfFTemz",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",

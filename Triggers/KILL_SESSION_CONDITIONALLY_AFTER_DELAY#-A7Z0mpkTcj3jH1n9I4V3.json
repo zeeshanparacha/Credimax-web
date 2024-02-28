@@ -1,0 +1,113 @@
+{
+  "_id": "-A7Z0mpkTcj3jH1n9I4V3",
+  "id": "DDFpIqrHsFjQgdCCyzR4T",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "KILL_SESSION_CONDITIONALLY_AFTER_DELAY",
+  "old_name": "KILL_SESSION_CONDITIONALLY_AFTER_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "30000",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "wCWnqATgAR1HzzGoBr_Yu",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "KILL_SESSION_CONDITIONALLY",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.kill_session" },
+                              "1"
+                            ]
+                          },
+                          "triggerName": "LOGOUT",
+                          "triggerId": "ENmQ4vm18DgTYJe9GDheH",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "logout",
+                                  "url": "/security/v1/logout",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": true,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 3,
+                                      "name": "Current session",
+                                      "key": "refreshToken",
+                                      "value": "userProfile.content.refreshToken"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": [
+                                  {
+                                    "httpStatus": 200,
+                                    "triggerName": "Refresh page",
+                                    "triggerId": "C9VAY5AImRfafaf65"
+                                  },
+                                  {
+                                    "logic": true,
+                                    "httpStatus": 200,
+                                    "triggerName": "DISABLE_SESSION_MODAL",
+                                    "triggerId": "ilsGYQg8oRgDW-4j19cB3"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.er3df7vgg1BBBTEMzBNMLhhKl89HU4Q",
+              "_id": "wuGFk96DWeRC1Wys4SHFw",
+              "updatedAt": "2/25/2024",
+              "createdAt": "2/25/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["wCWnqATgAR1HzzGoBr_Yu"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.fejcbao4l6nzDK6t2PpOHJQodG4LITkc",
+  "updatedAt": "2/26/2024",
+  "createdAt": "2/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

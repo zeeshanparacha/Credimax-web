@@ -1,0 +1,51 @@
+{
+  "id": "cM9zuhYt4W9lL2XwwJUNS",
+  "_id": "j2z3L0CZxzFqxdVqRJxQ7",
+  "name": "ILC_T_FILTER_LIST_ITEMS",
+  "old_name": "ILC_T_FILTER_LIST_ITEMS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "9",
+        "attributes": {
+          "stateName": "none",
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "none",
+          "dataType": "",
+          "destinationBindingKey": "ilc_t_Filtered_items",
+          "sourceBindingKey": "ILC_SELECTED_TRANSACTIONS.transactions",
+          "sourceStoreType": 1,
+          "destinationStoreType": 2,
+          "logic": {
+            "if": [
+              { "!": { "var": "currentScreen.form.ilc_t_type" } },
+              true,
+              {
+                "if": [
+                  {
+                    "==": [
+                      { "var": "transactionType" },
+                      { "var": "currentScreen.form.ilc_t_type" }
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              }
+            ]
+          },
+          "targetValue": "none"
+        }
+      }
+    }
+  ],
+  "csrf": "0.fejcbao4l6nzDK6t2PpOHJQodG4LITkc",
+  "updatedAt": "2/26/2024",
+  "createdAt": "2/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

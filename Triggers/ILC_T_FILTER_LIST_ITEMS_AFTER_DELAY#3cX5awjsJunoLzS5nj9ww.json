@@ -1,0 +1,79 @@
+{
+  "_id": "3cX5awjsJunoLzS5nj9ww",
+  "id": "nNbg8Ec2ZhXGtMRJc81Lf",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+  "old_name": "ILC_T_FILTER_LIST_ITEMS_AFTER_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "3Zep60IJ59bvaEwq2GxT4",
+              "name": "ILC_T_FILTER_TRANSACTIONS_LIST",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "10",
+                    "attributes": {
+                      "stateName": "none",
+                      "storeType": "",
+                      "selectedObjectBindingKey": "none",
+                      "dataType": "",
+                      "destinationBindingKey": "ilc_t_Filtered_items",
+                      "sourceBindingKey": "ILC_SELECTED_TRANSACTIONS.transactions",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 2,
+                      "logic": {
+                        "if": [
+                          { "!": { "var": "currentScreen.form.ilc_t_type" } },
+                          true,
+                          {
+                            "if": [
+                              {
+                                "==": [
+                                  { "var": "transactionType" },
+                                  { "var": "currentScreen.form.ilc_t_type" }
+                                ]
+                              },
+                              true,
+                              false
+                            ]
+                          }
+                        ]
+                      },
+                      "targetValue": "none"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.fejcbao4l6nzDK6t2PpOHJQodG4LITkc",
+              "_id": "cCmSEx4R08getw2dmbUvG",
+              "updatedAt": "2/26/2024",
+              "createdAt": "2/26/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["3Zep60IJ59bvaEwq2GxT4"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.fejcbao4l6nzDK6t2PpOHJQodG4LITkc",
+  "updatedAt": "2/26/2024",
+  "createdAt": "2/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}
