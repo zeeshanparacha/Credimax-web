@@ -1,0 +1,129 @@
+{
+  "_id": "x1_QE89PTHlGj3VSDsIex",
+  "id": "ABoJMN3s58hiNvJvb2guH",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "NAVIGATE_FROM_SERVICES_CONDITIONALLY",
+  "old_name": "NAVIGATE_TO_SPT_AND_DASHBOARD_CONDITIONALLY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "GO_BACK_TO_DASHBOARD",
+              "triggerId": "SoJkY647RyhZPvMuZIClp",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
+                      "gridRadioValue": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "or": [
+                  {
+                    "==": [
+                      { "var": "currentSession.dash_type" },
+                      "main dashboard"
+                    ]
+                  },
+                  {
+                    "==": [
+                      { "var": "currentSession.dash_type" },
+                      "ilc dashboard"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "triggerName": "GO_TO_SUPPLEMENTARY_SCREEN",
+              "triggerId": "B3DCvSJAL2Z5HvEzad9np",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "nextWidgetId": "QPdvyRNNvuI54xiQtwD-a",
+                      "gridRadioValue": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "==": [
+                  { "var": "currentSession.dash_type" },
+                  "supplementary card"
+                ]
+              }
+            },
+            {
+              "logic": {
+                "==": [{ "var": "currentSession.dash_type" }, "ilc other cards"]
+              },
+              "triggerName": "GO_TO_OTHER_DASHBOARD",
+              "triggerId": "1TlQ3Bx1lmkdpSeYtJ1bH",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "nextWidgetId": "s47LZ2E_rWcTXgCwHEWwE",
+                      "gridRadioValue": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "==": [
+                  { "var": "currentSession.dash_type" },
+                  "ilp child dashboard"
+                ]
+              },
+              "triggerName": "ILP_GO_TO_CHILD_DASHBOARD",
+              "triggerId": "MN_UfuyweLbbNUdbpXHRi",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "nextWidgetId": "JpbI0pkgeKdh7jOs1vRMW",
+                      "gridRadioValue": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.879q9u6oy4w2MErZH63Gnnk8mDKhqLFc",
+  "updatedAt": "3/5/2024",
+  "createdAt": "3/5/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

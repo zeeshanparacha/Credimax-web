@@ -1,0 +1,60 @@
+{
+  "id": "qe3TqIUTFwlKaAsabHk4F",
+  "name": "SAVE_DASH_TYPE_MS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "15",
+        "attributes": {
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "sourceBindingKey": "",
+          "filterList": [
+            {
+              "key": "dash_type",
+              "changeValueConditonally": true,
+              "storeType": 3,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.customer.customerType"
+                      },
+                      "MAIN"
+                    ]
+                  },
+                  "main dashboard",
+                  {
+                    "if": [
+                      {
+                        "==": [
+                          {
+                            "var": "currentSession.userProfile.content.customer.customerType"
+                          },
+                          "ILEAD"
+                        ]
+                      },
+                      "ilc dashboard",
+                      null
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.879q9u6oy4w2MErZH63Gnnk8mDKhqLFc",
+  "_id": "lriktpUYwg_pROcQgxNQu",
+  "updatedAt": "3/5/2024",
+  "createdAt": "3/5/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}
