@@ -1,9 +1,10 @@
 {
+  "_id": "kCX1GfeTNr6cNPQ18crkj",
   "id": "E90nDlOJZNWLGU7CHo7Ta",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "LOGOUT_DUE_TO_SESSION_EXPIRATION",
-  "old_name": "",
+  "old_name": "LOGOUT_DUE_TO_SESSION_EXPIRATION",
   "status": "ACTIVE",
   "services": [
     {
@@ -68,86 +69,241 @@
               "updatedBy": "talha"
             },
             {
-              "id": "ENmQ4vm18DgTYJe9GDheH",
-              "_id": "KKHDxIshaj5Fen4klqpVo",
+              "id": "xlqei4ZPocPPrTKIswNVt",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
-              "name": "LOGOUT",
-              "old_name": "LOGOUT",
+              "name": "LOGOUT_CHAIN_TRIGGER",
+              "old_name": "",
               "status": "ACTIVE",
               "services": [
                 {
-                  "type": "8",
+                  "type": "2",
                   "command": {
                     "type": "1",
                     "attributes": {
-                      "loaderWidgetIds": [906070],
-                      "messageWidgetIds": [906070],
-                      "responseStateKey": "logout",
-                      "url": "/security/v1/logout",
-                      "checksum": true,
-                      "encryption": true,
-                      "isDeviceDetails": true,
-                      "loginTrigger": false,
-                      "formData": false,
-                      "logoutTrigger": false,
-                      "headers": {
-                        "Content-Type": "application/json",
-                        "channel_key": "002"
-                      },
-                      "requestBody": [
+                      "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
                         {
-                          "type": 3,
-                          "name": "Current session",
-                          "key": "refreshToken",
-                          "value": "userProfile.content.refreshToken"
+                          "id": "oM0Q5isP25Lr83MtY3e_j",
+                          "_id": "Dy4RITJOHZqvsBk9UZ7jV",
+                          "name": "DISABLE_KILL_SESSION",
+                          "old_name": "DISABLE_KILL_SESSION",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "filterList": [
+                                    {
+                                      "key": "kill_session",
+                                      "changeValueConditonally": false,
+                                      "storeType": 3,
+                                      "logic": "0"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.er3df7vgg1BBBTEMzBNMLhhKl89HU4Q",
+                          "updatedAt": "2/25/2024",
+                          "createdAt": "2/25/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        },
+                        {
+                          "id": "ilsGYQg8oRgDW-4j19cB3",
+                          "name": "DISABLE_SESSION_MODAL",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "display_session_modal",
+                                      "changeValueConditonally": false,
+                                      "storeType": 3,
+                                      "logic": "0"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.bnjduo5i8mRNee7itWyUVi3LpxORSdq",
+                          "_id": "lBxohugWIDw7sk6SPk962",
+                          "updatedAt": "2/25/2024",
+                          "createdAt": "2/25/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        },
+                        {
+                          "_id": "6343f94c2c8a751b189f2e33",
+                          "id": "C9VAY5AImRfafaf65",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "REFRESH_PAGE_AFTER_DELAY",
+                          "old_name": "Refresh page",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "2",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "delay": "500",
+                                  "storeType": "",
+                                  "searchInState": false,
+                                  "triggers": [
+                                    {
+                                      "createdBy": "system",
+                                      "updatedBy": "system",
+                                      "_id": "6343f94c2c8a751b189f2e33",
+                                      "id": "C9VAY5AImRfafaf65",
+                                      "name": "Refresh page",
+                                      "projectType": "web",
+                                      "services": [
+                                        {
+                                          "_id": "61dd1cc511bed557b4cb0c89",
+                                          "type": "14",
+                                          "command": {
+                                            "responseHandler": [],
+                                            "returns": [],
+                                            "_id": "61dd1cc511bed557b4cb0c99",
+                                            "attributes": {},
+                                            "type": "3"
+                                          }
+                                        }
+                                      ],
+                                      "createdAt": "11-Jan-2022",
+                                      "updatedAt": "11-Jan-2022",
+                                      "__v": 0,
+                                      "canRead": true
+                                    }
+                                  ],
+                                  "triggerIds": ["C9VAY5AImRfafaf65"]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.ut3ptshbtkM8_6Ze-nPlfXcIMlf4dYk",
+                          "updatedAt": "3/10/2024",
+                          "createdAt": "3/10/2024",
+                          "createdBy": "talha2",
+                          "updatedBy": "talha2"
+                        },
+                        {
+                          "id": "ENmQ4vm18DgTYJe9GDheH",
+                          "_id": "KKHDxIshaj5Fen4klqpVo",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "LOGOUT",
+                          "old_name": "LOGOUT",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "logout",
+                                  "url": "/security/v1/logout",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": true,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 3,
+                                      "name": "Current session",
+                                      "key": "refreshToken",
+                                      "value": "userProfile.content.refreshToken"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": [
+                                  {
+                                    "httpStatus": 200,
+                                    "triggerName": "Refresh page",
+                                    "triggerId": "C9VAY5AImRfafaf65"
+                                  },
+                                  {
+                                    "logic": true,
+                                    "httpStatus": 200,
+                                    "triggerName": "DISABLE_SESSION_MODAL",
+                                    "triggerId": "ilsGYQg8oRgDW-4j19cB3"
+                                  },
+                                  {
+                                    "logic": true,
+                                    "httpStatus": 200,
+                                    "triggerName": "DISABLE_KILL_SESSION",
+                                    "triggerId": "oM0Q5isP25Lr83MtY3e_j"
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "csrf": "0.er3df7vgg1BBBTEMzBNMLhhKl89HU4Q",
+                          "updatedAt": "2/25/2024",
+                          "createdAt": "2/25/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
                         }
                       ],
-                      "baseURL": "656f0b4398e9df55f0499597",
-                      "storeType": 2
-                    },
-                    "responseHandler": [
-                      {
-                        "httpStatus": 200,
-                        "triggerName": "Refresh page",
-                        "triggerId": "C9VAY5AImRfafaf65"
-                      },
-                      {
-                        "logic": true,
-                        "httpStatus": 200,
-                        "triggerName": "DISABLE_SESSION_MODAL",
-                        "triggerId": "ilsGYQg8oRgDW-4j19cB3"
-                      },
-                      {
-                        "logic": true,
-                        "httpStatus": 200,
-                        "triggerName": "DISABLE_KILL_SESSION",
-                        "triggerId": "oM0Q5isP25Lr83MtY3e_j"
-                      }
-                    ]
+                      "triggerIds": [
+                        "oM0Q5isP25Lr83MtY3e_j",
+                        "ilsGYQg8oRgDW-4j19cB3",
+                        "C9VAY5AImRfafaf65",
+                        "ENmQ4vm18DgTYJe9GDheH"
+                      ]
+                    }
                   }
                 }
               ],
-              "csrf": "0.er3df7vgg1BBBTEMzBNMLhhKl89HU4Q",
-              "updatedAt": "2/25/2024",
-              "createdAt": "2/25/2024",
-              "createdBy": "talha",
-              "updatedBy": "talha"
+              "csrf": "0.ut3ptshbtkM8_6Ze-nPlfXcIMlf4dYk",
+              "_id": "QpwTZZDkk5_Lu5b4ForJ5",
+              "updatedAt": "3/10/2024",
+              "createdAt": "3/10/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
             }
           ],
           "triggerIds": [
             "WuhHxg90Z2anPz7DGsIrC",
             "Imf9PaDlq-uC4zisTNXLt",
-            "ENmQ4vm18DgTYJe9GDheH"
+            "xlqei4ZPocPPrTKIswNVt"
           ]
         }
       }
     }
   ],
-  "csrf": "0.fejcbao4l6nzDK6t2PpOHJQodG4LITkc",
-  "_id": "kCX1GfeTNr6cNPQ18crkj",
-  "updatedAt": "2/26/2024",
-  "createdAt": "2/26/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.ut3ptshbtkM8_6Ze-nPlfXcIMlf4dYk",
+  "updatedAt": "3/10/2024",
+  "createdAt": "3/10/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
 }

@@ -119,246 +119,7 @@
         "updatedAt": "23-Sep-2021",
         "Documentation": "<div>\n<table style=\"border-collapse: collapse; width: 99.8899%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 48.4024%;\">1</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">2</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">43</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">6</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">7</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>\nWrite your Docu7mentationtestsdfasd</div>",
         "createdAt": "24-Aug-2021",
-        "events": [
-          {
-            "triggerId": "X8OC5PTnNWgo19FgH2EKi",
-            "triggerName": "PC_SHOW_RESPONSE_AFTER_REDIRECTION",
-            "serviceType": "2",
-            "attributes": {
-              "delay": "",
-              "triggers": [
-                {
-                  "id": "41gSb3bfIaosn_s21751x",
-                  "name": "PC_READ_TRANSACTION_STATUS",
-                  "projectId": "652fcbce09869c3c809b3097",
-                  "gitBranchName": "master",
-                  "services": [
-                    {
-                      "type": "11",
-                      "command": {
-                        "type": "16",
-                        "attributes": {
-                          "storeType": "",
-                          "selectedObjectBindingKey": "selectedObject",
-                          "dataType": "",
-                          "destinationBindingKey": "pc_transaction_status",
-                          "sourceBindingKey": "",
-                          "destinationStoreType": 2,
-                          "value": "pc_transaction_status"
-                        }
-                      }
-                    }
-                  ],
-                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
-                  "_id": "BGBiFX61hc8IgoSFmMV0s",
-                  "updatedAt": "1/28/2024",
-                  "createdAt": "1/28/2024",
-                  "createdBy": "talha",
-                  "updatedBy": "talha"
-                },
-                {
-                  "id": "DsKdwEaMcbJZNndkv07lY",
-                  "name": "PC_READ_MODE",
-                  "projectId": "652fcbce09869c3c809b3097",
-                  "gitBranchName": "master",
-                  "services": [
-                    {
-                      "type": "11",
-                      "command": {
-                        "type": "16",
-                        "attributes": {
-                          "destinationBindingKey": "app_mode",
-                          "destinationStoreType": 3,
-                          "value": "app_mode"
-                        }
-                      }
-                    }
-                  ],
-                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
-                  "_id": "7ps-7PMyghI3mrXjlGWsE",
-                  "updatedAt": "1/28/2024",
-                  "createdAt": "1/28/2024",
-                  "createdBy": "talha",
-                  "updatedBy": "talha"
-                },
-                {
-                  "id": "byX4GDV7kEZpfvxZXvX7t",
-                  "projectId": "652fcbce09869c3c809b3097",
-                  "gitBranchName": "master",
-                  "name": "PC_SAVE_STATIC_RESPONSE",
-                  "old_name": "",
-                  "status": "ACTIVE",
-                  "services": [
-                    {
-                      "type": "13",
-                      "command": {
-                        "type": "1",
-                        "attributes": {
-                          "triggers": [
-                            {
-                              "logic": {
-                                "if": [
-                                  {
-                                    "==": [
-                                      {
-                                        "var": "currentScreen.pc_transaction_status"
-                                      },
-                                      "failed"
-                                    ]
-                                  },
-                                  true,
-                                  false
-                                ]
-                              },
-                              "triggerName": "PC_SAVE_FAILURE_MODAL_RESPONSE",
-                              "triggerId": "wOfF937GfHbJ6F7wt1OEG",
-                              "services": [
-                                {
-                                  "type": "11",
-                                  "command": {
-                                    "type": "15",
-                                    "attributes": {
-                                      "storeType": "",
-                                      "selectedObjectBindingKey": "selectedObject",
-                                      "dataType": "",
-                                      "sourceBindingKey": ""
-                                    }
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "logic": {
-                                "if": [
-                                  {
-                                    "==": [
-                                      {
-                                        "var": "currentScreen.pc_transaction_status"
-                                      },
-                                      "success"
-                                    ]
-                                  },
-                                  true,
-                                  false
-                                ]
-                              },
-                              "triggerName": "PC_SAVE_SUCCESS_MODAL_RESPONSE",
-                              "triggerId": "qN-UaEfhN3fbzBuJp_DAc",
-                              "services": [
-                                {
-                                  "type": "11",
-                                  "command": { "type": "15", "attributes": {} }
-                                }
-                              ]
-                            },
-                            {
-                              "logic": {
-                                "if": [
-                                  {
-                                    "var": "currentScreen.pc_transaction_status"
-                                  },
-                                  true,
-                                  false
-                                ]
-                              },
-                              "triggerName": "PC_RELOAD_PAGE_AFTER_DELAY",
-                              "triggerId": "uj98091livMT1MfLL_aVa",
-                              "services": [
-                                {
-                                  "type": "2",
-                                  "command": {
-                                    "type": "2",
-                                    "attributes": {
-                                      "delay": "5000",
-                                      "triggers": [
-                                        {
-                                          "id": "OcnazYFSytTu9R47beP4a",
-                                          "name": "PC_RELOAD_PAGE",
-                                          "projectId": "652fcbce09869c3c809b3097",
-                                          "gitBranchName": "master",
-                                          "services": [
-                                            {
-                                              "type": "11",
-                                              "command": {
-                                                "type": "17",
-                                                "attributes": {
-                                                  "storeType": "",
-                                                  "selectedObjectBindingKey": "selectedObject",
-                                                  "dataType": "",
-                                                  "sourceBindingKey": "",
-                                                  "link": "http://172.16.11.67:9992/?id=652fcbce09869c3c809b3097&branch=master&dev=true",
-                                                  "linkType": 2,
-                                                  "targetType": "_self"
-                                                }
-                                              }
-                                            }
-                                          ],
-                                          "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
-                                          "_id": "YMkySnJCQ8s90tWlzsxmW",
-                                          "updatedAt": "1/28/2024",
-                                          "createdAt": "1/28/2024",
-                                          "createdBy": "talha",
-                                          "updatedBy": "talha"
-                                        }
-                                      ],
-                                      "triggerIds": ["OcnazYFSytTu9R47beP4a"]
-                                    }
-                                  }
-                                }
-                              ]
-                            },
-                            {
-                              "logic": {
-                                "if": [
-                                  {
-                                    "var": "currentScreen.pc_transaction_status"
-                                  },
-                                  true,
-                                  false
-                                ]
-                              },
-                              "triggerName": "PC_SHOW_RESPONSE",
-                              "triggerId": "0ng9Cais2R8XaYCuWV8sW",
-                              "services": [
-                                {
-                                  "type": "9",
-                                  "command": {
-                                    "type": "1",
-                                    "attributes": {
-                                      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
-                                      "content": "",
-                                      "type": "",
-                                      "modalId": "sPJCtcvlqTb0R-9vY8i1T",
-                                      "toastContentType": "custom"
-                                    }
-                                  }
-                                }
-                              ]
-                            }
-                          ]
-                        }
-                      }
-                    }
-                  ],
-                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
-                  "_id": "6AZQSLHA5mQo7J_tICIRv",
-                  "updatedAt": "1/28/2024",
-                  "createdAt": "1/28/2024",
-                  "createdBy": "talha",
-                  "updatedBy": "talha"
-                }
-              ],
-              "triggerIds": [
-                "41gSb3bfIaosn_s21751x",
-                "DsKdwEaMcbJZNndkv07lY",
-                "byX4GDV7kEZpfvxZXvX7t"
-              ]
-            },
-            "type": "1",
-            "name": "On initialization",
-            "commandType": "1"
-          }
-        ],
+        "events": [],
         "order": 1,
         "version": "1.0.0",
         "isLatest": true,
@@ -369,7 +130,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "oadS_FjYy2EkvjBHHq5Qs",
+            "id": "sxsMSvXR8Q-7CB1VtwR-l",
             "gridProps": [
               {
                 "id": "iGHYdoorU5umkRN8dVfc0",
@@ -601,126 +362,74 @@
                     "commandType": "1"
                   },
                   {
-                    "triggerId": "Edl4xDMDMHdNK8hV8H-EP",
-                    "triggerName": "GET CARDS LIST DATA AND SLIDER DATA CHAIN TRIGGER",
+                    "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+                    "triggerName": "SHOW_RESPONSE_AFTER_REDIRECTION_CHAIN_TRIGGER",
                     "serviceType": "2",
                     "attributes": {
                       "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
                       "triggers": [
                         {
-                          "id": "HoTkYGonpJcbFC-AO_rEP",
-                          "_id": "0HN4La83DjHQn59bH64wM",
-                          "projectId": "652fcbce09869c3c809b3097",
-                          "gitBranchName": "master",
-                          "name": "GET_SLIDER_CARDS",
-                          "old_name": "GET_SLIDER_CARDS",
-                          "status": "ACTIVE",
-                          "services": [
-                            {
-                              "type": "8",
-                              "command": {
-                                "type": "1",
-                                "attributes": {
-                                  "loaderWidgetIds": [906070],
-                                  "messageWidgetIds": [906070],
-                                  "responseStateKey": "cards",
-                                  "responseReturnValue": "content",
-                                  "url": "/cards",
-                                  "checksum": true,
-                                  "encryption": true,
-                                  "isDeviceDetails": false,
-                                  "loginTrigger": false,
-                                  "formData": false,
-                                  "logoutTrigger": false,
-                                  "headers": {
-                                    "Content-Type": "application/json",
-                                    "Accept": "application/json",
-                                    "channel_key": "001",
-                                    "CSRF_TOKEN": "4c6e939d-db00-4697-82d8-b69bb05aef5a",
-                                    "locale": "en-ltr"
-                                  },
-                                  "requestBody": [],
-                                  "baseURL": "656d9ea296f6df0d74a123b2",
-                                  "storeType": 2
-                                },
-                                "responseHandler": []
-                              }
-                            }
-                          ],
-                          "csrf": "0.usppx41tgt2P6mbvdDsxiE9Fwd-HLxo",
-                          "updatedAt": "12/18/2023",
-                          "createdAt": "12/18/2023",
-                          "createdBy": "basitahmed1199",
-                          "updatedBy": "basitahmed1199"
-                        },
-                        {
-                          "id": "PF7RClgYkkKqxfypr7xt9",
-                          "name": "SLIDER_CARD_INDEX_INCREMENT",
+                          "id": "41gSb3bfIaosn_s21751x",
+                          "name": "PC_READ_TRANSACTION_STATUS",
                           "projectId": "652fcbce09869c3c809b3097",
                           "gitBranchName": "master",
                           "services": [
                             {
                               "type": "11",
                               "command": {
-                                "type": "14",
+                                "type": "16",
                                 "attributes": {
-                                  "destinationBindingKey": "SLIDER_CARD_INDEX",
-                                  "sourceBindingKey": "SLIDER_CARD_INDEX",
-                                  "sourceStoreType": 2,
-                                  "destinationStoreType": 2,
-                                  "counterType": "increment"
-                                }
-                              }
-                            }
-                          ],
-                          "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
-                          "_id": "rglvXT5bRJtLdWIZXW9a1",
-                          "updatedAt": "12/20/2023",
-                          "createdAt": "12/20/2023",
-                          "createdBy": "zeeshan",
-                          "updatedBy": "zeeshan"
-                        },
-                        {
-                          "id": "Yg6bPrf7eN8GksoM11VyL",
-                          "_id": "BkWmqgBmOaIuLan7E3ZLI",
-                          "name": "CURRENT_CARD_SLIDER",
-                          "old_name": "CURRENT_CARD_SLIDER",
-                          "projectId": "652fcbce09869c3c809b3097",
-                          "gitBranchName": "master",
-                          "services": [
-                            {
-                              "type": "11",
-                              "command": {
-                                "type": "13",
-                                "attributes": {
-                                  "requestBody": [],
                                   "storeType": "",
                                   "selectedObjectBindingKey": "selectedObject",
                                   "dataType": "",
-                                  "destinationBindingKey": "CURRENT_CARD",
-                                  "sourceBindingKey": "cards.cardList",
-                                  "sourceStoreType": 2,
+                                  "destinationBindingKey": "pc_transaction_status",
+                                  "sourceBindingKey": "",
                                   "destinationStoreType": 2,
-                                  "indexBindingKey": "0",
-                                  "indexStoreType": 2,
-                                  "indexType": "static"
+                                  "value": "pc_transaction_status"
                                 }
                               }
                             }
                           ],
-                          "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
-                          "updatedAt": "12/20/2023",
-                          "createdAt": "12/20/2023",
-                          "createdBy": "zeeshan",
-                          "updatedBy": "zeeshan"
+                          "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                          "_id": "BGBiFX61hc8IgoSFmMV0s",
+                          "updatedAt": "1/28/2024",
+                          "createdAt": "1/28/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
                         },
                         {
-                          "_id": "R9dYoH295UJwpaIjdrXv9",
-                          "id": "g5fHC43VY53QNdwz5zUw5",
+                          "id": "DsKdwEaMcbJZNndkv07lY",
+                          "name": "PC_READ_MODE",
                           "projectId": "652fcbce09869c3c809b3097",
                           "gitBranchName": "master",
-                          "name": "SHOW_CARDS_SLIDER_CONDITIONALLY",
-                          "old_name": "SHOW_CARDS_SLIDER_CONDITIONALLY",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "16",
+                                "attributes": {
+                                  "destinationBindingKey": "app_mode",
+                                  "destinationStoreType": 3,
+                                  "value": "app_mode"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                          "_id": "7ps-7PMyghI3mrXjlGWsE",
+                          "updatedAt": "1/28/2024",
+                          "createdAt": "1/28/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        },
+                        {
+                          "id": "2bO3erTtX-hsAKAcQh12Q",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "CONDITIONALLY_REDIRECT_TO_LAST_PAYMENT_SCREEN",
+                          "old_name": "",
                           "status": "ACTIVE",
                           "services": [
                             {
@@ -731,53 +440,82 @@
                                   "triggers": [
                                     {
                                       "logic": {
-                                        "==": [
+                                        "and": [
                                           {
-                                            "var": "currentScreen.cards.cardList.length"
+                                            "var": "currentScreen.pc_transaction_status"
                                           },
-                                          "1"
-                                        ]
-                                      },
-                                      "triggerName": "SHOW_LAST_ADD_CARD_SLIDER",
-                                      "triggerId": "49RE1kmEVHn-wYv6OZzO6",
-                                      "services": [
-                                        {
-                                          "type": "1",
-                                          "command": {
-                                            "type": "2",
-                                            "attributes": {
-                                              "fromWidgetId": "a2o4reogaZ9qjFTPTAz_a",
-                                              "nextWidgetId": "bH-fDr8R-qjw1yumQ5tlk",
-                                              "gridRadioValue": "Grid",
-                                              "selectedObjectBindingKey": "",
-                                              "editableForm": false
-                                            }
+                                          {
+                                            "!=": [
+                                              {
+                                                "var": "currentSession.pc_benifit_transaction"
+                                              },
+                                              "completed"
+                                            ]
                                           }
-                                        }
-                                      ]
-                                    },
-                                    {
-                                      "logic": {
-                                        ">": [
-                                          {
-                                            "var": "currentScreen.cards.cardList.length"
-                                          },
-                                          "1"
                                         ]
                                       },
-                                      "triggerName": "SHOW_MULTIPLE_CARD_SLIDER",
-                                      "triggerId": "E183eRJvHBu4FFHTEb6yq",
+                                      "triggerName": "GO_TO_LAST_PAYMENT_SCREEN",
+                                      "triggerId": "B-SDOd4N1eIyizqzuyWMl",
                                       "services": [
                                         {
-                                          "type": "1",
+                                          "type": "13",
                                           "command": {
-                                            "type": "2",
+                                            "type": "1",
                                             "attributes": {
-                                              "fromWidgetId": "9naXfXYGeWk_I3jlR3otf",
-                                              "nextWidgetId": "lPD-7h6_XS-VQ8oRrtGFP",
-                                              "gridRadioValue": "Grid",
-                                              "selectedObjectBindingKey": "selectedObject",
-                                              "editableForm": false
+                                              "triggers": [
+                                                {
+                                                  "logic": {
+                                                    "==": [
+                                                      {
+                                                        "var": "currentSession.last_payment_screen"
+                                                      },
+                                                      "pay_cards"
+                                                    ]
+                                                  },
+                                                  "triggerName": "GO_TO_PAY_CARDS",
+                                                  "triggerId": "UFA2TfzcJX-Frio45Fhbr",
+                                                  "services": [
+                                                    {
+                                                      "type": "1",
+                                                      "command": {
+                                                        "type": "3",
+                                                        "attributes": {
+                                                          "nextWidgetId": "_IlGsB-95yo7FYr3ysZwT",
+                                                          "gridRadioValue": "Grid",
+                                                          "selectedObjectBindingKey": "",
+                                                          "editableForm": false
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "logic": {
+                                                    "==": [
+                                                      {
+                                                        "var": "currentSession.last_payment_screen"
+                                                      },
+                                                      "ilc_topup"
+                                                    ]
+                                                  },
+                                                  "triggerName": "ILCCD_GO_TO_TOP_UP",
+                                                  "triggerId": "ExgiWjguQxj10SYTtS1GP",
+                                                  "services": [
+                                                    {
+                                                      "type": "1",
+                                                      "command": {
+                                                        "type": "3",
+                                                        "attributes": {
+                                                          "nextWidgetId": "-8htlEh04-3YsEy74xFy7",
+                                                          "gridRadioValue": "",
+                                                          "selectedObjectBindingKey": "selectedObject",
+                                                          "editableForm": false
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
                                             }
                                           }
                                         }
@@ -788,139 +526,23 @@
                               }
                             }
                           ],
-                          "csrf": "0.szjkon2xrg7waPGTc0hWuyif4GB0J0o",
-                          "updatedAt": "12/18/2023",
-                          "createdAt": "12/18/2023",
-                          "createdBy": "zeeshan",
-                          "updatedBy": "zeeshan"
-                        },
-                        {
-                          "id": "9LHS775b0Z8GDXMCQ9pPp",
-                          "_id": "KFDWh3WZG73nSR62cD7Uw",
-                          "projectId": "652fcbce09869c3c809b3097",
-                          "gitBranchName": "master",
-                          "name": "GET_CARD_STATEMENTS_TRIGGER",
-                          "old_name": "GET_CARD_STATEMENTS",
-                          "status": "ACTIVE",
-                          "services": [
-                            {
-                              "type": "8",
-                              "command": {
-                                "type": "1",
-                                "attributes": {
-                                  "loaderWidgetIds": [906070],
-                                  "messageWidgetIds": [906070],
-                                  "responseStateKey": "cardStatements",
-                                  "url": "/card/v1/getCardStatements",
-                                  "checksum": true,
-                                  "encryption": true,
-                                  "isDeviceDetails": false,
-                                  "loginTrigger": false,
-                                  "formData": false,
-                                  "logoutTrigger": false,
-                                  "headers": {
-                                    "Content-Type": "application/json",
-                                    "channel_key": "002"
-                                  },
-                                  "requestBody": [
-                                    {
-                                      "type": 4,
-                                      "name": "Static",
-                                      "key": "name",
-                                      "value": "Current Statement"
-                                    },
-                                    {
-                                      "type": 4,
-                                      "name": "Static",
-                                      "key": "date",
-                                      "value": "Jul 15"
-                                    },
-                                    {
-                                      "type": 2,
-                                      "name": "Current screen",
-                                      "key": "cardNumber",
-                                      "value": "CURRENT_CARD.cardNumber"
-                                    },
-                                    {
-                                      "type": 2,
-                                      "name": "Current screen",
-                                      "key": "cardType",
-                                      "value": "CURRENT_CARD.cardType"
-                                    }
-                                  ],
-                                  "baseURL": "656f0b4398e9df55f0499597",
-                                  "storeType": 2
-                                },
-                                "responseHandler": []
-                              }
-                            }
-                          ],
-                          "csrf": "0.99ss65b63jNL3tiJuWvSufvfeByTw8L",
-                          "updatedAt": "12/28/2023",
-                          "createdAt": "12/28/2023",
-                          "createdBy": "muhammad.asad",
-                          "updatedBy": "muhammad.asad"
-                        },
-                        {
-                          "id": "oipplJ53jAexiPIfeiZAa",
-                          "_id": "X_MgATIq_zlbIuVGTVRal",
-                          "name": "DASHBOARD_TABS_SWAP",
-                          "old_name": "DASHBOARD_TABS_SWAP",
-                          "projectId": "652fcbce09869c3c809b3097",
-                          "gitBranchName": "master",
-                          "services": [
-                            {
-                              "type": "1",
-                              "command": {
-                                "type": "2",
-                                "attributes": {
-                                  "fromWidgetId": "mlpUITl-IKVydahD783zV",
-                                  "nextWidgetId": "4fMD8xf4KqGACEfhvgHNh",
-                                  "gridRadioValue": "Grid",
-                                  "selectedObjectBindingKey": "selectedObject",
-                                  "editableForm": false
-                                }
-                              }
-                            }
-                          ],
-                          "csrf": "0.hvaq8r2zmwhvANrYtNirkBH3zG7bBWH0",
-                          "updatedAt": "12/28/2023",
-                          "createdAt": "12/28/2023",
-                          "createdBy": "basitahmed1199",
-                          "updatedBy": "basitahmed1199"
+                          "csrf": "0.yfq7peuwqrlTxPHQi0c2tXXjIUEJ59x",
+                          "_id": "xHq_uSmAZnsSNjT--W-cD",
+                          "updatedAt": "3/10/2024",
+                          "createdAt": "3/10/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
                         }
                       ],
                       "triggerIds": [
-                        "HoTkYGonpJcbFC-AO_rEP",
-                        "PF7RClgYkkKqxfypr7xt9",
-                        "Yg6bPrf7eN8GksoM11VyL",
-                        "g5fHC43VY53QNdwz5zUw5",
-                        "9LHS775b0Z8GDXMCQ9pPp",
-                        "oipplJ53jAexiPIfeiZAa"
+                        "41gSb3bfIaosn_s21751x",
+                        "DsKdwEaMcbJZNndkv07lY",
+                        "2bO3erTtX-hsAKAcQh12Q"
                       ]
                     },
                     "type": "1",
                     "name": "On initialization",
                     "commandType": "1"
-                  },
-                  {
-                    "triggerId": "Y4hG7exvHpfzUwF1m5Riu",
-                    "triggerName": "FREEZE_TOGGLE",
-                    "serviceType": "11",
-                    "attributes": {
-                      "requestBody": [],
-                      "storeType": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "",
-                      "destinationBindingKey": "freezeToggle",
-                      "sourceBindingKey": "CURRENT_CARD.isFreeze",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 1,
-                      "targettedType": "value"
-                    },
-                    "type": "1",
-                    "name": "On initialization",
-                    "commandType": "6"
                   }
                 ],
                 "order": 1,
@@ -939,7 +561,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "9KiDaI-MgreQiPz82aTQB",
+                    "id": "RfMhZMDogmfiDDyOp19h2",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -9393,8 +9015,23 @@
                                                                                   "content": "Label",
                                                                                   "type": "20002"
                                                                                 },
-                                                                                "events": [],
-                                                                                "path": "0-0-5-0-0-1-0-0-0-0-0-0-0-0-0-0-0-0-0"
+                                                                                "events": [
+                                                                                  {
+                                                                                    "triggerId": "TmIqN7xNUjB0aOZxHfp8s",
+                                                                                    "triggerName": "GO_TO_ILCT_CHILD_TASKS_SCREEN",
+                                                                                    "serviceType": "1",
+                                                                                    "attributes": {
+                                                                                      "nextWidgetId": "SEBmPi3WSfAouEfj_G6Af",
+                                                                                      "gridRadioValue": "",
+                                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                                      "editableForm": false
+                                                                                    },
+                                                                                    "type": "2",
+                                                                                    "name": "On click",
+                                                                                    "commandType": "3"
+                                                                                  }
+                                                                                ],
+                                                                                "path": "2-0-10-0-0-1-0-0-0-0-0-0-0-0-0-0-0-0-0"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -9844,8 +9481,23 @@
                                                                                   },
                                                                                   "label": "Current (Jul 15 - To date)"
                                                                                 },
-                                                                                "events": [],
-                                                                                "path": "2-0-11-0-0-1-0-0-0-0-0-0-0-0-2-0-0-0-0",
+                                                                                "events": [
+                                                                                  {
+                                                                                    "triggerId": "VbfqZfOqr0HgY5PzihDTK",
+                                                                                    "triggerName": "GO_TO_ILP_TAKS_SCREEN",
+                                                                                    "serviceType": "1",
+                                                                                    "attributes": {
+                                                                                      "nextWidgetId": "qRv1lYx8136QQug8Klbsw",
+                                                                                      "gridRadioValue": "",
+                                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                                      "editableForm": false
+                                                                                    },
+                                                                                    "type": "2",
+                                                                                    "name": "On click",
+                                                                                    "commandType": "3"
+                                                                                  }
+                                                                                ],
+                                                                                "path": "2-0-10-0-0-1-0-0-0-0-0-0-0-0-2-0-0-0-0",
                                                                                 "version": "1.0.0"
                                                                               }
                                                                             ],
@@ -11837,9 +11489,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "yHNYfgIiRzbDXJDQXQ2fr",
-    "createdBy": "talha2",
-    "updatedAt": "3/5/2024",
-    "createdAt": "3/5/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "3/13/2024",
+    "createdAt": "3/13/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12020,14 +11672,7 @@
       "isSwappable": true
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "X8OC5PTnNWgo19FgH2EKi",
-        "triggerName": "PC_SHOW_RESPONSE_AFTER_REDIRECTION",
-        "name": "On initialization",
-        "type": "1"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "yHNYfgIiRzbDXJDQXQ2fr",
     "projectId": "652fcbce09869c3c809b3097",
@@ -12167,14 +11812,8 @@
         "type": "1"
       },
       {
-        "triggerId": "Edl4xDMDMHdNK8hV8H-EP",
-        "triggerName": "GET CARDS LIST DATA AND SLIDER DATA CHAIN TRIGGER",
-        "name": "On initialization",
-        "type": "1"
-      },
-      {
-        "triggerId": "Y4hG7exvHpfzUwF1m5Riu",
-        "triggerName": "FREEZE_TOGGLE",
+        "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+        "triggerName": "SHOW_RESPONSE_AFTER_REDIRECTION_CHAIN_TRIGGER",
         "name": "On initialization",
         "type": "1"
       }
@@ -20344,8 +19983,16 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
-    "events": [],
-    "path": "0-0-5-0-0-1-0-0-0-0-0-0-0-0-0-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "TmIqN7xNUjB0aOZxHfp8s",
+        "triggerName": "GO_TO_ILCT_CHILD_TASKS_SCREEN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "1"
+      }
+    ],
+    "path": "2-0-10-0-0-1-0-0-0-0-0-0-0-0-0-0-0-0-0",
     "screenId": "yHNYfgIiRzbDXJDQXQ2fr",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -20727,8 +20374,16 @@
       },
       "label": "Current (Jul 15 - To date)"
     },
-    "events": [],
-    "path": "2-0-11-0-0-1-0-0-0-0-0-0-0-0-2-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "VbfqZfOqr0HgY5PzihDTK",
+        "triggerName": "GO_TO_ILP_TAKS_SCREEN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "1"
+      }
+    ],
+    "path": "2-0-10-0-0-1-0-0-0-0-0-0-0-0-2-0-0-0-0",
     "version": "1.0.0",
     "screenId": "yHNYfgIiRzbDXJDQXQ2fr",
     "subType": "component",

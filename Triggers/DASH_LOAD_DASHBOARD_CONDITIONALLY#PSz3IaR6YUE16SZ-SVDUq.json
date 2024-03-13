@@ -65,15 +65,111 @@
                   }
                 }
               ]
+            },
+            {
+              "logic": {
+                "==": [
+                  {
+                    "var": "currentSession.userProfile.content.customer.customerType"
+                  },
+                  "MAIN"
+                ]
+              },
+              "triggerName": "GET_SLIDER_CARDS",
+              "triggerId": "HoTkYGonpJcbFC-AO_rEP",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cards",
+                      "responseReturnValue": "content",
+                      "url": "/card/v1/web/cardList",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "DASH_LOAD_NEXT_CARD",
+                        "triggerId": "Pq0Umibp629zR597KbWTS"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "==": [
+                  {
+                    "var": "currentSession.userProfile.content.customer.customerType"
+                  },
+                  "ILEAD"
+                ]
+              },
+              "triggerName": "ILC_DASH_GET_CARD_API",
+              "triggerId": "BRTX9a6h8pXbEPkVvcr8U",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "ilc_cards",
+                      "url": "/card/child/v1/web/getIleadCard",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "ILC_DASH_SAVE_CURRENT_CARD",
+                        "triggerId": "dLcV1Qj0mI9piT52i4B6D"
+                      }
+                    ]
+                  }
+                }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.xji7l7bfcl8Wzw3E2z3gCDQn2JIdhkDq",
-  "updatedAt": "2/27/2024",
-  "createdAt": "2/27/2024",
+  "csrf": "0.l1jd5l6dom5DXs6HEpPGC0xI2X35E7T",
+  "updatedAt": "3/13/2024",
+  "createdAt": "3/13/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

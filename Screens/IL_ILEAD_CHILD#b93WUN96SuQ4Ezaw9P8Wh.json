@@ -46,41 +46,6 @@
         },
         "events": [
           {
-            "triggerId": "BRTX9a6h8pXbEPkVvcr8U",
-            "triggerName": "ILC_DASH_GET_CARD_API",
-            "serviceType": "8",
-            "attributes": {
-              "loaderWidgetIds": [906070],
-              "messageWidgetIds": [906070],
-              "responseStateKey": "ilc_cards",
-              "url": "/api-designer/api/cardData/execute",
-              "checksum": true,
-              "encryption": true,
-              "isDeviceDetails": true,
-              "loginTrigger": false,
-              "formData": false,
-              "logoutTrigger": false,
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "channel_key": "002"
-              },
-              "requestBody": [
-                {
-                  "type": 4,
-                  "name": "Static",
-                  "key": "request",
-                  "value": { "request": {} }
-                }
-              ],
-              "baseURL": "656f0b4398e9df55f0499597",
-              "storeType": 2
-            },
-            "type": "1",
-            "name": "On initialization",
-            "commandType": "1"
-          },
-          {
             "triggerId": "PYjTPz1OdWuOnImFaJCHo",
             "triggerName": "GET_ILEAD_CHILD_PROFILE",
             "serviceType": "8",
@@ -107,6 +72,219 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "hq1Ovg2M_BOQ2BeGgtXmZ",
+            "triggerName": "ILCD_GET_TRANSACTIONS",
+            "serviceType": "8",
+            "attributes": {
+              "loaderWidgetIds": [906070],
+              "messageWidgetIds": [906070],
+              "responseStateKey": "cardStatements",
+              "url": "/api-designer/api/getTransactions/execute",
+              "checksum": true,
+              "encryption": true,
+              "isDeviceDetails": true,
+              "loginTrigger": false,
+              "formData": false,
+              "logoutTrigger": false,
+              "headers": {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "channel_key": "002"
+              },
+              "requestBody": [
+                { "type": 4, "name": "Static", "key": "request", "value": {} }
+              ],
+              "baseURL": "65de08b22c4bb94a7826d82c",
+              "storeType": 2
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
+          },
+          {
+            "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+            "triggerName": "SHOW_RESPONSE_AFTER_REDIRECTION_CHAIN_TRIGGER",
+            "serviceType": "2",
+            "attributes": {
+              "delay": "",
+              "storeType": "",
+              "searchInState": false,
+              "triggers": [
+                {
+                  "id": "41gSb3bfIaosn_s21751x",
+                  "name": "PC_READ_TRANSACTION_STATUS",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "16",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "destinationBindingKey": "pc_transaction_status",
+                          "sourceBindingKey": "",
+                          "destinationStoreType": 2,
+                          "value": "pc_transaction_status"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "BGBiFX61hc8IgoSFmMV0s",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                },
+                {
+                  "id": "DsKdwEaMcbJZNndkv07lY",
+                  "name": "PC_READ_MODE",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "16",
+                        "attributes": {
+                          "destinationBindingKey": "app_mode",
+                          "destinationStoreType": 3,
+                          "value": "app_mode"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gtccmw6va0bAPqGj0iJa5jUwFu1EO16B",
+                  "_id": "7ps-7PMyghI3mrXjlGWsE",
+                  "updatedAt": "1/28/2024",
+                  "createdAt": "1/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                },
+                {
+                  "id": "2bO3erTtX-hsAKAcQh12Q",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "CONDITIONALLY_REDIRECT_TO_LAST_PAYMENT_SCREEN",
+                  "old_name": "",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "13",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "triggers": [
+                            {
+                              "logic": {
+                                "and": [
+                                  {
+                                    "var": "currentScreen.pc_transaction_status"
+                                  },
+                                  {
+                                    "!=": [
+                                      {
+                                        "var": "currentSession.pc_benifit_transaction"
+                                      },
+                                      "completed"
+                                    ]
+                                  }
+                                ]
+                              },
+                              "triggerName": "GO_TO_LAST_PAYMENT_SCREEN",
+                              "triggerId": "B-SDOd4N1eIyizqzuyWMl",
+                              "services": [
+                                {
+                                  "type": "13",
+                                  "command": {
+                                    "type": "1",
+                                    "attributes": {
+                                      "triggers": [
+                                        {
+                                          "logic": {
+                                            "==": [
+                                              {
+                                                "var": "currentSession.last_payment_screen"
+                                              },
+                                              "pay_cards"
+                                            ]
+                                          },
+                                          "triggerName": "GO_TO_PAY_CARDS",
+                                          "triggerId": "UFA2TfzcJX-Frio45Fhbr",
+                                          "services": [
+                                            {
+                                              "type": "1",
+                                              "command": {
+                                                "type": "3",
+                                                "attributes": {
+                                                  "nextWidgetId": "_IlGsB-95yo7FYr3ysZwT",
+                                                  "gridRadioValue": "Grid",
+                                                  "selectedObjectBindingKey": "",
+                                                  "editableForm": false
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "logic": {
+                                            "==": [
+                                              {
+                                                "var": "currentSession.last_payment_screen"
+                                              },
+                                              "ilc_topup"
+                                            ]
+                                          },
+                                          "triggerName": "ILCCD_GO_TO_TOP_UP",
+                                          "triggerId": "ExgiWjguQxj10SYTtS1GP",
+                                          "services": [
+                                            {
+                                              "type": "1",
+                                              "command": {
+                                                "type": "3",
+                                                "attributes": {
+                                                  "nextWidgetId": "-8htlEh04-3YsEy74xFy7",
+                                                  "gridRadioValue": "",
+                                                  "selectedObjectBindingKey": "selectedObject",
+                                                  "editableForm": false
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.yfq7peuwqrlTxPHQi0c2tXXjIUEJ59x",
+                  "_id": "xHq_uSmAZnsSNjT--W-cD",
+                  "updatedAt": "3/10/2024",
+                  "createdAt": "3/10/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                }
+              ],
+              "triggerIds": [
+                "41gSb3bfIaosn_s21751x",
+                "DsKdwEaMcbJZNndkv07lY",
+                "2bO3erTtX-hsAKAcQh12Q"
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "path": "0",
@@ -125,7 +303,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "Fn6mGlaLE3vlfRw2rAjZb",
+            "id": "4mBZk5kb3ncGbJTrhX6Rx",
             "gridProps": [
               {
                 "type": "10001",
@@ -1062,7 +1240,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "kO20dkZH1QCL4Zm3YxFuK",
+                                            "id": "TUKt2GY4F63yesVu7Us6m",
                                             "gridProps": [
                                               {
                                                 "id": "kjRYP9rNrq81klFnfm4G-",
@@ -1079,6 +1257,15 @@
                                                   "layoutProperties": {
                                                     "image": {
                                                       "//": "Use this class to style image component."
+                                                    },
+                                                    "overlay": {
+                                                      "aspect-ratio": "360/217",
+                                                      "width": "calc(100% - 10px)",
+                                                      "border-radius": "20px",
+                                                      "z-index": "2 !important",
+                                                      "position": "absolute",
+                                                      "margin-left": "auto",
+                                                      "left": "10px"
                                                     },
                                                     "mainContainer": "image",
                                                     "xl": 12,
@@ -1099,7 +1286,15 @@
                                                     }
                                                   ],
                                                   "imageAssetIdTemp": null,
-                                                  "useFullLink": false
+                                                  "useFullLink": false,
+                                                  "hideCondition": {
+                                                    "logic": {
+                                                      "!": {
+                                                        "var": "currentScreen.CURRENT_CARD.plasticCode"
+                                                      }
+                                                    }
+                                                  },
+                                                  "showOverlay": true
                                                 },
                                                 "events": [],
                                                 "path": "0-0-0-0-0-0-0-1-0-0-0",
@@ -1175,7 +1370,17 @@
                                                                           "imageAssetId": "GcIMsjUSU-ka3_FAMJtdL",
                                                                           "stateName": null,
                                                                           "storeType": null,
-                                                                          "useFullLink": null
+                                                                          "useFullLink": null,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "<": [
+                                                                                {
+                                                                                  "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                },
+                                                                                1
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "group": "Form",
                                                                         "updatedAt": "23-Aug-2021",
@@ -1189,8 +1394,134 @@
                                                                           "content": "Image",
                                                                           "type": "20012"
                                                                         },
-                                                                        "events": [],
-                                                                        "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-0-0-0"
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "-RlS5EOIBY_ULEN2E3rMk",
+                                                                            "triggerName": "DELETE_CARD_DETAILS_FROM_CURRENT_SCREEN",
+                                                                            "serviceType": "11",
+                                                                            "attributes": {
+                                                                              "stateName": "cardDetails",
+                                                                              "storeType": 2,
+                                                                              "selectedObjectBindingKey": "selectedObject",
+                                                                              "dataType": "",
+                                                                              "sourceBindingKey": ""
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "4"
+                                                                          }
+                                                                        ],
+                                                                        "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-0-0-0"
+                                                                      },
+                                                                      {
+                                                                        "id": "SSVninWEmfxr_VS3UKvJ8",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Image",
+                                                                        "icon": "FaImage",
+                                                                        "attributes": {
+                                                                          "name": "Image",
+                                                                          "contentType": false,
+                                                                          "defaultImageAssetIdTemp": {
+                                                                            "name": "dracaena-cinnabari.jpg",
+                                                                            "id": "CNIz67fi824LHr0ae-pOV"
+                                                                          },
+                                                                          "layoutProperties": {
+                                                                            "image": {
+                                                                              "//": "Use this class to style image component."
+                                                                            },
+                                                                            "mainContainer": "image",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
+                                                                          "imageAssetIdTemp": {
+                                                                            "createdBy": "user",
+                                                                            "_id": "65770bd0d6f84b282c426c98",
+                                                                            "name": "eye_unmask_light.svg",
+                                                                            "type": "svg",
+                                                                            "projectId": "652fcbce09869c3c809b3097",
+                                                                            "id": "sfd9nJ7fjYj2KEmvffDyk",
+                                                                            "gitBranchName": "master",
+                                                                            "folderType": "web",
+                                                                            "platform": "web",
+                                                                            "url": "652fcbce09869c3c809b3097/web/eye_unmask_light.svg",
+                                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/eye_unmask_light.svg",
+                                                                            "createdAt": "2023-12-11T13:17:04.148Z",
+                                                                            "updatedAt": "2023-12-21T13:01:15.669Z",
+                                                                            "__v": 0,
+                                                                            "uri": "652fcbce09869c3c809b3097/web/eye_unmask_light.svg"
+                                                                          },
+                                                                          "imageAssetId": "sfd9nJ7fjYj2KEmvffDyk",
+                                                                          "stateName": null,
+                                                                          "storeType": null,
+                                                                          "useFullLink": null,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              ">": [
+                                                                                {
+                                                                                  "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                },
+                                                                                0
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "group": "Form",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 0,
+                                                                        "type": "20012",
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Image",
+                                                                          "type": "20012"
+                                                                        },
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "xhxjVYrsprTmAJhceB67E",
+                                                                            "triggerName": "CARD_DETAILS_TRIGGER",
+                                                                            "serviceType": "8",
+                                                                            "attributes": {
+                                                                              "loaderWidgetIds": [
+                                                                                906070
+                                                                              ],
+                                                                              "messageWidgetIds": [
+                                                                                906070
+                                                                              ],
+                                                                              "responseStateKey": "cardDetails",
+                                                                              "url": "/card/v1/getCardDetails",
+                                                                              "checksum": true,
+                                                                              "encryption": true,
+                                                                              "isDeviceDetails": false,
+                                                                              "loginTrigger": false,
+                                                                              "formData": false,
+                                                                              "logoutTrigger": false,
+                                                                              "headers": {
+                                                                                "Content-Type": "application/json",
+                                                                                "channel_key": "002"
+                                                                              },
+                                                                              "requestBody": [
+                                                                                {
+                                                                                  "type": 2,
+                                                                                  "name": "Current screen",
+                                                                                  "key": "cardNumber",
+                                                                                  "value": "CURRENT_CARD.cardNumber"
+                                                                                }
+                                                                              ],
+                                                                              "baseURL": "656f0b4398e9df55f0499597",
+                                                                              "storeType": 2
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
+                                                                          }
+                                                                        ],
+                                                                        "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-0-0-1"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -1247,7 +1578,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "_9MuCFVziYQpx5qT8gUUm",
+                                                                    "id": "7SQR4p4GAoMO-JgcfVFWB",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "jI9NibDhT9IYp3Sswl73o",
@@ -1329,7 +1660,17 @@
                                                                             }
                                                                           ],
                                                                           "storeType": 2,
-                                                                          "searchInState": true
+                                                                          "searchInState": true,
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              ">": [
+                                                                                {
+                                                                                  "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+                                                                                },
+                                                                                0
+                                                                              ]
+                                                                            }
+                                                                          }
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -1346,6 +1687,66 @@
                                                                         },
                                                                         "events": [],
                                                                         "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-1-0-1"
+                                                                      },
+                                                                      {
+                                                                        "id": "E8Sbgg2fy1JomleO0V0nw",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Label",
+                                                                        "attributes": {
+                                                                          "variant": "body1",
+                                                                          "name": "Label",
+                                                                          "mandatory": false,
+                                                                          "layoutProperties": {
+                                                                            "label": {
+                                                                              "//": "Use this class to style label component."
+                                                                            },
+                                                                            "prefix": {
+                                                                              "//": "Use this class to style prefix."
+                                                                            },
+                                                                            "postfix": {
+                                                                              "//": "Use this class to style postfix."
+                                                                            },
+                                                                            "mainContainer": "label",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "label": "cardDetails.content.cardDetail.realCardNumber",
+                                                                          "searchInState": true,
+                                                                          "storeType": 2,
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "IL_CARD_NUMBER_LABEL "
+                                                                            }
+                                                                          ],
+                                                                          "hideCondition": {
+                                                                            "logic": {
+                                                                              "<": [
+                                                                                {
+                                                                                  "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+                                                                                },
+                                                                                1
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        "icon": "FaFont",
+                                                                        "group": "Form",
+                                                                        "type": "20002",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 15,
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Label",
+                                                                          "type": "20002"
+                                                                        },
+                                                                        "events": [],
+                                                                        "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-1-0-2"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -1354,8 +1755,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-1-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -1388,12 +1788,27 @@
                                                                     }
                                                                   ]
                                                                 },
-                                                                "events": [],
+                                                                "events": [
+                                                                  {
+                                                                    "triggerId": "oM2p6iElHz4Hf2tjCezQS",
+                                                                    "triggerName": "ILCD_GO_TO_CARD_DETAIL_SCREEN",
+                                                                    "serviceType": "1",
+                                                                    "attributes": {
+                                                                      "nextWidgetId": "BlnSGayp6sKQ6Glaj0UWP",
+                                                                      "gridRadioValue": "",
+                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                      "editableForm": false
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "3"
+                                                                  }
+                                                                ],
                                                                 "component": {
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-1",
+                                                                "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-1",
                                                                 "dimensions": {
                                                                   "rows": 1,
                                                                   "columns": 1,
@@ -1412,7 +1827,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "YLf-UXp9-xprhdTOw6UHJ",
+                                                                    "id": "KOHaWuok7XLXoYfGjUYfL",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -1503,7 +1918,17 @@
                                                                                     }
                                                                                   ],
                                                                                   "searchInState": false,
-                                                                                  "storeType": 2
+                                                                                  "storeType": 2,
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      ">": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cardExpiry.length"
+                                                                                        },
+                                                                                        0
+                                                                                      ]
+                                                                                    }
+                                                                                  }
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -1520,6 +1945,66 @@
                                                                                 },
                                                                                 "events": [],
                                                                                 "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-0-0-0-1"
+                                                                              },
+                                                                              {
+                                                                                "id": "7QC0sJiN7d3kcK4ztE5g_",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component."
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix."
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "cardDetails.content.cardDetail.cardExpiry",
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2,
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "<": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                        },
+                                                                                        1
+                                                                                      ]
+                                                                                    }
+                                                                                  },
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "IL_VALID_LABEL "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-0-0-0-2"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -1571,12 +2056,11 @@
                                                                       "md": 4,
                                                                       "sm": 4,
                                                                       "xs": 4
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-2-0"
+                                                                    }
                                                                   },
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "9Sl9zJ95b_J4YZXU_VMAb",
+                                                                    "id": "R_YvPqJVCu55kf2lrhMlZ",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -1665,7 +2149,17 @@
                                                                                     {
                                                                                       "cssClassName": "IL_VALID_LABEL "
                                                                                     }
-                                                                                  ]
+                                                                                  ],
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      ">": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                        },
+                                                                                        0
+                                                                                      ]
+                                                                                    }
+                                                                                  }
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -1682,6 +2176,66 @@
                                                                                 },
                                                                                 "events": [],
                                                                                 "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-1-0-0-1"
+                                                                              },
+                                                                              {
+                                                                                "id": "jAnvCCZgd3YAxcYkVavOp",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component."
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix."
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "cardDetails.content.cardDetail.cvv",
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2,
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "<": [
+                                                                                        {
+                                                                                          "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+                                                                                        },
+                                                                                        1
+                                                                                      ]
+                                                                                    }
+                                                                                  },
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "IL_VALID_LABEL "
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-1-0-0-2"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -1733,12 +2287,11 @@
                                                                       "md": 4,
                                                                       "sm": 4,
                                                                       "xs": 4
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-2-1"
+                                                                    }
                                                                   },
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "-XNAnOblTjXBCR4TwNqpK",
+                                                                    "id": "JhqDQrlhQbdx2Ct_cks8T",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -1875,8 +2428,7 @@
                                                                       "md": 4,
                                                                       "sm": 4,
                                                                       "xs": 4
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-2-2"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -1909,12 +2461,27 @@
                                                                     }
                                                                   ]
                                                                 },
-                                                                "events": [],
+                                                                "events": [
+                                                                  {
+                                                                    "triggerId": "oM2p6iElHz4Hf2tjCezQS",
+                                                                    "triggerName": "ILCD_GO_TO_CARD_DETAIL_SCREEN",
+                                                                    "serviceType": "1",
+                                                                    "attributes": {
+                                                                      "nextWidgetId": "BlnSGayp6sKQ6Glaj0UWP",
+                                                                      "gridRadioValue": "",
+                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                      "editableForm": false
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "3"
+                                                                  }
+                                                                ],
                                                                 "component": {
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-2",
+                                                                "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2",
                                                                 "dimensions": {
                                                                   "rows": 1,
                                                                   "columns": 3,
@@ -2076,7 +2643,8 @@
                                           "layoutProperties": {
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
-                                              "spacing": 0
+                                              "spacing": 0,
+                                              "cursor": "pointer"
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -2089,22 +2657,7 @@
                                           "name": "Grid layout",
                                           "cssClassNames": []
                                         },
-                                        "events": [
-                                          {
-                                            "triggerId": "oM2p6iElHz4Hf2tjCezQS",
-                                            "triggerName": "ILCD_GO_TO_CARD_DETAIL_SCREEN",
-                                            "serviceType": "1",
-                                            "attributes": {
-                                              "nextWidgetId": "BlnSGayp6sKQ6Glaj0UWP",
-                                              "gridRadioValue": "",
-                                              "selectedObjectBindingKey": "selectedObject",
-                                              "editableForm": false
-                                            },
-                                            "type": "2",
-                                            "name": "On click",
-                                            "commandType": "3"
-                                          }
-                                        ],
+                                        "events": [],
                                         "component": {
                                           "type": "10001",
                                           "content": "Grid layout"
@@ -6326,22 +6879,22 @@
                                                                                   "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
                                                                                   "imageAssetIdTemp": {
                                                                                     "createdBy": "user",
-                                                                                    "_id": "6579887bd3a90a26b4adf22d",
-                                                                                    "name": "warning_round_circle.svg",
-                                                                                    "type": "svg",
+                                                                                    "_id": "65e887032f9c444e886990c1",
+                                                                                    "name": "category_retail_circle.png",
+                                                                                    "type": "png",
                                                                                     "projectId": "652fcbce09869c3c809b3097",
-                                                                                    "id": "XOUCqHKwsCQbcUE4IC9CI",
+                                                                                    "id": "q4cEIvJjqz1ujHAX9RG_1",
                                                                                     "gitBranchName": "master",
                                                                                     "folderType": "web",
                                                                                     "platform": "web",
-                                                                                    "url": "652fcbce09869c3c809b3097/web/warning_round_circle.svg",
-                                                                                    "canvasUrl": "652fcbce09869c3c809b3097/web/warning_round_circle.svg",
-                                                                                    "createdAt": "2023-12-13T10:33:31.671Z",
-                                                                                    "updatedAt": "2023-12-21T13:01:15.669Z",
+                                                                                    "url": "652fcbce09869c3c809b3097/web/category_retail_circle.png",
+                                                                                    "canvasUrl": "652fcbce09869c3c809b3097/web/category_retail_circle.png",
+                                                                                    "createdAt": "2024-03-06T15:08:51.825Z",
+                                                                                    "updatedAt": "2024-03-06T15:08:51.825Z",
                                                                                     "__v": 0,
-                                                                                    "uri": "652fcbce09869c3c809b3097/web/warning_round_circle.svg"
+                                                                                    "uri": "652fcbce09869c3c809b3097/web/category_retail_circle.png"
                                                                                   },
-                                                                                  "imageAssetId": "XOUCqHKwsCQbcUE4IC9CI",
+                                                                                  "imageAssetId": "q4cEIvJjqz1ujHAX9RG_1",
                                                                                   "stateName": null,
                                                                                   "storeType": null,
                                                                                   "useFullLink": null
@@ -7396,11 +7949,11 @@
                                                                 },
                                                                 "events": [
                                                                   {
-                                                                    "triggerId": "nBEC_1lCvsBfvdLuQUvQx",
-                                                                    "triggerName": "VIEW_ALL_STATEMENTS",
+                                                                    "triggerId": "OH_BFex-epYd1gErJYF2p",
+                                                                    "triggerName": "ILCD_GO_TO_TRANSACTIONS",
                                                                     "serviceType": "1",
                                                                     "attributes": {
-                                                                      "nextWidgetId": "DYtM1Kw3_kAhZ8Wh_jSwu",
+                                                                      "nextWidgetId": "6H-K2_SJR-pljavfFTemz",
                                                                       "gridRadioValue": "",
                                                                       "selectedObjectBindingKey": "selectedObject",
                                                                       "editableForm": false
@@ -7410,7 +7963,7 @@
                                                                     "commandType": "3"
                                                                   }
                                                                 ],
-                                                                "path": "0-0-6-0-0-1-0-0-0-0-0-0-0-0-0-1-0-0-0"
+                                                                "path": "0-0-0-1-0-0-0-0-0-0-0-1-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -7868,7 +8421,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "qFofhR-7WY-8dlAvD6V11",
+                                                            "id": "xuM9I5vnN5XWDcVR7zuf5",
                                                             "gridProps": [
                                                               {
                                                                 "id": "l6DA_JxRUAKqGSHOyJFVK",
@@ -9196,7 +9749,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "GVhQ5QzeHa-IheueRdUKm",
+                                                            "id": "QG9mgR_fyTJyA9N0JGnIX",
                                                             "isMultiLevelColumn": true,
                                                             "gridProps": [
                                                               {
@@ -9345,9 +9898,9 @@
                                                             "mainContainer": "listLayout"
                                                           },
                                                           "storeType": 2,
-                                                          "dataSource": "cardStatements.content.statementsWithTypeList",
+                                                          "dataSource": "cardStatements.content.TransactionTypeList",
                                                           "isMultiLevel": true,
-                                                          "multiLevelData": "list",
+                                                          "multiLevelData": "transactionList",
                                                           "bindingKey": "statementModal",
                                                           "searchKeyword": "statementSearch",
                                                           "searchableField": "name",
@@ -9358,7 +9911,7 @@
                                                           "type": "20009",
                                                           "content": "List layout"
                                                         },
-                                                        "path": "2-0-11-0-0-1-0-0-0-0-0-0-0-0-3-0-0",
+                                                        "path": "0-0-0-1-0-0-0-0-0-0-3-0-0",
                                                         "dimensions": {
                                                           "rows": 1,
                                                           "columns": 2,
@@ -9668,8 +10221,8 @@
     "gitBranchName": "master",
     "_id": "b93WUN96SuQ4Ezaw9P8Wh",
     "createdBy": "talha",
-    "updatedAt": "3/4/2024",
-    "createdAt": "3/4/2024",
+    "updatedAt": "3/13/2024",
+    "createdAt": "3/13/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9723,14 +10276,20 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "BRTX9a6h8pXbEPkVvcr8U",
-        "triggerName": "ILC_DASH_GET_CARD_API",
+        "triggerId": "PYjTPz1OdWuOnImFaJCHo",
+        "triggerName": "GET_ILEAD_CHILD_PROFILE",
         "name": "On initialization",
         "type": "1"
       },
       {
-        "triggerId": "PYjTPz1OdWuOnImFaJCHo",
-        "triggerName": "GET_ILEAD_CHILD_PROFILE",
+        "triggerId": "hq1Ovg2M_BOQ2BeGgtXmZ",
+        "triggerName": "ILCD_GET_TRANSACTIONS",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "X8OC5PTnNWgo19FgH2EKi",
+        "triggerName": "SHOW_RESPONSE_AFTER_REDIRECTION_CHAIN_TRIGGER",
         "name": "On initialization",
         "type": "1"
       }
@@ -10814,7 +11373,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "cursor": "pointer"
         },
         "mainContainer": "gridLayout"
       },
@@ -10828,14 +11388,7 @@
       "cssClassNames": []
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "oM2p6iElHz4Hf2tjCezQS",
-        "triggerName": "ILCD_GO_TO_CARD_DETAIL_SCREEN",
-        "name": "On click",
-        "type": "2"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "projectId": "652fcbce09869c3c809b3097",
@@ -10854,6 +11407,15 @@
       "defaultImageAssetIdTemp": null,
       "layoutProperties": {
         "image": { "//": "Use this class to style image component." },
+        "overlay": {
+          "aspect-ratio": "360/217",
+          "width": "calc(100% - 10px)",
+          "border-radius": "20px",
+          "z-index": "2 !important",
+          "position": "absolute",
+          "margin-left": "auto",
+          "left": "10px"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -10869,7 +11431,11 @@
       "useDynamicAsset": true,
       "cssClassNames": [{ "cssClassName": "ILC_DASH_CARD_IMG " }],
       "imageAssetIdTemp": null,
-      "useFullLink": false
+      "useFullLink": false,
+      "hideCondition": {
+        "logic": { "!": { "var": "currentScreen.CURRENT_CARD.plasticCode" } }
+      },
+      "showOverlay": true
     },
     "events": [],
     "path": "0-0-0-0-0-0-0-1-0-0-0",
@@ -11039,6 +11605,18 @@
           "componentId": "vQVEtZtyM0EY-Gg6YhTCA",
           "componentType": "20012",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "SSVninWEmfxr_VS3UKvJ8",
+          "componentType": "20012",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -11109,7 +11687,17 @@
       "imageAssetId": "GcIMsjUSU-ka3_FAMJtdL",
       "stateName": null,
       "storeType": null,
-      "useFullLink": null
+      "useFullLink": null,
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            1
+          ]
+        }
+      }
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -11120,8 +11708,95 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Image", "type": "20012" },
-    "events": [],
-    "path": "0-0-0-0-0-0-0-1-0-0-0-0-0-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "-RlS5EOIBY_ULEN2E3rMk",
+        "triggerName": "DELETE_CARD_DETAILS_FROM_CURRENT_SCREEN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      }
+    ],
+    "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-0-0-0",
+    "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "SSVninWEmfxr_VS3UKvJ8",
+    "status": "ACTIVE",
+    "name": "Image",
+    "icon": "FaImage",
+    "attributes": {
+      "name": "Image",
+      "contentType": false,
+      "defaultImageAssetIdTemp": {
+        "name": "dracaena-cinnabari.jpg",
+        "id": "CNIz67fi824LHr0ae-pOV"
+      },
+      "layoutProperties": {
+        "image": { "//": "Use this class to style image component." },
+        "mainContainer": "image",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
+      "imageAssetIdTemp": {
+        "createdBy": "user",
+        "_id": "65770bd0d6f84b282c426c98",
+        "name": "eye_unmask_light.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "sfd9nJ7fjYj2KEmvffDyk",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/eye_unmask_light.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/eye_unmask_light.svg",
+        "createdAt": "2023-12-11T13:17:04.148Z",
+        "updatedAt": "2023-12-21T13:01:15.669Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/eye_unmask_light.svg"
+      },
+      "imageAssetId": "sfd9nJ7fjYj2KEmvffDyk",
+      "stateName": null,
+      "storeType": null,
+      "useFullLink": null,
+      "hideCondition": {
+        "logic": {
+          ">": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            0
+          ]
+        }
+      }
+    },
+    "group": "Form",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 0,
+    "type": "20012",
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Image", "type": "20012" },
+    "events": [
+      {
+        "triggerId": "xhxjVYrsprTmAJhceB67E",
+        "triggerName": "CARD_DETAILS_TRIGGER",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "8"
+      }
+    ],
+    "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-0-0-1",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -11157,6 +11832,18 @@
           "componentId": "Rut24Yr1PqtaY_TJUJ-Q9",
           "componentType": "20002",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "E8Sbgg2fy1JomleO0V0nw",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -11177,7 +11864,14 @@
       "cssClassNames": [{ "cssClassName": "IL_CARD_NUMBER_GRID " }]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "oM2p6iElHz4Hf2tjCezQS",
+        "triggerName": "ILCD_GO_TO_CARD_DETAIL_SCREEN",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "projectId": "652fcbce09869c3c809b3097",
@@ -11247,7 +11941,17 @@
       "label": "CURRENT_CARD.maskCardNumber",
       "cssClassNames": [{ "cssClassName": "IL_CARD_NUMBER_LABEL " }],
       "storeType": 2,
-      "searchInState": true
+      "searchInState": true,
+      "hideCondition": {
+        "logic": {
+          ">": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+            },
+            0
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -11261,6 +11965,58 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-1-0-1",
+    "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "E8Sbgg2fy1JomleO0V0nw",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "cardDetails.content.cardDetail.realCardNumber",
+      "searchInState": true,
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "IL_CARD_NUMBER_LABEL " }],
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+            },
+            1
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-1-0-2",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -11331,7 +12087,14 @@
       "cssClassNames": [{ "cssClassName": "IL_CVC_VALID_GRID " }]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "oM2p6iElHz4Hf2tjCezQS",
+        "triggerName": "ILCD_GO_TO_CARD_DETAIL_SCREEN",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "projectId": "652fcbce09869c3c809b3097",
@@ -11366,6 +12129,18 @@
             "xs": 12
           },
           "componentId": "I62HE7wtid7rYRykaR8Ob",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "7QC0sJiN7d3kcK4ztE5g_",
           "componentType": "20002",
           "order": 1
         }
@@ -11457,7 +12232,17 @@
       "label": "•• / ••",
       "cssClassNames": [{ "cssClassName": "IL_VALID_LABEL " }],
       "searchInState": false,
-      "storeType": 2
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          ">": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cardExpiry.length"
+            },
+            0
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -11471,6 +12256,58 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-0-0-0-1",
+    "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "7QC0sJiN7d3kcK4ztE5g_",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "cardDetails.content.cardDetail.cardExpiry",
+      "searchInState": true,
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            1
+          ]
+        }
+      },
+      "cssClassNames": [{ "cssClassName": "IL_VALID_LABEL " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-0-0-0-2",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -11504,6 +12341,18 @@
             "xs": 12
           },
           "componentId": "cXO_EDDjLnHAFA3WDaCL9",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "jAnvCCZgd3YAxcYkVavOp",
           "componentType": "20002",
           "order": 1
         }
@@ -11593,7 +12442,17 @@
         "xs": 12
       },
       "label": "•••",
-      "cssClassNames": [{ "cssClassName": "IL_VALID_LABEL " }]
+      "cssClassNames": [{ "cssClassName": "IL_VALID_LABEL " }],
+      "hideCondition": {
+        "logic": {
+          ">": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            0
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -11607,6 +12466,58 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-1-0-0-1",
+    "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "jAnvCCZgd3YAxcYkVavOp",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "cardDetails.content.cardDetail.cvv",
+      "searchInState": true,
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.cvv.length"
+            },
+            1
+          ]
+        }
+      },
+      "cssClassNames": [{ "cssClassName": "IL_VALID_LABEL " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-0-1-0-0-1-0-0-0-2-1-0-0-2",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -15729,22 +16640,22 @@
       "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
       "imageAssetIdTemp": {
         "createdBy": "user",
-        "_id": "6579887bd3a90a26b4adf22d",
-        "name": "warning_round_circle.svg",
-        "type": "svg",
+        "_id": "65e887032f9c444e886990c1",
+        "name": "category_retail_circle.png",
+        "type": "png",
         "projectId": "652fcbce09869c3c809b3097",
-        "id": "XOUCqHKwsCQbcUE4IC9CI",
+        "id": "q4cEIvJjqz1ujHAX9RG_1",
         "gitBranchName": "master",
         "folderType": "web",
         "platform": "web",
-        "url": "652fcbce09869c3c809b3097/web/warning_round_circle.svg",
-        "canvasUrl": "652fcbce09869c3c809b3097/web/warning_round_circle.svg",
-        "createdAt": "2023-12-13T10:33:31.671Z",
-        "updatedAt": "2023-12-21T13:01:15.669Z",
+        "url": "652fcbce09869c3c809b3097/web/category_retail_circle.png",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/category_retail_circle.png",
+        "createdAt": "2024-03-06T15:08:51.825Z",
+        "updatedAt": "2024-03-06T15:08:51.825Z",
         "__v": 0,
-        "uri": "652fcbce09869c3c809b3097/web/warning_round_circle.svg"
+        "uri": "652fcbce09869c3c809b3097/web/category_retail_circle.png"
       },
-      "imageAssetId": "XOUCqHKwsCQbcUE4IC9CI",
+      "imageAssetId": "q4cEIvJjqz1ujHAX9RG_1",
       "stateName": null,
       "storeType": null,
       "useFullLink": null
@@ -16545,14 +17456,14 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [
       {
-        "triggerId": "nBEC_1lCvsBfvdLuQUvQx",
-        "triggerName": "VIEW_ALL_STATEMENTS",
+        "triggerId": "OH_BFex-epYd1gErJYF2p",
+        "triggerName": "ILCD_GO_TO_TRANSACTIONS",
         "name": "On click",
         "type": "2",
         "serviceType": "1"
       }
     ],
-    "path": "0-0-6-0-0-1-0-0-0-0-0-0-0-0-0-1-0-0-0",
+    "path": "0-0-0-1-0-0-0-0-0-0-0-1-0-0-0",
     "screenId": "b93WUN96SuQ4Ezaw9P8Wh",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -16968,9 +17879,9 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "cardStatements.content.statementsWithTypeList",
+      "dataSource": "cardStatements.content.TransactionTypeList",
       "isMultiLevel": true,
-      "multiLevelData": "list",
+      "multiLevelData": "transactionList",
       "bindingKey": "statementModal",
       "searchKeyword": "statementSearch",
       "searchableField": "name",

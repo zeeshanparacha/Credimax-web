@@ -1,0 +1,169 @@
+{
+  "_id": "FieNMowV6ZLTEU0VrPMYv",
+  "id": "-u1-ZlJtmPTRYadJi8ut6",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILCD_SELECT_FIRST_FILTER",
+  "old_name": "ILCD_SELECT_FIRST_FILTER",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "3tDfdNgrM5D6Z7iPFRBLd",
+              "name": "SAVE_FIRST_FILTER_IN_FORM",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "ilcd_selected_filter",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": {
+                            "var": "currentScreen.ilcd_transaction_filters.content.statementFilters.0"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.lryqb1itmskaztH2jqdj42aVNgcHxQW",
+              "_id": "zHOnq03Q4Ohe-UKzrBCfh",
+              "updatedAt": "3/6/2024",
+              "createdAt": "3/6/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
+            },
+            {
+              "id": "FPfCvXYMssrqqZR3Zctql",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILDC_CALL_STATEMENT_API_AFTER_DELAY",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "delay": "100",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "w7Q2gn73oexPq1jsYE1YI",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "ILDC_CALL_STATEMENTS_API",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "ilcd_statements",
+                                  "url": "/card/v1/getCardStatements",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": true,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "name",
+                                      "value": "ilcd_selected_filter.name"
+                                    },
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "date",
+                                      "value": "ilcd_selected_filter.date"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "cardNumber",
+                                      "value": "CURRENT_CARD.cardNumber"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "cardType",
+                                      "value": "CURRENT_CARD.cardType"
+                                    },
+                                    {
+                                      "type": 1,
+                                      "name": "Form",
+                                      "key": "type",
+                                      "value": "ilcd_statement_type"
+                                    }
+                                  ],
+                                  "baseURL": "65e87c3e2f9c444e88698ebc",
+                                  "storeType": 2
+                                },
+                                "responseHandler": []
+                              }
+                            }
+                          ],
+                          "csrf": "0.lryqb1itmskaztH2jqdj42aVNgcHxQW",
+                          "_id": "jPNTV-gaZjxiLPgIHua1w",
+                          "updatedAt": "3/6/2024",
+                          "createdAt": "3/6/2024",
+                          "createdBy": "talha2",
+                          "updatedBy": "talha2"
+                        }
+                      ],
+                      "triggerIds": ["w7Q2gn73oexPq1jsYE1YI"]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.lryqb1itmskaztH2jqdj42aVNgcHxQW",
+              "_id": "IPtCKWAVF7xFVceZSPMEJ",
+              "updatedAt": "3/6/2024",
+              "createdAt": "3/6/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
+            }
+          ],
+          "triggerIds": ["3tDfdNgrM5D6Z7iPFRBLd", "FPfCvXYMssrqqZR3Zctql"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.lryqb1itmskaztH2jqdj42aVNgcHxQW",
+  "updatedAt": "3/6/2024",
+  "createdAt": "3/6/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

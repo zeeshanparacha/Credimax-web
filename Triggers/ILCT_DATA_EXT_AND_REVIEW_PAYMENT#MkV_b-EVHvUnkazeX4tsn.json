@@ -17,127 +17,118 @@
           "searchInState": false,
           "triggers": [
             {
-              "id": "dXzzuy_WnXBkVdiGYbooJ",
-              "_id": "Ztyuqb3oUt38vivIWME4o",
-              "name": "ILCT_PAY_API_DATA_EXTRACTION",
-              "old_name": "PC_PAY_API_DATA_EXTRACTION",
+              "id": "h0_4HPZCzWMjGAzmkZJxI",
+              "_id": "6f4I4Q07622o9eJIurvqo",
+              "name": "ILCT_DATA_EXTRACTION_FOR_PAYMENT",
+              "old_name": "ILCT_DATA_EXTRACTION_FOR_PAYMENT",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
               "services": [
                 {
                   "type": "11",
                   "command": {
-                    "type": "6",
+                    "type": "15",
                     "attributes": {
                       "requestBody": [],
                       "storeType": "",
                       "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "object",
-                      "destinationBindingKey": "pc_request",
-                      "sourceBindingKey": "form",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 2,
+                      "dataType": "",
+                      "sourceBindingKey": "",
                       "filterList": [
                         {
-                          "key": "creditCardNumber",
+                          "key": "pc_request.creditCardNumber",
                           "changeValueConditonally": true,
+                          "storeType": 2,
                           "logic": {
-                            "if": [
-                              {
-                                "==": [
-                                  { "var": "currentScreen.selected_tab" },
-                                  "my cards"
-                                ]
-                              },
-                              {
-                                "var": "currentScreen.form.current_card.cardNumber"
-                              },
-                              { "var": "currentScreen.form.pc_card_number" }
-                            ]
+                            "var": "currentScreen.CURRENT_CARD.cardNumber"
                           }
                         },
                         {
-                          "key": "type",
+                          "key": "pc_request.type",
                           "changeValueConditonally": true,
+                          "storeType": 2,
                           "logic": {
                             "if": [
                               {
                                 "==": [
                                   { "var": "currentScreen.page_name" },
-                                  "Pay cards"
+                                  "Pay using debit card"
                                 ]
                               },
+                              "DebitCard",
                               {
                                 "var": "currentScreen.form.selected_payment_method.type"
-                              },
-                              "DebitCard"
+                              }
                             ]
                           }
                         },
                         {
-                          "key": "accountOrDebitCardNumber",
+                          "key": "pc_request.accountOrDebitCardNumber",
+                          "storeType": 2,
                           "changeValueConditonally": true,
                           "logic": {
                             "if": [
                               {
                                 "==": [
                                   { "var": "currentScreen.page_name" },
-                                  "Pay cards"
+                                  "Pay using debit card"
                                 ]
                               },
+                              { "var": "currentScreen.form.pc_card_number_2" },
                               {
                                 "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
-                              },
-                              { "var": "currentScreen.form.pc_card_number_2" }
+                              }
                             ]
                           }
                         },
                         {
-                          "key": "accountType",
+                          "key": "pc_request.accountType",
+                          "storeType": 2,
                           "changeValueConditonally": true,
                           "logic": {
                             "if": [
                               {
                                 "==": [
                                   { "var": "currentScreen.page_name" },
-                                  "Pay cards"
+                                  "Pay using debit card"
                                 ]
                               },
+                              null,
                               {
                                 "var": "currentScreen.form.selected_payment_method.accountType"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "key": "pc_request.cardHolderName",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "if": [
+                              {
+                                "==": [
+                                  { "var": "currentScreen.page_name" },
+                                  "Pay using debit card"
+                                ]
                               },
+                              { "var": "currentScreen.form.pc_name_on_card" },
                               null
                             ]
                           }
                         },
                         {
-                          "key": "cardHolderName",
+                          "key": "pc_request.cardNickName",
+                          "storeType": 2,
                           "changeValueConditonally": true,
                           "logic": {
                             "if": [
                               {
                                 "==": [
                                   { "var": "currentScreen.page_name" },
-                                  "Pay cards"
+                                  "Pay using debit card"
                                 ]
                               },
-                              null,
-                              { "var": "currentScreen.form.pc_name_on_card" }
-                            ]
-                          }
-                        },
-                        {
-                          "key": "cardNickName",
-                          "changeValueConditonally": true,
-                          "logic": {
-                            "if": [
-                              {
-                                "==": [
-                                  { "var": "currentScreen.page_name" },
-                                  "Pay cards"
-                                ]
-                              },
-                              null,
                               {
                                 "if": [
                                   {
@@ -149,165 +140,81 @@
                                   { "var": "currentScreen.form.pc_nikname" },
                                   null
                                 ]
-                              }
+                              },
+                              null
                             ]
                           }
                         },
                         {
-                          "key": "expiry",
+                          "key": "pc_request.expiry",
+                          "storeType": 2,
                           "changeValueConditonally": true,
                           "logic": {
                             "if": [
                               {
                                 "==": [
                                   { "var": "currentScreen.page_name" },
-                                  "Pay cards"
+                                  "Pay using debit card"
                                 ]
                               },
-                              null,
-                              { "var": "currentScreen.form.pc_expiry_date" }
+                              { "var": "currentScreen.form.pc_expiry_date" },
+                              null
                             ]
                           }
                         },
                         {
-                          "key": "amount",
+                          "key": "pc_request.amount",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "var": "currentScreen.form.pc_custom_amount_2"
+                          }
+                        },
+                        {
+                          "key": "pc_request.currency",
+                          "storeType": 2,
+                          "changeValueConditonally": false,
+                          "logic": "BHD"
+                        },
+                        {
+                          "key": "pc_request.cprOfOtherCardHolder",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "var": "currentSession.userProfile.content.customer.userIdenValue"
+                          }
+                        },
+                        {
+                          "key": "pc_request.validation",
+                          "storeType": 2,
                           "changeValueConditonally": true,
                           "logic": {
                             "if": [
                               {
                                 "==": [
-                                  { "var": "currentScreen.page_name" },
-                                  "Pay cards"
-                                ]
-                              },
-                              {
-                                "if": [
                                   {
-                                    "==": [
-                                      { "var": "currentScreen.selected_tab" },
-                                      "other cards"
-                                    ]
+                                    "var": "currentScreen.pc_check_otp.content.otpRequired"
                                   },
-                                  {
-                                    "var": "currentScreen.form.pc_custom_amount_2"
-                                  },
-                                  {
-                                    "if": [
-                                      {
-                                        "==": [
-                                          {
-                                            "var": "currentScreen.form.current_card.cardType"
-                                          },
-                                          "VISA CARDY-EX"
-                                        ]
-                                      },
-                                      {
-                                        "var": "currentScreen.form.pc_custom_amount_2"
-                                      },
-                                      {
-                                        "if": [
-                                          {
-                                            "==": [
-                                              {
-                                                "var": "currentScreen.selectedAmountType"
-                                              },
-                                              "D"
-                                            ]
-                                          },
-                                          {
-                                            "var": "currentScreen.form.pc_custom_amount_2"
-                                          },
-                                          {
-                                            "var": "currentScreen.form.pc_custom_amount"
-                                          }
-                                        ]
-                                      }
-                                    ]
-                                  }
-                                ]
-                              },
-                              { "var": "currentScreen.form.pc_custom_amount_2" }
-                            ]
-                          }
-                        },
-                        {
-                          "key": "currency",
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, "BHD", "BHD"] }
-                        },
-                        {
-                          "key": "cprOfOtherCardHolder",
-                          "changeValueConditonally": true,
-                          "logic": {
-                            "if": [
-                              {
-                                "==": [
-                                  { "var": "currentScreen.selected_tab" },
-                                  "other cards"
-                                ]
-                              },
-                              { "var": "currentScreen.form.pc_cpr" },
-                              {
-                                "var": "currentSession.userProfile.content.customer.userIdenValue"
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "key": "validation",
-                          "changeValueConditonally": true,
-                          "logic": {
-                            "if": [
-                              {
-                                "and": [
-                                  {
-                                    "==": [
-                                      { "var": "currentScreen.selected_tab" },
-                                      "other cards"
-                                    ]
-                                  },
-                                  {
-                                    "==": [
-                                      {
-                                        "var": "currentScreen.form.selected_payment_method.type"
-                                      },
-                                      "DebitCard"
-                                    ]
-                                  }
+                                  1
                                 ]
                               },
                               { "var": "currentScreen.pc_validation_object" },
-                              {
-                                "if": [
-                                  {
-                                    "==": [
-                                      {
-                                        "var": "currentScreen.pc_check_otp.content.otpRequired"
-                                      },
-                                      1
-                                    ]
-                                  },
-                                  {
-                                    "var": "currentScreen.pc_validation_object"
-                                  },
-                                  null
-                                ]
-                              }
+                              null
                             ]
                           }
                         },
                         {
-                          "key": "saveNewCard",
+                          "key": "pc_request.saveNewCard",
                           "changeValueConditonally": true,
+                          "storeType": 2,
                           "logic": {
                             "if": [
                               {
                                 "==": [
                                   { "var": "currentScreen.page_name" },
-                                  "Pay cards"
+                                  "Pay using debit card"
                                 ]
                               },
-                              null,
                               {
                                 "if": [
                                   {
@@ -319,20 +226,20 @@
                                   true,
                                   false
                                 ]
-                              }
+                              },
+                              null
                             ]
                           }
                         }
-                      ],
-                      "targettedType": "value"
+                      ]
                     }
                   }
                 }
               ],
-              "csrf": "0.dxec5ydnyt4pOflU3p_IDuxCA1YpCrQf",
-              "updatedAt": "3/4/2024",
-              "createdAt": "3/4/2024",
-              "createdBy": "talha",
+              "csrf": "0.2mchm6wzcilgrslcF_sswJuDPzk6avvZ",
+              "updatedAt": "3/8/2024",
+              "createdAt": "3/8/2024",
+              "createdBy": "talha2",
               "updatedBy": "talha2"
             },
             {
@@ -363,14 +270,14 @@
               "updatedBy": "talha"
             }
           ],
-          "triggerIds": ["dXzzuy_WnXBkVdiGYbooJ", "iOqQaI2yK_Quc4Ia4CXcd"]
+          "triggerIds": ["h0_4HPZCzWMjGAzmkZJxI", "iOqQaI2yK_Quc4Ia4CXcd"]
         }
       }
     }
   ],
-  "csrf": "0.rm1zdj2qfsflhIrxVx4vVwFpjv5PIzf",
-  "updatedAt": "3/4/2024",
-  "createdAt": "3/4/2024",
+  "csrf": "0.imvd355qncjyp4_kK5G7oUEUlpK4XGJT",
+  "updatedAt": "3/8/2024",
+  "createdAt": "3/8/2024",
   "createdBy": "talha2",
   "updatedBy": "talha2"
 }

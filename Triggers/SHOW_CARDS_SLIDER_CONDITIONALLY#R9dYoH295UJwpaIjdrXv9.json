@@ -15,7 +15,25 @@
           "triggers": [
             {
               "logic": {
-                "==": [{ "var": "currentScreen.cards.cardList.length" }, "1"]
+                "or": [
+                  {
+                    "==": [
+                      { "var": "currentScreen.cards.cardList.length" },
+                      "1"
+                    ]
+                  },
+                  {
+                    "==": [
+                      { "var": "currentScreen.SLIDER_CARD_INDEX" },
+                      {
+                        "-": [
+                          { "var": "currentScreen.cards.cardList.length" },
+                          1
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               "triggerName": "SHOW_LAST_ADD_CARD_SLIDER",
               "triggerId": "_aJhb4aXw5fG1_ilBUGei",
@@ -37,7 +55,29 @@
             },
             {
               "logic": {
-                ">": [{ "var": "currentScreen.cards.cardList.length" }, "1"]
+                "and": [
+                  {
+                    ">": [{ "var": "currentScreen.cards.cardList.length" }, "1"]
+                  },
+                  {
+                    "or": [
+                      {
+                        "==": [{ "var": "currentScreen.SLIDER_CARD_INDEX" }, 0]
+                      },
+                      {
+                        "==": [
+                          { "var": "currentScreen.SLIDER_CARD_INDEX" },
+                          {
+                            "-": [
+                              { "var": "currentScreen.cards.cardList.length" },
+                              2
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               },
               "triggerName": "SHOW_MULTIPLE_CARD_SLIDER",
               "triggerId": "E183eRJvHBu4FFHTEb6yq",
@@ -62,9 +102,9 @@
       }
     }
   ],
-  "csrf": "0.99ss65b63jNL3tiJuWvSufvfeByTw8L",
-  "updatedAt": "12/28/2023",
-  "createdAt": "12/28/2023",
-  "createdBy": "muhammad.asad",
-  "updatedBy": "muhammad.asad"
+  "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
+  "updatedAt": "3/13/2024",
+  "createdAt": "3/13/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }

@@ -4,7 +4,7 @@
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "NAVIGATE_FROM_SERVICES_CONDITIONALLY",
-  "old_name": "NAVIGATE_TO_SPT_AND_DASHBOARD_CONDITIONALLY",
+  "old_name": "NAVIGATE_FROM_SERVICES_CONDITIONALLY",
   "status": "ACTIVE",
   "services": [
     {
@@ -31,20 +31,7 @@
                 }
               ],
               "logic": {
-                "or": [
-                  {
-                    "==": [
-                      { "var": "currentSession.dash_type" },
-                      "main dashboard"
-                    ]
-                  },
-                  {
-                    "==": [
-                      { "var": "currentSession.dash_type" },
-                      "ilc dashboard"
-                    ]
-                  }
-                ]
+                "==": [{ "var": "currentSession.dash_type" }, "main dashboard"]
               }
             },
             {
@@ -115,15 +102,36 @@
                   }
                 }
               ]
+            },
+            {
+              "logic": {
+                "==": [{ "var": "currentSession.dash_type" }, "ilc dashboard"]
+              },
+              "triggerName": "ILC_GO_TO_CARD_DETAILS",
+              "triggerId": "ih3vNCyqB_xun7IGducAp",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "nextWidgetId": "BlnSGayp6sKQ6Glaj0UWP",
+                      "gridRadioValue": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.879q9u6oy4w2MErZH63Gnnk8mDKhqLFc",
-  "updatedAt": "3/5/2024",
-  "createdAt": "3/5/2024",
+  "csrf": "0.lryqb1itmskaztH2jqdj42aVNgcHxQW",
+  "updatedAt": "3/6/2024",
+  "createdAt": "3/6/2024",
   "createdBy": "talha2",
   "updatedBy": "talha2"
 }

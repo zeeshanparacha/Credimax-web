@@ -1,0 +1,184 @@
+{
+  "_id": "TUZK8fZuVndhsUk7syzrO",
+  "id": "V1NrxBI8xu-krjFaXwZiq",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "DASH_CARD_RELATED_APIS_AFTER_DELAY",
+  "old_name": "DASH_CARD_RELATED_APIS_AFTER_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "1000",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "9LHS775b0Z8GDXMCQ9pPp",
+              "_id": "KFDWh3WZG73nSR62cD7Uw",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "GET_CARD_STATEMENTS_TRIGGER",
+              "old_name": "GET_CARD_STATEMENTS_TRIGGER",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cardStatements",
+                      "url": "/card/v1/getCardStatements",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "name",
+                          "value": "Current Statement"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "date",
+                          "value": "date"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardType",
+                          "value": "CURRENT_CARD.cardType"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.7gcbfe8l7uk094-tggnSRngJ5FW-VM0Q",
+              "updatedAt": "3/6/2024",
+              "createdAt": "3/6/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            },
+            {
+              "id": "ViU58dxCCkpwIlu6Zt6Rs",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "DASH_GET_CHILD_PAYMENTS_CONDITIONALLY",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "triggerName": "ILP_GET_PAYMENTS_AFTER_DELAY",
+                          "triggerId": "fu51HfXXuFxR7Ac8q_xED",
+                          "services": [
+                            {
+                              "type": "2",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "delay": "1000",
+                                  "storeType": "",
+                                  "searchInState": false,
+                                  "triggers": [],
+                                  "triggerIds": []
+                                }
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "ilp child dashboard"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
+              "_id": "2aj5kDP_OAJbAb8Txklp7",
+              "updatedAt": "3/13/2024",
+              "createdAt": "3/13/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            },
+            {
+              "id": "Y4hG7exvHpfzUwF1m5Riu",
+              "_id": "n1vdPpj0HXx_uhw6iIoXc",
+              "name": "FREEZE_TOGGLE",
+              "old_name": "FREEZE_TOGGLE",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "freezeToggle",
+                      "sourceBindingKey": "CURRENT_CARD.isFreeze",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 1,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.iou7ci9c1qhN1DsqeaS3wZ7JYYnxCrH_",
+              "updatedAt": "2/21/2024",
+              "createdAt": "2/21/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": [
+            "9LHS775b0Z8GDXMCQ9pPp",
+            "ViU58dxCCkpwIlu6Zt6Rs",
+            "Y4hG7exvHpfzUwF1m5Riu"
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
+  "updatedAt": "3/13/2024",
+  "createdAt": "3/13/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

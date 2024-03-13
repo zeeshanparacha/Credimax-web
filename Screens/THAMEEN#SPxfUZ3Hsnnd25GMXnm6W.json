@@ -34,7 +34,8 @@
             "gridLayout": {
               "//": "Use this class to style grid layout component.",
               "spacing": 0,
-              "background": "#f2f2f2"
+              "background": "#f2f2f2",
+              "min-height": "calc(100vh - 55px)"
             },
             "mainContainer": "gridLayout"
           },
@@ -53,44 +54,42 @@
         "createdAt": "24-Aug-2021",
         "events": [
           {
-            "triggerId": "WC0rCVjI2n-jptd16JVFn",
-            "triggerName": "DUMMY_DATA_FOR_LIST_TAB",
+            "triggerId": "3FP6an5PMWNm7g5rOpbgs",
+            "triggerName": "GET_THAMEEN_DASHBOARD_DATA",
             "serviceType": "8",
             "attributes": {
               "loaderWidgetIds": [906070],
               "messageWidgetIds": [906070],
-              "responseStateKey": "Incoming",
-              "url": "/basit",
+              "responseStateKey": "Thameen",
+              "url": "/ThameenDashboard",
               "checksum": true,
               "encryption": true,
-              "isDeviceDetails": false,
+              "isDeviceDetails": true,
               "loginTrigger": false,
               "formData": false,
               "logoutTrigger": false,
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "channel_key": "001",
-                "CSRF_TOKEN": "4c6e939d-db00-4697-82d8-b69bb05aef5a",
-                "locale": "en-ltr"
+                "channel_key": "002"
               },
               "requestBody": [],
-              "baseURL": "657710f6d6f84b282c426eec",
+              "baseURL": "65e87c3e2f9c444e88698ebc",
               "storeType": 2
             },
             "type": "1",
             "name": "On initialization",
-            "commandType": "5"
+            "commandType": "1"
           },
           {
-            "triggerId": "oJH-PlcG-G2rI4UVYz3O9",
-            "triggerName": "LIST_DUMMY_DATA_FOR_STATEMENT",
+            "triggerId": "VP5RVijm5kHHSW0tIRHCf",
+            "triggerName": "GET_THAMEEN_DASHBOARD_HISTORY",
             "serviceType": "8",
             "attributes": {
               "loaderWidgetIds": [906070],
               "messageWidgetIds": [906070],
-              "responseStateKey": "sData",
-              "url": "/casaaccount",
+              "responseStateKey": "THM_HISTORY",
+              "url": "/ThameenHistory",
               "checksum": true,
               "encryption": true,
               "isDeviceDetails": false,
@@ -100,17 +99,22 @@
               "headers": {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
-                "channel_key": "001",
-                "CSRF_TOKEN": "4c6e939d-db00-4697-82d8-b69bb05aef5a",
-                "locale": "en-ltr"
+                "channel_key": "002"
               },
-              "requestBody": [],
-              "baseURL": "657710f6d6f84b282c426eec",
+              "requestBody": [
+                {
+                  "type": 4,
+                  "name": "Static",
+                  "key": "date",
+                  "value": "yearToDate"
+                }
+              ],
+              "baseURL": "65e87c3e2f9c444e88698ebc",
               "storeType": 2
             },
             "type": "1",
             "name": "On initialization",
-            "commandType": "5"
+            "commandType": "1"
           }
         ],
         "order": 1,
@@ -119,11 +123,11 @@
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": 0,
+        "path": "0",
         "gridProps": [
           {
             "type": "column",
-            "id": "3ShmNOGIf9A7XiIKqHcr4",
+            "id": "_Tm2sZKtY-0zTzd2tl_fy",
             "gridProps": [
               {
                 "type": "10001",
@@ -141,7 +145,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "4LPeUPJO5YsPa1ldHes_Q",
+                            "id": "6MCHluwwglI_dE8tf8qqP",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -357,7 +361,9 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "5,600"
+                                                          "label": "Thameen.availablePoints",
+                                                          "searchInState": true,
+                                                          "storeType": 2
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -659,7 +665,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "8GBbmynVlTCWYZe0Sf7bw",
+                                                    "id": "0AMjuZEm6Jv-yHNdrXQm8",
                                                     "gridProps": [
                                                       {
                                                         "id": "cV7VyHsdEeFZBcih0LhYF",
@@ -672,11 +678,12 @@
                                                           "layoutProperties": {
                                                             "label": {
                                                               "//": "Use this class to style label component.",
-                                                              "font-size": "14px",
+                                                              "font-size": "12px",
                                                               "inline-height": "12px",
-                                                              "color": "#838383",
+                                                              "color": "#838383a1",
                                                               "letter-spacing": "0px",
-                                                              "padding": "0px 0px 2px"
+                                                              "padding": "0px 0px 2px",
+                                                              "font-weight": 600
                                                             },
                                                             "prefix": {
                                                               "//": "Use this class to style prefix."
@@ -740,8 +747,11 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "1,500.00",
-                                                          "cssClassNames": []
+                                                          "label": "Thameen.expiringThisMonth",
+                                                          "cssClassNames": [],
+                                                          "searchInState": true,
+                                                          "storeType": 2,
+                                                          "format": "thousand seprator"
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -766,8 +776,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-0-0-0-0-1-0-0-0-1-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -784,7 +793,7 @@
                                                     "gridLayout": {
                                                       "//": "Use this class to style grid layout component.",
                                                       "spacing": 0,
-                                                      "padding": "10px 0px 0px"
+                                                      "padding": "14px 0px 0px"
                                                     },
                                                     "mainContainer": "gridLayout"
                                                   },
@@ -809,7 +818,8 @@
                                                   "colSize0sm": 12,
                                                   "colSize0md": 12,
                                                   "colSize0lg": 12,
-                                                  "colSize0xl": 12
+                                                  "colSize0xl": 12,
+                                                  "layoutProperties": null
                                                 },
                                                 "readOnly": true
                                               }
@@ -900,7 +910,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "LeGmVeQVbmh6cGrh5uSH0",
+                                                    "id": "6kyGAxgM3J0HOEveLrDTy",
                                                     "gridProps": [
                                                       {
                                                         "id": "C2lGH2_dF5zBmaT8ToRlj",
@@ -933,7 +943,7 @@
                                                             "md": 12,
                                                             "sm": 12,
                                                             "xs": 12,
-                                                            "width": "300px",
+                                                            "width": "100%",
                                                             "height": "100px"
                                                           },
                                                           "data": {
@@ -971,10 +981,10 @@
                                                             ]
                                                           },
                                                           "storeType": 2,
-                                                          "dataSource": "Incoming.Incoming",
-                                                          "bindingKey": "amount",
-                                                          "bindingKeyForLabels": "name",
-                                                          "selectedBindingKey": "thm_selected_bar_chart",
+                                                          "dataSource": "Thameen.earnings",
+                                                          "bindingKey": "earning",
+                                                          "bindingKeyForLabels": "month",
+                                                          "selectedBindingKey": "thameen_selected_bar",
                                                           "hideXAxisGrid": true,
                                                           "hideXAxisBottomLine": true,
                                                           "hideYAxisGrid": true,
@@ -1008,8 +1018,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-0-0-0-0-1-1-0-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -1025,7 +1034,8 @@
                                                   "layoutProperties": {
                                                     "gridLayout": {
                                                       "//": "Use this class to style grid layout component.",
-                                                      "spacing": 0
+                                                      "spacing": 0,
+                                                      "margin": "0px 0px 0px -18px"
                                                     },
                                                     "mainContainer": "gridLayout"
                                                   },
@@ -1042,7 +1052,18 @@
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-0-0-0-0-1-1-0-0-0"
+                                                "path": "0-0-0-0-0-0-1-1-0-0-0",
+                                                "dimensions": {
+                                                  "rows": 1,
+                                                  "columns": 1,
+                                                  "colSize0xs": 12,
+                                                  "colSize0sm": 12,
+                                                  "colSize0md": 12,
+                                                  "colSize0lg": 12,
+                                                  "colSize0xl": 12,
+                                                  "layoutProperties": null
+                                                },
+                                                "readOnly": true
                                               }
                                             ],
                                             "layoutProperties": {
@@ -1065,7 +1086,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "hQTTrnKttTr8illicyovd",
+                                                    "id": "-gEMYnJnhyUSbNivY-EPL",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1074,7 +1095,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "8Hq8QdUuZnFFDIhcR-6mq",
+                                                            "id": "KHhJbYBd9P4SbekboZBep",
                                                             "gridProps": [
                                                               {
                                                                 "id": "6aFUKwpcWPXbjY_a2Mo47",
@@ -1135,10 +1156,12 @@
                                                                   "layoutProperties": {
                                                                     "label": {
                                                                       "//": "Use this class to style label component.",
-                                                                      "font-size": "12px",
-                                                                      "color": "#838383",
+                                                                      "font-size": "10px",
+                                                                      "color": "#838383a1",
                                                                       "inline-height": "10px",
-                                                                      "padding": "2px 0px 0px"
+                                                                      "padding": "2px 0px 0px",
+                                                                      "font-weight": 600,
+                                                                      "width": "max-content"
                                                                     },
                                                                     "prefix": {
                                                                       "//": "Use this class to style prefix."
@@ -1153,9 +1176,19 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "thm_selected_bar_chart.date",
+                                                                  "label": "thameen_selected_bar.month",
                                                                   "searchInState": true,
-                                                                  "storeType": 2
+                                                                  "storeType": 2,
+                                                                  "hideCondition": {
+                                                                    "logic": {
+                                                                      "<": [
+                                                                        {
+                                                                          "var": "currentScreen.thameen_selected_bar.month.length"
+                                                                        },
+                                                                        1
+                                                                      ]
+                                                                    }
+                                                                  }
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -1172,6 +1205,65 @@
                                                                 },
                                                                 "events": [],
                                                                 "path": "0-0-0-0-0-0-1-1-0-1-0-0-0-0-1"
+                                                              },
+                                                              {
+                                                                "id": "T0oPBdYDXku39ZwsOYKKg",
+                                                                "status": "ACTIVE",
+                                                                "name": "Label",
+                                                                "attributes": {
+                                                                  "variant": "body1",
+                                                                  "name": "Label",
+                                                                  "mandatory": false,
+                                                                  "layoutProperties": {
+                                                                    "label": {
+                                                                      "//": "Use this class to style label component.",
+                                                                      "font-size": "10px",
+                                                                      "color": "#838383a1",
+                                                                      "inline-height": "10px",
+                                                                      "padding": "2px 0px 0px",
+                                                                      "font-weight": 600,
+                                                                      "width": "max-content"
+                                                                    },
+                                                                    "prefix": {
+                                                                      "//": "Use this class to style prefix."
+                                                                    },
+                                                                    "postfix": {
+                                                                      "//": "Use this class to style postfix."
+                                                                    },
+                                                                    "mainContainer": "label",
+                                                                    "xl": 12,
+                                                                    "lg": 12,
+                                                                    "md": 12,
+                                                                    "sm": 12,
+                                                                    "xs": 12
+                                                                  },
+                                                                  "label": "Last 6 months",
+                                                                  "hideCondition": {
+                                                                    "logic": {
+                                                                      ">": [
+                                                                        {
+                                                                          "var": "currentScreen.thameen_selected_bar.month.length"
+                                                                        },
+                                                                        0
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "icon": "FaFont",
+                                                                "group": "Form",
+                                                                "type": "20002",
+                                                                "updatedAt": "23-Aug-2021",
+                                                                "createdAt": "23-Aug-2021",
+                                                                "order": 15,
+                                                                "version": "1.0.0",
+                                                                "isLatest": true,
+                                                                "projectType": "web",
+                                                                "component": {
+                                                                  "content": "Label",
+                                                                  "type": "20002"
+                                                                },
+                                                                "events": [],
+                                                                "path": "0-0-0-0-0-0-1-1-0-1-0-0-0-0-2"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1180,8 +1272,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-0-0-0-0-1-1-0-1-0-0-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -1226,6 +1317,67 @@
                                                             "id": "Sie5SgLIEkFs1WnJUcFho",
                                                             "gridProps": [
                                                               {
+                                                                "id": "agf2KYj0zTEJJFQWITuzY",
+                                                                "status": "ACTIVE",
+                                                                "name": "Label",
+                                                                "attributes": {
+                                                                  "variant": "body1",
+                                                                  "name": "Label",
+                                                                  "mandatory": false,
+                                                                  "layoutProperties": {
+                                                                    "label": {
+                                                                      "//": "Use this class to style label component."
+                                                                    },
+                                                                    "prefix": {
+                                                                      "//": "Use this class to style prefix."
+                                                                    },
+                                                                    "postfix": {
+                                                                      "//": "Use this class to style postfix."
+                                                                    },
+                                                                    "mainContainer": "label",
+                                                                    "xl": 12,
+                                                                    "lg": 12,
+                                                                    "md": 12,
+                                                                    "sm": 12,
+                                                                    "xs": 12
+                                                                  },
+                                                                  "label": "Thameen.availablePoints",
+                                                                  "searchInState": true,
+                                                                  "storeType": 2,
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "THM_24PX_LABEL_BOLD "
+                                                                    }
+                                                                  ],
+                                                                  "hideCondition": {
+                                                                    "logic": {
+                                                                      ">": [
+                                                                        {
+                                                                          "var": "currentScreen.thameen_selected_bar.month.length"
+                                                                        },
+                                                                        0
+                                                                      ]
+                                                                    }
+                                                                  },
+                                                                  "format": "thousand seprator"
+                                                                },
+                                                                "icon": "FaFont",
+                                                                "group": "Form",
+                                                                "type": "20002",
+                                                                "updatedAt": "23-Aug-2021",
+                                                                "createdAt": "23-Aug-2021",
+                                                                "order": 15,
+                                                                "version": "1.0.0",
+                                                                "isLatest": true,
+                                                                "projectType": "web",
+                                                                "component": {
+                                                                  "content": "Label",
+                                                                  "type": "20002"
+                                                                },
+                                                                "events": [],
+                                                                "path": "0-0-0-0-0-0-1-1-0-1-0-0-1-0-0"
+                                                              },
+                                                              {
                                                                 "id": "033l1T6M-m9pYRuJRInow",
                                                                 "status": "ACTIVE",
                                                                 "name": "Label",
@@ -1250,14 +1402,26 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "thm_selected_bar_chart.amount",
+                                                                  "label": "thameen_selected_bar.earning",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
                                                                     {
                                                                       "cssClassName": "THM_24PX_LABEL_BOLD "
                                                                     }
-                                                                  ]
+                                                                  ],
+                                                                  "hideCondition": {
+                                                                    "logic": {
+                                                                      "<": [
+                                                                        {
+                                                                          "var": "currentScreen.thameen_selected_bar.month.length"
+                                                                        },
+                                                                        1
+                                                                      ]
+                                                                    }
+                                                                  },
+                                                                  "enablePaginationSortingFilter": true,
+                                                                  "format": "thousand seprator"
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -1273,7 +1437,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-0-0-0-0-1-1-0-1-0-0-1-0-0"
+                                                                "path": "0-0-0-0-0-0-1-1-0-1-0-0-1-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1336,8 +1500,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-0-0-0-0-1-1-0-1-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -1354,7 +1517,8 @@
                                                     "gridLayout": {
                                                       "//": "Use this class to style grid layout component.",
                                                       "spacing": 0,
-                                                      "border-left": "2px solid #f2f2f2"
+                                                      "border-left": "2px solid #f2f2f2",
+                                                      "height": "102px"
                                                     },
                                                     "mainContainer": "gridLayout"
                                                   },
@@ -1514,7 +1678,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "NkKqYpL0AQ_qI4Zp4kG5X",
+                                    "id": "5nGU8brtAiXyoteHGM8TZ",
                                     "gridProps": [
                                       {
                                         "type": "20009",
@@ -1523,7 +1687,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "27FwN9cYBB1WgaTaQdT1y",
+                                            "id": "sbUlx7WU3oC1JkZclqgUE",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -1532,7 +1696,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "vL1KthWLYvZAz1RYnIXTZ",
+                                                    "id": "eSTD1M9Pf1kCQdcz3q5x3",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1540,7 +1704,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "_rPKAqiHpZPcO9SDClXN1",
+                                                            "id": "g4adiG2Saf54YJaZxlZv2",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1548,7 +1712,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "lm5UIjQXcn7fZMZu5YTnN",
+                                                                    "id": "HyNImADOkm0HShbaK4Yf9",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "J7FGemmp6HCIiUbzj2eLx",
@@ -1564,7 +1728,10 @@
                                                                           },
                                                                           "layoutProperties": {
                                                                             "image": {
-                                                                              "//": "Use this class to style image component."
+                                                                              "//": "Use this class to style image component.",
+                                                                              "width": "100%",
+                                                                              "height": "100%",
+                                                                              "margin": "0px auto"
                                                                             },
                                                                             "mainContainer": "image",
                                                                             "xl": 12,
@@ -1618,8 +1785,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-0-0-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-0-0-2-0-0-0-0-0-0-0-0",
@@ -1631,7 +1797,7 @@
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
                                                                       "spacing": 0,
-                                                                      "padding": "0px 0px 0px 10px"
+                                                                      "width": "90px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -1662,8 +1828,7 @@
                                                                   "colSize0sm": 12,
                                                                   "colSize0md": 12,
                                                                   "colSize0lg": 12,
-                                                                  "colSize0xl": 12,
-                                                                  "layoutProperties": null
+                                                                  "colSize0xl": 12
                                                                 },
                                                                 "readOnly": true
                                                               }
@@ -1678,7 +1843,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "gz2cWShcVfW7KferKkpwJ",
+                                                            "id": "NntD1Ky5V8mkXNOD67Tje",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1686,7 +1851,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "RURzUcpMX9ZtKz2TdEI0Z",
+                                                                    "id": "XzJ1LRDKSUJwipVxa6rOU",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "tKizw9isty1wZJaFUoUOF",
@@ -1796,8 +1961,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-0-1-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-0-0-2-0-0-0-0-0-0-1-0",
@@ -1808,7 +1972,8 @@
                                                                   "layoutProperties": {
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
-                                                                      "spacing": 0
+                                                                      "spacing": 0,
+                                                                      "margin": "0px 0px 0px -10px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -1831,7 +1996,18 @@
                                                                   "20010",
                                                                   "widget"
                                                                 ],
-                                                                "name": "Grid layout"
+                                                                "name": "Grid layout",
+                                                                "dimensions": {
+                                                                  "rows": 1,
+                                                                  "columns": 1,
+                                                                  "colSize0xs": 12,
+                                                                  "colSize0sm": 12,
+                                                                  "colSize0md": 12,
+                                                                  "colSize0lg": 12,
+                                                                  "colSize0xl": 12,
+                                                                  "layoutProperties": null
+                                                                },
+                                                                "readOnly": true
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1844,7 +2020,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "U7rDWojIZbwbQWB7W-Guu",
+                                                            "id": "xcOb1iZynrde9ZjPDbIrg",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1853,7 +2029,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "1iIenDvkPcjuxMBroTixj",
+                                                                    "id": "C8d17ICRN2bkGW6C2v_ZW",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -1996,8 +2172,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-0-2-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -2062,7 +2237,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "dROw1R8cVeWCALWZAEQnM",
+                                                            "id": "gpATFFaiwMPB2Ol6X6dXr",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2095,7 +2270,9 @@
                                                                                   },
                                                                                   "layoutProperties": {
                                                                                     "image": {
-                                                                                      "//": "Use this class to style image component."
+                                                                                      "//": "Use this class to style image component.",
+                                                                                      "width": "32px",
+                                                                                      "height": "32px"
                                                                                     },
                                                                                     "mainContainer": "image",
                                                                                     "xl": 12,
@@ -2221,7 +2398,8 @@
                                                                                       "color": "#696969",
                                                                                       "line-height": "18px",
                                                                                       "letter-spacing": "0px",
-                                                                                      "font-weight": "bold"
+                                                                                      "font-weight": "bold",
+                                                                                      "margin": "-2px 0px 0px 0px"
                                                                                     },
                                                                                     "prefix": {
                                                                                       "//": "Use this class to style prefix."
@@ -2270,11 +2448,11 @@
                                                                                   "layoutProperties": {
                                                                                     "label": {
                                                                                       "//": "Use this class to style label component.",
-                                                                                      "font-size": "12px",
+                                                                                      "font-size": "11px",
                                                                                       "color": "#696969",
                                                                                       "line-height": "10px",
                                                                                       "letter-spacing": "0px",
-                                                                                      "padding": "1px 0px 0px"
+                                                                                      "padding": "6px 0px 0px"
                                                                                     },
                                                                                     "prefix": {
                                                                                       "//": "Use this class to style prefix."
@@ -2447,7 +2625,7 @@
                                                                 {
                                                                   "var": "type"
                                                                 },
-                                                                "OverDueBalance"
+                                                                "airline"
                                                               ]
                                                             }
                                                           }
@@ -2467,16 +2645,16 @@
                                                         "dimensions": {
                                                           "rows": 1,
                                                           "columns": 4,
-                                                          "colSize0xs": 3,
-                                                          "colSize0sm": 3,
-                                                          "colSize0md": 3,
-                                                          "colSize0lg": 3,
-                                                          "colSize0xl": 3,
-                                                          "colSize1xs": 5,
-                                                          "colSize1sm": 5,
-                                                          "colSize1md": 5,
-                                                          "colSize1lg": 5,
-                                                          "colSize1xl": 5,
+                                                          "colSize0xs": 2.7,
+                                                          "colSize0sm": 2.7,
+                                                          "colSize0md": 2.7,
+                                                          "colSize0lg": 2.7,
+                                                          "colSize0xl": 2.7,
+                                                          "colSize1xs": 5.3,
+                                                          "colSize1sm": 5.3,
+                                                          "colSize1md": 5.3,
+                                                          "colSize1lg": 5.3,
+                                                          "colSize1xl": 5.3,
                                                           "colSize2xs": 1,
                                                           "colSize2sm": 1,
                                                           "colSize2md": 1,
@@ -2496,7 +2674,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "ZlcWLcAZtYrjrMmFSESP8",
+                                                            "id": "PhkhKXPePrlbyPsHaneLS",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2504,7 +2682,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "AOw_SyjS_uImlrr7JCqYH",
+                                                                    "id": "b2S1cRssd6FITOtmMcK3T",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "3Xfql1LX3U5Mg4wYKEFt4",
@@ -2520,7 +2698,10 @@
                                                                           },
                                                                           "layoutProperties": {
                                                                             "image": {
-                                                                              "//": "Use this class to style image component."
+                                                                              "//": "Use this class to style image component.",
+                                                                              "width": "100%",
+                                                                              "height": "100%",
+                                                                              "margin": "0px auto"
                                                                             },
                                                                             "mainContainer": "image",
                                                                             "xl": 12,
@@ -2574,8 +2755,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-1-0-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-0-0-2-0-0-0-0-0-1-0-0",
@@ -2587,7 +2767,8 @@
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
                                                                       "spacing": 0,
-                                                                      "padding": "0px 0px 0px 10px"
+                                                                      "padding": "0px 0px 0px 10px",
+                                                                      "width": "90px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -2618,8 +2799,7 @@
                                                                   "colSize0sm": 12,
                                                                   "colSize0md": 12,
                                                                   "colSize0lg": 12,
-                                                                  "colSize0xl": 12,
-                                                                  "layoutProperties": null
+                                                                  "colSize0xl": 12
                                                                 },
                                                                 "readOnly": true
                                                               }
@@ -2634,7 +2814,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "04ommrPsJfstPz63ziJac",
+                                                            "id": "VYgWuQFJCSbKnxzNa5iYa",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2642,7 +2822,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "EhnrLge1ssItH183nWkrQ",
+                                                                    "id": "nZpESxR3uMq3SIQUE2OD_",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "Rlw1kb25Hyg4MwcmA_oUd",
@@ -2752,8 +2932,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-1-1-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-0-0-2-0-0-0-0-0-1-1-0",
@@ -2764,7 +2943,8 @@
                                                                   "layoutProperties": {
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
-                                                                      "spacing": 0
+                                                                      "spacing": 0,
+                                                                      "margin": "0px 0px 0px -10px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -2787,7 +2967,17 @@
                                                                   "20010",
                                                                   "widget"
                                                                 ],
-                                                                "name": "Grid layout"
+                                                                "name": "Grid layout",
+                                                                "dimensions": {
+                                                                  "rows": 1,
+                                                                  "columns": 1,
+                                                                  "colSize0xs": 12,
+                                                                  "colSize0sm": 12,
+                                                                  "colSize0md": 12,
+                                                                  "colSize0lg": 12,
+                                                                  "colSize0xl": 12
+                                                                },
+                                                                "readOnly": true
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -2800,7 +2990,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "zhrk0pxXugS4sSFgMD3cb",
+                                                            "id": "_KSbe-QPjfZkG6pNaYWLS",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3018,7 +3208,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "DnS0crWSHqf-6YtpXq9w6",
+                                                            "id": "jwPqGbG929SDF8KRNsPVh",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3051,7 +3241,9 @@
                                                                                   },
                                                                                   "layoutProperties": {
                                                                                     "image": {
-                                                                                      "//": "Use this class to style image component."
+                                                                                      "//": "Use this class to style image component.",
+                                                                                      "width": "32px",
+                                                                                      "height": "32px"
                                                                                     },
                                                                                     "mainContainer": "image",
                                                                                     "xl": 12,
@@ -3177,7 +3369,8 @@
                                                                                       "color": "#696969",
                                                                                       "line-height": "18px",
                                                                                       "letter-spacing": "0px",
-                                                                                      "font-weight": "bold"
+                                                                                      "font-weight": "bold",
+                                                                                      "margin": "-2px 0px 0px 0px"
                                                                                     },
                                                                                     "prefix": {
                                                                                       "//": "Use this class to style prefix."
@@ -3226,11 +3419,11 @@
                                                                                   "layoutProperties": {
                                                                                     "label": {
                                                                                       "//": "Use this class to style label component.",
-                                                                                      "font-size": "12px",
+                                                                                      "font-size": "11px",
                                                                                       "color": "#696969",
                                                                                       "line-height": "10px",
                                                                                       "letter-spacing": "0px",
-                                                                                      "padding": "1px 0px 0px"
+                                                                                      "padding": "6px 0px 0px"
                                                                                     },
                                                                                     "prefix": {
                                                                                       "//": "Use this class to style prefix."
@@ -3403,7 +3596,7 @@
                                                                 {
                                                                   "var": "type"
                                                                 },
-                                                                "frozen"
+                                                                "cashback"
                                                               ]
                                                             }
                                                           }
@@ -3452,7 +3645,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "OUi6TPPPZwXu0W7fIFlVk",
+                                                            "id": "oPhGKEbImrXGS7iMjSHQ8",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3460,7 +3653,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "i9nXizvwgsLv8VDM9p-O2",
+                                                                    "id": "kn99DdwXGKXBYbtSL9lxm",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "9d0rJ0eGX9ODsJ9eIcUfi",
@@ -3476,7 +3669,10 @@
                                                                           },
                                                                           "layoutProperties": {
                                                                             "image": {
-                                                                              "//": "Use this class to style image component."
+                                                                              "//": "Use this class to style image component.",
+                                                                              "height": "100%",
+                                                                              "width": "100%",
+                                                                              "margin": "0px auto"
                                                                             },
                                                                             "mainContainer": "image",
                                                                             "xl": 12,
@@ -3530,8 +3726,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-2-0-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-0-0-2-0-0-0-0-0-2-0-0",
@@ -3543,7 +3738,8 @@
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
                                                                       "spacing": 0,
-                                                                      "padding": "0px 0px 0px 10px"
+                                                                      "padding": "0px 0px 0px 10px",
+                                                                      "width": "90px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -3589,7 +3785,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "1CxZgp477Q6sT11dB27j_",
+                                                            "id": "Xxkd959WmgV5f1p4Yt0Q9",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3597,7 +3793,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "apoZdMalegP3JKcYIPtre",
+                                                                    "id": "rB1cCQR2x-Y9e4fRki16V",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "QGf97q7RTNSgW57gup1ZX",
@@ -3707,8 +3903,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-2-1-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-0-0-2-0-0-0-0-0-2-1-0",
@@ -3719,7 +3914,8 @@
                                                                   "layoutProperties": {
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
-                                                                      "spacing": 0
+                                                                      "spacing": 0,
+                                                                      "margin": "0px 0px 0px -10px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -3742,7 +3938,17 @@
                                                                   "20010",
                                                                   "widget"
                                                                 ],
-                                                                "name": "Grid layout"
+                                                                "name": "Grid layout",
+                                                                "dimensions": {
+                                                                  "rows": 1,
+                                                                  "columns": 1,
+                                                                  "colSize0xs": 12,
+                                                                  "colSize0sm": 12,
+                                                                  "colSize0md": 12,
+                                                                  "colSize0lg": 12,
+                                                                  "colSize0xl": 12
+                                                                },
+                                                                "readOnly": true
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3755,7 +3961,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "OUOv038f1_rMUGAWyK1gS",
+                                                            "id": "6xvgF40wHgQ2p_kIXCe4p",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3973,7 +4179,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "iEzHZGpiX3MTY4o_Q-vFr",
+                                                            "id": "5iS_vMZb835Hx55MVPz7Q",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -4006,7 +4212,9 @@
                                                                                   },
                                                                                   "layoutProperties": {
                                                                                     "image": {
-                                                                                      "//": "Use this class to style image component."
+                                                                                      "//": "Use this class to style image component.",
+                                                                                      "width": "32px",
+                                                                                      "height": "32px"
                                                                                     },
                                                                                     "mainContainer": "image",
                                                                                     "xl": 12,
@@ -4132,7 +4340,8 @@
                                                                                       "color": "#696969",
                                                                                       "line-height": "18px",
                                                                                       "letter-spacing": "0px",
-                                                                                      "font-weight": "bold"
+                                                                                      "font-weight": "bold",
+                                                                                      "margin": "-2px 0px 0px 0px"
                                                                                     },
                                                                                     "prefix": {
                                                                                       "//": "Use this class to style prefix."
@@ -4181,11 +4390,11 @@
                                                                                   "layoutProperties": {
                                                                                     "label": {
                                                                                       "//": "Use this class to style label component.",
-                                                                                      "font-size": "12px",
+                                                                                      "font-size": "11px",
                                                                                       "color": "#696969",
                                                                                       "line-height": "10px",
                                                                                       "letter-spacing": "0px",
-                                                                                      "padding": "1px 0px 0px"
+                                                                                      "padding": "6px 0px 0px"
                                                                                     },
                                                                                     "prefix": {
                                                                                       "//": "Use this class to style prefix."
@@ -4357,7 +4566,7 @@
                                                                 {
                                                                   "var": "type"
                                                                 },
-                                                                "pinChange"
+                                                                "gift"
                                                               ]
                                                             }
                                                           }
@@ -4382,7 +4591,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "DgfWVlFr0jbGYEvg0sDt-",
+                                                            "id": "xxx8lbGd8r1wNt4YppJt4",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -4391,7 +4600,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "RqPQYBP8COKxt1tCW2PBq",
+                                                                    "id": "ftDIgYF1w58Q_h7E8h_S6",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "yIhM4EkqYx0ZuKSLGKNeE",
@@ -4407,7 +4616,10 @@
                                                                           },
                                                                           "layoutProperties": {
                                                                             "image": {
-                                                                              "//": "Use this class to style image component."
+                                                                              "//": "Use this class to style image component.",
+                                                                              "width": "100%",
+                                                                              "height": "100%",
+                                                                              "margin": "0px auto"
                                                                             },
                                                                             "mainContainer": "image",
                                                                             "xl": 12,
@@ -4461,8 +4673,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-3-0-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -4479,7 +4690,8 @@
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
                                                                       "spacing": 0,
-                                                                      "padding": "0px 0px 0px 10px"
+                                                                      "padding": "0px 0px 0px 10px",
+                                                                      "width": "90px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -4519,7 +4731,7 @@
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "rbotrO-RVO68tC3slk6ne",
+                                                            "id": "eZsNLHSsWFmEUB8GusQF-",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -4528,7 +4740,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "dEZYhjD9lUZhIE2oZXNk_",
+                                                                    "id": "IYQBM79xlOq02LbKChMiW",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "FRAegQSJEmyxQpN-3bY0q",
@@ -4635,8 +4847,7 @@
                                                                       "md": 12,
                                                                       "sm": 12,
                                                                       "xs": 12
-                                                                    },
-                                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0-3-1-0-0"
+                                                                    }
                                                                   }
                                                                 ],
                                                                 "allowedContainers": [
@@ -4652,7 +4863,8 @@
                                                                   "layoutProperties": {
                                                                     "gridLayout": {
                                                                       "//": "Use this class to style grid layout component.",
-                                                                      "spacing": 0
+                                                                      "spacing": 0,
+                                                                      "margin": "0px 0px 0px -10px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -4669,7 +4881,17 @@
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-0-0-0-0-2-0-0-0-0-0-3-1-0"
+                                                                "path": "0-0-0-0-0-0-2-0-0-0-0-0-3-1-0",
+                                                                "dimensions": {
+                                                                  "rows": 1,
+                                                                  "columns": 1,
+                                                                  "colSize0xs": 12,
+                                                                  "colSize0sm": 12,
+                                                                  "colSize0md": 12,
+                                                                  "colSize0lg": 12,
+                                                                  "colSize0xl": 12
+                                                                },
+                                                                "readOnly": true
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -4719,7 +4941,7 @@
                                                                 {
                                                                   "var": "type"
                                                                 },
-                                                                "OutStanding"
+                                                                "donate"
                                                               ]
                                                             }
                                                           }
@@ -5737,8 +5959,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-0-0-0-0-2-0-0-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -5819,7 +6040,7 @@
                                             "mainContainer": "listLayout"
                                           },
                                           "storeType": 2,
-                                          "dataSource": "sData.balanceViews",
+                                          "dataSource": "Thameen.features",
                                           "isHList": false
                                         },
                                         "events": [],
@@ -5862,10 +6083,7 @@
                                   "layoutProperties": {
                                     "gridLayout": {
                                       "//": "Use this class to style grid layout component.",
-                                      "spacing": 0,
-                                      "overflow-y": "scroll",
-                                      "box-sizing": "content-box",
-                                      "max-height": "calc(100vh - 150px)"
+                                      "spacing": 0
                                     },
                                     "mainContainer": "gridLayout"
                                   },
@@ -5901,8 +6119,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-0-0-0-0"
+                            }
                           }
                         ],
                         "allowedContainers": [
@@ -5918,7 +6135,12 @@
                           "layoutProperties": {
                             "gridLayout": {
                               "//": "Use this class to style grid layout component.",
-                              "spacing": 0
+                              "spacing": 0,
+                              "height": "calc(100vh - 55px)",
+                              "box-sizing": "content-box",
+                              "margin-right": "-50px",
+                              "padding-right": "50px",
+                              "overflow-y": "scroll"
                             },
                             "mainContainer": "gridLayout"
                           },
@@ -5965,7 +6187,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "tK482hUu60OT7N7a0hlWe",
+                                    "id": "LPhvVnyQ60rZ5ha7b1b4x",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -6366,7 +6588,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "B9DHI3OXkRM_I6A_POIcE",
+                                            "id": "JDvM9M5OgnrSrJsKnua7z",
                                             "gridProps": [
                                               {
                                                 "type": "20009",
@@ -6375,7 +6597,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "f3ddjNTi3ukmM2ic1P_9j",
+                                                    "id": "vL3T7mNXKxox2RUgtPQDH",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -6454,9 +6676,9 @@
                                                                                         {
                                                                                           "==": [
                                                                                             {
-                                                                                              "var": "currency"
+                                                                                              "var": "earnedOrRedeemed"
                                                                                             },
-                                                                                            "400"
+                                                                                            "redeemed"
                                                                                           ]
                                                                                         },
                                                                                         false,
@@ -6531,9 +6753,9 @@
                                                                                         {
                                                                                           "==": [
                                                                                             {
-                                                                                              "var": "currency"
+                                                                                              "var": "earnedOrRedeemed"
                                                                                             },
-                                                                                            "200"
+                                                                                            "earned"
                                                                                           ]
                                                                                         },
                                                                                         false,
@@ -6608,9 +6830,9 @@
                                                                                         {
                                                                                           "==": [
                                                                                             {
-                                                                                              "var": "currency"
+                                                                                              "var": "earnedOrRedeemed"
                                                                                             },
-                                                                                            "$34"
+                                                                                            "expire"
                                                                                           ]
                                                                                         },
                                                                                         false,
@@ -6728,7 +6950,7 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "amount",
+                                                                                  "label": "points",
                                                                                   "searchInState": true,
                                                                                   "storeType": 2,
                                                                                   "cssClassNames": [
@@ -6783,7 +7005,9 @@
                                                                                     {
                                                                                       "cssClassName": "THM_LABEL "
                                                                                     }
-                                                                                  ]
+                                                                                  ],
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -6903,12 +7127,30 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "name",
+                                                                                  "label": "description",
                                                                                   "cssClassNames": [
                                                                                     {
                                                                                       "cssClassName": "THM_BOLD_LABEL "
                                                                                     }
-                                                                                  ]
+                                                                                  ],
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2,
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "if": [
+                                                                                        {
+                                                                                          "==": [
+                                                                                            {
+                                                                                              "var": "earnedOrRedeemed"
+                                                                                            },
+                                                                                            "expire"
+                                                                                          ]
+                                                                                        },
+                                                                                        true,
+                                                                                        false
+                                                                                      ]
+                                                                                    }
+                                                                                  }
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -6951,12 +7193,30 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "currency",
+                                                                                  "label": "amount",
                                                                                   "cssClassNames": [
                                                                                     {
                                                                                       "cssClassName": "THM_LABEL "
                                                                                     }
-                                                                                  ]
+                                                                                  ],
+                                                                                  "searchInState": true,
+                                                                                  "storeType": 2,
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "if": [
+                                                                                        {
+                                                                                          "==": [
+                                                                                            {
+                                                                                              "var": "earnedOrRedeemed"
+                                                                                            },
+                                                                                            "expire"
+                                                                                          ]
+                                                                                        },
+                                                                                        true,
+                                                                                        false
+                                                                                      ]
+                                                                                    }
+                                                                                  }
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -6973,6 +7233,71 @@
                                                                                 },
                                                                                 "events": [],
                                                                                 "path": "0-0-0-1-0-0-0-0-2-0-0-0-0-0-0-2-0-0-1"
+                                                                              },
+                                                                              {
+                                                                                "id": "sPoBz6F-I8r7QVkLl98Gf",
+                                                                                "status": "ACTIVE",
+                                                                                "name": "Label",
+                                                                                "attributes": {
+                                                                                  "variant": "body1",
+                                                                                  "name": "Label",
+                                                                                  "mandatory": false,
+                                                                                  "layoutProperties": {
+                                                                                    "label": {
+                                                                                      "//": "Use this class to style label component.",
+                                                                                      "margin": "20px 0px 0px 0px"
+                                                                                    },
+                                                                                    "prefix": {
+                                                                                      "//": "Use this class to style prefix."
+                                                                                    },
+                                                                                    "postfix": {
+                                                                                      "//": "Use this class to style postfix."
+                                                                                    },
+                                                                                    "mainContainer": "label",
+                                                                                    "xl": 12,
+                                                                                    "lg": 12,
+                                                                                    "md": 12,
+                                                                                    "sm": 12,
+                                                                                    "xs": 12
+                                                                                  },
+                                                                                  "label": "Expired",
+                                                                                  "cssClassNames": [
+                                                                                    {
+                                                                                      "cssClassName": "THM_BOLD_LABEL "
+                                                                                    }
+                                                                                  ],
+                                                                                  "hideCondition": {
+                                                                                    "logic": {
+                                                                                      "if": [
+                                                                                        {
+                                                                                          "==": [
+                                                                                            {
+                                                                                              "var": "earnedOrRedeemed"
+                                                                                            },
+                                                                                            "expire"
+                                                                                          ]
+                                                                                        },
+                                                                                        false,
+                                                                                        true
+                                                                                      ]
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                "icon": "FaFont",
+                                                                                "group": "Form",
+                                                                                "type": "20002",
+                                                                                "updatedAt": "23-Aug-2021",
+                                                                                "createdAt": "23-Aug-2021",
+                                                                                "order": 15,
+                                                                                "version": "1.0.0",
+                                                                                "isLatest": true,
+                                                                                "projectType": "web",
+                                                                                "component": {
+                                                                                  "content": "Label",
+                                                                                  "type": "20002"
+                                                                                },
+                                                                                "events": [],
+                                                                                "path": "0-0-0-1-0-0-0-0-2-0-0-0-0-0-0-2-0-0-2"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -7165,7 +7490,6 @@
                                                     "listLayout": {
                                                       "padding": "0px",
                                                       "background": "#FFFFFF",
-                                                      "overflow-y": "scroll",
                                                       "padding-right": "17px",
                                                       "box-sizing": "content-box",
                                                       "max-height": "calc(100vh - 90px)"
@@ -7173,7 +7497,7 @@
                                                     "mainContainer": "listLayout"
                                                   },
                                                   "storeType": 2,
-                                                  "dataSource": "Incoming.Incoming"
+                                                  "dataSource": "THM_HISTORY"
                                                 },
                                                 "events": [],
                                                 "component": {
@@ -7199,8 +7523,7 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-0-1-0-0-0-0-2-0"
+                                            }
                                           }
                                         ],
                                         "allowedContainers": [
@@ -7216,7 +7539,13 @@
                                           "layoutProperties": {
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
-                                              "spacing": 0
+                                              "spacing": 0,
+                                              "position": "relative",
+                                              "overflow-y": "scroll",
+                                              "height": "calc(100vh - 158px)",
+                                              "overflow-x": "hidden",
+                                              "box-sizing": "content-box",
+                                              "padding-right": "35px"
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -7242,8 +7571,7 @@
                                       "md": 12,
                                       "sm": 12,
                                       "xs": 12
-                                    },
-                                    "path": "0-0-0-1-0-0-0-0"
+                                    }
                                   }
                                 ],
                                 "path": "0-0-0-1-0-0-0",
@@ -7257,7 +7585,12 @@
                                       "spacing": 0,
                                       "background": "#FFFFFF",
                                       "padding": "24px",
-                                      "borderRadius": "15px"
+                                      "borderRadius": "15px",
+                                      "height": "calc(100vh - 55px)",
+                                      "padding-right": "20px",
+                                      "margin-right": "20px",
+                                      "display": "block",
+                                      "overflow": "hidden"
                                     },
                                     "mainContainer": "gridLayout"
                                   },
@@ -7398,8 +7731,7 @@
               "md": 12,
               "sm": 12,
               "xs": 12
-            },
-            "path": "0-0"
+            }
           }
         ],
         "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 },
@@ -7422,9 +7754,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "SPxfUZ3Hsnnd25GMXnm6W",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "2/28/2024",
-    "createdAt": "2/28/2024",
+    "createdBy": "zeeshan",
+    "updatedAt": "3/10/2024",
+    "createdAt": "3/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7458,7 +7790,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "background": "#f2f2f2"
+          "background": "#f2f2f2",
+          "min-height": "calc(100vh - 55px)"
         },
         "mainContainer": "gridLayout"
       },
@@ -7473,14 +7806,14 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "WC0rCVjI2n-jptd16JVFn",
-        "triggerName": "DUMMY_DATA_FOR_LIST_TAB",
+        "triggerId": "3FP6an5PMWNm7g5rOpbgs",
+        "triggerName": "GET_THAMEEN_DASHBOARD_DATA",
         "name": "On initialization",
         "type": "1"
       },
       {
-        "triggerId": "oJH-PlcG-G2rI4UVYz3O9",
-        "triggerName": "LIST_DUMMY_DATA_FOR_STATEMENT",
+        "triggerId": "VP5RVijm5kHHSW0tIRHCf",
+        "triggerName": "GET_THAMEEN_DASHBOARD_HISTORY",
         "name": "On initialization",
         "type": "1"
       }
@@ -7619,7 +7952,12 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "height": "calc(100vh - 55px)",
+          "box-sizing": "content-box",
+          "margin-right": "-50px",
+          "padding-right": "50px",
+          "overflow-y": "scroll"
         },
         "mainContainer": "gridLayout"
       },
@@ -7964,7 +8302,9 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "5,600"
+      "label": "Thameen.availablePoints",
+      "searchInState": true,
+      "storeType": 2
     },
     "icon": "FaFont",
     "group": "Form",
@@ -8260,7 +8600,7 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "10px 0px 0px"
+          "padding": "14px 0px 0px"
         },
         "mainContainer": "gridLayout"
       },
@@ -8292,11 +8632,12 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "14px",
+          "font-size": "12px",
           "inline-height": "12px",
-          "color": "#838383",
+          "color": "#838383a1",
           "letter-spacing": "0px",
-          "padding": "0px 0px 2px"
+          "padding": "0px 0px 2px",
+          "font-weight": 600
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -8354,8 +8695,11 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "1,500.00",
-      "cssClassNames": []
+      "label": "Thameen.expiringThisMonth",
+      "cssClassNames": [],
+      "searchInState": true,
+      "storeType": 2,
+      "format": "thousand seprator"
     },
     "icon": "FaFont",
     "group": "Form",
@@ -8457,7 +8801,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "margin": "0px 0px 0px -18px"
         },
         "mainContainer": "gridLayout"
       },
@@ -8507,7 +8852,7 @@
         "md": 12,
         "sm": 12,
         "xs": 12,
-        "width": "300px",
+        "width": "100%",
         "height": "100px"
       },
       "data": {
@@ -8534,10 +8879,10 @@
         ]
       },
       "storeType": 2,
-      "dataSource": "Incoming.Incoming",
-      "bindingKey": "amount",
-      "bindingKeyForLabels": "name",
-      "selectedBindingKey": "thm_selected_bar_chart",
+      "dataSource": "Thameen.earnings",
+      "bindingKey": "earning",
+      "bindingKeyForLabels": "month",
+      "selectedBindingKey": "thameen_selected_bar",
       "hideXAxisGrid": true,
       "hideXAxisBottomLine": true,
       "hideYAxisGrid": true,
@@ -8616,7 +8961,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "border-left": "2px solid #f2f2f2"
+          "border-left": "2px solid #f2f2f2",
+          "height": "102px"
         },
         "mainContainer": "gridLayout"
       },
@@ -8665,6 +9011,18 @@
             "xs": 12
           },
           "componentId": "6WqIuL_iLsjv48_LvsjZb",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "T0oPBdYDXku39ZwsOYKKg",
           "componentType": "20002",
           "order": 1
         }
@@ -8745,10 +9103,12 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "12px",
-          "color": "#838383",
+          "font-size": "10px",
+          "color": "#838383a1",
           "inline-height": "10px",
-          "padding": "2px 0px 0px"
+          "padding": "2px 0px 0px",
+          "font-weight": 600,
+          "width": "max-content"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -8759,9 +9119,14 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "thm_selected_bar_chart.date",
+      "label": "thameen_selected_bar.month",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          "<": [{ "var": "currentScreen.thameen_selected_bar.month.length" }, 1]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -8782,11 +9147,75 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "T0oPBdYDXku39ZwsOYKKg",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "font-size": "10px",
+          "color": "#838383a1",
+          "inline-height": "10px",
+          "padding": "2px 0px 0px",
+          "font-weight": 600,
+          "width": "max-content"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Last 6 months",
+      "hideCondition": {
+        "logic": {
+          ">": [{ "var": "currentScreen.thameen_selected_bar.month.length" }, 0]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-1-1-0-1-0-0-0-0-2",
+    "screenId": "SPxfUZ3Hsnnd25GMXnm6W",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "dQCcCTRWbKwi9bJUfRZjQ",
     "name": "Grid layout",
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "agf2KYj0zTEJJFQWITuzY",
+          "componentType": "20002",
+          "order": 1
+        },
         {
           "layoutProperties": {
             "xl": 12,
@@ -8827,6 +9256,54 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "agf2KYj0zTEJJFQWITuzY",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Thameen.availablePoints",
+      "searchInState": true,
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "THM_24PX_LABEL_BOLD " }],
+      "hideCondition": {
+        "logic": {
+          ">": [{ "var": "currentScreen.thameen_selected_bar.month.length" }, 0]
+        }
+      },
+      "format": "thousand seprator"
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-0-0-1-1-0-1-0-0-1-0-0",
+    "screenId": "SPxfUZ3Hsnnd25GMXnm6W",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "033l1T6M-m9pYRuJRInow",
     "status": "ACTIVE",
     "name": "Label",
@@ -8845,10 +9322,17 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "thm_selected_bar_chart.amount",
+      "label": "thameen_selected_bar.earning",
       "searchInState": true,
       "storeType": 2,
-      "cssClassNames": [{ "cssClassName": "THM_24PX_LABEL_BOLD " }]
+      "cssClassNames": [{ "cssClassName": "THM_24PX_LABEL_BOLD " }],
+      "hideCondition": {
+        "logic": {
+          "<": [{ "var": "currentScreen.thameen_selected_bar.month.length" }, 1]
+        }
+      },
+      "enablePaginationSortingFilter": true,
+      "format": "thousand seprator"
     },
     "icon": "FaFont",
     "group": "Form",
@@ -8861,7 +9345,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-0-0-0-0-1-1-0-1-0-0-1-0-0",
+    "path": "0-0-0-0-0-0-1-1-0-1-0-0-1-0-1",
     "screenId": "SPxfUZ3Hsnnd25GMXnm6W",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -8898,10 +9382,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0,
-          "overflow-y": "scroll",
-          "box-sizing": "content-box",
-          "max-height": "calc(100vh - 150px)"
+          "spacing": 0
         },
         "mainContainer": "gridLayout"
       },
@@ -8962,7 +9443,7 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "sData.balanceViews",
+      "dataSource": "Thameen.features",
       "isHList": false
     },
     "layout": null,
@@ -9211,9 +9692,7 @@
       "name": "Grid layout",
       "columns": "4",
       "cssClassNames": [{ "cssClassName": "THM_BOX_LIST_GRID " }],
-      "hideCondition": {
-        "logic": { "!=": [{ "var": "type" }, "OverDueBalance"] }
-      }
+      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "airline"] } }
     },
     "layout": null,
     "events": [],
@@ -9248,7 +9727,7 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "0px 0px 0px 10px"
+          "width": "90px"
         },
         "mainContainer": "gridLayout"
       },
@@ -9282,7 +9761,12 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "100%",
+          "height": "100%",
+          "margin": "0px auto"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -9365,7 +9849,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "margin": "0px 0px 0px -10px"
         },
         "mainContainer": "gridLayout"
       },
@@ -9737,7 +10222,11 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "32px",
+          "height": "32px"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -9856,7 +10345,8 @@
           "color": "#696969",
           "line-height": "18px",
           "letter-spacing": "0px",
-          "font-weight": "bold"
+          "font-weight": "bold",
+          "margin": "-2px 0px 0px 0px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": {
@@ -9905,11 +10395,11 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "12px",
+          "font-size": "11px",
           "color": "#696969",
           "line-height": "10px",
           "letter-spacing": "0px",
-          "padding": "1px 0px 0px"
+          "padding": "6px 0px 0px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -10030,7 +10520,7 @@
       "name": "Grid layout",
       "columns": "4",
       "cssClassNames": [{ "cssClassName": "THM_BOX_LIST_GRID " }],
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "frozen"] } }
+      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "cashback"] } }
     },
     "layout": null,
     "events": [],
@@ -10065,7 +10555,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "0px 0px 0px 10px"
+          "padding": "0px 0px 0px 10px",
+          "width": "90px"
         },
         "mainContainer": "gridLayout"
       },
@@ -10099,7 +10590,12 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "100%",
+          "height": "100%",
+          "margin": "0px auto"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -10182,7 +10678,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "margin": "0px 0px 0px -10px"
         },
         "mainContainer": "gridLayout"
       },
@@ -10554,7 +11051,11 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "32px",
+          "height": "32px"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -10673,7 +11174,8 @@
           "color": "#696969",
           "line-height": "18px",
           "letter-spacing": "0px",
-          "font-weight": "bold"
+          "font-weight": "bold",
+          "margin": "-2px 0px 0px 0px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": {
@@ -10722,11 +11224,11 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "12px",
+          "font-size": "11px",
           "color": "#696969",
           "line-height": "10px",
           "letter-spacing": "0px",
-          "padding": "1px 0px 0px"
+          "padding": "6px 0px 0px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -10846,7 +11348,7 @@
       "name": "Grid layout",
       "columns": "4",
       "cssClassNames": [{ "cssClassName": "THM_BOX_LIST_GRID " }],
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "pinChange"] } }
+      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "gift"] } }
     },
     "layout": null,
     "events": [],
@@ -10881,7 +11383,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "0px 0px 0px 10px"
+          "padding": "0px 0px 0px 10px",
+          "width": "90px"
         },
         "mainContainer": "gridLayout"
       },
@@ -10915,7 +11418,12 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "height": "100%",
+          "width": "100%",
+          "margin": "0px auto"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -10998,7 +11506,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "margin": "0px 0px 0px -10px"
         },
         "mainContainer": "gridLayout"
       },
@@ -11370,7 +11879,11 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "32px",
+          "height": "32px"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -11489,7 +12002,8 @@
           "color": "#696969",
           "line-height": "18px",
           "letter-spacing": "0px",
-          "font-weight": "bold"
+          "font-weight": "bold",
+          "margin": "-2px 0px 0px 0px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": {
@@ -11538,11 +12052,11 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "12px",
+          "font-size": "11px",
           "color": "#696969",
           "line-height": "10px",
           "letter-spacing": "0px",
-          "padding": "1px 0px 0px"
+          "padding": "6px 0px 0px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -11637,7 +12151,7 @@
       "name": "Grid layout",
       "cssClassNames": [{ "cssClassName": "THM_BOX_LIST_GRID " }],
       "columns": "2",
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "OutStanding"] } }
+      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "donate"] } }
     },
     "layout": null,
     "events": [],
@@ -11672,7 +12186,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "padding": "0px 0px 0px 10px"
+          "padding": "0px 0px 0px 10px",
+          "width": "90px"
         },
         "mainContainer": "gridLayout"
       },
@@ -11706,7 +12221,12 @@
         "id": "CNIz67fi824LHr0ae-pOV"
       },
       "layoutProperties": {
-        "image": { "//": "Use this class to style image component." },
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "100%",
+          "height": "100%",
+          "margin": "0px auto"
+        },
         "mainContainer": "image",
         "xl": 12,
         "lg": 12,
@@ -11789,7 +12309,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "margin": "0px 0px 0px -10px"
         },
         "mainContainer": "gridLayout"
       },
@@ -12923,7 +13444,12 @@
           "spacing": 0,
           "background": "#FFFFFF",
           "padding": "24px",
-          "borderRadius": "15px"
+          "borderRadius": "15px",
+          "height": "calc(100vh - 55px)",
+          "padding-right": "20px",
+          "margin-right": "20px",
+          "display": "block",
+          "overflow": "hidden"
         },
         "mainContainer": "gridLayout"
       },
@@ -13297,7 +13823,13 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "position": "relative",
+          "overflow-y": "scroll",
+          "height": "calc(100vh - 158px)",
+          "overflow-x": "hidden",
+          "box-sizing": "content-box",
+          "padding-right": "35px"
         },
         "mainContainer": "gridLayout"
       },
@@ -13357,7 +13889,6 @@
         "listLayout": {
           "padding": "0px",
           "background": "#FFFFFF",
-          "overflow-y": "scroll",
           "padding-right": "17px",
           "box-sizing": "content-box",
           "max-height": "calc(100vh - 90px)"
@@ -13365,7 +13896,7 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "Incoming.Incoming"
+      "dataSource": "THM_HISTORY"
     },
     "layout": null,
     "events": [],
@@ -13615,7 +14146,11 @@
       "useFullLink": null,
       "hideCondition": {
         "logic": {
-          "if": [{ "==": [{ "var": "currency" }, "400"] }, false, true]
+          "if": [
+            { "==": [{ "var": "earnedOrRedeemed" }, "redeemed"] },
+            false,
+            true
+          ]
         }
       }
     },
@@ -13681,7 +14216,11 @@
       "useFullLink": null,
       "hideCondition": {
         "logic": {
-          "if": [{ "==": [{ "var": "currency" }, "200"] }, false, true]
+          "if": [
+            { "==": [{ "var": "earnedOrRedeemed" }, "earned"] },
+            false,
+            true
+          ]
         }
       }
     },
@@ -13747,7 +14286,11 @@
       "useFullLink": null,
       "hideCondition": {
         "logic": {
-          "if": [{ "==": [{ "var": "currency" }, "$34"] }, false, true]
+          "if": [
+            { "==": [{ "var": "earnedOrRedeemed" }, "expire"] },
+            false,
+            true
+          ]
         }
       }
     },
@@ -13844,7 +14387,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "amount",
+      "label": "points",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "THM_BOLD_LABEL " }]
@@ -13887,7 +14430,9 @@
         "xs": 12
       },
       "label": "date",
-      "cssClassNames": [{ "cssClassName": "THM_LABEL " }]
+      "cssClassNames": [{ "cssClassName": "THM_LABEL " }],
+      "searchInState": true,
+      "storeType": 2
     },
     "icon": "FaFont",
     "group": "Form",
@@ -13934,6 +14479,18 @@
             "xs": 12
           },
           "componentId": "RJ4GGea6d6eH4pOZICozw",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "sPoBz6F-I8r7QVkLl98Gf",
           "componentType": "20002",
           "order": 1
         }
@@ -13987,8 +14544,19 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "name",
-      "cssClassNames": [{ "cssClassName": "THM_BOLD_LABEL " }]
+      "label": "description",
+      "cssClassNames": [{ "cssClassName": "THM_BOLD_LABEL " }],
+      "searchInState": true,
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          "if": [
+            { "==": [{ "var": "earnedOrRedeemed" }, "expire"] },
+            true,
+            false
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -14027,8 +14595,19 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "currency",
-      "cssClassNames": [{ "cssClassName": "THM_LABEL " }]
+      "label": "amount",
+      "cssClassNames": [{ "cssClassName": "THM_LABEL " }],
+      "searchInState": true,
+      "storeType": 2,
+      "hideCondition": {
+        "logic": {
+          "if": [
+            { "==": [{ "var": "earnedOrRedeemed" }, "expire"] },
+            true,
+            false
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -14042,6 +14621,58 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-1-0-0-0-0-2-0-0-0-0-0-0-2-0-0-1",
+    "screenId": "SPxfUZ3Hsnnd25GMXnm6W",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "sPoBz6F-I8r7QVkLl98Gf",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "20px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Expired",
+      "cssClassNames": [{ "cssClassName": "THM_BOLD_LABEL " }],
+      "hideCondition": {
+        "logic": {
+          "if": [
+            { "==": [{ "var": "earnedOrRedeemed" }, "expire"] },
+            false,
+            true
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-1-0-0-0-0-2-0-0-0-0-0-0-2-0-0-2",
     "screenId": "SPxfUZ3Hsnnd25GMXnm6W",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
