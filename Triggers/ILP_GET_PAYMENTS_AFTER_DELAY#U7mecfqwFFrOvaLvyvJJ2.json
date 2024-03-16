@@ -1,9 +1,10 @@
 {
+  "_id": "U7mecfqwFFrOvaLvyvJJ2",
   "id": "fu51HfXXuFxR7Ac8q_xED",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "ILP_GET_PAYMENTS_AFTER_DELAY",
-  "old_name": "",
+  "old_name": "ILP_GET_PAYMENTS_AFTER_DELAY",
   "status": "ACTIVE",
   "services": [
     {
@@ -14,16 +15,115 @@
           "delay": "1000",
           "storeType": "",
           "searchInState": false,
-          "triggers": [],
-          "triggerIds": []
+          "triggers": [
+            {
+              "id": "oY0ECjHLP_BZNfoc4eS2U",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILP_GET_CHILD_PAYMENTS",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "ilp_child_payment_list",
+                      "url": "/api-designer/api/fetchIleadPrentPayment/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "request.userId",
+                          "value": "CURRENT_CARD.ileadUserId"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2,
+                      "hideLoading": false
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.y3tbt6fvezlFPA-3-AljfzFqhylc2PoZ",
+              "_id": "ZuRl9MWiZbwaloZQxWsOo",
+              "updatedAt": "3/14/2024",
+              "createdAt": "3/14/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            },
+            {
+              "id": "6BEVfpm5dffbOObZKnk8z",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILP_GET_CHILD_PAYMENTS_HISTORY",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "ilp_child_payment_history",
+                      "url": "/api-designer/api/paymentHistory/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "request.cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.y3tbt6fvezlFPA-3-AljfzFqhylc2PoZ",
+              "_id": "I9Aguc7FKr8rdsaA_GX_L",
+              "updatedAt": "3/14/2024",
+              "createdAt": "3/14/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["oY0ECjHLP_BZNfoc4eS2U", "6BEVfpm5dffbOObZKnk8z"]
         }
       }
     }
   ],
-  "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
-  "_id": "U7mecfqwFFrOvaLvyvJJ2",
-  "updatedAt": "3/13/2024",
-  "createdAt": "3/13/2024",
+  "csrf": "0.y3tbt6fvezlFPA-3-AljfzFqhylc2PoZ",
+  "updatedAt": "3/14/2024",
+  "createdAt": "3/14/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

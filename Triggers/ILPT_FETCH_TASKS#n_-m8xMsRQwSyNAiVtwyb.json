@@ -1,0 +1,57 @@
+{
+  "id": "kxQFYyMH7izQhbX8wqbB1",
+  "_id": "n_-m8xMsRQwSyNAiVtwyb",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_FETCH_TASKS",
+  "old_name": "ILPT_FETCH_TASKS",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "ilpt_fetch_tasks",
+          "responseReturnValue": "content",
+          "url": "/api-designer/api/fetchIleadParentTask/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.userId",
+              "value": "selected_child.ileadUserId"
+            }
+          ],
+          "baseURL": "65de08b22c4bb94a7826d82c",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "ILPT_FILTER_LIST_DELAY",
+            "triggerId": "NyYA02hXDfn1AGS9MVuRT",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.y113s1ejyws6hNuLPw0ICmSgbsrmRMEY",
+  "updatedAt": "3/16/2024",
+  "createdAt": "3/16/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

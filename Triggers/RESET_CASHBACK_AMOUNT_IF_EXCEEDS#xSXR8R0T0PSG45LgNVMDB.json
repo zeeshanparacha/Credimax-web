@@ -1,0 +1,51 @@
+{
+  "id": "3Ew87UN1242_7mOfOUR08",
+  "_id": "xSXR8R0T0PSG45LgNVMDB",
+  "name": "RESET_CASHBACK_AMOUNT_IF_EXCEEDS",
+  "old_name": "RESET_CASHBACK_AMOUNT_IF_EXCEEDS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "6",
+        "attributes": {
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "value",
+          "destinationBindingKey": "amount",
+          "sourceBindingKey": "form.amount",
+          "sourceStoreType": 2,
+          "destinationStoreType": 1,
+          "logic": {
+            "if": [
+              {
+                "<=": [
+                  { "parseNumber": { "var": "form.amount" } },
+                  { "parseNumber": { "var": "CASHBACK.maxCash" } }
+                ]
+              },
+              {
+                "if": [
+                  { "<=": [{ "parseNumber": { "var": "form.amount" } }, 0] },
+                  { "parseNumber": { "var": "CASHBACK.minCash" } },
+                  { "parseNumber": { "var": "form.amount" } }
+                ]
+              },
+              { "parseNumber": { "var": "CASHBACK.maxCash" } }
+            ]
+          },
+          "changeValueConditonally": true,
+          "targettedType": "value"
+        }
+      }
+    }
+  ],
+  "csrf": "0.kxegvm3i7wosWRwCRvdjjcq1_h5bNq5m",
+  "updatedAt": "3/16/2024",
+  "createdAt": "3/16/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}
