@@ -80,40 +80,6 @@
             "commandType": "1"
           },
           {
-            "triggerId": "kxQFYyMH7izQhbX8wqbB1",
-            "triggerName": "ILPT_FETCH_TASKS",
-            "serviceType": "8",
-            "attributes": {
-              "loaderWidgetIds": [906070],
-              "messageWidgetIds": [906070],
-              "responseStateKey": "ilpt_fetch_tasks",
-              "url": "/api-designer/api/fetchIleadPrentPayment/execute",
-              "checksum": true,
-              "encryption": true,
-              "isDeviceDetails": false,
-              "loginTrigger": false,
-              "formData": false,
-              "logoutTrigger": false,
-              "headers": {
-                "Content-Type": "application/json",
-                "channel_key": "002"
-              },
-              "requestBody": [
-                {
-                  "type": 2,
-                  "name": "Current screen",
-                  "key": "request.userId",
-                  "value": "ilpt_card_list.content.cardList.0.ileadUserId"
-                }
-              ],
-              "baseURL": "65de08b22c4bb94a7826d82c",
-              "storeType": 2
-            },
-            "type": "1",
-            "name": "On initialization",
-            "commandType": "1"
-          },
-          {
             "triggerId": "FO4zLPHS35QYvNBSLRlAK",
             "triggerName": "ILPT_FILTER_KEY_WORD_TRIGGER_1",
             "serviceType": "11",
@@ -152,7 +118,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "fbPnFHeylxTaRtHeVtE-3",
+            "id": "qxOcCclMWljAsoG4M9Gqe",
             "gridProps": [
               {
                 "id": "KMXUq0RQooS_uKOtXqJmH",
@@ -429,8 +395,23 @@
                                             }
                                           ]
                                         },
-                                        "events": [],
-                                        "path": "0-0-0-0-1-0-0-0-0",
+                                        "events": [
+                                          {
+                                            "triggerId": "TmIqN7xNUjB0aOZxHfp8s",
+                                            "triggerName": "GO_TO_ILCT_CHILD_TASKS_SCREEN",
+                                            "serviceType": "1",
+                                            "attributes": {
+                                              "nextWidgetId": "SEBmPi3WSfAouEfj_G6Af",
+                                              "gridRadioValue": "",
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "editableForm": false
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "3"
+                                          }
+                                        ],
+                                        "path": "0-0-2-0-1-0-0-0-0",
                                         "version": "1.0.0"
                                       }
                                     ],
@@ -757,7 +738,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "PvjpocCKrL6pU5-_IP2yK",
+                                                    "id": "yhmGv_k9KaJw5bKMxW3JO",
                                                     "gridProps": [
                                                       {
                                                         "id": "oDJM2mKWFqutRRB5o_-Oc",
@@ -847,10 +828,10 @@
                                                       "logic": {
                                                         "==": [
                                                           {
-                                                            "var": "embossingName"
+                                                            "var": "cardNumber"
                                                           },
                                                           {
-                                                            "var": "currentScreen.form.selected_child.embossingName"
+                                                            "var": "currentScreen.form.selected_child.cardNumber"
                                                           }
                                                         ]
                                                       }
@@ -2474,7 +2455,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "mTVhM4Juw5bumMk_imsGU",
+                                                            "id": "R_kGCG3JwMVwjNTdHPgnl",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -3442,14 +3423,14 @@
                                                                                         },
                                                                                         "events": [
                                                                                           {
-                                                                                            "triggerId": "oX7UpQO7pyatX9fkkHz6j",
-                                                                                            "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+                                                                                            "triggerId": "rffpbGBw9s4Ss4GqmPbkq",
+                                                                                            "triggerName": "ILPT_DELETE_TASK_POPUP_MODAL",
                                                                                             "serviceType": "9",
                                                                                             "attributes": {
-                                                                                              "widgetId": "6HQ5FLlrWj7Amb0QOi-HW",
+                                                                                              "widgetId": "2-hlyJ5TBnW-nEX3dHEXF",
                                                                                               "content": "",
                                                                                               "type": "",
-                                                                                              "modalId": "KMXUq0RQooS_uKOtXqJmH",
+                                                                                              "modalId": "moiyga2R_4fVlitF-qsu4",
                                                                                               "toastContentType": "custom"
                                                                                             },
                                                                                             "type": "2",
@@ -3457,7 +3438,7 @@
                                                                                             "commandType": "1"
                                                                                           }
                                                                                         ],
-                                                                                        "path": "0-0-2-0-0-0-0-0-1-0-0-0-1-0-0-4-0-0-2-0-0"
+                                                                                        "path": "0-0-3-0-0-0-0-0-1-0-0-0-1-0-0-4-0-0-1-0-0"
                                                                                       }
                                                                                     ],
                                                                                     "layoutProperties": {
@@ -3789,15 +3770,15 @@
                                                           ],
                                                           "searchStoreType": 1,
                                                           "searchKeyword": "ilead_tasks_search",
-                                                          "searchableField": "name",
-                                                          "bindingKey": "selected_transaction"
+                                                          "searchableField": "taskName",
+                                                          "bindingKey": "iplt_selected_task"
                                                         },
                                                         "events": [],
                                                         "component": {
                                                           "type": "20009",
                                                           "content": "List layout"
                                                         },
-                                                        "path": "0-0-1-0-0-0-0-0-1-0-0-0-1",
+                                                        "path": "0-0-3-0-0-0-0-0-1-0-0-0-1",
                                                         "dimensions": {
                                                           "rows": 1,
                                                           "columns": 3,
@@ -4105,8 +4086,8 @@
     "gitBranchName": "master",
     "_id": "qRv1lYx8136QQug8Klbsw",
     "createdBy": "basitahmed1199",
-    "updatedAt": "3/16/2024",
-    "createdAt": "3/16/2024",
+    "updatedAt": "3/19/2024",
+    "createdAt": "3/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4200,12 +4181,6 @@
       {
         "triggerId": "T4zhESyuo6v-1b47nTGP-",
         "triggerName": "ILPT_CARD_LIST",
-        "name": "On initialization",
-        "type": "1"
-      },
-      {
-        "triggerId": "kxQFYyMH7izQhbX8wqbB1",
-        "triggerName": "ILPT_FETCH_TASKS",
         "name": "On initialization",
         "type": "1"
       },
@@ -4614,8 +4589,16 @@
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "PAGE_HEADER_NAME " }]
     },
-    "events": [],
-    "path": "0-0-0-0-1-0-0-0-0",
+    "events": [
+      {
+        "triggerId": "TmIqN7xNUjB0aOZxHfp8s",
+        "triggerName": "GO_TO_ILCT_CHILD_TASKS_SCREEN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "1"
+      }
+    ],
+    "path": "0-0-2-0-1-0-0-0-0",
     "version": "1.0.0",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "subType": "component",
@@ -4949,8 +4932,8 @@
           "cssClassName": "HEADER_TAB_OPTION_SELECTED",
           "logic": {
             "==": [
-              { "var": "embossingName" },
-              { "var": "currentScreen.form.selected_child.embossingName" }
+              { "var": "cardNumber" },
+              { "var": "currentScreen.form.selected_child.cardNumber" }
             ]
           }
         }
@@ -6333,8 +6316,8 @@
       "cssClassNames": [{ "cssClassName": "LIST_LAYOUT_TABLE_ROW " }],
       "searchStoreType": 1,
       "searchKeyword": "ilead_tasks_search",
-      "searchableField": "name",
-      "bindingKey": "selected_transaction"
+      "searchableField": "taskName",
+      "bindingKey": "iplt_selected_task"
     },
     "layout": null,
     "events": [],
@@ -7393,14 +7376,14 @@
     "component": { "content": "Image", "type": "20012" },
     "events": [
       {
-        "triggerId": "oX7UpQO7pyatX9fkkHz6j",
-        "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+        "triggerId": "rffpbGBw9s4Ss4GqmPbkq",
+        "triggerName": "ILPT_DELETE_TASK_POPUP_MODAL",
         "name": "On click",
         "type": "2",
         "serviceType": "9"
       }
     ],
-    "path": "0-0-2-0-0-0-0-0-1-0-0-0-1-0-0-4-0-0-2-0-0",
+    "path": "0-0-3-0-0-0-0-0-1-0-0-0-1-0-0-4-0-0-1-0-0",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

@@ -1,0 +1,56 @@
+{
+  "id": "9QupH4YHXZqw8PCYP2jjV",
+  "_id": "YumVfKQhunPpc8qCYGCHI",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILC_CHILD_GOALS_DURATION_API",
+  "old_name": "ILC_CHILD_GOALS_DURATION_API",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "RESPONSE_ILC_FREQUENCY",
+          "url": "/prelogin//v1/getDuration",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILC_NEW_GOALS_AFTER_DELAY",
+            "triggerId": "pY6gPRKO0Q3_oV-YzQ-aa"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILPP_SAVE_PERMANENT_FREQ_AFTER_DELAY",
+            "triggerId": "MkSpbzL1Vs7Iff191tm0c"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.bpu63lwtxtdnGFJpPyTrsIbdgz8a9EGy",
+  "updatedAt": "3/22/2024",
+  "createdAt": "3/22/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

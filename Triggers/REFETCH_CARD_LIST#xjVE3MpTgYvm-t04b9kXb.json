@@ -1,9 +1,10 @@
 {
+  "_id": "xjVE3MpTgYvm-t04b9kXb",
   "id": "FmodegyvEGKO4ckjzSlTl",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "REFETCH_CARD_LIST",
-  "old_name": "",
+  "old_name": "REFETCH_CARD_LIST",
   "status": "ACTIVE",
   "services": [
     {
@@ -16,12 +17,10 @@
           "searchInState": false,
           "triggers": [
             {
-              "id": "HoTkYGonpJcbFC-AO_rEP",
-              "_id": "0HN4La83DjHQn59bH64wM",
+              "id": "1D7ugBJk5g1PUavcboBpb",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
-              "name": "GET_SLIDER_CARDS",
-              "old_name": "GET_SLIDER_CARDS",
+              "name": "GENERAL_CLEAR_CACHE",
               "status": "ACTIVE",
               "services": [
                 {
@@ -31,9 +30,8 @@
                     "attributes": {
                       "loaderWidgetIds": [906070],
                       "messageWidgetIds": [906070],
-                      "responseStateKey": "cards",
-                      "responseReturnValue": "content",
-                      "url": "/card/v1/web/cardList",
+                      "responseStateKey": "cache_status",
+                      "url": "/card/v1/clearCache",
                       "checksum": true,
                       "encryption": true,
                       "isDeviceDetails": false,
@@ -42,6 +40,7 @@
                       "logoutTrigger": false,
                       "headers": {
                         "Content-Type": "application/json",
+                        "Accept": "application/json",
                         "channel_key": "002"
                       },
                       "requestBody": [],
@@ -52,56 +51,126 @@
                   }
                 }
               ],
-              "csrf": "0.99ss65b63jNL3tiJuWvSufvfeByTw8L",
-              "updatedAt": "12/27/2023",
-              "createdAt": "12/27/2023",
-              "createdBy": "muhammad.asad",
-              "updatedBy": "muhammad.asad"
+              "csrf": "0.uao5lgyznxnGn8PyhAnFp64Xy6zL2aZU",
+              "_id": "LEpDwDncHGQQu99yoRsWT",
+              "updatedAt": "2/12/2024",
+              "createdAt": "2/12/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
             },
             {
-              "id": "Yg6bPrf7eN8GksoM11VyL",
-              "_id": "BkWmqgBmOaIuLan7E3ZLI",
-              "name": "CURRENT_CARD_SLIDER",
-              "old_name": "CURRENT_CARD_SLIDER",
+              "_id": "FiVvt8Ps0OP212kmzDuO9",
+              "id": "sBht4iSqhT0ehUGAPn4Pb",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
+              "name": "DASH_GET_CARDS_CONDITIONALLY_WITHOUT_ACTION",
+              "old_name": "DASH_GET_CARDS_CONDITIONALLY_WITHOUT_ACTION",
+              "status": "ACTIVE",
               "services": [
                 {
-                  "type": "11",
+                  "type": "13",
                   "command": {
-                    "type": "13",
+                    "type": "1",
                     "attributes": {
-                      "requestBody": [],
-                      "storeType": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "",
-                      "destinationBindingKey": "CURRENT_CARD",
-                      "sourceBindingKey": "cards.cardList",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 2,
-                      "indexBindingKey": "SLIDER_CARD_INDEX",
-                      "indexStoreType": 2,
-                      "indexType": "dynamic"
+                      "triggers": [
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "ilp child dashboard"
+                            ]
+                          },
+                          "triggerName": "GET_CHILD_CARD_WITHOUT_ACTION",
+                          "triggerId": "SMDTfIDl_qm4p0ynf4qb3",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "cards",
+                                  "responseReturnValue": "content",
+                                  "url": "/card/v1/web/getIleadCard",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": []
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "main dashboard"
+                            ]
+                          },
+                          "triggerName": "GET_SLIDER_CARDS_WITHOUT_ACTIONS",
+                          "triggerId": "JjB90J7Ca9n_VMYHze7bJ",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "cards",
+                                  "responseReturnValue": "content",
+                                  "url": "/card/v1/web/cardList",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": []
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   }
                 }
               ],
-              "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
-              "updatedAt": "12/21/2023",
-              "createdAt": "12/21/2023",
-              "createdBy": "zeeshan",
-              "updatedBy": "zeeshan"
+              "csrf": "0.x7iv4ivrpfqZxKu7s3NEMcfox99ietL",
+              "updatedAt": "3/20/2024",
+              "createdAt": "3/20/2024",
+              "createdBy": "mubashar",
+              "updatedBy": "mubashar"
             }
           ],
-          "triggerIds": ["HoTkYGonpJcbFC-AO_rEP", "Yg6bPrf7eN8GksoM11VyL"]
+          "triggerIds": ["1D7ugBJk5g1PUavcboBpb", "sBht4iSqhT0ehUGAPn4Pb"]
         }
       }
     }
   ],
-  "csrf": "0.oss05d6mn9gxpHzd84TCMxr8MJGX6J_y",
-  "_id": "xjVE3MpTgYvm-t04b9kXb",
-  "updatedAt": "2/27/2024",
-  "createdAt": "2/27/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.x7iv4ivrpfqZxKu7s3NEMcfox99ietL",
+  "updatedAt": "3/20/2024",
+  "createdAt": "3/20/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
 }

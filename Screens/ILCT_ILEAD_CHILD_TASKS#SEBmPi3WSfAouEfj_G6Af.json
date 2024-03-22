@@ -139,6 +139,40 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "15"
+          },
+          {
+            "triggerId": "FgnZGXYx88bZa74FikQem",
+            "triggerName": "ILCT_FETCH_TASKS",
+            "serviceType": "8",
+            "attributes": {
+              "loaderWidgetIds": [906070],
+              "messageWidgetIds": [906070],
+              "responseStateKey": "ilct_task_details",
+              "url": "/api-designer/api/getTasks/execute",
+              "checksum": true,
+              "encryption": true,
+              "isDeviceDetails": false,
+              "loginTrigger": false,
+              "formData": false,
+              "logoutTrigger": false,
+              "headers": {
+                "Content-Type": "application/json",
+                "channel_key": "002"
+              },
+              "requestBody": [
+                {
+                  "type": 2,
+                  "name": "Current screen",
+                  "key": "type",
+                  "value": "currentScreen.ilpt_filter_key_word"
+                }
+              ],
+              "baseURL": "65de08b22c4bb94a7826d82c",
+              "storeType": 2
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "path": "0",
@@ -156,7 +190,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "bzBNDB43Z4OPOc8OWl4K3",
+            "id": "1RLzzurUYi-mRjC2a7H6f",
             "gridProps": [
               {
                 "id": "-e06cAfe0iFChBGdxHGof",
@@ -1195,7 +1229,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "mVQYQv6sDcd0VZXYvBmB9",
+                            "id": "j3hC_2mF-j4HyLRig2YYO",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1400,7 +1434,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "taskAmount",
+                                                                  "label": "rewardWithCurrency",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -1423,7 +1457,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-0-0-0-0-0-1-0-0-0"
+                                                                "path": "0-0-1-0-0-0-0-0-1-0-0-1-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1562,7 +1596,7 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "currentTask",
+                                                          "label": "name",
                                                           "searchInState": true,
                                                           "storeType": 2,
                                                           "cssClassNames": [
@@ -1585,7 +1619,7 @@
                                                           "type": "20002"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-1-0-0-0-0-0-0-0-1-0-0"
+                                                        "path": "0-0-1-0-0-0-0-0-1-0-1-0-0"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -1689,7 +1723,7 @@
                                                                       "max-width": "fit-content"
                                                                     }
                                                                   },
-                                                                  "label": "frequency",
+                                                                  "label": "perform",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -1712,7 +1746,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-0-0-0-0-2-0-0-0-0"
+                                                                "path": "0-0-1-0-0-0-0-0-1-0-2-0-0-0-0"
                                                               },
                                                               {
                                                                 "id": "KC8FNWvtVhCwurI9pBeCa",
@@ -1754,9 +1788,9 @@
                                                                     "logic": {
                                                                       "!=": [
                                                                         {
-                                                                          "var": "frequency"
+                                                                          "var": "status"
                                                                         },
-                                                                        "Daily"
+                                                                        "Late"
                                                                       ]
                                                                     }
                                                                   }
@@ -2198,7 +2232,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "relations",
+                                                                  "label": "assignedBy",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -2521,8 +2555,8 @@
                           },
                           "isHList": false,
                           "storeType": 2,
-                          "dataSource": "ILCT_DEL_DATA.task",
-                          "bindingKey": "ilct_selected_task"
+                          "dataSource": "ilct_task_details.toDo",
+                          "bindingKey": "ilct_selected_toDo.task"
                         },
                         "events": [],
                         "component": {
@@ -2616,7 +2650,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "C1tI1Qrwt7LIohqi0VgaW",
+                            "id": "d1fS3u6L2V7ZxlZ7nlnxy",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -2807,7 +2841,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "taskAmount",
+                                                                  "label": "rewardWithCurrency",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -3094,7 +3128,7 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "TaskApp",
+                                                          "label": "name",
                                                           "searchInState": true,
                                                           "storeType": 2,
                                                           "cssClassNames": [
@@ -3117,7 +3151,7 @@
                                                           "type": "20002"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-2-0-0-0-0-0-0-0-1-0-0"
+                                                        "path": "0-0-2-0-0-0-0-0-0-0-2-0-0"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -3215,7 +3249,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "frequency",
+                                                                  "label": "perform",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -3238,7 +3272,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-2-0-0-0-0-0-0-0-2-0-0-0-0"
+                                                                "path": "0-0-2-0-0-0-0-0-0-0-3-0-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3638,7 +3672,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "relations",
+                                                                  "label": "assignedBy",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -3932,7 +3966,7 @@
                             "mainContainer": "listLayout"
                           },
                           "storeType": 2,
-                          "dataSource": "ILCT_DEL_APPROVE.taskApproved",
+                          "dataSource": "ilct_task_details.toBeApproved",
                           "bindingKey": "ilct_selected_approve_task"
                         },
                         "events": [
@@ -4063,7 +4097,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "SfpMg0IG0aV_rsdrWIxGv",
+                            "id": "UXTUBWu2Bz-5lxSfx5DWC",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -4254,7 +4288,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "taskAmount",
+                                                                  "label": "rewardWithCurrency",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -4277,7 +4311,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-2-0-0-0-0-0-0-0-0-1-0-0-0"
+                                                                "path": "0-0-3-0-0-0-0-0-0-0-0-1-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -4541,7 +4575,7 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "TaskApp",
+                                                          "label": "name",
                                                           "searchInState": true,
                                                           "storeType": 2,
                                                           "cssClassNames": [
@@ -4564,7 +4598,7 @@
                                                           "type": "20002"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-2-0-0-0-0-0-0-0-1-0-0"
+                                                        "path": "0-0-3-0-0-0-0-0-0-0-2-0-0"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -4663,7 +4697,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "frequency",
+                                                                  "label": "perform",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -4686,7 +4720,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-2-0-0-0-0-0-0-0-2-0-0-0-0"
+                                                                "path": "0-0-3-0-0-0-0-0-0-0-3-0-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -5086,7 +5120,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "relations",
+                                                                  "label": "assignedBy",
                                                                   "searchInState": true,
                                                                   "storeType": 2,
                                                                   "cssClassNames": [
@@ -5381,7 +5415,7 @@
                             "mainContainer": "listLayout"
                           },
                           "storeType": 2,
-                          "dataSource": "ILCT_DONE_TASKS.taskDone",
+                          "dataSource": "ilct_task_details.done",
                           "bindingKey": "ilct_selected_done_task"
                         },
                         "events": [],
@@ -5515,8 +5549,8 @@
     "gitBranchName": "master",
     "_id": "SEBmPi3WSfAouEfj_G6Af",
     "createdBy": "basitahmed1199",
-    "updatedAt": "3/14/2024",
-    "createdAt": "3/14/2024",
+    "updatedAt": "3/17/2024",
+    "createdAt": "3/17/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5630,6 +5664,12 @@
       {
         "triggerId": "6Ywby-QhjM7xxKmpexCX7",
         "triggerName": "DELETE_LATER_THREE",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "FgnZGXYx88bZa74FikQem",
+        "triggerName": "ILCT_FETCH_TASKS",
         "name": "On initialization",
         "type": "1"
       }
@@ -6542,8 +6582,8 @@
       },
       "isHList": false,
       "storeType": 2,
-      "dataSource": "ILCT_DEL_DATA.task",
-      "bindingKey": "ilct_selected_task"
+      "dataSource": "ilct_task_details.toDo",
+      "bindingKey": "ilct_selected_toDo.task"
     },
     "layout": null,
     "events": [],
@@ -6967,7 +7007,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "taskAmount",
+      "label": "rewardWithCurrency",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_TASK_AMOUNT " }]
@@ -6983,7 +7023,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-0-0-0-1-0-0-0",
+    "path": "0-0-1-0-0-0-0-0-1-0-0-1-0-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7055,7 +7095,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "currentTask",
+      "label": "name",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_TASK_AMOUNT " }]
@@ -7071,7 +7111,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-0-0-1-0-0",
+    "path": "0-0-1-0-0-0-0-0-1-0-1-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7269,7 +7309,7 @@
         "xs": 12,
         "componentStyles": { "max-width": "fit-content" }
       },
-      "label": "frequency",
+      "label": "perform",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_FREQUENCY_CLASS " }]
@@ -7285,7 +7325,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-0-0-2-0-0-0-0",
+    "path": "0-0-1-0-0-0-0-0-1-0-2-0-0-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7320,7 +7360,7 @@
       },
       "label": "Late",
       "cssClassNames": [{ "cssClassName": "TAB_CARD_YELLOW_RADIUS " }],
-      "hideCondition": { "logic": { "!=": [{ "var": "frequency" }, "Daily"] } }
+      "hideCondition": { "logic": { "!=": [{ "var": "status" }, "Late"] } }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -7602,7 +7642,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "relations",
+      "label": "assignedBy",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_FREQUENCY_CLASS " }]
@@ -7717,7 +7757,7 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "ILCT_DEL_APPROVE.taskApproved",
+      "dataSource": "ilct_task_details.toBeApproved",
       "bindingKey": "ilct_selected_approve_task"
     },
     "layout": null,
@@ -8133,7 +8173,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "taskAmount",
+      "label": "rewardWithCurrency",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_TASK_AMOUNT " }]
@@ -8333,7 +8373,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "TaskApp",
+      "label": "name",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_TASK_AMOUNT " }]
@@ -8349,7 +8389,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-2-0-0-0-0-0-0-0-1-0-0",
+    "path": "0-0-2-0-0-0-0-0-0-0-2-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -8530,7 +8570,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "frequency",
+      "label": "perform",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_FREQUENCY_CLASS " }]
@@ -8546,7 +8586,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-2-0-0-0-0-0-0-0-2-0-0-0-0",
+    "path": "0-0-2-0-0-0-0-0-0-0-3-0-0-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -8815,7 +8855,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "relations",
+      "label": "assignedBy",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_FREQUENCY_CLASS " }]
@@ -8935,7 +8975,7 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "ILCT_DONE_TASKS.taskDone",
+      "dataSource": "ilct_task_details.done",
       "bindingKey": "ilct_selected_done_task"
     },
     "layout": null,
@@ -9344,7 +9384,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "taskAmount",
+      "label": "rewardWithCurrency",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_TASK_AMOUNT " }]
@@ -9360,7 +9400,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-2-0-0-0-0-0-0-0-0-1-0-0-0",
+    "path": "0-0-3-0-0-0-0-0-0-0-0-1-0-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -9544,7 +9584,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "TaskApp",
+      "label": "name",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_TASK_AMOUNT " }]
@@ -9560,7 +9600,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-2-0-0-0-0-0-0-0-1-0-0",
+    "path": "0-0-3-0-0-0-0-0-0-0-2-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -9741,7 +9781,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "frequency",
+      "label": "perform",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_FREQUENCY_CLASS " }]
@@ -9757,7 +9797,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-2-0-0-0-0-0-0-0-2-0-0-0-0",
+    "path": "0-0-3-0-0-0-0-0-0-0-3-0-0-0-0",
     "screenId": "SEBmPi3WSfAouEfj_G6Af",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -10026,7 +10066,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "relations",
+      "label": "assignedBy",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "ILCT_FREQUENCY_CLASS " }]

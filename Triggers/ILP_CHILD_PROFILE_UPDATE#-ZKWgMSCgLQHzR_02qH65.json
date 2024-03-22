@@ -1,0 +1,98 @@
+{
+  "id": "P0M1zGvYl_Fb_eFD9uUoe",
+  "_id": "-ZKWgMSCgLQHzR_02qH65",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILP_CHILD_PROFILE_UPDATE",
+  "old_name": "ILP_CHILD_PROFILE_UPDATE",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "ilp_child_profile_update",
+          "url": "/api-designer/api/updateIleadUserData/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.image",
+              "value": "IL_CHILD_IMAGE"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.nickName",
+              "value": "IL_NICK_NAME"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.email",
+              "value": "IL_EMAIL"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.rewardUnit",
+              "value": "BHD"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.starValue",
+              "value": "1.0"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.id",
+              "value": "CURRENT_CARD.ileadChild.ileadUserId"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "ILP_UPDATE_PROFILE_ERROR_TOAST",
+            "triggerId": "vCbzOZJ2IwyfWuTBc1hZI",
+            "logic": { "==": [{ "var": "code" }, 0] }
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "HIDE_MODAL_TRIGGER",
+            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "triggerName": "ILP_UPDATE_PROFILE_SUCCESS_TOAST",
+            "triggerId": "5wbpbrxEOmb9dOjIcdLo5",
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.s5bltkx615W_rsF9sBI5ydJ6ZuPB_uG",
+  "updatedAt": "3/22/2024",
+  "createdAt": "3/22/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

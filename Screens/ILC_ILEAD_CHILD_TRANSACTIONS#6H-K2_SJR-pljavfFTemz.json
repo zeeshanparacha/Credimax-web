@@ -622,12 +622,12 @@
                                                                   },
                                                                   "dropdownOptions": [
                                                                     {
-                                                                      "code": "failed",
-                                                                      "name": "Failed"
+                                                                      "code": "all",
+                                                                      "name": "All"
                                                                     },
                                                                     {
-                                                                      "code": "success",
-                                                                      "name": "Success"
+                                                                      "code": "onHold",
+                                                                      "name": "On hold"
                                                                     }
                                                                   ],
                                                                   "variant": "outlined",
@@ -1889,8 +1889,8 @@
                                                                           },
                                                                           "label": "Merchant name",
                                                                           "enablePaginationSortingFilter": true,
-                                                                          "paginationSortingKey": "Merchantname",
-                                                                          "paginationListDataKey": "ilc_t_Filtered_items",
+                                                                          "paginationSortingKey": "name",
+                                                                          "paginationListDataKey": "ilcd_statements.content.statementsWithTypeList.0.list",
                                                                           "storeType": 2,
                                                                           "cssClassNames": [
                                                                             {
@@ -2008,9 +2008,9 @@
                                                                           },
                                                                           "label": "Transaction date",
                                                                           "enablePaginationSortingFilter": true,
-                                                                          "paginationSortingKey": "TransactionDate",
+                                                                          "paginationSortingKey": "postDate",
                                                                           "storeType": 2,
-                                                                          "paginationListDataKey": "ilc_t_Filtered_items",
+                                                                          "paginationListDataKey": "ilcd_statements.content.statementsWithTypeList.0.list",
                                                                           "cssClassNames": [
                                                                             {
                                                                               "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL "
@@ -2127,8 +2127,8 @@
                                                                           },
                                                                           "label": "Amount",
                                                                           "enablePaginationSortingFilter": true,
-                                                                          "paginationSortingKey": "Amount",
-                                                                          "paginationListDataKey": "ilc_t_Filtered_items",
+                                                                          "paginationSortingKey": "amount",
+                                                                          "paginationListDataKey": "ilcd_statements.content.statementsWithTypeList.0.list",
                                                                           "storeType": 2,
                                                                           "cssClassNames": [
                                                                             {
@@ -2379,7 +2379,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "xrw_y8weG5oVE90K9Cso8",
+                                                            "id": "biazUa0VYVA_9SqEZzCgj",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2873,7 +2873,10 @@
                                                                                     {
                                                                                       "cssClassName": "IL_TRANSACTIONS_AMOUNT_BHD_LABEL "
                                                                                     }
-                                                                                  ]
+                                                                                  ],
+                                                                                  "prefix": "currency",
+                                                                                  "searchInStatePrefix": true,
+                                                                                  "addSpacesPrefix": true
                                                                                 },
                                                                                 "icon": "FaFont",
                                                                                 "group": "Form",
@@ -3142,12 +3145,11 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-0"
+                                                            }
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "Il9UiBe64EFIddyIg3Fwj",
+                                                            "id": "Q67J1pArNUmpt4X7qZV0q",
                                                             "isPaginationColumn": true,
                                                             "gridProps": [
                                                               {
@@ -3691,8 +3693,7 @@
                                                             ],
                                                             "layoutProperties": {
                                                               "md": 12
-                                                            },
-                                                            "path": "0-0-1-0-0-0-1-1-0-0-1-0-0-1"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -3722,9 +3723,9 @@
                                                             "mainContainer": "listLayout"
                                                           },
                                                           "storeType": 2,
-                                                          "dataSource": "ilcd_statements.content.statementsWithTypeList",
+                                                          "dataSource": "ilcd_statements.content.statementsWithTypeList.0.list",
                                                           "bindingKey": "ILC_SELECTED_TRANSACTION",
-                                                          "searchableField": "Merchantname",
+                                                          "searchableField": "name",
                                                           "searchStoreType": 1,
                                                           "isSearchable": false,
                                                           "searchKeyword": "ilc_t_SearchData",
@@ -3981,9 +3982,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "6H-K2_SJR-pljavfFTemz",
-    "createdBy": "talha2",
-    "updatedAt": "3/7/2024",
-    "createdAt": "3/7/2024",
+    "createdBy": "talha",
+    "updatedAt": "3/19/2024",
+    "createdAt": "3/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4754,8 +4755,8 @@
         "xs": 12
       },
       "dropdownOptions": [
-        { "code": "failed", "name": "Failed" },
-        { "code": "success", "name": "Success" }
+        { "code": "all", "name": "All" },
+        { "code": "onHold", "name": "On hold" }
       ],
       "variant": "outlined",
       "selectedDataType": 1,
@@ -5758,8 +5759,8 @@
       },
       "label": "Merchant name",
       "enablePaginationSortingFilter": true,
-      "paginationSortingKey": "Merchantname",
-      "paginationListDataKey": "ilc_t_Filtered_items",
+      "paginationSortingKey": "name",
+      "paginationListDataKey": "ilcd_statements.content.statementsWithTypeList.0.list",
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL " }]
     },
@@ -5849,9 +5850,9 @@
       },
       "label": "Transaction date",
       "enablePaginationSortingFilter": true,
-      "paginationSortingKey": "TransactionDate",
+      "paginationSortingKey": "postDate",
       "storeType": 2,
-      "paginationListDataKey": "ilc_t_Filtered_items",
+      "paginationListDataKey": "ilcd_statements.content.statementsWithTypeList.0.list",
       "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL " }]
     },
     "icon": "FaFont",
@@ -5940,8 +5941,8 @@
       },
       "label": "Amount",
       "enablePaginationSortingFilter": true,
-      "paginationSortingKey": "Amount",
-      "paginationListDataKey": "ilc_t_Filtered_items",
+      "paginationSortingKey": "amount",
+      "paginationListDataKey": "ilcd_statements.content.statementsWithTypeList.0.list",
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_MERCHANT_LABEL " }]
     },
@@ -6102,9 +6103,9 @@
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "ilcd_statements.content.statementsWithTypeList",
+      "dataSource": "ilcd_statements.content.statementsWithTypeList.0.list",
       "bindingKey": "ILC_SELECTED_TRANSACTION",
-      "searchableField": "Merchantname",
+      "searchableField": "name",
       "searchStoreType": 1,
       "isSearchable": false,
       "searchKeyword": "ilc_t_SearchData",
@@ -6643,7 +6644,12 @@
       "label": "amount",
       "searchInState": true,
       "storeType": 2,
-      "cssClassNames": [{ "cssClassName": "IL_TRANSACTIONS_AMOUNT_BHD_LABEL " }]
+      "cssClassNames": [
+        { "cssClassName": "IL_TRANSACTIONS_AMOUNT_BHD_LABEL " }
+      ],
+      "prefix": "currency",
+      "searchInStatePrefix": true,
+      "addSpacesPrefix": true
     },
     "icon": "FaFont",
     "group": "Form",

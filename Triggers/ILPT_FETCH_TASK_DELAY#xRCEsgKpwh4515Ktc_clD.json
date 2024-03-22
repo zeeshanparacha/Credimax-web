@@ -1,0 +1,87 @@
+{
+  "_id": "xRCEsgKpwh4515Ktc_clD",
+  "id": "NyYA02hXDfn1AGS9MVuRT",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_FETCH_TASK_DELAY",
+  "old_name": "ILPT_FILTER_LIST_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "kxQFYyMH7izQhbX8wqbB1",
+              "_id": "n_-m8xMsRQwSyNAiVtwyb",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILPT_FETCH_TASKS",
+              "old_name": "ILPT_FETCH_TASKS",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "ilpt_fetch_tasks",
+                      "responseReturnValue": "content",
+                      "url": "/api-designer/api/fetchIleadParentTask/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.userId",
+                          "value": "selected_child.ileadUserId"
+                        }
+                      ],
+                      "baseURL": "65de08b22c4bb94a7826d82c",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "ILPT_FILTER_LIST",
+                        "triggerId": "_Yqj_pxZj5b9xKpo46hVJ",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.anndggzrqvuguLR8-5AdjpytFbZD3Q8X",
+              "updatedAt": "3/17/2024",
+              "createdAt": "3/17/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": ["kxQFYyMH7izQhbX8wqbB1"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.anndggzrqvuguLR8-5AdjpytFbZD3Q8X",
+  "updatedAt": "3/17/2024",
+  "createdAt": "3/17/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

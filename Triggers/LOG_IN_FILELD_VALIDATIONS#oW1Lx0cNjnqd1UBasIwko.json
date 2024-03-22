@@ -1,0 +1,145 @@
+{
+  "id": "Fso8coxGx4vpGLJKW5tg6",
+  "_id": "oW1Lx0cNjnqd1UBasIwko",
+  "gitBranchName": "master",
+  "name": "LOG_IN_FILELD_VALIDATIONS",
+  "old_name": "LOG_IN_FILELD_VALIDATIONS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "email",
+              "storeType": 1,
+              "messageBindingKey": "email_Validations",
+              "isRequired": true,
+              "requiredMessage": "Email is required",
+              "regEx": "/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/",
+              "regExMessage": "Email format incorrect",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "password",
+              "storeType": 1,
+              "messageBindingKey": "password_validation",
+              "isRequired": true,
+              "requiredMessage": "Password is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            }
+          ],
+          "successTrigger": {
+            "_id": "0mTV_FJKk99Sl0QZTH7fY",
+            "id": "RkxV_HA2L_c0JfvWvVMj1",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "Login_Chain_Trigger",
+            "old_name": "Login_Chain_Trigger",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "triggers": [
+                      {
+                        "id": "rQqjnRJ9i1K_xIDWJlZ7m",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "name": "LOGIN_TRIGGER",
+                        "status": "ACTIVE",
+                        "services": [
+                          {
+                            "type": "8",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "loaderWidgetIds": [906070],
+                                "messageWidgetIds": [906070],
+                                "responseStateKey": "validateLoginPasswordResponse",
+                                "successMessageBindingKey": "successKey",
+                                "url": "/security/v6/validateLoginPassword",
+                                "checksum": true,
+                                "encryption": true,
+                                "isDeviceDetails": true,
+                                "loginTrigger": false,
+                                "formData": false,
+                                "logoutTrigger": false,
+                                "headers": {
+                                  "Content-Type": "application/json",
+                                  "channel_key": "002"
+                                },
+                                "requestBody": [
+                                  {
+                                    "type": 4,
+                                    "name": "Static",
+                                    "key": "loginType",
+                                    "value": "CREDENTIALS"
+                                  },
+                                  {
+                                    "type": 4,
+                                    "name": "Static",
+                                    "key": "loginPin"
+                                  },
+                                  {
+                                    "type": 3,
+                                    "name": "Current session",
+                                    "key": "device",
+                                    "value": "device"
+                                  },
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "password",
+                                    "value": "password"
+                                  },
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "username",
+                                    "value": "username"
+                                  }
+                                ],
+                                "baseURL": "6566efa5a131d92664c8dd76",
+                                "storeType": 2
+                              },
+                              "responseHandler": []
+                            }
+                          }
+                        ],
+                        "csrf": "0.dn5xax0wqmb3XGVx0D-Lf2g2UWBSLpx",
+                        "_id": "NLMr8WqgXidtA0wzLrzZl",
+                        "updatedAt": "11/30/2023",
+                        "createdAt": "11/30/2023",
+                        "createdBy": "masood",
+                        "updatedBy": "masood"
+                      }
+                    ],
+                    "triggerIds": ["rQqjnRJ9i1K_xIDWJlZ7m"]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.m69z60tig5rG5SO2mXlbd3u0t_RDWdOA",
+            "updatedAt": "2/12/2024",
+            "createdAt": "2/12/2024",
+            "createdBy": "talha",
+            "updatedBy": "talha"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.9cqgkn4st3aOTjQHJDHZLghyvE-N5mxB",
+  "updatedAt": "3/20/2024",
+  "createdAt": "3/20/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

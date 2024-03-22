@@ -1,0 +1,52 @@
+{
+  "id": "X9VKMo7jqREtgW9dWEqjj",
+  "_id": "ivk02N87J4Ou810OBg5Fq",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_GET_ALL_PMs",
+  "old_name": "ILPT_GET_ALL_PMs",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "paymentMethodsAll",
+          "responseReturnValue": "content",
+          "url": "/payment/payCard/v1/getBBKAccountWithDebitCardsAndCreditCards",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            { "type": 4, "name": "Static", "key": "type", "value": "both" }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "triggerName": "ILPT_SELECT_ALL_PAYMENT_METHODS",
+            "triggerId": "amhOaeZLltsKN9CogBs95"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.bpu63lwtxtdnGFJpPyTrsIbdgz8a9EGy",
+  "updatedAt": "3/21/2024",
+  "createdAt": "3/21/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

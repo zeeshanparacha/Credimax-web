@@ -1,0 +1,81 @@
+{
+  "id": "dvxixdWWX2E0s6Y21qxR8",
+  "_id": "OMGA3U68iTy2cNKuE69OZ",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILC_GOAL_CALCULATION_API",
+  "old_name": "ILC_GOAL_CALCULATION_API",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
+          "url": "/api-designer/api/iLeadGoalCalculation/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.amount",
+              "value": "ILCG_GOAL_AMOUNT"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.contributationFreq",
+              "value": "ILC_FREQUENCY.name"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.startDate",
+              "value": "ILCG_START_DATE"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.contributionAmount",
+              "value": "ILCG_AMOUNT"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.targetDate",
+              "value": "ILCG_TARGET_DATE"
+            }
+          ],
+          "baseURL": "65de08b22c4bb94a7826d82c",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILP_SAVE_TAGETED_AMOUNT_AFTER_DELAY",
+            "triggerId": "UUE-rGmre9rrh8dWl_xff"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.i6qyigxkmlr0uKwBWVjiGHYwSDcRwEiR",
+  "updatedAt": "3/19/2024",
+  "createdAt": "3/19/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

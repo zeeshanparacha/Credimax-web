@@ -1,0 +1,128 @@
+{
+  "_id": "SlHFavQAbnaZQnzaUDjoL",
+  "id": "Yyx8iBnSRjBIRF0EYicMI",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "DASH_BALANCE_VIEW_ACTION_CONDITIONALLY",
+  "old_name": "DASH_BALANCE_VIEW_ACTION_CONDITIONALLY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "==": [
+                  {
+                    "var": "currentScreen.form.dash_selected_balance_view.type"
+                  },
+                  "profile"
+                ]
+              },
+              "triggerName": "DASH_BALANCE_VIEW_ILP_CHILD_PROFILE_CHAIN",
+              "triggerId": "Sh-NuPkxnLgMj7B8NxW_L",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "k54Jg3Naz9fAXv_8xqxLm",
+                          "name": "ILP_MOVE_CHILD_PROFILE_ON_ROOT_OF_FORM",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "ilp_child_email",
+                                      "changeValueConditonally": true,
+                                      "storeType": 1,
+                                      "logic": {
+                                        "var": "currentScreen.form.dash_selected_balance_view.ileadUserData.email"
+                                      }
+                                    },
+                                    {
+                                      "logic": {
+                                        "var": "currentScreen.form.dash_selected_balance_view.ileadUserData.name"
+                                      },
+                                      "changeValueConditonally": true,
+                                      "storeType": 1,
+                                      "key": "ilp_child_name"
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.v4kt6a4uxxigoIJETxepB2ur4In9aJ0r",
+                          "_id": "PG41ioocfSCdXOF9eT_AT",
+                          "updatedAt": "3/18/2024",
+                          "createdAt": "3/18/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        },
+                        {
+                          "id": "aEJZdx_-3wOYIdEoyk2Fo",
+                          "gitBranchName": "master",
+                          "name": "ILP_SHOW_CHILD_PROFILE",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "widgetId": "W1OUatfmXlouLg4m6YgEX",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "XzHcImwfx_7yB5C5k0yTw",
+                                  "toastContentType": "custom"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.9h55yf7xct5I1ZSKUVsXYZ9XmGlRLICB",
+                          "_id": "OCv0RuB8MpILSV8zPJ0_l",
+                          "updatedAt": "3/17/2024",
+                          "createdAt": "3/17/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        }
+                      ],
+                      "triggerIds": [
+                        "k54Jg3Naz9fAXv_8xqxLm",
+                        "aEJZdx_-3wOYIdEoyk2Fo"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.v4kt6a4uxxigoIJETxepB2ur4In9aJ0r",
+  "updatedAt": "3/18/2024",
+  "createdAt": "3/18/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}
