@@ -46,7 +46,7 @@
           "name": "Grid layout"
         },
         "group": "Layout",
-        "type": "sidebarItem",
+        "type": "10001",
         "updatedAt": "23-Sep-2021",
         "Documentation": "<div>\n<table style=\"border-collapse: collapse; width: 99.8899%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 48.4024%;\">1</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">2</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">43</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">6</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n<tr>\n<td style=\"width: 48.4024%;\">7</td>\n<td style=\"width: 48.4024%;\">&nbsp;</td>\n</tr>\n</tbody>\n</table>\nWrite your Docu7mentationtestsdfasd</div>",
         "createdAt": "24-Aug-2021",
@@ -74,6 +74,33 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "FBG2B-O9bL2l63Q4TNDb5",
+            "triggerName": "CALCULATE_AVAILABLE_POINTS",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "value",
+              "destinationBindingKey": "AVAILABLE_POINTS",
+              "sourceBindingKey": "AVAILABLE_POINTS",
+              "sourceStoreType": 1,
+              "destinationStoreType": 1,
+              "logic": {
+                "*": [
+                  {
+                    "var": "SELECTED_CATELOG.dashboardItem.shortDescriptionValue"
+                  },
+                  { "var": "SELECTED_CATELOG.multiplier" }
+                ]
+              },
+              "changeValueConditonally": true,
+              "targettedType": "value"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "6"
           }
         ],
         "order": 1,
@@ -86,7 +113,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "sZCvdU4w4ztHdW43OPiKe",
+            "id": "A01e6aovpddSCKVjol376",
             "gridProps": [
               {
                 "type": "10001",
@@ -224,7 +251,22 @@
                                   "content": "Button",
                                   "type": "20006"
                                 },
-                                "events": [],
+                                "events": [
+                                  {
+                                    "triggerId": "bQTzimglFZMk9jU7fKgR_",
+                                    "triggerName": "GO_TO_THAMEEN",
+                                    "serviceType": "1",
+                                    "attributes": {
+                                      "nextWidgetId": "SPxfUZ3Hsnnd25GMXnm6W",
+                                      "gridRadioValue": "",
+                                      "selectedObjectBindingKey": "selectedObject",
+                                      "editableForm": false
+                                    },
+                                    "type": "2",
+                                    "name": "On click",
+                                    "commandType": "3"
+                                  }
+                                ],
                                 "path": "0-0-0-0-0-0-1"
                               },
                               {
@@ -719,10 +761,10 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "Thameen_AIR.availablePoints",
+                                                          "label": "AVAILABLE_POINTS",
                                                           "format": "thousand seprator",
                                                           "searchInState": true,
-                                                          "storeType": 2
+                                                          "storeType": 1
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -940,10 +982,10 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "Thameen_AIR.ammountAgaintPoints",
+                                                          "label": "SELECTED_CATELOG.dashboardItem.shortDescriptionValue",
                                                           "format": "thousand seprator",
                                                           "searchInState": true,
-                                                          "storeType": 2
+                                                          "storeType": 1
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -1340,7 +1382,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "JdLqioZMobcEOSvYUKzYt",
+                                                    "id": "kRraL2DBniZV0-Ria1ILD",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1349,7 +1391,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "RJn1jpxr3dxB4Qwbs7fQC",
+                                                            "id": "yCxRPD0xvmj4TRcRgSpZm",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1387,7 +1429,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "amount",
+                                                                          "label": "shortDescriptionValue",
                                                                           "postfix": "      miles",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
@@ -1875,7 +1917,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "points",
+                                                                          "label": "pointValue",
                                                                           "format": "thousand seprator",
                                                                           "postfix": "   points",
                                                                           "storeType": 2,
@@ -1985,10 +2027,10 @@
                                                               "logic": {
                                                                 "==": [
                                                                   {
-                                                                    "var": "amount"
+                                                                    "var": "id"
                                                                   },
                                                                   {
-                                                                    "var": "currentScreen.form.SELECTED_MILE.amount"
+                                                                    "var": "currentScreen.form.SELECTED_MILE.id"
                                                                   }
                                                                 ]
                                                               }
@@ -1998,10 +2040,10 @@
                                                               "logic": {
                                                                 ">": [
                                                                   {
-                                                                    "var": "points"
+                                                                    "var": "pointValue"
                                                                   },
                                                                   {
-                                                                    "var": "currentScreen.Thameen_AIR.availablePoints"
+                                                                    "var": "currentScreen.form.AVAILABLE_POINTS"
                                                                   }
                                                                 ]
                                                               }
@@ -2090,14 +2132,14 @@
                                                     },
                                                     "mainContainer": "listLayout"
                                                   },
-                                                  "dataSource": "Thameen_AIR.availablePointsList",
-                                                  "storeType": 2,
+                                                  "dataSource": "SELECTED_CATELOG.rewardItemsList",
+                                                  "storeType": 1,
                                                   "bindingKey": "SELECTED_MILE",
                                                   "disableClick": {
                                                     ">": [
-                                                      { "var": "points" },
+                                                      { "var": "pointValue" },
                                                       {
-                                                        "var": "currentScreen.Thameen_AIR.availablePoints"
+                                                        "var": "currentScreen.form.AVAILABLE_POINTS"
                                                       }
                                                     ]
                                                   }
@@ -2321,6 +2363,36 @@
                                                     },
                                                     "type": "3",
                                                     "name": "On change"
+                                                  },
+                                                  {
+                                                    "triggerId": "xF27ihjUeGv1ufPvdgccv",
+                                                    "triggerName": "CALCULATE_CUSTOM_POINTS",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "value",
+                                                      "destinationBindingKey": "customPoints",
+                                                      "sourceBindingKey": "customPoints",
+                                                      "sourceStoreType": 1,
+                                                      "destinationStoreType": 1,
+                                                      "logic": {
+                                                        "*": [
+                                                          {
+                                                            "parseNumber": {
+                                                              "var": "customMiles"
+                                                            }
+                                                          },
+                                                          {
+                                                            "var": "SELECTED_CATELOG.multiplier"
+                                                          }
+                                                        ]
+                                                      },
+                                                      "changeValueConditonally": true,
+                                                      "targettedType": "value"
+                                                    },
+                                                    "type": "6",
+                                                    "name": "On blur"
                                                   }
                                                 ],
                                                 "path": "0-0-1-0-0-0-1-0-2-0-1"
@@ -2967,8 +3039,19 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "1400",
-                                                                  "postfix": " points"
+                                                                  "label": "SELECTED_MILE.pointValue",
+                                                                  "postfix": " points",
+                                                                  "searchInState": true,
+                                                                  "storeType": 1,
+                                                                  "hideCondition": {
+                                                                    "logic": {
+                                                                      "!": [
+                                                                        {
+                                                                          "var": "currentScreen.form.SELECTED_MILE.pointValue"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  }
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -2985,6 +3068,65 @@
                                                                 },
                                                                 "events": [],
                                                                 "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-1"
+                                                              },
+                                                              {
+                                                                "id": "DMHPlpZwkuKzN1kTBoRB2",
+                                                                "status": "ACTIVE",
+                                                                "name": "Label",
+                                                                "attributes": {
+                                                                  "variant": "body1",
+                                                                  "name": "Label",
+                                                                  "mandatory": false,
+                                                                  "layoutProperties": {
+                                                                    "label": {
+                                                                      "//": "Use this class to style label component.",
+                                                                      "font-size": 14,
+                                                                      "color": "#000",
+                                                                      "font-weight": "700"
+                                                                    },
+                                                                    "prefix": {
+                                                                      "//": "Use this class to style prefix."
+                                                                    },
+                                                                    "postfix": {
+                                                                      "//": "Use this class to style postfix."
+                                                                    },
+                                                                    "mainContainer": "label",
+                                                                    "xl": 12,
+                                                                    "lg": 12,
+                                                                    "md": 12,
+                                                                    "sm": 12,
+                                                                    "xs": 12
+                                                                  },
+                                                                  "label": "customPoints",
+                                                                  "format": "thousand seprator",
+                                                                  "postfix": " points",
+                                                                  "storeType": 1,
+                                                                  "searchInState": true,
+                                                                  "hideCondition": {
+                                                                    "logic": {
+                                                                      "!": [
+                                                                        {
+                                                                          "var": "currentScreen.form.customPoints"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "icon": "FaFont",
+                                                                "group": "Form",
+                                                                "type": "20002",
+                                                                "updatedAt": "23-Aug-2021",
+                                                                "createdAt": "23-Aug-2021",
+                                                                "order": 15,
+                                                                "version": "1.0.0",
+                                                                "isLatest": true,
+                                                                "projectType": "web",
+                                                                "component": {
+                                                                  "content": "Label",
+                                                                  "type": "20002"
+                                                                },
+                                                                "events": [],
+                                                                "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-2"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3525,7 +3667,17 @@
             }
           }
         ],
-        "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 },
+        "dimensions": {
+          "rows": 1,
+          "columns": 1,
+          "colSize0xs": 12,
+          "colSize0sm": 12,
+          "colSize0md": 12,
+          "colSize0lg": 12,
+          "colSize0xl": 12
+        },
+        "readOnly": true
       }
     ],
     "events": [],
@@ -3536,8 +3688,8 @@
     "gitBranchName": "master",
     "_id": "0XQM3DVG4jK853V7M0IQb",
     "createdBy": "zeeshan",
-    "updatedAt": "3/18/2024",
-    "createdAt": "3/18/2024",
+    "updatedAt": "3/27/2024",
+    "createdAt": "3/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3606,6 +3758,12 @@
       {
         "triggerId": "-X781XYvcQ7frcYeRmPoF",
         "triggerName": "THAMEEN_GET_AIRLINE",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "FBG2B-O9bL2l63Q4TNDb5",
+        "triggerName": "CALCULATE_AVAILABLE_POINTS",
         "name": "On initialization",
         "type": "1"
       }
@@ -3856,7 +4014,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Button", "type": "20006" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "bQTzimglFZMk9jU7fKgR_",
+        "triggerName": "GO_TO_THAMEEN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "1"
+      }
+    ],
     "path": "0-0-0-0-0-0-1",
     "screenId": "0XQM3DVG4jK853V7M0IQb",
     "subType": "component",
@@ -4469,10 +4635,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Thameen_AIR.availablePoints",
+      "label": "AVAILABLE_POINTS",
       "format": "thousand seprator",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -4692,10 +4858,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Thameen_AIR.ammountAgaintPoints",
+      "label": "SELECTED_CATELOG.dashboardItem.shortDescriptionValue",
       "format": "thousand seprator",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -5139,13 +5305,13 @@
         "listLayout": { "padding": "5px", "margin": "0px 12px 0px 0px" },
         "mainContainer": "listLayout"
       },
-      "dataSource": "Thameen_AIR.availablePointsList",
-      "storeType": 2,
+      "dataSource": "SELECTED_CATELOG.rewardItemsList",
+      "storeType": 1,
       "bindingKey": "SELECTED_MILE",
       "disableClick": {
         ">": [
-          { "var": "points" },
-          { "var": "currentScreen.Thameen_AIR.availablePoints" }
+          { "var": "pointValue" },
+          { "var": "currentScreen.form.AVAILABLE_POINTS" }
         ]
       }
     },
@@ -5249,8 +5415,8 @@
           "cssClassName": "THM_TICKET_BOX_SELECTED ",
           "logic": {
             "==": [
-              { "var": "amount" },
-              { "var": "currentScreen.form.SELECTED_MILE.amount" }
+              { "var": "id" },
+              { "var": "currentScreen.form.SELECTED_MILE.id" }
             ]
           }
         },
@@ -5258,8 +5424,8 @@
           "cssClassName": "THM_TICKET_BOX_SELECTED_DISABLED ",
           "logic": {
             ">": [
-              { "var": "points" },
-              { "var": "currentScreen.Thameen_AIR.availablePoints" }
+              { "var": "pointValue" },
+              { "var": "currentScreen.form.AVAILABLE_POINTS" }
             ]
           }
         }
@@ -5357,7 +5523,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "amount",
+      "label": "shortDescriptionValue",
       "postfix": "      miles",
       "format": "thousand seprator",
       "searchInState": true,
@@ -5739,7 +5905,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "points",
+      "label": "pointValue",
       "format": "thousand seprator",
       "postfix": "   points",
       "storeType": 2,
@@ -5942,6 +6108,13 @@
         "triggerName": "DELETE_SELECTED_MILE",
         "name": "On change",
         "type": "3",
+        "serviceType": "11"
+      },
+      {
+        "triggerId": "xF27ihjUeGv1ufPvdgccv",
+        "triggerName": "CALCULATE_CUSTOM_POINTS",
+        "name": "On blur",
+        "type": "6",
         "serviceType": "11"
       }
     ],
@@ -6527,6 +6700,18 @@
           "componentId": "Blvo4IqSi0nwY5wsgn9Kx",
           "componentType": "20002",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "DMHPlpZwkuKzN1kTBoRB2",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -6621,8 +6806,15 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "1400",
-      "postfix": " points"
+      "label": "SELECTED_MILE.pointValue",
+      "postfix": " points",
+      "searchInState": true,
+      "storeType": 1,
+      "hideCondition": {
+        "logic": {
+          "!": [{ "var": "currentScreen.form.SELECTED_MILE.pointValue" }]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -6638,6 +6830,57 @@
     "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-1",
     "screenId": "0XQM3DVG4jK853V7M0IQb",
     "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "DMHPlpZwkuKzN1kTBoRB2",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "font-size": 14,
+          "color": "#000",
+          "font-weight": "700"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "customPoints",
+      "format": "thousand seprator",
+      "postfix": " points",
+      "storeType": 1,
+      "searchInState": true,
+      "hideCondition": {
+        "logic": { "!": [{ "var": "currentScreen.form.customPoints" }] }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "subType": "component",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-2",
+    "screenId": "0XQM3DVG4jK853V7M0IQb",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"

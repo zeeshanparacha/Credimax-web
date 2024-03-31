@@ -33,9 +33,7 @@
           "layoutProperties": {
             "gridLayout": {
               "//": "Use this class to style grid layout component.",
-              "spacing": 0,
-              "background": "#F2F2F2",
-              "height": "calc(100vh - 55px)"
+              "spacing": 0
             },
             "mainContainer": "gridLayout",
             "skeleton": {
@@ -48,7 +46,8 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "Grid layout"
+          "name": "Grid layout",
+          "cssClassNames": [{ "cssClassName": "ILP_ILEAD_MAIN_GRID " }]
         },
         "group": "Layout",
         "type": "10001",
@@ -95,7 +94,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "kLKtmFes0wt878raGoHSe",
+            "id": "N76x0Yazp1V8DtDGTwS6y",
             "gridProps": [
               {
                 "id": "jD76zzfExkoYcvA-UVzqD",
@@ -785,19 +784,19 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "wDZJAXqUHB-WxTmvvfp3X",
+                                    "id": "ucreTuwWs1DcIk1Em92nO",
                                     "gridProps": [
                                       {
                                         "type": "10001",
                                         "name": "Grid layout",
-                                        "id": "KQnbqlL1D6dJt363cl2Jm",
+                                        "id": "JdDviN-eU2acF98FVZ777",
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "Qta9GOc2rSe-AFdjhGDXK",
+                                            "id": "tTxeh23tvQf92o8LuIzy_",
                                             "gridProps": [
                                               {
-                                                "id": "BvjAAdpibiddKNIEE86gY",
+                                                "id": "bGmxVqtVJfCDr6HDfjTTu",
                                                 "status": "ACTIVE",
                                                 "name": "Label",
                                                 "attributes": {
@@ -806,11 +805,7 @@
                                                   "mandatory": false,
                                                   "layoutProperties": {
                                                     "label": {
-                                                      "//": "Use this class to style label component.",
-                                                      "textAlign": "center",
-                                                      "fontSize": "16px",
-                                                      "letter-spacing": "0px",
-                                                      "fontWeight": "inherit"
+                                                      "//": "Use this class to style label component."
                                                     },
                                                     "prefix": {
                                                       "//": "Use this class to style prefix."
@@ -825,10 +820,14 @@
                                                     "sm": 12,
                                                     "xs": 12
                                                   },
-                                                  "label": "embossingName",
+                                                  "label": "ileadChild.name",
                                                   "searchInState": true,
-                                                  "storeType": 1,
-                                                  "cssClassNames": []
+                                                  "storeType": 2,
+                                                  "cssClassNames": [
+                                                    {
+                                                      "cssClassName": "ILC_GOAL_TAB_LABEL "
+                                                    }
+                                                  ]
                                                 },
                                                 "icon": "FaFont",
                                                 "group": "Form",
@@ -870,9 +869,12 @@
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
                                               "spacing": 0,
-                                              "width": "150px"
+                                              "color": "#678FB7"
                                             },
-                                            "mainContainer": "gridLayout"
+                                            "mainContainer": "gridLayout",
+                                            "skeleton": {
+                                              "//": "Use this class to style skeleton loading component."
+                                            }
                                           },
                                           "layoutProps": {
                                             "direction": "row",
@@ -883,39 +885,96 @@
                                           "name": "Grid layout",
                                           "conditionalClasses": [
                                             {
-                                              "cssClassName": "ILP_GOAL_HEADER_CONDITIONAL_CLASS ",
+                                              "cssClassName": "ILP_SELECTED_CHILD_GOAL ",
                                               "logic": {
                                                 "==": [
-                                                  { "var": "cardNumber" },
                                                   {
-                                                    "var": "currentScreen.form.ILP_SELECTED_CHILD_CARD.cardNumber"
-                                                  }
+                                                    "var": "currentScreen.form.ILP_SELECTED_CHILD_GOAL.cardNumber"
+                                                  },
+                                                  { "var": "cardNumber" }
                                                 ]
                                               }
                                             }
-                                          ],
-                                          "cssClassNames": [
-                                            {
-                                              "cssClassName": "ILP_GOAL_HEADER_GRID "
-                                            }
                                           ]
                                         },
-                                        "events": [],
+                                        "events": [
+                                          {
+                                            "triggerId": "IKKXnnAM1lOFn3YoCiFL6",
+                                            "triggerName": "ILP_GOALS_LIST_API_AFTER_DELAY",
+                                            "serviceType": "2",
+                                            "attributes": {
+                                              "delay": "500",
+                                              "storeType": "",
+                                              "searchInState": false,
+                                              "triggers": [
+                                                {
+                                                  "id": "gww71JcjJsqG0Z-kwKKzM",
+                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                  "gitBranchName": "master",
+                                                  "name": "ILP_GOALS_LIST_API",
+                                                  "status": "ACTIVE",
+                                                  "services": [
+                                                    {
+                                                      "type": "8",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "loaderWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "messageWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "responseStateKey": "RESPONSE_ILP_GOAL_LIST_API",
+                                                          "url": "/api-designer/api/transferBetweenGoal/execute",
+                                                          "checksum": true,
+                                                          "encryption": true,
+                                                          "isDeviceDetails": true,
+                                                          "loginTrigger": false,
+                                                          "formData": false,
+                                                          "logoutTrigger": false,
+                                                          "headers": {
+                                                            "Content-Type": "application/json",
+                                                            "Accept": "application/json",
+                                                            "channel_key": "002"
+                                                          },
+                                                          "requestBody": [
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.ileadId",
+                                                              "value": "ileadUserId"
+                                                            }
+                                                          ],
+                                                          "baseURL": "65de08b22c4bb94a7826d82c",
+                                                          "storeType": 2
+                                                        },
+                                                        "responseHandler": []
+                                                      }
+                                                    }
+                                                  ],
+                                                  "csrf": "0.v9lb7swturqVAxFvLZpKz648apyZj1cX",
+                                                  "_id": "QsHR164krztCM6wmVf4El",
+                                                  "updatedAt": "3/17/2024",
+                                                  "createdAt": "3/17/2024",
+                                                  "createdBy": "mubashar",
+                                                  "updatedBy": "mubashar"
+                                                }
+                                              ],
+                                              "triggerIds": [
+                                                "gww71JcjJsqG0Z-kwKKzM"
+                                              ]
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "2"
+                                          }
+                                        ],
                                         "component": {
                                           "type": "10001",
                                           "content": "Grid layout"
                                         },
-                                        "path": "0-0-1-0-1-0-0-0-0",
-                                        "dimensions": {
-                                          "rows": 1,
-                                          "columns": 1,
-                                          "colSize0xs": 12,
-                                          "colSize0sm": 12,
-                                          "colSize0md": 12,
-                                          "colSize0lg": 12,
-                                          "colSize0xl": 12
-                                        },
-                                        "readOnly": true
+                                        "path": "0-0-1-0-1-0-0-0-0"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -948,7 +1007,7 @@
                                     "itemStyle": { "padding": "0px" },
                                     "listLayout": {
                                       "padding": "0px",
-                                      "height": "32px"
+                                      "margin": "0px 0px -10px"
                                     },
                                     "mainContainer": "listLayout"
                                   },
@@ -1018,7 +1077,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-0-0-1"
+                        "path": "0-0-1-0-1"
                       }
                     ],
                     "layoutProperties": {
@@ -1095,8 +1154,7 @@
                           "label": "Header",
                           "layoutProperties": {
                             "gridLayout": {
-                              "//": "Use this class to style grid layout component.",
-                              "height": "calc(100vh - 200px)"
+                              "//": "Use this class to style grid layout component."
                             },
                             "mainContainer": "gridLayout"
                           },
@@ -1112,7 +1170,7 @@
                           ]
                         },
                         "events": [],
-                        "path": "0-0-1-0-0",
+                        "path": "0-0-2-0-0",
                         "version": "1.0.0",
                         "allowedContainers": [
                           "10001",
@@ -1134,7 +1192,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "HaDMwKKx4-J1z30WBb8Dd",
+                            "id": "YmqUP7lGe3Do_55rYv__Q",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1180,21 +1238,25 @@
                                                                     "id": "o-dcxizaVhfeubRNMa7E9",
                                                                     "gridProps": [
                                                                       {
-                                                                        "id": "L5tIPpT6DXBkwOU6SwYX2",
+                                                                        "id": "15BsEwKQVd7S6P1UjczW4",
                                                                         "status": "ACTIVE",
                                                                         "name": "Image",
                                                                         "icon": "FaImage",
                                                                         "attributes": {
-                                                                          "name": "Imag",
+                                                                          "name": "Image",
                                                                           "contentType": true,
                                                                           "defaultImageAssetIdTemp": null,
                                                                           "layoutProperties": {
                                                                             "image": {
                                                                               "//": "Use this class to style image component.",
                                                                               "width": "100%",
-                                                                              "borderRadius": "10px"
+                                                                              "borderRadius": "10px",
+                                                                              "height": "150px"
                                                                             },
                                                                             "mainContainer": "image",
+                                                                            "overlay": {
+                                                                              "//": "Only applicable if overlay is enabled from basic details"
+                                                                            },
                                                                             "xl": 12,
                                                                             "lg": 12,
                                                                             "md": 12,
@@ -1202,12 +1264,11 @@
                                                                             "xs": 12
                                                                           },
                                                                           "defaultImageAssetId": null,
-                                                                          "imageAssetIdTemp": null,
                                                                           "imageAssetId": null,
                                                                           "stateName": "image",
-                                                                          "storeType": 2,
-                                                                          "useFullLink": null,
-                                                                          "useDynamicAsset": true
+                                                                          "baseType": "full_link",
+                                                                          "imageAssetIdTemp": null,
+                                                                          "storeType": 2
                                                                         },
                                                                         "group": "Form",
                                                                         "updatedAt": "23-Aug-2021",
@@ -1222,7 +1283,7 @@
                                                                           "type": "20012"
                                                                         },
                                                                         "events": [],
-                                                                        "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0"
+                                                                        "path": "0-0-2-0-0-0-0-0-0-0-0-0-0-0-0-0-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -1453,10 +1514,10 @@
                                                                           "width": "100%",
                                                                           "progressType": "linear",
                                                                           "storeType": 2,
-                                                                          "bindingKey": "archivePercentage",
+                                                                          "bindingKey": "acheivePercentage",
                                                                           "splitLinearProgress": true,
                                                                           "progressColor": "#306A9F",
-                                                                          "colorWhenCompleted": "#E7F0F7",
+                                                                          "colorWhenCompleted": "#306A9F",
                                                                           "searchTotalValueInState": true
                                                                         },
                                                                         "icon": "AiOutlineLoading3Quarters",
@@ -1473,7 +1534,7 @@
                                                                           "type": "20060"
                                                                         },
                                                                         "events": [],
-                                                                        "path": "0-0-1-0-0-0-1-0-0-0-0-0-2-0-0"
+                                                                        "path": "0-0-2-0-0-0-0-0-0-0-0-0-0-0-2-0-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -1977,7 +2038,7 @@
                                     "path": "0-0-1-0-0-0"
                                   }
                                 ],
-                                "path": "0-0-1-0-0-0-0",
+                                "path": "0-0-2-0-0-0-0",
                                 "events": [],
                                 "attributes": {
                                   "gridProps": [],
@@ -2062,7 +2123,7 @@
                 },
                 "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
-                "path": "0-0-1"
+                "path": "0-0-2"
               }
             ],
             "layoutProperties": {
@@ -2095,9 +2156,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "mBisiE55RGjCQpDXB5lsF",
-    "createdBy": "mubashar",
-    "updatedAt": "3/18/2024",
-    "createdAt": "3/18/2024",
+    "createdBy": "talha2",
+    "updatedAt": "3/31/2024",
+    "createdAt": "3/31/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2161,9 +2222,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0,
-          "background": "#F2F2F2",
-          "height": "calc(100vh - 55px)"
+          "spacing": 0
         },
         "mainContainer": "gridLayout",
         "skeleton": {
@@ -2176,7 +2235,8 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "cssClassNames": [{ "cssClassName": "ILP_ILEAD_MAIN_GRID " }]
     },
     "layout": null,
     "events": [
@@ -2807,11 +2867,11 @@
     "attributes": {
       "gridProps": [
         {
-          "componentId": "KQnbqlL1D6dJt363cl2Jm",
+          "componentId": "JdDviN-eU2acF98FVZ777",
           "componentType": "10001",
-          "id": "KQnbqlL1D6dJt363cl2Jm",
+          "id": "JdDviN-eU2acF98FVZ777",
           "position": {
-            "i": "KQnbqlL1D6dJt363cl2Jm",
+            "i": "JdDviN-eU2acF98FVZ777",
             "x": null,
             "y": null,
             "w": null,
@@ -2836,7 +2896,7 @@
       },
       "layoutProperties": {
         "itemStyle": { "padding": "0px" },
-        "listLayout": { "padding": "0px", "height": "32px" },
+        "listLayout": { "padding": "0px", "margin": "0px 0px -10px" },
         "mainContainer": "listLayout"
       },
       "isHList": true,
@@ -2855,7 +2915,7 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "KQnbqlL1D6dJt363cl2Jm",
+    "id": "JdDviN-eU2acF98FVZ777",
     "name": "Grid layout",
     "type": "10001",
     "attributes": {
@@ -2868,7 +2928,7 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "BvjAAdpibiddKNIEE86gY",
+          "componentId": "bGmxVqtVJfCDr6HDfjTTu",
           "componentType": "20002",
           "order": 1
         }
@@ -2878,9 +2938,12 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "width": "150px"
+          "color": "#678FB7"
         },
-        "mainContainer": "gridLayout"
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
       },
       "layoutProps": {
         "direction": "row",
@@ -2891,19 +2954,27 @@
       "name": "Grid layout",
       "conditionalClasses": [
         {
-          "cssClassName": "ILP_GOAL_HEADER_CONDITIONAL_CLASS ",
+          "cssClassName": "ILP_SELECTED_CHILD_GOAL ",
           "logic": {
             "==": [
-              { "var": "cardNumber" },
-              { "var": "currentScreen.form.ILP_SELECTED_CHILD_CARD.cardNumber" }
+              {
+                "var": "currentScreen.form.ILP_SELECTED_CHILD_GOAL.cardNumber"
+              },
+              { "var": "cardNumber" }
             ]
           }
         }
-      ],
-      "cssClassNames": [{ "cssClassName": "ILP_GOAL_HEADER_GRID " }]
+      ]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "IKKXnnAM1lOFn3YoCiFL6",
+        "triggerName": "ILP_GOALS_LIST_API_AFTER_DELAY",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "mBisiE55RGjCQpDXB5lsF",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2912,7 +2983,7 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "BvjAAdpibiddKNIEE86gY",
+    "id": "bGmxVqtVJfCDr6HDfjTTu",
     "status": "ACTIVE",
     "name": "Label",
     "attributes": {
@@ -2920,13 +2991,7 @@
       "name": "Label",
       "mandatory": false,
       "layoutProperties": {
-        "label": {
-          "//": "Use this class to style label component.",
-          "textAlign": "center",
-          "fontSize": "16px",
-          "letter-spacing": "0px",
-          "fontWeight": "inherit"
-        },
+        "label": { "//": "Use this class to style label component." },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
         "mainContainer": "label",
@@ -2936,10 +3001,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "embossingName",
+      "label": "ileadChild.name",
       "searchInState": true,
-      "storeType": 1,
-      "cssClassNames": []
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "ILC_GOAL_TAB_LABEL " }]
     },
     "icon": "FaFont",
     "group": "Form",
@@ -3042,8 +3107,7 @@
       "label": "Header",
       "layoutProperties": {
         "gridLayout": {
-          "//": "Use this class to style grid layout component.",
-          "height": "calc(100vh - 200px)"
+          "//": "Use this class to style grid layout component."
         },
         "mainContainer": "gridLayout"
       },
@@ -3350,7 +3414,7 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "L5tIPpT6DXBkwOU6SwYX2",
+          "componentId": "15BsEwKQVd7S6P1UjczW4",
           "componentType": "20012",
           "order": 1
         }
@@ -3381,21 +3445,25 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "L5tIPpT6DXBkwOU6SwYX2",
+    "id": "15BsEwKQVd7S6P1UjczW4",
     "status": "ACTIVE",
     "name": "Image",
     "icon": "FaImage",
     "attributes": {
-      "name": "Imag",
+      "name": "Image",
       "contentType": true,
       "defaultImageAssetIdTemp": null,
       "layoutProperties": {
         "image": {
           "//": "Use this class to style image component.",
           "width": "100%",
-          "borderRadius": "10px"
+          "borderRadius": "10px",
+          "height": "150px"
         },
         "mainContainer": "image",
+        "overlay": {
+          "//": "Only applicable if overlay is enabled from basic details"
+        },
         "xl": 12,
         "lg": 12,
         "md": 12,
@@ -3403,12 +3471,11 @@
         "xs": 12
       },
       "defaultImageAssetId": null,
-      "imageAssetIdTemp": null,
       "imageAssetId": null,
       "stateName": "image",
-      "storeType": 2,
-      "useFullLink": null,
-      "useDynamicAsset": true
+      "baseType": "full_link",
+      "imageAssetIdTemp": null,
+      "storeType": 2
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -3420,7 +3487,7 @@
     "projectType": "web",
     "component": { "content": "Image", "type": "20012" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0-0",
+    "path": "0-0-2-0-0-0-0-0-0-0-0-0-0-0-0-0-0",
     "screenId": "mBisiE55RGjCQpDXB5lsF",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3628,10 +3695,10 @@
       "width": "100%",
       "progressType": "linear",
       "storeType": 2,
-      "bindingKey": "archivePercentage",
+      "bindingKey": "acheivePercentage",
       "splitLinearProgress": true,
       "progressColor": "#306A9F",
-      "colorWhenCompleted": "#E7F0F7",
+      "colorWhenCompleted": "#306A9F",
       "searchTotalValueInState": true
     },
     "icon": "AiOutlineLoading3Quarters",
@@ -3645,7 +3712,7 @@
     "projectType": "web",
     "component": { "content": "Progress", "type": "20060" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-0-0-0-0-2-0-0",
+    "path": "0-0-2-0-0-0-0-0-0-0-0-0-0-0-2-0-0",
     "screenId": "mBisiE55RGjCQpDXB5lsF",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

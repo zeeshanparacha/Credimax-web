@@ -1,0 +1,73 @@
+{
+  "id": "YIrQDIiNQxCw6PYG3sM1I",
+  "_id": "v58BBCvrWcyX_JFZer-3s",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TBG_PAY_API",
+  "old_name": "TBG_PAY_API",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "tbg_response",
+          "url": "/api-designer/api/transferBetweenCardsAndGoals/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request",
+              "value": "tbg_request"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2,
+          "triggerGenericErrorTrigger": false,
+          "hideLoading": true,
+          "loadingState": "TBG_generic_loader",
+          "isLoadingState": true
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "TBG_SHOW_RESPONSE",
+            "triggerId": "1x0YElduMbIgpPwQGo5tV"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "TBG_SHOW_RESPONSE",
+            "triggerId": "1x0YElduMbIgpPwQGo5tV"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILC_TBG_GET_USER_BALANCES",
+            "triggerId": "0wTP4lM7IXKJZnOn-TL6p"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.vv3ay627ng3WOTbrb_E40xdVBT9K0eZ",
+  "updatedAt": "3/29/2024",
+  "createdAt": "3/29/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

@@ -1,0 +1,118 @@
+{
+  "_id": "WIE_Z9khOOso9Cvfo5Ue5",
+  "id": "OubfUkR4cXrJPpy9CYbN7",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+  "old_name": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "ILC_GOAL_CALCULATION_API",
+              "triggerId": "dvxixdWWX2E0s6Y21qxR8",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
+                      "url": "/api-designer/api/iLeadGoalCalculation/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "amount",
+                          "value": "ILCG_GOAL_AMOUNT"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "contributationFreq",
+                          "value": "ILC_FREQUENCY.name"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "startDate",
+                          "value": "ILCG_START_DATE"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "contributionAmount",
+                          "value": "IILCG_AMOUNT"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "targetDate",
+                          "value": "ILCG_TARGET_DATE"
+                        }
+                      ],
+                      "baseURL": "65e87c3e2f9c444e88698ebc",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "logic": {
+                "and": [
+                  {
+                    ">": [
+                      { "var": "currentScreen.form.ILCG_START_DATE.length" },
+                      0
+                    ]
+                  },
+                  {
+                    ">": [
+                      { "var": "currentScreen.form.ILCG_GOAL_AMOUNT.length" },
+                      0
+                    ]
+                  },
+                  {
+                    ">": [
+                      { "var": "currentScreen.form.ILC_FREQUENCY.name.length" },
+                      0
+                    ]
+                  },
+                  {
+                    ">": [
+                      { "var": "currentScreen.form.ILCG_TARGET_DATE.length" },
+                      0
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.h6j87grc9zeP5yqANAQfbcmyZG0Irzs",
+  "updatedAt": "3/28/2024",
+  "createdAt": "3/28/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "onzzlWZ2fRxEMNogu5mL0",
+  "_id": "QlVAqM2ZGb2oXXSz182a4",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPP_UPDATE_PAYMENT",
+  "old_name": "ILPP_UPDATE_PAYMENT",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "pc_release_payment",
+          "url": "/api-designer/api/updateIleadPrentPayment/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request",
+              "value": "pc_request"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.validation",
+              "value": "pc_validation_object"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.cardOrAccount.toCardNumber",
+              "value": "CURRENT_CARD.cardNumber"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.cardOrAccount.currency",
+              "value": "BHD"
+            },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "request.cardOrAccount.cprOfOtherCardHolder",
+              "value": "userProfile.content.customer.userIdenValue"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.type",
+              "value": "ALLOWANCE"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.enable",
+              "value": "1"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2,
+          "loadingState": "PCRP_Loader_Generic",
+          "isLoadingState": true
+        },
+        "responseHandler": [
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+            },
+            "httpStatus": 200,
+            "triggerName": "PC_SHOW_RESPONSE",
+            "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+          },
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, true, false]
+            },
+            "httpStatus": 200,
+            "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+            "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+          },
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, true, false]
+            },
+            "httpStatus": 200,
+            "triggerName": "PC_REDIRECT_TO_BENIFIT",
+            "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.ha9e13jdfum7305XYI84wMgrnKraFfpv",
+  "updatedAt": "3/23/2024",
+  "createdAt": "3/23/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

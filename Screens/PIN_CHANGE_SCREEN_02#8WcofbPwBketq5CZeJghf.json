@@ -486,7 +486,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "oZABL5BuNcB9fR3pyz-C0",
+                    "id": "EffICptYmL-HAY1UmK5d2",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -759,7 +759,7 @@
                                                                               "var": "form.pinChange"
                                                                             },
                                                                             {
-                                                                              "var": "form.oldPin"
+                                                                              "var": "form.pinConfirm"
                                                                             }
                                                                           ]
                                                                         },
@@ -1036,7 +1036,7 @@
                                                                               "var": "form.pinChange"
                                                                             },
                                                                             {
-                                                                              "var": "pinConfirm"
+                                                                              "var": "form.pinConfirm"
                                                                             }
                                                                           ]
                                                                         },
@@ -2019,7 +2019,7 @@
                                                                   "type": 1,
                                                                   "name": "Form",
                                                                   "key": "oldPin",
-                                                                  "value": "existingPin"
+                                                                  "value": "oldPin"
                                                                 },
                                                                 {
                                                                   "type": 1,
@@ -2031,8 +2031,8 @@
                                                               "baseURL": "656f0b4398e9df55f0499597",
                                                               "storeType": 2
                                                             },
-                                                            "type": "2",
-                                                            "name": "On click",
+                                                            "type": "4",
+                                                            "name": "On Submit",
                                                             "commandType": "1"
                                                           }
                                                         ],
@@ -2308,7 +2308,7 @@
                 },
                 "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
-                "path": "0-0-1",
+                "path": "1-0-1",
                 "dimensions": {
                   "rows": 1,
                   "columns": 1,
@@ -2352,8 +2352,8 @@
     "gitBranchName": "master",
     "_id": "8WcofbPwBketq5CZeJghf",
     "createdBy": "basitahmed1199",
-    "updatedAt": "2/19/2024",
-    "createdAt": "2/19/2024",
+    "updatedAt": "3/26/2024",
+    "createdAt": "3/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3373,7 +3373,9 @@
         ],
         "logic": {
           "if": [
-            { "!=": [{ "var": "form.pinChange" }, { "var": "form.oldPin" }] },
+            {
+              "!=": [{ "var": "form.pinChange" }, { "var": "form.pinConfirm" }]
+            },
             true,
             false
           ]
@@ -3619,7 +3621,9 @@
         "jsonLogicErrorMessage": "Pin do not match",
         "logic": {
           "if": [
-            { "!=": [{ "var": "form.pinChange" }, { "var": "pinConfirm" }] },
+            {
+              "!=": [{ "var": "form.pinChange" }, { "var": "form.pinConfirm" }]
+            },
             true,
             false
           ]
@@ -4248,8 +4252,8 @@
       {
         "triggerId": "P_n3FFyCYc_SsVSPXQoKV",
         "triggerName": "SET_NEW_PIN_CHANGE",
-        "name": "On click",
-        "type": "2",
+        "name": "On Submit",
+        "type": "4",
         "serviceType": "8"
       }
     ],

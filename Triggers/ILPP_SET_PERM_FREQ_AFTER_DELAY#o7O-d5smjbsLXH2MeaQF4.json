@@ -1,0 +1,167 @@
+{
+  "_id": "o7O-d5smjbsLXH2MeaQF4",
+  "id": "euKUw1G4UtQvOZpuA7dSl",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPP_SET_PERM_FREQ_AFTER_DELAY",
+  "old_name": "ILPP_SET_PERM_FREQ_AFTER_DELAY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "100",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "ULNEuyy_ALlkf_2aJYTBO",
+              "_id": "4vm53q3cOtDek7txbfCwz",
+              "name": "ILPP_SET_FREQ_PERM",
+              "old_name": "ILPP_SET_FREQ_PERM",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "ilpp_recuringType_permanent",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": {
+                            "var": "currentScreen.form.ILC_FREQUENCY.name"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.kee2ux129y9eb4nODy2mGvxU89KZ5QsL",
+              "updatedAt": "3/23/2024",
+              "createdAt": "3/23/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
+            },
+            {
+              "_id": "qwfythmiRq9BQgwEfU_kj",
+              "id": "cV9JO6QRN9agAtBlLPVbe",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILPP_SET_DEFAULT_DATE_AFTER_FREQ_SELECTION_2",
+              "old_name": "ILPP_SET_DEFAULT_DATE_AFTER_FREQ_SELECTION",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "logic": {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.ILC_FREQUENCY.name"
+                              },
+                              "Monthly"
+                            ]
+                          },
+                          "triggerName": "ILPP_GET_DATE_PLUS_1",
+                          "triggerId": "eDGQQ6sMw4O_bVGYlMbtP",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "11",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "destinationBindingKey": "ilpp_date_permanent",
+                                  "sourceBindingKey": "",
+                                  "destinationStoreType": 1,
+                                  "dateDifference": "1",
+                                  "dateFormat": "dd-MM-yyyy"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.ILC_FREQUENCY.name"
+                              },
+                              "Weekly"
+                            ]
+                          },
+                          "triggerName": "SET_DATE_AS_DEFAULT_DAY",
+                          "triggerId": "R_x5UBQJsLke1pFxzqg9n",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "ilpp_date",
+                                      "changeValueConditonally": false,
+                                      "storeType": 1,
+                                      "logic": "Sunday"
+                                    },
+                                    {
+                                      "key": "ilpp_day",
+                                      "storeType": 1,
+                                      "logic": {
+                                        "code": "Sunday",
+                                        "name": "Sunday"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.6yll64w86p4kITiVdZB08zHlzlDet-sY",
+              "updatedAt": "3/23/2024",
+              "createdAt": "3/23/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
+            }
+          ],
+          "triggerIds": ["ULNEuyy_ALlkf_2aJYTBO", "cV9JO6QRN9agAtBlLPVbe"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.kee2ux129y9eb4nODy2mGvxU89KZ5QsL",
+  "updatedAt": "3/23/2024",
+  "createdAt": "3/23/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

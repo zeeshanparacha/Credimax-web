@@ -1,8 +1,10 @@
 {
   "id": "yg_6GaV9o6d1yKO0qKqH-",
+  "_id": "32Y3whvRptKvMGGGajQy9",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "ILPT_CREATE_NEW_TASK",
+  "old_name": "ILPT_CREATE_NEW_TASK",
   "status": "ACTIVE",
   "services": [
     {
@@ -56,23 +58,59 @@
               "value": "ilpt_selected_frequency.name"
             },
             {
+              "type": 4,
+              "name": "Static",
+              "key": "request.currency",
+              "value": "BHD"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.rewardUnit",
+              "value": "BHD"
+            },
+            {
               "type": 1,
               "name": "Form",
-              "key": "request.currency",
-              "value": "selected_child.balanceViews.0.ileadUserData.currency"
+              "key": "request.date",
+              "value": "ilpt_date"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.assignIds",
+              "value": "ilpt_assign_id"
             }
           ],
-          "baseURL": "65de08b22c4bb94a7826d82c",
+          "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "ILPT_CREATE_TASK_ERROR_TOAST",
+            "triggerId": "tLI3-OvdlC7YgQG-K9ssD",
+            "logic": { "==": [{ "var": "code" }, 0] }
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "GO_TO_ILP_TAKS_SCREEN",
+            "triggerId": "VbfqZfOqr0HgY5PzihDTK",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "ILPT_CLEAR_STATES",
+            "triggerId": "bNbUhCchYtjivQ1hqfFPP",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
       }
     }
   ],
-  "csrf": "0.i7sau07nfoogM4nlprIPFlM4JM1qahKC",
-  "_id": "32Y3whvRptKvMGGGajQy9",
-  "updatedAt": "3/19/2024",
-  "createdAt": "3/19/2024",
+  "csrf": "0.gvwofx4nvlotrY7Be2nGGDyb9Tn6Y_ko",
+  "updatedAt": "3/29/2024",
+  "createdAt": "3/29/2024",
   "createdBy": "basitahmed1199",
   "updatedBy": "basitahmed1199"
 }

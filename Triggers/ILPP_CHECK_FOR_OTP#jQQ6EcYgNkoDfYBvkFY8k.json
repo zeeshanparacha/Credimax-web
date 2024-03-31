@@ -20,98 +20,235 @@
                   1
                 ]
               },
-              "triggerName": "ILPP_RELEASE_PAYMENT",
-              "triggerId": "nl4S3iCIsKwnWkNcrfLFB",
+              "triggerName": "ILPP_RELEASE_PAYMENT_CONDITIONALLY",
+              "triggerId": "9bbsZ6atV_FVqK_dUxRv0",
               "services": [
                 {
-                  "type": "8",
+                  "type": "13",
                   "command": {
                     "type": "1",
                     "attributes": {
-                      "loaderWidgetIds": [906070],
-                      "messageWidgetIds": [906070],
-                      "responseStateKey": "pc_release_payment",
-                      "url": "/api-designer/api/createIleadPrentPayment/execute",
-                      "checksum": true,
-                      "encryption": true,
-                      "isDeviceDetails": true,
-                      "loginTrigger": false,
-                      "formData": false,
-                      "logoutTrigger": false,
-                      "headers": {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "channel_key": "002"
-                      },
-                      "requestBody": [
+                      "triggers": [
                         {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "request",
-                          "value": "pc_request"
+                          "logic": {
+                            "==": [
+                              { "var": "currentScreen.page_name" },
+                              "Edit payment"
+                            ]
+                          },
+                          "triggerName": "ILPP_UPDATE_PAYMENT",
+                          "triggerId": "onzzlWZ2fRxEMNogu5mL0",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "pc_release_payment",
+                                  "url": "/api-designer/api/updateIleadPrentPayment/execute",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": true,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request",
+                                      "value": "pc_request"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.validation",
+                                      "value": "pc_validation_object"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.cardOrAccount.toCardNumber",
+                                      "value": "CURRENT_CARD.cardNumber"
+                                    },
+                                    {
+                                      "type": 4,
+                                      "name": "Static",
+                                      "key": "request.cardOrAccount.currency",
+                                      "value": "BHD"
+                                    },
+                                    {
+                                      "type": 3,
+                                      "name": "Current session",
+                                      "key": "request.cardOrAccount.cprOfOtherCardHolder",
+                                      "value": "userProfile.content.customer.userIdenValue"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2,
+                                  "loadingState": "PCRP_Loader_Generic",
+                                  "isLoadingState": true
+                                },
+                                "responseHandler": [
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        false,
+                                        true
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_SHOW_RESPONSE",
+                                    "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+                                  },
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        true,
+                                        false
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+                                    "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+                                  },
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        true,
+                                        false
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_REDIRECT_TO_BENIFIT",
+                                    "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
                         },
                         {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "request.validation",
-                          "value": "pc_validation_object"
-                        },
-                        {
-                          "type": 2,
-                          "name": "Current screen",
-                          "key": "request.cardOrAccount.toCardNumber",
-                          "value": "CURRENT_CARD.cardNumber"
-                        },
-                        {
-                          "type": 4,
-                          "name": "Static",
-                          "key": "request.cardOrAccount.currency",
-                          "value": "BHD"
+                          "logic": {
+                            "!=": [
+                              { "var": "currentScreen.page_name" },
+                              "Edit payment"
+                            ]
+                          },
+                          "triggerName": "ILPP_RELEASE_PAYMENT",
+                          "triggerId": "nl4S3iCIsKwnWkNcrfLFB",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "pc_release_payment",
+                                  "url": "/api-designer/api/createIleadParentPayment/execute",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": true,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request",
+                                      "value": "pc_request"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.validation",
+                                      "value": "pc_validation_object"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "request.cardOrAccount.toCardNumber",
+                                      "value": "CURRENT_CARD.cardNumber"
+                                    },
+                                    {
+                                      "type": 4,
+                                      "name": "Static",
+                                      "key": "request.cardOrAccount.currency",
+                                      "value": "BHD"
+                                    },
+                                    {
+                                      "type": 3,
+                                      "name": "Current session",
+                                      "key": "request.cardOrAccount.cprOfOtherCardHolder",
+                                      "value": "userProfile.content.customer.userIdenValue"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2,
+                                  "loadingState": "PCRP_Loader_Generic",
+                                  "isLoadingState": true
+                                },
+                                "responseHandler": [
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        false,
+                                        true
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_SHOW_RESPONSE",
+                                    "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+                                  },
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        true,
+                                        false
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+                                    "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+                                  },
+                                  {
+                                    "logic": {
+                                      "if": [
+                                        { "var": "content.benefitRedirectUrl" },
+                                        true,
+                                        false
+                                      ]
+                                    },
+                                    "httpStatus": 200,
+                                    "triggerName": "PC_REDIRECT_TO_BENIFIT",
+                                    "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+                                  }
+                                ]
+                              }
+                            }
+                          ]
                         }
-                      ],
-                      "baseURL": "656f0b4398e9df55f0499597",
-                      "storeType": 2,
-                      "loadingState": "PCRP_Loader_Generic",
-                      "isLoadingState": true
-                    },
-                    "responseHandler": [
-                      {
-                        "logic": {
-                          "if": [
-                            { "var": "content.benefitRedirectUrl" },
-                            false,
-                            true
-                          ]
-                        },
-                        "httpStatus": 200,
-                        "triggerName": "PC_SHOW_RESPONSE",
-                        "triggerId": "0ng9Cais2R8XaYCuWV8sW"
-                      },
-                      {
-                        "logic": {
-                          "if": [
-                            { "var": "content.benefitRedirectUrl" },
-                            true,
-                            false
-                          ]
-                        },
-                        "httpStatus": 200,
-                        "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
-                        "triggerId": "tUDjtDaOHEtaVjVJM71JY"
-                      },
-                      {
-                        "logic": {
-                          "if": [
-                            { "var": "content.benefitRedirectUrl" },
-                            true,
-                            false
-                          ]
-                        },
-                        "httpStatus": 200,
-                        "triggerName": "PC_REDIRECT_TO_BENIFIT",
-                        "triggerId": "9FGN41WEwt-ux_dXEzsVG"
-                      }
-                    ]
+                      ]
+                    }
                   }
                 }
               ]
@@ -143,9 +280,9 @@
       }
     }
   ],
-  "csrf": "0.229221f9slvV9lQyoFyrFNugfLadwKPz",
-  "updatedAt": "3/22/2024",
-  "createdAt": "3/22/2024",
+  "csrf": "0.5gxjjh5iy1jfG8aVeRAGLz5UgEA5Gij",
+  "updatedAt": "3/23/2024",
+  "createdAt": "3/23/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

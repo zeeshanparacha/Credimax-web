@@ -1,0 +1,463 @@
+{
+  "id": "e1O6U-Ti1j7QjJbLvGBRj",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "DASH_GET_FIRST_CARD_CONDITIONALLY_FOR_CHILD",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "DASH_GET_FIRST_CARD",
+              "triggerId": "5UlaO0npVGEe_6eYw4RAZ",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "REU1xKw8ww6iaT9Bwy-tE",
+                          "name": "SET_CARD_INDEX_AS_ZERO",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "SLIDER_CARD_INDEX",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, 0, 0] }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.xvbi8wc3gqcYe6KPF5tpulQqMw4HogOA",
+                          "_id": "US3PyU3w1_pFtW9Kj6qS3",
+                          "updatedAt": "3/14/2024",
+                          "createdAt": "3/14/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        },
+                        {
+                          "_id": "d7EViLbuuYp8h4oO7NHoT",
+                          "id": "B6DAIfB-z1pA3GE8Yc20q",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "DASH_CHANGE_CARD_CHAIN_TRIGGER",
+                          "old_name": "DASH_CHANGE_CARD_CHAIN_TRIGGER",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "2",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "delay": "",
+                                  "storeType": "",
+                                  "searchInState": false,
+                                  "triggers": [
+                                    {
+                                      "id": "Yg6bPrf7eN8GksoM11VyL",
+                                      "_id": "BkWmqgBmOaIuLan7E3ZLI",
+                                      "name": "CURRENT_CARD_SLIDER",
+                                      "old_name": "CURRENT_CARD_SLIDER",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "services": [
+                                        {
+                                          "type": "11",
+                                          "command": {
+                                            "type": "13",
+                                            "attributes": {
+                                              "requestBody": [],
+                                              "storeType": "",
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "dataType": "",
+                                              "destinationBindingKey": "CURRENT_CARD",
+                                              "sourceBindingKey": "cards.cardList",
+                                              "sourceStoreType": 2,
+                                              "destinationStoreType": 2,
+                                              "indexBindingKey": "SLIDER_CARD_INDEX",
+                                              "indexStoreType": 2,
+                                              "indexType": "dynamic"
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.4oud734xp9mBEcTzNq0B-UDggfC0h1Yu",
+                                      "updatedAt": "12/21/2023",
+                                      "createdAt": "12/21/2023",
+                                      "createdBy": "zeeshan",
+                                      "updatedBy": "zeeshan"
+                                    },
+                                    {
+                                      "_id": "R9dYoH295UJwpaIjdrXv9",
+                                      "id": "g5fHC43VY53QNdwz5zUw5",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "name": "SHOW_CARDS_SLIDER_CONDITIONALLY",
+                                      "old_name": "SHOW_CARDS_SLIDER_CONDITIONALLY",
+                                      "status": "ACTIVE",
+                                      "services": [
+                                        {
+                                          "type": "13",
+                                          "command": {
+                                            "type": "1",
+                                            "attributes": {
+                                              "triggers": [
+                                                {
+                                                  "logic": {
+                                                    "==": [
+                                                      {
+                                                        "var": "currentScreen.cards.cardList.length"
+                                                      },
+                                                      "1"
+                                                    ]
+                                                  },
+                                                  "triggerName": "SHOW_LAST_ADD_CARD_SLIDER",
+                                                  "triggerId": "_aJhb4aXw5fG1_ilBUGei",
+                                                  "services": [
+                                                    {
+                                                      "type": "1",
+                                                      "command": {
+                                                        "type": "2",
+                                                        "attributes": {
+                                                          "fromWidgetId": "9naXfXYGeWk_I3jlR3otf",
+                                                          "nextWidgetId": "bH-fDr8R-qjw1yumQ5tlk",
+                                                          "gridRadioValue": "Grid",
+                                                          "selectedObjectBindingKey": "selectedObject",
+                                                          "editableForm": false
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "logic": {
+                                                    ">": [
+                                                      {
+                                                        "var": "currentScreen.cards.cardList.length"
+                                                      },
+                                                      "1"
+                                                    ]
+                                                  },
+                                                  "triggerName": "SHOW_MULTIPLE_CARD_SLIDER",
+                                                  "triggerId": "E183eRJvHBu4FFHTEb6yq",
+                                                  "services": [
+                                                    {
+                                                      "type": "1",
+                                                      "command": {
+                                                        "type": "2",
+                                                        "attributes": {
+                                                          "fromWidgetId": "9naXfXYGeWk_I3jlR3otf",
+                                                          "nextWidgetId": "lPD-7h6_XS-VQ8oRrtGFP",
+                                                          "gridRadioValue": "Grid",
+                                                          "selectedObjectBindingKey": "selectedObject",
+                                                          "editableForm": false
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.99ss65b63jNL3tiJuWvSufvfeByTw8L",
+                                      "updatedAt": "12/28/2023",
+                                      "createdAt": "12/28/2023",
+                                      "createdBy": "muhammad.asad",
+                                      "updatedBy": "muhammad.asad"
+                                    },
+                                    {
+                                      "id": "oipplJ53jAexiPIfeiZAa",
+                                      "_id": "X_MgATIq_zlbIuVGTVRal",
+                                      "name": "DASHBOARD_TABS_SWAP",
+                                      "old_name": "DASHBOARD_TABS_SWAP",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "services": [
+                                        {
+                                          "type": "1",
+                                          "command": {
+                                            "type": "2",
+                                            "attributes": {
+                                              "fromWidgetId": "mlpUITl-IKVydahD783zV",
+                                              "nextWidgetId": "TNlMsMCFvZdo9p1OcOt0g",
+                                              "gridRadioValue": "Grid",
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "editableForm": false
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.lryqb1itmskaztH2jqdj42aVNgcHxQW",
+                                      "updatedAt": "3/6/2024",
+                                      "createdAt": "3/6/2024",
+                                      "createdBy": "talha2",
+                                      "updatedBy": "talha2"
+                                    },
+                                    {
+                                      "id": "V1NrxBI8xu-krjFaXwZiq",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "name": "DASH_CARD_RELATED_APIS_AFTER_DELAY",
+                                      "old_name": "",
+                                      "status": "ACTIVE",
+                                      "services": [
+                                        {
+                                          "type": "2",
+                                          "command": {
+                                            "type": "2",
+                                            "attributes": {
+                                              "delay": "1000",
+                                              "storeType": "",
+                                              "searchInState": false,
+                                              "triggers": [
+                                                {
+                                                  "id": "9LHS775b0Z8GDXMCQ9pPp",
+                                                  "_id": "KFDWh3WZG73nSR62cD7Uw",
+                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                  "gitBranchName": "master",
+                                                  "name": "GET_CARD_STATEMENTS_TRIGGER",
+                                                  "old_name": "GET_CARD_STATEMENTS_TRIGGER",
+                                                  "status": "ACTIVE",
+                                                  "services": [
+                                                    {
+                                                      "type": "8",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "loaderWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "messageWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "responseStateKey": "cardStatements",
+                                                          "url": "/card/v1/getCardStatements",
+                                                          "checksum": true,
+                                                          "encryption": true,
+                                                          "isDeviceDetails": false,
+                                                          "loginTrigger": false,
+                                                          "formData": false,
+                                                          "logoutTrigger": false,
+                                                          "headers": {
+                                                            "Content-Type": "application/json",
+                                                            "channel_key": "002"
+                                                          },
+                                                          "requestBody": [
+                                                            {
+                                                              "type": 4,
+                                                              "name": "Static",
+                                                              "key": "name",
+                                                              "value": "Current Statement"
+                                                            },
+                                                            {
+                                                              "type": 4,
+                                                              "name": "Static",
+                                                              "key": "date",
+                                                              "value": "date"
+                                                            },
+                                                            {
+                                                              "type": 2,
+                                                              "name": "Current screen",
+                                                              "key": "cardNumber",
+                                                              "value": "CURRENT_CARD.cardNumber"
+                                                            },
+                                                            {
+                                                              "type": 2,
+                                                              "name": "Current screen",
+                                                              "key": "cardType",
+                                                              "value": "CURRENT_CARD.cardType"
+                                                            }
+                                                          ],
+                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                          "storeType": 2
+                                                        },
+                                                        "responseHandler": []
+                                                      }
+                                                    }
+                                                  ],
+                                                  "csrf": "0.7gcbfe8l7uk094-tggnSRngJ5FW-VM0Q",
+                                                  "updatedAt": "3/6/2024",
+                                                  "createdAt": "3/6/2024",
+                                                  "createdBy": "talha",
+                                                  "updatedBy": "talha"
+                                                },
+                                                {
+                                                  "id": "ViU58dxCCkpwIlu6Zt6Rs",
+                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                  "gitBranchName": "master",
+                                                  "name": "DASH_GET_CHILD_PAYMENTS_CONDITIONALLY",
+                                                  "old_name": "",
+                                                  "status": "ACTIVE",
+                                                  "services": [
+                                                    {
+                                                      "type": "13",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "triggers": [
+                                                            {
+                                                              "triggerName": "ILP_GET_PAYMENTS_AFTER_DELAY",
+                                                              "triggerId": "fu51HfXXuFxR7Ac8q_xED",
+                                                              "services": [
+                                                                {
+                                                                  "type": "2",
+                                                                  "command": {
+                                                                    "type": "2",
+                                                                    "attributes": {
+                                                                      "delay": "1000",
+                                                                      "storeType": "",
+                                                                      "searchInState": false,
+                                                                      "triggers": [],
+                                                                      "triggerIds": []
+                                                                    }
+                                                                  }
+                                                                }
+                                                              ],
+                                                              "logic": {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentSession.dash_type"
+                                                                  },
+                                                                  "ilp child dashboard"
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
+                                                  "_id": "2aj5kDP_OAJbAb8Txklp7",
+                                                  "updatedAt": "3/13/2024",
+                                                  "createdAt": "3/13/2024",
+                                                  "createdBy": "talha",
+                                                  "updatedBy": "talha"
+                                                }
+                                              ],
+                                              "triggerIds": [
+                                                "9LHS775b0Z8GDXMCQ9pPp",
+                                                "ViU58dxCCkpwIlu6Zt6Rs"
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
+                                      "_id": "TUZK8fZuVndhsUk7syzrO",
+                                      "updatedAt": "3/13/2024",
+                                      "createdAt": "3/13/2024",
+                                      "createdBy": "talha",
+                                      "updatedBy": "talha"
+                                    },
+                                    {
+                                      "id": "3iyBAR-fbF57Hpql6j0pq",
+                                      "name": "DASH_CLEAR_STATEMENT_FOR_NEW_CARD",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "services": [
+                                        {
+                                          "type": "11",
+                                          "command": {
+                                            "type": "15",
+                                            "attributes": {
+                                              "filterList": [
+                                                {
+                                                  "key": "cardStatements",
+                                                  "changeValueConditonally": false,
+                                                  "storeType": 2,
+                                                  "logic": null
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.l1jd5l6dom5DXs6HEpPGC0xI2X35E7T",
+                                      "_id": "rkF3OSnMUBKOdHYdanmn7",
+                                      "updatedAt": "3/13/2024",
+                                      "createdAt": "3/13/2024",
+                                      "createdBy": "talha",
+                                      "updatedBy": "talha"
+                                    }
+                                  ],
+                                  "triggerIds": [
+                                    "Yg6bPrf7eN8GksoM11VyL",
+                                    "g5fHC43VY53QNdwz5zUw5",
+                                    "oipplJ53jAexiPIfeiZAa",
+                                    "V1NrxBI8xu-krjFaXwZiq",
+                                    "3iyBAR-fbF57Hpql6j0pq"
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.l1jd5l6dom5DXs6HEpPGC0xI2X35E7T",
+                          "updatedAt": "3/13/2024",
+                          "createdAt": "3/13/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        }
+                      ],
+                      "triggerIds": [
+                        "REU1xKw8ww6iaT9Bwy-tE",
+                        "B6DAIfB-z1pA3GE8Yc20q"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "!": [
+                  {
+                    "in": [
+                      { "var": "currentScreen.CURRENT_CARD.cardNumber" },
+                      {
+                        "map": [
+                          { "var": "currentScreen.cards.cardList" },
+                          { "var": "cardNumber" }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.y4txsu3wfajXhuECY5LPCtRM9Yug-zf",
+  "_id": "kKnorQSLokPCEJzARuEjL",
+  "updatedAt": "3/24/2024",
+  "createdAt": "3/24/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

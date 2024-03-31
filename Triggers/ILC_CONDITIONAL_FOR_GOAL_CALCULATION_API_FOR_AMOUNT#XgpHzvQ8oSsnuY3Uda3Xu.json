@@ -3,8 +3,8 @@
   "id": "Ikrr3sjIZA4001F2hBtjT",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
-  "name": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API",
-  "old_name": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API",
+  "name": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
+  "old_name": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
   "status": "ACTIVE",
   "services": [
     {
@@ -14,8 +14,8 @@
         "attributes": {
           "triggers": [
             {
-              "triggerName": "ILC_GOAL_CALCULATION_API",
-              "triggerId": "dvxixdWWX2E0s6Y21qxR8",
+              "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
+              "triggerId": "nfji7B_h9wTBrDHwEERnM",
               "services": [
                 {
                   "type": "8",
@@ -41,38 +41,39 @@
                         {
                           "type": 1,
                           "name": "Form",
-                          "key": "amount",
+                          "key": "request.amount",
                           "value": "ILCG_GOAL_AMOUNT"
                         },
                         {
                           "type": 1,
                           "name": "Form",
-                          "key": "contributationFreq",
+                          "key": "request.contributionFreq",
                           "value": "ILC_FREQUENCY.name"
                         },
                         {
                           "type": 1,
                           "name": "Form",
-                          "key": "startDate",
+                          "key": "request.startDate",
                           "value": "ILCG_START_DATE"
                         },
                         {
                           "type": 1,
                           "name": "Form",
-                          "key": "contributionAmount",
-                          "value": "IILCG_AMOUNT"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "targetDate",
-                          "value": "ILCG_TARGET_DATE"
+                          "key": "request.contibutionAmount",
+                          "value": "ILCG_AMOUNT"
                         }
                       ],
-                      "baseURL": "65e87c3e2f9c444e88698ebc",
+                      "baseURL": "656f0b4398e9df55f0499597",
                       "storeType": 2
                     },
-                    "responseHandler": []
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
+                        "triggerId": "UUE-rGmre9rrh8dWl_xff"
+                      }
+                    ]
                   }
                 }
               ],
@@ -97,22 +98,7 @@
                     ]
                   },
                   {
-                    "or": [
-                      {
-                        ">": [
-                          {
-                            "var": "currentScreen.form.ILCG_TARGET_DATE.length"
-                          },
-                          0
-                        ]
-                      },
-                      {
-                        ">": [
-                          { "var": "currentScreen.form.ILCG_AMOUNT.length" },
-                          0
-                        ]
-                      }
-                    ]
+                    ">": [{ "var": "currentScreen.form.ILCG_AMOUNT.length" }, 0]
                   }
                 ]
               }
@@ -122,9 +108,9 @@
       }
     }
   ],
-  "csrf": "0.8lhykihe0ldjYiJXowPMx7GZbO7hVplp",
-  "updatedAt": "3/18/2024",
-  "createdAt": "3/18/2024",
+  "csrf": "0.h6j87grc9zeP5yqANAQfbcmyZG0Irzs",
+  "updatedAt": "3/28/2024",
+  "createdAt": "3/28/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }

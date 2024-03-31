@@ -106,6 +106,43 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "6"
+          },
+          {
+            "triggerId": "yQ8I6HwYvGUr07xl1Sztw",
+            "triggerName": "ILPT_CREATE_TASK_SUCCESS_TOAST_CONDITIONAL",
+            "serviceType": "13",
+            "attributes": {
+              "triggers": [
+                {
+                  "triggerName": "ILPT_CREATE_TASK_SUCCESS_TOAST",
+                  "triggerId": "A8dSch8UWwOdDFZ2Da6og",
+                  "services": [
+                    {
+                      "type": "9",
+                      "command": {
+                        "type": "3",
+                        "attributes": {
+                          "type": "success",
+                          "modalId": "hSqsxaYunxT4fZywmJcJ0",
+                          "toastContentType": "stateBased",
+                          "storeType": 2,
+                          "stateName": "ilpt_create_new_task.message"
+                        }
+                      }
+                    }
+                  ],
+                  "logic": {
+                    "==": [
+                      { "var": "currentScreen.ilpt_create_new_task.code" },
+                      1
+                    ]
+                  }
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "order": 1,
@@ -118,7 +155,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "qxOcCclMWljAsoG4M9Gqe",
+            "id": "xASx0v41xCA0zAkSqJH3v",
             "gridProps": [
               {
                 "id": "KMXUq0RQooS_uKOtXqJmH",
@@ -579,9 +616,64 @@
                                             "type": "2",
                                             "name": "On click",
                                             "commandType": "3"
+                                          },
+                                          {
+                                            "triggerId": "bNbUhCchYtjivQ1hqfFPP",
+                                            "triggerName": "ILPT_CLEAR_STATES",
+                                            "serviceType": "11",
+                                            "attributes": {
+                                              "storeType": "",
+                                              "selectedObjectBindingKey": "selectedObject",
+                                              "dataType": "",
+                                              "sourceBindingKey": "",
+                                              "filterList": [
+                                                {
+                                                  "key": "ilp_new_task",
+                                                  "changeValueConditonally": false,
+                                                  "storeType": 1,
+                                                  "logic": null
+                                                },
+                                                {
+                                                  "key": "ilp_task_reward",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "ilpt_assign_id",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "ilpt_date",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "ilpt_selected_chip",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "ilpt_selected_chip_array",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "ilpt_selected_frequency",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "ilpt_toggle",
+                                                  "storeType": 1
+                                                },
+                                                {
+                                                  "key": "selected_child",
+                                                  "storeType": 1,
+                                                  "logic": null
+                                                }
+                                              ]
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "15"
                                           }
                                         ],
-                                        "path": "0-0-0-0-1-1-0-0-0"
+                                        "path": "0-0-2-0-1-1-0-0-0"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -767,7 +859,7 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "embossingName",
+                                                          "label": "ileadChild.name",
                                                           "searchInState": true,
                                                           "storeType": 2
                                                         },
@@ -1139,7 +1231,8 @@
                         "component": {
                           "type": "10001",
                           "content": "Grid layout"
-                        }
+                        },
+                        "path": "0-0-2-0-2"
                       }
                     ],
                     "layoutProperties": {
@@ -1210,7 +1303,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "5CU5tsWsZXMIacJCuDxzZ",
+                            "id": "RpzhIJG2-7RtjqQgJaW_E",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -2756,7 +2849,7 @@
                                                                                         {
                                                                                           "var": "status"
                                                                                         },
-                                                                                        "Pending"
+                                                                                        "Waiting Apporval"
                                                                                       ]
                                                                                     }
                                                                                   }
@@ -2775,7 +2868,7 @@
                                                                                   "type": "20002"
                                                                                 },
                                                                                 "events": [],
-                                                                                "path": "0-0-1-0-0-0-0-0-1-0-0-0-1-0-1-1-0-0-1"
+                                                                                "path": "0-0-3-0-0-0-0-0-1-0-0-0-1-0-0-1-0-0-1"
                                                                               },
                                                                               {
                                                                                 "id": "2aVfos14HQd6dBSsmWBDE",
@@ -2818,7 +2911,7 @@
                                                                                         {
                                                                                           "var": "status"
                                                                                         },
-                                                                                        "Completed"
+                                                                                        "Active"
                                                                                       ]
                                                                                     }
                                                                                   }
@@ -2837,7 +2930,7 @@
                                                                                   "type": "20002"
                                                                                 },
                                                                                 "events": [],
-                                                                                "path": "0-0-1-0-0-0-0-0-1-0-0-0-1-0-1-1-0-0-2"
+                                                                                "path": "0-0-3-0-0-0-0-0-1-0-0-0-1-0-0-1-0-0-2"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -3932,43 +4025,11 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-1-0-1-0"
+                            }
                           }
                         ],
-                        "path": "0-0-1-0-1",
-                        "events": [
-                          {
-                            "triggerId": "oJH-PlcG-G2rI4UVYz3O9",
-                            "triggerName": "LIST_DUMMY_DATA_FOR_STATEMENT",
-                            "serviceType": "8",
-                            "attributes": {
-                              "loaderWidgetIds": [906070],
-                              "messageWidgetIds": [906070],
-                              "responseStateKey": "sData",
-                              "url": "/basit",
-                              "checksum": true,
-                              "encryption": true,
-                              "isDeviceDetails": false,
-                              "loginTrigger": false,
-                              "formData": false,
-                              "logoutTrigger": false,
-                              "headers": {
-                                "Content-Type": "application/json",
-                                "Accept": "application/json",
-                                "channel_key": "001",
-                                "CSRF_TOKEN": "4c6e939d-db00-4697-82d8-b69bb05aef5a",
-                                "locale": "en-ltr"
-                              },
-                              "requestBody": [],
-                              "baseURL": "657710f6d6f84b282c426eec",
-                              "storeType": 2
-                            },
-                            "type": "1",
-                            "name": "On initialization",
-                            "commandType": "5"
-                          }
-                        ],
+                        "path": "0-0-3-0-0",
+                        "events": [],
                         "attributes": {
                           "gridProps": [],
                           "label": "Header",
@@ -4043,7 +4104,7 @@
                 },
                 "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
-                "path": "0-0-1",
+                "path": "0-0-3",
                 "dimensions": {
                   "rows": 1,
                   "columns": 1,
@@ -4086,8 +4147,8 @@
     "gitBranchName": "master",
     "_id": "qRv1lYx8136QQug8Klbsw",
     "createdBy": "basitahmed1199",
-    "updatedAt": "3/19/2024",
-    "createdAt": "3/19/2024",
+    "updatedAt": "3/29/2024",
+    "createdAt": "3/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4187,6 +4248,12 @@
       {
         "triggerId": "FO4zLPHS35QYvNBSLRlAK",
         "triggerName": "ILPT_FILTER_KEY_WORD_TRIGGER_1",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "yQ8I6HwYvGUr07xl1Sztw",
+        "triggerName": "ILPT_CREATE_TASK_SUCCESS_TOAST_CONDITIONAL",
         "name": "On initialization",
         "type": "1"
       }
@@ -4724,9 +4791,16 @@
         "name": "On click",
         "type": "2",
         "serviceType": "1"
+      },
+      {
+        "triggerId": "bNbUhCchYtjivQ1hqfFPP",
+        "triggerName": "ILPT_CLEAR_STATES",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
       }
     ],
-    "path": "0-0-0-0-1-1-0-0-0",
+    "path": "0-0-2-0-1-1-0-0-0",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -4978,7 +5052,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "embossingName",
+      "label": "ileadChild.name",
       "searchInState": true,
       "storeType": 2
     },
@@ -5097,14 +5171,7 @@
       "cssClassNames": [{ "cssClassName": "STATEMENT_TRANSACTION_BG " }]
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "oJH-PlcG-G2rI4UVYz3O9",
-        "triggerName": "LIST_DUMMY_DATA_FOR_STATEMENT",
-        "name": "On initialization",
-        "type": "1"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6741,7 +6808,9 @@
       "label": "Waiting approval",
       "cssClassNames": [{ "cssClassName": "TAB_CARD_GREEN_RADIUS " }],
       "hideComponent": false,
-      "hideCondition": { "logic": { "!=": [{ "var": "status" }, "Pending"] } }
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "status" }, "Waiting Apporval"] }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -6754,7 +6823,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-1-0-0-0-1-0-1-1-0-0-1",
+    "path": "0-0-3-0-0-0-0-0-1-0-0-0-1-0-0-1-0-0-1",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6788,7 +6857,7 @@
       },
       "label": "Active",
       "cssClassNames": [{ "cssClassName": "TAB_STATUS_BLUE_STYLE " }],
-      "hideCondition": { "logic": { "!=": [{ "var": "status" }, "Completed"] } }
+      "hideCondition": { "logic": { "!=": [{ "var": "status" }, "Active"] } }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -6801,7 +6870,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-1-0-0-0-1-0-1-1-0-0-2",
+    "path": "0-0-3-0-0-0-0-0-1-0-0-0-1-0-0-1-0-0-2",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

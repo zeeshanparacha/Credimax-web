@@ -1,0 +1,149 @@
+{
+  "_id": "vgLQ0u5of3wawvVrMFNOh",
+  "id": "h0-blIm1EYN6ZQ9KODI_0",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TBG_REVIEW_AND_TRANSFORM",
+  "old_name": "TBG_REVIEW_AND_TRANSFORM",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "PdzzFKqU5bAHMUHcB5Avr",
+              "name": "TBG_TRANSFORM_REQUEST",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "tbg_request.from.id",
+                          "changeValueConditonally": true,
+                          "storeType": 2,
+                          "logic": {
+                            "var": "currentScreen.form.from_wallet.id"
+                          }
+                        },
+                        {
+                          "key": "tbg_request.from.type",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "var": "currentScreen.form.from_wallet.type"
+                          }
+                        },
+                        {
+                          "key": "tbg_request.from.cprOfCard",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "if": [
+                              { "var": "currentScreen.form.from_wallet.cprId" },
+                              { "var": "currentScreen.form.from_wallet.cprId" },
+                              {
+                                "var": "currentSession.SIDEMENU.content.ileadCard.cprId"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "logic": {
+                            "if": [
+                              { "var": "currentScreen.form.to_wallet.cprId" },
+                              { "var": "currentScreen.form.to_wallet.cprId" },
+                              {
+                                "var": "currentSession.SIDEMENU.content.ileadCard.cprId"
+                              }
+                            ]
+                          },
+                          "key": "tbg_request.to.cprOfCard",
+                          "changeValueConditonally": true,
+                          "storeType": 2
+                        },
+                        {
+                          "key": "tbg_request.to.id",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentScreen.form.to_wallet.id" }
+                        },
+                        {
+                          "key": "tbg_request.to.type",
+                          "storeType": 2,
+                          "logic": {
+                            "var": "currentScreen.form.to_wallet.type"
+                          },
+                          "changeValueConditonally": true
+                        },
+                        {
+                          "key": "tbg_request.amount",
+                          "storeType": 2,
+                          "changeValueConditonally": true,
+                          "logic": { "var": "currentScreen.form.amount" }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.fjo9anfd3y8tYJjHBGy0-t9Jic1p6VHB",
+              "_id": "eTu5v0QgtoXDPivIs-jVw",
+              "updatedAt": "3/29/2024",
+              "createdAt": "3/29/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            },
+            {
+              "id": "2qDGeSYZna_omBCbCwlUA",
+              "gitBranchName": "master",
+              "name": "TBG_SHOW_REVIEW_TRANSFER_POPUP",
+              "projectId": "652fcbce09869c3c809b3097",
+              "services": [
+                {
+                  "type": "9",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "widgetId": "y9YQFzbqEhZH2YaUzbYwL",
+                      "content": "",
+                      "type": "",
+                      "modalId": "GxaKtUPFEQc3M0rndLXjc",
+                      "toastContentType": "custom"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.vjt2c6lmpjn69vim-jImCidaZ5-0U-oB",
+              "_id": "dZU3jr8_Q0qb5hbpsvrV-",
+              "updatedAt": "3/29/2024",
+              "createdAt": "3/29/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["PdzzFKqU5bAHMUHcB5Avr", "2qDGeSYZna_omBCbCwlUA"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.vjt2c6lmpjn69vim-jImCidaZ5-0U-oB",
+  "updatedAt": "3/29/2024",
+  "createdAt": "3/29/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

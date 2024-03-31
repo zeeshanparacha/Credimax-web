@@ -1,0 +1,113 @@
+{
+  "id": "cvvNl95K4uq4VD1A7-sp2",
+  "_id": "lNRekekfjY3wg0kizxEDv",
+  "name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT_EDIT",
+  "old_name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT_EDIT",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "15",
+        "attributes": {
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "sourceBindingKey": "",
+          "filterList": [
+            {
+              "key": "pc_request.isRecurring",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      { "var": "currentScreen.ilpp_payment_type" },
+                      "Allowance"
+                    ]
+                  },
+                  "1",
+                  "0"
+                ]
+              }
+            },
+            {
+              "key": "pc_request.recuringType",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.ilpp_recuringType_permanent"
+              }
+            },
+            {
+              "key": "pc_request.amount",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.pc_custom_amount_2" }
+            },
+            {
+              "key": "pc_request.type",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": { "var": "currentScreen.ilpp_payment_type" }
+            },
+            {
+              "key": "pc_request.date",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.ilpp_date_permanent" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.type",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.selected_payment_method.type"
+              }
+            },
+            {
+              "key": "pc_request.cardOrAccount.accountOrCardNumber",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+              }
+            },
+            {
+              "key": "pc_request.cardOrAccount.title",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.selected_payment_method.title"
+              }
+            },
+            {
+              "key": "pc_request.cardOrAccount.cardOrAccType",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.selected_payment_method.accountType"
+              }
+            },
+            {
+              "key": "pc_request.id",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": {
+                "var": "currentScreen.form.ilp_selected_child_payment.id"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.ha9e13jdfum7305XYI84wMgrnKraFfpv",
+  "updatedAt": "3/23/2024",
+  "createdAt": "3/23/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

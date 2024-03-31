@@ -298,28 +298,230 @@
         "createdAt": "24-Aug-2021",
         "events": [
           {
-            "triggerId": "3cYj4wkv8wfJeJAP-rRQF",
-            "triggerName": "GET_CARD_LIST_STATEMENTS",
-            "serviceType": "8",
+            "triggerId": "C9K88MbloNk281O92xMmy",
+            "triggerName": "STATEMENTS_SEQUENTIAL_DELAY_3",
+            "serviceType": "2",
             "attributes": {
-              "loaderWidgetIds": [906070],
-              "messageWidgetIds": [906070],
-              "responseStateKey": "cards",
-              "responseReturnValue": "content",
-              "url": "/card/v1/web/cardList",
-              "checksum": true,
-              "encryption": true,
-              "isDeviceDetails": false,
-              "loginTrigger": false,
-              "formData": false,
-              "logoutTrigger": false,
-              "headers": {
-                "Content-Type": "application/json",
-                "channel_key": "002"
-              },
-              "requestBody": [],
-              "baseURL": "656f0b4398e9df55f0499597",
-              "storeType": 2
+              "delay": "",
+              "storeType": "",
+              "searchInState": false,
+              "triggers": [
+                {
+                  "id": "2bie3Q8uM9encsMg2pVkY",
+                  "name": "FILL_STATEMENT_TYPE_ALL",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "6",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "value",
+                          "destinationBindingKey": "STATEMENT_TYPE",
+                          "sourceBindingKey": "STATEMENT_TYPE",
+                          "sourceStoreType": 2,
+                          "destinationStoreType": 2,
+                          "logic": {
+                            "if": [{ "==": [true, true] }, "all", ""]
+                          },
+                          "changeValueConditonally": true,
+                          "targettedType": "value"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.gcl8larkhuF2Aibz2HONqoeLGd06Fyk",
+                  "_id": "mM10tWE6ulXdcXnUMlPGq",
+                  "updatedAt": "1/8/2024",
+                  "createdAt": "1/8/2024",
+                  "createdBy": "basitahmed1199",
+                  "updatedBy": "basitahmed1199"
+                },
+                {
+                  "id": "H2x9-A2OSau7vqkqfQz7U",
+                  "_id": "fQmk00EURbHM_58BtYO6X",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "GET_STATEMENTS_FILTER_API",
+                  "old_name": "GET_STATEMENTS_FILTER_API",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "8",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "loaderWidgetIds": [906070],
+                          "messageWidgetIds": [906070],
+                          "responseStateKey": "cardStatementsFilter",
+                          "url": "/card/v1/getStatementFilters",
+                          "checksum": true,
+                          "encryption": true,
+                          "isDeviceDetails": false,
+                          "loginTrigger": false,
+                          "formData": false,
+                          "logoutTrigger": false,
+                          "headers": {
+                            "Content-Type": "application/json",
+                            "channel_key": "002"
+                          },
+                          "requestBody": [
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "cardNumber",
+                              "value": "current_card.cardNumber"
+                            }
+                          ],
+                          "baseURL": "656f0b4398e9df55f0499597",
+                          "storeType": 2
+                        },
+                        "responseHandler": []
+                      }
+                    }
+                  ],
+                  "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                  "updatedAt": "1/11/2024",
+                  "createdAt": "1/11/2024",
+                  "createdBy": "zeeshan",
+                  "updatedBy": "zeeshan"
+                },
+                {
+                  "id": "RFesO16-sP156pSkU3g-E",
+                  "_id": "s9z7UHuNLQuWp3GaOgJX2",
+                  "name": "SET_CURRENT_STATEMENT_FILTER",
+                  "old_name": "SET_CURRENT_STATEMENT_FILTER",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "6",
+                        "attributes": {
+                          "requestBody": [],
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "object",
+                          "destinationBindingKey": "current_statement_filter",
+                          "sourceBindingKey": "current_statement_filter",
+                          "sourceStoreType": 1,
+                          "destinationStoreType": 1,
+                          "filterList": [
+                            {
+                              "key": "type",
+                              "changeValueConditonally": true,
+                              "logic": {
+                                "if": [
+                                  { "==": [true, true] },
+                                  "Current Statement",
+                                  ""
+                                ]
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "if": [
+                              { "==": [true, true] },
+                              "Current Statement",
+                              ""
+                            ]
+                          },
+                          "changeValueConditonally": true,
+                          "targettedType": "object"
+                        }
+                      }
+                    }
+                  ],
+                  "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                  "updatedAt": "1/11/2024",
+                  "createdAt": "1/11/2024",
+                  "createdBy": "zeeshan",
+                  "updatedBy": "zeeshan"
+                },
+                {
+                  "id": "h_HDXNk9RMDiEA8RtKOd0",
+                  "_id": "kAnXOv-MbAF_YEH7YBwic",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "STATEMENTS_WITH_TYPES",
+                  "old_name": "STATEMENTS_WITH_TYPES",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "8",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "loaderWidgetIds": [906070],
+                          "messageWidgetIds": [906070],
+                          "responseStateKey": "cardStatements",
+                          "url": "/card/v1/getCardStatements",
+                          "checksum": true,
+                          "encryption": true,
+                          "isDeviceDetails": false,
+                          "loginTrigger": false,
+                          "formData": false,
+                          "logoutTrigger": false,
+                          "headers": {
+                            "Content-Type": "application/json",
+                            "channel_key": "002"
+                          },
+                          "requestBody": [
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "name",
+                              "value": "current_statement_filter.type"
+                            },
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "date",
+                              "value": "current_statement_filter.date"
+                            },
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "cardNumber",
+                              "value": "current_card.cardNumber"
+                            },
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "cardType",
+                              "value": "current_card.cardType"
+                            },
+                            {
+                              "type": 2,
+                              "name": "Current screen",
+                              "key": "type",
+                              "value": "STATEMENT_TYPE"
+                            }
+                          ],
+                          "baseURL": "656f0b4398e9df55f0499597",
+                          "storeType": 2
+                        },
+                        "responseHandler": []
+                      }
+                    }
+                  ],
+                  "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
+                  "updatedAt": "1/11/2024",
+                  "createdAt": "1/11/2024",
+                  "createdBy": "zeeshan",
+                  "updatedBy": "zeeshan"
+                }
+              ],
+              "triggerIds": [
+                "2bie3Q8uM9encsMg2pVkY",
+                "H2x9-A2OSau7vqkqfQz7U",
+                "RFesO16-sP156pSkU3g-E",
+                "h_HDXNk9RMDiEA8RtKOd0"
+              ]
             },
             "type": "1",
             "name": "On initialization",
@@ -336,7 +538,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "sLv1J5YymVWHenSXMq4Fd",
+            "id": "APb-gxHlqjKiWJ4XFv7ng",
             "gridProps": [
               {
                 "type": "10001",
@@ -1312,7 +1514,7 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "0-0-0-0-0-0-2",
+                                "path": "7-0-0-0-0-0-2",
                                 "dimensions": {
                                   "rows": 1,
                                   "columns": 2,
@@ -1402,7 +1604,8 @@
                             "gridLayout": {
                               "//": "Use this class to style grid layout component.",
                               "padding": "5px 25px 0px",
-                              "spacing": 0
+                              "spacing": 0,
+                              "min-height": "calc(100vh - 180px)"
                             },
                             "mainContainer": "gridLayout"
                           },
@@ -1464,11 +1667,11 @@
                           "content": "Grid layout",
                           "type": "10001"
                         },
-                        "path": "0-0-0-0-1",
+                        "path": "7-0-0-0-1",
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "jXh1q9MDXvJrs-GMu1_Vo",
+                            "id": "rU4QiWvCqPRVZRzQ461sM",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1485,7 +1688,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "U3wX8sKBGX92uTpIJpKw4",
+                                            "id": "Z0vZTxQVZ0N7C2Sp1sqkt",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -1494,7 +1697,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "CYDK93TJ-BjjMsfJAiZ21",
+                                                    "id": "tNJf7fcKVKFOFklv0q4H2",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -2035,7 +2238,7 @@
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-0-0-1-0-0-0-0-0-0-0-0-0-1-1-0"
+                                                                        "path": "7-0-0-0-1-0-0-0-0-0-0-0-0-0-1-1-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -2178,8 +2381,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-0-0-1-0-0-0-0-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -2214,7 +2416,7 @@
                                                           {
                                                             "==": [
                                                               {
-                                                                "var": "currentScreen.form.current_card.cardNumber"
+                                                                "var": "currentScreen.CURRENT_CARD.cardNumber"
                                                               },
                                                               {
                                                                 "var": "cardNumber"
@@ -2386,7 +2588,7 @@
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-0-0-1-0-0-0-0-0-0"
+                                                "path": "7-0-0-0-1-0-0-0-0-0-0"
                                               }
                                             ],
                                             "layoutProperties": {
@@ -2395,8 +2597,7 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-0-0-1-0-0-0-0-0"
+                                            }
                                           }
                                         ],
                                         "allowedContainers": [
@@ -2424,14 +2625,15 @@
                                           "isHList": true,
                                           "storeType": 2,
                                           "dataSource": "cards.cardList",
-                                          "bindingKey": "current_card"
+                                          "bindingKey": "CURRENT_CARD",
+                                          "bindingKeyStoreType": 2
                                         },
                                         "events": [],
                                         "component": {
                                           "type": "20009",
                                           "content": "List layout"
                                         },
-                                        "path": "0-0-0-0-1-0-0-0-0"
+                                        "path": "7-0-0-0-1-0-0-0-0"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -2485,7 +2687,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "q-G9SmWYO38AET8vy0JtP",
+                                    "id": "IUwCNN8YIgyowUc63kNsN",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -7615,7 +7817,7 @@
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-0-0-1-0-1-0-0-0-2-0-0-0-0-0-0"
+                                                                        "path": "7-0-0-0-1-0-1-0-0-0-2-0-0-0-0-0-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -7664,7 +7866,7 @@
                                                                   "type": "20009",
                                                                   "content": "List layout"
                                                                 },
-                                                                "path": "0-0-0-0-1-0-1-0-0-0-2-0-0-0-0"
+                                                                "path": "7-0-0-0-1-0-1-0-0-0-2-0-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -10936,8 +11138,7 @@
                                       "md": 12,
                                       "sm": 12,
                                       "xs": 12
-                                    },
-                                    "path": "0-0-0-0-1-0-1-0"
+                                    }
                                   }
                                 ],
                                 "allowedContainers": [
@@ -10955,7 +11156,8 @@
                                       "//": "Use this class to style grid layout component.",
                                       "padding": "5px",
                                       "spacing": 0,
-                                      "margin": "-20px 0px 0px 0px"
+                                      "margin": "-20px 0px 0px 0px",
+                                      "min-height": "calc(100vh - 300px)"
                                     },
                                     "mainContainer": "gridLayout"
                                   },
@@ -10977,7 +11179,7 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "0-0-0-0-1-0-1",
+                                "path": "7-0-0-0-1-0-1",
                                 "dimensions": {
                                   "rows": 1,
                                   "columns": 1,
@@ -10997,8 +11199,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-0-0-1-0"
+                            }
                           }
                         ],
                         "layoutProperties": {
@@ -11099,9 +11300,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "DYtM1Kw3_kAhZ8Wh_jSwu",
-    "createdBy": "talha",
-    "updatedAt": "3/12/2024",
-    "createdAt": "3/12/2024",
+    "createdBy": "talha2",
+    "updatedAt": "3/27/2024",
+    "createdAt": "3/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11352,8 +11553,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "3cYj4wkv8wfJeJAP-rRQF",
-        "triggerName": "GET_CARD_LIST_STATEMENTS",
+        "triggerId": "C9K88MbloNk281O92xMmy",
+        "triggerName": "STATEMENTS_SEQUENTIAL_DELAY_3",
         "name": "On initialization",
         "type": "1"
       }
@@ -12197,7 +12398,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "padding": "5px 25px 0px",
-          "spacing": 0
+          "spacing": 0,
+          "min-height": "calc(100vh - 180px)"
         },
         "mainContainer": "gridLayout"
       },
@@ -12320,7 +12522,8 @@
       "isHList": true,
       "storeType": 2,
       "dataSource": "cards.cardList",
-      "bindingKey": "current_card"
+      "bindingKey": "CURRENT_CARD",
+      "bindingKeyStoreType": 2
     },
     "layout": null,
     "events": [],
@@ -12391,7 +12594,7 @@
             "if": [
               {
                 "==": [
-                  { "var": "currentScreen.form.current_card.cardNumber" },
+                  { "var": "currentScreen.CURRENT_CARD.cardNumber" },
                   { "var": "cardNumber" }
                 ]
               },
@@ -13088,7 +13291,8 @@
           "//": "Use this class to style grid layout component.",
           "padding": "5px",
           "spacing": 0,
-          "margin": "-20px 0px 0px 0px"
+          "margin": "-20px 0px 0px 0px",
+          "min-height": "calc(100vh - 300px)"
         },
         "mainContainer": "gridLayout"
       },

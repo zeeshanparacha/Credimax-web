@@ -46,7 +46,7 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "Grid layout"
+          "name": "ILPP_OTP_WIDGET"
         },
         "group": "Layout",
         "type": "sidebarItem",
@@ -1274,6 +1274,260 @@
                                                     "commandType": "15"
                                                   },
                                                   {
+                                                    "triggerId": "9bbsZ6atV_FVqK_dUxRv0",
+                                                    "triggerName": "ILPP_RELEASE_PAYMENT_CONDITIONALLY",
+                                                    "serviceType": "13",
+                                                    "attributes": {
+                                                      "triggers": [
+                                                        {
+                                                          "logic": {
+                                                            "==": [
+                                                              {
+                                                                "var": "currentScreen.page_name"
+                                                              },
+                                                              "Edit payment"
+                                                            ]
+                                                          },
+                                                          "triggerName": "ILPP_UPDATE_PAYMENT",
+                                                          "triggerId": "onzzlWZ2fRxEMNogu5mL0",
+                                                          "services": [
+                                                            {
+                                                              "type": "8",
+                                                              "command": {
+                                                                "type": "1",
+                                                                "attributes": {
+                                                                  "loaderWidgetIds": [
+                                                                    906070
+                                                                  ],
+                                                                  "messageWidgetIds": [
+                                                                    906070
+                                                                  ],
+                                                                  "responseStateKey": "pc_release_payment",
+                                                                  "url": "/api-designer/api/updateIleadPrentPayment/execute",
+                                                                  "checksum": true,
+                                                                  "encryption": true,
+                                                                  "isDeviceDetails": true,
+                                                                  "loginTrigger": false,
+                                                                  "formData": false,
+                                                                  "logoutTrigger": false,
+                                                                  "headers": {
+                                                                    "Content-Type": "application/json",
+                                                                    "Accept": "application/json",
+                                                                    "channel_key": "002"
+                                                                  },
+                                                                  "requestBody": [
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "request",
+                                                                      "value": "pc_request"
+                                                                    },
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "request.validation",
+                                                                      "value": "pc_validation_object"
+                                                                    },
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "request.cardOrAccount.toCardNumber",
+                                                                      "value": "CURRENT_CARD.cardNumber"
+                                                                    },
+                                                                    {
+                                                                      "type": 4,
+                                                                      "name": "Static",
+                                                                      "key": "request.cardOrAccount.currency",
+                                                                      "value": "BHD"
+                                                                    },
+                                                                    {
+                                                                      "type": 3,
+                                                                      "name": "Current session",
+                                                                      "key": "request.cardOrAccount.cprOfOtherCardHolder",
+                                                                      "value": "userProfile.content.customer.userIdenValue"
+                                                                    }
+                                                                  ],
+                                                                  "baseURL": "656f0b4398e9df55f0499597",
+                                                                  "storeType": 2,
+                                                                  "loadingState": "PCRP_Loader_Generic",
+                                                                  "isLoadingState": true
+                                                                },
+                                                                "responseHandler": [
+                                                                  {
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "var": "content.benefitRedirectUrl"
+                                                                        },
+                                                                        false,
+                                                                        true
+                                                                      ]
+                                                                    },
+                                                                    "httpStatus": 200,
+                                                                    "triggerName": "PC_SHOW_RESPONSE",
+                                                                    "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+                                                                  },
+                                                                  {
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "var": "content.benefitRedirectUrl"
+                                                                        },
+                                                                        true,
+                                                                        false
+                                                                      ]
+                                                                    },
+                                                                    "httpStatus": 200,
+                                                                    "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+                                                                    "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+                                                                  },
+                                                                  {
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "var": "content.benefitRedirectUrl"
+                                                                        },
+                                                                        true,
+                                                                        false
+                                                                      ]
+                                                                    },
+                                                                    "httpStatus": 200,
+                                                                    "triggerName": "PC_REDIRECT_TO_BENIFIT",
+                                                                    "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "logic": {
+                                                            "!=": [
+                                                              {
+                                                                "var": "currentScreen.page_name"
+                                                              },
+                                                              "Edit payment"
+                                                            ]
+                                                          },
+                                                          "triggerName": "ILPP_RELEASE_PAYMENT",
+                                                          "triggerId": "nl4S3iCIsKwnWkNcrfLFB",
+                                                          "services": [
+                                                            {
+                                                              "type": "8",
+                                                              "command": {
+                                                                "type": "1",
+                                                                "attributes": {
+                                                                  "loaderWidgetIds": [
+                                                                    906070
+                                                                  ],
+                                                                  "messageWidgetIds": [
+                                                                    906070
+                                                                  ],
+                                                                  "responseStateKey": "pc_release_payment",
+                                                                  "url": "/api-designer/api/createIleadParentPayment/execute",
+                                                                  "checksum": true,
+                                                                  "encryption": true,
+                                                                  "isDeviceDetails": true,
+                                                                  "loginTrigger": false,
+                                                                  "formData": false,
+                                                                  "logoutTrigger": false,
+                                                                  "headers": {
+                                                                    "Content-Type": "application/json",
+                                                                    "Accept": "application/json",
+                                                                    "channel_key": "002"
+                                                                  },
+                                                                  "requestBody": [
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "request",
+                                                                      "value": "pc_request"
+                                                                    },
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "request.validation",
+                                                                      "value": "pc_validation_object"
+                                                                    },
+                                                                    {
+                                                                      "type": 2,
+                                                                      "name": "Current screen",
+                                                                      "key": "request.cardOrAccount.toCardNumber",
+                                                                      "value": "CURRENT_CARD.cardNumber"
+                                                                    },
+                                                                    {
+                                                                      "type": 4,
+                                                                      "name": "Static",
+                                                                      "key": "request.cardOrAccount.currency",
+                                                                      "value": "BHD"
+                                                                    },
+                                                                    {
+                                                                      "type": 3,
+                                                                      "name": "Current session",
+                                                                      "key": "request.cardOrAccount.cprOfOtherCardHolder",
+                                                                      "value": "userProfile.content.customer.userIdenValue"
+                                                                    }
+                                                                  ],
+                                                                  "baseURL": "656f0b4398e9df55f0499597",
+                                                                  "storeType": 2,
+                                                                  "loadingState": "PCRP_Loader_Generic",
+                                                                  "isLoadingState": true
+                                                                },
+                                                                "responseHandler": [
+                                                                  {
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "var": "content.benefitRedirectUrl"
+                                                                        },
+                                                                        false,
+                                                                        true
+                                                                      ]
+                                                                    },
+                                                                    "httpStatus": 200,
+                                                                    "triggerName": "PC_SHOW_RESPONSE",
+                                                                    "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+                                                                  },
+                                                                  {
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "var": "content.benefitRedirectUrl"
+                                                                        },
+                                                                        true,
+                                                                        false
+                                                                      ]
+                                                                    },
+                                                                    "httpStatus": 200,
+                                                                    "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+                                                                    "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+                                                                  },
+                                                                  {
+                                                                    "logic": {
+                                                                      "if": [
+                                                                        {
+                                                                          "var": "content.benefitRedirectUrl"
+                                                                        },
+                                                                        true,
+                                                                        false
+                                                                      ]
+                                                                    },
+                                                                    "httpStatus": 200,
+                                                                    "triggerName": "PC_REDIRECT_TO_BENIFIT",
+                                                                    "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "1"
+                                                  },
+                                                  {
                                                     "triggerId": "WuhHxg90Z2anPz7DGsIrC",
                                                     "triggerName": "Close Modal",
                                                     "serviceType": "9",
@@ -1286,68 +1540,9 @@
                                                     "type": "2",
                                                     "name": "On click",
                                                     "commandType": "2"
-                                                  },
-                                                  {
-                                                    "triggerId": "nl4S3iCIsKwnWkNcrfLFB",
-                                                    "triggerName": "ILPP_RELEASE_PAYMENT",
-                                                    "serviceType": "8",
-                                                    "attributes": {
-                                                      "loaderWidgetIds": [
-                                                        906070
-                                                      ],
-                                                      "messageWidgetIds": [
-                                                        906070
-                                                      ],
-                                                      "responseStateKey": "pc_release_payment",
-                                                      "url": "/api-designer/api/createIleadPrentPayment/execute",
-                                                      "checksum": true,
-                                                      "encryption": true,
-                                                      "isDeviceDetails": true,
-                                                      "loginTrigger": false,
-                                                      "formData": false,
-                                                      "logoutTrigger": false,
-                                                      "headers": {
-                                                        "Content-Type": "application/json",
-                                                        "Accept": "application/json",
-                                                        "channel_key": "002"
-                                                      },
-                                                      "requestBody": [
-                                                        {
-                                                          "type": 2,
-                                                          "name": "Current screen",
-                                                          "key": "request",
-                                                          "value": "pc_request"
-                                                        },
-                                                        {
-                                                          "type": 2,
-                                                          "name": "Current screen",
-                                                          "key": "request.validation",
-                                                          "value": "pc_validation_object"
-                                                        },
-                                                        {
-                                                          "type": 2,
-                                                          "name": "Current screen",
-                                                          "key": "request.cardOrAccount.toCardNumber",
-                                                          "value": "CURRENT_CARD.cardNumber"
-                                                        },
-                                                        {
-                                                          "type": 4,
-                                                          "name": "Static",
-                                                          "key": "request.cardOrAccount.currency",
-                                                          "value": "BHD"
-                                                        }
-                                                      ],
-                                                      "baseURL": "656f0b4398e9df55f0499597",
-                                                      "storeType": 2,
-                                                      "loadingState": "PCRP_Loader_Generic",
-                                                      "isLoadingState": true
-                                                    },
-                                                    "type": "2",
-                                                    "name": "On click",
-                                                    "commandType": "1"
                                                   }
                                                 ],
-                                                "path": "0-0-0-0-1-0-0-0-7-0-0"
+                                                "path": "0-0-1-0-1-0-0-0-7-0-0"
                                               },
                                               {
                                                 "type": "10001",
@@ -1510,7 +1705,7 @@
                                           "type": "10001",
                                           "content": "Grid layout"
                                         },
-                                        "path": "0-0-0-0-0-0-7",
+                                        "path": "0-0-1-0-1-0-0-0-7",
                                         "dimensions": {
                                           "rows": 1,
                                           "columns": 1,
@@ -1627,8 +1822,8 @@
     "gitBranchName": "master",
     "_id": "X-wRHSamFAxIzjohyeuEH",
     "createdBy": "talha",
-    "updatedAt": "3/22/2024",
-    "createdAt": "3/22/2024",
+    "updatedAt": "3/23/2024",
+    "createdAt": "3/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1686,7 +1881,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "ILPP_OTP_WIDGET"
     },
     "layout": null,
     "events": [],
@@ -2859,21 +3054,21 @@
         "serviceType": "11"
       },
       {
+        "triggerId": "9bbsZ6atV_FVqK_dUxRv0",
+        "triggerName": "ILPP_RELEASE_PAYMENT_CONDITIONALLY",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
+      },
+      {
         "triggerId": "WuhHxg90Z2anPz7DGsIrC",
         "triggerName": "Close Modal",
         "name": "On click",
         "type": "2",
         "serviceType": "9"
-      },
-      {
-        "triggerId": "nl4S3iCIsKwnWkNcrfLFB",
-        "triggerName": "ILPP_RELEASE_PAYMENT",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "8"
       }
     ],
-    "path": "0-0-0-0-1-0-0-0-7-0-0",
+    "path": "0-0-1-0-1-0-0-0-7-0-0",
     "screenId": "X-wRHSamFAxIzjohyeuEH",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

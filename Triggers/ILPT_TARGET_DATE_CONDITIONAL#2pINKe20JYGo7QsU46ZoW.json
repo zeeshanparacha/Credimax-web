@@ -1,0 +1,91 @@
+{
+  "id": "RYUqeceq9DVeuNZUYXOU3",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_TARGET_DATE_CONDITIONAL",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "ILPT_TARGET_DATE_NULL",
+              "triggerId": "waGudia7MWkrkmf1AV5bj",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "ilpt_target_date",
+                          "changeValueConditonally": false,
+                          "storeType": 1,
+                          "logic": null
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  { "==": [{ "var": "currentScreen.form.ilpt_toggle" }, true] },
+                  true,
+                  false
+                ]
+              }
+            },
+            {
+              "triggerName": "ILPT_TARGET_DATE",
+              "triggerId": "amOYg6XlrLwux1NO0slUF",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "11",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "destinationBindingKey": "ilpt_target_date",
+                      "sourceBindingKey": "",
+                      "destinationStoreType": 1,
+                      "dateDifference": "1",
+                      "dateFormat": "dd-MMM-yyyy"
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [{ "var": "currentScreen.form.ilpt_toggle" }, false]
+                  },
+                  true,
+                  false
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.gvwofx4nvlotrY7Be2nGGDyb9Tn6Y_ko",
+  "_id": "2pINKe20JYGo7QsU46ZoW",
+  "updatedAt": "3/29/2024",
+  "createdAt": "3/29/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

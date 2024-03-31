@@ -1,0 +1,75 @@
+{
+  "id": "ieAk7vPGgo2oR7Bd22-qz",
+  "_id": "CHQVVLOiVHEnjaFZ6N8vN",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPP_DELETE_PAYMENT",
+  "old_name": "ILPP_DELETE_PAYMENT",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "ilpp_delete_payment_res",
+          "url": "/api-designer/api/deleteIleadParentPayment/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.id",
+              "value": "ilp_selected_child_payment.id"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILP_GET_CHILD_PAYMENTS",
+            "triggerId": "oY0ECjHLP_BZNfoc4eS2U"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "Close Modal",
+            "triggerId": "WuhHxg90Z2anPz7DGsIrC"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILPP_DELETE_PAYMENT_SUCCESS",
+            "triggerId": "pT1MxQQo63eOIBatng8_k"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "ILPP_DELETE_PAYMENT_FAILURE",
+            "triggerId": "tj3giEE9kzZofIqYncoqN"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.aqynybx6lwn-jRd4nRWvoDv1o4zHKMOv",
+  "updatedAt": "3/23/2024",
+  "createdAt": "3/23/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

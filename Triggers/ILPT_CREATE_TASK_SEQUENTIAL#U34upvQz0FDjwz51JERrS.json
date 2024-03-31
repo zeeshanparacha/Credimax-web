@@ -1,0 +1,200 @@
+{
+  "id": "8e8y4yyE7VTz6BnUf-iir",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_CREATE_TASK_SEQUENTIAL",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "vP3OQO3Gj0py9V9WB9ykh",
+              "_id": "JAEXn0vzt95_gvcRE6JyO",
+              "name": "ILPT_ASSIGN_ID_MAP",
+              "old_name": "ILPT_ASSIGN_ID_MAP",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "object",
+                      "destinationBindingKey": "ilpt_assign_id",
+                      "sourceBindingKey": "ilpt_selected_chip_array",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "value": "id",
+                      "filterList": [
+                        {
+                          "key": "id",
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "if": [
+                              true,
+                              { "var": "ileadUserId" },
+                              { "var": "ileadUserId" }
+                            ]
+                          }
+                        }
+                      ],
+                      "logic": {
+                        "if": [
+                          true,
+                          { "var": "ileadUserId" },
+                          { "var": "ileadUserId" }
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "array"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.edczj1n3i84lGrUY16y0n7i2hsEryrB4",
+              "updatedAt": "3/27/2024",
+              "createdAt": "3/27/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            },
+            {
+              "id": "yg_6GaV9o6d1yKO0qKqH-",
+              "_id": "32Y3whvRptKvMGGGajQy9",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILPT_CREATE_NEW_TASK",
+              "old_name": "ILPT_CREATE_NEW_TASK",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "ilpt_create_new_task",
+                      "url": "/api-designer/api/createIleadParentTask/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.reward",
+                          "value": "ilp_task_reward"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.taskName",
+                          "value": "ilp_new_task"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.endDate",
+                          "value": "ilpt_target_date"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "request.isRecurring",
+                          "value": "ilpt_recurring"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.recuringType",
+                          "value": "ilpt_selected_frequency.name"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "request.currency",
+                          "value": "BHD"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "request.rewardUnit",
+                          "value": "BHD"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.date",
+                          "value": "ilpt_date"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.assignIds",
+                          "value": "ilpt_assign_id"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "ILPT_CREATE_TASK_ERROR_TOAST",
+                        "triggerId": "tLI3-OvdlC7YgQG-K9ssD",
+                        "logic": { "==": [{ "var": "code" }, 0] }
+                      },
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "GO_TO_ILP_TAKS_SCREEN",
+                        "triggerId": "VbfqZfOqr0HgY5PzihDTK",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      },
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "ILPT_CLEAR_STATES",
+                        "triggerId": "bNbUhCchYtjivQ1hqfFPP",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.gvwofx4nvlotrY7Be2nGGDyb9Tn6Y_ko",
+              "updatedAt": "3/29/2024",
+              "createdAt": "3/29/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": ["vP3OQO3Gj0py9V9WB9ykh", "yg_6GaV9o6d1yKO0qKqH-"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.fswf4holoobHLVCiQV2LFKoRazmcY9j6",
+  "_id": "U34upvQz0FDjwz51JERrS",
+  "updatedAt": "3/30/2024",
+  "createdAt": "3/30/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

@@ -1,0 +1,87 @@
+{
+  "_id": "-kzodMo1Dg6vaTYVrVWjC",
+  "id": "YmbZCvpFQpqzPNOAMRzeP",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_RECURRING_TYPE_CONDITIONAL",
+  "old_name": "ILPT_RECURRING_TYPE_CONDITIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "ILPT_FREQUENCY_SAVE_FIRST_VALUE",
+              "triggerId": "Whqbo0XqNlZ9yqTGdREw0",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "ilpt_selected_frequency",
+                      "sourceBindingKey": "form",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "if": [true, { "var": "ilpt_frequency.0" }, false]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  { "==": [{ "var": "currentScreen.form.ilpt_toggle" }, true] },
+                  true,
+                  false
+                ]
+              }
+            },
+            {
+              "triggerName": "ILPT_RECURRING_TYPE_DELETE",
+              "triggerId": "sGFnhxqqGqIePQT7Hm6EW",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "4",
+                    "attributes": {
+                      "stateName": "ilpt_selected_frequency",
+                      "storeType": 1,
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": ""
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [{ "var": "currentScreen.form.ilpt_toggle" }, false]
+                  },
+                  true,
+                  false
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.gvwofx4nvlotrY7Be2nGGDyb9Tn6Y_ko",
+  "updatedAt": "3/29/2024",
+  "createdAt": "3/29/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}
