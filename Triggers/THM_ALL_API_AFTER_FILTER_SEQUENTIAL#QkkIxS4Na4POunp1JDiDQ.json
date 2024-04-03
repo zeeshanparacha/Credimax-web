@@ -1,0 +1,167 @@
+{
+  "_id": "QkkIxS4Na4POunp1JDiDQ",
+  "id": "A5SHj8WBjoA-2rMvAYI07",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "THM_ALL_API_AFTER_FILTER_SEQUENTIAL",
+  "old_name": "THM_ALL_API_AFTER_FILTER_SEQUENTIAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "RMKiL_RgjOCeBWtJe7Eh-",
+              "_id": "Pildq4xveRpXWaDgpctLj",
+              "name": "SET_THAMEEN_CURRENT_DATE",
+              "old_name": "SET_THAMEEN_CURRENT_DATE",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "THM_FILTER",
+                      "sourceBindingKey": "THM_FILTER",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "if": [
+                          true,
+                          { "var": "HISTORY_FILTERS.content.tabs.0" },
+                          ""
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+              "updatedAt": "4/1/2024",
+              "createdAt": "4/1/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "0X9U8vY_1Ujd7S1NemIF5",
+              "name": "CHANGE_THAMEEN_HISTORY_FILTER_VALUES",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "object",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "startDate",
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "if": [true, { "var": "THM_FILTER.fromDate" }, ""]
+                          }
+                        },
+                        {
+                          "key": "endDate",
+                          "changeValueConditonally": true,
+                          "logic": {
+                            "if": [true, { "var": "THM_FILTER.toDate" }, ""]
+                          }
+                        }
+                      ],
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+              "_id": "A-y3L5OgBPldnv30SGAqD",
+              "updatedAt": "4/1/2024",
+              "createdAt": "4/1/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "Hom3V1iTNydegXZ9NpALv",
+              "_id": "w6fKBKJiR69O-g6ecALJU",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+              "old_name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "THAMEEN_HORIZONTAL_LIST",
+                      "url": "/api-designer/api/thameenPointsDetails/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request",
+                          "value": "THM_FILTER"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+              "updatedAt": "4/1/2024",
+              "createdAt": "4/1/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            }
+          ],
+          "triggerIds": [
+            "RMKiL_RgjOCeBWtJe7Eh-",
+            "0X9U8vY_1Ujd7S1NemIF5",
+            "Hom3V1iTNydegXZ9NpALv"
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+  "updatedAt": "4/1/2024",
+  "createdAt": "4/1/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}

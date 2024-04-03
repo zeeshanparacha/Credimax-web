@@ -1,0 +1,76 @@
+{
+  "id": "60AE7xy7QuHu3Bgalnnor",
+  "_id": "GAKnxAClcqbaex0vF8Psm",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILCG_DELETE_GOAL_API",
+  "old_name": "ILCG_DELETE_GOAL_API",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "RESPONSE_ILCG_DELETE_GOAL",
+          "url": "/api-designer/api/deleteGoal/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.goalId",
+              "value": "ILCG_LIST.id"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2,
+          "hideLoading": true
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "Close Modal",
+            "triggerId": "WuhHxg90Z2anPz7DGsIrC"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILCG_DELETE_SUCCESS_MEASSAGE",
+            "triggerId": "08FRk5afnL4biu_RzhVPp"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "ILCG_DELETE_ERROR_MESSAGE",
+            "triggerId": "nt9LWjGw0iRQ4nYuC6k3D"
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "ILCG_GET_ALL_GOALS_API_SILENTLY",
+            "triggerId": "YvWPCvi7PrXwqXHb6XvPL",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.1yfujktv3ivVNCDDxvrYHkB7LnKHd7Er",
+  "updatedAt": "4/1/2024",
+  "createdAt": "4/1/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

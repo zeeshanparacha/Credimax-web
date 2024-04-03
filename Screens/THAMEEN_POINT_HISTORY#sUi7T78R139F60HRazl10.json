@@ -52,63 +52,122 @@
         "createdAt": "24-Aug-2021",
         "events": [
           {
-            "triggerId": "tecYT9GTPA2OhqJmptvde",
-            "triggerName": "THAMEEN_HISTORY_FILTERS",
-            "serviceType": "8",
+            "triggerId": "76NEUXgr_r-CJjiEaYLAk",
+            "triggerName": "THAMEEN_HISTORY_SEQUENTIAL",
+            "serviceType": "2",
             "attributes": {
-              "loaderWidgetIds": [906070],
-              "messageWidgetIds": [906070],
-              "responseStateKey": "HISTORY_FILTERS",
-              "url": "/ThameenHistoryFilters",
-              "checksum": true,
-              "encryption": true,
-              "isDeviceDetails": false,
-              "loginTrigger": false,
-              "formData": false,
-              "logoutTrigger": false,
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "channel_key": "002"
-              },
-              "requestBody": [],
-              "baseURL": "65e87c3e2f9c444e88698ebc",
-              "storeType": 2
-            },
-            "type": "1",
-            "name": "On initialization",
-            "commandType": "1"
-          },
-          {
-            "triggerId": "VP5RVijm5kHHSW0tIRHCf",
-            "triggerName": "GET_THAMEEN_DASHBOARD_HISTORY",
-            "serviceType": "8",
-            "attributes": {
-              "loaderWidgetIds": [906070],
-              "messageWidgetIds": [906070],
-              "responseStateKey": "THM_HISTORY",
-              "url": "/ThameenHistory",
-              "checksum": true,
-              "encryption": true,
-              "isDeviceDetails": false,
-              "loginTrigger": false,
-              "formData": false,
-              "logoutTrigger": false,
-              "headers": {
-                "Content-Type": "application/json",
-                "Accept": "application/json",
-                "channel_key": "002"
-              },
-              "requestBody": [
+              "delay": "",
+              "storeType": "",
+              "searchInState": false,
+              "triggers": [
                 {
-                  "type": 4,
-                  "name": "Static",
-                  "key": "date",
-                  "value": "yearToDate"
+                  "id": "tecYT9GTPA2OhqJmptvde",
+                  "_id": "BTAh9miOrgXsIWeAovooQ",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "THAMEEN_HISTORY_FILTERS",
+                  "old_name": "THAMEEN_HISTORY_FILTERS",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "8",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "loaderWidgetIds": [906070],
+                          "messageWidgetIds": [906070],
+                          "responseStateKey": "HISTORY_FILTERS",
+                          "url": "/api-designer/api/thameenMonthsList/execute",
+                          "checksum": true,
+                          "encryption": true,
+                          "isDeviceDetails": false,
+                          "loginTrigger": false,
+                          "formData": false,
+                          "logoutTrigger": false,
+                          "headers": {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                            "channel_key": "002"
+                          },
+                          "requestBody": [],
+                          "baseURL": "656f0b4398e9df55f0499597",
+                          "storeType": 2
+                        },
+                        "responseHandler": [
+                          {
+                            "httpStatus": 200,
+                            "logic": true,
+                            "triggerName": "SET_THAMEEN_CURRENT_DATE",
+                            "triggerId": "RMKiL_RgjOCeBWtJe7Eh-"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+                  "updatedAt": "4/1/2024",
+                  "createdAt": "4/1/2024",
+                  "createdBy": "zeeshan",
+                  "updatedBy": "zeeshan"
+                },
+                {
+                  "id": "Hom3V1iTNydegXZ9NpALv",
+                  "_id": "w6fKBKJiR69O-g6ecALJU",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+                  "old_name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "8",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "loaderWidgetIds": [906070],
+                          "messageWidgetIds": [906070],
+                          "responseStateKey": "THAMEEN_HORIZONTAL_LIST",
+                          "url": "/api-designer/api/thameenPointsDetails/execute",
+                          "checksum": true,
+                          "encryption": true,
+                          "isDeviceDetails": false,
+                          "loginTrigger": false,
+                          "formData": false,
+                          "logoutTrigger": false,
+                          "headers": {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                            "channel_key": "002"
+                          },
+                          "requestBody": [
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "startDate",
+                              "value": "THM_FILTER.fromDate"
+                            },
+                            {
+                              "type": 1,
+                              "name": "Form",
+                              "key": "endDate",
+                              "value": "THM_FILTER.toDate"
+                            }
+                          ],
+                          "baseURL": "656f0b4398e9df55f0499597",
+                          "storeType": 2
+                        },
+                        "responseHandler": []
+                      }
+                    }
+                  ],
+                  "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+                  "updatedAt": "4/1/2024",
+                  "createdAt": "4/1/2024",
+                  "createdBy": "zeeshan",
+                  "updatedBy": "zeeshan"
                 }
               ],
-              "baseURL": "65e87c3e2f9c444e88698ebc",
-              "storeType": 2
+              "triggerIds": ["tecYT9GTPA2OhqJmptvde", "Hom3V1iTNydegXZ9NpALv"]
             },
             "type": "1",
             "name": "On initialization",
@@ -121,11 +180,11 @@
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": 0,
+        "path": "0",
         "gridProps": [
           {
             "type": "column",
-            "id": "6z1Vs3UT57T1QqTiA06t3",
+            "id": "1tjmD9pxJrz4-Lxfdz5F0",
             "gridProps": [
               {
                 "type": "10001",
@@ -208,13 +267,13 @@
                                 },
                                 "events": [
                                   {
-                                    "triggerId": "UFA2TfzcJX-Frio45Fhbr",
-                                    "triggerName": "GO_TO_PAY_CARDS",
+                                    "triggerId": "bQTzimglFZMk9jU7fKgR_",
+                                    "triggerName": "GO_TO_THAMEEN",
                                     "serviceType": "1",
                                     "attributes": {
-                                      "nextWidgetId": "_IlGsB-95yo7FYr3ysZwT",
-                                      "gridRadioValue": "Grid",
-                                      "selectedObjectBindingKey": "",
+                                      "nextWidgetId": "SPxfUZ3Hsnnd25GMXnm6W",
+                                      "gridRadioValue": "",
+                                      "selectedObjectBindingKey": "selectedObject",
                                       "editableForm": false
                                     },
                                     "type": "2",
@@ -499,7 +558,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "L0nKYSDMFn48P0x41Q9Wd",
+                                    "id": "DOAsdkDLODzHY_6HZPXe2",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -604,7 +663,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "Dg0BAVxpx2pOrcLAyKGRw",
+                                            "id": "UnOyMkjMNIFzhOFhk3R2A",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -742,12 +801,11 @@
                                               "md": 5,
                                               "sm": 5,
                                               "xs": 5
-                                            },
-                                            "path": "0-0-1-0-0-0-0-0-1-0"
+                                            }
                                           },
                                           {
                                             "type": "column",
-                                            "id": "ct3KRqzi6fD58nLUalm1P",
+                                            "id": "hiSycFJybYxBarUtyZYbg",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -818,12 +876,11 @@
                                               "md": 4,
                                               "sm": 4,
                                               "xs": 4
-                                            },
-                                            "path": "0-0-1-0-0-0-0-0-1-1"
+                                            }
                                           },
                                           {
                                             "type": "column",
-                                            "id": "Q3NGwM8sRTWBhM8ut02tr",
+                                            "id": "11LcYPVLoEg_s3wJpZp0C",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -832,7 +889,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "aOy-mY_eJlJwfNNI3hajK",
+                                                    "id": "AxvXBWp3KLvoLWLAJA-rH",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -887,17 +944,16 @@
                                                       }
                                                     ],
                                                     "layoutProperties": {
-                                                      "xl": 6,
-                                                      "lg": 6,
-                                                      "md": 6,
-                                                      "sm": 6,
-                                                      "xs": 6
-                                                    },
-                                                    "path": "0-0-1-0-0-0-0-0-1-2-0-0"
+                                                      "xl": 1,
+                                                      "lg": 1,
+                                                      "md": 1,
+                                                      "sm": 1,
+                                                      "xs": 1
+                                                    }
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "03XFJXJlON6Y03rVhpiyp",
+                                                    "id": "_oUTpTWu6Ycm-QCSAjDOU",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -905,7 +961,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "UnZINZAPZkR_gdicCnoJg",
+                                                            "id": "CNttv6rl0ev-fhzO_wM2m",
                                                             "gridProps": [
                                                               {
                                                                 "id": "IQd5mCUgGz2pFOwNrd1rA",
@@ -918,7 +974,7 @@
                                                                   "layoutProperties": {
                                                                     "label": {
                                                                       "//": "Use this class to style label component.",
-                                                                      "font-size": "16px",
+                                                                      "font-size": "13px",
                                                                       "color": "#000000",
                                                                       "letter-spacing": "0px",
                                                                       "cursor": "pointer"
@@ -935,7 +991,9 @@
                                                                     "sm": 9,
                                                                     "xs": 9
                                                                   },
-                                                                  "label": "All"
+                                                                  "label": "THAMEEN_FILTER_TYPE",
+                                                                  "searchInState": true,
+                                                                  "storeType": 1
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -960,12 +1018,11 @@
                                                               "md": 9,
                                                               "sm": 9,
                                                               "xs": 9
-                                                            },
-                                                            "path": "0-0-1-0-0-0-0-0-1-2-0-1-0-0"
+                                                            }
                                                           },
                                                           {
                                                             "type": "column",
-                                                            "id": "OjuEwtuvB2A1mxjQr88U6",
+                                                            "id": "1b9at91_lTRGHSo17U88f",
                                                             "gridProps": [
                                                               {
                                                                 "id": "MfVZTc5D6X2tshpnXFBRQ",
@@ -1032,8 +1089,7 @@
                                                               "md": 3,
                                                               "sm": 3,
                                                               "xs": 3
-                                                            },
-                                                            "path": "0-0-1-0-0-0-0-0-1-2-0-1-0-1"
+                                                            }
                                                           }
                                                         ],
                                                         "path": "0-0-1-0-0-0-0-0-1-2-0-1-0",
@@ -1044,12 +1100,11 @@
                                                           "layoutProperties": {
                                                             "gridLayout": {
                                                               "//": "Use this class to style grid layout component.",
-                                                              "padding": "5px 10px 5px 10px",
+                                                              "padding": "5px",
                                                               "spacing": 0,
                                                               "borderRadius": "10px",
                                                               "border": "1px solid #E6E6E6",
-                                                              "cursor": "pointer",
-                                                              "width": "140px"
+                                                              "cursor": "pointer"
                                                             },
                                                             "mainContainer": "gridLayout"
                                                           },
@@ -1061,7 +1116,8 @@
                                                           "direction": "row",
                                                           "name": "STATEMENT_DOWNLOAD_WIDGET",
                                                           "cssClassNames": [],
-                                                          "columns": "2"
+                                                          "columns": "2",
+                                                          "popoverComponentId": "t4q_ESCeYHNQuKBtYjqWl"
                                                         },
                                                         "component": {
                                                           "type": "10001",
@@ -1074,17 +1130,32 @@
                                                           "20010",
                                                           "widget"
                                                         ],
-                                                        "name": "STATEMENT_DOWNLOAD_WIDGET"
+                                                        "name": "STATEMENT_DOWNLOAD_WIDGET",
+                                                        "dimensions": {
+                                                          "rows": 1,
+                                                          "columns": 2,
+                                                          "colSize0xs": 9,
+                                                          "colSize0sm": 9,
+                                                          "colSize0md": 9,
+                                                          "colSize0lg": 9,
+                                                          "colSize0xl": 9,
+                                                          "colSize1xs": 3,
+                                                          "colSize1sm": 3,
+                                                          "colSize1md": 3,
+                                                          "colSize1lg": 3,
+                                                          "colSize1xl": 3,
+                                                          "layoutProperties": null
+                                                        },
+                                                        "readOnly": true
                                                       }
                                                     ],
                                                     "layoutProperties": {
-                                                      "xl": 6,
-                                                      "lg": 6,
-                                                      "md": 6,
-                                                      "sm": 6,
-                                                      "xs": 6
-                                                    },
-                                                    "path": "0-0-1-0-0-0-0-0-1-2-0-1"
+                                                      "xl": 11,
+                                                      "lg": 11,
+                                                      "md": 11,
+                                                      "sm": 11,
+                                                      "xs": 11
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -1114,7 +1185,36 @@
                                                   "name": "Grid layout",
                                                   "columns": "2"
                                                 },
-                                                "events": [],
+                                                "events": [
+                                                  {
+                                                    "triggerId": "RKueQcqvHYT5tQG6UBZHB",
+                                                    "triggerName": "FILL_THAMEEN_HISTORY_TYPE_ALL",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "value",
+                                                      "destinationBindingKey": "THAMEEN_FILTER_TYPE",
+                                                      "sourceBindingKey": "THAMEEN_FILTER_TYPE",
+                                                      "sourceStoreType": 1,
+                                                      "destinationStoreType": 1,
+                                                      "logic": {
+                                                        "if": [
+                                                          {
+                                                            "==": [true, true]
+                                                          },
+                                                          "All",
+                                                          ""
+                                                        ]
+                                                      },
+                                                      "changeValueConditonally": true,
+                                                      "targettedType": "value"
+                                                    },
+                                                    "type": "1",
+                                                    "name": "On initialization",
+                                                    "commandType": "6"
+                                                  }
+                                                ],
                                                 "component": {
                                                   "type": "10001",
                                                   "content": "Grid layout"
@@ -1122,14 +1222,19 @@
                                                 "path": "0-0-1-0-0-0-0-0-1-2-0",
                                                 "dimensions": {
                                                   "rows": 1,
-                                                  "columns": 1,
-                                                  "colSize0xs": 12,
-                                                  "colSize0sm": 12,
-                                                  "colSize0md": 12,
-                                                  "colSize0lg": 12,
-                                                  "colSize0xl": 12
+                                                  "columns": 2,
+                                                  "colSize0xs": 1,
+                                                  "colSize0sm": 1,
+                                                  "colSize0md": 1,
+                                                  "colSize0lg": 1,
+                                                  "colSize0xl": 1,
+                                                  "colSize1xs": 11,
+                                                  "colSize1sm": 11,
+                                                  "colSize1md": 11,
+                                                  "colSize1lg": 11,
+                                                  "colSize1xl": 11
                                                 },
-                                                "readOnly": false
+                                                "readOnly": true
                                               }
                                             ],
                                             "layoutProperties": {
@@ -1138,8 +1243,7 @@
                                               "md": 3,
                                               "sm": 3,
                                               "xs": 3
-                                            },
-                                            "path": "0-0-1-0-0-0-0-0-1-2"
+                                            }
                                           }
                                         ],
                                         "path": "0-0-1-0-0-0-0-0-1",
@@ -1151,7 +1255,8 @@
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
                                               "padding": "5px",
-                                              "spacing": 0
+                                              "spacing": 0,
+                                              "margin": "10px 0px"
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -1175,7 +1280,28 @@
                                           "20010",
                                           "widget"
                                         ],
-                                        "name": "Grid layout"
+                                        "name": "Grid layout",
+                                        "dimensions": {
+                                          "rows": 1,
+                                          "columns": 3,
+                                          "colSize0xs": 5,
+                                          "colSize0sm": 5,
+                                          "colSize0md": 5,
+                                          "colSize0lg": 5,
+                                          "colSize0xl": 5,
+                                          "colSize1xs": 4,
+                                          "colSize1sm": 4,
+                                          "colSize1md": 4,
+                                          "colSize1lg": 4,
+                                          "colSize1xl": 4,
+                                          "colSize2xs": 3,
+                                          "colSize2sm": 3,
+                                          "colSize2md": 3,
+                                          "colSize2lg": 3,
+                                          "colSize2xl": 3,
+                                          "layoutProperties": null
+                                        },
+                                        "readOnly": true
                                       }
                                     ],
                                     "layoutProperties": {
@@ -1184,8 +1310,7 @@
                                       "md": 12,
                                       "sm": 12,
                                       "xs": 12
-                                    },
-                                    "path": "0-0-1-0-0-0-0-0"
+                                    }
                                   }
                                 ],
                                 "allowedContainers": [
@@ -1201,7 +1326,7 @@
                                   "layoutProperties": {
                                     "gridLayout": {
                                       "//": "Use this class to style grid layout component.",
-                                      "padding": "5px 0px 5px 10px",
+                                      "padding": "5px 20px 5px 10px",
                                       "spacing": 0
                                     },
                                     "mainContainer": "gridLayout"
@@ -1227,8 +1352,7 @@
                                   "colSize0sm": 12,
                                   "colSize0md": 12,
                                   "colSize0lg": 12,
-                                  "colSize0xl": 12,
-                                  "layoutProperties": null
+                                  "colSize0xl": 12
                                 },
                                 "readOnly": true
                               },
@@ -1248,7 +1372,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "lYNlpnJhNRZnRKxOBqCNV",
+                                            "id": "sdMwg06ptvaMcZfiQ8XlU",
                                             "gridProps": [
                                               {
                                                 "type": "20009",
@@ -1257,7 +1381,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "6xVaISZzwgCWT3XE8pqPV",
+                                                    "id": "-7nvXBbq37Gf3TYS9Nobp",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1266,7 +1390,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "_yx6WM6hVJ6O1QmlX05k3",
+                                                            "id": "LFpOvHfR7zBdDBui9Cn0F",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1299,7 +1423,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "name",
+                                                                          "label": "titleIB",
                                                                           "searchInState": true,
                                                                           "storeType": 2
                                                                         },
@@ -1480,8 +1604,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-1-0-0-0-1-0-0-0-0-0-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -1498,7 +1621,8 @@
                                                             "gridLayout": {
                                                               "//": "Use this class to style grid layout component.",
                                                               "padding": "10px",
-                                                              "spacing": 0
+                                                              "spacing": 0,
+                                                              "margin-bottom": "12px"
                                                             },
                                                             "mainContainer": "gridLayout"
                                                           },
@@ -1513,12 +1637,26 @@
                                                             {
                                                               "cssClassName": "ACTIVE_FILTER_STATEMENT ",
                                                               "logic": {
-                                                                "==": [
+                                                                "and": [
                                                                   {
-                                                                    "var": "date"
+                                                                    "==": [
+                                                                      {
+                                                                        "var": "fromDate"
+                                                                      },
+                                                                      {
+                                                                        "var": "currentScreen.form.THM_FILTER.startDate"
+                                                                      }
+                                                                    ]
                                                                   },
                                                                   {
-                                                                    "var": "currentScreen.form.date"
+                                                                    "==": [
+                                                                      {
+                                                                        "var": "toDate"
+                                                                      },
+                                                                      {
+                                                                        "var": "currentScreen.form.THM_FILTER.endDate"
+                                                                      }
+                                                                    ]
                                                                   }
                                                                 ]
                                                               }
@@ -1527,38 +1665,175 @@
                                                         },
                                                         "events": [
                                                           {
-                                                            "triggerId": "_h9oAt8jA1ZFxLg_CpFdm",
-                                                            "triggerName": "COLLAPSE_STATEMENT_FILTER",
-                                                            "serviceType": "11",
+                                                            "triggerId": "A5SHj8WBjoA-2rMvAYI07",
+                                                            "triggerName": "THM_ALL_API_AFTER_FILTER_SEQUENTIAL",
+                                                            "serviceType": "2",
                                                             "attributes": {
+                                                              "delay": "",
                                                               "storeType": "",
-                                                              "selectedObjectBindingKey": "selectedObject",
-                                                              "dataType": "value",
-                                                              "destinationBindingKey": "COLLAPSE_STATEMENT",
-                                                              "sourceBindingKey": "COLLAPSE_STATEMENT",
-                                                              "sourceStoreType": 2,
-                                                              "destinationStoreType": 2,
-                                                              "logic": {
-                                                                "if": [
-                                                                  {
-                                                                    "==": [
-                                                                      {
-                                                                        "var": "COLLAPSE_STATEMENT"
-                                                                      },
-                                                                      false
-                                                                    ]
-                                                                  },
-                                                                  true,
-                                                                  false
-                                                                ]
-                                                              },
-                                                              "changeValueConditonally": true,
-                                                              "mapRecursiveInChilds": true,
-                                                              "targettedType": "value"
+                                                              "searchInState": false,
+                                                              "triggers": [
+                                                                {
+                                                                  "id": "RMKiL_RgjOCeBWtJe7Eh-",
+                                                                  "_id": "Pildq4xveRpXWaDgpctLj",
+                                                                  "name": "SET_THAMEEN_CURRENT_DATE",
+                                                                  "old_name": "SET_THAMEEN_CURRENT_DATE",
+                                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                                  "gitBranchName": "master",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "11",
+                                                                      "command": {
+                                                                        "type": "6",
+                                                                        "attributes": {
+                                                                          "requestBody": [],
+                                                                          "storeType": "",
+                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                          "dataType": "value",
+                                                                          "destinationBindingKey": "THM_FILTER",
+                                                                          "sourceBindingKey": "THM_FILTER",
+                                                                          "sourceStoreType": 2,
+                                                                          "destinationStoreType": 1,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              {
+                                                                                "var": "HISTORY_FILTERS.content.tabs.0"
+                                                                              },
+                                                                              ""
+                                                                            ]
+                                                                          },
+                                                                          "changeValueConditonally": true,
+                                                                          "targettedType": "value"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+                                                                  "updatedAt": "4/1/2024",
+                                                                  "createdAt": "4/1/2024",
+                                                                  "createdBy": "zeeshan",
+                                                                  "updatedBy": "zeeshan"
+                                                                },
+                                                                {
+                                                                  "id": "0X9U8vY_1Ujd7S1NemIF5",
+                                                                  "name": "CHANGE_THAMEEN_HISTORY_FILTER_VALUES",
+                                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                                  "gitBranchName": "master",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "11",
+                                                                      "command": {
+                                                                        "type": "6",
+                                                                        "attributes": {
+                                                                          "storeType": "",
+                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                          "dataType": "object",
+                                                                          "sourceBindingKey": "",
+                                                                          "filterList": [
+                                                                            {
+                                                                              "key": "startDate",
+                                                                              "changeValueConditonally": true,
+                                                                              "logic": {
+                                                                                "if": [
+                                                                                  true,
+                                                                                  {
+                                                                                    "var": "THM_FILTER.fromDate"
+                                                                                  },
+                                                                                  ""
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            {
+                                                                              "key": "endDate",
+                                                                              "changeValueConditonally": true,
+                                                                              "logic": {
+                                                                                "if": [
+                                                                                  true,
+                                                                                  {
+                                                                                    "var": "THM_FILTER.toDate"
+                                                                                  },
+                                                                                  ""
+                                                                                ]
+                                                                              }
+                                                                            }
+                                                                          ],
+                                                                          "targettedType": "value"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+                                                                  "_id": "A-y3L5OgBPldnv30SGAqD",
+                                                                  "updatedAt": "4/1/2024",
+                                                                  "createdAt": "4/1/2024",
+                                                                  "createdBy": "zeeshan",
+                                                                  "updatedBy": "zeeshan"
+                                                                },
+                                                                {
+                                                                  "id": "Hom3V1iTNydegXZ9NpALv",
+                                                                  "_id": "w6fKBKJiR69O-g6ecALJU",
+                                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                                  "gitBranchName": "master",
+                                                                  "name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+                                                                  "old_name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+                                                                  "status": "ACTIVE",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "8",
+                                                                      "command": {
+                                                                        "type": "1",
+                                                                        "attributes": {
+                                                                          "loaderWidgetIds": [
+                                                                            906070
+                                                                          ],
+                                                                          "messageWidgetIds": [
+                                                                            906070
+                                                                          ],
+                                                                          "responseStateKey": "THAMEEN_HORIZONTAL_LIST",
+                                                                          "url": "/api-designer/api/thameenPointsDetails/execute",
+                                                                          "checksum": true,
+                                                                          "encryption": true,
+                                                                          "isDeviceDetails": false,
+                                                                          "loginTrigger": false,
+                                                                          "formData": false,
+                                                                          "logoutTrigger": false,
+                                                                          "headers": {
+                                                                            "Content-Type": "application/json",
+                                                                            "Accept": "application/json",
+                                                                            "channel_key": "002"
+                                                                          },
+                                                                          "requestBody": [
+                                                                            {
+                                                                              "type": 1,
+                                                                              "name": "Form",
+                                                                              "key": "request",
+                                                                              "value": "THM_FILTER"
+                                                                            }
+                                                                          ],
+                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                          "storeType": 2
+                                                                        },
+                                                                        "responseHandler": []
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+                                                                  "updatedAt": "4/1/2024",
+                                                                  "createdAt": "4/1/2024",
+                                                                  "createdBy": "zeeshan",
+                                                                  "updatedBy": "zeeshan"
+                                                                }
+                                                              ],
+                                                              "triggerIds": [
+                                                                "RMKiL_RgjOCeBWtJe7Eh-",
+                                                                "0X9U8vY_1Ujd7S1NemIF5",
+                                                                "Hom3V1iTNydegXZ9NpALv"
+                                                              ]
                                                             },
                                                             "type": "2",
                                                             "name": "On click",
-                                                            "commandType": "6"
+                                                            "commandType": "1"
                                                           }
                                                         ],
                                                         "component": {
@@ -1584,8 +1859,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-1-0-0-0-1-0-0-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -1610,13 +1884,14 @@
                                                       "padding": "0px"
                                                     },
                                                     "listLayout": {
-                                                      "padding": "5px"
+                                                      "padding": "0px 5px"
                                                     },
                                                     "mainContainer": "listLayout"
                                                   },
                                                   "storeType": 2,
-                                                  "dataSource": "HISTORY_FILTERS.filters",
-                                                  "multiLevelData": "data"
+                                                  "dataSource": "HISTORY_FILTERS.content.tabs",
+                                                  "multiLevelData": "data",
+                                                  "bindingKey": "THM_FILTER"
                                                 },
                                                 "events": [],
                                                 "component": {
@@ -1642,8 +1917,7 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-1-0-0-0-1-0-0-0"
+                                            }
                                           }
                                         ],
                                         "allowedContainers": [
@@ -1659,8 +1933,9 @@
                                           "layoutProperties": {
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
-                                              "padding": "5px",
-                                              "spacing": 0
+                                              "padding": "0px 20px 0px 10px",
+                                              "spacing": 0,
+                                              "margin": "0px"
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -1685,7 +1960,8 @@
                                           "colSize0sm": 12,
                                           "colSize0md": 12,
                                           "colSize0lg": 12,
-                                          "colSize0xl": 12
+                                          "colSize0xl": 12,
+                                          "layoutProperties": null
                                         },
                                         "readOnly": true
                                       }
@@ -1718,7 +1994,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "zmigWR4tvzkV2klKP-AB9",
+                                                    "id": "mCHTQb7iTYNtRSHrAFR4E",
                                                     "gridProps": [
                                                       {
                                                         "type": "20009",
@@ -1727,7 +2003,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "Jq9gdTpcYVq1q4BCMT2cT",
+                                                            "id": "IKTdkZ_0HGxyKk9DCikO5",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1736,7 +2012,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "lWpNjFTYnis-jTxolWssf",
+                                                                    "id": "TXnPRhTqL5g67CkTJdGRh",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "IPGOpoPA7oxEDxx4p42g0",
@@ -1829,7 +2105,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "title",
+                                                                          "label": "name",
                                                                           "searchInState": true,
                                                                           "storeType": 2
                                                                         },
@@ -1877,7 +2153,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "balance",
+                                                                          "label": "value",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
                                                                           "storeType": 2
@@ -1944,7 +2220,7 @@
                                                                         {
                                                                           "var": "type"
                                                                         },
-                                                                        "balance"
+                                                                        "pointsBalance"
                                                                       ]
                                                                     }
                                                                   }
@@ -1973,7 +2249,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "DIm5czDd6AjVUnBKhK_PZ",
+                                                                    "id": "t7200H3iV72XuvW4Qo3j9",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "UL7UWnjb-EyZVr-VPRu19",
@@ -2066,7 +2342,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "title",
+                                                                          "label": "name",
                                                                           "searchInState": true,
                                                                           "storeType": 2
                                                                         },
@@ -2114,7 +2390,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "balance",
+                                                                          "label": "value",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
                                                                           "storeType": 2
@@ -2181,7 +2457,7 @@
                                                                         {
                                                                           "var": "type"
                                                                         },
-                                                                        "expiring"
+                                                                        "expiringEndOfMonth"
                                                                       ]
                                                                     }
                                                                   }
@@ -2210,7 +2486,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "r-2t4JwnjBd28I3z9YnZl",
+                                                                    "id": "3HGX-5km6p-wtRYq1Uzl5",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "MKdvvpbltsSoJmC_Bm8NZ",
@@ -2303,7 +2579,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "title",
+                                                                          "label": "name",
                                                                           "searchInState": true,
                                                                           "storeType": 2
                                                                         },
@@ -2351,7 +2627,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "balance",
+                                                                          "label": "value",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
                                                                           "storeType": 2
@@ -2416,9 +2692,9 @@
                                                                     "logic": {
                                                                       "!=": [
                                                                         {
-                                                                          "var": "type"
+                                                                          "var": "name"
                                                                         },
-                                                                        "expired"
+                                                                        "Expired Points"
                                                                       ]
                                                                     }
                                                                   }
@@ -2428,7 +2704,18 @@
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
                                                                 },
-                                                                "path": "0-0-1-0-0-0-1-1-0-0-0-0-0-0-2"
+                                                                "path": "0-0-1-0-0-0-1-1-0-0-0-0-0-0-2",
+                                                                "dimensions": {
+                                                                  "rows": 1,
+                                                                  "columns": 1,
+                                                                  "colSize0xs": 12,
+                                                                  "colSize0sm": 12,
+                                                                  "colSize0md": 12,
+                                                                  "colSize0lg": 12,
+                                                                  "colSize0xl": 12,
+                                                                  "layoutProperties": null
+                                                                },
+                                                                "readOnly": true
                                                               },
                                                               {
                                                                 "type": "10001",
@@ -2437,7 +2724,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "h1xiIggRoV7do1shdrQn-",
+                                                                    "id": "KA6avv2Bye0Y5uv88_R4Z",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "8NakF4JTEwvDLNEFyVQpV",
@@ -2530,7 +2817,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "title",
+                                                                          "label": "name",
                                                                           "searchInState": true,
                                                                           "storeType": 2
                                                                         },
@@ -2578,7 +2865,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "balance",
+                                                                          "label": "value",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
                                                                           "storeType": 2
@@ -2645,7 +2932,7 @@
                                                                         {
                                                                           "var": "type"
                                                                         },
-                                                                        "redeemed"
+                                                                        "pointsRedeemed"
                                                                       ]
                                                                     }
                                                                   }
@@ -2664,7 +2951,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "29tONiQYHnKm3drW7248H",
+                                                                    "id": "7UTO1gkLGF4EFtjtucxCJ",
                                                                     "gridProps": [
                                                                       {
                                                                         "id": "dO5u53uo3jmbo4Qy9wwWn",
@@ -2757,7 +3044,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "title",
+                                                                          "label": "name",
                                                                           "searchInState": true,
                                                                           "storeType": 2
                                                                         },
@@ -2805,7 +3092,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "balance",
+                                                                          "label": "value",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
                                                                           "storeType": 2
@@ -2872,7 +3159,7 @@
                                                                         {
                                                                           "var": "type"
                                                                         },
-                                                                        "earned"
+                                                                        "pointsEarned"
                                                                       ]
                                                                     }
                                                                   }
@@ -2922,38 +3209,38 @@
                                                             "mainContainer": "listLayout"
                                                           },
                                                           "isHList": true,
-                                                          "dataSource": "HISTORY_FILTERS.list",
+                                                          "dataSource": "THAMEEN_HORIZONTAL_LIST.content.pointsData",
                                                           "storeType": 2,
                                                           "bindingKeyForType": "type",
                                                           "listTypes": [
                                                             {
-                                                              "type": "balance",
+                                                              "type": "pointsBalance",
                                                               "bindingKey": "",
                                                               "width": "150px",
                                                               "height": "125px"
                                                             },
                                                             {
-                                                              "type": "expiring",
+                                                              "type": "expiringEndOfMonth",
                                                               "bindingKey": "",
                                                               "width": "230px",
                                                               "height": "125px"
                                                             },
                                                             {
-                                                              "type": "expired",
+                                                              "type": "Expired Points",
                                                               "bindingKey": "",
                                                               "width": "150px",
                                                               "height": "125px"
                                                             },
                                                             {
-                                                              "type": "redeemed",
+                                                              "type": "pointsRedeemed",
                                                               "bindingKey": "",
                                                               "width": "180px",
                                                               "height": "125px"
                                                             },
                                                             {
-                                                              "type": "earned",
+                                                              "type": "pointsEarned",
                                                               "bindingKey": "",
-                                                              "width": "180px",
+                                                              "width": "160px",
                                                               "height": "125px"
                                                             }
                                                           ],
@@ -2964,7 +3251,17 @@
                                                           "type": "20009",
                                                           "content": "List layout"
                                                         },
-                                                        "path": "0-0-1-0-0-0-1-1-0-0-0-0-0"
+                                                        "path": "0-0-1-0-0-0-1-1-0-0-0-0-0",
+                                                        "dimensions": {
+                                                          "rows": 1,
+                                                          "columns": 1,
+                                                          "colSize0xs": 12,
+                                                          "colSize0sm": 12,
+                                                          "colSize0md": 12,
+                                                          "colSize0lg": 12,
+                                                          "colSize0xl": 12
+                                                        },
+                                                        "readOnly": false
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -2973,8 +3270,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-1-0-0-0-1-1-0-0-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "path": "0-0-1-0-0-0-1-1-0-0-0",
@@ -2998,7 +3294,17 @@
                                                     "alignItems": "flex-start"
                                                   },
                                                   "direction": "row",
-                                                  "name": "Grid layout"
+                                                  "name": "Grid layout",
+                                                  "hideCondition": {
+                                                    "logic": {
+                                                      "<": [
+                                                        {
+                                                          "var": "currentScreen.THAMEEN_HORIZONTAL_LIST.content.pointsData.length"
+                                                        },
+                                                        1
+                                                      ]
+                                                    }
+                                                  }
                                                 },
                                                 "component": {
                                                   "type": "10001",
@@ -5722,8 +6028,7 @@
               "md": 12,
               "sm": 12,
               "xs": 12
-            },
-            "path": "0-0"
+            }
           }
         ],
         "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
@@ -5737,8 +6042,8 @@
     "gitBranchName": "master",
     "_id": "sUi7T78R139F60HRazl10",
     "createdBy": "zeeshan",
-    "updatedAt": "3/26/2024",
-    "createdAt": "3/26/2024",
+    "updatedAt": "4/3/2024",
+    "createdAt": "4/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5805,14 +6110,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "tecYT9GTPA2OhqJmptvde",
-        "triggerName": "THAMEEN_HISTORY_FILTERS",
-        "name": "On initialization",
-        "type": "1"
-      },
-      {
-        "triggerId": "VP5RVijm5kHHSW0tIRHCf",
-        "triggerName": "GET_THAMEEN_DASHBOARD_HISTORY",
+        "triggerId": "76NEUXgr_r-CJjiEaYLAk",
+        "triggerName": "THAMEEN_HISTORY_SEQUENTIAL",
         "name": "On initialization",
         "type": "1"
       }
@@ -5995,8 +6294,8 @@
     "component": { "content": "Image", "type": "20012" },
     "events": [
       {
-        "triggerId": "UFA2TfzcJX-Frio45Fhbr",
-        "triggerName": "GO_TO_PAY_CARDS",
+        "triggerId": "bQTzimglFZMk9jU7fKgR_",
+        "triggerName": "GO_TO_THAMEEN",
         "name": "On click",
         "type": "2",
         "serviceType": "1"
@@ -6269,7 +6568,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px 0px 5px 10px",
+          "padding": "5px 20px 5px 10px",
           "spacing": 0
         },
         "mainContainer": "gridLayout"
@@ -6422,7 +6721,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "padding": "5px",
-          "spacing": 0
+          "spacing": 0,
+          "margin": "10px 0px"
         },
         "mainContainer": "gridLayout"
       },
@@ -6599,7 +6899,7 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 6, "lg": 6, "md": 6, "sm": 6, "xs": 6 }
+          "layoutProperties": { "xl": 1, "lg": 1, "md": 1, "sm": 1, "xs": 1 }
         },
         {
           "componentId": "ni0gy9eJqCzvj2F10uqUl",
@@ -6612,7 +6912,13 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 6, "lg": 6, "md": 6, "sm": 6, "xs": 6 }
+          "layoutProperties": {
+            "xl": 11,
+            "lg": 11,
+            "md": 11,
+            "sm": 11,
+            "xs": 11
+          }
         }
       ],
       "label": "Header",
@@ -6634,7 +6940,14 @@
       "columns": "2"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "RKueQcqvHYT5tQG6UBZHB",
+        "triggerName": "FILL_THAMEEN_HISTORY_TYPE_ALL",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
     "screenId": "sUi7T78R139F60HRazl10",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6696,12 +7009,11 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px 10px 5px 10px",
+          "padding": "5px",
           "spacing": 0,
           "borderRadius": "10px",
           "border": "1px solid #E6E6E6",
-          "cursor": "pointer",
-          "width": "140px"
+          "cursor": "pointer"
         },
         "mainContainer": "gridLayout"
       },
@@ -6713,7 +7025,8 @@
       "direction": "row",
       "name": "STATEMENT_DOWNLOAD_WIDGET",
       "cssClassNames": [],
-      "columns": "2"
+      "columns": "2",
+      "popoverComponentId": "t4q_ESCeYHNQuKBtYjqWl"
     },
     "layout": null,
     "events": [],
@@ -6735,7 +7048,7 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "16px",
+          "font-size": "13px",
           "color": "#000000",
           "letter-spacing": "0px",
           "cursor": "pointer"
@@ -6752,7 +7065,9 @@
         "sm": 9,
         "xs": 9
       },
-      "label": "All"
+      "label": "THAMEEN_FILTER_TYPE",
+      "searchInState": true,
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -6917,8 +7232,9 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px",
-          "spacing": 0
+          "padding": "0px 20px 0px 10px",
+          "spacing": 0,
+          "margin": "0px"
         },
         "mainContainer": "gridLayout"
       },
@@ -6975,12 +7291,13 @@
       },
       "layoutProperties": {
         "itemStyle": { "padding": "0px" },
-        "listLayout": { "padding": "5px" },
+        "listLayout": { "padding": "0px 5px" },
         "mainContainer": "listLayout"
       },
       "storeType": 2,
-      "dataSource": "HISTORY_FILTERS.filters",
-      "multiLevelData": "data"
+      "dataSource": "HISTORY_FILTERS.content.tabs",
+      "multiLevelData": "data",
+      "bindingKey": "THM_FILTER"
     },
     "layout": null,
     "events": [],
@@ -7041,7 +7358,8 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "padding": "10px",
-          "spacing": 0
+          "spacing": 0,
+          "margin-bottom": "12px"
         },
         "mainContainer": "gridLayout"
       },
@@ -7056,7 +7374,20 @@
         {
           "cssClassName": "ACTIVE_FILTER_STATEMENT ",
           "logic": {
-            "==": [{ "var": "date" }, { "var": "currentScreen.form.date" }]
+            "and": [
+              {
+                "==": [
+                  { "var": "fromDate" },
+                  { "var": "currentScreen.form.THM_FILTER.startDate" }
+                ]
+              },
+              {
+                "==": [
+                  { "var": "toDate" },
+                  { "var": "currentScreen.form.THM_FILTER.endDate" }
+                ]
+              }
+            ]
           }
         }
       ]
@@ -7064,8 +7395,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "_h9oAt8jA1ZFxLg_CpFdm",
-        "triggerName": "COLLAPSE_STATEMENT_FILTER",
+        "triggerId": "A5SHj8WBjoA-2rMvAYI07",
+        "triggerName": "THM_ALL_API_AFTER_FILTER_SEQUENTIAL",
         "name": "On click",
         "type": "2"
       }
@@ -7146,7 +7477,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "name",
+      "label": "titleIB",
       "searchInState": true,
       "storeType": 2
     },
@@ -7374,7 +7705,17 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "hideCondition": {
+        "logic": {
+          "<": [
+            {
+              "var": "currentScreen.THAMEEN_HORIZONTAL_LIST.content.pointsData.length"
+            },
+            1
+          ]
+        }
+      }
     },
     "layout": null,
     "events": [],
@@ -7501,38 +7842,38 @@
         "mainContainer": "listLayout"
       },
       "isHList": true,
-      "dataSource": "HISTORY_FILTERS.list",
+      "dataSource": "THAMEEN_HORIZONTAL_LIST.content.pointsData",
       "storeType": 2,
       "bindingKeyForType": "type",
       "listTypes": [
         {
-          "type": "balance",
+          "type": "pointsBalance",
           "bindingKey": "",
           "width": "150px",
           "height": "125px"
         },
         {
-          "type": "expiring",
+          "type": "expiringEndOfMonth",
           "bindingKey": "",
           "width": "230px",
           "height": "125px"
         },
         {
-          "type": "expired",
+          "type": "Expired Points",
           "bindingKey": "",
           "width": "150px",
           "height": "125px"
         },
         {
-          "type": "redeemed",
+          "type": "pointsRedeemed",
           "bindingKey": "",
           "width": "180px",
           "height": "125px"
         },
         {
-          "type": "earned",
+          "type": "pointsEarned",
           "bindingKey": "",
-          "width": "180px",
+          "width": "160px",
           "height": "125px"
         }
       ],
@@ -7611,7 +7952,9 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "balance"] } }
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "type" }, "pointsBalance"] }
+      }
     },
     "layout": null,
     "events": [],
@@ -7709,7 +8052,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "title",
+      "label": "name",
       "searchInState": true,
       "storeType": 2
     },
@@ -7755,7 +8098,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "balance",
+      "label": "value",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 2
@@ -7842,7 +8185,9 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "expiring"] } }
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "type" }, "expiringEndOfMonth"] }
+      }
     },
     "layout": null,
     "events": [],
@@ -7940,7 +8285,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "title",
+      "label": "name",
       "searchInState": true,
       "storeType": 2
     },
@@ -7986,7 +8331,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "balance",
+      "label": "value",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 2
@@ -8073,7 +8418,9 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "expired"] } }
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "name" }, "Expired Points"] }
+      }
     },
     "layout": null,
     "events": [],
@@ -8171,7 +8518,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "title",
+      "label": "name",
       "searchInState": true,
       "storeType": 2
     },
@@ -8217,7 +8564,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "balance",
+      "label": "value",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 2
@@ -8304,7 +8651,9 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "redeemed"] } }
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "type" }, "pointsRedeemed"] }
+      }
     },
     "layout": null,
     "events": [],
@@ -8402,7 +8751,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "title",
+      "label": "name",
       "searchInState": true,
       "storeType": 2
     },
@@ -8448,7 +8797,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "balance",
+      "label": "value",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 2
@@ -8535,7 +8884,9 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "hideCondition": { "logic": { "!=": [{ "var": "type" }, "earned"] } }
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "type" }, "pointsEarned"] }
+      }
     },
     "layout": null,
     "events": [],
@@ -8633,7 +8984,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "title",
+      "label": "name",
       "searchInState": true,
       "storeType": 2
     },
@@ -8679,7 +9030,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "balance",
+      "label": "value",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 2

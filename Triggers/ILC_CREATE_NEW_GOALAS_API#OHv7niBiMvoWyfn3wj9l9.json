@@ -43,20 +43,75 @@
             {
               "type": 1,
               "name": "Form",
-              "key": "request.goalAmount",
+              "key": "request.amount",
               "value": "ILCG_GOAL_AMOUNT"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.targetDate",
+              "value": "ILCG_TARGET_DATE"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.contributionFreq",
+              "value": "ILC_FREQUENCY.name"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.contributionAmount",
+              "value": "ILCG_AMOUNT"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.cardNumber",
+              "value": "CURRENT_CARD.cardNumber"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.cprOfCard",
+              "value": "CURRENT_CARD.clientCode"
+            },
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request.image",
+              "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
             }
           ],
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "ILCG_CREATE_GOAL_SUCCESS_MESSAGE",
+            "triggerId": "SyIBo7HY40Z8JTC2MNAYJ"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "ILCG_CREATE_GOAL_ERROR_MESSAGE",
+            "triggerId": "7ubebU8IrQBx0xn7fRnfZ"
+          },
+          {
+            "triggerName": "ILCG_NAVIGATE_TO_ILC_CHILD_GOALS_AFTER_DELAY",
+            "triggerId": "jbmm-eHgh97VV-0SST6GN",
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200
+          }
+        ]
       }
     }
   ],
-  "csrf": "0.b9fy88mkafv-cgO72iOxZOT2FHK9ymtp",
-  "updatedAt": "3/25/2024",
-  "createdAt": "3/25/2024",
+  "csrf": "0.41hskwbvoipt_Ja7fMLrFhHvcqe4xw5K",
+  "updatedAt": "4/2/2024",
+  "createdAt": "4/2/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }

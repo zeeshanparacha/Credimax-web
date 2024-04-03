@@ -1,0 +1,132 @@
+{
+  "id": "t97YWrmCXsDfLkvt--dLG",
+  "_id": "8HoSyH9DVlUppXCWxW9sE",
+  "name": "ILPGC_DATA_EXT_DC",
+  "old_name": "ILPGC_DATA_EXT_DC",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "15",
+        "attributes": {
+          "requestBody": [],
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "sourceBindingKey": "",
+          "filterList": [
+            {
+              "key": "pc_request.cardOrAccount.saveCard",
+              "changeValueConditonally": false,
+              "storeType": 2,
+              "logic": "0"
+            },
+            {
+              "key": "pc_request.goalId",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.current_goal.id" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.toCardNumber",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.ILP_SELECTED_CHILD_CARD.cardNumber"
+              }
+            },
+            {
+              "key": "pc_request.amount",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": { "var": "currentScreen.form.pc_custom_amount_2" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.cprOfOtherCardHolder",
+              "storeType": 2,
+              "logic": {
+                "var": "currentSession.userProfile.content.customer.userIdenValue"
+              },
+              "changeValueConditonally": true
+            },
+            {
+              "key": "pc_request.cardOrAccount.accountOrCardNumber",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.pc_card_number_2" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.currency",
+              "storeType": 2,
+              "logic": "BHD"
+            },
+            {
+              "key": "pc_request.cardOrAccount.cardOrAccType",
+              "storeType": 2,
+              "changeValueConditonally": false,
+              "logic": "DebitCard"
+            },
+            {
+              "key": "pc_request.cardOrAccount.type",
+              "storeType": 2,
+              "changeValueConditonally": false,
+              "logic": "DebitCard"
+            },
+            {
+              "key": "pc_request.validation",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pc_check_otp.content.otpRequired"
+                      },
+                      "1"
+                    ]
+                  },
+                  { "var": "currentScreen.pc_validation_object" },
+                  null
+                ]
+              }
+            },
+            {
+              "key": "pc_request.cardOrAccount.saveNewCard",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [{ "var": "currentScreen.save_card" }, "true", "false"]
+              }
+            },
+            {
+              "key": "pc_request.cardOrAccount.expiry",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.pc_expiry_date" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.cardNickName",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.pc_nikname" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.cardHolderName",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.pc_name_on_card" }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.l6b2pd817akiBRFz6bNYSgDAW526rF1",
+  "updatedAt": "4/2/2024",
+  "createdAt": "4/2/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}

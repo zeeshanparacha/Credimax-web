@@ -1,0 +1,93 @@
+{
+  "id": "mQLDghZu_c4Svh7nbDthD",
+  "_id": "J7TL7N_YdXzNNtqWUS8xb",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPGC_RELEASE_PAYMENT",
+  "old_name": "ILPGC_RELEASE_PAYMENT",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "pc_release_payment",
+          "url": "/api-designer/api/goalContributionByParent/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 2,
+              "name": "Current screen",
+              "key": "request",
+              "value": "pc_request"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2,
+          "loadingState": "PCRP_Loader_Generic",
+          "isLoadingState": true
+        },
+        "responseHandler": [
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+            },
+            "httpStatus": 200,
+            "triggerName": "PC_SHOW_RESPONSE",
+            "triggerId": "0ng9Cais2R8XaYCuWV8sW"
+          },
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, true, false]
+            },
+            "httpStatus": 200,
+            "triggerName": "PC_SAVE_BENIFIT_TRANSACTION_STATUS",
+            "triggerId": "tUDjtDaOHEtaVjVJM71JY"
+          },
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, true, false]
+            },
+            "httpStatus": 200,
+            "triggerName": "PC_REDIRECT_TO_BENIFIT",
+            "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+          },
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+            },
+            "httpStatus": 200,
+            "triggerName": "ILP_GOALS_GET_CARD_LIST_API",
+            "triggerId": "YRuPlcSjKgGHssvJGzzH7"
+          },
+          {
+            "logic": {
+              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+            },
+            "httpStatus": 200,
+            "triggerName": "ILPT_GET_ALL_PMs_2",
+            "triggerId": "B2UqpEhVSTzw_BZc5WsiC"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.l6b2pd817akiBRFz6bNYSgDAW526rF1",
+  "updatedAt": "4/2/2024",
+  "createdAt": "4/2/2024",
+  "createdBy": "talha2",
+  "updatedBy": "talha2"
+}
