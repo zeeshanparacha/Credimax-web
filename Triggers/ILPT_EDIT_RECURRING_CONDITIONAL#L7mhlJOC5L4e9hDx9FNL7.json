@@ -1,0 +1,96 @@
+{
+  "_id": "L7mhlJOC5L4e9hDx9FNL7",
+  "id": "E6GNZMiTVaSCr1YaFAgkA",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_EDIT_RECURRING_CONDITIONAL",
+  "old_name": "ILPT_EDIT_RECURRING_CONDITIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
+                      },
+                      "Weekly"
+                    ]
+                  }
+                ]
+              },
+              "triggerName": "ILPT_EDIT_WEEKLY_DAY_SET",
+              "triggerId": "OP8L5izqDqu1Lawr2V4xF",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "ilpt_selected_task.date",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": {
+                            "var": "currentScreen.form.ilpt_weekly_edit_day.name"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
+                      },
+                      "Monthly"
+                    ]
+                  }
+                ]
+              },
+              "triggerName": "ILPT_EDIT_MONTHLY_DATE_SET",
+              "triggerId": "Yb0WsqxL4ZSVJKiZGDNZ8",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": ""
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.a68nrbb5v4K6wfr3I5Glm_5EwUgXZnx",
+  "updatedAt": "4/4/2024",
+  "createdAt": "4/4/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

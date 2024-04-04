@@ -27,7 +27,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "gA9bRGKzUieWAFtIe2PHN",
+            "id": "uY5QJOeGHR5ntpVT0wiIP",
             "gridProps": [
               {
                 "type": "10001",
@@ -531,7 +531,7 @@
                                                                           "label": "",
                                                                           "name": "Text box",
                                                                           "label-locale-key": "",
-                                                                          "maxLength": 20,
+                                                                          "maxLength": "200",
                                                                           "type": "text",
                                                                           "variant": "standard",
                                                                           "value": "",
@@ -561,7 +561,7 @@
                                                                             "errorMsg": "This field is required"
                                                                           },
                                                                           "placeholder": "",
-                                                                          "stateName": "iplt_selected_task.taskName",
+                                                                          "stateName": "ilpt_selected_task.taskName",
                                                                           "disableUnderline": true
                                                                         },
                                                                         "events": [],
@@ -971,7 +971,7 @@
                                                                                     "errorMsg": "This field is required"
                                                                                   },
                                                                                   "placeholder": "",
-                                                                                  "stateName": "iplt_selected_task.rewardWithOutCurrency",
+                                                                                  "stateName": "ilpt_selected_task.rewardWithOutCurrency",
                                                                                   "disableUnderline": true,
                                                                                   "decimalPlaces": "3"
                                                                                 },
@@ -1449,11 +1449,12 @@
                                                                             },
                                                                             "chip": {
                                                                               "//": "Use this class to style chip component.",
-                                                                              "height": "40px"
+                                                                              "height": "40px",
+                                                                              "background-color": "#D12F78 !important"
                                                                             },
                                                                             "deleteIcon": {
                                                                               "//": "Use this class to style remove icon.",
-                                                                              "color": "white"
+                                                                              "color": "white !important"
                                                                             },
                                                                             "avatar": {
                                                                               "//": "Use this class to style avatar.",
@@ -1477,23 +1478,7 @@
                                                                           "addRemoveIcon": true,
                                                                           "variant": "dynamic",
                                                                           "labelBindingkey": "name",
-                                                                          "imageAssetIdTemp": {
-                                                                            "createdBy": "user",
-                                                                            "_id": "655dd8bfc500201edc031146",
-                                                                            "name": "UserAddImage.png",
-                                                                            "type": "png",
-                                                                            "projectId": "652fcbce09869c3c809b3097",
-                                                                            "id": "EVI1Ca_CdJhgEkP-U2QL8",
-                                                                            "gitBranchName": "master",
-                                                                            "folderType": "web",
-                                                                            "platform": "web",
-                                                                            "url": "652fcbce09869c3c809b3097/web/UserAddImage.png",
-                                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/UserAddImage.png",
-                                                                            "createdAt": "2023-11-22T10:32:31.178Z",
-                                                                            "updatedAt": "2023-12-21T13:01:15.668Z",
-                                                                            "__v": 0,
-                                                                            "uri": "652fcbce09869c3c809b3097/web/UserAddImage.png"
-                                                                          },
+                                                                          "imageAssetIdTemp": null,
                                                                           "baseType": "sec_config",
                                                                           "colorBindingkey": "color",
                                                                           "imageBindingkey": "imageName",
@@ -1975,34 +1960,92 @@
                                                                 },
                                                                 "events": [
                                                                   {
-                                                                    "triggerId": "3GVi90PK2Y-ozJHdXPBtn",
-                                                                    "triggerName": "ILPT_EDIT_RECURRING_HIDE_SHOW",
-                                                                    "serviceType": "11",
+                                                                    "triggerId": "6tHt0rVkYhoRzQ5ET62mY",
+                                                                    "triggerName": "ILPT_EDIT_RECURRING_0_1_CONDITIONAL",
+                                                                    "serviceType": "13",
                                                                     "attributes": {
-                                                                      "requestBody": [],
-                                                                      "storeType": "",
-                                                                      "selectedObjectBindingKey": "selectedObject",
-                                                                      "dataType": "value",
-                                                                      "destinationBindingKey": "iplt_selected_task.isRecurring",
-                                                                      "sourceBindingKey": "iplt_selected_task.isRecurring",
-                                                                      "sourceStoreType": 1,
-                                                                      "destinationStoreType": 1,
-                                                                      "logic": {
-                                                                        "if": [
-                                                                          {
-                                                                            "==": [
+                                                                      "triggers": [
+                                                                        {
+                                                                          "triggerName": "ILPT_EDIT_RECURRING_1",
+                                                                          "triggerId": "1FK3LKrx5--lD-NLi9on1",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "15",
+                                                                                "attributes": {
+                                                                                  "storeType": "",
+                                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                                  "dataType": "",
+                                                                                  "sourceBindingKey": "",
+                                                                                  "filterList": [
+                                                                                    {
+                                                                                      "key": "ilpt_selected_task.isRecurring",
+                                                                                      "changeValueConditonally": false,
+                                                                                      "storeType": 1,
+                                                                                      "logic": "1"
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ],
+                                                                          "logic": {
+                                                                            "if": [
                                                                               {
-                                                                                "var": "isRecurring"
+                                                                                "==": [
+                                                                                  {
+                                                                                    "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                                                                                  },
+                                                                                  "0"
+                                                                                ]
                                                                               },
-                                                                              "0"
+                                                                              true,
+                                                                              false
                                                                             ]
-                                                                          },
-                                                                          "1",
-                                                                          "0"
-                                                                        ]
-                                                                      },
-                                                                      "changeValueConditonally": true,
-                                                                      "targettedType": "value"
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "triggerName": "ILPT_EDIT_RECURRING_0",
+                                                                          "triggerId": "raVnRDjfpHYptj5-ZNv1t",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "15",
+                                                                                "attributes": {
+                                                                                  "storeType": "",
+                                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                                  "dataType": "",
+                                                                                  "sourceBindingKey": "",
+                                                                                  "filterList": [
+                                                                                    {
+                                                                                      "key": "ilpt_selected_task.isRecurring",
+                                                                                      "changeValueConditonally": false,
+                                                                                      "storeType": 1,
+                                                                                      "logic": "0"
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ],
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              {
+                                                                                "==": [
+                                                                                  {
+                                                                                    "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                                                                                  },
+                                                                                  "1"
+                                                                                ]
+                                                                              },
+                                                                              true,
+                                                                              false
+                                                                            ]
+                                                                          }
+                                                                        }
+                                                                      ]
                                                                     },
                                                                     "type": "3",
                                                                     "name": "On change"
@@ -2219,7 +2262,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "rGmusZ0SKLP7LI9K2TfYa",
+                                                    "id": "mY2_4CVW1BkXLWDm3Fj8W",
                                                     "gridProps": [
                                                       {
                                                         "id": "UuiGPnImF9bizaF7EGt8Z",
@@ -2299,8 +2342,8 @@
                                                                         "attributes": {
                                                                           "name": "Calendar",
                                                                           "label": "",
-                                                                          "stateName": "iplt_selected_task.endDate",
-                                                                          "format": "dd-MMMM-yyyy",
+                                                                          "stateName": "endDate",
+                                                                          "format": "dd/MM/yyyy",
                                                                           "variant": "standard",
                                                                           "validate": {
                                                                             "required": false,
@@ -2467,11 +2510,17 @@
                                                   "name": "ILPT_TARGET_DATE",
                                                   "hideCondition": {
                                                     "logic": {
-                                                      "==": [
+                                                      "if": [
                                                         {
-                                                          "var": "currentScreen.form.iplt_selected_task.isRecurring"
+                                                          "==": [
+                                                            {
+                                                              "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                                                            },
+                                                            "0"
+                                                          ]
                                                         },
-                                                        "1"
+                                                        false,
+                                                        true
                                                       ]
                                                     }
                                                   }
@@ -2632,7 +2681,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "1ufleCNCkBcdiJrWhxVU8",
+                                            "id": "ftkSCYZjUVdjpg2lPwJG6",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -2716,7 +2765,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "Te7Uh_7ew0Y71bI3LWhAh",
+                                                                            "id": "UD1nIwBIJuH0KoOTxHvgn",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -2741,7 +2790,7 @@
                                                                                                 "gridProps": [
                                                                                                   {
                                                                                                     "type": "column",
-                                                                                                    "id": "LgRsMdqTB7jzCHOO397lV",
+                                                                                                    "id": "0-hTd3sW-CaQrHMPq15ck",
                                                                                                     "gridProps": [
                                                                                                       {
                                                                                                         "id": "Uv7HtWRdFuYAkwrc4Spd-",
@@ -2832,7 +2881,7 @@
                                                                                                             "var": "name"
                                                                                                           },
                                                                                                           {
-                                                                                                            "var": "currentScreen.form.iplt_selected_task.recurringType"
+                                                                                                            "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
                                                                                                           }
                                                                                                         ]
                                                                                                       }
@@ -2962,8 +3011,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-0-0-0-0-5-0-0-0-1-0-0-0-0-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "allowedContainers": [
@@ -2992,7 +3040,7 @@
                                                                           },
                                                                           "dataSource": "ilpt_frequency",
                                                                           "storeType": 2,
-                                                                          "bindingKey": "ilpt_selected_frequency",
+                                                                          "bindingKey": "ilpt_edit_selected_frequency",
                                                                           "isHList": true
                                                                         },
                                                                         "events": [],
@@ -3179,7 +3227,7 @@
                                           },
                                           {
                                             "type": "column",
-                                            "id": "Zmf5kDlX553ETxhpPU8k-",
+                                            "id": "Qrbl7nS-G9Uses8WDfvVR",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -3196,7 +3244,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "fLX1bn7s0umEOG1bPws3-",
+                                                            "id": "0kBeoGThjPzdBRXL2d5oj",
                                                             "gridProps": [
                                                               {
                                                                 "id": "b3K8zDtuZlcCk3n2vo3SX",
@@ -3276,8 +3324,8 @@
                                                                                 "attributes": {
                                                                                   "name": "Calendar",
                                                                                   "label": "",
-                                                                                  "stateName": "iplt_selected_task.date",
-                                                                                  "format": "dd-MMMM-yyyy",
+                                                                                  "stateName": "ilpt_edit_monthly_date",
+                                                                                  "format": "dd/MM/yyyy",
                                                                                   "variant": "standard",
                                                                                   "validate": {
                                                                                     "required": false,
@@ -3309,7 +3357,22 @@
                                                                                 },
                                                                                 "event": [],
                                                                                 "path": "0-0-1-0-0-0-0-0-5-1-0-0-0-0-1-0-0-0-0",
-                                                                                "events": []
+                                                                                "events": [
+                                                                                  {
+                                                                                    "triggerId": "Yb0WsqxL4ZSVJKiZGDNZ8",
+                                                                                    "triggerName": "ILPT_EDIT_MONTHLY_DATE_SET",
+                                                                                    "serviceType": "11",
+                                                                                    "attributes": {
+                                                                                      "storeType": "",
+                                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                                      "dataType": "",
+                                                                                      "sourceBindingKey": ""
+                                                                                    },
+                                                                                    "type": "3",
+                                                                                    "name": "On change",
+                                                                                    "commandType": "15"
+                                                                                  }
+                                                                                ]
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -3427,8 +3490,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-1-0-0-0-0-0-5-1-0-0-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "path": "0-0-1-0-0-0-0-0-5-1-0-0-0",
@@ -3460,7 +3522,7 @@
                                                                 {
                                                                   "==": [
                                                                     {
-                                                                      "var": "currentScreen.form.ilpt_selected_frequency.name"
+                                                                      "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
                                                                     },
                                                                     "Monthly"
                                                                   ]
@@ -3500,7 +3562,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "aCBRdhNnklLUsA_qTEAw5",
+                                                            "id": "e8vBwWxbDQXJnyRhWAPnJ",
                                                             "gridProps": [
                                                               {
                                                                 "id": "OfH4nTxJOxB9EjxBD0kEt",
@@ -3570,7 +3632,7 @@
                                                                         "createdAt": "23-Aug-2021",
                                                                         "attributes": {
                                                                           "name": "Drop down",
-                                                                          "stateName": "ilpt_weekly_date",
+                                                                          "stateName": "ilpt_weekly_edit_day",
                                                                           "allValues": true,
                                                                           "dataSource": "",
                                                                           "dataKey": "",
@@ -3666,54 +3728,23 @@
                                                                         "type": "20003",
                                                                         "events": [
                                                                           {
-                                                                            "triggerId": "UTPD0sL1-oZairBs_H-PN",
-                                                                            "triggerName": "ILPT_WEEKLY_DATE_SET_DELAY",
-                                                                            "serviceType": "2",
+                                                                            "triggerId": "OP8L5izqDqu1Lawr2V4xF",
+                                                                            "triggerName": "ILPT_EDIT_WEEKLY_DAY_SET",
+                                                                            "serviceType": "11",
                                                                             "attributes": {
-                                                                              "delay": "100",
                                                                               "storeType": "",
-                                                                              "searchInState": false,
-                                                                              "triggers": [
+                                                                              "selectedObjectBindingKey": "selectedObject",
+                                                                              "dataType": "",
+                                                                              "sourceBindingKey": "",
+                                                                              "filterList": [
                                                                                 {
-                                                                                  "id": "EaieJaOahR4gMcJt2QZIY",
-                                                                                  "_id": "buVQVopVUMMyyW25t0yHC",
-                                                                                  "name": "ILPT_WEEKLY_DATE_SET",
-                                                                                  "old_name": "ILPT_WEEKLY_DATE_SET",
-                                                                                  "projectId": "652fcbce09869c3c809b3097",
-                                                                                  "gitBranchName": "master",
-                                                                                  "services": [
-                                                                                    {
-                                                                                      "type": "11",
-                                                                                      "command": {
-                                                                                        "type": "6",
-                                                                                        "attributes": {
-                                                                                          "requestBody": [],
-                                                                                          "storeType": "",
-                                                                                          "selectedObjectBindingKey": "selectedObject",
-                                                                                          "dataType": "value",
-                                                                                          "destinationBindingKey": "ilpt_date",
-                                                                                          "sourceBindingKey": "ilpt_weekly_date.code",
-                                                                                          "sourceStoreType": 1,
-                                                                                          "destinationStoreType": 1,
-                                                                                          "filterList": [],
-                                                                                          "logic": {
-                                                                                            "var": "currentScreen.form.ilpt_weekly_date.name"
-                                                                                          },
-                                                                                          "changeValueConditonally": false,
-                                                                                          "targettedType": "value"
-                                                                                        }
-                                                                                      }
-                                                                                    }
-                                                                                  ],
-                                                                                  "csrf": "0.6juyd6zqvdfVfWNC6G_RZz7odQUK5Rm2",
-                                                                                  "updatedAt": "3/26/2024",
-                                                                                  "createdAt": "3/26/2024",
-                                                                                  "createdBy": "basitahmed1199",
-                                                                                  "updatedBy": "basitahmed1199"
+                                                                                  "key": "ilpt_selected_task.date",
+                                                                                  "changeValueConditonally": true,
+                                                                                  "storeType": 1,
+                                                                                  "logic": {
+                                                                                    "var": "currentScreen.form.ilpt_weekly_edit_day.name"
+                                                                                  }
                                                                                 }
-                                                                              ],
-                                                                              "triggerIds": [
-                                                                                "EaieJaOahR4gMcJt2QZIY"
                                                                               ]
                                                                             },
                                                                             "type": "3",
@@ -4231,8 +4262,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-1-0-0-0-0-0-5-1-0-0-1-0"
+                                                            }
                                                           }
                                                         ],
                                                         "path": "0-0-1-0-0-0-0-0-5-1-0-0-1",
@@ -4262,7 +4292,7 @@
                                                                 {
                                                                   "==": [
                                                                     {
-                                                                      "var": "currentScreen.form.ilpt_selected_frequency.name"
+                                                                      "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
                                                                     },
                                                                     "Weekly"
                                                                   ]
@@ -4378,11 +4408,17 @@
                                           "name": "Grid layout",
                                           "hideCondition": {
                                             "logic": {
-                                              "==": [
+                                              "if": [
                                                 {
-                                                  "var": "currentScreen.form.iplt_selected_task.isRecurring"
+                                                  "==": [
+                                                    {
+                                                      "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                                                    },
+                                                    "1"
+                                                  ]
                                                 },
-                                                "0"
+                                                false,
+                                                true
                                               ]
                                             }
                                           }
@@ -4467,7 +4503,7 @@
                                         "id": "_Jsw2xFBGxUvBMUbtVQhg",
                                         "status": "ACTIVE",
                                         "attributes": {
-                                          "label": "Create",
+                                          "label": "Update",
                                           "variant": "contained",
                                           "name": "Button",
                                           "label-locale-key": "",
@@ -4534,64 +4570,207 @@
                                         },
                                         "events": [
                                           {
-                                            "triggerId": "yg_6GaV9o6d1yKO0qKqH-",
-                                            "triggerName": "ILPT_CREATE_NEW_TASK",
-                                            "serviceType": "8",
+                                            "triggerId": "xxKumA7rgccdSljdSp1Rp",
+                                            "triggerName": "ILPT_EDIT_UPDATE_TASK_SEQUENTIAL",
+                                            "serviceType": "2",
                                             "attributes": {
-                                              "loaderWidgetIds": [906070],
-                                              "messageWidgetIds": [906070],
-                                              "responseStateKey": "ilpt_create_new_task",
-                                              "url": "/api-designer/api/createIleadParentTask/execute",
-                                              "checksum": true,
-                                              "encryption": true,
-                                              "isDeviceDetails": false,
-                                              "loginTrigger": false,
-                                              "formData": false,
-                                              "logoutTrigger": false,
-                                              "headers": {
-                                                "Content-Type": "application/json",
-                                                "channel_key": "002"
-                                              },
-                                              "requestBody": [
+                                              "delay": "",
+                                              "storeType": "",
+                                              "searchInState": false,
+                                              "triggers": [
                                                 {
-                                                  "type": 1,
-                                                  "name": "Form",
-                                                  "key": "request.reward",
-                                                  "value": "ilp_task_reward"
+                                                  "id": "QFSQAdNBUU1J5n8H_KxzD",
+                                                  "_id": "0jkDGMhMfz-tz5EO_ketS",
+                                                  "name": "ILPT_EDIT_ASSIGN_ID_MAP",
+                                                  "old_name": "ILPT_EDIT_ASSIGN_ID_MAP",
+                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                  "gitBranchName": "master",
+                                                  "services": [
+                                                    {
+                                                      "type": "11",
+                                                      "command": {
+                                                        "type": "6",
+                                                        "attributes": {
+                                                          "requestBody": [],
+                                                          "storeType": "",
+                                                          "selectedObjectBindingKey": "selectedObject",
+                                                          "dataType": "object",
+                                                          "destinationBindingKey": "ilpt_assign_id",
+                                                          "sourceBindingKey": "ilpt_selected_chip_array",
+                                                          "sourceStoreType": 1,
+                                                          "destinationStoreType": 1,
+                                                          "value": "id",
+                                                          "filterList": [
+                                                            {
+                                                              "key": "id",
+                                                              "changeValueConditonally": true,
+                                                              "logic": {
+                                                                "if": [
+                                                                  true,
+                                                                  {
+                                                                    "var": "id"
+                                                                  },
+                                                                  {
+                                                                    "var": "id"
+                                                                  }
+                                                                ]
+                                                              }
+                                                            }
+                                                          ],
+                                                          "logic": {
+                                                            "if": [
+                                                              true,
+                                                              {
+                                                                "var": "ileadUserId"
+                                                              },
+                                                              {
+                                                                "var": "ileadUserId"
+                                                              }
+                                                            ]
+                                                          },
+                                                          "changeValueConditonally": true,
+                                                          "targettedType": "array"
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "csrf": "0.tr7sxiiqz7eLjquFDi0zUEYb8YDSG7B",
+                                                  "updatedAt": "4/4/2024",
+                                                  "createdAt": "4/4/2024",
+                                                  "createdBy": "basitahmed1199",
+                                                  "updatedBy": "basitahmed1199"
                                                 },
                                                 {
-                                                  "type": 1,
-                                                  "name": "Form",
-                                                  "key": "request.taskName",
-                                                  "value": "ilp_new_task"
-                                                },
-                                                {
-                                                  "type": 1,
-                                                  "name": "Form",
-                                                  "key": "request.endDate",
-                                                  "value": "ilpt_target_date"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "request.isRecurring",
-                                                  "value": "ilpt_recurring"
-                                                },
-                                                {
-                                                  "type": 1,
-                                                  "name": "Form",
-                                                  "key": "request.recuringType",
-                                                  "value": "ilpt_selected_frequency.name"
-                                                },
-                                                {
-                                                  "type": 1,
-                                                  "name": "Form",
-                                                  "key": "request.currency",
-                                                  "value": "selected_child.balanceViews.0.ileadUserData.currency"
+                                                  "id": "wfZQ4z_p3FKw1lqngrqdV",
+                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                  "gitBranchName": "master",
+                                                  "name": "ILPT_EDIT_UPDATE_TASK",
+                                                  "status": "ACTIVE",
+                                                  "services": [
+                                                    {
+                                                      "type": "8",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "loaderWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "messageWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "responseStateKey": "ilpt_edit_update_task",
+                                                          "url": "/api-designer/api/updateIleadParentTask/execute",
+                                                          "checksum": true,
+                                                          "encryption": true,
+                                                          "isDeviceDetails": false,
+                                                          "loginTrigger": false,
+                                                          "formData": false,
+                                                          "logoutTrigger": false,
+                                                          "headers": {
+                                                            "Content-Type": "application/json",
+                                                            "channel_key": "002"
+                                                          },
+                                                          "requestBody": [
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.id",
+                                                              "value": "ilpt_selected_task.id"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.image",
+                                                              "value": "ilpt_selected_task.image"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.reward",
+                                                              "value": "ilpt_selected_task.rewardWithOutCurrency"
+                                                            },
+                                                            {
+                                                              "type": 4,
+                                                              "name": "Static",
+                                                              "key": "request.rewardUnit",
+                                                              "value": "BHD"
+                                                            },
+                                                            {
+                                                              "type": 4,
+                                                              "name": "Static",
+                                                              "key": "request.currency",
+                                                              "value": "BHD"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.taskName",
+                                                              "value": "ilpt_selected_task.taskName"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.endDate",
+                                                              "value": "endDate"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.isRecurring",
+                                                              "value": "ilpt_selected_task.isRecurring"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.recuringType",
+                                                              "value": "ilpt_edit_selected_frequency.name"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.assignIds",
+                                                              "value": "edit_assign_id"
+                                                            },
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "request.date",
+                                                              "value": "ilpt_selected_task.date"
+                                                            }
+                                                          ],
+                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                          "storeType": 2
+                                                        },
+                                                        "responseHandler": [
+                                                          {
+                                                            "httpStatus": 200,
+                                                            "triggerName": "GO_TO_ILP_TAKS_SCREEN",
+                                                            "triggerId": "VbfqZfOqr0HgY5PzihDTK",
+                                                            "logic": {
+                                                              "==": [
+                                                                {
+                                                                  "var": "code"
+                                                                },
+                                                                1
+                                                              ]
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ],
+                                                  "csrf": "0.tr7sxiiqz7eLjquFDi0zUEYb8YDSG7B",
+                                                  "_id": "n3xsnc0yrLv6c40FKCKaZ",
+                                                  "updatedAt": "4/4/2024",
+                                                  "createdAt": "4/4/2024",
+                                                  "createdBy": "basitahmed1199",
+                                                  "updatedBy": "basitahmed1199"
                                                 }
                                               ],
-                                              "baseURL": "65de08b22c4bb94a7826d82c",
-                                              "storeType": 2
+                                              "triggerIds": [
+                                                "QFSQAdNBUU1J5n8H_KxzD",
+                                                "wfZQ4z_p3FKw1lqngrqdV"
+                                              ]
                                             },
                                             "type": "2",
                                             "name": "On click",
@@ -4896,6 +5075,170 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "u0UuSimX1T8MYZRDrGVBz",
+            "triggerName": "ILPT_SELECTED_FREQUENCY",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "ilpt_edit_selected_frequency.name",
+                  "changeValueConditonally": true,
+                  "storeType": 1,
+                  "logic": {
+                    "var": "currentScreen.form.ilpt_selected_task.recurringType"
+                  }
+                },
+                {
+                  "changeValueConditonally": true,
+                  "logic": {
+                    "var": "currentScreen.form.ilpt_selected_task.recurringType"
+                  },
+                  "key": "ilpt_edit_selected_frequency.value",
+                  "storeType": 1
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
+          },
+          {
+            "triggerId": "xURmJNFSP-pgDfLXW6zCI",
+            "triggerName": "ILPT_EDIT_END_DATE_CONDITIONAL",
+            "serviceType": "13",
+            "attributes": {
+              "triggers": [
+                {
+                  "triggerName": "ILPT_EDIT_END_DATE",
+                  "triggerId": "DhPFttn8yGyZNdME2q0c_",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "6",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "destinationBindingKey": "endDate",
+                          "sourceBindingKey": "ilpt_selected_task.endDate",
+                          "sourceStoreType": 1,
+                          "destinationStoreType": 1,
+                          "targettedType": "value"
+                        }
+                      }
+                    }
+                  ],
+                  "logic": {
+                    "if": [
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                          },
+                          "0"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
+          },
+          {
+            "triggerId": "E6GNZMiTVaSCr1YaFAgkA",
+            "triggerName": "ILPT_EDIT_RECURRING_CONDITIONAL",
+            "serviceType": "13",
+            "attributes": {
+              "triggers": [
+                {
+                  "logic": {
+                    "if": [
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.form.ilpt_selected_task.recurringType"
+                          },
+                          "Weekly"
+                        ]
+                      },
+                      true,
+                      true
+                    ]
+                  },
+                  "triggerName": "ILPT_EDIT_WEEKLY_DAY_SET",
+                  "triggerId": "OP8L5izqDqu1Lawr2V4xF",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "15",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "sourceBindingKey": "",
+                          "filterList": [
+                            {
+                              "key": "ilpt_selected_task.date",
+                              "changeValueConditonally": true,
+                              "storeType": 1,
+                              "logic": {
+                                "var": "currentScreen.form.ilpt_weekly_edit_day.name"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "logic": {
+                    "if": [
+                      {
+                        "==": [
+                          {
+                            "var": "currentScreen.form.ilpt_selected_task.recurringType"
+                          },
+                          "Monthly"
+                        ]
+                      },
+                      false,
+                      true
+                    ]
+                  },
+                  "triggerName": "ILPT_EDIT_MONTHLY_DATE_SET",
+                  "triggerId": "Yb0WsqxL4ZSVJKiZGDNZ8",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "15",
+                        "attributes": {
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "",
+                          "sourceBindingKey": ""
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "attributes": {
@@ -4919,7 +5262,17 @@
         },
         "component": { "type": "10001", "content": "Grid layout" },
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
-        "name": "Grid layout"
+        "name": "Grid layout",
+        "dimensions": {
+          "rows": 1,
+          "columns": 1,
+          "colSize0xs": 12,
+          "colSize0sm": 12,
+          "colSize0md": 12,
+          "colSize0lg": 12,
+          "colSize0xl": 12
+        },
+        "readOnly": true
       }
     ],
     "events": [],
@@ -4930,8 +5283,8 @@
     "gitBranchName": "master",
     "_id": "rLjSvF3983kBGl4VY5POu",
     "createdBy": "basitahmed1199",
-    "updatedAt": "4/2/2024",
-    "createdAt": "4/2/2024",
+    "updatedAt": "4/4/2024",
+    "createdAt": "4/4/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5013,6 +5366,24 @@
       {
         "triggerId": "VzJIo-HDOm-0hlCUxvfGD",
         "triggerName": "ILPT_EDIT_TOGGLE_TRUE_CONDITIONAL",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "u0UuSimX1T8MYZRDrGVBz",
+        "triggerName": "ILPT_SELECTED_FREQUENCY",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "xURmJNFSP-pgDfLXW6zCI",
+        "triggerName": "ILPT_EDIT_END_DATE_CONDITIONAL",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "E6GNZMiTVaSCr1YaFAgkA",
+        "triggerName": "ILPT_EDIT_RECURRING_CONDITIONAL",
         "name": "On initialization",
         "type": "1"
       }
@@ -5876,7 +6247,7 @@
       "label": "",
       "name": "Text box",
       "label-locale-key": "",
-      "maxLength": 20,
+      "maxLength": "200",
       "type": "text",
       "variant": "standard",
       "value": "",
@@ -5901,7 +6272,7 @@
       },
       "validate": { "required": false, "errorMsg": "This field is required" },
       "placeholder": "",
-      "stateName": "iplt_selected_task.taskName",
+      "stateName": "ilpt_selected_task.taskName",
       "disableUnderline": true
     },
     "events": [],
@@ -6294,7 +6665,7 @@
       },
       "validate": { "required": false, "errorMsg": "This field is required" },
       "placeholder": "",
-      "stateName": "iplt_selected_task.rewardWithOutCurrency",
+      "stateName": "ilpt_selected_task.rewardWithOutCurrency",
       "disableUnderline": true,
       "decimalPlaces": "3"
     },
@@ -6712,11 +7083,12 @@
         "inputProps": { "//": "Use this class to style  text field element." },
         "chip": {
           "//": "Use this class to style chip component.",
-          "height": "40px"
+          "height": "40px",
+          "background-color": "#D12F78 !important"
         },
         "deleteIcon": {
           "//": "Use this class to style remove icon.",
-          "color": "white"
+          "color": "white !important"
         },
         "avatar": {
           "//": "Use this class to style avatar.",
@@ -6740,23 +7112,7 @@
       "addRemoveIcon": true,
       "variant": "dynamic",
       "labelBindingkey": "name",
-      "imageAssetIdTemp": {
-        "createdBy": "user",
-        "_id": "655dd8bfc500201edc031146",
-        "name": "UserAddImage.png",
-        "type": "png",
-        "projectId": "652fcbce09869c3c809b3097",
-        "id": "EVI1Ca_CdJhgEkP-U2QL8",
-        "gitBranchName": "master",
-        "folderType": "web",
-        "platform": "web",
-        "url": "652fcbce09869c3c809b3097/web/UserAddImage.png",
-        "canvasUrl": "652fcbce09869c3c809b3097/web/UserAddImage.png",
-        "createdAt": "2023-11-22T10:32:31.178Z",
-        "updatedAt": "2023-12-21T13:01:15.668Z",
-        "__v": 0,
-        "uri": "652fcbce09869c3c809b3097/web/UserAddImage.png"
-      },
+      "imageAssetIdTemp": null,
       "baseType": "sec_config",
       "colorBindingkey": "color",
       "imageBindingkey": "imageName",
@@ -7108,11 +7464,11 @@
     "component": { "content": "Toggle switch", "type": "20039" },
     "events": [
       {
-        "triggerId": "3GVi90PK2Y-ozJHdXPBtn",
-        "triggerName": "ILPT_EDIT_RECURRING_HIDE_SHOW",
+        "triggerId": "6tHt0rVkYhoRzQ5ET62mY",
+        "triggerName": "ILPT_EDIT_RECURRING_0_1_CONDITIONAL",
         "name": "On change",
         "type": "3",
-        "serviceType": "11"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-1-0-0-0-0-0-3-0-0-0-1-0-0",
@@ -7282,9 +7638,15 @@
       "name": "ILPT_TARGET_DATE",
       "hideCondition": {
         "logic": {
-          "==": [
-            { "var": "currentScreen.form.iplt_selected_task.isRecurring" },
-            "1"
+          "if": [
+            {
+              "==": [
+                { "var": "currentScreen.form.ilpt_selected_task.isRecurring" },
+                "0"
+              ]
+            },
+            false,
+            true
           ]
         }
       }
@@ -7460,8 +7822,8 @@
     "attributes": {
       "name": "Calendar",
       "label": "",
-      "stateName": "iplt_selected_task.endDate",
-      "format": "dd-MMMM-yyyy",
+      "stateName": "endDate",
+      "format": "dd/MM/yyyy",
       "variant": "standard",
       "validate": { "required": false, "errorMsg": "", "isCalendar": true },
       "layoutProperties": {
@@ -7575,9 +7937,15 @@
       "name": "Grid layout",
       "hideCondition": {
         "logic": {
-          "==": [
-            { "var": "currentScreen.form.iplt_selected_task.isRecurring" },
-            "0"
+          "if": [
+            {
+              "==": [
+                { "var": "currentScreen.form.ilpt_selected_task.isRecurring" },
+                "1"
+              ]
+            },
+            false,
+            true
           ]
         }
       }
@@ -7843,7 +8211,7 @@
       },
       "dataSource": "ilpt_frequency",
       "storeType": 2,
-      "bindingKey": "ilpt_selected_frequency",
+      "bindingKey": "ilpt_edit_selected_frequency",
       "isHList": true
     },
     "layout": null,
@@ -8004,7 +8372,7 @@
           "logic": {
             "==": [
               { "var": "name" },
-              { "var": "currentScreen.form.iplt_selected_task.recurringType" }
+              { "var": "currentScreen.form.ilpt_edit_selected_frequency.name" }
             ]
           }
         }
@@ -8196,7 +8564,9 @@
           "if": [
             {
               "==": [
-                { "var": "currentScreen.form.ilpt_selected_frequency.name" },
+                {
+                  "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
+                },
                 "Monthly"
               ]
             },
@@ -8376,8 +8746,8 @@
     "attributes": {
       "name": "Calendar",
       "label": "",
-      "stateName": "iplt_selected_task.date",
-      "format": "dd-MMMM-yyyy",
+      "stateName": "ilpt_edit_monthly_date",
+      "format": "dd/MM/yyyy",
       "variant": "standard",
       "validate": { "required": false, "errorMsg": "", "isCalendar": true },
       "layoutProperties": {
@@ -8400,7 +8770,15 @@
     "component": { "content": "Date picker", "type": "20027" },
     "event": [],
     "path": "0-0-1-0-0-0-0-0-5-1-0-0-0-0-1-0-0-0-0",
-    "events": [],
+    "events": [
+      {
+        "triggerId": "Yb0WsqxL4ZSVJKiZGDNZ8",
+        "triggerName": "ILPT_EDIT_MONTHLY_DATE_SET",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "11"
+      }
+    ],
     "screenId": "rLjSvF3983kBGl4VY5POu",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -8486,7 +8864,9 @@
           "if": [
             {
               "==": [
-                { "var": "currentScreen.form.ilpt_selected_frequency.name" },
+                {
+                  "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
+                },
                 "Weekly"
               ]
             },
@@ -8605,7 +8985,7 @@
     "createdAt": "23-Aug-2021",
     "attributes": {
       "name": "Drop down",
-      "stateName": "ilpt_weekly_date",
+      "stateName": "ilpt_weekly_edit_day",
       "allValues": true,
       "dataSource": "",
       "dataKey": "",
@@ -8669,11 +9049,11 @@
     "type": "20003",
     "events": [
       {
-        "triggerId": "UTPD0sL1-oZairBs_H-PN",
-        "triggerName": "ILPT_WEEKLY_DATE_SET_DELAY",
+        "triggerId": "OP8L5izqDqu1Lawr2V4xF",
+        "triggerName": "ILPT_EDIT_WEEKLY_DAY_SET",
         "name": "On change",
         "type": "3",
-        "serviceType": "2"
+        "serviceType": "11"
       }
     ],
     "order": 10,
@@ -9125,7 +9505,7 @@
     "id": "_Jsw2xFBGxUvBMUbtVQhg",
     "status": "ACTIVE",
     "attributes": {
-      "label": "Create",
+      "label": "Update",
       "variant": "contained",
       "name": "Button",
       "label-locale-key": "",
@@ -9181,11 +9561,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "yg_6GaV9o6d1yKO0qKqH-",
-        "triggerName": "ILPT_CREATE_NEW_TASK",
+        "triggerId": "xxKumA7rgccdSljdSp1Rp",
+        "triggerName": "ILPT_EDIT_UPDATE_TASK_SEQUENTIAL",
         "name": "On click",
         "type": "2",
-        "serviceType": "8"
+        "serviceType": "2"
       }
     ],
     "path": "0-0-1-0-0-0-1-0-0",

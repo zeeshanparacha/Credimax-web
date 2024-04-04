@@ -1,0 +1,207 @@
+{
+  "_id": "mlwYeiX1QkUcKSO1YbwZe",
+  "id": "wEoogJgXqlouhlo-kDL5A",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPTP_CHECK_ELIGIBILITY",
+  "old_name": "ILPTP_CHECK_ELIGIBILITY",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "and": [
+                  { "var": "currentScreen.form.pc_custom_amount_2" },
+                  {
+                    ">": [
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          0
+                        ]
+                      },
+                      0
+                    ]
+                  },
+                  { "var": "currentScreen.form.selected_payment_method" },
+                  { "var": "currentScreen.ilpp_payment_type" }
+                ]
+              },
+              "triggerName": "ILPTP_DATA_EXT_AND_REVIEW_PAYMENT",
+              "triggerId": "PMQu8JImwah2XAi71GR9L",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "4078johuKwNGfg0s7GdcM",
+                          "_id": "46V5aIjNzkz9VtOZtSG6p",
+                          "name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT",
+                          "old_name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "pc_request.isRecurring",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "if": [
+                                          {
+                                            "==": [
+                                              {
+                                                "var": "currentScreen.ilpp_payment_type"
+                                              },
+                                              "Allowance"
+                                            ]
+                                          },
+                                          "1",
+                                          "0"
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.recuringType",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.ilpp_recuringType_permanent"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.amount",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.type",
+                                      "changeValueConditonally": true,
+                                      "storeType": 2,
+                                      "logic": {
+                                        "var": "currentScreen.ilpp_payment_type"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.date",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.ilpp_date_permanent"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.cardOrAccount.type",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.selected_payment_method.type"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.cardOrAccount.accountOrCardNumber",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.cardOrAccount.title",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.selected_payment_method.title"
+                                      }
+                                    },
+                                    {
+                                      "key": "pc_request.cardOrAccount.cardOrAccType",
+                                      "storeType": 2,
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.selected_payment_method.accountType"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.lkyckeqnm6xyYYAHjjAaK1OW-hQCzLW",
+                          "updatedAt": "3/22/2024",
+                          "createdAt": "3/22/2024",
+                          "createdBy": "talha2",
+                          "updatedBy": "talha2"
+                        },
+                        {
+                          "id": "yZp9fxJVNVh7tzkOeh3hQ",
+                          "gitBranchName": "master",
+                          "name": "ILPP_SHOW_REVIEW_PAYMENT_MODAL",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "widgetId": "y4iikcZodx8nP1nqHTa4D",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "8ZG1RWj7H9smpIDaXIPU_",
+                                  "toastContentType": "custom"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.229221f9slvV9lQyoFyrFNugfLadwKPz",
+                          "_id": "dixKGzQkHvctp4gkiDDYw",
+                          "updatedAt": "3/22/2024",
+                          "createdAt": "3/22/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        }
+                      ],
+                      "triggerIds": [
+                        "4078johuKwNGfg0s7GdcM",
+                        "yZp9fxJVNVh7tzkOeh3hQ"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.dwiskeimzv7sK6-Im13mJVDQ404Gy25E",
+  "updatedAt": "4/4/2024",
+  "createdAt": "4/4/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}
