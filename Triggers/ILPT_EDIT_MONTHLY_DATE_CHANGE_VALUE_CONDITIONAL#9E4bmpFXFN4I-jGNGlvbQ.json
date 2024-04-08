@@ -1,10 +1,10 @@
 {
-  "_id": "L7mhlJOC5L4e9hDx9FNL7",
-  "id": "E6GNZMiTVaSCr1YaFAgkA",
+  "_id": "9E4bmpFXFN4I-jGNGlvbQ",
+  "id": "mWU3YqM-aBx04DSZkJVb1",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
-  "name": "ILPT_EDIT_RECURRING_CONDITIONAL",
-  "old_name": "ILPT_EDIT_RECURRING_CONDITIONAL",
+  "name": "ILPT_EDIT_MONTHLY_DATE_CHANGE_VALUE_CONDITIONAL",
+  "old_name": "ILPT_EDIT_MONTHLY_DATE_CHANGE_VALUE_CONDITIONAL",
   "status": "ACTIVE",
   "services": [
     {
@@ -14,20 +14,8 @@
         "attributes": {
           "triggers": [
             {
-              "logic": {
-                "if": [
-                  {
-                    "==": [
-                      {
-                        "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
-                      },
-                      "Weekly"
-                    ]
-                  }
-                ]
-              },
-              "triggerName": "ILPT_EDIT_WEEKLY_DAY_SET",
-              "triggerId": "OP8L5izqDqu1Lawr2V4xF",
+              "triggerName": "ILPT_EDIT_MONTHLY_DATE_CHANGE_VALUE",
+              "triggerId": "iB9PrvuBMcAvmNdzYk9LI",
               "services": [
                 {
                   "type": "11",
@@ -40,44 +28,58 @@
                       "sourceBindingKey": "",
                       "filterList": [
                         {
-                          "key": "ilpt_selected_task.date",
+                          "key": "ilpt_edit_monthly_date",
                           "changeValueConditonally": true,
-                          "storeType": 1,
-                          "logic": {
-                            "var": "currentScreen.form.ilpt_weekly_edit_day.name"
-                          }
+                          "logic": { "var": "ilpt_selected_task.date" },
+                          "storeType": 1
                         }
                       ]
                     }
                   }
                 }
-              ]
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      { "var": "currentScreen.form.recurringType" },
+                      "Monthly"
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              }
             },
             {
               "logic": {
                 "if": [
                   {
                     "==": [
-                      {
-                        "var": "currentScreen.form.ilpt_edit_selected_frequency.name"
-                      },
-                      "Monthly"
+                      { "var": "currentScreen.form.recurringType" },
+                      "Weekly"
                     ]
-                  }
+                  },
+                  true,
+                  false
                 ]
               },
-              "triggerName": "ILPT_EDIT_MONTHLY_DATE_SET",
-              "triggerId": "Yb0WsqxL4ZSVJKiZGDNZ8",
+              "triggerName": "ILPT_EDIT_MONTHLY_CURRENT_DATE",
+              "triggerId": "vHXZgM9xRxelszsFKLrqY",
               "services": [
                 {
                   "type": "11",
                   "command": {
-                    "type": "15",
+                    "type": "11",
                     "attributes": {
                       "storeType": "",
                       "selectedObjectBindingKey": "selectedObject",
                       "dataType": "",
-                      "sourceBindingKey": ""
+                      "destinationBindingKey": "ilpt_edit_monthly_date",
+                      "sourceBindingKey": "",
+                      "destinationStoreType": 1,
+                      "dateDifference": "0",
+                      "dateFormat": "dd/MM/yyyy"
                     }
                   }
                 }
@@ -88,9 +90,9 @@
       }
     }
   ],
-  "csrf": "0.a68nrbb5v4K6wfr3I5Glm_5EwUgXZnx",
-  "updatedAt": "4/4/2024",
-  "createdAt": "4/4/2024",
+  "csrf": "0.iqxxpb8ctzbWbpcmBP5cnyo5viXqbPts",
+  "updatedAt": "4/6/2024",
+  "createdAt": "4/6/2024",
   "createdBy": "basitahmed1199",
   "updatedBy": "basitahmed1199"
 }

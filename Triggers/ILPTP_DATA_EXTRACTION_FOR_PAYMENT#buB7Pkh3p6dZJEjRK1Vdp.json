@@ -2,7 +2,7 @@
   "id": "_BvEmP900ZhGaSnOi-tWi",
   "_id": "buB7Pkh3p6dZJEjRK1Vdp",
   "name": "ILPTP_DATA_EXTRACTION_FOR_PAYMENT",
-  "old_name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT",
+  "old_name": "ILPTP_DATA_EXTRACTION_FOR_PAYMENT",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "services": [
@@ -18,47 +18,26 @@
           "sourceBindingKey": "",
           "filterList": [
             {
+              "key": "pc_request.id",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.ilpt_selected_task.id" }
+            },
+            {
               "key": "pc_request.isRecurring",
               "storeType": 2,
               "changeValueConditonally": true,
               "logic": {
-                "if": [
-                  {
-                    "==": [
-                      { "var": "currentScreen.ilpp_payment_type" },
-                      "Allowance"
-                    ]
-                  },
-                  "1",
-                  "0"
-                ]
-              }
-            },
-            {
-              "key": "pc_request.recuringType",
-              "storeType": 2,
-              "changeValueConditonally": true,
-              "logic": {
-                "var": "currentScreen.form.ilpp_recuringType_permanent"
+                "var": "currentScreen.form.ilpt_selected_task.isRecurring"
               }
             },
             {
               "key": "pc_request.amount",
               "storeType": 2,
               "changeValueConditonally": true,
-              "logic": { "var": "currentScreen.form.pc_custom_amount_2" }
-            },
-            {
-              "key": "pc_request.type",
-              "changeValueConditonally": true,
-              "storeType": 2,
-              "logic": { "var": "currentScreen.ilpp_payment_type" }
-            },
-            {
-              "key": "pc_request.date",
-              "storeType": 2,
-              "changeValueConditonally": true,
-              "logic": { "var": "currentScreen.form.ilpp_date_permanent" }
+              "logic": {
+                "var": "currentScreen.form.ilpt_selected_task.rewardWithOutCurrency"
+              }
             },
             {
               "key": "pc_request.cardOrAccount.type",
@@ -91,15 +70,62 @@
               "logic": {
                 "var": "currentScreen.form.selected_payment_method.accountType"
               }
+            },
+            {
+              "key": "pc_request.cardOrAccount.currency",
+              "storeType": 2,
+              "logic": "BHD"
+            },
+            {
+              "key": "pc_request.cardOrAccount.toCardNumber",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.selected_child.cardNumber" }
+            },
+            {
+              "key": "pc_request.cardOrAccount.cprOfOtherCardHolder",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentSession.userProfile.content.customer.userIdenValue"
+              }
+            },
+            { "key": "pc_request.type", "storeType": 2, "logic": "Task" },
+            {
+              "key": "pc_request.validation",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pc_check_otp.content.otpRequired"
+                      },
+                      "1"
+                    ]
+                  },
+                  { "var": "currentScreen.pc_validation_object" },
+                  null
+                ]
+              }
+            },
+            {
+              "key": "pc_request.userId",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.form.selected_child.ileadChild.ileadUserId"
+              }
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.lkyckeqnm6xyYYAHjjAaK1OW-hQCzLW",
-  "updatedAt": "4/4/2024",
-  "createdAt": "4/4/2024",
-  "createdBy": "talha2",
+  "csrf": "0.v3gvfe5v1ypvN4Eg53UrwjTrPUDTXWHb",
+  "updatedAt": "4/5/2024",
+  "createdAt": "4/5/2024",
+  "createdBy": "talha",
   "updatedBy": "talha"
 }

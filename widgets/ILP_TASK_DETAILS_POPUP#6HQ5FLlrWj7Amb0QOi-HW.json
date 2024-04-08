@@ -491,7 +491,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "ahUjfRUJVnI4-B_T87ZX9",
+                                    "id": "mJ1DU8URv7Ch8G84lrTzn",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -802,7 +802,17 @@
                                   "name": "Grid layout",
                                   "cssClassNames": [
                                     { "cssClassName": "FLEX_ROW_CENTER " }
-                                  ]
+                                  ],
+                                  "hideCondition": {
+                                    "logic": {
+                                      "==": [
+                                        {
+                                          "var": "currentScreen.form.ilpt_selected_task.status"
+                                        },
+                                        "Done"
+                                      ]
+                                    }
+                                  }
                                 },
                                 "events": [],
                                 "component": {
@@ -887,7 +897,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "KkbuDsm29zdFeiCpEbMlM",
+                            "id": "ZEBJOpvIMu33cpZlWbWz_",
                             "gridProps": [
                               {
                                 "id": "riF2He767-zHYLSXUV5fF",
@@ -913,28 +923,15 @@
                                   "defaultImageAssetId": null,
                                   "imageAssetIdTemp": null,
                                   "imageAssetId": null,
-                                  "stateName": "ilpt_selected_task.image",
+                                  "stateName": "ilpt_selected_task.webImage",
                                   "storeType": 1,
                                   "useFullLink": null,
                                   "cssClassNames": [
                                     { "cssClassName": "ILPT_IMAGE_BORDER " }
                                   ],
-                                  "hideCondition": {
-                                    "logic": {
-                                      "if": [
-                                        {
-                                          "==": [
-                                            {
-                                              "var": "currentScreen.form.selected_transaction.isImage"
-                                            },
-                                            "1"
-                                          ]
-                                        },
-                                        true
-                                      ]
-                                    }
-                                  },
-                                  "baseType": "sec_config"
+                                  "hideCondition": {},
+                                  "baseType": "sec_config",
+                                  "selectedConfiguration": "660b3cd596973234b81fdcd4"
                                 },
                                 "group": "Form",
                                 "updatedAt": "23-Aug-2021",
@@ -988,17 +985,11 @@
                           "name": "Grid layout",
                           "hideCondition": {
                             "logic": {
-                              "if": [
+                              "==": [
                                 {
-                                  "==": [
-                                    {
-                                      "var": "currentScreen.form.ilpt_selected_task.isImage"
-                                    },
-                                    "1"
-                                  ]
+                                  "var": "currentScreen.form.ilpt_selected_task.isImage"
                                 },
-                                true,
-                                false
+                                "0"
                               ]
                             }
                           }
@@ -1045,16 +1036,14 @@
                                         "icon": "FaImage",
                                         "attributes": {
                                           "name": "Image",
-                                          "contentType": false,
-                                          "defaultImageAssetIdTemp": {
-                                            "name": "dracaena-cinnabari.jpg",
-                                            "id": "CNIz67fi824LHr0ae-pOV"
-                                          },
+                                          "contentType": true,
+                                          "defaultImageAssetIdTemp": null,
                                           "layoutProperties": {
                                             "image": {
                                               "//": "Use this class to style image component.",
                                               "width": "32px",
-                                              "height": "32px"
+                                              "height": "32px",
+                                              "borderRadius": "50%"
                                             },
                                             "mainContainer": "image",
                                             "componentStyles": {
@@ -1066,28 +1055,14 @@
                                             "sm": 12,
                                             "xs": 12
                                           },
-                                          "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
-                                          "imageAssetIdTemp": {
-                                            "createdBy": "user",
-                                            "_id": "65b236cd1c6add3f308bbfee",
-                                            "name": "account_circle.svg",
-                                            "type": "svg",
-                                            "projectId": "652fcbce09869c3c809b3097",
-                                            "id": "tAr5UgJNl9mQBe6NYaHJb",
-                                            "gitBranchName": "master",
-                                            "folderType": "web",
-                                            "platform": "web",
-                                            "url": "652fcbce09869c3c809b3097/web/account_circle.svg",
-                                            "canvasUrl": "652fcbce09869c3c809b3097/web/account_circle.svg",
-                                            "createdAt": "2024-01-25T10:24:13.881Z",
-                                            "updatedAt": "2024-01-25T10:24:13.881Z",
-                                            "__v": 0,
-                                            "uri": "652fcbce09869c3c809b3097/web/account_circle.svg"
-                                          },
-                                          "imageAssetId": "tAr5UgJNl9mQBe6NYaHJb",
-                                          "stateName": null,
-                                          "storeType": null,
-                                          "useFullLink": null
+                                          "defaultImageAssetId": null,
+                                          "imageAssetIdTemp": null,
+                                          "imageAssetId": null,
+                                          "stateName": "selected_child.ileadChild.imageName",
+                                          "storeType": 1,
+                                          "useFullLink": null,
+                                          "baseType": "sec_config",
+                                          "selectedConfiguration": "65f69489b8665034f406ba58"
                                         },
                                         "group": "Form",
                                         "updatedAt": "23-Aug-2021",
@@ -1130,7 +1105,7 @@
                                             "sm": 12,
                                             "xs": 12
                                           },
-                                          "label": "selected_child.embossingName",
+                                          "label": "selected_child.ileadChild.name",
                                           "cssClassNames": [
                                             {
                                               "cssClassName": "ILP_LABEL_BOLD "
@@ -1153,7 +1128,7 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-1-0-3-0-0-0-1"
+                                        "path": "0-0-0-0-3-0-0-0-1"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -1223,6 +1198,188 @@
                                     "id": "xXQvD3oGv6SBy8ix3gibd",
                                     "gridProps": [
                                       {
+                                        "id": "vWa-E57SHWWUpw47zloJp",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component.",
+                                              "color": "#004986",
+                                              "width": "fit-content",
+                                              "padding": "1px 12px",
+                                              "float": "right !important",
+                                              "background": "#E7F0F7"
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "Active",
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.ilpt_selected_task.status"
+                                                },
+                                                "Active"
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-0-0-3-1-0-0-0"
+                                      },
+                                      {
+                                        "id": "1JTQ6vOQMvQBw0Xf-HwHw",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component.",
+                                              "color": "#A31B1E",
+                                              "width": "fit-content",
+                                              "padding": "1px 12px",
+                                              "float": "right !important"
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "Overdue",
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "TAB_CARD_RED_RADIUS "
+                                            }
+                                          ],
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.ilpt_selected_task.status"
+                                                },
+                                                "Overdue"
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-0-0-3-1-0-0-1"
+                                      },
+                                      {
+                                        "id": "K5tPZfCx-mNtqEQpF2db3",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component.",
+                                              "color": "#06892E",
+                                              "width": "fit-content",
+                                              "padding": "1px 12px",
+                                              "float": "right !important"
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "Done",
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "TAB_CARD_GREEN_RADIUS "
+                                            }
+                                          ],
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.ilpt_selected_task.status"
+                                                },
+                                                "Done"
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-0-0-3-1-0-0-2"
+                                      },
+                                      {
                                         "id": "1-teGsuAhJEScnEtisVB3",
                                         "status": "ACTIVE",
                                         "name": "Label",
@@ -1256,7 +1413,17 @@
                                             {
                                               "cssClassName": "TAB_CARD_GREEN_RADIUS "
                                             }
-                                          ]
+                                          ],
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.ilpt_selected_task.status"
+                                                },
+                                                "Waiting Apporval"
+                                              ]
+                                            }
+                                          }
                                         },
                                         "icon": "FaFont",
                                         "group": "Form",
@@ -1272,7 +1439,7 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-0-0-3-1-0-0-0"
+                                        "path": "0-0-0-0-3-1-0-0-3"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -1783,7 +1950,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "OQ7uF3d2NeUmaTBxN9Ap7",
+                                    "id": "POHj-LFM7CAqBwPPhUMP8",
                                     "gridProps": [
                                       {
                                         "id": "dZslnkD0N8YrhuOCV4Dsl",
@@ -1915,13 +2082,24 @@
                                     "alignItems": "flex-start"
                                   },
                                   "direction": "row",
-                                  "name": "Grid layout"
+                                  "name": "Grid layout",
+                                  "hideCondition": {
+                                    "logic": {
+                                      "==": [
+                                        {
+                                          "var": "currentScreen.form.ilpt_selected_task.endDate"
+                                        },
+                                        ""
+                                      ]
+                                    }
+                                  }
                                 },
                                 "events": [],
                                 "component": {
                                   "type": "10001",
                                   "content": "Grid layout"
-                                }
+                                },
+                                "path": "0-0-0-0-5-0-0"
                               }
                             ],
                             "layoutProperties": {
@@ -2149,7 +2327,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "VBIlfpH_tnej5H12spW7p",
+                            "id": "OwhCGBJiq-6Q2jsPsp_Ay",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -2211,7 +2389,7 @@
                           },
                           {
                             "type": "column",
-                            "id": "3l6X3VCHxi4UTXUJBwbCM",
+                            "id": "-UfkEkE-ayY8RpYK1PcN8",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -2279,17 +2457,44 @@
                                         },
                                         "events": [
                                           {
-                                            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
-                                            "triggerName": "HIDE_MODAL_TRIGGER",
-                                            "serviceType": "9",
+                                            "triggerId": "Wip0bkFuzqXhZDsp707_H",
+                                            "triggerName": "ILPT_REJECT_TASK",
+                                            "serviceType": "8",
                                             "attributes": {
-                                              "content": "",
-                                              "type": "",
-                                              "modalId": "Hnd2p3GlKp2devIkjLNIH"
+                                              "loaderWidgetIds": [906070],
+                                              "messageWidgetIds": [906070],
+                                              "responseStateKey": "ilpt_reject_task",
+                                              "url": "/api-designer/api/updateTasks/execute",
+                                              "checksum": true,
+                                              "encryption": true,
+                                              "isDeviceDetails": false,
+                                              "loginTrigger": false,
+                                              "formData": false,
+                                              "logoutTrigger": false,
+                                              "headers": {
+                                                "Content-Type": "application/json",
+                                                "channel_key": "002"
+                                              },
+                                              "requestBody": [
+                                                {
+                                                  "type": 1,
+                                                  "name": "Form",
+                                                  "key": "request.id",
+                                                  "value": "ilpt_selected_task.id"
+                                                },
+                                                {
+                                                  "type": 4,
+                                                  "name": "Static",
+                                                  "key": "request.status",
+                                                  "value": "reject"
+                                                }
+                                              ],
+                                              "baseURL": "656f0b4398e9df55f0499597",
+                                              "storeType": 2
                                             },
                                             "type": "2",
                                             "name": "On click",
-                                            "commandType": "2"
+                                            "commandType": "1"
                                           }
                                         ],
                                         "path": "0-0-0-0-6-1-0-0-0"
@@ -2359,7 +2564,7 @@
                           },
                           {
                             "type": "column",
-                            "id": "xgXmdgCF2BjEXqgqcE7y2",
+                            "id": "fchZwnBdBWbpTo95nrdqZ",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -2438,6 +2643,20 @@
                                             "type": "2",
                                             "name": "On click",
                                             "commandType": "3"
+                                          },
+                                          {
+                                            "triggerId": "WuhHxg90Z2anPz7DGsIrC",
+                                            "triggerName": "Close Modal",
+                                            "serviceType": "9",
+                                            "attributes": {
+                                              "content": "",
+                                              "type": "",
+                                              "modalId": "ozKeLAA5SQp3bjJ9kCQQg",
+                                              "toastContentType": "custom"
+                                            },
+                                            "type": "2",
+                                            "name": "On click",
+                                            "commandType": "2"
                                           }
                                         ],
                                         "path": "0-0-0-0-6-2-0-0-0"
@@ -2517,14 +2736,41 @@
                           },
                           "direction": "row",
                           "name": "Grid layout",
-                          "columns": "3"
+                          "columns": "3",
+                          "hideCondition": {
+                            "logic": {
+                              "or": [
+                                {
+                                  "==": [
+                                    {
+                                      "var": "currentScreen.form.ilpt_selected_task.status"
+                                    },
+                                    "Active"
+                                  ]
+                                },
+                                {
+                                  "==": [
+                                    {
+                                      "var": "currentScreen.form.ilpt_selected_task.status"
+                                    },
+                                    "Done"
+                                  ]
+                                },
+                                {
+                                  "!": {
+                                    "var": "currentScreen.form.ilpt_selected_task.status"
+                                  }
+                                }
+                              ]
+                            }
+                          }
                         },
                         "events": [],
                         "component": {
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-0-0-7",
+                        "path": "0-0-0-0-6",
                         "dimensions": {
                           "rows": 1,
                           "columns": 3,
@@ -2628,9 +2874,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "6HQ5FLlrWj7Amb0QOi-HW",
-    "createdBy": "talha",
-    "updatedAt": "4/4/2024",
-    "createdAt": "4/4/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "4/7/2024",
+    "createdAt": "4/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3329,7 +3575,15 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "cssClassNames": [{ "cssClassName": "FLEX_ROW_CENTER " }]
+      "cssClassNames": [{ "cssClassName": "FLEX_ROW_CENTER " }],
+      "hideCondition": {
+        "logic": {
+          "==": [
+            { "var": "currentScreen.form.ilpt_selected_task.status" },
+            "Done"
+          ]
+        }
+      }
     },
     "layout": null,
     "events": [],
@@ -3611,15 +3865,9 @@
       "name": "Grid layout",
       "hideCondition": {
         "logic": {
-          "if": [
-            {
-              "==": [
-                { "var": "currentScreen.form.ilpt_selected_task.isImage" },
-                "1"
-              ]
-            },
-            true,
-            false
+          "==": [
+            { "var": "currentScreen.form.ilpt_selected_task.isImage" },
+            "0"
           ]
         }
       }
@@ -3657,24 +3905,13 @@
       "defaultImageAssetId": null,
       "imageAssetIdTemp": null,
       "imageAssetId": null,
-      "stateName": "ilpt_selected_task.image",
+      "stateName": "ilpt_selected_task.webImage",
       "storeType": 1,
       "useFullLink": null,
       "cssClassNames": [{ "cssClassName": "ILPT_IMAGE_BORDER " }],
-      "hideCondition": {
-        "logic": {
-          "if": [
-            {
-              "==": [
-                { "var": "currentScreen.form.selected_transaction.isImage" },
-                "1"
-              ]
-            },
-            true
-          ]
-        }
-      },
-      "baseType": "sec_config"
+      "hideCondition": {},
+      "baseType": "sec_config",
+      "selectedConfiguration": "660b3cd596973234b81fdcd4"
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -3833,16 +4070,14 @@
     "icon": "FaImage",
     "attributes": {
       "name": "Image",
-      "contentType": false,
-      "defaultImageAssetIdTemp": {
-        "name": "dracaena-cinnabari.jpg",
-        "id": "CNIz67fi824LHr0ae-pOV"
-      },
+      "contentType": true,
+      "defaultImageAssetIdTemp": null,
       "layoutProperties": {
         "image": {
           "//": "Use this class to style image component.",
           "width": "32px",
-          "height": "32px"
+          "height": "32px",
+          "borderRadius": "50%"
         },
         "mainContainer": "image",
         "componentStyles": { "max-width": "fit-content" },
@@ -3852,28 +4087,14 @@
         "sm": 12,
         "xs": 12
       },
-      "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
-      "imageAssetIdTemp": {
-        "createdBy": "user",
-        "_id": "65b236cd1c6add3f308bbfee",
-        "name": "account_circle.svg",
-        "type": "svg",
-        "projectId": "652fcbce09869c3c809b3097",
-        "id": "tAr5UgJNl9mQBe6NYaHJb",
-        "gitBranchName": "master",
-        "folderType": "web",
-        "platform": "web",
-        "url": "652fcbce09869c3c809b3097/web/account_circle.svg",
-        "canvasUrl": "652fcbce09869c3c809b3097/web/account_circle.svg",
-        "createdAt": "2024-01-25T10:24:13.881Z",
-        "updatedAt": "2024-01-25T10:24:13.881Z",
-        "__v": 0,
-        "uri": "652fcbce09869c3c809b3097/web/account_circle.svg"
-      },
-      "imageAssetId": "tAr5UgJNl9mQBe6NYaHJb",
-      "stateName": null,
-      "storeType": null,
-      "useFullLink": null
+      "defaultImageAssetId": null,
+      "imageAssetIdTemp": null,
+      "imageAssetId": null,
+      "stateName": "selected_child.ileadChild.imageName",
+      "storeType": 1,
+      "useFullLink": null,
+      "baseType": "sec_config",
+      "selectedConfiguration": "65f69489b8665034f406ba58"
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -3914,7 +4135,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "selected_child.embossingName",
+      "label": "selected_child.ileadChild.name",
       "cssClassNames": [{ "cssClassName": "ILP_LABEL_BOLD " }],
       "storeType": 1,
       "searchInState": true
@@ -3930,7 +4151,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-3-0-0-0-1",
+    "path": "0-0-0-0-3-0-0-0-1",
     "screenId": "6HQ5FLlrWj7Amb0QOi-HW",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3943,6 +4164,42 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "vWa-E57SHWWUpw47zloJp",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "1JTQ6vOQMvQBw0Xf-HwHw",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "K5tPZfCx-mNtqEQpF2db3",
+          "componentType": "20002",
+          "order": 1
+        },
         {
           "layoutProperties": {
             "xl": 12,
@@ -3982,6 +4239,168 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "vWa-E57SHWWUpw47zloJp",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "color": "#004986",
+          "width": "fit-content",
+          "padding": "1px 12px",
+          "float": "right !important",
+          "background": "#E7F0F7"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Active",
+      "hideCondition": {
+        "logic": {
+          "!=": [
+            { "var": "currentScreen.form.ilpt_selected_task.status" },
+            "Active"
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-3-1-0-0-0",
+    "screenId": "6HQ5FLlrWj7Amb0QOi-HW",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "1JTQ6vOQMvQBw0Xf-HwHw",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "color": "#A31B1E",
+          "width": "fit-content",
+          "padding": "1px 12px",
+          "float": "right !important"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Overdue",
+      "cssClassNames": [{ "cssClassName": "TAB_CARD_RED_RADIUS " }],
+      "hideCondition": {
+        "logic": {
+          "!=": [
+            { "var": "currentScreen.form.ilpt_selected_task.status" },
+            "Overdue"
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-3-1-0-0-1",
+    "screenId": "6HQ5FLlrWj7Amb0QOi-HW",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "K5tPZfCx-mNtqEQpF2db3",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "color": "#06892E",
+          "width": "fit-content",
+          "padding": "1px 12px",
+          "float": "right !important"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Done",
+      "cssClassNames": [{ "cssClassName": "TAB_CARD_GREEN_RADIUS " }],
+      "hideCondition": {
+        "logic": {
+          "!=": [
+            { "var": "currentScreen.form.ilpt_selected_task.status" },
+            "Done"
+          ]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-3-1-0-0-2",
+    "screenId": "6HQ5FLlrWj7Amb0QOi-HW",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "1-teGsuAhJEScnEtisVB3",
     "status": "ACTIVE",
     "name": "Label",
@@ -4007,7 +4426,15 @@
         "xs": 12
       },
       "label": "Waiting approval",
-      "cssClassNames": [{ "cssClassName": "TAB_CARD_GREEN_RADIUS " }]
+      "cssClassNames": [{ "cssClassName": "TAB_CARD_GREEN_RADIUS " }],
+      "hideCondition": {
+        "logic": {
+          "!=": [
+            { "var": "currentScreen.form.ilpt_selected_task.status" },
+            "Waiting Apporval"
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
@@ -4020,7 +4447,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-0-0-3-1-0-0-0",
+    "path": "0-0-0-0-3-1-0-0-3",
     "screenId": "6HQ5FLlrWj7Amb0QOi-HW",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -4472,7 +4899,12 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.form.ilpt_selected_task.endDate" }, ""]
+        }
+      }
     },
     "layout": null,
     "events": [],
@@ -4770,7 +5202,26 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "columns": "3"
+      "columns": "3",
+      "hideCondition": {
+        "logic": {
+          "or": [
+            {
+              "==": [
+                { "var": "currentScreen.form.ilpt_selected_task.status" },
+                "Active"
+              ]
+            },
+            {
+              "==": [
+                { "var": "currentScreen.form.ilpt_selected_task.status" },
+                "Done"
+              ]
+            },
+            { "!": { "var": "currentScreen.form.ilpt_selected_task.status" } }
+          ]
+        }
+      }
     },
     "layout": null,
     "events": [],
@@ -4904,11 +5355,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
-        "triggerName": "HIDE_MODAL_TRIGGER",
+        "triggerId": "Wip0bkFuzqXhZDsp707_H",
+        "triggerName": "ILPT_REJECT_TASK",
         "name": "On click",
         "type": "2",
-        "serviceType": "9"
+        "serviceType": "8"
       }
     ],
     "path": "0-0-0-0-6-1-0-0-0",
@@ -5012,6 +5463,13 @@
         "name": "On click",
         "type": "2",
         "serviceType": "1"
+      },
+      {
+        "triggerId": "WuhHxg90Z2anPz7DGsIrC",
+        "triggerName": "Close Modal",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
       }
     ],
     "path": "0-0-0-0-6-2-0-0-0",

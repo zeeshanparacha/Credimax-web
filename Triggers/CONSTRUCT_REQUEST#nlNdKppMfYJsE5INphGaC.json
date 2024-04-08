@@ -1,0 +1,70 @@
+{
+  "id": "Wcaij1vXBx755Q8QSCgg4",
+  "name": "CONSTRUCT_REQUEST",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "6",
+        "attributes": {
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "object",
+          "destinationBindingKey": "THM_REQUEST",
+          "sourceBindingKey": "THM_REQUEST",
+          "sourceStoreType": 2,
+          "destinationStoreType": 1,
+          "filterList": [
+            {
+              "key": "fromDate",
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  { "==": [true, true] },
+                  { "var": "form.THM_FILTER.startDate" },
+                  ""
+                ]
+              }
+            },
+            {
+              "key": "toDate",
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  { "==": [true, true] },
+                  { "var": "form.THM_FILTER.endDate" },
+                  ""
+                ]
+              }
+            },
+            {
+              "key": "filter",
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  { "==": [true, true] },
+                  { "var": "form.THAMEEN_FILTER_TYPE" },
+                  ""
+                ]
+              }
+            },
+            {
+              "key": "minimumDataRequired",
+              "changeValueConditonally": true,
+              "logic": { "if": [{ "==": [true, true] }, 25, ""] }
+            }
+          ],
+          "targettedType": "value"
+        }
+      }
+    }
+  ],
+  "csrf": "0.e85q94cymv6LHQ3cm4ccObbm1NU-1m6m",
+  "_id": "nlNdKppMfYJsE5INphGaC",
+  "updatedAt": "4/5/2024",
+  "createdAt": "4/5/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}

@@ -36,7 +36,7 @@
               "spacing": 0,
               "padding": "32px",
               "max-width": "608px",
-              "height": "90vh"
+              "max-height": "90vh"
             },
             "mainContainer": "gridLayout"
           },
@@ -46,7 +46,7 @@
             "alignItems": "flex-start"
           },
           "direction": "row",
-          "name": "Grid layout"
+          "name": "ILCT_TASK_DETAILS_SUBMIT_POPUP"
         },
         "group": "Layout",
         "type": "10001",
@@ -68,6 +68,28 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "4"
+          },
+          {
+            "triggerId": "Fq6Iu9dfLPYEqfTIUOhkC",
+            "triggerName": "ILCT_TASK_IMAGE_NULL",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "ilct_task_image",
+                  "changeValueConditonally": false,
+                  "storeType": 1,
+                  "logic": null
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
           }
         ],
         "order": 1,
@@ -80,8 +102,24 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "fW0oQrkL_N9FHekL0_xjF",
+            "id": "mnmQo5vGP0_wBodLadGOw",
             "gridProps": [
+              {
+                "id": "IZFO_UM8G6tgNwVNw7MZa",
+                "type": "20031",
+                "triggerName": "ILCT_UNDO_TASK_POPUP_MODAL",
+                "attributes": {
+                  "widgetId": "RH40_tw8yGksi3-Sl_I-G",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
               {
                 "type": "10001",
                 "name": "Grid layout",
@@ -284,6 +322,34 @@
                                     "type": "2",
                                     "name": "On click",
                                     "commandType": "2"
+                                  },
+                                  {
+                                    "triggerId": "FgnZGXYx88bZa74FikQem",
+                                    "triggerName": "ILCT_FETCH_TASKS",
+                                    "serviceType": "8",
+                                    "attributes": {
+                                      "loaderWidgetIds": [906070],
+                                      "messageWidgetIds": [906070],
+                                      "responseStateKey": "ilct_task_details",
+                                      "responseReturnValue": "content",
+                                      "url": "/card/child/v1/getTaskList",
+                                      "checksum": true,
+                                      "encryption": true,
+                                      "isDeviceDetails": false,
+                                      "loginTrigger": false,
+                                      "formData": false,
+                                      "logoutTrigger": false,
+                                      "headers": {
+                                        "Content-Type": "application/json",
+                                        "channel_key": "002"
+                                      },
+                                      "requestBody": [],
+                                      "baseURL": "656f0b4398e9df55f0499597",
+                                      "storeType": 2
+                                    },
+                                    "type": "2",
+                                    "name": "On click",
+                                    "commandType": "1"
                                   }
                                 ],
                                 "path": "0-0-0-1-0-0-0"
@@ -549,6 +615,214 @@
               {
                 "type": "10001",
                 "name": "Grid layout",
+                "id": "euMVMU4ZmEOXdFB4z9oNY",
+                "gridProps": [
+                  {
+                    "type": "column",
+                    "id": "5o3UkGVKH1vAkfn6hbVGO",
+                    "gridProps": [
+                      {
+                        "id": "9dJZnMfOOMDX9-8ax_n41",
+                        "status": "ACTIVE",
+                        "name": "Image",
+                        "icon": "FaImage",
+                        "attributes": {
+                          "name": "Image",
+                          "contentType": true,
+                          "defaultImageAssetIdTemp": null,
+                          "layoutProperties": {
+                            "image": {
+                              "//": "Use this class to style image component.",
+                              "width": "100%",
+                              "height": "246px",
+                              "borderRadius": "10px"
+                            },
+                            "mainContainer": "image",
+                            "overlay": {
+                              "//": "Only applicable if overlay is enabled from basic details"
+                            },
+                            "xl": 12,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "xs": 12
+                          },
+                          "defaultImageAssetId": null,
+                          "imageAssetId": null,
+                          "stateName": "ilct_selected_toDo.task.image",
+                          "hideCondition": {
+                            "logic": {
+                              "!=": [
+                                { "var": "currentScreen.ILCT_TASK_TAB" },
+                                "TO_BE_APPROVED"
+                              ]
+                            }
+                          },
+                          "storeType": 1,
+                          "baseType": "sec_config",
+                          "selectedConfiguration": "660b3cd596973234b81fdcd4",
+                          "imageAssetIdTemp": null
+                        },
+                        "group": "Form",
+                        "updatedAt": "23-Aug-2021",
+                        "createdAt": "23-Aug-2021",
+                        "order": 0,
+                        "type": "20012",
+                        "version": "1.0.0",
+                        "isLatest": true,
+                        "projectType": "web",
+                        "component": { "content": "Image", "type": "20012" },
+                        "events": [],
+                        "path": "0-0-3-0-0"
+                      }
+                    ],
+                    "layoutProperties": {
+                      "xl": 12,
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "xs": 12
+                    }
+                  }
+                ],
+                "allowedContainers": [
+                  "10001",
+                  "20030",
+                  "noLayout",
+                  "20010",
+                  "widget"
+                ],
+                "attributes": {
+                  "gridProps": [],
+                  "label": "Header",
+                  "layoutProperties": {
+                    "gridLayout": {
+                      "//": "Use this class to style grid layout component.",
+                      "spacing": 0
+                    },
+                    "mainContainer": "gridLayout",
+                    "skeleton": {
+                      "//": "Use this class to style skeleton loading component."
+                    }
+                  },
+                  "layoutProps": {
+                    "direction": "row",
+                    "justifyContent": "flex-start",
+                    "alignItems": "flex-start"
+                  },
+                  "direction": "row",
+                  "name": "Grid layout"
+                },
+                "events": [],
+                "component": { "type": "10001", "content": "Grid layout" }
+              },
+              {
+                "type": "10001",
+                "name": "Grid layout",
+                "id": "M5lNkAS083z2xkliiVPu8",
+                "gridProps": [
+                  {
+                    "type": "column",
+                    "id": "76eK1FJrjrzxZKGdpb0DC",
+                    "gridProps": [
+                      {
+                        "id": "Aj2WU-dIn4kktJHyBErL9",
+                        "status": "ACTIVE",
+                        "name": "Image",
+                        "icon": "FaImage",
+                        "attributes": {
+                          "name": "Image",
+                          "contentType": true,
+                          "defaultImageAssetIdTemp": null,
+                          "layoutProperties": {
+                            "image": {
+                              "//": "Use this class to style image component.",
+                              "width": "100%",
+                              "height": "246px",
+                              "borderRadius": "10px"
+                            },
+                            "mainContainer": "image",
+                            "overlay": {
+                              "//": "Only applicable if overlay is enabled from basic details"
+                            },
+                            "xl": 12,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "xs": 12
+                          },
+                          "defaultImageAssetId": null,
+                          "imageAssetId": null,
+                          "stateName": "ilct_selected_toDo.task.image",
+                          "storeType": 1,
+                          "baseType": "sec_config",
+                          "selectedConfiguration": "660b3cd596973234b81fdcd4",
+                          "hideCondition": {
+                            "logic": {
+                              "!=": [
+                                { "var": "currentScreen.ILCT_TASK_TAB" },
+                                "DONE"
+                              ]
+                            }
+                          },
+                          "imageAssetIdTemp": null
+                        },
+                        "group": "Form",
+                        "updatedAt": "23-Aug-2021",
+                        "createdAt": "23-Aug-2021",
+                        "order": 0,
+                        "type": "20012",
+                        "version": "1.0.0",
+                        "isLatest": true,
+                        "projectType": "web",
+                        "component": { "content": "Image", "type": "20012" },
+                        "events": [],
+                        "path": "0-0-4-0-0"
+                      }
+                    ],
+                    "layoutProperties": {
+                      "xl": 12,
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "xs": 12
+                    }
+                  }
+                ],
+                "allowedContainers": [
+                  "10001",
+                  "20030",
+                  "noLayout",
+                  "20010",
+                  "widget"
+                ],
+                "attributes": {
+                  "gridProps": [],
+                  "label": "Header",
+                  "layoutProperties": {
+                    "gridLayout": {
+                      "//": "Use this class to style grid layout component.",
+                      "spacing": 0
+                    },
+                    "mainContainer": "gridLayout",
+                    "skeleton": {
+                      "//": "Use this class to style skeleton loading component."
+                    }
+                  },
+                  "layoutProps": {
+                    "direction": "row",
+                    "justifyContent": "flex-start",
+                    "alignItems": "flex-start"
+                  },
+                  "direction": "row",
+                  "name": "Grid layout"
+                },
+                "events": [],
+                "component": { "type": "10001", "content": "Grid layout" }
+              },
+              {
+                "type": "10001",
+                "name": "Grid layout",
                 "id": "8RgQaa1mwWMV9gjF9_Gb7",
                 "gridProps": [
                   {
@@ -671,7 +945,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "DG3_Bgw0RYmpXGlqW9vGi",
+                    "id": "7w7oKX7XC6amY_8akENiD",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -850,26 +1124,7 @@
                                             { "cssClassName": "ILPT_LABEL " }
                                           ]
                                         },
-                                        "events": [
-                                          {
-                                            "triggerId": "dkMvKwOuLZTl2vRt1Dysa",
-                                            "triggerName": "ILCT_IMAGE_UPLOAD",
-                                            "serviceType": "16",
-                                            "attributes": {
-                                              "bindingKey": "ilct_image_upload",
-                                              "storeType": 1,
-                                              "fileType": "img",
-                                              "maxSize": "1000",
-                                              "uploadTrigger": {
-                                                "id": "Vg3TSBY-lvQL3pWp1Fm4a",
-                                                "name": "ILCT_UPLOAD_TASK_IMAGE"
-                                              }
-                                            },
-                                            "type": "2",
-                                            "name": "On click",
-                                            "commandType": "1"
-                                          }
-                                        ],
+                                        "events": [],
                                         "path": "0-0-3-0-0-0-1-0-1",
                                         "version": "1.0.0"
                                       }
@@ -1090,15 +1345,9 @@
                   "name": "Grid layout",
                   "hideCondition": {
                     "logic": {
-                      "if": [
-                        {
-                          "==": [
-                            { "var": "currentScreen.ilct_update_task.code" },
-                            0
-                          ]
-                        },
-                        true,
-                        false
+                      "!=": [
+                        { "var": "currentScreen.ilct_update_task.code" },
+                        1
                       ]
                     }
                   }
@@ -1119,11 +1368,151 @@
                       {
                         "type": "10001",
                         "name": "Grid layout",
+                        "id": "zzJ3n6IhCGL54ILDl0-JF",
+                        "gridProps": [
+                          {
+                            "type": "column",
+                            "id": "CPRRVY9nUXZxIER6OIPGY",
+                            "gridProps": [
+                              {
+                                "id": "jkZLyGvyId5DjGJEYiSOQ",
+                                "status": "ACTIVE",
+                                "attributes": {
+                                  "label": "Done",
+                                  "variant": "contained",
+                                  "name": "Button",
+                                  "label-locale-key": "",
+                                  "fullWidth": true,
+                                  "layoutProperties": {
+                                    "button": {
+                                      "//": "Use this class to style button component.",
+                                      "font-size": "14px",
+                                      "font-weight": "bold",
+                                      "width": "110px",
+                                      "text-transform": "none"
+                                    },
+                                    "iconButton": {
+                                      "//": "Use this class to style icon button component.",
+                                      "width": "24px",
+                                      "height": "24px"
+                                    },
+                                    "inputProps": {
+                                      "//": "Use this class to style button element."
+                                    },
+                                    "mainContainer": "button",
+                                    "xl": 12,
+                                    "lg": 12,
+                                    "md": 12,
+                                    "sm": 12,
+                                    "xs": 12
+                                  },
+                                  "cssClassNames": [
+                                    {
+                                      "cssClassName": "ILCT_POPUP_GREEN_BUTTON_STYLE "
+                                    }
+                                  ],
+                                  "assetId": "USmBugbT-UBik3oo9kPGp",
+                                  "buttonIconPosition": "start",
+                                  "disableOnClick": false,
+                                  "asset": {
+                                    "createdBy": "user",
+                                    "_id": "65eb24e2b16e853c2041ce6b",
+                                    "name": "check_done_light.svg",
+                                    "type": "svg",
+                                    "projectId": "652fcbce09869c3c809b3097",
+                                    "id": "USmBugbT-UBik3oo9kPGp",
+                                    "gitBranchName": "master",
+                                    "folderType": "web",
+                                    "platform": "web",
+                                    "url": "652fcbce09869c3c809b3097/web/check_done_light.svg",
+                                    "canvasUrl": "652fcbce09869c3c809b3097/web/check_done_light.svg",
+                                    "createdAt": "2024-03-08T14:46:58.530Z",
+                                    "updatedAt": "2024-03-08T14:46:58.530Z",
+                                    "__v": 0,
+                                    "uri": "652fcbce09869c3c809b3097/web/check_done_light.svg"
+                                  },
+                                  "icon": null,
+                                  "hideCondition": {
+                                    "logic": {
+                                      "!=": [
+                                        {
+                                          "var": "currentScreen.ILCT_TASK_TAB"
+                                        },
+                                        "DONE"
+                                      ]
+                                    }
+                                  }
+                                },
+                                "name": "Button",
+                                "icon": "FaBimobject",
+                                "group": "Form",
+                                "type": "20006",
+                                "Documentation": "<div>components 12344</div>",
+                                "updatedAt": "23-Aug-2021",
+                                "createdAt": "23-Aug-2021",
+                                "order": 1,
+                                "version": "1.0.0",
+                                "isLatest": true,
+                                "projectType": "web",
+                                "component": {
+                                  "content": "Button",
+                                  "type": "20006"
+                                },
+                                "events": [],
+                                "path": "0-0-7-0-0-0-0"
+                              }
+                            ],
+                            "layoutProperties": {
+                              "xl": 12,
+                              "lg": 12,
+                              "md": 12,
+                              "sm": 12,
+                              "xs": 12
+                            }
+                          }
+                        ],
+                        "allowedContainers": [
+                          "10001",
+                          "20030",
+                          "noLayout",
+                          "20010",
+                          "widget"
+                        ],
+                        "attributes": {
+                          "gridProps": [],
+                          "label": "Header",
+                          "layoutProperties": {
+                            "gridLayout": {
+                              "//": "Use this class to style grid layout component.",
+                              "spacing": 0
+                            },
+                            "mainContainer": "gridLayout",
+                            "skeleton": {
+                              "//": "Use this class to style skeleton loading component."
+                            }
+                          },
+                          "layoutProps": {
+                            "direction": "row",
+                            "justifyContent": "flex-start",
+                            "alignItems": "flex-start"
+                          },
+                          "direction": "row",
+                          "name": "Grid layout"
+                        },
+                        "events": [],
+                        "component": {
+                          "type": "10001",
+                          "content": "Grid layout"
+                        }
+                      },
+                      {
+                        "type": "10001",
+                        "name": "Grid layout",
                         "id": "hg2ZHb5bs6ssSV09BYU0W",
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "uUbEBJZgbzhRjIKj-zamT",
+                            "id": "0qwnmxO1A0lr8xo4YgSGV",
                             "gridProps": [
                               {
                                 "id": "6g0PLmjk2QcgRFHO5VkWg",
@@ -1184,7 +1573,15 @@
                                   ],
                                   "hideCondition": {
                                     "logic": {
-                                      "if": [
+                                      "or": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.ILCT_TASK_TAB"
+                                            },
+                                            "TO_BE_APPROVED"
+                                          ]
+                                        },
                                         {
                                           "==": [
                                             {
@@ -1192,9 +1589,7 @@
                                             },
                                             1
                                           ]
-                                        },
-                                        true,
-                                        false
+                                        }
                                       ]
                                     }
                                   }
@@ -1256,7 +1651,7 @@
                                     "commandType": "1"
                                   }
                                 ],
-                                "path": "0-0-4-0-0-0-0"
+                                "path": "0-0-7-0-0-0-1"
                               },
                               {
                                 "id": "CS9dKeVinynaicv9P8cTO",
@@ -1319,17 +1714,23 @@
                                   "disableCondition": {},
                                   "hideCondition": {
                                     "logic": {
-                                      "if": [
+                                      "and": [
                                         {
-                                          "==": [
+                                          "!=": [
                                             {
                                               "var": "currentScreen.ilct_update_task.code"
                                             },
-                                            0
+                                            1
                                           ]
                                         },
-                                        true,
-                                        false
+                                        {
+                                          "!=": [
+                                            {
+                                              "var": "currentScreen.ILCT_TASK_TAB"
+                                            },
+                                            "TO_BE_APPROVED"
+                                          ]
+                                        }
                                       ]
                                     }
                                   }
@@ -1349,8 +1750,24 @@
                                   "content": "Button",
                                   "type": "20006"
                                 },
-                                "events": [],
-                                "path": "0-0-4-0-0-0-1"
+                                "events": [
+                                  {
+                                    "triggerId": "bTsRE_1zw236dMLTa4LH5",
+                                    "triggerName": "ILCT_UNDO_TASK_POPUP_MODAL",
+                                    "serviceType": "9",
+                                    "attributes": {
+                                      "widgetId": "RH40_tw8yGksi3-Sl_I-G",
+                                      "content": "",
+                                      "type": "",
+                                      "modalId": "IZFO_UM8G6tgNwVNw7MZa",
+                                      "toastContentType": "custom"
+                                    },
+                                    "type": "2",
+                                    "name": "On click",
+                                    "commandType": "1"
+                                  }
+                                ],
+                                "path": "0-0-7-0-1-0-1"
                               }
                             ],
                             "layoutProperties": {
@@ -1359,8 +1776,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-4-0-0-0"
+                            }
                           }
                         ],
                         "allowedContainers": [
@@ -1386,14 +1802,22 @@
                             "alignItems": "flex-start"
                           },
                           "direction": "row",
-                          "name": "Grid layout"
+                          "name": "Grid layout",
+                          "hideCondition": {
+                            "logic": {
+                              "==": [
+                                { "var": "currentScreen.ILCT_TASK_TAB" },
+                                "DONE"
+                              ]
+                            }
+                          }
                         },
                         "events": [],
                         "component": {
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-4-0-0"
+                        "path": "0-0-7-0-1"
                       }
                     ],
                     "layoutProperties": {
@@ -1828,7 +2252,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "LmN4EAelFu1suZcFR6-Tq",
+                    "id": "SEMCzKjy5xYOYyeKXO0qu",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -1837,7 +2261,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "RgXz2t4Ewv2zrKr8MtuOq",
+                            "id": "GqD-K7XCpQFQVkTvT0DRM",
                             "gridProps": [
                               {
                                 "id": "oxxC72CE9bh_t3uImJLvj",
@@ -1941,8 +2365,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-6-0-0-0"
+                            }
                           }
                         ],
                         "allowedContainers": [
@@ -1968,7 +2391,17 @@
                             "alignItems": "flex-start"
                           },
                           "direction": "row",
-                          "name": "Grid layout"
+                          "name": "Grid layout",
+                          "hideCondition": {
+                            "logic": {
+                              "==": [
+                                {
+                                  "var": "currentScreen.form.ilct_selected_toDo.task.endDate"
+                                },
+                                ""
+                              ]
+                            }
+                          }
                         },
                         "events": [],
                         "component": {
@@ -1988,7 +2421,7 @@
                   },
                   {
                     "type": "column",
-                    "id": "TfuL3HR82Haw9_WJlez5d",
+                    "id": "AetOpFCOiPGj6tZLq5HrX",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -2160,8 +2593,7 @@
                   "layoutProperties": {
                     "gridLayout": {
                       "//": "Use this class to style grid layout component.",
-                      "spacing": 0,
-                      "padding": "0px 0px 32px"
+                      "spacing": 0
                     },
                     "mainContainer": "gridLayout"
                   },
@@ -2171,7 +2603,24 @@
                     "alignItems": "flex-start"
                   },
                   "direction": "row",
-                  "name": "Grid layout"
+                  "name": "Grid layout",
+                  "conditionalClasses": [
+                    {
+                      "cssClassName": "ILCT_SUBMIT_TASK_BOTTOM_PADDING_CONDITIONAL ",
+                      "logic": {
+                        "if": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.ilct_update_task.code" },
+                              1
+                            ]
+                          },
+                          true,
+                          false
+                        ]
+                      }
+                    }
+                  ]
                 },
                 "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
@@ -2224,8 +2673,8 @@
     "gitBranchName": "master",
     "_id": "o0ioLrei__iQuwHn6dv4H",
     "createdBy": "basitahmed1199",
-    "updatedAt": "4/4/2024",
-    "createdAt": "4/4/2024",
+    "updatedAt": "4/8/2024",
+    "createdAt": "4/8/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2234,6 +2683,18 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "IZFO_UM8G6tgNwVNw7MZa",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "componentId": "ZvvpA-XgcNxWlxY4syy47",
           "componentType": "10001",
@@ -2259,6 +2720,44 @@
           "id": "n6mMkpwSLZurkLnHZLCFB",
           "position": {
             "i": "n6mMkpwSLZurkLnHZLCFB",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        },
+        {
+          "componentId": "euMVMU4ZmEOXdFB4z9oNY",
+          "componentType": "10001",
+          "id": "euMVMU4ZmEOXdFB4z9oNY",
+          "position": {
+            "i": "euMVMU4ZmEOXdFB4z9oNY",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        },
+        {
+          "componentId": "M5lNkAS083z2xkliiVPu8",
+          "componentType": "10001",
+          "id": "M5lNkAS083z2xkliiVPu8",
+          "position": {
+            "i": "M5lNkAS083z2xkliiVPu8",
             "x": null,
             "y": null,
             "w": null,
@@ -2375,7 +2874,7 @@
           "spacing": 0,
           "padding": "32px",
           "max-width": "608px",
-          "height": "90vh"
+          "max-height": "90vh"
         },
         "mainContainer": "gridLayout"
       },
@@ -2385,7 +2884,7 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "ILCT_TASK_DETAILS_SUBMIT_POPUP"
     },
     "layout": null,
     "events": [
@@ -2394,10 +2893,32 @@
         "triggerName": "ILCT_UPDATE_CHILD_TASK_RESPONSE_DELETE",
         "name": "On initialization",
         "type": "1"
+      },
+      {
+        "triggerId": "Fq6Iu9dfLPYEqfTIUOhkC",
+        "triggerName": "ILCT_TASK_IMAGE_NULL",
+        "name": "On initialization",
+        "type": "1"
       }
     ],
     "subType": "component",
     "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "IZFO_UM8G6tgNwVNw7MZa",
+    "type": "20031",
+    "triggerName": "ILCT_UNDO_TASK_POPUP_MODAL",
+    "attributes": {
+      "widgetId": "RH40_tw8yGksi3-Sl_I-G",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -2659,6 +3180,13 @@
         "name": "On click",
         "type": "2",
         "serviceType": "9"
+      },
+      {
+        "triggerId": "FgnZGXYx88bZa74FikQem",
+        "triggerName": "ILCT_FETCH_TASKS",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "8"
       }
     ],
     "path": "0-0-0-1-0-0-0",
@@ -2801,6 +3329,210 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-0",
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "euMVMU4ZmEOXdFB4z9oNY",
+    "name": "Grid layout",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "9dJZnMfOOMDX9-8ax_n41",
+          "componentType": "20012",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout"
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "9dJZnMfOOMDX9-8ax_n41",
+    "status": "ACTIVE",
+    "name": "Image",
+    "icon": "FaImage",
+    "attributes": {
+      "name": "Image",
+      "contentType": true,
+      "defaultImageAssetIdTemp": null,
+      "layoutProperties": {
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "100%",
+          "height": "246px",
+          "borderRadius": "10px"
+        },
+        "mainContainer": "image",
+        "overlay": {
+          "//": "Only applicable if overlay is enabled from basic details"
+        },
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "defaultImageAssetId": null,
+      "imageAssetId": null,
+      "stateName": "ilct_selected_toDo.task.image",
+      "hideCondition": {
+        "logic": {
+          "!=": [{ "var": "currentScreen.ILCT_TASK_TAB" }, "TO_BE_APPROVED"]
+        }
+      },
+      "storeType": 1,
+      "baseType": "sec_config",
+      "selectedConfiguration": "660b3cd596973234b81fdcd4",
+      "imageAssetIdTemp": null
+    },
+    "group": "Form",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 0,
+    "type": "20012",
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Image", "type": "20012" },
+    "events": [],
+    "path": "0-0-3-0-0",
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "M5lNkAS083z2xkliiVPu8",
+    "name": "Grid layout",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "Aj2WU-dIn4kktJHyBErL9",
+          "componentType": "20012",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout"
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "Aj2WU-dIn4kktJHyBErL9",
+    "status": "ACTIVE",
+    "name": "Image",
+    "icon": "FaImage",
+    "attributes": {
+      "name": "Image",
+      "contentType": true,
+      "defaultImageAssetIdTemp": null,
+      "layoutProperties": {
+        "image": {
+          "//": "Use this class to style image component.",
+          "width": "100%",
+          "height": "246px",
+          "borderRadius": "10px"
+        },
+        "mainContainer": "image",
+        "overlay": {
+          "//": "Only applicable if overlay is enabled from basic details"
+        },
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "defaultImageAssetId": null,
+      "imageAssetId": null,
+      "stateName": "ilct_selected_toDo.task.image",
+      "storeType": 1,
+      "baseType": "sec_config",
+      "selectedConfiguration": "660b3cd596973234b81fdcd4",
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "currentScreen.ILCT_TASK_TAB" }, "DONE"] }
+      },
+      "imageAssetIdTemp": null
+    },
+    "group": "Form",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 0,
+    "type": "20012",
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Image", "type": "20012" },
+    "events": [],
+    "path": "0-0-4-0-0",
     "screenId": "o0ioLrei__iQuwHn6dv4H",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -2960,13 +3692,7 @@
       "direction": "row",
       "name": "Grid layout",
       "hideCondition": {
-        "logic": {
-          "if": [
-            { "==": [{ "var": "currentScreen.ilct_update_task.code" }, 0] },
-            true,
-            false
-          ]
-        }
+        "logic": { "!=": [{ "var": "currentScreen.ilct_update_task.code" }, 1] }
       }
     },
     "layout": null,
@@ -3259,15 +3985,7 @@
       "label": "Upload picture",
       "cssClassNames": [{ "cssClassName": "ILPT_LABEL " }]
     },
-    "events": [
-      {
-        "triggerId": "dkMvKwOuLZTl2vRt1Dysa",
-        "triggerName": "ILCT_IMAGE_UPLOAD",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "16"
-      }
-    ],
+    "events": [],
     "path": "0-0-3-0-0-0-1-0-1",
     "version": "1.0.0",
     "screenId": "o0ioLrei__iQuwHn6dv4H",
@@ -3314,6 +4032,25 @@
     "attributes": {
       "gridProps": [
         {
+          "componentId": "zzJ3n6IhCGL54ILDl0-JF",
+          "componentType": "10001",
+          "id": "zzJ3n6IhCGL54ILDl0-JF",
+          "position": {
+            "i": "zzJ3n6IhCGL54ILDl0-JF",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        },
+        {
           "componentId": "hg2ZHb5bs6ssSV09BYU0W",
           "componentType": "10001",
           "id": "hg2ZHb5bs6ssSV09BYU0W",
@@ -3356,6 +4093,129 @@
     "screenId": "o0ioLrei__iQuwHn6dv4H",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "zzJ3n6IhCGL54ILDl0-JF",
+    "name": "Grid layout",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "jkZLyGvyId5DjGJEYiSOQ",
+          "componentType": "20006",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout"
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "jkZLyGvyId5DjGJEYiSOQ",
+    "status": "ACTIVE",
+    "attributes": {
+      "label": "Done",
+      "variant": "contained",
+      "name": "Button",
+      "label-locale-key": "",
+      "fullWidth": true,
+      "layoutProperties": {
+        "button": {
+          "//": "Use this class to style button component.",
+          "font-size": "14px",
+          "font-weight": "bold",
+          "width": "110px",
+          "text-transform": "none"
+        },
+        "iconButton": {
+          "//": "Use this class to style icon button component.",
+          "width": "24px",
+          "height": "24px"
+        },
+        "inputProps": { "//": "Use this class to style button element." },
+        "mainContainer": "button",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "cssClassNames": [{ "cssClassName": "ILCT_POPUP_GREEN_BUTTON_STYLE " }],
+      "assetId": "USmBugbT-UBik3oo9kPGp",
+      "buttonIconPosition": "start",
+      "disableOnClick": false,
+      "asset": {
+        "createdBy": "user",
+        "_id": "65eb24e2b16e853c2041ce6b",
+        "name": "check_done_light.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "USmBugbT-UBik3oo9kPGp",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/check_done_light.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/check_done_light.svg",
+        "createdAt": "2024-03-08T14:46:58.530Z",
+        "updatedAt": "2024-03-08T14:46:58.530Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/check_done_light.svg"
+      },
+      "icon": null,
+      "hideCondition": {
+        "logic": { "!=": [{ "var": "currentScreen.ILCT_TASK_TAB" }, "DONE"] }
+      }
+    },
+    "name": "Button",
+    "icon": "FaBimobject",
+    "group": "Form",
+    "type": "20006",
+    "Documentation": "<div>components 12344</div>",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 1,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Button", "type": "20006" },
+    "events": [],
+    "path": "0-0-7-0-0-0-0",
+    "screenId": "o0ioLrei__iQuwHn6dv4H",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
@@ -3404,7 +4264,10 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "hideCondition": {
+        "logic": { "==": [{ "var": "currentScreen.ILCT_TASK_TAB" }, "DONE"] }
+      }
     },
     "layout": null,
     "events": [],
@@ -3468,10 +4331,11 @@
       "cssClassNames": [{ "cssClassName": "ILCT_POPUP_BUTTON_STYLE " }],
       "hideCondition": {
         "logic": {
-          "if": [
-            { "==": [{ "var": "currentScreen.ilct_update_task.code" }, 1] },
-            true,
-            false
+          "or": [
+            {
+              "==": [{ "var": "currentScreen.ILCT_TASK_TAB" }, "TO_BE_APPROVED"]
+            },
+            { "==": [{ "var": "currentScreen.ilct_update_task.code" }, 1] }
           ]
         }
       }
@@ -3497,7 +4361,7 @@
         "serviceType": "8"
       }
     ],
-    "path": "0-0-4-0-0-0-0",
+    "path": "0-0-7-0-0-0-1",
     "screenId": "o0ioLrei__iQuwHn6dv4H",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3559,10 +4423,11 @@
       "disableCondition": {},
       "hideCondition": {
         "logic": {
-          "if": [
-            { "==": [{ "var": "currentScreen.ilct_update_task.code" }, 0] },
-            true,
-            false
+          "and": [
+            { "!=": [{ "var": "currentScreen.ilct_update_task.code" }, 1] },
+            {
+              "!=": [{ "var": "currentScreen.ILCT_TASK_TAB" }, "TO_BE_APPROVED"]
+            }
           ]
         }
       }
@@ -3579,8 +4444,16 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Button", "type": "20006" },
-    "events": [],
-    "path": "0-0-4-0-0-0-1",
+    "events": [
+      {
+        "triggerId": "bTsRE_1zw236dMLTa4LH5",
+        "triggerName": "ILCT_UNDO_TASK_POPUP_MODAL",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
+      }
+    ],
+    "path": "0-0-7-0-1-0-1",
     "screenId": "o0ioLrei__iQuwHn6dv4H",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -3966,8 +4839,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0,
-          "padding": "0px 0px 32px"
+          "spacing": 0
         },
         "mainContainer": "gridLayout"
       },
@@ -3977,7 +4849,19 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "conditionalClasses": [
+        {
+          "cssClassName": "ILCT_SUBMIT_TASK_BOTTOM_PADDING_CONDITIONAL ",
+          "logic": {
+            "if": [
+              { "==": [{ "var": "currentScreen.ilct_update_task.code" }, 1] },
+              true,
+              false
+            ]
+          }
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -4033,7 +4917,15 @@
         "alignItems": "flex-start"
       },
       "direction": "row",
-      "name": "Grid layout"
+      "name": "Grid layout",
+      "hideCondition": {
+        "logic": {
+          "==": [
+            { "var": "currentScreen.form.ilct_selected_toDo.task.endDate" },
+            ""
+          ]
+        }
+      }
     },
     "layout": null,
     "events": [],

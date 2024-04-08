@@ -67,6 +67,38 @@
             "id": "we4xOBbEMHQ4-85MC1Amg",
             "gridProps": [
               {
+                "id": "u0y1rzfeNshMfFzWBEppW",
+                "name": "SHOW_THAMEEN_REDEEM_SUCCESS",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "R1cpFlk8pOd78j-dS1vd4",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
+                "id": "nIZk4yU_cflpppCkvsJOk",
+                "name": "SHOW_THAMEEN_REDEEM_POPUP",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
                 "id": "WrYnzChcrnFnH5WJyOTYE",
                 "status": "ACTIVE",
                 "_id": "610134a1d1f5e860b1e8c751",
@@ -97,32 +129,66 @@
                 "createdAt": "24-Aug-2021",
                 "events": [
                   {
-                    "triggerId": "3E7n3MsWvST2HrYtbmn5R",
-                    "triggerName": "THAMEEN_GIFT_CARD",
-                    "serviceType": "8",
+                    "triggerId": "FBG2B-O9bL2l63Q4TNDb5",
+                    "triggerName": "CALCULATE_AVAILABLE_BALANCE",
+                    "serviceType": "11",
                     "attributes": {
-                      "loaderWidgetIds": [906070],
-                      "messageWidgetIds": [906070],
-                      "responseStateKey": "GIFT_CARD",
-                      "url": "/GIFT_CARD",
-                      "checksum": true,
-                      "encryption": true,
-                      "isDeviceDetails": false,
-                      "loginTrigger": false,
-                      "formData": false,
-                      "logoutTrigger": false,
-                      "headers": {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "channel_key": "002"
-                      },
                       "requestBody": [],
-                      "baseURL": "65e87c3e2f9c444e88698ebc",
-                      "storeType": 2
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "AVAILABLE_BALANCE",
+                      "sourceBindingKey": "AVAILABLE_BALANCE",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "round": [
+                          {
+                            "*": [
+                              {
+                                "var": "SELECTED_CATELOG.rewardItemsList.0.availablePoints"
+                              },
+                              { "var": "SELECTED_CATELOG.multiplier" }
+                            ]
+                          },
+                          2
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
                     },
                     "type": "1",
                     "name": "On initialization",
-                    "commandType": "1"
+                    "commandType": "6"
+                  },
+                  {
+                    "triggerId": "V3CwcFfPl52daze-yWDr_",
+                    "triggerName": "GET_AVAILABLE_BALANCE",
+                    "serviceType": "11",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "AVAILABLE_POINTS",
+                      "sourceBindingKey": "AVAILABLE_POINTS",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "if": [
+                          { "==": [true, true] },
+                          {
+                            "var": "SELECTED_CATELOG.rewardItemsList.0.availablePoints"
+                          },
+                          ""
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    },
+                    "type": "1",
+                    "name": "On initialization",
+                    "commandType": "6"
                   }
                 ],
                 "order": 1,
@@ -137,11 +203,11 @@
                   "widget"
                 ],
                 "component": { "content": "Grid layout", "type": "10001" },
-                "path": "0-0-0",
+                "path": "0-0-2",
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "rJVj2mNckddrj-YqJ2ffv",
+                    "id": "dPMb2OAq8xntrvOHl4gBl",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -478,7 +544,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "y8DapladCl1KpAeS_88iD",
+                                            "id": "y_mQKphOfaGlHhAa55k7x",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -487,7 +553,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "MmdNQmxGQzAklkUMn5XyV",
+                                                    "id": "nzZ6ZUt653O2gj8o1jZ82",
                                                     "gridProps": [
                                                       {
                                                         "id": "vsqYTc86o5FVb-rds82qQ",
@@ -505,7 +571,8 @@
                                                             "image": {
                                                               "//": "Use this class to style image component.",
                                                               "width": "100%",
-                                                              "height": "100%"
+                                                              "height": "100%",
+                                                              "overflow": "hidden"
                                                             },
                                                             "mainContainer": "image",
                                                             "xl": 12,
@@ -517,22 +584,22 @@
                                                           "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
                                                           "imageAssetIdTemp": {
                                                             "createdBy": "user",
-                                                            "_id": "65e9b0c7b16e853c2041a736",
-                                                            "name": "gulf_air.png",
-                                                            "type": "png",
+                                                            "_id": "65dde29d2c4bb94a7826cecf",
+                                                            "name": "giftcard_list.jpg",
+                                                            "type": "jpg",
                                                             "projectId": "652fcbce09869c3c809b3097",
-                                                            "id": "cgFi5o3sdMGXDmWZ3KZq3",
+                                                            "id": "kZMTJqxusqu_KNgt-lXxR",
                                                             "gitBranchName": "master",
                                                             "folderType": "web",
                                                             "platform": "web",
-                                                            "url": "652fcbce09869c3c809b3097/web/gulf_air.png",
-                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/gulf_air.png",
-                                                            "createdAt": "2024-03-07T12:19:19.656Z",
-                                                            "updatedAt": "2024-03-07T12:19:19.656Z",
+                                                            "url": "652fcbce09869c3c809b3097/web/giftcard_list.jpg",
+                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/giftcard_list.jpg",
+                                                            "createdAt": "2024-02-27T13:24:45.457Z",
+                                                            "updatedAt": "2024-02-27T13:24:45.457Z",
                                                             "__v": 0,
-                                                            "uri": "652fcbce09869c3c809b3097/web/gulf_air.png"
+                                                            "uri": "652fcbce09869c3c809b3097/web/giftcard_list.jpg"
                                                           },
-                                                          "imageAssetId": "cgFi5o3sdMGXDmWZ3KZq3",
+                                                          "imageAssetId": "kZMTJqxusqu_KNgt-lXxR",
                                                           "stateName": null,
                                                           "storeType": null,
                                                           "useFullLink": null
@@ -550,7 +617,7 @@
                                                           "type": "20012"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-1-0-0-0-0-0-0-0-0"
+                                                        "path": "0-0-0-0-1-0-0-0-0-0-0-0-0"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -579,7 +646,8 @@
                                                       "width": "110px",
                                                       "height": "110px",
                                                       "background": "#fff",
-                                                      "border-radius": "15px"
+                                                      "border-radius": "15px",
+                                                      "overflow": "hidden"
                                                     },
                                                     "mainContainer": "gridLayout"
                                                   },
@@ -596,7 +664,7 @@
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-1-0-0-0-0-0-0",
+                                                "path": "0-0-0-0-1-0-0-0-0-0-0",
                                                 "dimensions": {
                                                   "rows": 1,
                                                   "columns": 1,
@@ -604,8 +672,7 @@
                                                   "colSize0sm": 12,
                                                   "colSize0md": 12,
                                                   "colSize0lg": 12,
-                                                  "colSize0xl": 12,
-                                                  "layoutProperties": null
+                                                  "colSize0xl": 12
                                                 },
                                                 "readOnly": true
                                               }
@@ -620,7 +687,7 @@
                                           },
                                           {
                                             "type": "column",
-                                            "id": "B4MjSjKC31jQ49lCbPFdA",
+                                            "id": "UMQtBy3aKk_0-usLasnqi",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -673,16 +740,16 @@
                                               }
                                             ],
                                             "layoutProperties": {
-                                              "xl": 6,
-                                              "lg": 6,
-                                              "md": 6,
-                                              "sm": 6,
-                                              "xs": 6
+                                              "xl": 1,
+                                              "lg": 1,
+                                              "md": 1,
+                                              "sm": 1,
+                                              "xs": 1
                                             }
                                           },
                                           {
                                             "type": "column",
-                                            "id": "Nh6TWJYGsSQ2_O_cruIsR",
+                                            "id": "zMJ4GlT4G2wNr6Eqkx27F",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -691,7 +758,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "URnyCQxRsd_x_hCH8HrOp",
+                                                    "id": "_QsqE51nYlGClqnqHdA1w",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -792,10 +859,10 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "GIFT_CARD.availablePoints",
+                                                                  "label": "AVAILABLE_POINTS",
                                                                   "format": "thousand seprator",
                                                                   "searchInState": true,
-                                                                  "storeType": 2
+                                                                  "storeType": 1
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -912,7 +979,7 @@
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "sbbTaD8MbHC7xONXoaTI4",
+                                                    "id": "JanBXlvmvpQBeFsZh6ZDq",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -950,22 +1017,22 @@
                                                                   "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
                                                                   "imageAssetIdTemp": {
                                                                     "createdBy": "user",
-                                                                    "_id": "65e9b28bb16e853c2041a76b",
-                                                                    "name": "plane.svg",
+                                                                    "_id": "661093b438a69435081a59c0",
+                                                                    "name": "gift_card_gray.svg",
                                                                     "type": "svg",
                                                                     "projectId": "652fcbce09869c3c809b3097",
-                                                                    "id": "JJplzdCp01WvStJhLm6w6",
+                                                                    "id": "r1WclhPEFMe1yKdOkqy-7",
                                                                     "gitBranchName": "master",
                                                                     "folderType": "web",
                                                                     "platform": "web",
-                                                                    "url": "652fcbce09869c3c809b3097/web/plane.svg",
-                                                                    "canvasUrl": "652fcbce09869c3c809b3097/web/plane.svg",
-                                                                    "createdAt": "2024-03-07T12:26:51.653Z",
-                                                                    "updatedAt": "2024-03-07T12:26:51.653Z",
+                                                                    "url": "652fcbce09869c3c809b3097/web/gift_card_gray.svg",
+                                                                    "canvasUrl": "652fcbce09869c3c809b3097/web/gift_card_gray.svg",
+                                                                    "createdAt": "2024-04-06T00:13:40.172Z",
+                                                                    "updatedAt": "2024-04-06T00:13:40.172Z",
                                                                     "__v": 0,
-                                                                    "uri": "652fcbce09869c3c809b3097/web/plane.svg"
+                                                                    "uri": "652fcbce09869c3c809b3097/web/gift_card_gray.svg"
                                                                   },
-                                                                  "imageAssetId": "JJplzdCp01WvStJhLm6w6",
+                                                                  "imageAssetId": "r1WclhPEFMe1yKdOkqy-7",
                                                                   "stateName": null,
                                                                   "storeType": null,
                                                                   "useFullLink": null
@@ -983,7 +1050,7 @@
                                                                   "type": "20012"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-0-2-0-1-0-0-0"
+                                                                "path": "0-0-0-0-1-0-0-0-0-2-0-1-0-0-0"
                                                               },
                                                               {
                                                                 "id": "6ID06o2xl2Jxsdi82rABD",
@@ -1013,10 +1080,10 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "GIFT_CARD.ammountAgaintPoints",
+                                                                  "label": "AVAILABLE_BALANCE",
                                                                   "format": "thousand seprator",
                                                                   "searchInState": true,
-                                                                  "storeType": 2,
+                                                                  "storeType": 1,
                                                                   "prefix": "BHD "
                                                                 },
                                                                 "icon": "FaFont",
@@ -1147,10 +1214,13 @@
                                                     "gridLayout": {
                                                       "//": "Use this class to style grid layout component.",
                                                       "spacing": 0,
-                                                      "height": "110px",
+                                                      "min-height": "110px",
                                                       "background": "#fff",
                                                       "border-radius": "15px",
-                                                      "padding": "20px 30px"
+                                                      "padding": "20px 30px",
+                                                      "max-width": "400px",
+                                                      "width": "auto",
+                                                      "float": "right"
                                                     },
                                                     "mainContainer": "gridLayout"
                                                   },
@@ -1167,7 +1237,7 @@
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-1-0-0-0-0-2-0",
+                                                "path": "0-0-0-0-1-0-0-0-0-2-0",
                                                 "dimensions": {
                                                   "rows": 1,
                                                   "columns": 2,
@@ -1186,11 +1256,11 @@
                                               }
                                             ],
                                             "layoutProperties": {
-                                              "xl": 4,
-                                              "lg": 4,
-                                              "md": 4,
-                                              "sm": 4,
-                                              "xs": 4
+                                              "xl": 9,
+                                              "lg": 9,
+                                              "md": 9,
+                                              "sm": 9,
+                                              "xs": 9
                                             }
                                           }
                                         ],
@@ -1225,7 +1295,7 @@
                                           "type": "10001",
                                           "content": "Grid layout"
                                         },
-                                        "path": "0-0-1-0-0-0-0",
+                                        "path": "0-0-0-0-1-0-0-0-0",
                                         "dimensions": {
                                           "rows": 1,
                                           "columns": 3,
@@ -1414,7 +1484,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "rYpwC8wMUxlULFCOJTGce",
+                                                            "id": "BQDedrMRQru-U7xjXxeAk",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -1423,7 +1493,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "fp_oHxzz0JAqqxU-8VWla",
+                                                                    "id": "kkNmmLv6Rpoe3eOGaPNPQ",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -1461,7 +1531,7 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "amount",
+                                                                                  "label": "shortDescriptionValue",
                                                                                   "format": "thousand seprator",
                                                                                   "searchInState": true,
                                                                                   "storeType": 2,
@@ -1949,7 +2019,7 @@
                                                                                     "sm": 12,
                                                                                     "xs": 12
                                                                                   },
-                                                                                  "label": "points",
+                                                                                  "label": "pointValue",
                                                                                   "format": "thousand seprator",
                                                                                   "postfix": "   points",
                                                                                   "storeType": 2,
@@ -1969,7 +2039,7 @@
                                                                                   "type": "20002"
                                                                                 },
                                                                                 "events": [],
-                                                                                "path": "0-0-1-0-0-0-1-0-1-0-0-0-0-0-2-0-0"
+                                                                                "path": "0-0-0-0-1-0-0-0-1-0-1-0-0-0-0-0-2-0-0"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -2042,7 +2112,8 @@
                                                                       "text-align": "center",
                                                                       "color": "#004986",
                                                                       "margin": "0px 22px 0px 0px",
-                                                                      "cursor": "pointer"
+                                                                      "cursor": "pointer",
+                                                                      "width": "180px"
                                                                     },
                                                                     "mainContainer": "gridLayout"
                                                                   },
@@ -2059,10 +2130,10 @@
                                                                       "logic": {
                                                                         "==": [
                                                                           {
-                                                                            "var": "amount"
+                                                                            "var": "id"
                                                                           },
                                                                           {
-                                                                            "var": "currentScreen.form.SELECTED_CARD.amount"
+                                                                            "var": "currentScreen.form.SELECTED_CARD.id"
                                                                           }
                                                                         ]
                                                                       }
@@ -2073,12 +2144,12 @@
                                                                         ">": [
                                                                           {
                                                                             "parseNumber": {
-                                                                              "var": "amount"
+                                                                              "var": "pointValue"
                                                                             }
                                                                           },
                                                                           {
                                                                             "parseNumber": {
-                                                                              "var": "currentScreen.GIFT_CARD.ammountAgaintPoints"
+                                                                              "var": "currentScreen.form.AVAILABLE_POINTS"
                                                                             }
                                                                           }
                                                                         ]
@@ -2166,23 +2237,24 @@
                                                             },
                                                             "mainContainer": "listLayout"
                                                           },
-                                                          "dataSource": "GIFT_CARD.availablePointsList",
-                                                          "storeType": 2,
+                                                          "dataSource": "SELECTED_CATELOG.rewardItemsList",
+                                                          "storeType": 1,
                                                           "bindingKey": "SELECTED_CARD",
                                                           "disableClick": {
                                                             ">": [
                                                               {
                                                                 "parseNumber": {
-                                                                  "var": "amount"
+                                                                  "var": "pointValue"
                                                                 }
                                                               },
                                                               {
                                                                 "parseNumber": {
-                                                                  "var": "currentScreen.GIFT_CARD.ammountAgaintPoints"
+                                                                  "var": "currentScreen.form.AVAILABLE_POINTS"
                                                                 }
                                                               }
                                                             ]
-                                                          }
+                                                          },
+                                                          "isHList": true
                                                         },
                                                         "events": [],
                                                         "component": {
@@ -2197,8 +2269,7 @@
                                                           "colSize0sm": 12,
                                                           "colSize0md": 12,
                                                           "colSize0lg": 12,
-                                                          "colSize0xl": 12,
-                                                          "layoutProperties": null
+                                                          "colSize0xl": 12
                                                         },
                                                         "readOnly": false
                                                       }
@@ -2315,7 +2386,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "IhICB3H6SD3HZsKacScAb",
+                                                                    "id": "o0yK899_sS5Ni6Spx08_h",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -2521,7 +2592,7 @@
                                                                   },
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "PLKYVOw_-AIpWDtKuGX58",
+                                                                    "id": "pC-tWeVJX3D_TDmIl1R_X",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -2642,7 +2713,7 @@
                                                                   },
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "Z1D5qltQvtDYalecyAxTA",
+                                                                    "id": "ZkVNY9yu9eBIAucFp2Hgt",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -2651,7 +2722,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "KBX6A0xrg3f8vtzYEdM3a",
+                                                                            "id": "8nLJbyWM4daUvRb_HdruW",
                                                                             "gridProps": [
                                                                               {
                                                                                 "id": "z-rc7PSpSf7CMpB7R_6s0",
@@ -2880,7 +2951,7 @@
                                                                             "var": "currentScreen.form.quantity_redemption_points"
                                                                           },
                                                                           {
-                                                                            "var": "currentScreen.GIFT_CARD.availablePoints"
+                                                                            "var": "currentScreen.form.AVAILABLE_POINTS"
                                                                           }
                                                                         ]
                                                                       }
@@ -3036,7 +3107,7 @@
                                                                         "var": "currentScreen.form.quantity_redemption_points"
                                                                       },
                                                                       {
-                                                                        "var": "currentScreen.GIFT_CARD.availablePoints"
+                                                                        "var": "currentScreen.form.AVAILABLE_POINTS"
                                                                       }
                                                                     ]
                                                                   }
@@ -3215,7 +3286,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "SELECTED_CARD.points",
+                                                                          "label": "SELECTED_CARD.pointValue",
                                                                           "postfix": " points",
                                                                           "format": "thousand seprator",
                                                                           "searchInState": true,
@@ -3428,7 +3499,7 @@
                                                                                       "var": "currentScreen.form.quantity_redemption_points"
                                                                                     },
                                                                                     {
-                                                                                      "var": "currentScreen.GIFT_CARD.availablePoints"
+                                                                                      "var": "currentScreen.form.AVAILABLE_POINTS"
                                                                                     }
                                                                                   ]
                                                                                 }
@@ -3458,18 +3529,121 @@
                                                                         },
                                                                         "events": [
                                                                           {
-                                                                            "triggerId": "12c3fGL0QD9nLkGMcClTC",
-                                                                            "triggerName": "Swap To OTP Widget TRIGGER",
-                                                                            "serviceType": "1",
+                                                                            "triggerId": "Rtg58gp9OygvtGdF0W_Q1",
+                                                                            "triggerName": "CALCULATE_GIFT_CARD_REMAINING_POINTS_CONDITIONAL",
+                                                                            "serviceType": "13",
                                                                             "attributes": {
-                                                                              "fromWidgetId": "VtKCCLwvk_tCuGGvSJ5Ix",
-                                                                              "nextWidgetId": "ae02bY4VKERWSkMbhKVNN",
-                                                                              "gridRadioValue": "Grid",
-                                                                              "selectedObjectBindingKey": "selectedObject",
-                                                                              "editableForm": false
+                                                                              "triggers": [
+                                                                                {
+                                                                                  "logic": {
+                                                                                    ">": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.quantity"
+                                                                                      },
+                                                                                      1
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "GIFT_CARD_CALCULATE_REMAINING_REDEEM_POINTS_CUSTOM",
+                                                                                  "triggerId": "uZlLdp_Lx-Y9ar66GGSL4",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "11",
+                                                                                      "command": {
+                                                                                        "type": "6",
+                                                                                        "attributes": {
+                                                                                          "storeType": "",
+                                                                                          "selectedObjectBindingKey": "selectedObject",
+                                                                                          "dataType": "value",
+                                                                                          "destinationBindingKey": "REMAINING_POINTS",
+                                                                                          "sourceBindingKey": "REMAINING_POINTS",
+                                                                                          "sourceStoreType": 1,
+                                                                                          "destinationStoreType": 1,
+                                                                                          "logic": {
+                                                                                            "round": [
+                                                                                              {
+                                                                                                "-": [
+                                                                                                  {
+                                                                                                    "var": "AVAILABLE_POINTS"
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "var": "quantity_redemption_points"
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              2
+                                                                                            ]
+                                                                                          },
+                                                                                          "changeValueConditonally": true,
+                                                                                          "targettedType": "value"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "<": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.quantity"
+                                                                                      },
+                                                                                      1
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "GIFT_CARD_CALCULATE_REMAINING_REDEEM_POINTS_CATELOG",
+                                                                                  "triggerId": "sfCpE8qZZ-91aC-KX7yZl",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "11",
+                                                                                      "command": {
+                                                                                        "type": "6",
+                                                                                        "attributes": {
+                                                                                          "dataType": "value",
+                                                                                          "destinationBindingKey": "REMAINING_POINTS",
+                                                                                          "sourceBindingKey": "REMAINING_POINTS",
+                                                                                          "sourceStoreType": 1,
+                                                                                          "destinationStoreType": 1,
+                                                                                          "logic": {
+                                                                                            "round": [
+                                                                                              {
+                                                                                                "-": [
+                                                                                                  {
+                                                                                                    "var": "AVAILABLE_POINTS"
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "var": "SELECTED_CARD.pointValue"
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              2
+                                                                                            ]
+                                                                                          },
+                                                                                          "changeValueConditonally": true,
+                                                                                          "targettedType": "value"
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
                                                                             },
-                                                                            "type": "4",
-                                                                            "name": "On Submit"
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
+                                                                          },
+                                                                          {
+                                                                            "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+                                                                            "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+                                                                            "serviceType": "9",
+                                                                            "attributes": {
+                                                                              "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                                                                              "content": "",
+                                                                              "type": "",
+                                                                              "modalId": "Bf3P7TnQrunI8whik7L7J",
+                                                                              "toastContentType": "custom"
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
                                                                           }
                                                                         ],
                                                                         "path": "0-0-0-0-1-0-0-0-1-0-3-0-0-1-0-0-0"
@@ -3853,8 +4027,8 @@
     "gitBranchName": "master",
     "_id": "OJhwLruJcyaLy7Y4fdUC6",
     "createdBy": "zeeshan",
-    "updatedAt": "3/26/2024",
-    "createdAt": "3/26/2024",
+    "updatedAt": "4/7/2024",
+    "createdAt": "4/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3863,6 +4037,30 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "u0y1rzfeNshMfFzWBEppW",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "nIZk4yU_cflpppCkvsJOk",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "componentId": "WrYnzChcrnFnH5WJyOTYE",
           "componentType": "10001",
@@ -3906,6 +4104,38 @@
     "events": [],
     "subType": "component",
     "screenId": "OJhwLruJcyaLy7Y4fdUC6",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "u0y1rzfeNshMfFzWBEppW",
+    "name": "SHOW_THAMEEN_REDEEM_SUCCESS",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "R1cpFlk8pOd78j-dS1vd4",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "OJhwLruJcyaLy7Y4fdUC6",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "nIZk4yU_cflpppCkvsJOk",
+    "name": "SHOW_THAMEEN_REDEEM_POPUP",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "OJhwLruJcyaLy7Y4fdUC6",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -3975,8 +4205,14 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "3E7n3MsWvST2HrYtbmn5R",
-        "triggerName": "THAMEEN_GIFT_CARD",
+        "triggerId": "FBG2B-O9bL2l63Q4TNDb5",
+        "triggerName": "CALCULATE_AVAILABLE_BALANCE",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "V3CwcFfPl52daze-yWDr_",
+        "triggerName": "GET_AVAILABLE_BALANCE",
         "name": "On initialization",
         "type": "1"
       }
@@ -4443,7 +4679,7 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 6, "lg": 6, "md": 6, "sm": 6, "xs": 6 }
+          "layoutProperties": { "xl": 1, "lg": 1, "md": 1, "sm": 1, "xs": 1 }
         },
         {
           "componentId": "oQzaQojWXSTfBsBXFsQQo",
@@ -4456,7 +4692,7 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 4, "lg": 4, "md": 4, "sm": 4, "xs": 4 }
+          "layoutProperties": { "xl": 9, "lg": 9, "md": 9, "sm": 9, "xs": 9 }
         }
       ],
       "label": "Header",
@@ -4512,7 +4748,8 @@
           "width": "110px",
           "height": "110px",
           "background": "#fff",
-          "border-radius": "15px"
+          "border-radius": "15px",
+          "overflow": "hidden"
         },
         "mainContainer": "gridLayout"
       },
@@ -4549,7 +4786,8 @@
         "image": {
           "//": "Use this class to style image component.",
           "width": "100%",
-          "height": "100%"
+          "height": "100%",
+          "overflow": "hidden"
         },
         "mainContainer": "image",
         "xl": 12,
@@ -4561,22 +4799,22 @@
       "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
       "imageAssetIdTemp": {
         "createdBy": "user",
-        "_id": "65e9b0c7b16e853c2041a736",
-        "name": "gulf_air.png",
-        "type": "png",
+        "_id": "65dde29d2c4bb94a7826cecf",
+        "name": "giftcard_list.jpg",
+        "type": "jpg",
         "projectId": "652fcbce09869c3c809b3097",
-        "id": "cgFi5o3sdMGXDmWZ3KZq3",
+        "id": "kZMTJqxusqu_KNgt-lXxR",
         "gitBranchName": "master",
         "folderType": "web",
         "platform": "web",
-        "url": "652fcbce09869c3c809b3097/web/gulf_air.png",
-        "canvasUrl": "652fcbce09869c3c809b3097/web/gulf_air.png",
-        "createdAt": "2024-03-07T12:19:19.656Z",
-        "updatedAt": "2024-03-07T12:19:19.656Z",
+        "url": "652fcbce09869c3c809b3097/web/giftcard_list.jpg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/giftcard_list.jpg",
+        "createdAt": "2024-02-27T13:24:45.457Z",
+        "updatedAt": "2024-02-27T13:24:45.457Z",
         "__v": 0,
-        "uri": "652fcbce09869c3c809b3097/web/gulf_air.png"
+        "uri": "652fcbce09869c3c809b3097/web/giftcard_list.jpg"
       },
-      "imageAssetId": "cgFi5o3sdMGXDmWZ3KZq3",
+      "imageAssetId": "kZMTJqxusqu_KNgt-lXxR",
       "stateName": null,
       "storeType": null,
       "useFullLink": null
@@ -4591,7 +4829,7 @@
     "projectType": "web",
     "component": { "content": "Image", "type": "20012" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-0-0-0-0",
+    "path": "0-0-0-0-1-0-0-0-0-0-0-0-0",
     "screenId": "OJhwLruJcyaLy7Y4fdUC6",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -4667,10 +4905,13 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "height": "110px",
+          "min-height": "110px",
           "background": "#fff",
           "border-radius": "15px",
-          "padding": "20px 30px"
+          "padding": "20px 30px",
+          "max-width": "400px",
+          "width": "auto",
+          "float": "right"
         },
         "mainContainer": "gridLayout"
       },
@@ -4848,10 +5089,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "GIFT_CARD.availablePoints",
+      "label": "AVAILABLE_POINTS",
       "format": "thousand seprator",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -5010,22 +5251,22 @@
       "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
       "imageAssetIdTemp": {
         "createdBy": "user",
-        "_id": "65e9b28bb16e853c2041a76b",
-        "name": "plane.svg",
+        "_id": "661093b438a69435081a59c0",
+        "name": "gift_card_gray.svg",
         "type": "svg",
         "projectId": "652fcbce09869c3c809b3097",
-        "id": "JJplzdCp01WvStJhLm6w6",
+        "id": "r1WclhPEFMe1yKdOkqy-7",
         "gitBranchName": "master",
         "folderType": "web",
         "platform": "web",
-        "url": "652fcbce09869c3c809b3097/web/plane.svg",
-        "canvasUrl": "652fcbce09869c3c809b3097/web/plane.svg",
-        "createdAt": "2024-03-07T12:26:51.653Z",
-        "updatedAt": "2024-03-07T12:26:51.653Z",
+        "url": "652fcbce09869c3c809b3097/web/gift_card_gray.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/gift_card_gray.svg",
+        "createdAt": "2024-04-06T00:13:40.172Z",
+        "updatedAt": "2024-04-06T00:13:40.172Z",
         "__v": 0,
-        "uri": "652fcbce09869c3c809b3097/web/plane.svg"
+        "uri": "652fcbce09869c3c809b3097/web/gift_card_gray.svg"
       },
-      "imageAssetId": "JJplzdCp01WvStJhLm6w6",
+      "imageAssetId": "r1WclhPEFMe1yKdOkqy-7",
       "stateName": null,
       "storeType": null,
       "useFullLink": null
@@ -5040,7 +5281,7 @@
     "projectType": "web",
     "component": { "content": "Image", "type": "20012" },
     "events": [],
-    "path": "0-0-1-0-0-0-0-2-0-1-0-0-0",
+    "path": "0-0-0-0-1-0-0-0-0-2-0-1-0-0-0",
     "screenId": "OJhwLruJcyaLy7Y4fdUC6",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -5071,10 +5312,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "GIFT_CARD.ammountAgaintPoints",
+      "label": "AVAILABLE_BALANCE",
       "format": "thousand seprator",
       "searchInState": true,
-      "storeType": 2,
+      "storeType": 1,
       "prefix": "BHD "
     },
     "icon": "FaFont",
@@ -5481,19 +5722,16 @@
         "listLayout": { "padding": "5px", "margin": "0px 12px 0px 0px" },
         "mainContainer": "listLayout"
       },
-      "dataSource": "GIFT_CARD.availablePointsList",
-      "storeType": 2,
+      "dataSource": "SELECTED_CATELOG.rewardItemsList",
+      "storeType": 1,
       "bindingKey": "SELECTED_CARD",
       "disableClick": {
         ">": [
-          { "parseNumber": { "var": "amount" } },
-          {
-            "parseNumber": {
-              "var": "currentScreen.GIFT_CARD.ammountAgaintPoints"
-            }
-          }
+          { "parseNumber": { "var": "pointValue" } },
+          { "parseNumber": { "var": "currentScreen.form.AVAILABLE_POINTS" } }
         ]
-      }
+      },
+      "isHList": true
     },
     "layout": null,
     "events": [],
@@ -5579,7 +5817,8 @@
           "text-align": "center",
           "color": "#004986",
           "margin": "0px 22px 0px 0px",
-          "cursor": "pointer"
+          "cursor": "pointer",
+          "width": "180px"
         },
         "mainContainer": "gridLayout"
       },
@@ -5595,8 +5834,8 @@
           "cssClassName": "THM_TICKET_BOX_SELECTED ",
           "logic": {
             "==": [
-              { "var": "amount" },
-              { "var": "currentScreen.form.SELECTED_CARD.amount" }
+              { "var": "id" },
+              { "var": "currentScreen.form.SELECTED_CARD.id" }
             ]
           }
         },
@@ -5604,11 +5843,9 @@
           "cssClassName": "THM_TICKET_BOX_SELECTED_DISABLED ",
           "logic": {
             ">": [
-              { "parseNumber": { "var": "amount" } },
+              { "parseNumber": { "var": "pointValue" } },
               {
-                "parseNumber": {
-                  "var": "currentScreen.GIFT_CARD.ammountAgaintPoints"
-                }
+                "parseNumber": { "var": "currentScreen.form.AVAILABLE_POINTS" }
               }
             ]
           }
@@ -5700,7 +5937,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "amount",
+      "label": "shortDescriptionValue",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 2,
@@ -6082,7 +6319,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "points",
+      "label": "pointValue",
       "format": "thousand seprator",
       "postfix": "   points",
       "storeType": 2,
@@ -6099,7 +6336,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-1-0-0-0-0-0-2-0-0",
+    "path": "0-0-0-0-1-0-0-0-1-0-1-0-0-0-0-0-2-0-0",
     "screenId": "OJhwLruJcyaLy7Y4fdUC6",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6371,7 +6608,7 @@
           "logic": {
             ">": [
               { "var": "currentScreen.form.quantity_redemption_points" },
-              { "var": "currentScreen.GIFT_CARD.availablePoints" }
+              { "var": "currentScreen.form.AVAILABLE_POINTS" }
             ]
           }
         }
@@ -6787,7 +7024,7 @@
               "!": {
                 ">": [
                   { "var": "currentScreen.form.quantity_redemption_points" },
-                  { "var": "currentScreen.GIFT_CARD.availablePoints" }
+                  { "var": "currentScreen.form.AVAILABLE_POINTS" }
                 ]
               }
             }
@@ -7060,7 +7297,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "SELECTED_CARD.points",
+      "label": "SELECTED_CARD.pointValue",
       "postfix": " points",
       "format": "thousand seprator",
       "searchInState": true,
@@ -7229,7 +7466,7 @@
             {
               ">": [
                 { "var": "currentScreen.form.quantity_redemption_points" },
-                { "var": "currentScreen.GIFT_CARD.availablePoints" }
+                { "var": "currentScreen.form.AVAILABLE_POINTS" }
               ]
             }
           ]
@@ -7251,11 +7488,18 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "12c3fGL0QD9nLkGMcClTC",
-        "triggerName": "Swap To OTP Widget TRIGGER",
-        "name": "On Submit",
-        "type": "4",
-        "serviceType": "1"
+        "triggerId": "Rtg58gp9OygvtGdF0W_Q1",
+        "triggerName": "CALCULATE_GIFT_CARD_REMAINING_POINTS_CONDITIONAL",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
+      },
+      {
+        "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+        "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
       }
     ],
     "path": "0-0-0-0-1-0-0-0-1-0-3-0-0-1-0-0-0",

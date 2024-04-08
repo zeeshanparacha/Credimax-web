@@ -1,0 +1,74 @@
+{
+  "id": "Wip0bkFuzqXhZDsp707_H",
+  "_id": "DxLrXTCTnQxLp2b-4IijO",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_REJECT_TASK",
+  "old_name": "ILPT_REJECT_TASK",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "ilpt_reject_task",
+          "url": "/api-designer/api/updateTasks/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.id",
+              "value": "ilpt_selected_task.id"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.status",
+              "value": "reject"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.userId",
+              "value": "selected_child.ileadChild.ileadUserId"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "HIDE_MODAL_TRIGGER",
+            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "ILPT_FETCH_TASKS",
+            "triggerId": "kxQFYyMH7izQhbX8wqbB1",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.iqxxpb8ctzbWbpcmBP5cnyo5viXqbPts",
+  "updatedAt": "4/6/2024",
+  "createdAt": "4/6/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

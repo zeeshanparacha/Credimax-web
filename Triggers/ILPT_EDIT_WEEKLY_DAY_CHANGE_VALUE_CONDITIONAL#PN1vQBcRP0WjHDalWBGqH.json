@@ -1,10 +1,10 @@
 {
-  "_id": "6JvXY0q-kVXHa9etmVhIT",
-  "id": "6tHt0rVkYhoRzQ5ET62mY",
+  "_id": "PN1vQBcRP0WjHDalWBGqH",
+  "id": "Ts1OCUjHcneEVqdqeqiqH",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
-  "name": "ILPT_EDIT_RECURRING_0_1_CONDITIONAL",
-  "old_name": "ILPT_EDIT_RECURRING_0_1_CONDITIONAL",
+  "name": "ILPT_EDIT_WEEKLY_DAY_CHANGE_VALUE_CONDITIONAL",
+  "old_name": "ILPT_EDIT_WEEKLY_DAY_CHANGE_VALUE_CONDITIONAL",
   "status": "ACTIVE",
   "services": [
     {
@@ -14,8 +14,8 @@
         "attributes": {
           "triggers": [
             {
-              "triggerName": "ILPT_EDIT_RECURRING_1",
-              "triggerId": "1FK3LKrx5--lD-NLi9on1",
+              "triggerName": "ILPT_EDIT_WEEKLY_DAY_CHANGE_VALUE",
+              "triggerId": "qeufEGI0HA31qeArJAl4O",
               "services": [
                 {
                   "type": "11",
@@ -28,10 +28,12 @@
                       "sourceBindingKey": "",
                       "filterList": [
                         {
-                          "key": "ilpt_selected_task.isRecurring",
-                          "changeValueConditonally": false,
+                          "key": "ilpt_weekly_edit_day",
+                          "changeValueConditonally": true,
                           "storeType": 1,
-                          "logic": "1"
+                          "logic": {
+                            "var": "currentScreen.ilpt_selected_task.date"
+                          }
                         }
                       ]
                     }
@@ -43,19 +45,31 @@
                   {
                     "==": [
                       {
-                        "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                        "var": "currentScreen.form.ilpt_selected_task.recurringType"
                       },
-                      "1"
+                      "Weekly"
                     ]
                   },
-                  false,
-                  true
+                  true,
+                  false
                 ]
               }
             },
             {
-              "triggerName": "ILPT_EDIT_RECURRING_0",
-              "triggerId": "raVnRDjfpHYptj5-ZNv1t",
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      { "var": "currentScreen.form.recurringType" },
+                      "Monthly"
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              },
+              "triggerName": "ILPT_EDIT_WEEKLY_SUNDAY",
+              "triggerId": "AyNsx6UiPeIL4vLkJCLrc",
               "services": [
                 {
                   "type": "11",
@@ -68,37 +82,30 @@
                       "sourceBindingKey": "",
                       "filterList": [
                         {
-                          "key": "ilpt_selected_task.isRecurring",
+                          "key": "ilpt_weekly_edit_day.name",
                           "changeValueConditonally": false,
                           "storeType": 1,
-                          "logic": "0"
+                          "logic": "Sunday"
+                        },
+                        {
+                          "storeType": 1,
+                          "key": "ilpt_weekly_edit_day.code",
+                          "logic": "Sunday"
                         }
                       ]
                     }
                   }
                 }
-              ],
-              "logic": {
-                "if": [
-                  {
-                    "==": [
-                      {
-                        "var": "currentScreen.form.ilpt_selected_task.isRecurring"
-                      },
-                      "1"
-                    ]
-                  }
-                ]
-              }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.tr7sxiiqz7eLjquFDi0zUEYb8YDSG7B",
-  "updatedAt": "4/4/2024",
-  "createdAt": "4/4/2024",
+  "csrf": "0.iqxxpb8ctzbWbpcmBP5cnyo5viXqbPts",
+  "updatedAt": "4/6/2024",
+  "createdAt": "4/6/2024",
   "createdBy": "basitahmed1199",
   "updatedBy": "basitahmed1199"
 }

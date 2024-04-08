@@ -1,0 +1,196 @@
+{
+  "id": "zdpRLp0bqQi5wBnKKMHk3",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CALL_THM_HISTORY_ON_FILTER_CHANGE",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "0X9U8vY_1Ujd7S1NemIF5",
+              "_id": "A-y3L5OgBPldnv30SGAqD",
+              "name": "CHANGE_THAMEEN_HISTORY_FILTER_VALUES",
+              "old_name": "CHANGE_THAMEEN_HISTORY_FILTER_VALUES",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "object",
+                      "destinationBindingKey": "THM_FILTER",
+                      "sourceBindingKey": "THM_FILTER",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "filterList": [
+                        {
+                          "key": "startDate",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, { "var": "fromDate" }, ""] }
+                        },
+                        {
+                          "key": "endDate",
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, { "var": "toDate" }, ""] }
+                        }
+                      ],
+                      "targettedType": "object"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+              "updatedAt": "4/1/2024",
+              "createdAt": "4/1/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "Hom3V1iTNydegXZ9NpALv",
+              "_id": "w6fKBKJiR69O-g6ecALJU",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+              "old_name": "THAMEEN_HISTORY_HORIZONTAL_LIST",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "THAMEEN_HORIZONTAL_LIST",
+                      "url": "/api-designer/api/thameenPointsDetails/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request",
+                          "value": "THM_FILTER"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.zoz0jba9g54jHkPOyTLGu0bznjCaIeB",
+              "updatedAt": "4/1/2024",
+              "createdAt": "4/1/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "F9XFFzk8gRJVRTyzKvgym",
+              "_id": "0GUHX0O3-EPoofwIcAJem",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "THAMEEN_TRANSACTION_HISTORY",
+              "old_name": "THAMEEN_TRANSACTION_HISTORY",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "THAMEEN_HISTORY",
+                      "url": "/api-designer/api/loyaltyTransaction/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "request.minimumDataRequired",
+                          "value": "25"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.filter",
+                          "value": "THAMEEN_FILTER_TYPE"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.fromDate",
+                          "value": "THM_FILTER.startDate"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.toDate",
+                          "value": "THM_FILTER.endDate"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ],
+              "csrf": "0.e85q94cymv6LHQ3cm4ccObbm1NU-1m6m",
+              "updatedAt": "4/5/2024",
+              "createdAt": "4/5/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            }
+          ],
+          "triggerIds": [
+            "0X9U8vY_1Ujd7S1NemIF5",
+            "Hom3V1iTNydegXZ9NpALv",
+            "F9XFFzk8gRJVRTyzKvgym"
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.e85q94cymv6LHQ3cm4ccObbm1NU-1m6m",
+  "_id": "VuI-U5uXlkPzC1imM-gIN",
+  "updatedAt": "4/5/2024",
+  "createdAt": "4/5/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}

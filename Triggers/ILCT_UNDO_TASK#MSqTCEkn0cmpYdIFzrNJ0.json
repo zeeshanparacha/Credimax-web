@@ -1,0 +1,68 @@
+{
+  "id": "Ns5tPX8KEse9WX0gZrTUB",
+  "_id": "MSqTCEkn0cmpYdIFzrNJ0",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILCT_UNDO_TASK",
+  "old_name": "ILCT_UNDO_TASK",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "ilct_undo_task",
+          "url": "/api-designer/api/updateTasks/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.id",
+              "value": "ilct_selected_toDo.task.id"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.status",
+              "value": "reject"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "HIDE_MODAL_TRIGGER",
+            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "ILCT_FETCH_TASKS",
+            "triggerId": "FgnZGXYx88bZa74FikQem",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.tu5os6gvhqmGRI8NVUZbEn0qokh_fUSr",
+  "updatedAt": "4/5/2024",
+  "createdAt": "4/5/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

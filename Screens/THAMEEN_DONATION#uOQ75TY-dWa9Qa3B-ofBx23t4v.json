@@ -6,6 +6,19 @@
     "attributes": {
       "gridProps": [
         {
+          "componentId": "RrvOeM4Oc9xPjELh48nAV",
+          "componentType": "10001",
+          "id": "RrvOeM4Oc9xPjELh48nAV",
+          "position": {
+            "i": "RrvOeM4Oc9xPjELh48nAV",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        },
+        {
           "componentId": "Xa7NpRs0cCN7kosUNx_Fi",
           "componentType": "10001",
           "id": "Xa7NpRs0cCN7kosUNx_Fi",
@@ -21,6 +34,38 @@
       ]
     },
     "layout": [
+      {
+        "type": "10001",
+        "id": "RrvOeM4Oc9xPjELh48nAV",
+        "gridProps": [
+          {
+            "type": "column",
+            "id": "voxkNbEuDRLRNgH6Zw6WA",
+            "gridProps": [
+              {
+                "id": "nIZk4yU_cflpppCkvsJOk",
+                "type": "20031",
+                "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+                "attributes": {
+                  "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                  "layoutProperties": {}
+                },
+                "component": { "type": "20031" }
+              },
+              {
+                "id": "u0y1rzfeNshMfFzWBEppW",
+                "name": "SHOW_THAMEEN_REDEEM_SUCCESS",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "R1cpFlk8pOd78j-dS1vd4",
+                  "layoutProperties": {}
+                },
+                "component": { "type": "20031" }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "Xa7NpRs0cCN7kosUNx_Fi",
         "status": "ACTIVE",
@@ -77,6 +122,35 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "6"
+          },
+          {
+            "triggerId": "V3CwcFfPl52daze-yWDr_",
+            "triggerName": "GET_AVAILABLE_BALANCE",
+            "serviceType": "11",
+            "attributes": {
+              "requestBody": [],
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "value",
+              "destinationBindingKey": "AVAILABLE_POINTS",
+              "sourceBindingKey": "AVAILABLE_POINTS",
+              "sourceStoreType": 1,
+              "destinationStoreType": 1,
+              "logic": {
+                "if": [
+                  { "==": [true, true] },
+                  {
+                    "var": "SELECTED_CATELOG.rewardItemsList.0.availablePoints"
+                  },
+                  ""
+                ]
+              },
+              "changeValueConditonally": true,
+              "targettedType": "value"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "6"
           }
         ],
         "order": 1,
@@ -85,12 +159,28 @@
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": "0",
+        "path": "1",
         "gridProps": [
           {
             "type": "column",
-            "id": "lhki-piw8DDrL_Pe-zLVA",
+            "id": "r4PTCzcibVyq3xvd8PE2h",
             "gridProps": [
+              {
+                "id": "nIZk4yU_cflpppCkvsJOk",
+                "type": "20031",
+                "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+                "attributes": {
+                  "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
               {
                 "type": "10001",
                 "name": "HEADER",
@@ -423,7 +513,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "qodHVC8L8OOR28AYCTaTa",
+                                    "id": "azx7UbyHlWKLX89JBCaxG",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -432,7 +522,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "NRFQO-fWBBOuGUvjEB_tD",
+                                            "id": "_fOyFgypeBFt0LXocwFSJ",
                                             "gridProps": [
                                               {
                                                 "id": "OJfW5soZKSh5A5YwAA4Z6",
@@ -524,7 +614,8 @@
                                               "width": "110px",
                                               "height": "110px",
                                               "background": "#fff",
-                                              "border-radius": "15px"
+                                              "border-radius": "15px",
+                                              "overflow": "hidden"
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -549,8 +640,7 @@
                                           "colSize0sm": 12,
                                           "colSize0md": 12,
                                           "colSize0lg": 12,
-                                          "colSize0xl": 12,
-                                          "layoutProperties": null
+                                          "colSize0xl": 12
                                         },
                                         "readOnly": true
                                       }
@@ -565,7 +655,7 @@
                                   },
                                   {
                                     "type": "column",
-                                    "id": "Sr0s8wDGzPcwON7fZ1qeC",
+                                    "id": "803X7-ia_ayAMM2pIcUQP",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -618,16 +708,16 @@
                                       }
                                     ],
                                     "layoutProperties": {
-                                      "xl": 6,
-                                      "lg": 6,
-                                      "md": 6,
-                                      "sm": 6,
-                                      "xs": 6
+                                      "xl": 1,
+                                      "lg": 1,
+                                      "md": 1,
+                                      "sm": 1,
+                                      "xs": 1
                                     }
                                   },
                                   {
                                     "type": "column",
-                                    "id": "XYc5CvNtgylVCuLBf46Pu",
+                                    "id": "IUuhyJnty7hHnFBaXxfcz",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -636,7 +726,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "Ao7ZKuqlt2GeT1OjSukOM",
+                                            "id": "mxvFFbUXgZYXzpHAIFUgg",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -857,7 +947,7 @@
                                           },
                                           {
                                             "type": "column",
-                                            "id": "uczm4nSO0tB5_ZxCdsqz2",
+                                            "id": "LaLwiKWBet8ZImXUC2VQg",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -895,22 +985,22 @@
                                                           "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
                                                           "imageAssetIdTemp": {
                                                             "createdBy": "user",
-                                                            "_id": "65e9b28bb16e853c2041a76b",
-                                                            "name": "plane.svg",
+                                                            "_id": "661093aa38a69435081a59bb",
+                                                            "name": "donation_coin_gray.svg",
                                                             "type": "svg",
                                                             "projectId": "652fcbce09869c3c809b3097",
-                                                            "id": "JJplzdCp01WvStJhLm6w6",
+                                                            "id": "YEBfynaxHAbGk9pJs5XqT",
                                                             "gitBranchName": "master",
                                                             "folderType": "web",
                                                             "platform": "web",
-                                                            "url": "652fcbce09869c3c809b3097/web/plane.svg",
-                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/plane.svg",
-                                                            "createdAt": "2024-03-07T12:26:51.653Z",
-                                                            "updatedAt": "2024-03-07T12:26:51.653Z",
+                                                            "url": "652fcbce09869c3c809b3097/web/donation_coin_gray.svg",
+                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/donation_coin_gray.svg",
+                                                            "createdAt": "2024-04-06T00:13:30.345Z",
+                                                            "updatedAt": "2024-04-06T00:13:30.345Z",
                                                             "__v": 0,
-                                                            "uri": "652fcbce09869c3c809b3097/web/plane.svg"
+                                                            "uri": "652fcbce09869c3c809b3097/web/donation_coin_gray.svg"
                                                           },
-                                                          "imageAssetId": "JJplzdCp01WvStJhLm6w6",
+                                                          "imageAssetId": "YEBfynaxHAbGk9pJs5XqT",
                                                           "stateName": null,
                                                           "storeType": null,
                                                           "useFullLink": null
@@ -958,7 +1048,7 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "SELECTED_CATELOG.dashboardItem.shortDescriptionValueInText",
+                                                          "label": "AVAILABLE_BALANCE",
                                                           "format": "thousand seprator",
                                                           "searchInState": true,
                                                           "storeType": 1,
@@ -1094,10 +1184,13 @@
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
                                               "spacing": 0,
-                                              "height": "110px",
+                                              "min-height": "110px",
                                               "background": "#fff",
                                               "border-radius": "15px",
-                                              "padding": "20px 30px"
+                                              "padding": "20px 30px",
+                                              "max-width": "400px",
+                                              "width": "auto",
+                                              "float": "right"
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -1133,11 +1226,11 @@
                                       }
                                     ],
                                     "layoutProperties": {
-                                      "xl": 4,
-                                      "lg": 4,
-                                      "md": 4,
-                                      "sm": 4,
-                                      "xs": 4
+                                      "xl": 9,
+                                      "lg": 9,
+                                      "md": 9,
+                                      "sm": 9,
+                                      "xs": 9
                                     }
                                   }
                                 ],
@@ -1361,7 +1454,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "L1xzepCIDBDSqB9RSEPqd",
+                                                    "id": "vbMVlMDxz7_XXFun5WCoG",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1370,7 +1463,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "zT_Zk8IjwWVn8473Qfsj6",
+                                                            "id": "qUdHrZhUm0jyp6s5up4BK",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2050,13 +2143,43 @@
                                                             "type": "2",
                                                             "name": "On click",
                                                             "commandType": "4"
+                                                          },
+                                                          {
+                                                            "triggerId": "y3Wc47XKfQOxNjHT3rgdW",
+                                                            "triggerName": "DELETE_IS_CUSTOM_AMOUNT_EXCEEDS",
+                                                            "serviceType": "11",
+                                                            "attributes": {
+                                                              "stateName": "IS_CUSTOM_AMOUNT_EXCEEDS",
+                                                              "storeType": 1,
+                                                              "selectedObjectBindingKey": "selectedObject",
+                                                              "dataType": "",
+                                                              "sourceBindingKey": ""
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "4"
+                                                          },
+                                                          {
+                                                            "triggerId": "11wRi3PYfEt2pDNJMXG04",
+                                                            "triggerName": "DELETE_CUSTOM_POINTS",
+                                                            "serviceType": "11",
+                                                            "attributes": {
+                                                              "stateName": "customPoints",
+                                                              "storeType": 1,
+                                                              "selectedObjectBindingKey": "selectedObject",
+                                                              "dataType": "",
+                                                              "sourceBindingKey": ""
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "4"
                                                           }
                                                         ],
                                                         "component": {
                                                           "type": "10001",
                                                           "content": "Grid layout"
                                                         },
-                                                        "path": "0-0-1-0-0-0-1-0-1-0-0-0-0",
+                                                        "path": "1-0-2-0-0-0-1-0-1-0-0-0-0",
                                                         "dimensions": {
                                                           "rows": 1,
                                                           "columns": 1,
@@ -2122,7 +2245,8 @@
                                                       }
                                                     ]
                                                   },
-                                                  "isHList": true
+                                                  "isHList": true,
+                                                  "bindingKeyStoreType": 1
                                                 },
                                                 "events": [],
                                                 "component": {
@@ -2319,24 +2443,6 @@
                                                 },
                                                 "events": [
                                                   {
-                                                    "triggerId": "Ecq05q2WKZZ6IreG8KdA-",
-                                                    "triggerName": "IS_DONATION_AMOUNT_EXCEEDS_ON_CUSTOM_AMOUNT",
-                                                    "serviceType": "11",
-                                                    "attributes": {
-                                                      "storeType": "",
-                                                      "selectedObjectBindingKey": "selectedObject",
-                                                      "dataType": "value",
-                                                      "destinationBindingKey": "IS_CUSTOM_AMOUNT_EXCEEDS",
-                                                      "sourceBindingKey": "IS_CUSTOM_AMOUNT_EXCEEDS",
-                                                      "sourceStoreType": 2,
-                                                      "destinationStoreType": 2,
-                                                      "changeValueConditonally": true,
-                                                      "targettedType": "value"
-                                                    },
-                                                    "type": "6",
-                                                    "name": "On blur"
-                                                  },
-                                                  {
                                                     "triggerId": "FRW7aiIUhw84VFvqr0r-6",
                                                     "triggerName": "DELETE_CUSTOM_DONATION_AMOUNT",
                                                     "serviceType": "11",
@@ -2379,9 +2485,40 @@
                                                     },
                                                     "type": "6",
                                                     "name": "On blur"
+                                                  },
+                                                  {
+                                                    "triggerId": "Ecq05q2WKZZ6IreG8KdA-",
+                                                    "triggerName": "IS_DONATION_AMOUNT_EXCEEDS_ON_CUSTOM_AMOUNT",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "requestBody": [],
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "value",
+                                                      "destinationBindingKey": "IS_CUSTOM_AMOUNT_EXCEEDS",
+                                                      "sourceBindingKey": "IS_CUSTOM_AMOUNT_EXCEEDS",
+                                                      "sourceStoreType": 1,
+                                                      "destinationStoreType": 1,
+                                                      "logic": {
+                                                        ">": [
+                                                          {
+                                                            "parseNumber": {
+                                                              "var": "customPoints"
+                                                            }
+                                                          },
+                                                          {
+                                                            "var": "AVAILABLE_POINTS"
+                                                          }
+                                                        ]
+                                                      },
+                                                      "changeValueConditonally": true,
+                                                      "targettedType": "value"
+                                                    },
+                                                    "type": "6",
+                                                    "name": "On blur"
                                                   }
                                                 ],
-                                                "path": "0-0-1-0-0-0-1-0-2-0-1"
+                                                "path": "1-0-2-0-0-0-1-0-2-0-1"
                                               },
                                               {
                                                 "id": "d1pBWD_8b2J3VzGIU6ag1",
@@ -2418,13 +2555,13 @@
                                                       "or": [
                                                         {
                                                           "!": {
-                                                            "var": "currentScreen.IS_CUSTOM_AMOUNT_EXCEEDS"
+                                                            "var": "currentScreen.form.IS_CUSTOM_AMOUNT_EXCEEDS"
                                                           }
                                                         },
                                                         {
                                                           "===": [
                                                             {
-                                                              "var": "currentScreen.IS_CUSTOM_AMOUNT_EXCEEDS"
+                                                              "var": "currentScreen.form.IS_CUSTOM_AMOUNT_EXCEEDS"
                                                             },
                                                             false
                                                           ]
@@ -2573,7 +2710,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-0"
+                                                                "path": "0-0-1-0-0-0-1-0-3-0-0-0-0-0-0"
                                                               },
                                                               {
                                                                 "id": "Blvo4IqSi0nwY5wsgn9Kx",
@@ -2603,7 +2740,7 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "SELECTED_CARD.points",
+                                                                  "label": "SELECTED_CARD.pointValue",
                                                                   "postfix": " points",
                                                                   "searchInState": true,
                                                                   "searchInStatePostfix": false,
@@ -2673,7 +2810,8 @@
                                                                         }
                                                                       ]
                                                                     }
-                                                                  }
+                                                                  },
+                                                                  "postfix": " points"
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -2809,7 +2947,7 @@
                                                                               }
                                                                             },
                                                                             {
-                                                                              "var": "currentScreen.IS_CUSTOM_AMOUNT_EXCEEDS"
+                                                                              "var": "currentScreen.form.IS_CUSTOM_AMOUNT_EXCEEDS"
                                                                             }
                                                                           ]
                                                                         },
@@ -2853,21 +2991,124 @@
                                                                 },
                                                                 "events": [
                                                                   {
-                                                                    "triggerId": "12c3fGL0QD9nLkGMcClTC",
-                                                                    "triggerName": "Swap To OTP Widget TRIGGER",
-                                                                    "serviceType": "1",
+                                                                    "triggerId": "ymKNDyh9U21hVSguxJ0JX",
+                                                                    "triggerName": "CALCULATE_DONATION_REMAINING_POINTS_CONDITIONAL",
+                                                                    "serviceType": "13",
                                                                     "attributes": {
-                                                                      "fromWidgetId": "VtKCCLwvk_tCuGGvSJ5Ix",
-                                                                      "nextWidgetId": "ae02bY4VKERWSkMbhKVNN",
-                                                                      "gridRadioValue": "Grid",
-                                                                      "selectedObjectBindingKey": "selectedObject",
-                                                                      "editableForm": false
+                                                                      "triggers": [
+                                                                        {
+                                                                          "logic": {
+                                                                            "!": [
+                                                                              {
+                                                                                "var": "currentScreen.form.customAmount"
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          "triggerName": "DONATION_CALCULATE_REMAINING_REDEEM_POINTS_CATELOG",
+                                                                          "triggerId": "Ggb6CGR0h2q9Gxl9kJNSS",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "6",
+                                                                                "attributes": {
+                                                                                  "storeType": "",
+                                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                                  "dataType": "value",
+                                                                                  "destinationBindingKey": "REMAINING_POINTS",
+                                                                                  "sourceBindingKey": "REMAINING_POINTS",
+                                                                                  "sourceStoreType": 1,
+                                                                                  "destinationStoreType": 1,
+                                                                                  "logic": {
+                                                                                    "round": [
+                                                                                      {
+                                                                                        "-": [
+                                                                                          {
+                                                                                            "var": "AVAILABLE_POINTS"
+                                                                                          },
+                                                                                          {
+                                                                                            "var": "SELECTED_CARD.pointValue"
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      2
+                                                                                    ]
+                                                                                  },
+                                                                                  "changeValueConditonally": true,
+                                                                                  "targettedType": "value"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        {
+                                                                          "logic": {
+                                                                            "!!": [
+                                                                              {
+                                                                                "var": "currentScreen.form.customAmount"
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          "triggerName": "DONATION_CALCULATE_REMAINING_REDEEM_POINTS_CUSTOM",
+                                                                          "triggerId": "wHT7VTKeX7IxRCe1e7t9E",
+                                                                          "services": [
+                                                                            {
+                                                                              "type": "11",
+                                                                              "command": {
+                                                                                "type": "6",
+                                                                                "attributes": {
+                                                                                  "storeType": "",
+                                                                                  "selectedObjectBindingKey": "selectedObject",
+                                                                                  "dataType": "value",
+                                                                                  "destinationBindingKey": "REMAINING_POINTS",
+                                                                                  "sourceBindingKey": "REMAINING_POINTS",
+                                                                                  "sourceStoreType": 1,
+                                                                                  "destinationStoreType": 1,
+                                                                                  "logic": {
+                                                                                    "round": [
+                                                                                      {
+                                                                                        "-": [
+                                                                                          {
+                                                                                            "var": "AVAILABLE_POINTS"
+                                                                                          },
+                                                                                          {
+                                                                                            "var": "customPoints"
+                                                                                          }
+                                                                                        ]
+                                                                                      },
+                                                                                      2
+                                                                                    ]
+                                                                                  },
+                                                                                  "changeValueConditonally": true,
+                                                                                  "targettedType": "value"
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      ]
                                                                     },
-                                                                    "type": "4",
-                                                                    "name": "On Submit"
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "1"
+                                                                  },
+                                                                  {
+                                                                    "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+                                                                    "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+                                                                    "serviceType": "9",
+                                                                    "attributes": {
+                                                                      "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                                                                      "content": "",
+                                                                      "type": "",
+                                                                      "modalId": "nIZk4yU_cflpppCkvsJOk",
+                                                                      "toastContentType": "custom"
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "1"
                                                                   }
                                                                 ],
-                                                                "path": "0-0-1-0-0-0-1-0-3-0-0-1-0-0-0"
+                                                                "path": "1-0-2-0-0-0-1-0-3-0-0-1-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3222,8 +3463,68 @@
     "gitBranchName": "master",
     "_id": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
     "createdBy": "zeeshan",
-    "updatedAt": "3/27/2024",
-    "createdAt": "3/27/2024",
+    "updatedAt": "4/8/2024",
+    "createdAt": "4/8/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "RrvOeM4Oc9xPjELh48nAV",
+    "name": "Component",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {},
+          "componentId": "nIZk4yU_cflpppCkvsJOk",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
+          "layoutProperties": {},
+          "componentId": "u0y1rzfeNshMfFzWBEppW",
+          "componentType": "20031",
+          "order": 1
+        }
+      ]
+    },
+    "layout": null,
+    "subType": "component",
+    "screenId": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "nIZk4yU_cflpppCkvsJOk",
+    "type": "20031",
+    "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+    "attributes": {
+      "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "u0y1rzfeNshMfFzWBEppW",
+    "name": "SHOW_THAMEEN_REDEEM_SUCCESS",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "R1cpFlk8pOd78j-dS1vd4",
+      "layoutProperties": {}
+    },
+    "component": { "type": "20031" },
+    "screenId": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3232,6 +3533,18 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "nIZk4yU_cflpppCkvsJOk",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "componentId": "Pr6D-EBKr6PT4i8EEa3dP",
           "componentType": "10001",
@@ -3292,6 +3605,12 @@
       {
         "triggerId": "FBG2B-O9bL2l63Q4TNDb5",
         "triggerName": "CALCULATE_AVAILABLE_POINTS",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "V3CwcFfPl52daze-yWDr_",
+        "triggerName": "GET_AVAILABLE_BALANCE",
         "name": "On initialization",
         "type": "1"
       }
@@ -3758,7 +4077,7 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 6, "lg": 6, "md": 6, "sm": 6, "xs": 6 }
+          "layoutProperties": { "xl": 1, "lg": 1, "md": 1, "sm": 1, "xs": 1 }
         },
         {
           "componentId": "p6O8sX3zUJ8cB8XzIdbVD",
@@ -3771,7 +4090,7 @@
             "w": null,
             "h": null
           },
-          "layoutProperties": { "xl": 4, "lg": 4, "md": 4, "sm": 4, "xs": 4 }
+          "layoutProperties": { "xl": 9, "lg": 9, "md": 9, "sm": 9, "xs": 9 }
         }
       ],
       "label": "Header",
@@ -3827,7 +4146,8 @@
           "width": "110px",
           "height": "110px",
           "background": "#fff",
-          "border-radius": "15px"
+          "border-radius": "15px",
+          "overflow": "hidden"
         },
         "mainContainer": "gridLayout"
       },
@@ -3982,10 +4302,13 @@
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
           "spacing": 0,
-          "height": "110px",
+          "min-height": "110px",
           "background": "#fff",
           "border-radius": "15px",
-          "padding": "20px 30px"
+          "padding": "20px 30px",
+          "max-width": "400px",
+          "width": "auto",
+          "float": "right"
         },
         "mainContainer": "gridLayout"
       },
@@ -4325,22 +4648,22 @@
       "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
       "imageAssetIdTemp": {
         "createdBy": "user",
-        "_id": "65e9b28bb16e853c2041a76b",
-        "name": "plane.svg",
+        "_id": "661093aa38a69435081a59bb",
+        "name": "donation_coin_gray.svg",
         "type": "svg",
         "projectId": "652fcbce09869c3c809b3097",
-        "id": "JJplzdCp01WvStJhLm6w6",
+        "id": "YEBfynaxHAbGk9pJs5XqT",
         "gitBranchName": "master",
         "folderType": "web",
         "platform": "web",
-        "url": "652fcbce09869c3c809b3097/web/plane.svg",
-        "canvasUrl": "652fcbce09869c3c809b3097/web/plane.svg",
-        "createdAt": "2024-03-07T12:26:51.653Z",
-        "updatedAt": "2024-03-07T12:26:51.653Z",
+        "url": "652fcbce09869c3c809b3097/web/donation_coin_gray.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/donation_coin_gray.svg",
+        "createdAt": "2024-04-06T00:13:30.345Z",
+        "updatedAt": "2024-04-06T00:13:30.345Z",
         "__v": 0,
-        "uri": "652fcbce09869c3c809b3097/web/plane.svg"
+        "uri": "652fcbce09869c3c809b3097/web/donation_coin_gray.svg"
       },
-      "imageAssetId": "JJplzdCp01WvStJhLm6w6",
+      "imageAssetId": "YEBfynaxHAbGk9pJs5XqT",
       "stateName": null,
       "storeType": null,
       "useFullLink": null
@@ -4386,7 +4709,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "SELECTED_CATELOG.dashboardItem.shortDescriptionValueInText",
+      "label": "AVAILABLE_BALANCE",
       "format": "thousand seprator",
       "searchInState": true,
       "storeType": 1,
@@ -4807,7 +5130,8 @@
           { "parseNumber": { "var": "currentScreen.form.AVAILABLE_POINTS" } }
         ]
       },
-      "isHList": true
+      "isHList": true,
+      "bindingKeyStoreType": 1
     },
     "layout": null,
     "events": [],
@@ -4934,6 +5258,18 @@
       {
         "triggerId": "KiSxwKs4CKl0Ron3kzE16",
         "triggerName": "DELETE_CUSTOM_DONATION_AMOUNT_FORM",
+        "name": "On click",
+        "type": "2"
+      },
+      {
+        "triggerId": "y3Wc47XKfQOxNjHT3rgdW",
+        "triggerName": "DELETE_IS_CUSTOM_AMOUNT_EXCEEDS",
+        "name": "On click",
+        "type": "2"
+      },
+      {
+        "triggerId": "11wRi3PYfEt2pDNJMXG04",
+        "triggerName": "DELETE_CUSTOM_POINTS",
         "name": "On click",
         "type": "2"
       }
@@ -5601,13 +5937,6 @@
     "component": { "content": "Text Box", "type": "20004" },
     "events": [
       {
-        "triggerId": "Ecq05q2WKZZ6IreG8KdA-",
-        "triggerName": "IS_DONATION_AMOUNT_EXCEEDS_ON_CUSTOM_AMOUNT",
-        "name": "On blur",
-        "type": "6",
-        "serviceType": "11"
-      },
-      {
         "triggerId": "FRW7aiIUhw84VFvqr0r-6",
         "triggerName": "DELETE_CUSTOM_DONATION_AMOUNT",
         "name": "On change",
@@ -5620,9 +5949,16 @@
         "name": "On blur",
         "type": "6",
         "serviceType": "11"
+      },
+      {
+        "triggerId": "Ecq05q2WKZZ6IreG8KdA-",
+        "triggerName": "IS_DONATION_AMOUNT_EXCEEDS_ON_CUSTOM_AMOUNT",
+        "name": "On blur",
+        "type": "6",
+        "serviceType": "11"
       }
     ],
-    "path": "0-0-1-0-0-0-1-0-2-0-1",
+    "path": "1-0-2-0-0-0-1-0-2-0-1",
     "screenId": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -5658,10 +5994,10 @@
       "hideCondition": {
         "logic": {
           "or": [
-            { "!": { "var": "currentScreen.IS_CUSTOM_AMOUNT_EXCEEDS" } },
+            { "!": { "var": "currentScreen.form.IS_CUSTOM_AMOUNT_EXCEEDS" } },
             {
               "===": [
-                { "var": "currentScreen.IS_CUSTOM_AMOUNT_EXCEEDS" },
+                { "var": "currentScreen.form.IS_CUSTOM_AMOUNT_EXCEEDS" },
                 false
               ]
             }
@@ -5903,7 +6239,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-0",
+    "path": "0-0-1-0-0-0-1-0-3-0-0-0-0-0-0",
     "screenId": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -5934,7 +6270,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "SELECTED_CARD.points",
+      "label": "SELECTED_CARD.pointValue",
       "postfix": " points",
       "searchInState": true,
       "searchInStatePostfix": false,
@@ -5990,7 +6326,8 @@
       "storeType": 1,
       "hideCondition": {
         "logic": { "!": [{ "var": "currentScreen.form.customAmount" }] }
-      }
+      },
+      "postfix": " points"
     },
     "icon": "FaFont",
     "group": "Form",
@@ -6100,7 +6437,7 @@
             {
               "and": [
                 { "!!": { "var": "currentScreen.form.customAmount" } },
-                { "var": "currentScreen.IS_CUSTOM_AMOUNT_EXCEEDS" }
+                { "var": "currentScreen.form.IS_CUSTOM_AMOUNT_EXCEEDS" }
               ]
             },
             {
@@ -6128,14 +6465,21 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "12c3fGL0QD9nLkGMcClTC",
-        "triggerName": "Swap To OTP Widget TRIGGER",
-        "name": "On Submit",
-        "type": "4",
-        "serviceType": "1"
+        "triggerId": "ymKNDyh9U21hVSguxJ0JX",
+        "triggerName": "CALCULATE_DONATION_REMAINING_POINTS_CONDITIONAL",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
+      },
+      {
+        "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+        "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
       }
     ],
-    "path": "0-0-1-0-0-0-1-0-3-0-0-1-0-0-0",
+    "path": "1-0-2-0-0-0-1-0-3-0-0-1-0-0-0",
     "screenId": "uOQ75TY-dWa9Qa3B-ofBx23t4v",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

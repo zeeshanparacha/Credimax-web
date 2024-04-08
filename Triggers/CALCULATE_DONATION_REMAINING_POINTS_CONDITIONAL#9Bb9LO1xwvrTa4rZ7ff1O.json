@@ -1,0 +1,96 @@
+{
+  "id": "ymKNDyh9U21hVSguxJ0JX",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CALCULATE_DONATION_REMAINING_POINTS_CONDITIONAL",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": { "!": [{ "var": "currentScreen.form.customAmount" }] },
+              "triggerName": "DONATION_CALCULATE_REMAINING_REDEEM_POINTS_CATELOG",
+              "triggerId": "Ggb6CGR0h2q9Gxl9kJNSS",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "REMAINING_POINTS",
+                      "sourceBindingKey": "REMAINING_POINTS",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "round": [
+                          {
+                            "-": [
+                              { "var": "AVAILABLE_POINTS" },
+                              { "var": "SELECTED_CARD.pointValue" }
+                            ]
+                          },
+                          2
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": { "!!": [{ "var": "currentScreen.form.customAmount" }] },
+              "triggerName": "DONATION_CALCULATE_REMAINING_REDEEM_POINTS_CUSTOM",
+              "triggerId": "wHT7VTKeX7IxRCe1e7t9E",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "REMAINING_POINTS",
+                      "sourceBindingKey": "REMAINING_POINTS",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "round": [
+                          {
+                            "-": [
+                              { "var": "AVAILABLE_POINTS" },
+                              { "var": "customPoints" }
+                            ]
+                          },
+                          2
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.yf70y4l4i2aHiOpOPh49oLN8cp-SNDPt",
+  "_id": "9Bb9LO1xwvrTa4rZ7ff1O",
+  "updatedAt": "4/7/2024",
+  "createdAt": "4/7/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}

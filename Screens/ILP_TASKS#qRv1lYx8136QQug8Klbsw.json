@@ -143,6 +143,65 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "bNbUhCchYtjivQ1hqfFPP",
+            "triggerName": "ILPT_CLEAR_STATES",
+            "serviceType": "11",
+            "attributes": {
+              "requestBody": [],
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "ilp_new_task",
+                  "changeValueConditonally": false,
+                  "storeType": 1,
+                  "logic": null
+                },
+                { "key": "ilp_task_reward", "storeType": 1 },
+                { "key": "ilpt_assign_id", "storeType": 1 },
+                { "key": "ilpt_date", "storeType": 1 },
+                { "key": "ilpt_selected_chip", "storeType": 1 },
+                { "key": "ilpt_selected_chip_array", "storeType": 1 },
+                { "key": "ilpt_selected_frequency", "storeType": 1 },
+                { "key": "selected_child", "storeType": 1, "logic": null }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
+          },
+          {
+            "triggerId": "eqF1ZgdQAl-IdRMIUgg4z",
+            "triggerName": "ILPT_EDIT_CLEAR_STATES",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "ilpt_selected_task",
+                  "changeValueConditonally": false,
+                  "storeType": 1,
+                  "logic": null
+                },
+                { "key": "endDate", "storeType": 1 },
+                { "key": "ilpt_edit_frequency", "storeType": 1 },
+                { "key": "ilpt_selected_edit_chip_array", "storeType": 1 },
+                { "key": "ilpt_selected_edit_chip", "storeType": 1 },
+                { "key": "ilpt_weekly_edit_day" },
+                { "key": "ilpt_edit_toggle", "storeType": 1 },
+                { "key": "ilpt_edit_monthly_date", "storeType": 1 }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
           }
         ],
         "order": 1,
@@ -155,7 +214,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "xASx0v41xCA0zAkSqJH3v",
+            "id": "ZIPMjpPxE7zlOuujU6oKz",
             "gridProps": [
               {
                 "id": "KMXUq0RQooS_uKOtXqJmH",
@@ -190,12 +249,28 @@
                 "component": { "type": "20031" }
               },
               {
+                "id": "sPJCtcvlqTb0R-9vY8i1T",
+                "name": "PC_SHOW_RESPONSE",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
                 "type": "10001",
                 "id": "ac2pDqT3xQ4K34Hkl5Myb",
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "igL3lBjTZwH7gapfbOS5k",
+                    "id": "yhgtHF3ekOFb7raq76Ewe",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -622,6 +697,7 @@
                                             "triggerName": "ILPT_CLEAR_STATES",
                                             "serviceType": "11",
                                             "attributes": {
+                                              "requestBody": [],
                                               "storeType": "",
                                               "selectedObjectBindingKey": "selectedObject",
                                               "dataType": "",
@@ -658,10 +734,6 @@
                                                   "storeType": 1
                                                 },
                                                 {
-                                                  "key": "ilpt_toggle",
-                                                  "storeType": 1
-                                                },
-                                                {
                                                   "key": "selected_child",
                                                   "storeType": 1,
                                                   "logic": null
@@ -673,7 +745,7 @@
                                             "commandType": "15"
                                           }
                                         ],
-                                        "path": "0-0-2-0-1-1-0-0-0"
+                                        "path": "0-0-3-0-1-1-0-0-0"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -830,7 +902,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "yhmGv_k9KaJw5bKMxW3JO",
+                                                    "id": "MDw31ot31dlFGi1479HGE",
                                                     "gridProps": [
                                                       {
                                                         "id": "oDJM2mKWFqutRRB5o_-Oc",
@@ -842,10 +914,7 @@
                                                           "mandatory": false,
                                                           "layoutProperties": {
                                                             "label": {
-                                                              "//": "Use this class to style label component.",
-                                                              "cursor": "pointer",
-                                                              "padding": "0px 0px 10px",
-                                                              "color": "#678FB7"
+                                                              "//": "Use this class to style label component."
                                                             },
                                                             "prefix": {
                                                               "//": "Use this class to style prefix."
@@ -862,7 +931,12 @@
                                                           },
                                                           "label": "ileadChild.name",
                                                           "searchInState": true,
-                                                          "storeType": 2
+                                                          "storeType": 2,
+                                                          "cssClassNames": [
+                                                            {
+                                                              "cssClassName": "ILPT_TASKS_HEADER_COLOR "
+                                                            }
+                                                          ]
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -1245,8 +1319,168 @@
                     }
                   }
                 ],
-                "path": "0-0-2",
-                "events": [],
+                "path": "0-0-3",
+                "events": [
+                  {
+                    "triggerId": "byX4GDV7kEZpfvxZXvX7t",
+                    "triggerName": "PC_SAVE_STATIC_RESPONSE",
+                    "serviceType": "13",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "logic": {
+                            "if": [
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.pc_transaction_status"
+                                      },
+                                      "failed"
+                                    ]
+                                  },
+                                  {
+                                    "!": [
+                                      {
+                                        "var": "currentScreen.pc_benifit_transaction"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              true,
+                              false
+                            ]
+                          },
+                          "triggerName": "PC_SAVE_FAILURE_MODAL_RESPONSE",
+                          "triggerId": "wOfF937GfHbJ6F7wt1OEG",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "pc_release_payment",
+                                      "changeValueConditonally": false,
+                                      "storeType": 2,
+                                      "logic": {
+                                        "code": 0,
+                                        "message": "Payment failed, please try again",
+                                        "content": {}
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "if": [
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.pc_transaction_status"
+                                      },
+                                      "success"
+                                    ]
+                                  },
+                                  {
+                                    "!": [
+                                      {
+                                        "var": "currentScreen.pc_benifit_transaction"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              true,
+                              false
+                            ]
+                          },
+                          "triggerName": "PC_SAVE_SUCCESS_MODAL_RESPONSE",
+                          "triggerId": "qN-UaEfhN3fbzBuJp_DAc",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "filterList": [
+                                    {
+                                      "key": "pc_release_payment",
+                                      "changeValueConditonally": false,
+                                      "storeType": 2,
+                                      "logic": {
+                                        "code": 1,
+                                        "message": "Transaction successful",
+                                        "content": {}
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "if": [
+                              {
+                                "and": [
+                                  {
+                                    "var": "currentScreen.pc_transaction_status"
+                                  },
+                                  {
+                                    "!": [
+                                      {
+                                        "var": "currentSession.pc_benifit_transaction"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              true,
+                              false
+                            ]
+                          },
+                          "triggerName": "PC_SHOW_RESPONSE",
+                          "triggerId": "0ng9Cais2R8XaYCuWV8sW",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "sPJCtcvlqTb0R-9vY8i1T",
+                                  "toastContentType": "custom"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    "type": "1",
+                    "name": "On initialization",
+                    "commandType": "1"
+                  }
+                ],
                 "attributes": {
                   "gridProps": [],
                   "label": "Header",
@@ -2567,7 +2801,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "clqbdfhtp3a75XNkRRgqx",
+                                                                            "id": "dHe-OCbqeUwfgKemJNEOJ",
                                                                             "gridProps": [
                                                                               {
                                                                                 "id": "Npon5B0uM1rc7c4C1dzdU",
@@ -2694,7 +2928,8 @@
                                                                           "layoutProperties": {
                                                                             "gridLayout": {
                                                                               "//": "Use this class to style grid layout component.",
-                                                                              "spacing": 0
+                                                                              "spacing": 0,
+                                                                              "cursor": "pointer"
                                                                             },
                                                                             "mainContainer": "gridLayout"
                                                                           },
@@ -2706,12 +2941,28 @@
                                                                           "direction": "row",
                                                                           "name": "Grid layout"
                                                                         },
-                                                                        "events": [],
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+                                                                            "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+                                                                            "serviceType": "9",
+                                                                            "attributes": {
+                                                                              "widgetId": "6HQ5FLlrWj7Amb0QOi-HW",
+                                                                              "content": "",
+                                                                              "type": "",
+                                                                              "modalId": "KMXUq0RQooS_uKOtXqJmH",
+                                                                              "toastContentType": "custom"
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
+                                                                          }
+                                                                        ],
                                                                         "component": {
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-1-0-0-0-0-0-1-0-0-0-1-0-0-0-0",
+                                                                        "path": "0-0-4-0-0-0-0-0-1-0-0-0-1-0-0-0-0",
                                                                         "dimensions": {
                                                                           "rows": 1,
                                                                           "columns": 1,
@@ -2743,7 +2994,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "hmKErEjby8Z-2-iEh3Bai",
+                                                                            "id": "L8PMIqs55VdUkNqyiJWsb",
                                                                             "gridProps": [
                                                                               {
                                                                                 "id": "bair-6zZw5nc_3ppo6_iD",
@@ -3002,8 +3253,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-1-0-0-0-1-0-0-0-1-0-0-1-0-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "allowedContainers": [
@@ -3019,7 +3269,8 @@
                                                                           "layoutProperties": {
                                                                             "gridLayout": {
                                                                               "//": "Use this class to style grid layout component.",
-                                                                              "spacing": 0
+                                                                              "spacing": 0,
+                                                                              "cursor": "pointer"
                                                                             },
                                                                             "mainContainer": "gridLayout"
                                                                           },
@@ -3031,12 +3282,28 @@
                                                                           "direction": "row",
                                                                           "name": "Grid layout"
                                                                         },
-                                                                        "events": [],
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+                                                                            "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+                                                                            "serviceType": "9",
+                                                                            "attributes": {
+                                                                              "widgetId": "6HQ5FLlrWj7Amb0QOi-HW",
+                                                                              "content": "",
+                                                                              "type": "",
+                                                                              "modalId": "KMXUq0RQooS_uKOtXqJmH",
+                                                                              "toastContentType": "custom"
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
+                                                                          }
+                                                                        ],
                                                                         "component": {
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-1-0-1-0-0-0-1-0-0-0-1-0-0-1-0"
+                                                                        "path": "0-0-4-0-0-0-0-0-1-0-0-0-1-0-0-1-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -3058,7 +3325,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "8QPihGyKx44plnYrigvCC",
+                                                                            "id": "4t17RpBukrO3mNR_WNVS5",
                                                                             "gridProps": [
                                                                               {
                                                                                 "id": "Mwet98g2jUbegKEctZhfm",
@@ -3185,8 +3452,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-1-0-0-0-1-0-0-0-1-0-0-2-0-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "allowedContainers": [
@@ -3202,7 +3468,8 @@
                                                                           "layoutProperties": {
                                                                             "gridLayout": {
                                                                               "//": "Use this class to style grid layout component.",
-                                                                              "spacing": 0
+                                                                              "spacing": 0,
+                                                                              "cursor": "pointer"
                                                                             },
                                                                             "mainContainer": "gridLayout"
                                                                           },
@@ -3219,12 +3486,28 @@
                                                                             }
                                                                           ]
                                                                         },
-                                                                        "events": [],
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+                                                                            "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+                                                                            "serviceType": "9",
+                                                                            "attributes": {
+                                                                              "widgetId": "6HQ5FLlrWj7Amb0QOi-HW",
+                                                                              "content": "",
+                                                                              "type": "",
+                                                                              "modalId": "KMXUq0RQooS_uKOtXqJmH",
+                                                                              "toastContentType": "custom"
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
+                                                                          }
+                                                                        ],
                                                                         "component": {
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-1-0-1-0-0-0-1-0-0-0-1-0-0-2-0"
+                                                                        "path": "0-0-4-0-0-0-0-0-1-0-0-0-1-0-0-2-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -3246,7 +3529,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "-C5qgQU7oISwyg5tYzFDl",
+                                                                            "id": "9GMkz0mXN-X8IsXC8VSTf",
                                                                             "gridProps": [
                                                                               {
                                                                                 "id": "hAeH2yAHQQuIUkR0gZf0a",
@@ -3305,8 +3588,7 @@
                                                                               "md": 12,
                                                                               "sm": 12,
                                                                               "xs": 12
-                                                                            },
-                                                                            "path": "0-0-1-0-1-0-0-0-1-0-0-0-1-0-0-3-0-0"
+                                                                            }
                                                                           }
                                                                         ],
                                                                         "allowedContainers": [
@@ -3322,7 +3604,8 @@
                                                                           "layoutProperties": {
                                                                             "gridLayout": {
                                                                               "//": "Use this class to style grid layout component.",
-                                                                              "spacing": 0
+                                                                              "spacing": 0,
+                                                                              "cursor": "pointer"
                                                                             },
                                                                             "mainContainer": "gridLayout"
                                                                           },
@@ -3334,12 +3617,28 @@
                                                                           "direction": "row",
                                                                           "name": "Grid layout"
                                                                         },
-                                                                        "events": [],
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+                                                                            "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+                                                                            "serviceType": "9",
+                                                                            "attributes": {
+                                                                              "widgetId": "6HQ5FLlrWj7Amb0QOi-HW",
+                                                                              "content": "",
+                                                                              "type": "",
+                                                                              "modalId": "KMXUq0RQooS_uKOtXqJmH",
+                                                                              "toastContentType": "custom"
+                                                                            },
+                                                                            "type": "2",
+                                                                            "name": "On click",
+                                                                            "commandType": "1"
+                                                                          }
+                                                                        ],
                                                                         "component": {
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-1-0-1-0-0-0-1-0-0-0-1-0-0-3-0"
+                                                                        "path": "0-0-4-0-0-0-0-0-1-0-0-0-1-0-0-3-0"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -4228,8 +4527,8 @@
     "gitBranchName": "master",
     "_id": "qRv1lYx8136QQug8Klbsw",
     "createdBy": "basitahmed1199",
-    "updatedAt": "4/3/2024",
-    "createdAt": "4/3/2024",
+    "updatedAt": "4/7/2024",
+    "createdAt": "4/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4259,6 +4558,18 @@
             "xs": 12
           },
           "componentId": "moiyga2R_4fVlitF-qsu4",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "sPJCtcvlqTb0R-9vY8i1T",
           "componentType": "20031",
           "order": 1
         },
@@ -4337,6 +4648,18 @@
         "triggerName": "ILPT_CREATE_TASK_SUCCESS_TOAST_CONDITIONAL",
         "name": "On initialization",
         "type": "1"
+      },
+      {
+        "triggerId": "bNbUhCchYtjivQ1hqfFPP",
+        "triggerName": "ILPT_CLEAR_STATES",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "eqF1ZgdQAl-IdRMIUgg4z",
+        "triggerName": "ILPT_EDIT_CLEAR_STATES",
+        "name": "On initialization",
+        "type": "1"
       }
     ],
     "subType": "component",
@@ -4368,6 +4691,22 @@
     "type": "20031",
     "attributes": {
       "widgetId": "2-hlyJ5TBnW-nEX3dHEXF",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "qRv1lYx8136QQug8Klbsw",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "sPJCtcvlqTb0R-9vY8i1T",
+    "name": "PC_SHOW_RESPONSE",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "fiaL2IKrSuTmwZzx6QT1N",
       "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
     },
     "component": { "type": "20031" },
@@ -4461,7 +4800,14 @@
       "cssClassNames": [{ "cssClassName": "PAGE_HEADER_WITH_TABS_MAIN_CLASS " }]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "byX4GDV7kEZpfvxZXvX7t",
+        "triggerName": "PC_SAVE_STATIC_RESPONSE",
+        "name": "On initialization",
+        "type": "1"
+      }
+    ],
     "subType": "component",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "projectId": "652fcbce09869c3c809b3097",
@@ -4881,7 +5227,7 @@
         "serviceType": "11"
       }
     ],
-    "path": "0-0-2-0-1-1-0-0-0",
+    "path": "0-0-3-0-1-1-0-0-0",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -5119,12 +5465,7 @@
       "name": "Label",
       "mandatory": false,
       "layoutProperties": {
-        "label": {
-          "//": "Use this class to style label component.",
-          "cursor": "pointer",
-          "padding": "0px 0px 10px",
-          "color": "#678FB7"
-        },
+        "label": { "//": "Use this class to style label component." },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
         "mainContainer": "label",
@@ -5136,7 +5477,8 @@
       },
       "label": "ileadChild.name",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "cssClassNames": [{ "cssClassName": "ILPT_TASKS_HEADER_COLOR " }]
     },
     "icon": "FaFont",
     "group": "Form",
@@ -6635,7 +6977,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "cursor": "pointer"
         },
         "mainContainer": "gridLayout"
       },
@@ -6648,7 +6991,14 @@
       "name": "Grid layout"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+        "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6805,7 +7155,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "cursor": "pointer"
         },
         "mainContainer": "gridLayout"
       },
@@ -6818,7 +7169,14 @@
       "name": "Grid layout"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+        "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7053,7 +7411,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "cursor": "pointer"
         },
         "mainContainer": "gridLayout"
       },
@@ -7067,7 +7426,14 @@
       "cssClassNames": [{ "cssClassName": "FLEX_ROW_CENTER " }]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+        "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7208,7 +7574,8 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0
+          "spacing": 0,
+          "cursor": "pointer"
         },
         "mainContainer": "gridLayout"
       },
@@ -7221,7 +7588,14 @@
       "name": "Grid layout"
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "oX7UpQO7pyatX9fkkHz6j",
+        "triggerName": "ILP_TASK_DETAILS_POPUP_MODAL",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "qRv1lYx8136QQug8Klbsw",
     "projectId": "652fcbce09869c3c809b3097",

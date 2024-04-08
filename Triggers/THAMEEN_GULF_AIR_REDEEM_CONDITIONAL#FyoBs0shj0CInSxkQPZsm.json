@@ -1,0 +1,173 @@
+{
+  "_id": "FyoBs0shj0CInSxkQPZsm",
+  "id": "mcnTm3COkvhxVHPtGcgFm",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "THAMEEN_GULF_AIR_REDEEM_CONDITIONAL",
+  "old_name": "THAMEEN_GULF_AIR_REDEEM_CONDITIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": { "==": [{ "var": "currentScreen.form.quantity" }, 1] },
+              "triggerName": "GIFT_CARD_REDEEM_CATELOG",
+              "triggerId": "RvGaqezxTM41PuDF4yuPs",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "GULF_AIR_REDEEM_RESPONSE",
+                      "url": "/api-designer/api/thameenRedeem/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.items.description",
+                          "value": "SELECTED_CARD.shortDescription"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.items.pointsRedeemed",
+                          "value": "SELECTED_CARD.pointValue"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "request.postRedemptions.items.paymentOption",
+                          "value": "POINTS_ONLY"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.items.redemptionMatrixItemId",
+                          "value": "SELECTED_CARD.id"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.sourceCode",
+                          "value": "SELECTED_CATELOG.sourceCode"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "SHOW_THAMEEN_REDEEM_SUCCESS",
+                        "triggerId": "cSpSoRJN9-NQ1Po3NBdxg"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "triggerName": "GIFT_CARD_REDEEM_CUSTOM",
+              "triggerId": "sidP1gnjpMIkwXKhBK34L",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "GIFT_CARD_REDEEM_RESPONSE",
+                      "url": "/api-designer/api/thameenRedeem/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "request.postRedemptions.items.description",
+                          "value": "Gift Card"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.items.pointsRedeemed",
+                          "value": "quantity_redemption_points"
+                        },
+                        {
+                          "type": 4,
+                          "name": "Static",
+                          "key": "request.postRedemptions.items.paymentOption",
+                          "value": "POINTS_ONLY"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.items.redemptionMatrixItemId",
+                          "value": "SELECTED_CARD.id"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.postRedemptions.sourceCode",
+                          "value": "SELECTED_CATELOG.sourceCode"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "HIDE_MODAL_TRIGGER",
+                        "triggerId": "0jfXBfYTEBK8TaReZW9Xd"
+                      },
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "SHOW_THAMEEN_REDEEM_SUCCESS",
+                        "triggerId": "cSpSoRJN9-NQ1Po3NBdxg"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "logic": { ">": [{ "var": "currentScreen.form.quantity" }, 1] }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.9hm7g1tyu5wpoZxfiYvUFw_MqI0J0_vu",
+  "updatedAt": "4/8/2024",
+  "createdAt": "4/8/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}

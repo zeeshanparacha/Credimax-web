@@ -1,0 +1,85 @@
+{
+  "id": "sidP1gnjpMIkwXKhBK34L",
+  "_id": "fE45_2cDxIOSUf8VCDESE",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "GIFT_CARD_REDEEM_CUSTOM",
+  "old_name": "GIFT_CARD_REDEEM_CUSTOM",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "GIFT_CARD_REDEEM_RESPONSE",
+          "url": "/api-designer/api/thameenRedeem/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.postRedemptions.items.description",
+              "value": "Gift Card"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.postRedemptions.items.pointsRedeemed",
+              "value": "quantity_redemption_points"
+            },
+            {
+              "type": 4,
+              "name": "Static",
+              "key": "request.postRedemptions.items.paymentOption",
+              "value": "POINTS_ONLY"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.postRedemptions.items.redemptionMatrixItemId",
+              "value": "SELECTED_CARD.id"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.postRedemptions.sourceCode",
+              "value": "SELECTED_CATELOG.sourceCode"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "HIDE_MODAL_TRIGGER",
+            "triggerId": "0jfXBfYTEBK8TaReZW9Xd"
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "SHOW_THAMEEN_REDEEM_SUCCESS",
+            "triggerId": "cSpSoRJN9-NQ1Po3NBdxg"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.ewwdayg5zdc7H335RVKBiPJ7yFpjuhkp",
+  "updatedAt": "4/7/2024",
+  "createdAt": "4/7/2024",
+  "createdBy": "zeeshan",
+  "updatedBy": "zeeshan"
+}
