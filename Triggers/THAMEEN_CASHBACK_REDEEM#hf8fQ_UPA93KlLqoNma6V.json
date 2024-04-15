@@ -1,10 +1,10 @@
 {
-  "id": "im62yOwcnvZWnE9Ch5Z3b",
-  "_id": "qe2M4GKJJ6XsRL63W3D2x",
+  "id": "mhUB4AFm3ahmicfL2_X4W",
+  "_id": "hf8fQ_UPA93KlLqoNma6V",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
-  "name": "THAMEEN_AIR_REDEEM_CUSTOM",
-  "old_name": "THAMEEN_AIR_REDEEM_CUSTOM",
+  "name": "THAMEEN_CASHBACK_REDEEM",
+  "old_name": "THAMEEN_CASHBACK_REDEEM",
   "status": "ACTIVE",
   "services": [
     {
@@ -32,13 +32,13 @@
               "type": 4,
               "name": "Static",
               "key": "request.postRedemptions.items.description",
-              "value": "Gulf Air miles"
+              "value": "Cashback"
             },
             {
               "type": 1,
               "name": "Form",
               "key": "request.postRedemptions.items.pointsRedeemed",
-              "value": "customPoints"
+              "value": "AMOUNT_POINTS"
             },
             {
               "type": 4,
@@ -72,14 +72,32 @@
             {
               "type": 1,
               "name": "Form",
-              "key": "request.postRedemptions.membershipId",
-              "value": "membershipNumber"
+              "key": "request.postRedemptions.cardNumber",
+              "value": "cardNumber"
             }
           ],
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "httpStatus": 200,
+            "triggerName": "HIDE_MODAL_TRIGGER",
+            "triggerId": "0jfXBfYTEBK8TaReZW9Xd"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "SHOW_THAMEEN_REDEEM_SUCCESS",
+            "triggerId": "cSpSoRJN9-NQ1Po3NBdxg"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "triggerName": "SHOW_THAMEEN_REDEEM_ERROR_MODAL",
+            "triggerId": "nOeg7xM9lyYwXZP_-vi_n",
+            "httpStatus": 200
+          }
+        ]
       }
     }
   ],

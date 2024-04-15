@@ -366,6 +366,43 @@
                             "type": "1",
                             "name": "On initialization",
                             "commandType": "1"
+                          },
+                          {
+                            "triggerId": "5_DMesAcAcc_LX4fGlQ_E",
+                            "triggerName": "ILCG_MIN_STAR_DATE",
+                            "serviceType": "11",
+                            "attributes": {
+                              "requestBody": [],
+                              "storeType": "",
+                              "selectedObjectBindingKey": "selectedObject",
+                              "dataType": "",
+                              "destinationBindingKey": "MIN_START_DATE",
+                              "sourceBindingKey": "",
+                              "destinationStoreType": 2,
+                              "dateDifference": "1",
+                              "dateFormat": "dd-MM-yyyy"
+                            },
+                            "type": "1",
+                            "name": "On initialization",
+                            "commandType": "11"
+                          },
+                          {
+                            "triggerId": "WMpOjUNs5jwMAfxtjHRyP",
+                            "triggerName": "ILCG_MIN_TARGET_DATE",
+                            "serviceType": "11",
+                            "attributes": {
+                              "storeType": "",
+                              "selectedObjectBindingKey": "selectedObject",
+                              "dataType": "",
+                              "destinationBindingKey": "ILCG_START_DATE",
+                              "sourceBindingKey": "",
+                              "destinationStoreType": 2,
+                              "dateDifference": "0",
+                              "dateFormat": "dd-MM-yyyy"
+                            },
+                            "type": "1",
+                            "name": "On initialization",
+                            "commandType": "11"
                           }
                         ],
                         "path": "0-0-0-0-1",
@@ -389,7 +426,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "IZD4ZW3p79Tz64totp1lE",
+                            "id": "RiNSMJkgBgy_rQBcHFgDP",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -895,6 +932,57 @@
                                                                 },
                                                                 "events": [],
                                                                 "path": "0-0-0-0-1-0-0-0-0-0-2-0-0-0-0"
+                                                              },
+                                                              {
+                                                                "id": "id1LZvHz0oTw0vr8eD-Tz",
+                                                                "status": "ACTIVE",
+                                                                "name": "Label",
+                                                                "attributes": {
+                                                                  "variant": "body1",
+                                                                  "name": "Label",
+                                                                  "mandatory": false,
+                                                                  "layoutProperties": {
+                                                                    "label": {
+                                                                      "//": "Use this class to style label component.",
+                                                                      "margin": "9px 0px 0px 0px"
+                                                                    },
+                                                                    "prefix": {
+                                                                      "//": "Use this class to style prefix."
+                                                                    },
+                                                                    "postfix": {
+                                                                      "//": "Use this class to style postfix."
+                                                                    },
+                                                                    "mainContainer": "label",
+                                                                    "xl": 12,
+                                                                    "lg": 12,
+                                                                    "md": 12,
+                                                                    "sm": 12,
+                                                                    "xs": 12
+                                                                  },
+                                                                  "label": "VALIDATIONS_ILCG_NAME",
+                                                                  "searchInState": true,
+                                                                  "storeType": 1,
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "LOG_IN_EMAIL_VALIDATION "
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "icon": "FaFont",
+                                                                "group": "Form",
+                                                                "type": "20002",
+                                                                "updatedAt": "23-Aug-2021",
+                                                                "createdAt": "23-Aug-2021",
+                                                                "order": 15,
+                                                                "version": "1.0.0",
+                                                                "isLatest": true,
+                                                                "projectType": "web",
+                                                                "component": {
+                                                                  "content": "Label",
+                                                                  "type": "20002"
+                                                                },
+                                                                "events": [],
+                                                                "path": "0-0-0-0-1-0-0-0-0-0-2-0-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1028,14 +1116,14 @@
                                                                 },
                                                                 "events": [
                                                                   {
-                                                                    "triggerId": "OubfUkR4cXrJPpy9CYbN7",
-                                                                    "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+                                                                    "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+                                                                    "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
                                                                     "serviceType": "13",
                                                                     "attributes": {
                                                                       "triggers": [
                                                                         {
-                                                                          "triggerName": "ILC_GOAL_CALCULATION_API",
-                                                                          "triggerId": "dvxixdWWX2E0s6Y21qxR8",
+                                                                          "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
+                                                                          "triggerId": "nfji7B_h9wTBrDHwEERnM",
                                                                           "services": [
                                                                             {
                                                                               "type": "8",
@@ -1065,38 +1153,46 @@
                                                                                     {
                                                                                       "type": 1,
                                                                                       "name": "Form",
-                                                                                      "key": "amount",
+                                                                                      "key": "request.amount",
                                                                                       "value": "ILCG_GOAL_AMOUNT"
                                                                                     },
                                                                                     {
                                                                                       "type": 1,
                                                                                       "name": "Form",
-                                                                                      "key": "contributationFreq",
+                                                                                      "key": "request.contributionFreq",
                                                                                       "value": "ILC_FREQUENCY.name"
                                                                                     },
                                                                                     {
                                                                                       "type": 1,
                                                                                       "name": "Form",
-                                                                                      "key": "startDate",
+                                                                                      "key": "request.startDate",
                                                                                       "value": "ILCG_START_DATE"
                                                                                     },
                                                                                     {
                                                                                       "type": 1,
                                                                                       "name": "Form",
-                                                                                      "key": "contributionAmount",
-                                                                                      "value": "IILCG_AMOUNT"
-                                                                                    },
-                                                                                    {
-                                                                                      "type": 1,
-                                                                                      "name": "Form",
-                                                                                      "key": "targetDate",
-                                                                                      "value": "ILCG_TARGET_DATE"
+                                                                                      "key": "request.contibutionAmount",
+                                                                                      "value": "ILCG_AMOUNT"
                                                                                     }
                                                                                   ],
-                                                                                  "baseURL": "65e87c3e2f9c444e88698ebc",
+                                                                                  "baseURL": "656f0b4398e9df55f0499597",
                                                                                   "storeType": 2
                                                                                 },
-                                                                                "responseHandler": []
+                                                                                "responseHandler": [
+                                                                                  {
+                                                                                    "logic": {
+                                                                                      "==": [
+                                                                                        {
+                                                                                          "var": "code"
+                                                                                        },
+                                                                                        1
+                                                                                      ]
+                                                                                    },
+                                                                                    "httpStatus": 200,
+                                                                                    "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
+                                                                                    "triggerId": "UUE-rGmre9rrh8dWl_xff"
+                                                                                  }
+                                                                                ]
                                                                               }
                                                                             }
                                                                           ],
@@ -1129,7 +1225,7 @@
                                                                               {
                                                                                 ">": [
                                                                                   {
-                                                                                    "var": "currentScreen.form.ILCG_TARGET_DATE.length"
+                                                                                    "var": "currentScreen.form.ILCG_AMOUNT.length"
                                                                                   },
                                                                                   0
                                                                                 ]
@@ -1144,6 +1240,57 @@
                                                                   }
                                                                 ],
                                                                 "path": "0-0-0-0-1-0-0-0-0-0-2-1-0-0-0"
+                                                              },
+                                                              {
+                                                                "id": "1nANKXh0C8XqZ9l_hzkYZ",
+                                                                "status": "ACTIVE",
+                                                                "name": "Label",
+                                                                "attributes": {
+                                                                  "variant": "body1",
+                                                                  "name": "Label",
+                                                                  "mandatory": false,
+                                                                  "layoutProperties": {
+                                                                    "label": {
+                                                                      "//": "Use this class to style label component.",
+                                                                      "margin": "9px 0px 0px 0px"
+                                                                    },
+                                                                    "prefix": {
+                                                                      "//": "Use this class to style prefix."
+                                                                    },
+                                                                    "postfix": {
+                                                                      "//": "Use this class to style postfix."
+                                                                    },
+                                                                    "mainContainer": "label",
+                                                                    "xl": 12,
+                                                                    "lg": 12,
+                                                                    "md": 12,
+                                                                    "sm": 12,
+                                                                    "xs": 12
+                                                                  },
+                                                                  "label": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+                                                                  "searchInState": true,
+                                                                  "storeType": 1,
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "LOG_IN_EMAIL_VALIDATION "
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "icon": "FaFont",
+                                                                "group": "Form",
+                                                                "type": "20002",
+                                                                "updatedAt": "23-Aug-2021",
+                                                                "createdAt": "23-Aug-2021",
+                                                                "order": 15,
+                                                                "version": "1.0.0",
+                                                                "isLatest": true,
+                                                                "projectType": "web",
+                                                                "component": {
+                                                                  "content": "Label",
+                                                                  "type": "20002"
+                                                                },
+                                                                "events": [],
+                                                                "path": "0-0-0-0-1-0-0-0-0-0-2-1-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1684,6 +1831,57 @@
                                                                     "commandType": "1"
                                                                   }
                                                                 ]
+                                                              },
+                                                              {
+                                                                "id": "hikm8TKURvkSy24WMZEjH",
+                                                                "status": "ACTIVE",
+                                                                "name": "Label",
+                                                                "attributes": {
+                                                                  "variant": "body1",
+                                                                  "name": "Label",
+                                                                  "mandatory": false,
+                                                                  "layoutProperties": {
+                                                                    "label": {
+                                                                      "//": "Use this class to style label component.",
+                                                                      "margin": "9px 0px 0px 0px"
+                                                                    },
+                                                                    "prefix": {
+                                                                      "//": "Use this class to style prefix."
+                                                                    },
+                                                                    "postfix": {
+                                                                      "//": "Use this class to style postfix."
+                                                                    },
+                                                                    "mainContainer": "label",
+                                                                    "xl": 12,
+                                                                    "lg": 12,
+                                                                    "md": 12,
+                                                                    "sm": 12,
+                                                                    "xs": 12
+                                                                  },
+                                                                  "label": "VALIDATIONS_ILCG_TARGET_DATE",
+                                                                  "searchInState": true,
+                                                                  "storeType": 1,
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "LOG_IN_EMAIL_VALIDATION "
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                "icon": "FaFont",
+                                                                "group": "Form",
+                                                                "type": "20002",
+                                                                "updatedAt": "23-Aug-2021",
+                                                                "createdAt": "23-Aug-2021",
+                                                                "order": 15,
+                                                                "version": "1.0.0",
+                                                                "isLatest": true,
+                                                                "projectType": "web",
+                                                                "component": {
+                                                                  "content": "Label",
+                                                                  "type": "20002"
+                                                                },
+                                                                "events": [],
+                                                                "path": "0-0-0-0-1-0-0-0-0-0-4-0-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -2107,7 +2305,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "puGGpckOEblkXQwf7csPf",
+                                                                            "id": "0tme3TZcSpXb8tKdE7lEG",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -2332,14 +2530,14 @@
                                                                         },
                                                                         "events": [
                                                                           {
-                                                                            "triggerId": "OubfUkR4cXrJPpy9CYbN7",
-                                                                            "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+                                                                            "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+                                                                            "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
                                                                             "serviceType": "13",
                                                                             "attributes": {
                                                                               "triggers": [
                                                                                 {
-                                                                                  "triggerName": "ILC_GOAL_CALCULATION_API",
-                                                                                  "triggerId": "dvxixdWWX2E0s6Y21qxR8",
+                                                                                  "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
+                                                                                  "triggerId": "nfji7B_h9wTBrDHwEERnM",
                                                                                   "services": [
                                                                                     {
                                                                                       "type": "8",
@@ -2369,38 +2567,46 @@
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "amount",
+                                                                                              "key": "request.amount",
                                                                                               "value": "ILCG_GOAL_AMOUNT"
                                                                                             },
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "contributationFreq",
+                                                                                              "key": "request.contributionFreq",
                                                                                               "value": "ILC_FREQUENCY.name"
                                                                                             },
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "startDate",
+                                                                                              "key": "request.startDate",
                                                                                               "value": "ILCG_START_DATE"
                                                                                             },
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "contributionAmount",
-                                                                                              "value": "IILCG_AMOUNT"
-                                                                                            },
-                                                                                            {
-                                                                                              "type": 1,
-                                                                                              "name": "Form",
-                                                                                              "key": "targetDate",
-                                                                                              "value": "ILCG_TARGET_DATE"
+                                                                                              "key": "request.contibutionAmount",
+                                                                                              "value": "ILCG_AMOUNT"
                                                                                             }
                                                                                           ],
-                                                                                          "baseURL": "65e87c3e2f9c444e88698ebc",
+                                                                                          "baseURL": "656f0b4398e9df55f0499597",
                                                                                           "storeType": 2
                                                                                         },
-                                                                                        "responseHandler": []
+                                                                                        "responseHandler": [
+                                                                                          {
+                                                                                            "logic": {
+                                                                                              "==": [
+                                                                                                {
+                                                                                                  "var": "code"
+                                                                                                },
+                                                                                                1
+                                                                                              ]
+                                                                                            },
+                                                                                            "httpStatus": 200,
+                                                                                            "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
+                                                                                            "triggerId": "UUE-rGmre9rrh8dWl_xff"
+                                                                                          }
+                                                                                        ]
                                                                                       }
                                                                                     }
                                                                                   ],
@@ -2433,7 +2639,7 @@
                                                                                       {
                                                                                         ">": [
                                                                                           {
-                                                                                            "var": "currentScreen.form.ILCG_TARGET_DATE.length"
+                                                                                            "var": "currentScreen.form.ILCG_AMOUNT.length"
                                                                                           },
                                                                                           0
                                                                                         ]
@@ -2569,6 +2775,57 @@
                                                           "colSize0xl": 12
                                                         },
                                                         "readOnly": true
+                                                      },
+                                                      {
+                                                        "id": "89dABU1geYSMJKbLQ_gGI",
+                                                        "status": "ACTIVE",
+                                                        "name": "Label",
+                                                        "attributes": {
+                                                          "variant": "body1",
+                                                          "name": "Label",
+                                                          "mandatory": false,
+                                                          "layoutProperties": {
+                                                            "label": {
+                                                              "//": "Use this class to style label component.",
+                                                              "margin": "9px 0px 0px 0px"
+                                                            },
+                                                            "prefix": {
+                                                              "//": "Use this class to style prefix."
+                                                            },
+                                                            "postfix": {
+                                                              "//": "Use this class to style postfix."
+                                                            },
+                                                            "mainContainer": "label",
+                                                            "xl": 12,
+                                                            "lg": 12,
+                                                            "md": 12,
+                                                            "sm": 12,
+                                                            "xs": 12
+                                                          },
+                                                          "label": "VALIDATIONS_ILC_FREQUENCY.name",
+                                                          "searchInState": true,
+                                                          "storeType": 1,
+                                                          "cssClassNames": [
+                                                            {
+                                                              "cssClassName": "LOG_IN_EMAIL_VALIDATION "
+                                                            }
+                                                          ]
+                                                        },
+                                                        "icon": "FaFont",
+                                                        "group": "Form",
+                                                        "type": "20002",
+                                                        "updatedAt": "23-Aug-2021",
+                                                        "createdAt": "23-Aug-2021",
+                                                        "order": 15,
+                                                        "version": "1.0.0",
+                                                        "isLatest": true,
+                                                        "projectType": "web",
+                                                        "component": {
+                                                          "content": "Label",
+                                                          "type": "20002"
+                                                        },
+                                                        "events": [],
+                                                        "path": "0-0-0-0-1-0-0-0-0-0-7-0-1"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -2927,6 +3184,57 @@
                                                                           }
                                                                         ],
                                                                         "path": "0-0-0-0-1-0-0-0-0-0-8-0-0-0-1-0-0"
+                                                                      },
+                                                                      {
+                                                                        "id": "Imgv7jCh13d1mkFh1JKNx",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Label",
+                                                                        "attributes": {
+                                                                          "variant": "body1",
+                                                                          "name": "Label",
+                                                                          "mandatory": false,
+                                                                          "layoutProperties": {
+                                                                            "label": {
+                                                                              "//": "Use this class to style label component.",
+                                                                              "margin": "9px 0px 0px 0px"
+                                                                            },
+                                                                            "prefix": {
+                                                                              "//": "Use this class to style prefix."
+                                                                            },
+                                                                            "postfix": {
+                                                                              "//": "Use this class to style postfix."
+                                                                            },
+                                                                            "mainContainer": "label",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "label": "VALIDATIONS_ILCG_AMOUNT",
+                                                                          "searchInState": true,
+                                                                          "storeType": 1,
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "LOG_IN_EMAIL_VALIDATION "
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        "icon": "FaFont",
+                                                                        "group": "Form",
+                                                                        "type": "20002",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 15,
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Label",
+                                                                          "type": "20002"
+                                                                        },
+                                                                        "events": [],
+                                                                        "path": "0-0-0-0-1-0-0-0-0-0-8-0-0-0-1-0-1"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -3220,14 +3528,14 @@
                                                                         "path": "0-0-0-0-1-0-0-0-0-0-8-1-0-0-1-0-0",
                                                                         "events": [
                                                                           {
-                                                                            "triggerId": "OubfUkR4cXrJPpy9CYbN7",
-                                                                            "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+                                                                            "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+                                                                            "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
                                                                             "serviceType": "13",
                                                                             "attributes": {
                                                                               "triggers": [
                                                                                 {
-                                                                                  "triggerName": "ILC_GOAL_CALCULATION_API",
-                                                                                  "triggerId": "dvxixdWWX2E0s6Y21qxR8",
+                                                                                  "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
+                                                                                  "triggerId": "nfji7B_h9wTBrDHwEERnM",
                                                                                   "services": [
                                                                                     {
                                                                                       "type": "8",
@@ -3257,38 +3565,46 @@
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "amount",
+                                                                                              "key": "request.amount",
                                                                                               "value": "ILCG_GOAL_AMOUNT"
                                                                                             },
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "contributationFreq",
+                                                                                              "key": "request.contributionFreq",
                                                                                               "value": "ILC_FREQUENCY.name"
                                                                                             },
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "startDate",
+                                                                                              "key": "request.startDate",
                                                                                               "value": "ILCG_START_DATE"
                                                                                             },
                                                                                             {
                                                                                               "type": 1,
                                                                                               "name": "Form",
-                                                                                              "key": "contributionAmount",
-                                                                                              "value": "IILCG_AMOUNT"
-                                                                                            },
-                                                                                            {
-                                                                                              "type": 1,
-                                                                                              "name": "Form",
-                                                                                              "key": "targetDate",
-                                                                                              "value": "ILCG_TARGET_DATE"
+                                                                                              "key": "request.contibutionAmount",
+                                                                                              "value": "ILCG_AMOUNT"
                                                                                             }
                                                                                           ],
-                                                                                          "baseURL": "65e87c3e2f9c444e88698ebc",
+                                                                                          "baseURL": "656f0b4398e9df55f0499597",
                                                                                           "storeType": 2
                                                                                         },
-                                                                                        "responseHandler": []
+                                                                                        "responseHandler": [
+                                                                                          {
+                                                                                            "logic": {
+                                                                                              "==": [
+                                                                                                {
+                                                                                                  "var": "code"
+                                                                                                },
+                                                                                                1
+                                                                                              ]
+                                                                                            },
+                                                                                            "httpStatus": 200,
+                                                                                            "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
+                                                                                            "triggerId": "UUE-rGmre9rrh8dWl_xff"
+                                                                                          }
+                                                                                        ]
                                                                                       }
                                                                                     }
                                                                                   ],
@@ -3321,7 +3637,7 @@
                                                                                       {
                                                                                         ">": [
                                                                                           {
-                                                                                            "var": "currentScreen.form.ILCG_TARGET_DATE.length"
+                                                                                            "var": "currentScreen.form.ILCG_AMOUNT.length"
                                                                                           },
                                                                                           0
                                                                                         ]
@@ -3336,6 +3652,57 @@
                                                                             "commandType": "1"
                                                                           }
                                                                         ]
+                                                                      },
+                                                                      {
+                                                                        "id": "t7SFawJEF9vs96dkuFfz0",
+                                                                        "status": "ACTIVE",
+                                                                        "name": "Label",
+                                                                        "attributes": {
+                                                                          "variant": "body1",
+                                                                          "name": "Label",
+                                                                          "mandatory": false,
+                                                                          "layoutProperties": {
+                                                                            "label": {
+                                                                              "//": "Use this class to style label component.",
+                                                                              "margin": "9px 0px 0px 0px"
+                                                                            },
+                                                                            "prefix": {
+                                                                              "//": "Use this class to style prefix."
+                                                                            },
+                                                                            "postfix": {
+                                                                              "//": "Use this class to style postfix."
+                                                                            },
+                                                                            "mainContainer": "label",
+                                                                            "xl": 12,
+                                                                            "lg": 12,
+                                                                            "md": 12,
+                                                                            "sm": 12,
+                                                                            "xs": 12
+                                                                          },
+                                                                          "label": "VALIDATIONS_ILCG_START_DATE",
+                                                                          "searchInState": true,
+                                                                          "storeType": 1,
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "LOG_IN_EMAIL_VALIDATION "
+                                                                            }
+                                                                          ]
+                                                                        },
+                                                                        "icon": "FaFont",
+                                                                        "group": "Form",
+                                                                        "type": "20002",
+                                                                        "updatedAt": "23-Aug-2021",
+                                                                        "createdAt": "23-Aug-2021",
+                                                                        "order": 15,
+                                                                        "version": "1.0.0",
+                                                                        "isLatest": true,
+                                                                        "projectType": "web",
+                                                                        "component": {
+                                                                          "content": "Label",
+                                                                          "type": "20002"
+                                                                        },
+                                                                        "events": [],
+                                                                        "path": "0-0-0-0-1-0-0-0-0-0-8-1-0-0-1-0-1"
                                                                       }
                                                                     ],
                                                                     "layoutProperties": {
@@ -4483,54 +4850,7 @@
                                                             "__v": 0,
                                                             "uri": "652fcbce09869c3c809b3097/web/arrow_right_light.svg"
                                                           },
-                                                          "disableCondition": {
-                                                            "logic": {
-                                                              "or": [
-                                                                {
-                                                                  "!": [
-                                                                    {
-                                                                      "var": "currentScreen.form.ILCG_NAME"
-                                                                    }
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "!": [
-                                                                    {
-                                                                      "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
-                                                                    }
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "!": [
-                                                                    {
-                                                                      "var": "currentScreen.form.ILCG_TARGET_DATE"
-                                                                    }
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "!": [
-                                                                    {
-                                                                      "var": "currentScreen.form.ILC_FREQUENCY.name"
-                                                                    }
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "!": [
-                                                                    {
-                                                                      "var": "currentScreen.form.ILCG_AMOUNT"
-                                                                    }
-                                                                  ]
-                                                                },
-                                                                {
-                                                                  "!": [
-                                                                    {
-                                                                      "var": "currentScreen.form.ILCG_START_DATE"
-                                                                    }
-                                                                  ]
-                                                                }
-                                                              ]
-                                                            }
-                                                          },
+                                                          "disableCondition": {},
                                                           "cssDisableClassNames": [
                                                             {
                                                               "cssClassName": "ROUND_BTN "
@@ -4559,91 +4879,230 @@
                                                         },
                                                         "events": [
                                                           {
-                                                            "triggerId": "8mdApZ_-ujaxVPXrYL4Ro",
-                                                            "triggerName": "ILCG_EDIT_GOAL_API",
-                                                            "serviceType": "8",
+                                                            "triggerId": "3opv38LjcuEu1yiTzd9Am",
+                                                            "triggerName": "ILCG_EDIT_GOAL_VALIDATIONS",
+                                                            "serviceType": "16",
                                                             "attributes": {
-                                                              "loaderWidgetIds": [
-                                                                906070
-                                                              ],
-                                                              "messageWidgetIds": [
-                                                                906070
-                                                              ],
-                                                              "responseStateKey": "REPONSE_ILCG_EDIT_GOAL",
-                                                              "url": "/api-designer/api/editGoal/execute",
-                                                              "checksum": true,
-                                                              "encryption": true,
-                                                              "isDeviceDetails": true,
-                                                              "loginTrigger": false,
-                                                              "formData": false,
-                                                              "logoutTrigger": false,
-                                                              "headers": {
-                                                                "Content-Type": "application/json",
-                                                                "Accept": "application/json",
-                                                                "channel_key": "002"
-                                                              },
-                                                              "requestBody": [
+                                                              "validationList": [
                                                                 {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "request.name",
-                                                                  "value": "ILCG_NAME"
+                                                                  "bindingKey": "ILCG_NAME",
+                                                                  "storeType": 1,
+                                                                  "messageBindingKey": "VALIDATIONS_ILCG_NAME",
+                                                                  "isRequired": true,
+                                                                  "requiredMessage": "Goal name is required",
+                                                                  "regEx": "",
+                                                                  "regExMessage": "",
+                                                                  "JSONLogic": []
                                                                 },
                                                                 {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "request.startDate",
-                                                                  "value": "ILCG_START_DATE"
+                                                                  "bindingKey": "ILCG_GOAL_AMOUNT",
+                                                                  "storeType": 1,
+                                                                  "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+                                                                  "isRequired": true,
+                                                                  "requiredMessage": "Goal amount is required",
+                                                                  "regEx": "",
+                                                                  "regExMessage": "",
+                                                                  "JSONLogic": []
                                                                 },
                                                                 {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "request.amount",
-                                                                  "value": "ILCG_GOAL_AMOUNT"
+                                                                  "bindingKey": "ILCG_TARGET_DATE",
+                                                                  "storeType": 1,
+                                                                  "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
+                                                                  "isRequired": true,
+                                                                  "requiredMessage": "Target date is required",
+                                                                  "regEx": "",
+                                                                  "regExMessage": "",
+                                                                  "JSONLogic": []
                                                                 },
                                                                 {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "request.targetDate",
-                                                                  "value": "ILCG_TARGET_DATE"
+                                                                  "bindingKey": "ILC_FREQUENCY.name",
+                                                                  "storeType": 1,
+                                                                  "messageBindingKey": "VALIDATIONS_ILC_FREQUENCY.name",
+                                                                  "isRequired": true,
+                                                                  "requiredMessage": "Contribution frequency is required",
+                                                                  "regEx": "",
+                                                                  "regExMessage": "",
+                                                                  "JSONLogic": []
                                                                 },
                                                                 {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "request.contributionFreq",
-                                                                  "value": "ILC_FREQUENCY.name"
+                                                                  "bindingKey": "ILCG_AMOUNT",
+                                                                  "storeType": 1,
+                                                                  "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
+                                                                  "isRequired": true,
+                                                                  "requiredMessage": "Contribution amount is required",
+                                                                  "regEx": "",
+                                                                  "regExMessage": "",
+                                                                  "JSONLogic": []
                                                                 },
                                                                 {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "request.contributionAmount",
-                                                                  "value": "ILCG_AMOUNT"
-                                                                },
-                                                                {
-                                                                  "type": 2,
-                                                                  "name": "Current screen",
-                                                                  "key": "request.cardNumber",
-                                                                  "value": "CURRENT_CARD.cardNumber"
-                                                                },
-                                                                {
-                                                                  "type": 2,
-                                                                  "name": "Current screen",
-                                                                  "key": "request.cprOfCard",
-                                                                  "value": "CURRENT_CARD.clientCode"
-                                                                },
-                                                                {
-                                                                  "type": 2,
-                                                                  "name": "Current screen",
-                                                                  "key": "request.image",
-                                                                  "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
+                                                                  "bindingKey": "ILCG_START_DATE",
+                                                                  "storeType": 1,
+                                                                  "messageBindingKey": "VALIDATIONS_ILCG_START_DATE",
+                                                                  "isRequired": true,
+                                                                  "requiredMessage": "Start date is required",
+                                                                  "regEx": "",
+                                                                  "regExMessage": "",
+                                                                  "JSONLogic": []
                                                                 }
                                                               ],
-                                                              "baseURL": "656f0b4398e9df55f0499597",
-                                                              "storeType": 2
+                                                              "successTrigger": {
+                                                                "id": "8mdApZ_-ujaxVPXrYL4Ro",
+                                                                "_id": "Ty87630DL6lgPEGQw8D0U",
+                                                                "projectId": "652fcbce09869c3c809b3097",
+                                                                "gitBranchName": "master",
+                                                                "name": "ILCG_EDIT_GOAL_API",
+                                                                "old_name": "ILCG_EDIT_GOAL_API",
+                                                                "status": "ACTIVE",
+                                                                "services": [
+                                                                  {
+                                                                    "type": "8",
+                                                                    "command": {
+                                                                      "type": "1",
+                                                                      "attributes": {
+                                                                        "loaderWidgetIds": [
+                                                                          906070
+                                                                        ],
+                                                                        "messageWidgetIds": [
+                                                                          906070
+                                                                        ],
+                                                                        "responseStateKey": "REPONSE_ILCG_EDIT_GOAL",
+                                                                        "url": "/api-designer/api/editGoal/execute",
+                                                                        "checksum": true,
+                                                                        "encryption": true,
+                                                                        "isDeviceDetails": true,
+                                                                        "loginTrigger": false,
+                                                                        "formData": false,
+                                                                        "logoutTrigger": false,
+                                                                        "headers": {
+                                                                          "Content-Type": "application/json",
+                                                                          "Accept": "application/json",
+                                                                          "channel_key": "002"
+                                                                        },
+                                                                        "requestBody": [
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.name",
+                                                                            "value": "ILCG_NAME"
+                                                                          },
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.startDate",
+                                                                            "value": "ILCG_START_DATE"
+                                                                          },
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.amount",
+                                                                            "value": "ILCG_GOAL_AMOUNT"
+                                                                          },
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.targetDate",
+                                                                            "value": "ILCG_TARGET_DATE"
+                                                                          },
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.contributionFreq",
+                                                                            "value": "ILC_FREQUENCY.name"
+                                                                          },
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.contributionAmount",
+                                                                            "value": "ILCG_AMOUNT"
+                                                                          },
+                                                                          {
+                                                                            "type": 2,
+                                                                            "name": "Current screen",
+                                                                            "key": "request.cardNumber",
+                                                                            "value": "CURRENT_CARD.cardNumber"
+                                                                          },
+                                                                          {
+                                                                            "type": 2,
+                                                                            "name": "Current screen",
+                                                                            "key": "request.cprOfCard",
+                                                                            "value": "CURRENT_CARD.clientCode"
+                                                                          },
+                                                                          {
+                                                                            "type": 2,
+                                                                            "name": "Current screen",
+                                                                            "key": "request.image",
+                                                                            "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
+                                                                          },
+                                                                          {
+                                                                            "type": 1,
+                                                                            "name": "Form",
+                                                                            "key": "request.id",
+                                                                            "value": "ILCG_LIST.id"
+                                                                          },
+                                                                          {
+                                                                            "type": 4,
+                                                                            "name": "Static",
+                                                                            "key": "request.currency",
+                                                                            "value": "BHD"
+                                                                          }
+                                                                        ],
+                                                                        "baseURL": "656f0b4398e9df55f0499597",
+                                                                        "storeType": 2
+                                                                      },
+                                                                      "responseHandler": [
+                                                                        {
+                                                                          "httpStatus": 200,
+                                                                          "logic": {
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "code"
+                                                                              },
+                                                                              1
+                                                                            ]
+                                                                          },
+                                                                          "triggerName": "ILCG_EDIT_SUCCESS_MESSAGE",
+                                                                          "triggerId": "T4U7Kd-BsDHmwxKuqGf7v"
+                                                                        },
+                                                                        {
+                                                                          "httpStatus": 200,
+                                                                          "logic": {
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "code"
+                                                                              },
+                                                                              0
+                                                                            ]
+                                                                          },
+                                                                          "triggerName": "ILCG_EDIT_ERROR_MESSAGE",
+                                                                          "triggerId": "h9BV-ZS7U0hr6WIj5JBqD"
+                                                                        },
+                                                                        {
+                                                                          "httpStatus": 200,
+                                                                          "logic": {
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "code"
+                                                                              },
+                                                                              1
+                                                                            ]
+                                                                          },
+                                                                          "triggerName": "NVIGATE_FROM_EDIT_TO_GOAL_SCREEN",
+                                                                          "triggerId": "6ZhvMrlYIyIIxMFSMKjoO"
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  }
+                                                                ],
+                                                                "csrf": "0.gwilhhqs16iBHgUyUvH0WQ2YqDvLp8yk",
+                                                                "updatedAt": "4/3/2024",
+                                                                "createdAt": "4/3/2024",
+                                                                "createdBy": "talha2",
+                                                                "updatedBy": "talha2"
+                                                              }
                                                             },
                                                             "type": "2",
                                                             "name": "On click",
-                                                            "commandType": "1"
+                                                            "commandType": "2"
                                                           }
                                                         ],
                                                         "path": "0-0-0-0-1-0-0-0-0-0-11-0-0"
@@ -4812,8 +5271,7 @@
                               "md": 12,
                               "sm": 12,
                               "xs": 12
-                            },
-                            "path": "0-0-0-0-1-0"
+                            }
                           }
                         ],
                         "readOnly": true
@@ -4853,8 +5311,8 @@
     "gitBranchName": "master",
     "_id": "T-kZsQeVMKUM7yIw4lp3O",
     "createdBy": "mubashar",
-    "updatedAt": "4/4/2024",
-    "createdAt": "4/4/2024",
+    "updatedAt": "4/8/2024",
+    "createdAt": "4/8/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5200,6 +5658,18 @@
       {
         "triggerId": "wofzPR57eme53ouHOaRsv",
         "triggerName": "ILCG_FREQUENCY_API",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "5_DMesAcAcc_LX4fGlQ_E",
+        "triggerName": "ILCG_MIN_STAR_DATE",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "WMpOjUNs5jwMAfxtjHRyP",
+        "triggerName": "ILCG_MIN_TARGET_DATE",
         "name": "On initialization",
         "type": "1"
       }
@@ -5914,6 +6384,18 @@
           "componentId": "tij-0kZslvU8RbgujLKdj",
           "componentType": "20004",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "id1LZvHz0oTw0vr8eD-Tz",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -5993,6 +6475,51 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
+    "id": "id1LZvHz0oTw0vr8eD-Tz",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "VALIDATIONS_ILCG_NAME",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [{ "cssClassName": "LOG_IN_EMAIL_VALIDATION " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-0-0-0-0-2-0-0-0-1",
+    "screenId": "T-kZsQeVMKUM7yIw4lp3O",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
     "id": "rDS8C5OXFDMlpxOGhzio8",
     "name": "Grid layout",
     "type": "10001",
@@ -6008,6 +6535,18 @@
           },
           "componentId": "wxyai13Vq65Pqe_BlMmHd",
           "componentType": "20004",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "1nANKXh0C8XqZ9l_hzkYZ",
+          "componentType": "20002",
           "order": 1
         }
       ],
@@ -6082,14 +6621,59 @@
     "component": { "content": "Text Box", "type": "20004" },
     "events": [
       {
-        "triggerId": "OubfUkR4cXrJPpy9CYbN7",
-        "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+        "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+        "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
         "name": "On blur",
         "type": "6",
         "serviceType": "13"
       }
     ],
     "path": "0-0-0-0-1-0-0-0-0-0-2-1-0-0-0",
+    "screenId": "T-kZsQeVMKUM7yIw4lp3O",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "1nANKXh0C8XqZ9l_hzkYZ",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [{ "cssClassName": "LOG_IN_EMAIL_VALIDATION " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-0-0-0-0-2-1-0-0-1",
     "screenId": "T-kZsQeVMKUM7yIw4lp3O",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6346,6 +6930,18 @@
           "componentId": "5rbevEmD4EBLKBGTa2efw",
           "componentType": "20027",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "hikm8TKURvkSy24WMZEjH",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -6419,6 +7015,51 @@
         "serviceType": "13"
       }
     ],
+    "screenId": "T-kZsQeVMKUM7yIw4lp3O",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "hikm8TKURvkSy24WMZEjH",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "VALIDATIONS_ILCG_TARGET_DATE",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [{ "cssClassName": "LOG_IN_EMAIL_VALIDATION " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-0-0-0-0-4-0-0-0-1",
     "screenId": "T-kZsQeVMKUM7yIw4lp3O",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6649,6 +7290,18 @@
             "sm": 12,
             "xs": 12
           }
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "89dABU1geYSMJKbLQ_gGI",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -6836,8 +7489,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "OubfUkR4cXrJPpy9CYbN7",
-        "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+        "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+        "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
         "name": "On click",
         "type": "2"
       }
@@ -6994,6 +7647,51 @@
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-0-0-1-0-0-0-0-0-7-0-0-0-0-0-0-0-0-0-0-0-0",
+    "screenId": "T-kZsQeVMKUM7yIw4lp3O",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "89dABU1geYSMJKbLQ_gGI",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "VALIDATIONS_ILC_FREQUENCY.name",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [{ "cssClassName": "LOG_IN_EMAIL_VALIDATION " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-0-0-0-0-7-0-1",
     "screenId": "T-kZsQeVMKUM7yIw4lp3O",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7225,6 +7923,18 @@
           "componentId": "bIMqo-yY7BU_f5bhx9tQI",
           "componentType": "20004",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "Imgv7jCh13d1mkFh1JKNx",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -7305,6 +8015,51 @@
       }
     ],
     "path": "0-0-0-0-1-0-0-0-0-0-8-0-0-0-1-0-0",
+    "screenId": "T-kZsQeVMKUM7yIw4lp3O",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "Imgv7jCh13d1mkFh1JKNx",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "VALIDATIONS_ILCG_AMOUNT",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [{ "cssClassName": "LOG_IN_EMAIL_VALIDATION " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-0-0-0-0-8-0-0-0-1-0-1",
     "screenId": "T-kZsQeVMKUM7yIw4lp3O",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7487,6 +8242,18 @@
           "componentId": "SCOj9SnJ3dSHr7IHvYVt2",
           "componentType": "20027",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "t7SFawJEF9vs96dkuFfz0",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -7556,13 +8323,58 @@
     "path": "0-0-0-0-1-0-0-0-0-0-8-1-0-0-1-0-0",
     "events": [
       {
-        "triggerId": "OubfUkR4cXrJPpy9CYbN7",
-        "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_TARGET_DATE",
+        "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+        "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
         "name": "On change",
         "type": "3",
         "serviceType": "13"
       }
     ],
+    "screenId": "T-kZsQeVMKUM7yIw4lp3O",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "t7SFawJEF9vs96dkuFfz0",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "VALIDATIONS_ILCG_START_DATE",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [{ "cssClassName": "LOG_IN_EMAIL_VALIDATION " }]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-1-0-0-0-0-0-8-1-0-0-1-0-1",
     "screenId": "T-kZsQeVMKUM7yIw4lp3O",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -8476,18 +9288,7 @@
         "__v": 0,
         "uri": "652fcbce09869c3c809b3097/web/arrow_right_light.svg"
       },
-      "disableCondition": {
-        "logic": {
-          "or": [
-            { "!": [{ "var": "currentScreen.form.ILCG_NAME" }] },
-            { "!": [{ "var": "currentScreen.form.ILCG_GOAL_AMOUNT" }] },
-            { "!": [{ "var": "currentScreen.form.ILCG_TARGET_DATE" }] },
-            { "!": [{ "var": "currentScreen.form.ILC_FREQUENCY.name" }] },
-            { "!": [{ "var": "currentScreen.form.ILCG_AMOUNT" }] },
-            { "!": [{ "var": "currentScreen.form.ILCG_START_DATE" }] }
-          ]
-        }
-      },
+      "disableCondition": {},
       "cssDisableClassNames": [{ "cssClassName": "ROUND_BTN " }],
       "cssClassNames": [{ "cssClassName": "ROUND_BTN " }]
     },
@@ -8505,11 +9306,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "8mdApZ_-ujaxVPXrYL4Ro",
-        "triggerName": "ILCG_EDIT_GOAL_API",
+        "triggerId": "3opv38LjcuEu1yiTzd9Am",
+        "triggerName": "ILCG_EDIT_GOAL_VALIDATIONS",
         "name": "On click",
         "type": "2",
-        "serviceType": "8"
+        "serviceType": "16"
       }
     ],
     "path": "0-0-0-0-1-0-0-0-0-0-11-0-0",

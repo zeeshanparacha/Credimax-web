@@ -6,6 +6,45 @@
     "attributes": {
       "gridProps": [
         {
+          "componentId": "R7Aa87WB4QiDUvVob7WEN",
+          "componentType": "10001",
+          "id": "R7Aa87WB4QiDUvVob7WEN",
+          "position": {
+            "i": "R7Aa87WB4QiDUvVob7WEN",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        },
+        {
+          "componentId": "3DfSw41J2xFqDIAri3dIl",
+          "componentType": "10001",
+          "id": "3DfSw41J2xFqDIAri3dIl",
+          "position": {
+            "i": "3DfSw41J2xFqDIAri3dIl",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        },
+        {
+          "componentId": "AIjNbEdZ454sOwhQwFFEe",
+          "componentType": "10001",
+          "id": "AIjNbEdZ454sOwhQwFFEe",
+          "position": {
+            "i": "AIjNbEdZ454sOwhQwFFEe",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        },
+        {
           "componentId": "Xa7NpRs0cCN7kosUNx_Fi",
           "componentType": "10001",
           "id": "Xa7NpRs0cCN7kosUNx_Fi",
@@ -21,6 +60,72 @@
       ]
     },
     "layout": [
+      {
+        "type": "10001",
+        "id": "R7Aa87WB4QiDUvVob7WEN",
+        "gridProps": [
+          {
+            "type": "column",
+            "id": "jyMz2AyHNw93bVo-xTVCE",
+            "gridProps": [
+              {
+                "id": "nIZk4yU_cflpppCkvsJOk",
+                "name": "SHOW_THAMEEN_REDEEM_POPUP",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                  "layoutProperties": {}
+                },
+                "component": { "type": "20031" }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "10001",
+        "id": "3DfSw41J2xFqDIAri3dIl",
+        "gridProps": [
+          {
+            "type": "column",
+            "id": "0em0QKNmGqtOzHBzoxke_",
+            "gridProps": [
+              {
+                "id": "vrZACJjfyBdrmYP0hyJ3E",
+                "name": "SHOW_THAMEEN_REDEEM_ERROR_MODAL",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "pTwaLc9Zx4Vc6OnDc-8FJ",
+                  "layoutProperties": {}
+                },
+                "component": { "type": "20031" }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "10001",
+        "id": "AIjNbEdZ454sOwhQwFFEe",
+        "gridProps": [
+          {
+            "type": "column",
+            "id": "fr5G37IWCkwl0S_14Kc_x",
+            "gridProps": [
+              {
+                "id": "u0y1rzfeNshMfFzWBEppW",
+                "name": "SHOW_THAMEEN_REDEEM_SUCCESS",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "R1cpFlk8pOd78j-dS1vd4",
+                  "layoutProperties": {}
+                },
+                "component": { "type": "20031" }
+              }
+            ]
+          }
+        ]
+      },
       {
         "id": "Xa7NpRs0cCN7kosUNx_Fi",
         "status": "ACTIVE",
@@ -52,14 +157,71 @@
         "createdAt": "24-Aug-2021",
         "events": [
           {
-            "triggerId": "oa1PxUhQf9-7dSy8Be3tf",
-            "triggerName": "THAMEEN_GET_CASHBACK",
+            "triggerId": "z3R6sNygsOIUVvWhwD2m2",
+            "triggerName": "GET_CASHBACK_AVAILABLE_POINTS",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "value",
+              "destinationBindingKey": "AVAILABLE_POINTS",
+              "sourceBindingKey": "AVAILABLE_POINTS",
+              "sourceStoreType": 2,
+              "destinationStoreType": 1,
+              "logic": {
+                "if": [
+                  { "==": [true, true] },
+                  { "var": "CATALOGS_ITEMS.content.availablePoints" },
+                  ""
+                ]
+              },
+              "changeValueConditonally": true,
+              "targettedType": "value"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "6"
+          },
+          {
+            "triggerId": "Gl84jCOcyJk0PzzkU6w_s",
+            "triggerName": "CALCULATE_CASHBACK_AVAILABLE_BALANCE",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "value",
+              "destinationBindingKey": "AVAILABLE_BALANCE",
+              "sourceBindingKey": "AVAILABLE_BALANCE",
+              "sourceStoreType": 2,
+              "destinationStoreType": 1,
+              "logic": {
+                "round": [
+                  {
+                    "*": [
+                      { "var": "CATALOGS_ITEMS.content.availablePoints" },
+                      { "var": "form.SELECTED_CATELOG.multiplier" }
+                    ]
+                  },
+                  2
+                ]
+              },
+              "changeValueConditonally": true,
+              "targettedType": "value"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "6"
+          },
+          {
+            "triggerId": "bpT4QLm9_lHSsgEjwtE9m",
+            "triggerName": "GET_THAMEEN_CASHBACK_CARDS",
             "serviceType": "8",
             "attributes": {
               "loaderWidgetIds": [906070],
               "messageWidgetIds": [906070],
-              "responseStateKey": "CASHBACK",
-              "url": "/CASHBACK",
+              "responseStateKey": "CASHBACK_CARDS",
+              "responseReturnValue": "content.cardList",
+              "url": "/card/v1/cardList",
               "checksum": true,
               "encryption": true,
               "isDeviceDetails": false,
@@ -72,12 +234,37 @@
                 "channel_key": "002"
               },
               "requestBody": [],
-              "baseURL": "65e87c3e2f9c444e88698ebc",
+              "baseURL": "656f0b4398e9df55f0499597",
               "storeType": 2
             },
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "bx0aBS8bH5puNTzkfK5fn",
+            "triggerName": "CALCULATE_CASHBACK_MAX_LENGTH",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "value",
+              "destinationBindingKey": "MAX_LENGTH",
+              "sourceBindingKey": "MAX_LENGTH",
+              "sourceStoreType": 1,
+              "destinationStoreType": 1,
+              "logic": {
+                "-": [
+                  { "var": "AVAILABLE_BALANCE" },
+                  { "%": [{ "var": "AVAILABLE_BALANCE" }, 5] }
+                ]
+              },
+              "changeValueConditonally": true,
+              "targettedType": "value"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "6"
           }
         ],
         "order": 1,
@@ -86,11 +273,11 @@
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": "0",
+        "path": "3",
         "gridProps": [
           {
             "type": "column",
-            "id": "InbabGe3wGa6XuH7eHuZk",
+            "id": "QgP2TN19U1ovuWSAJ61Z3",
             "gridProps": [
               {
                 "type": "10001",
@@ -387,7 +574,7 @@
                 },
                 "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
-                "path": "0-0-0",
+                "path": "1-0-0",
                 "dimensions": {
                   "rows": 1,
                   "columns": 1,
@@ -738,10 +925,10 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "CASHBACK.availablePoints",
+                                                          "label": "AVAILABLE_POINTS",
                                                           "format": "thousand seprator",
                                                           "searchInState": true,
-                                                          "storeType": 2
+                                                          "storeType": 1
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -959,10 +1146,10 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "CASHBACK.availableCashback",
+                                                          "label": "AVAILABLE_BALANCE",
                                                           "format": "thousand seprator",
                                                           "searchInState": true,
-                                                          "storeType": 2,
+                                                          "storeType": 1,
                                                           "prefix": "BHD "
                                                         },
                                                         "icon": "FaFont",
@@ -1360,7 +1547,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "Bz-ZSXw9zQ3AJxVgiuXla",
+                                                    "id": "xjG6hPWaIPy-cnu7-HVkj",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1369,7 +1556,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "3FlT6yfuFjdV4eGcjS73Z",
+                                                            "id": "jKsxEQaBlCIKUA1f3Ub85",
                                                             "gridProps": [
                                                               {
                                                                 "id": "iCO1jrmUVemogjb1v5Xqc",
@@ -1524,7 +1711,7 @@
                                                                                             "sm": 12,
                                                                                             "xs": 12
                                                                                           },
-                                                                                          "label": "lastFourDigits",
+                                                                                          "label": "cardLastNumber",
                                                                                           "searchInState": true,
                                                                                           "storeType": 2
                                                                                         },
@@ -1586,7 +1773,8 @@
                                                                                 "component": {
                                                                                   "type": "10001",
                                                                                   "content": "Grid layout"
-                                                                                }
+                                                                                },
+                                                                                "path": "0-0-1-0-0-0-1-0-1-0-0-0-0-0-1-0-0-0-0"
                                                                               }
                                                                             ],
                                                                             "layoutProperties": {
@@ -1665,7 +1853,7 @@
                                                                                                 {
                                                                                                   "var": "brandName"
                                                                                                 },
-                                                                                                "mastercard"
+                                                                                                "VISA"
                                                                                               ]
                                                                                             }
                                                                                           }
@@ -1739,7 +1927,7 @@
                                                                                                 {
                                                                                                   "var": "brandName"
                                                                                                 },
-                                                                                                "visa"
+                                                                                                "MASTERCARD"
                                                                                               ]
                                                                                             }
                                                                                           }
@@ -1896,7 +2084,8 @@
                                                                 "component": {
                                                                   "type": "10001",
                                                                   "content": "Grid layout"
-                                                                }
+                                                                },
+                                                                "path": "0-0-1-0-0-0-1-0-1-0-0-0-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -1946,10 +2135,10 @@
                                                               "logic": {
                                                                 "==": [
                                                                   {
-                                                                    "var": "lastFourDigits"
+                                                                    "var": "cardLastNumber"
                                                                   },
                                                                   {
-                                                                    "var": "currentScreen.form.SELECTED_CARD.lastFourDigits"
+                                                                    "var": "currentScreen.form.SELECTED_CARD.cardLastNumber"
                                                                   }
                                                                 ]
                                                               }
@@ -2000,7 +2189,7 @@
                                                     },
                                                     "mainContainer": "listLayout"
                                                   },
-                                                  "dataSource": "CASHBACK.cards",
+                                                  "dataSource": "CASHBACK_CARDS",
                                                   "storeType": 2,
                                                   "bindingKey": "SELECTED_CARD",
                                                   "disableClick": {
@@ -2155,7 +2344,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "JDtQBUnlMbRWoKmNEAT7X",
+                                                            "id": "7t5WbA1kyYxTIs3fAhTqK",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -2739,7 +2928,8 @@
                                                           },
                                                           "direction": "row",
                                                           "name": "Grid layout",
-                                                          "hideCondition": {}
+                                                          "hideCondition": {},
+                                                          "hideComponent": true
                                                         },
                                                         "events": [
                                                           {
@@ -2778,7 +2968,7 @@
                                                           "type": "10001",
                                                           "content": "Grid layout"
                                                         },
-                                                        "path": "0-0-1-0-0-0-1-0-2-0-0-1-0",
+                                                        "path": "1-0-1-0-0-0-1-0-2-0-0-1-0",
                                                         "dimensions": {
                                                           "rows": 1,
                                                           "columns": 1,
@@ -2867,14 +3057,15 @@
                                                         "attributes": {
                                                           "name": "Draggble Slider",
                                                           "value": "5",
-                                                          "min": "CASHBACK.minCash",
-                                                          "max": "CASHBACK.maxCash",
+                                                          "min": "SELECTED_CATELOG.minLimit",
+                                                          "max": "MAX_LENGTH",
                                                           "size": "small",
                                                           "progressType": "circular",
                                                           "searchSliderValueInState": true,
-                                                          "storeTypeMinAndMax": 2,
+                                                          "storeTypeMinAndMax": 1,
                                                           "steps": "5",
-                                                          "stateName": "amount"
+                                                          "stateName": "amount",
+                                                          "color": "#003973"
                                                         },
                                                         "icon": "RxSlider",
                                                         "group": "Form",
@@ -2890,7 +3081,42 @@
                                                           "content": "Draggable Slider",
                                                           "type": "20061"
                                                         },
-                                                        "events": [],
+                                                        "events": [
+                                                          {
+                                                            "triggerId": "-tiOqRGHMpCIb_vb6gS-s",
+                                                            "triggerName": "CALCULATE_CASHBACK_AMOUNT_POINTS",
+                                                            "serviceType": "11",
+                                                            "attributes": {
+                                                              "storeType": "",
+                                                              "selectedObjectBindingKey": "selectedObject",
+                                                              "dataType": "value",
+                                                              "destinationBindingKey": "AMOUNT_POINTS",
+                                                              "sourceBindingKey": "AMOUNT_POINTS",
+                                                              "sourceStoreType": 1,
+                                                              "destinationStoreType": 1,
+                                                              "logic": {
+                                                                "round": [
+                                                                  {
+                                                                    "/": [
+                                                                      {
+                                                                        "var": "amount"
+                                                                      },
+                                                                      {
+                                                                        "var": "SELECTED_CATELOG.multiplier"
+                                                                      }
+                                                                    ]
+                                                                  },
+                                                                  2
+                                                                ]
+                                                              },
+                                                              "changeValueConditonally": true,
+                                                              "targettedType": "value"
+                                                            },
+                                                            "type": "3",
+                                                            "name": "On change",
+                                                            "commandType": "6"
+                                                          }
+                                                        ],
                                                         "path": "0-0-1-0-0-0-1-0-2-0-1-0-0"
                                                       },
                                                       {
@@ -2938,10 +3164,10 @@
                                                                             "sm": 6,
                                                                             "xs": 6
                                                                           },
-                                                                          "label": "CASHBACK.minCash",
+                                                                          "label": "minLimit",
                                                                           "prefix": "BHD ",
                                                                           "searchInState": true,
-                                                                          "storeType": 2
+                                                                          "storeType": 1
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -3000,10 +3226,10 @@
                                                                             "sm": 6,
                                                                             "xs": 6
                                                                           },
-                                                                          "label": "CASHBACK.maxCash",
+                                                                          "label": "MAX_LENGTH",
                                                                           "prefix": "BHD ",
                                                                           "searchInState": true,
-                                                                          "storeType": 2
+                                                                          "storeType": 1
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -3324,8 +3550,10 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "1400",
-                                                                  "postfix": " points"
+                                                                  "label": "AMOUNT_POINTS",
+                                                                  "postfix": " points",
+                                                                  "searchInState": true,
+                                                                  "storeType": 1
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -3341,7 +3569,7 @@
                                                                   "type": "20002"
                                                                 },
                                                                 "events": [],
-                                                                "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-1"
+                                                                "path": "0-0-1-0-0-0-1-0-3-0-0-0-0-0-1"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3452,12 +3680,21 @@
                                                                   "onEnterKey": true,
                                                                   "disableCondition": {
                                                                     "logic": {
-                                                                      "if": [
+                                                                      "or": [
                                                                         {
-                                                                          "var": "currentScreen.form.SELECTED_CARD"
+                                                                          "!": [
+                                                                            {
+                                                                              "var": "currentScreen.form.AMOUNT_POINTS"
+                                                                            }
+                                                                          ]
                                                                         },
-                                                                        false,
-                                                                        true
+                                                                        {
+                                                                          "!": [
+                                                                            {
+                                                                              "var": "currentScreen.form.SELECTED_CARD"
+                                                                            }
+                                                                          ]
+                                                                        }
                                                                       ]
                                                                     }
                                                                   },
@@ -3484,21 +3721,56 @@
                                                                 },
                                                                 "events": [
                                                                   {
-                                                                    "triggerId": "12c3fGL0QD9nLkGMcClTC",
-                                                                    "triggerName": "Swap To OTP Widget TRIGGER",
-                                                                    "serviceType": "1",
+                                                                    "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+                                                                    "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+                                                                    "serviceType": "9",
                                                                     "attributes": {
-                                                                      "fromWidgetId": "VtKCCLwvk_tCuGGvSJ5Ix",
-                                                                      "nextWidgetId": "ae02bY4VKERWSkMbhKVNN",
-                                                                      "gridRadioValue": "Grid",
-                                                                      "selectedObjectBindingKey": "selectedObject",
-                                                                      "editableForm": false
+                                                                      "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                                                                      "content": "",
+                                                                      "type": "",
+                                                                      "modalId": "nIZk4yU_cflpppCkvsJOk",
+                                                                      "toastContentType": "custom"
                                                                     },
-                                                                    "type": "4",
-                                                                    "name": "On Submit"
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "1"
+                                                                  },
+                                                                  {
+                                                                    "triggerId": "_Q9E8tZxywwypGwSd3NlP",
+                                                                    "triggerName": "CALCULATE_CASHBACK_REMAINING_POINTS",
+                                                                    "serviceType": "11",
+                                                                    "attributes": {
+                                                                      "storeType": "",
+                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                      "dataType": "value",
+                                                                      "destinationBindingKey": "REMAINING_POINTS",
+                                                                      "sourceBindingKey": "REMAINING_POINTS",
+                                                                      "sourceStoreType": 1,
+                                                                      "destinationStoreType": 1,
+                                                                      "logic": {
+                                                                        "round": [
+                                                                          {
+                                                                            "-": [
+                                                                              {
+                                                                                "var": "AVAILABLE_POINTS"
+                                                                              },
+                                                                              {
+                                                                                "var": "AMOUNT_POINTS"
+                                                                              }
+                                                                            ]
+                                                                          },
+                                                                          2
+                                                                        ]
+                                                                      },
+                                                                      "changeValueConditonally": true,
+                                                                      "targettedType": "value"
+                                                                    },
+                                                                    "type": "2",
+                                                                    "name": "On click",
+                                                                    "commandType": "6"
                                                                   }
                                                                 ],
-                                                                "path": "0-0-1-0-0-0-1-0-3-0-0-1-0-0-0"
+                                                                "path": "1-0-1-0-0-0-1-0-3-0-0-1-0-0-0"
                                                               }
                                                             ],
                                                             "layoutProperties": {
@@ -3818,7 +4090,7 @@
                 },
                 "events": [],
                 "component": { "type": "10001", "content": "Grid layout" },
-                "path": "0-0-1",
+                "path": "1-0-1",
                 "dimensions": {
                   "rows": 1,
                   "columns": 1,
@@ -3852,8 +4124,122 @@
     "gitBranchName": "master",
     "_id": "yV3Sc1XQJzqAwf2kAlKMu",
     "createdBy": "zeeshan",
-    "updatedAt": "3/26/2024",
-    "createdAt": "3/26/2024",
+    "updatedAt": "4/9/2024",
+    "createdAt": "4/9/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "R7Aa87WB4QiDUvVob7WEN",
+    "name": "Component",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {},
+          "componentId": "nIZk4yU_cflpppCkvsJOk",
+          "componentType": "20031",
+          "order": 1
+        }
+      ]
+    },
+    "layout": null,
+    "subType": "component",
+    "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "nIZk4yU_cflpppCkvsJOk",
+    "name": "SHOW_THAMEEN_REDEEM_POPUP",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+      "layoutProperties": {}
+    },
+    "component": { "type": "20031" },
+    "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "3DfSw41J2xFqDIAri3dIl",
+    "name": "Component",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {},
+          "componentId": "vrZACJjfyBdrmYP0hyJ3E",
+          "componentType": "20031",
+          "order": 1
+        }
+      ]
+    },
+    "layout": null,
+    "subType": "component",
+    "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "vrZACJjfyBdrmYP0hyJ3E",
+    "name": "SHOW_THAMEEN_REDEEM_ERROR_MODAL",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "pTwaLc9Zx4Vc6OnDc-8FJ",
+      "layoutProperties": {}
+    },
+    "component": { "type": "20031" },
+    "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "AIjNbEdZ454sOwhQwFFEe",
+    "name": "Component",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {},
+          "componentId": "u0y1rzfeNshMfFzWBEppW",
+          "componentType": "20031",
+          "order": 1
+        }
+      ]
+    },
+    "layout": null,
+    "subType": "component",
+    "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "u0y1rzfeNshMfFzWBEppW",
+    "name": "SHOW_THAMEEN_REDEEM_SUCCESS",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "R1cpFlk8pOd78j-dS1vd4",
+      "layoutProperties": {}
+    },
+    "component": { "type": "20031" },
+    "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3920,8 +4306,26 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "oa1PxUhQf9-7dSy8Be3tf",
-        "triggerName": "THAMEEN_GET_CASHBACK",
+        "triggerId": "z3R6sNygsOIUVvWhwD2m2",
+        "triggerName": "GET_CASHBACK_AVAILABLE_POINTS",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "Gl84jCOcyJk0PzzkU6w_s",
+        "triggerName": "CALCULATE_CASHBACK_AVAILABLE_BALANCE",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "bpT4QLm9_lHSsgEjwtE9m",
+        "triggerName": "GET_THAMEEN_CASHBACK_CARDS",
+        "name": "On initialization",
+        "type": "1"
+      },
+      {
+        "triggerId": "bx0aBS8bH5puNTzkfK5fn",
+        "triggerName": "CALCULATE_CASHBACK_MAX_LENGTH",
         "name": "On initialization",
         "type": "1"
       }
@@ -4794,10 +5198,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "CASHBACK.availablePoints",
+      "label": "AVAILABLE_POINTS",
       "format": "thousand seprator",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -5017,10 +5421,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "CASHBACK.availableCashback",
+      "label": "AVAILABLE_BALANCE",
       "format": "thousand seprator",
       "searchInState": true,
-      "storeType": 2,
+      "storeType": 1,
       "prefix": "BHD "
     },
     "icon": "FaFont",
@@ -5427,7 +5831,7 @@
         "listLayout": { "padding": "0px", "margin": "0px 12px 0px 0px" },
         "mainContainer": "listLayout"
       },
-      "dataSource": "CASHBACK.cards",
+      "dataSource": "CASHBACK_CARDS",
       "storeType": 2,
       "bindingKey": "SELECTED_CARD",
       "disableClick": {
@@ -5509,8 +5913,8 @@
           "cssClassName": "CASH_BACK_CARD_LIST_ACTIVE ",
           "logic": {
             "==": [
-              { "var": "lastFourDigits" },
-              { "var": "currentScreen.form.SELECTED_CARD.lastFourDigits" }
+              { "var": "cardLastNumber" },
+              { "var": "currentScreen.form.SELECTED_CARD.cardLastNumber" }
             ]
           }
         }
@@ -5815,7 +6219,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "lastFourDigits",
+      "label": "cardLastNumber",
       "searchInState": true,
       "storeType": 2
     },
@@ -5951,9 +6355,7 @@
       "stateName": null,
       "storeType": null,
       "useFullLink": null,
-      "hideCondition": {
-        "logic": { "==": [{ "var": "brandName" }, "mastercard"] }
-      }
+      "hideCondition": { "logic": { "==": [{ "var": "brandName" }, "VISA"] } }
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -6018,7 +6420,9 @@
       "stateName": null,
       "storeType": null,
       "useFullLink": null,
-      "hideCondition": { "logic": { "==": [{ "var": "brandName" }, "visa"] } }
+      "hideCondition": {
+        "logic": { "==": [{ "var": "brandName" }, "MASTERCARD"] }
+      }
     },
     "group": "Form",
     "updatedAt": "23-Aug-2021",
@@ -6274,7 +6678,8 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "hideCondition": {}
+      "hideCondition": {},
+      "hideComponent": true
     },
     "layout": null,
     "events": [
@@ -6810,14 +7215,15 @@
     "attributes": {
       "name": "Draggble Slider",
       "value": "5",
-      "min": "CASHBACK.minCash",
-      "max": "CASHBACK.maxCash",
+      "min": "SELECTED_CATELOG.minLimit",
+      "max": "MAX_LENGTH",
       "size": "small",
       "progressType": "circular",
       "searchSliderValueInState": true,
-      "storeTypeMinAndMax": 2,
+      "storeTypeMinAndMax": 1,
       "steps": "5",
-      "stateName": "amount"
+      "stateName": "amount",
+      "color": "#003973"
     },
     "icon": "RxSlider",
     "group": "Form",
@@ -6830,7 +7236,15 @@
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Draggable Slider", "type": "20061" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "-tiOqRGHMpCIb_vb6gS-s",
+        "triggerName": "CALCULATE_CASHBACK_AMOUNT_POINTS",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "11"
+      }
+    ],
     "path": "0-0-1-0-0-0-1-0-2-0-1-0-0",
     "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
     "subType": "component",
@@ -6962,10 +7376,10 @@
         "sm": 6,
         "xs": 6
       },
-      "label": "CASHBACK.minCash",
+      "label": "minLimit",
       "prefix": "BHD ",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -7009,10 +7423,10 @@
         "sm": 6,
         "xs": 6
       },
-      "label": "CASHBACK.maxCash",
+      "label": "MAX_LENGTH",
       "prefix": "BHD ",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -7267,8 +7681,10 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "1400",
-      "postfix": " points"
+      "label": "AMOUNT_POINTS",
+      "postfix": " points",
+      "searchInState": true,
+      "storeType": 1
     },
     "icon": "FaFont",
     "group": "Form",
@@ -7281,7 +7697,7 @@
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-5-0-0-0-0-0-1",
+    "path": "0-0-1-0-0-0-1-0-3-0-0-0-0-0-1",
     "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -7374,7 +7790,10 @@
       "onEnterKey": true,
       "disableCondition": {
         "logic": {
-          "if": [{ "var": "currentScreen.form.SELECTED_CARD" }, false, true]
+          "or": [
+            { "!": [{ "var": "currentScreen.form.AMOUNT_POINTS" }] },
+            { "!": [{ "var": "currentScreen.form.SELECTED_CARD" }] }
+          ]
         }
       },
       "cssDisableClassNames": [{ "cssClassName": "DISABLED_BUTTON " }]
@@ -7393,14 +7812,21 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "12c3fGL0QD9nLkGMcClTC",
-        "triggerName": "Swap To OTP Widget TRIGGER",
-        "name": "On Submit",
-        "type": "4",
-        "serviceType": "1"
+        "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+        "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "9"
+      },
+      {
+        "triggerId": "_Q9E8tZxywwypGwSd3NlP",
+        "triggerName": "CALCULATE_CASHBACK_REMAINING_POINTS",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
       }
     ],
-    "path": "0-0-1-0-0-0-1-0-3-0-0-1-0-0-0",
+    "path": "1-0-1-0-0-0-1-0-3-0-0-1-0-0-0",
     "screenId": "yV3Sc1XQJzqAwf2kAlKMu",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",

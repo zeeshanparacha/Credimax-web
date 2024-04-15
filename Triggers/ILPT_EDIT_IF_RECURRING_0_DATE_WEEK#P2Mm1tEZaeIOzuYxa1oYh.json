@@ -14,6 +14,46 @@
         "attributes": {
           "triggers": [
             {
+              "logic": {
+                "if": [
+                  {
+                    "!=": [
+                      {
+                        "var": "currentScreen.form.ilpt_selected_task.isRecurring"
+                      },
+                      "1"
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              },
+              "triggerName": "ILPT_EDIT_RECURRING_FREQUENCY_SAVE",
+              "triggerId": "ZZqY9plYPoJyUq4W0Iw06",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "ilpt_edit_frequency",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": { "var": "currentScreen.ilpt_frequency.0" }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            {
               "triggerName": "ILPT_EDIT_MONTHLY_CURRENT_DATE",
               "triggerId": "vHXZgM9xRxelszsFKLrqY",
               "services": [
@@ -37,11 +77,11 @@
               "logic": {
                 "if": [
                   {
-                    "==": [
+                    "!=": [
                       {
                         "var": "currentScreen.form.ilpt_selected_task.isRecurring"
                       },
-                      "1"
+                      "0"
                     ]
                   },
                   true,
@@ -82,62 +122,26 @@
               "logic": {
                 "if": [
                   {
-                    "==": [
+                    "!=": [
                       {
                         "var": "currentScreen.form.ilpt_selected_task.isRecurring"
                       },
-                      "1"
+                      "0"
                     ]
                   },
                   true,
                   false
                 ]
               }
-            },
-            {
-              "logic": {
-                "if": [
-                  {
-                    "==": [
-                      {
-                        "var": "currentScreen.form.ilpt_selected_task.isRecurring"
-                      },
-                      "1"
-                    ]
-                  },
-                  true,
-                  false
-                ]
-              },
-              "triggerName": "ILPT_EDIT_SAVE_FREQUENCY",
-              "triggerId": "8Ysr1d8zj_3AHqWtexTfQ",
-              "services": [
-                {
-                  "type": "11",
-                  "command": {
-                    "type": "6",
-                    "attributes": {
-                      "storeType": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "",
-                      "destinationBindingKey": "ilpt_edit_frequency.name",
-                      "sourceBindingKey": "ilpt_frequency.0.name",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 1,
-                      "targettedType": "value"
-                    }
-                  }
-                }
-              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.fwlbmygf7eqx7-uC_Mo3uNHbhM9n0rCu",
-  "updatedAt": "4/8/2024",
-  "createdAt": "4/8/2024",
+  "csrf": "0.avadwfm5qo9HUkEvIwNyG-Q9ZviE4diz",
+  "updatedAt": "4/9/2024",
+  "createdAt": "4/9/2024",
   "createdBy": "basitahmed1199",
   "updatedBy": "basitahmed1199"
 }

@@ -14,7 +14,7 @@
         "attributes": {
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
-          "responseStateKey": "THAMEEN_DONATION_REDEEM_RESPONSE",
+          "responseStateKey": "THAMEEN_REDEEM_RESPONSE",
           "url": "/api-designer/api/thameenRedeem/execute",
           "checksum": true,
           "encryption": true,
@@ -57,6 +57,18 @@
               "name": "Form",
               "key": "request.postRedemptions.sourceCode",
               "value": "SELECTED_CATELOG.sourceCode"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.postRedemptions.catalogId",
+              "value": "SELECTED_CATELOG.id"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.postRedemptions.catalogName",
+              "value": "SELECTED_CATELOG.name"
             }
           ],
           "baseURL": "656f0b4398e9df55f0499597",
@@ -71,15 +83,22 @@
           {
             "httpStatus": 200,
             "triggerName": "SHOW_THAMEEN_REDEEM_SUCCESS",
-            "triggerId": "cSpSoRJN9-NQ1Po3NBdxg"
+            "triggerId": "cSpSoRJN9-NQ1Po3NBdxg",
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "SHOW_THAMEEN_REDEEM_ERROR_MODAL",
+            "triggerId": "nOeg7xM9lyYwXZP_-vi_n",
+            "logic": { "==": [{ "var": "code" }, 0] }
           }
         ]
       }
     }
   ],
-  "csrf": "0.yf70y4l4i2aHiOpOPh49oLN8cp-SNDPt",
-  "updatedAt": "4/7/2024",
-  "createdAt": "4/7/2024",
+  "csrf": "0.25a2y9u672rIXw5H01i2G18MoIPW9izR",
+  "updatedAt": "4/9/2024",
+  "createdAt": "4/9/2024",
   "createdBy": "zeeshan",
   "updatedBy": "zeeshan"
 }

@@ -1,0 +1,201 @@
+{
+  "id": "SYxDwl7_YwkhXW3jDh7XO",
+  "gitBranchName": "master",
+  "name": "ILCG_NEW_GOAL_FIELDS_VALIDATIONS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "ILCG_NAME",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_NAME",
+              "isRequired": true,
+              "requiredMessage": "Goal name is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "ILCG_GOAL_AMOUNT",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+              "isRequired": true,
+              "requiredMessage": "Goal amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "ILCG_TARGET_DATE",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
+              "isRequired": true,
+              "requiredMessage": "Target date is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "ILC_FREQUENCY.name",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILC_FREQUENCY.name",
+              "isRequired": true,
+              "requiredMessage": "Contribution frequency is required ",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "ILCG_AMOUNT",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
+              "isRequired": true,
+              "requiredMessage": "Contribution amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "ILCG_START_DATE",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_START_DATE",
+              "isRequired": true,
+              "requiredMessage": "Start date is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            }
+          ],
+          "successTrigger": {
+            "id": "ut0p1yEMeQYIewGlEdNvq",
+            "_id": "OHv7niBiMvoWyfn3wj9l9",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILC_CREATE_NEW_GOALAS_API",
+            "old_name": "ILC_CREATE_NEW_GOALAS_API",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "8",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "loaderWidgetIds": [906070],
+                    "messageWidgetIds": [906070],
+                    "responseStateKey": "RESPONSE_CREATE_NEW_GOALS",
+                    "url": "/api-designer/api/createNewGoal/execute",
+                    "checksum": true,
+                    "encryption": true,
+                    "isDeviceDetails": true,
+                    "loginTrigger": false,
+                    "formData": false,
+                    "logoutTrigger": false,
+                    "headers": {
+                      "Content-Type": "application/json",
+                      "Accept": "application/json",
+                      "channel_key": "002"
+                    },
+                    "requestBody": [
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.name",
+                        "value": "ILCG_NAME"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.startDate",
+                        "value": "ILCG_START_DATE"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.amount",
+                        "value": "ILCG_GOAL_AMOUNT"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.targetDate",
+                        "value": "ILCG_TARGET_DATE"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.contributionFreq",
+                        "value": "ILC_FREQUENCY.name"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.contributionAmount",
+                        "value": "ILCG_AMOUNT"
+                      },
+                      {
+                        "type": 2,
+                        "name": "Current screen",
+                        "key": "request.cardNumber",
+                        "value": "CURRENT_CARD.cardNumber"
+                      },
+                      {
+                        "type": 2,
+                        "name": "Current screen",
+                        "key": "request.cprOfCard",
+                        "value": "CURRENT_CARD.clientCode"
+                      },
+                      {
+                        "type": 2,
+                        "name": "Current screen",
+                        "key": "request.image",
+                        "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
+                      }
+                    ],
+                    "baseURL": "656f0b4398e9df55f0499597",
+                    "storeType": 2
+                  },
+                  "responseHandler": [
+                    {
+                      "logic": { "==": [{ "var": "code" }, 1] },
+                      "httpStatus": 200,
+                      "triggerName": "ILCG_CREATE_GOAL_SUCCESS_MESSAGE",
+                      "triggerId": "SyIBo7HY40Z8JTC2MNAYJ"
+                    },
+                    {
+                      "logic": { "==": [{ "var": "code" }, 0] },
+                      "httpStatus": 200,
+                      "triggerName": "ILCG_CREATE_GOAL_ERROR_MESSAGE",
+                      "triggerId": "7ubebU8IrQBx0xn7fRnfZ"
+                    },
+                    {
+                      "triggerName": "ILCG_NAVIGATE_TO_ILC_CHILD_GOALS_AFTER_DELAY",
+                      "triggerId": "jbmm-eHgh97VV-0SST6GN",
+                      "logic": { "==": [{ "var": "code" }, 1] },
+                      "httpStatus": 200
+                    }
+                  ]
+                }
+              }
+            ],
+            "csrf": "0.41hskwbvoipt_Ja7fMLrFhHvcqe4xw5K",
+            "updatedAt": "4/2/2024",
+            "createdAt": "4/2/2024",
+            "createdBy": "mubashar",
+            "updatedBy": "mubashar"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.smph0td1pt6t-fLz-0OatJazCsQfa0j",
+  "_id": "T8C5vrsnBcgQl7I8UmRNV",
+  "updatedAt": "4/8/2024",
+  "createdAt": "4/8/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}
