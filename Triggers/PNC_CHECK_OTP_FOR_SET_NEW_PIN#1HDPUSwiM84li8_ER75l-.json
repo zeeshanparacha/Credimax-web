@@ -1,0 +1,196 @@
+{
+  "_id": "1HDPUSwiM84li8_ER75l-",
+  "id": "VZvWU6KcsSjoSuUbD-eqB",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PNC_CHECK_OTP_FOR_SET_NEW_PIN",
+  "old_name": "PNC_CHECK_OTP_FOR_SET_NEW_PIN",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "SET_NEW_PIN_CHANGE",
+              "triggerId": "P_n3FFyCYc_SsVSPXQoKV",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "newPinChangeResponse",
+                      "url": "/card/v1/setCardPin",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "validation",
+                          "value": "validation"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "oldPin",
+                          "value": "oldPin"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "newPin",
+                          "value": "pinChange"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "NAVIGATE_FROM_PIN_CHANGE_02_TO_PIN_CHANGE_01",
+                        "triggerId": "jaUgFTBaG279C28s34NyU",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      },
+                      {
+                        "triggerName": "CHANGE_PIN_ERROR_TOAST",
+                        "triggerId": "JUP3Ff16w5q_dQkhuVtEy",
+                        "httpStatus": 200,
+                        "logic": { "==": [{ "var": "code" }, 0] }
+                      },
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "PNC_CLEAR_OLD_PIN_STATE",
+                        "triggerId": "Xfl-2Tej3gl9s_taumVw8",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "triggerName": "SET_NEW_PIN_CHANGE_WITHOUT_VALIDATION",
+              "triggerId": "Shz45HV_YTvaYTaLulf0a",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "newPinChangeResponse",
+                      "url": "/card/v1/setCardPin",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "oldPin",
+                          "value": "oldPin"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "newPin",
+                          "value": "pinChange"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "NAVIGATE_FROM_PIN_CHANGE_02_TO_PIN_CHANGE_01",
+                        "triggerId": "jaUgFTBaG279C28s34NyU",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      },
+                      {
+                        "triggerName": "CHANGE_PIN_ERROR_TOAST",
+                        "triggerId": "JUP3Ff16w5q_dQkhuVtEy",
+                        "httpStatus": 200,
+                        "logic": { "==": [{ "var": "code" }, 0] }
+                      },
+                      {
+                        "httpStatus": 200,
+                        "triggerName": "PNC_CLEAR_OLD_PIN_STATE",
+                        "triggerId": "Xfl-2Tej3gl9s_taumVw8",
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.ttcc7ejbw9fr6qQtaGUxj8J2uEJguP4",
+  "updatedAt": "4/21/2024",
+  "createdAt": "4/21/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

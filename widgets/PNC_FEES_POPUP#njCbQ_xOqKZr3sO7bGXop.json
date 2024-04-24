@@ -30,6 +30,22 @@
             "id": "XgeZD05kl08W4aw5k8E1t",
             "gridProps": [
               {
+                "id": "UpfjUwVV6CYDo-mChIhW5",
+                "type": "20031",
+                "name": "PNC_CHECK_OTP_FOR_GENERATE_PIN",
+                "attributes": {
+                  "widgetId": "XSeSXJ0e0lM_rmzn5RYuy",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
                 "type": "10001",
                 "id": "2QN-WcmQS_yQ51sy8KL-Y",
                 "gridProps": [
@@ -812,15 +828,296 @@
                                         },
                                         "events": [
                                           {
-                                            "triggerId": "6aPO7FgRMz5T2KJELg3fu",
-                                            "triggerName": "RANDOM_PIN_GENERATE_MODAL",
-                                            "serviceType": "9",
+                                            "triggerId": "BD_i9J8PO6BcuBQ4yNeZh",
+                                            "triggerName": "PNC_CHECK_OTP_FOR_GENERATE_PIN",
+                                            "serviceType": "13",
                                             "attributes": {
-                                              "widgetId": "XSeSXJ0e0lM_rmzn5RYuy",
-                                              "content": "",
-                                              "type": "",
-                                              "modalId": "UpfjUwVV6CYDo-mChIhW5",
-                                              "toastContentType": "custom"
+                                              "triggers": [
+                                                {
+                                                  "triggerName": "RANDOM_PIN_GENERATE_MODAL",
+                                                  "triggerId": "6aPO7FgRMz5T2KJELg3fu",
+                                                  "services": [
+                                                    {
+                                                      "type": "9",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "widgetId": "XSeSXJ0e0lM_rmzn5RYuy",
+                                                          "content": "",
+                                                          "type": "",
+                                                          "modalId": "UpfjUwVV6CYDo-mChIhW5",
+                                                          "toastContentType": "custom"
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "logic": {
+                                                    "if": [
+                                                      {
+                                                        "==": [
+                                                          {
+                                                            "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                                                          },
+                                                          1
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                },
+                                                {
+                                                  "triggerName": "RANDOM_PIN_GENERATE_OTP_SEQUENTIONAL",
+                                                  "triggerId": "BOu-ykvEszb7g91IJO4a6",
+                                                  "services": [
+                                                    {
+                                                      "type": "2",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "delay": "",
+                                                          "triggers": [
+                                                            {
+                                                              "id": "t2Nv3Et0WeTNkBPvBOvrE",
+                                                              "_id": "wbQP-Fp696z4hT5xssq27",
+                                                              "name": "Validation Values Mapping",
+                                                              "old_name": "Validation Values Mapping",
+                                                              "projectId": "652fcbce09869c3c809b3097",
+                                                              "gitBranchName": "master",
+                                                              "services": [
+                                                                {
+                                                                  "type": "11",
+                                                                  "command": {
+                                                                    "type": "6",
+                                                                    "attributes": {
+                                                                      "requestBody": [],
+                                                                      "storeType": "",
+                                                                      "selectedObjectBindingKey": "selectedObject",
+                                                                      "dataType": "",
+                                                                      "destinationBindingKey": "validation",
+                                                                      "sourceBindingKey": "validation",
+                                                                      "sourceStoreType": 2,
+                                                                      "destinationStoreType": 2,
+                                                                      "filterList": [
+                                                                        {
+                                                                          "key": "tranCode",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "var": "currentScreen.tranCode"
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "changeValueConditonally": true,
+                                                                          "key": "validationType",
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              "OTP",
+                                                                              "OTP"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "key": "isOtp",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              true,
+                                                                              true
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "key": "splitOtp",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              true,
+                                                                              true
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "key": "generationType",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              "2",
+                                                                              "2"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "key": "otpExpiry",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              "4",
+                                                                              "4"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "key": "is2FA",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "if": [
+                                                                              true,
+                                                                              "1",
+                                                                              "1"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "var": "currentScreen.form.smsPin"
+                                                                          },
+                                                                          "key": "smsPin"
+                                                                        },
+                                                                        {
+                                                                          "key": "emailPin",
+                                                                          "changeValueConditonally": true,
+                                                                          "logic": {
+                                                                            "var": "currentScreen.form.smsPin"
+                                                                          }
+                                                                        }
+                                                                      ],
+                                                                      "targettedType": "object"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              ],
+                                                              "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+                                                              "updatedAt": "11/29/2023",
+                                                              "createdAt": "11/29/2023",
+                                                              "createdBy": "muhammad.asad",
+                                                              "updatedBy": "muhammad.asad"
+                                                            },
+                                                            {
+                                                              "id": "DYs1RqKfG4mjSZpn57c__",
+                                                              "projectId": "652fcbce09869c3c809b3097",
+                                                              "gitBranchName": "master",
+                                                              "name": "RANDOM_PIN_GENERATE_OTP",
+                                                              "status": "ACTIVE",
+                                                              "services": [
+                                                                {
+                                                                  "type": "8",
+                                                                  "command": {
+                                                                    "type": "1",
+                                                                    "attributes": {
+                                                                      "loaderWidgetIds": [
+                                                                        906070
+                                                                      ],
+                                                                      "messageWidgetIds": [
+                                                                        906070
+                                                                      ],
+                                                                      "responseStateKey": "randomPinGenerateOTP",
+                                                                      "url": "/card/v1/generateTempPinRequest",
+                                                                      "checksum": true,
+                                                                      "encryption": true,
+                                                                      "isDeviceDetails": false,
+                                                                      "loginTrigger": false,
+                                                                      "formData": false,
+                                                                      "logoutTrigger": false,
+                                                                      "headers": {
+                                                                        "Content-Type": "application/json",
+                                                                        "channel_key": "002"
+                                                                      },
+                                                                      "requestBody": [
+                                                                        {
+                                                                          "type": 2,
+                                                                          "name": "Current screen",
+                                                                          "key": "cardNumber",
+                                                                          "value": "CURRENT_CARD.cardNumber"
+                                                                        },
+                                                                        {
+                                                                          "type": 2,
+                                                                          "name": "Current screen",
+                                                                          "key": "validation",
+                                                                          "value": "validation"
+                                                                        }
+                                                                      ],
+                                                                      "baseURL": "656f0b4398e9df55f0499597",
+                                                                      "storeType": 2
+                                                                    },
+                                                                    "responseHandler": [
+                                                                      {
+                                                                        "triggerName": "RANDOM_PIN_CHANGE_OTP_SUCCESS_TOAST",
+                                                                        "triggerId": "f6gGGkbNn_ZYBu-kQ0ySh",
+                                                                        "httpStatus": 200,
+                                                                        "logic": {
+                                                                          ">": [
+                                                                            {
+                                                                              "var": "currentScreen.randomPinGenerateOTP.message.length"
+                                                                            },
+                                                                            0
+                                                                          ]
+                                                                        }
+                                                                      }
+                                                                    ]
+                                                                  }
+                                                                }
+                                                              ],
+                                                              "csrf": "0.saimpwfdgqrGyyOoxdrYHL6_zxtyQZ7z",
+                                                              "_id": "E16SM3eH2V-qcpYblCyeu",
+                                                              "updatedAt": "1/27/2024",
+                                                              "createdAt": "1/27/2024",
+                                                              "createdBy": "basitahmed1199",
+                                                              "updatedBy": "basitahmed1199"
+                                                            },
+                                                            {
+                                                              "id": "WuhHxg90Z2anPz7DGsIrC",
+                                                              "gitBranchName": "master",
+                                                              "name": "Close Modal",
+                                                              "projectId": "652fcbce09869c3c809b3097",
+                                                              "services": [
+                                                                {
+                                                                  "type": "9",
+                                                                  "command": {
+                                                                    "type": "2",
+                                                                    "attributes": {
+                                                                      "content": "",
+                                                                      "type": "",
+                                                                      "modalId": "ozKeLAA5SQp3bjJ9kCQQg",
+                                                                      "toastContentType": "custom"
+                                                                    }
+                                                                  }
+                                                                }
+                                                              ],
+                                                              "csrf": "0.jatauflq6m9OLTNIXxnsSIPkevvmnHOc",
+                                                              "_id": "i77CygKtRPbsSR6rKkIva",
+                                                              "updatedAt": "1/11/2024",
+                                                              "createdAt": "1/11/2024",
+                                                              "createdBy": "talha",
+                                                              "updatedBy": "talha"
+                                                            }
+                                                          ],
+                                                          "triggerIds": [
+                                                            "t2Nv3Et0WeTNkBPvBOvrE",
+                                                            "DYs1RqKfG4mjSZpn57c__",
+                                                            "WuhHxg90Z2anPz7DGsIrC"
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  ],
+                                                  "logic": {
+                                                    "if": [
+                                                      {
+                                                        "==": [
+                                                          {
+                                                            "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                                                          },
+                                                          0
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                }
+                                              ]
                                             },
                                             "type": "2",
                                             "name": "On click",
@@ -1043,8 +1340,8 @@
     "gitBranchName": "master",
     "_id": "njCbQ_xOqKZr3sO7bGXop",
     "createdBy": "basitahmed1199",
-    "updatedAt": "2/18/2024",
-    "createdAt": "2/18/2024",
+    "updatedAt": "4/21/2024",
+    "createdAt": "4/21/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1053,6 +1350,18 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "UpfjUwVV6CYDo-mChIhW5",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "componentId": "2QN-WcmQS_yQ51sy8KL-Y",
           "componentType": "10001",
@@ -1094,6 +1403,22 @@
     "events": [],
     "subType": "component",
     "screenId": "njCbQ_xOqKZr3sO7bGXop",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "UpfjUwVV6CYDo-mChIhW5",
+    "type": "20031",
+    "name": "PNC_CHECK_OTP_FOR_GENERATE_PIN",
+    "attributes": {
+      "widgetId": "XSeSXJ0e0lM_rmzn5RYuy",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "njCbQ_xOqKZr3sO7bGXop",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
@@ -1984,11 +2309,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "6aPO7FgRMz5T2KJELg3fu",
-        "triggerName": "RANDOM_PIN_GENERATE_MODAL",
+        "triggerId": "BD_i9J8PO6BcuBQ4yNeZh",
+        "triggerName": "PNC_CHECK_OTP_FOR_GENERATE_PIN",
         "name": "On click",
         "type": "2",
-        "serviceType": "9"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-0-0-3-1-0-0-0",

@@ -850,7 +850,7 @@
                                                           "width": "56",
                                                           "height": "64",
                                                           "isOtpExpiry": false,
-                                                          "otpErrorBindingKey": "bbk_validate_otp_res.message",
+                                                          "otpErrorBindingKey": "bbk_connect_to_bbk_error",
                                                           "otpTime": "4"
                                                         },
                                                         "version": "1.0.0",
@@ -860,7 +860,30 @@
                                                           "content": "OTP",
                                                           "type": "20052"
                                                         },
-                                                        "events": [],
+                                                        "events": [
+                                                          {
+                                                            "triggerId": "N2tVLg_lSWpmSZ-Ewnsz0",
+                                                            "triggerName": "BBK_CLEAR_OTP_MSG",
+                                                            "serviceType": "11",
+                                                            "attributes": {
+                                                              "storeType": "",
+                                                              "selectedObjectBindingKey": "selectedObject",
+                                                              "dataType": "",
+                                                              "sourceBindingKey": "",
+                                                              "filterList": [
+                                                                {
+                                                                  "key": "bbk_validate_otp_res.message",
+                                                                  "changeValueConditonally": false,
+                                                                  "storeType": 2,
+                                                                  "logic": null
+                                                                }
+                                                              ]
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "15"
+                                                          }
+                                                        ],
                                                         "path": "0-0-0-0-0-0-0-0-0-0-3-0-0"
                                                       }
                                                     ],
@@ -1064,9 +1087,8 @@
                                                     "sm": 12,
                                                     "xs": 12
                                                   },
-                                                  "label": "userProfile.content.customer.mobileNumber",
-                                                  "prefix": "We sent a 6-digit code to ",
-                                                  "searchInState": true,
+                                                  "label": "We sent a 6 digits code to you registered number at BBK",
+                                                  "searchInState": false,
                                                   "storeType": 3
                                                 },
                                                 "icon": "FaFont",
@@ -1719,9 +1741,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "KWFtuv2_hC1GxqvhxMW7W",
-    "createdBy": "mubashar",
-    "updatedAt": "3/13/2024",
-    "createdAt": "3/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "4/16/2024",
+    "createdAt": "4/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2595,14 +2617,22 @@
       "width": "56",
       "height": "64",
       "isOtpExpiry": false,
-      "otpErrorBindingKey": "bbk_validate_otp_res.message",
+      "otpErrorBindingKey": "bbk_connect_to_bbk_error",
       "otpTime": "4"
     },
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "OTP", "type": "20052" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "N2tVLg_lSWpmSZ-Ewnsz0",
+        "triggerName": "BBK_CLEAR_OTP_MSG",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      }
+    ],
     "path": "0-0-0-0-0-0-0-0-0-0-3-0-0",
     "screenId": "KWFtuv2_hC1GxqvhxMW7W",
     "subType": "component",
@@ -2735,9 +2765,8 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "userProfile.content.customer.mobileNumber",
-      "prefix": "We sent a 6-digit code to ",
-      "searchInState": true,
+      "label": "We sent a 6 digits code to you registered number at BBK",
+      "searchInState": false,
       "storeType": 3
     },
     "icon": "FaFont",

@@ -756,10 +756,10 @@
                                                                         {
                                                                           "!=": [
                                                                             {
-                                                                              "var": "form.pinChange"
+                                                                              "var": "currentScreen.form.pinChange"
                                                                             },
                                                                             {
-                                                                              "var": "form.pinConfirm"
+                                                                              "var": "currentScreen.form.pinConfirm"
                                                                             }
                                                                           ]
                                                                         },
@@ -1033,10 +1033,10 @@
                                                                         {
                                                                           "!=": [
                                                                             {
-                                                                              "var": "form.pinChange"
+                                                                              "var": "currentScreen.form.pinChange"
                                                                             },
                                                                             {
-                                                                              "var": "form.pinConfirm"
+                                                                              "var": "currentScreen.form.pinConfirm"
                                                                             }
                                                                           ]
                                                                         },
@@ -1980,59 +1980,235 @@
                                                         },
                                                         "events": [
                                                           {
-                                                            "triggerId": "P_n3FFyCYc_SsVSPXQoKV",
-                                                            "triggerName": "SET_NEW_PIN_CHANGE",
-                                                            "serviceType": "8",
+                                                            "triggerId": "VZvWU6KcsSjoSuUbD-eqB",
+                                                            "triggerName": "PNC_CHECK_OTP_FOR_SET_NEW_PIN",
+                                                            "serviceType": "13",
                                                             "attributes": {
-                                                              "loaderWidgetIds": [
-                                                                906070
-                                                              ],
-                                                              "messageWidgetIds": [
-                                                                906070
-                                                              ],
-                                                              "responseStateKey": "newPinChangeResponse",
-                                                              "url": "/card/v1/setCardPin",
-                                                              "checksum": true,
-                                                              "encryption": true,
-                                                              "isDeviceDetails": false,
-                                                              "loginTrigger": false,
-                                                              "formData": false,
-                                                              "logoutTrigger": false,
-                                                              "headers": {
-                                                                "Content-Type": "application/json",
-                                                                "channel_key": "002"
-                                                              },
-                                                              "requestBody": [
+                                                              "triggers": [
                                                                 {
-                                                                  "type": 2,
-                                                                  "name": "Current screen",
-                                                                  "key": "cardNumber",
-                                                                  "value": "CURRENT_CARD.cardNumber"
+                                                                  "triggerName": "SET_NEW_PIN_CHANGE",
+                                                                  "triggerId": "P_n3FFyCYc_SsVSPXQoKV",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "8",
+                                                                      "command": {
+                                                                        "type": "1",
+                                                                        "attributes": {
+                                                                          "loaderWidgetIds": [
+                                                                            906070
+                                                                          ],
+                                                                          "messageWidgetIds": [
+                                                                            906070
+                                                                          ],
+                                                                          "responseStateKey": "newPinChangeResponse",
+                                                                          "url": "/card/v1/setCardPin",
+                                                                          "checksum": true,
+                                                                          "encryption": true,
+                                                                          "isDeviceDetails": false,
+                                                                          "loginTrigger": false,
+                                                                          "formData": false,
+                                                                          "logoutTrigger": false,
+                                                                          "headers": {
+                                                                            "Content-Type": "application/json",
+                                                                            "channel_key": "002"
+                                                                          },
+                                                                          "requestBody": [
+                                                                            {
+                                                                              "type": 2,
+                                                                              "name": "Current screen",
+                                                                              "key": "cardNumber",
+                                                                              "value": "CURRENT_CARD.cardNumber"
+                                                                            },
+                                                                            {
+                                                                              "type": 2,
+                                                                              "name": "Current screen",
+                                                                              "key": "validation",
+                                                                              "value": "validation"
+                                                                            },
+                                                                            {
+                                                                              "type": 1,
+                                                                              "name": "Form",
+                                                                              "key": "oldPin",
+                                                                              "value": "oldPin"
+                                                                            },
+                                                                            {
+                                                                              "type": 1,
+                                                                              "name": "Form",
+                                                                              "key": "newPin",
+                                                                              "value": "pinChange"
+                                                                            }
+                                                                          ],
+                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                          "storeType": 2
+                                                                        },
+                                                                        "responseHandler": [
+                                                                          {
+                                                                            "httpStatus": 200,
+                                                                            "triggerName": "NAVIGATE_FROM_PIN_CHANGE_02_TO_PIN_CHANGE_01",
+                                                                            "triggerId": "jaUgFTBaG279C28s34NyU",
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "code"
+                                                                                },
+                                                                                1
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          {
+                                                                            "triggerName": "CHANGE_PIN_ERROR_TOAST",
+                                                                            "triggerId": "JUP3Ff16w5q_dQkhuVtEy",
+                                                                            "httpStatus": 200,
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "code"
+                                                                                },
+                                                                                0
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          {
+                                                                            "httpStatus": 200,
+                                                                            "triggerName": "PNC_CLEAR_OLD_PIN_STATE",
+                                                                            "triggerId": "Xfl-2Tej3gl9s_taumVw8",
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "code"
+                                                                                },
+                                                                                1
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "logic": {
+                                                                    "if": [
+                                                                      {
+                                                                        "==": [
+                                                                          {
+                                                                            "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                                                                          },
+                                                                          1
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
                                                                 },
                                                                 {
-                                                                  "type": 2,
-                                                                  "name": "Current screen",
-                                                                  "key": "validation",
-                                                                  "value": "validation"
-                                                                },
-                                                                {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "oldPin",
-                                                                  "value": "oldPin"
-                                                                },
-                                                                {
-                                                                  "type": 1,
-                                                                  "name": "Form",
-                                                                  "key": "newPin",
-                                                                  "value": "pinChange"
+                                                                  "triggerName": "SET_NEW_PIN_CHANGE_WITHOUT_VALIDATION",
+                                                                  "triggerId": "Shz45HV_YTvaYTaLulf0a",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "8",
+                                                                      "command": {
+                                                                        "type": "1",
+                                                                        "attributes": {
+                                                                          "loaderWidgetIds": [
+                                                                            906070
+                                                                          ],
+                                                                          "messageWidgetIds": [
+                                                                            906070
+                                                                          ],
+                                                                          "responseStateKey": "newPinChangeResponse",
+                                                                          "url": "/card/v1/setCardPin",
+                                                                          "checksum": true,
+                                                                          "encryption": true,
+                                                                          "isDeviceDetails": false,
+                                                                          "loginTrigger": false,
+                                                                          "formData": false,
+                                                                          "logoutTrigger": false,
+                                                                          "headers": {
+                                                                            "Content-Type": "application/json",
+                                                                            "channel_key": "002"
+                                                                          },
+                                                                          "requestBody": [
+                                                                            {
+                                                                              "type": 2,
+                                                                              "name": "Current screen",
+                                                                              "key": "cardNumber",
+                                                                              "value": "CURRENT_CARD.cardNumber"
+                                                                            },
+                                                                            {
+                                                                              "type": 1,
+                                                                              "name": "Form",
+                                                                              "key": "oldPin",
+                                                                              "value": "oldPin"
+                                                                            },
+                                                                            {
+                                                                              "type": 1,
+                                                                              "name": "Form",
+                                                                              "key": "newPin",
+                                                                              "value": "pinChange"
+                                                                            }
+                                                                          ],
+                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                          "storeType": 2
+                                                                        },
+                                                                        "responseHandler": [
+                                                                          {
+                                                                            "httpStatus": 200,
+                                                                            "triggerName": "NAVIGATE_FROM_PIN_CHANGE_02_TO_PIN_CHANGE_01",
+                                                                            "triggerId": "jaUgFTBaG279C28s34NyU",
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "code"
+                                                                                },
+                                                                                1
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          {
+                                                                            "triggerName": "CHANGE_PIN_ERROR_TOAST",
+                                                                            "triggerId": "JUP3Ff16w5q_dQkhuVtEy",
+                                                                            "httpStatus": 200,
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "code"
+                                                                                },
+                                                                                0
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          {
+                                                                            "httpStatus": 200,
+                                                                            "triggerName": "PNC_CLEAR_OLD_PIN_STATE",
+                                                                            "triggerId": "Xfl-2Tej3gl9s_taumVw8",
+                                                                            "logic": {
+                                                                              "==": [
+                                                                                {
+                                                                                  "var": "code"
+                                                                                },
+                                                                                1
+                                                                              ]
+                                                                            }
+                                                                          }
+                                                                        ]
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "logic": {
+                                                                    "if": [
+                                                                      {
+                                                                        "==": [
+                                                                          {
+                                                                            "var": "currentScreen.pncCheckOTP.content.otpRequired"
+                                                                          },
+                                                                          0
+                                                                        ]
+                                                                      }
+                                                                    ]
+                                                                  }
                                                                 }
-                                                              ],
-                                                              "baseURL": "656f0b4398e9df55f0499597",
-                                                              "storeType": 2
+                                                              ]
                                                             },
-                                                            "type": "4",
-                                                            "name": "On Submit",
+                                                            "type": "2",
+                                                            "name": "On click",
                                                             "commandType": "1"
                                                           }
                                                         ],
@@ -2352,8 +2528,8 @@
     "gitBranchName": "master",
     "_id": "8WcofbPwBketq5CZeJghf",
     "createdBy": "basitahmed1199",
-    "updatedAt": "3/26/2024",
-    "createdAt": "3/26/2024",
+    "updatedAt": "4/22/2024",
+    "createdAt": "4/22/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3374,7 +3550,10 @@
         "logic": {
           "if": [
             {
-              "!=": [{ "var": "form.pinChange" }, { "var": "form.pinConfirm" }]
+              "!=": [
+                { "var": "currentScreen.form.pinChange" },
+                { "var": "currentScreen.form.pinConfirm" }
+              ]
             },
             true,
             false
@@ -3622,7 +3801,10 @@
         "logic": {
           "if": [
             {
-              "!=": [{ "var": "form.pinChange" }, { "var": "form.pinConfirm" }]
+              "!=": [
+                { "var": "currentScreen.form.pinChange" },
+                { "var": "currentScreen.form.pinConfirm" }
+              ]
             },
             true,
             false
@@ -4250,11 +4432,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "P_n3FFyCYc_SsVSPXQoKV",
-        "triggerName": "SET_NEW_PIN_CHANGE",
-        "name": "On Submit",
-        "type": "4",
-        "serviceType": "8"
+        "triggerId": "VZvWU6KcsSjoSuUbD-eqB",
+        "triggerName": "PNC_CHECK_OTP_FOR_SET_NEW_PIN",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "13"
       }
     ],
     "path": "1-0-1-0-0-0-1-5-0-0-1-0-0",

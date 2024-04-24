@@ -474,7 +474,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "3FIDkbh_NiqXj8WxnUMnZ",
+            "id": "DJmsJMsupeRZeTfNNTgDI",
             "gridProps": [
               {
                 "id": "3WI5u8ga4ikq4k2JCP2xh",
@@ -1300,7 +1300,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "nPHsrULsG8nQySOD2MV2H",
+                                            "id": "K0d_6_67N_GrFzs7HVMfC",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -1309,7 +1309,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "oi_joj3e2Jzz0lcSaEo4m",
+                                                    "id": "S1S7ZRfJ_-psy0ROSph37",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -1348,7 +1348,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "cardType",
+                                                                          "label": "cardDisplayName",
                                                                           "searchInState": true,
                                                                           "storeType": 2,
                                                                           "cssClassNames": [
@@ -2030,9 +2030,11 @@
                                                           {
                                                             "==": [
                                                               {
-                                                                "var": "currentScreen.current_goal.id"
+                                                                "var": "currentScreen.form.current_card.cardNumber"
                                                               },
-                                                              { "var": "id" }
+                                                              {
+                                                                "var": "cardNumber"
+                                                              }
                                                             ]
                                                           },
                                                           true,
@@ -2043,7 +2045,8 @@
                                                   ],
                                                   "cssClassNames": [
                                                     {
-                                                      "cssClassName": "CARD_LIST_CARD_MAIN "
+                                                      "cssClassName": "CARD_LIST_CARD_MAIN ",
+                                                      "key": "CARD_LIST_CARD_MAIN "
                                                     }
                                                   ]
                                                 },
@@ -2090,7 +2093,7 @@
                                           "storeType": 2,
                                           "dataSource": "cards.cardList",
                                           "bindingKey": "current_card",
-                                          "bindingKeyStoreType": 2
+                                          "bindingKeyStoreType": 1
                                         },
                                         "events": [],
                                         "component": {
@@ -5217,20 +5220,7 @@
                                                                                             }
                                                                                           ],
                                                                                           "disableCondition": {
-                                                                                            "logic": {
-                                                                                              "if": [
-                                                                                                {
-                                                                                                  "==": [
-                                                                                                    {
-                                                                                                      "var": "currentScreen.selectedAmountType"
-                                                                                                    },
-                                                                                                    "D"
-                                                                                                  ]
-                                                                                                },
-                                                                                                false,
-                                                                                                true
-                                                                                              ]
-                                                                                            }
+                                                                                            "logic": false
                                                                                           },
                                                                                           "decimalPlaces": "3"
                                                                                         },
@@ -5785,6 +5775,31 @@
                                                                                             },
                                                                                             "type": "7",
                                                                                             "name": "On enter key press"
+                                                                                          },
+                                                                                          {
+                                                                                            "triggerId": "73LHP4Q3JPB023AUQwPPW",
+                                                                                            "triggerName": "PC_SELECT_CUSTOM_AMOUNT",
+                                                                                            "serviceType": "11",
+                                                                                            "attributes": {
+                                                                                              "storeType": "",
+                                                                                              "selectedObjectBindingKey": "selectedObject",
+                                                                                              "dataType": "value",
+                                                                                              "destinationBindingKey": "selectedAmountType",
+                                                                                              "sourceBindingKey": "form",
+                                                                                              "sourceStoreType": 2,
+                                                                                              "destinationStoreType": 2,
+                                                                                              "logic": {
+                                                                                                "if": [
+                                                                                                  true,
+                                                                                                  "D",
+                                                                                                  "D"
+                                                                                                ]
+                                                                                              },
+                                                                                              "changeValueConditonally": true,
+                                                                                              "targettedType": "value"
+                                                                                            },
+                                                                                            "type": "2",
+                                                                                            "name": "On click"
                                                                                           }
                                                                                         ],
                                                                                         "path": "3-0-2-0-0-0-1-0-0-0-1-0-1-1-0-0-0-2-0-0-0"
@@ -5842,7 +5857,7 @@
                                                                             }
                                                                           }
                                                                         ],
-                                                                        "path": "0-0-1-0-0-0-1-0-0-0-1-0-1-1-0-0-0",
+                                                                        "path": "3-0-2-0-0-0-1-0-0-0-1-0-1-1-0-0-0",
                                                                         "events": [
                                                                           {
                                                                             "triggerId": "73LHP4Q3JPB023AUQwPPW",
@@ -11175,7 +11190,7 @@
                                                                                           "name": "Text box",
                                                                                           "label-locale-key": "",
                                                                                           "maxLength": "16",
-                                                                                          "type": "number",
+                                                                                          "type": "amount_only",
                                                                                           "variant": "standard",
                                                                                           "value": "",
                                                                                           "readOnly": false,
@@ -11760,7 +11775,7 @@
                                                                                           "name": "Text box",
                                                                                           "label-locale-key": "",
                                                                                           "maxLength": "15",
-                                                                                          "type": "number",
+                                                                                          "type": "amount_only",
                                                                                           "variant": "standard",
                                                                                           "value": "",
                                                                                           "readOnly": false,
@@ -16939,8 +16954,8 @@
     "gitBranchName": "master",
     "_id": "_IlGsB-95yo7FYr3ysZwT",
     "createdBy": "talha",
-    "updatedAt": "3/31/2024",
-    "createdAt": "3/31/2024",
+    "updatedAt": "4/24/2024",
+    "createdAt": "4/24/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18029,7 +18044,7 @@
       "storeType": 2,
       "dataSource": "cards.cardList",
       "bindingKey": "current_card",
-      "bindingKeyStoreType": 2
+      "bindingKeyStoreType": 1
     },
     "layout": null,
     "events": [],
@@ -18100,8 +18115,8 @@
             "if": [
               {
                 "==": [
-                  { "var": "currentScreen.current_goal.id" },
-                  { "var": "id" }
+                  { "var": "currentScreen.form.current_card.cardNumber" },
+                  { "var": "cardNumber" }
                 ]
               },
               true,
@@ -18110,7 +18125,12 @@
           }
         }
       ],
-      "cssClassNames": [{ "cssClassName": "CARD_LIST_CARD_MAIN " }]
+      "cssClassNames": [
+        {
+          "cssClassName": "CARD_LIST_CARD_MAIN ",
+          "key": "CARD_LIST_CARD_MAIN "
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -18254,7 +18274,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "cardType",
+      "label": "cardDisplayName",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "CARD_LIST_CARD_TYPE " }],
@@ -21537,15 +21557,7 @@
       "placeholder": "BHD 0.000",
       "stateName": "pc_custom_amount_2",
       "cssClassNames": [{ "cssClassName": "PC_RADIO_TEXTBOX " }],
-      "disableCondition": {
-        "logic": {
-          "if": [
-            { "==": [{ "var": "currentScreen.selectedAmountType" }, "D"] },
-            false,
-            true
-          ]
-        }
-      },
+      "disableCondition": { "logic": false },
       "decimalPlaces": "3"
     },
     "icon": "FaWindowMinimize",
@@ -21566,6 +21578,13 @@
         "name": "On enter key press",
         "type": "7",
         "serviceType": "13"
+      },
+      {
+        "triggerId": "73LHP4Q3JPB023AUQwPPW",
+        "triggerName": "PC_SELECT_CUSTOM_AMOUNT",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
       }
     ],
     "path": "3-0-2-0-0-0-1-0-0-0-1-0-1-1-0-0-0-2-0-0-0",
@@ -25445,7 +25464,7 @@
       "name": "Text box",
       "label-locale-key": "",
       "maxLength": "16",
-      "type": "number",
+      "type": "amount_only",
       "variant": "standard",
       "value": "",
       "readOnly": false,
@@ -25855,7 +25874,7 @@
       "name": "Text box",
       "label-locale-key": "",
       "maxLength": "15",
-      "type": "number",
+      "type": "amount_only",
       "variant": "standard",
       "value": "",
       "readOnly": false,
