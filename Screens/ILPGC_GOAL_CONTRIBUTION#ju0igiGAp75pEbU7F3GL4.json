@@ -3442,7 +3442,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "BuIH1-lx2wS-g58qYZSJv",
+                                                                    "id": "Wa87fYEuD_dFC8qlDnha6",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -3889,7 +3889,7 @@
                                                                                                 "gridProps": [
                                                                                                   {
                                                                                                     "type": "column",
-                                                                                                    "id": "vSdOFrqLG0ABYLzzmtair",
+                                                                                                    "id": "Qzvyujj0Ks6W-8JZTSh1l",
                                                                                                     "gridProps": [
                                                                                                       {
                                                                                                         "id": "BpmzJm_6NbupDi1VAzWKO",
@@ -3974,21 +3974,70 @@
                                                                                                     {
                                                                                                       "cssClassName": "COLOR_TEXT_ERROR ",
                                                                                                       "logic": {
-                                                                                                        ">": [
+                                                                                                        "or": [
                                                                                                           {
-                                                                                                            "+": [
+                                                                                                            ">": [
                                                                                                               {
-                                                                                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                "+": [
+                                                                                                                  {
+                                                                                                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                                                                                                  },
+                                                                                                                  0
+                                                                                                                ]
                                                                                                               },
-                                                                                                              0
+                                                                                                              {
+                                                                                                                "+": [
+                                                                                                                  {
+                                                                                                                    "var": "balance"
+                                                                                                                  },
+                                                                                                                  0
+                                                                                                                ]
+                                                                                                              }
                                                                                                             ]
                                                                                                           },
                                                                                                           {
-                                                                                                            "+": [
+                                                                                                            "and": [
                                                                                                               {
-                                                                                                                "var": "balance"
+                                                                                                                "==": [
+                                                                                                                  {
+                                                                                                                    "var": "type"
+                                                                                                                  },
+                                                                                                                  "DebitCard"
+                                                                                                                ]
                                                                                                               },
-                                                                                                              0
+                                                                                                              {
+                                                                                                                "==": [
+                                                                                                                  {
+                                                                                                                    "var": "isExpired"
+                                                                                                                  },
+                                                                                                                  "1"
+                                                                                                                ]
+                                                                                                              }
+                                                                                                            ]
+                                                                                                          },
+                                                                                                          {
+                                                                                                            "and": [
+                                                                                                              {
+                                                                                                                "!=": [
+                                                                                                                  {
+                                                                                                                    "var": "type"
+                                                                                                                  },
+                                                                                                                  "DebitCard"
+                                                                                                                ]
+                                                                                                              },
+                                                                                                              {
+                                                                                                                "<=": [
+                                                                                                                  {
+                                                                                                                    "+": [
+                                                                                                                      {
+                                                                                                                        "var": "balance"
+                                                                                                                      },
+                                                                                                                      0
+                                                                                                                    ]
+                                                                                                                  },
+                                                                                                                  0
+                                                                                                                ]
+                                                                                                              }
                                                                                                             ]
                                                                                                           }
                                                                                                         ]
@@ -4450,7 +4499,139 @@
                                                                                           {
                                                                                             "type": "column",
                                                                                             "id": "27lFP0ht5h8byCTTFRdTJ",
-                                                                                            "gridProps": [],
+                                                                                            "gridProps": [
+                                                                                              {
+                                                                                                "type": "10001",
+                                                                                                "name": "PC_EXPIRED_TAG",
+                                                                                                "id": "14wNYuEMq65nN5H_SfwA0",
+                                                                                                "gridProps": [
+                                                                                                  {
+                                                                                                    "type": "column",
+                                                                                                    "id": "WFaDkJOxWV2UuAgDJGkMH",
+                                                                                                    "gridProps": [
+                                                                                                      {
+                                                                                                        "id": "jjqqFy0xOCx812STqFq6o",
+                                                                                                        "status": "ACTIVE",
+                                                                                                        "name": "Label",
+                                                                                                        "attributes": {
+                                                                                                          "variant": "body1",
+                                                                                                          "name": "Label",
+                                                                                                          "mandatory": false,
+                                                                                                          "layoutProperties": {
+                                                                                                            "label": {
+                                                                                                              "//": "Use this class to style label component."
+                                                                                                            },
+                                                                                                            "prefix": {
+                                                                                                              "//": "Use this class to style prefix."
+                                                                                                            },
+                                                                                                            "postfix": {
+                                                                                                              "//": "Use this class to style postfix."
+                                                                                                            },
+                                                                                                            "mainContainer": "label",
+                                                                                                            "xl": 12,
+                                                                                                            "lg": 12,
+                                                                                                            "md": 12,
+                                                                                                            "sm": 12,
+                                                                                                            "xs": 12
+                                                                                                          },
+                                                                                                          "label": "Expired",
+                                                                                                          "cssClassNames": [
+                                                                                                            {
+                                                                                                              "cssClassName": "PC_ERROR_TAG_LABEL ",
+                                                                                                              "key": "PC_ERROR_TAG_LABEL "
+                                                                                                            }
+                                                                                                          ]
+                                                                                                        },
+                                                                                                        "icon": "FaFont",
+                                                                                                        "group": "Form",
+                                                                                                        "type": "20002",
+                                                                                                        "updatedAt": "23-Aug-2021",
+                                                                                                        "createdAt": "23-Aug-2021",
+                                                                                                        "order": 15,
+                                                                                                        "version": "1.0.0",
+                                                                                                        "isLatest": true,
+                                                                                                        "projectType": "web",
+                                                                                                        "component": {
+                                                                                                          "content": "Label",
+                                                                                                          "type": "20002"
+                                                                                                        },
+                                                                                                        "events": [],
+                                                                                                        "path": "3-0-2-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-1-2-0-0-0-0-0"
+                                                                                                      }
+                                                                                                    ],
+                                                                                                    "layoutProperties": {
+                                                                                                      "xl": 12,
+                                                                                                      "lg": 12,
+                                                                                                      "md": 12,
+                                                                                                      "sm": 12,
+                                                                                                      "xs": 12
+                                                                                                    }
+                                                                                                  }
+                                                                                                ],
+                                                                                                "allowedContainers": [
+                                                                                                  "10001",
+                                                                                                  "20030",
+                                                                                                  "noLayout",
+                                                                                                  "20010",
+                                                                                                  "widget"
+                                                                                                ],
+                                                                                                "attributes": {
+                                                                                                  "gridProps": [],
+                                                                                                  "label": "Header",
+                                                                                                  "layoutProperties": {
+                                                                                                    "gridLayout": {
+                                                                                                      "//": "Use this class to style grid layout component.",
+                                                                                                      "spacing": 0
+                                                                                                    },
+                                                                                                    "mainContainer": "gridLayout",
+                                                                                                    "skeleton": {
+                                                                                                      "//": "Use this class to style skeleton loading component."
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "layoutProps": {
+                                                                                                    "direction": "row",
+                                                                                                    "justifyContent": "flex-start",
+                                                                                                    "alignItems": "flex-start"
+                                                                                                  },
+                                                                                                  "direction": "row",
+                                                                                                  "name": "Grid layout",
+                                                                                                  "disableCondition": {},
+                                                                                                  "hideCondition": {
+                                                                                                    "logic": {
+                                                                                                      "!=": [
+                                                                                                        {
+                                                                                                          "var": "isExpired"
+                                                                                                        },
+                                                                                                        "1"
+                                                                                                      ]
+                                                                                                    }
+                                                                                                  },
+                                                                                                  "cssClassNames": [
+                                                                                                    {
+                                                                                                      "cssClassName": "PC_DC_EXPIRED_GRID ",
+                                                                                                      "key": "PC_DC_EXPIRED_GRID "
+                                                                                                    }
+                                                                                                  ]
+                                                                                                },
+                                                                                                "events": [],
+                                                                                                "component": {
+                                                                                                  "type": "10001",
+                                                                                                  "content": "Grid layout"
+                                                                                                },
+                                                                                                "path": "3-0-2-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-1-2-0-0-0",
+                                                                                                "dimensions": {
+                                                                                                  "rows": 1,
+                                                                                                  "columns": 1,
+                                                                                                  "colSize0xs": 12,
+                                                                                                  "colSize0sm": 12,
+                                                                                                  "colSize0md": 12,
+                                                                                                  "colSize0lg": 12,
+                                                                                                  "colSize0xl": 12,
+                                                                                                  "name": null
+                                                                                                },
+                                                                                                "readOnly": true
+                                                                                              }
+                                                                                            ],
                                                                                             "layoutProperties": {
                                                                                               "xl": 12,
                                                                                               "lg": 12,
@@ -4687,21 +4868,70 @@
                                                                   "dataSource": "paymentMethods.bbkAccountsAndDebitCard",
                                                                   "bindingKey": "selected_payment_method",
                                                                   "disableClick": {
-                                                                    ">": [
+                                                                    "or": [
                                                                       {
-                                                                        "+": [
+                                                                        ">": [
                                                                           {
-                                                                            "var": "currentScreen.form.pc_custom_amount_2"
+                                                                            "+": [
+                                                                              {
+                                                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                                                              },
+                                                                              0
+                                                                            ]
                                                                           },
-                                                                          0
+                                                                          {
+                                                                            "+": [
+                                                                              {
+                                                                                "var": "balance"
+                                                                              },
+                                                                              0
+                                                                            ]
+                                                                          }
                                                                         ]
                                                                       },
                                                                       {
-                                                                        "+": [
+                                                                        "and": [
                                                                           {
-                                                                            "var": "balance"
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "type"
+                                                                              },
+                                                                              "DebitCard"
+                                                                            ]
                                                                           },
-                                                                          0
+                                                                          {
+                                                                            "==": [
+                                                                              {
+                                                                                "var": "isExpired"
+                                                                              },
+                                                                              "1"
+                                                                            ]
+                                                                          }
+                                                                        ]
+                                                                      },
+                                                                      {
+                                                                        "and": [
+                                                                          {
+                                                                            "!=": [
+                                                                              {
+                                                                                "var": "type"
+                                                                              },
+                                                                              "DebitCard"
+                                                                            ]
+                                                                          },
+                                                                          {
+                                                                            "<=": [
+                                                                              {
+                                                                                "+": [
+                                                                                  {
+                                                                                    "var": "balance"
+                                                                                  },
+                                                                                  0
+                                                                                ]
+                                                                              },
+                                                                              0
+                                                                            ]
+                                                                          }
                                                                         ]
                                                                       }
                                                                     ]
@@ -6239,8 +6469,8 @@
     "gitBranchName": "master",
     "_id": "ju0igiGAp75pEbU7F3GL4",
     "createdBy": "talha",
-    "updatedAt": "4/6/2024",
-    "createdAt": "4/6/2024",
+    "updatedAt": "4/25/2024",
+    "createdAt": "4/25/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8921,9 +9151,25 @@
       "dataSource": "paymentMethods.bbkAccountsAndDebitCard",
       "bindingKey": "selected_payment_method",
       "disableClick": {
-        ">": [
-          { "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0] },
-          { "+": [{ "var": "balance" }, 0] }
+        "or": [
+          {
+            ">": [
+              { "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0] },
+              { "+": [{ "var": "balance" }, 0] }
+            ]
+          },
+          {
+            "and": [
+              { "==": [{ "var": "type" }, "DebitCard"] },
+              { "==": [{ "var": "isExpired" }, "1"] }
+            ]
+          },
+          {
+            "and": [
+              { "!=": [{ "var": "type" }, "DebitCard"] },
+              { "<=": [{ "+": [{ "var": "balance" }, 0] }, 0] }
+            ]
+          }
         ]
       }
     },
@@ -9580,9 +9826,27 @@
         {
           "cssClassName": "COLOR_TEXT_ERROR ",
           "logic": {
-            ">": [
-              { "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0] },
-              { "+": [{ "var": "balance" }, 0] }
+            "or": [
+              {
+                ">": [
+                  {
+                    "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0]
+                  },
+                  { "+": [{ "var": "balance" }, 0] }
+                ]
+              },
+              {
+                "and": [
+                  { "==": [{ "var": "type" }, "DebitCard"] },
+                  { "==": [{ "var": "isExpired" }, "1"] }
+                ]
+              },
+              {
+                "and": [
+                  { "!=": [{ "var": "type" }, "DebitCard"] },
+                  { "<=": [{ "+": [{ "var": "balance" }, 0] }, 0] }
+                ]
+              }
             ]
           }
         }
@@ -10004,7 +10268,27 @@
     "name": "Grid layout",
     "type": "10001",
     "attributes": {
-      "gridProps": [],
+      "gridProps": [
+        {
+          "componentId": "14wNYuEMq65nN5H_SfwA0",
+          "componentType": "10001",
+          "id": "14wNYuEMq65nN5H_SfwA0",
+          "position": {
+            "i": "14wNYuEMq65nN5H_SfwA0",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        }
+      ],
       "label": "Header",
       "layoutProperties": {
         "gridLayout": {
@@ -10028,6 +10312,100 @@
     "screenId": "ju0igiGAp75pEbU7F3GL4",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "14wNYuEMq65nN5H_SfwA0",
+    "name": "PC_EXPIRED_TAG",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "jjqqFy0xOCx812STqFq6o",
+          "componentType": "20002",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout",
+      "disableCondition": {},
+      "hideCondition": { "logic": { "!=": [{ "var": "isExpired" }, "1"] } },
+      "cssClassNames": [
+        { "cssClassName": "PC_DC_EXPIRED_GRID ", "key": "PC_DC_EXPIRED_GRID " }
+      ]
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "ju0igiGAp75pEbU7F3GL4",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "jjqqFy0xOCx812STqFq6o",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Expired",
+      "cssClassNames": [
+        { "cssClassName": "PC_ERROR_TAG_LABEL ", "key": "PC_ERROR_TAG_LABEL " }
+      ]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "23-Aug-2021",
+    "createdAt": "23-Aug-2021",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "3-0-2-0-0-0-1-0-1-0-1-0-0-0-0-0-0-0-1-2-0-0-0-0-0",
+    "screenId": "ju0igiGAp75pEbU7F3GL4",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },

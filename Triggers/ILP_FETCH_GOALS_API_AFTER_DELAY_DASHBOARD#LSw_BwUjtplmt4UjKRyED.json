@@ -1,0 +1,87 @@
+{
+  "_id": "LSw_BwUjtplmt4UjKRyED",
+  "id": "0nBtoPgFPt8kgkTVJ5ffy",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILP_FETCH_GOALS_API_AFTER_DELAY_DASHBOARD",
+  "old_name": "ILP_FETCH_GOALS_API_AFTER_DELAY_DASHBOARD",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "500",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "NqWwYD5-Aep-8C32Ee6Ua",
+              "_id": "rD2298KGzwqktEQ3wN83T",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ILP_FETCH_GOALS_API",
+              "old_name": "ILP_GOALS_LIST_API",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "RESPONSE_ILP_GOAL_LIST_API",
+                      "url": "/api-designer/api/getGoalList/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "request.ileadId",
+                          "value": "ILP_SELECTED_CHILD_CARD.ileadUserId"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "ILPGC_SELECT_FIRST_GOAL_AFTER_DELAY",
+                        "triggerId": "vbJkj5vxhTSprf3qfiud8"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.gqkzv92rlsp25f880Y4tYCqj9W4_gIn3",
+              "updatedAt": "4/25/2024",
+              "createdAt": "4/25/2024",
+              "createdBy": "talha2",
+              "updatedBy": "mubashar"
+            }
+          ],
+          "triggerIds": ["NqWwYD5-Aep-8C32Ee6Ua"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.hijr5dhwegbXYbqjzEg25IoOfzMLvCi-",
+  "updatedAt": "4/25/2024",
+  "createdAt": "4/25/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

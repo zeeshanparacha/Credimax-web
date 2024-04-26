@@ -4488,7 +4488,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "HXzTkzG-hzvv2i4lfYzdJ",
+                                                            "id": "rIS3Dkslj2o_W8GS34qjE",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -4937,7 +4937,7 @@
                                                                                         "gridProps": [
                                                                                           {
                                                                                             "type": "column",
-                                                                                            "id": "s67fmuTrcUFZukKmeG8Ly",
+                                                                                            "id": "Pm9NIKwMS28dsGXox4cKf",
                                                                                             "gridProps": [
                                                                                               {
                                                                                                 "id": "zzWpPzQh20wY5y0cIDYRR",
@@ -4991,8 +4991,7 @@
                                                                                               "md": 12,
                                                                                               "sm": 12,
                                                                                               "xs": 12
-                                                                                            },
-                                                                                            "path": "0-0-4-0-1-0-2-0-1-0-0-0-0-0-0-0-0-2-0-0-1-0"
+                                                                                            }
                                                                                           }
                                                                                         ],
                                                                                         "allowedContainers": [
@@ -5036,6 +5035,19 @@
                                                                                                     "+": [
                                                                                                       {
                                                                                                         "var": "balance"
+                                                                                                      },
+                                                                                                      0
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "<=": [
+                                                                                                      {
+                                                                                                        "+": [
+                                                                                                          {
+                                                                                                            "var": "balance"
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
                                                                                                       },
                                                                                                       0
                                                                                                     ]
@@ -5247,8 +5259,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-4-0-1-0-2-0-1-0-0-0-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -5320,6 +5331,19 @@
                                                                     "+": [
                                                                       {
                                                                         "var": "currentScreen.form.pc_custom_amount_2"
+                                                                      },
+                                                                      0
+                                                                    ]
+                                                                  },
+                                                                  0
+                                                                ]
+                                                              },
+                                                              {
+                                                                "<=": [
+                                                                  {
+                                                                    "+": [
+                                                                      {
+                                                                        "var": "balance"
                                                                       },
                                                                       0
                                                                     ]
@@ -6218,8 +6242,8 @@
     "gitBranchName": "master",
     "_id": "iArV49OdFFAvSK0HSv2SGbq83n",
     "createdBy": "talha",
-    "updatedAt": "4/19/2024",
-    "createdAt": "4/19/2024",
+    "updatedAt": "4/25/2024",
+    "createdAt": "4/25/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9841,7 +9865,8 @@
               { "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0] },
               0
             ]
-          }
+          },
+          { "<=": [{ "+": [{ "var": "balance" }, 0] }, 0] }
         ]
       }
     },
@@ -10481,7 +10506,8 @@
           "logic": {
             ">": [
               { "+": [{ "var": "currentScreen.form.pc_custom_amount_2" }, 0] },
-              { "+": [{ "var": "balance" }, 0] }
+              { "+": [{ "var": "balance" }, 0] },
+              { "<=": [{ "+": [{ "var": "balance" }, 0] }, 0] }
             ]
           }
         }
