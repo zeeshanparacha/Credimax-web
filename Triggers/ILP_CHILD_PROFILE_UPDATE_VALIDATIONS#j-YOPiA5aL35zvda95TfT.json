@@ -1,0 +1,148 @@
+{
+  "id": "8cMB06xf5JQEosx5xZmfT",
+  "_id": "j-YOPiA5aL35zvda95TfT",
+  "gitBranchName": "master",
+  "name": "ILP_CHILD_PROFILE_UPDATE_VALIDATIONS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "IL_NICK_NAME",
+              "storeType": 1,
+              "messageBindingKey": "IL_NICK_NAME_Validations",
+              "isRequired": true,
+              "requiredMessage": "Nick name is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "IL_EMAIL",
+              "storeType": 1,
+              "messageBindingKey": "IL_EMAIL_Validations",
+              "isRequired": true,
+              "requiredMessage": "Email is required ",
+              "regEx": "/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/",
+              "regExMessage": "Email format incorrect",
+              "JSONLogic": []
+            }
+          ],
+          "successTrigger": {
+            "id": "P0M1zGvYl_Fb_eFD9uUoe",
+            "_id": "-ZKWgMSCgLQHzR_02qH65",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILP_CHILD_PROFILE_UPDATE",
+            "old_name": "ILP_CHILD_PROFILE_UPDATE",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "8",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "loaderWidgetIds": [906070],
+                    "messageWidgetIds": [906070],
+                    "responseStateKey": "ilp_child_profile_update",
+                    "url": "/api-designer/api/updateIleadUserData/execute",
+                    "checksum": true,
+                    "encryption": true,
+                    "isDeviceDetails": false,
+                    "loginTrigger": false,
+                    "formData": false,
+                    "logoutTrigger": false,
+                    "headers": {
+                      "Content-Type": "application/json",
+                      "channel_key": "002"
+                    },
+                    "requestBody": [
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.image",
+                        "value": "IL_CHILD_IMAGE"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.nickName",
+                        "value": "IL_NICK_NAME"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.email",
+                        "value": "IL_EMAIL"
+                      },
+                      {
+                        "type": 4,
+                        "name": "Static",
+                        "key": "request.rewardUnit",
+                        "value": "BHD"
+                      },
+                      {
+                        "type": 4,
+                        "name": "Static",
+                        "key": "request.starValue",
+                        "value": "1.0"
+                      },
+                      {
+                        "type": 2,
+                        "name": "Current screen",
+                        "key": "request.id",
+                        "value": "CURRENT_CARD.ileadChild.ileadUserId"
+                      }
+                    ],
+                    "baseURL": "656f0b4398e9df55f0499597",
+                    "storeType": 2
+                  },
+                  "responseHandler": [
+                    {
+                      "httpStatus": 200,
+                      "triggerName": "ILP_UPDATE_PROFILE_ERROR_TOAST",
+                      "triggerId": "vCbzOZJ2IwyfWuTBc1hZI",
+                      "logic": { "==": [{ "var": "code" }, 0] }
+                    },
+                    {
+                      "httpStatus": 200,
+                      "triggerName": "HIDE_MODAL_TRIGGER",
+                      "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+                      "logic": { "==": [{ "var": "code" }, 1] }
+                    },
+                    {
+                      "triggerName": "ILP_UPDATE_PROFILE_SUCCESS_TOAST",
+                      "triggerId": "5wbpbrxEOmb9dOjIcdLo5",
+                      "logic": { "==": [{ "var": "code" }, 1] },
+                      "httpStatus": 200
+                    },
+                    {
+                      "logic": { "==": [{ "var": "code" }, 1] },
+                      "httpStatus": 200,
+                      "triggerName": "DASH_CLEAR_CACHE_N_GET_CHILD_CARDS_SILENTLY",
+                      "triggerId": "sAxcuC1p_MImsTuOgpzuU"
+                    }
+                  ]
+                }
+              }
+            ],
+            "csrf": "0.y4txsu3wfajXhuECY5LPCtRM9Yug-zf",
+            "updatedAt": "3/24/2024",
+            "createdAt": "3/24/2024",
+            "createdBy": "talha",
+            "updatedBy": "talha"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.talnco4hqisPsSO0qlCXKCYrF5xAMaca",
+  "updatedAt": "5/5/2024",
+  "createdAt": "5/5/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

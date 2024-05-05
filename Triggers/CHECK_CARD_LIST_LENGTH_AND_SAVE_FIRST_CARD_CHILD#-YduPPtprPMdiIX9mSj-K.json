@@ -1,0 +1,72 @@
+{
+  "id": "KKIHMmqM_IKYF9i0q_vnT",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CHECK_CARD_LIST_LENGTH_AND_SAVE_FIRST_CARD_CHILD",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "if": [
+                  {
+                    "and": [
+                      { "var": "currentScreen.cards.cardList" },
+                      {
+                        ">": [
+                          { "var": "currentScreen.cards.cardList.length" },
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              },
+              "triggerName": "SELECT_LAST_CHILD_CARD_IN_TOPUP",
+              "triggerId": "SBAMkp92Y9-Z4nTP4Azoj",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "9",
+                    "attributes": {
+                      "stateName": "none",
+                      "storeType": "",
+                      "selectedObjectBindingKey": "none",
+                      "dataType": "",
+                      "destinationBindingKey": "current_card",
+                      "sourceBindingKey": "cards.content.cardList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "==": [
+                          { "var": "cardNumber" },
+                          { "var": "last_child_card" }
+                        ]
+                      },
+                      "targetValue": "none"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.e293oilzq5tKQpw91dLgBqDqvRDGfx-J",
+  "_id": "-YduPPtprPMdiIX9mSj-K",
+  "updatedAt": "5/2/2024",
+  "createdAt": "5/2/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

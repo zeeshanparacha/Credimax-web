@@ -18,10 +18,12 @@
                 "if": [
                   {
                     "and": [
-                      { "var": "currentScreen.cards.cardList" },
+                      { "var": "currentScreen.cards.content.cardList" },
                       {
                         ">": [
-                          { "var": "currentScreen.cards.cardList.length" },
+                          {
+                            "var": "currentScreen.cards.content.cardList.length"
+                          },
                           0
                         ]
                       }
@@ -31,24 +33,27 @@
                   false
                 ]
               },
-              "triggerName": "SAVE_FIRST_CARD_AS_CURRENT_CARD",
-              "triggerId": "OjYjs4p88jBQR6Xr-GNqg",
+              "triggerName": "PC_SELECT_LAST_MAIN_CARD",
+              "triggerId": "0o6gtZ_jIXfX9k8vviBqd",
               "services": [
                 {
                   "type": "11",
                   "command": {
-                    "type": "6",
+                    "type": "9",
                     "attributes": {
-                      "storeType": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "value",
+                      "stateName": "none",
+                      "selectedObjectBindingKey": "none",
                       "destinationBindingKey": "current_card",
-                      "sourceBindingKey": "form",
+                      "sourceBindingKey": "cards.cardList",
                       "sourceStoreType": 2,
                       "destinationStoreType": 1,
-                      "logic": { "var": "currentScreen.cards.cardList.0" },
-                      "changeValueConditonally": true,
-                      "targettedType": "value"
+                      "logic": {
+                        "==": [
+                          { "var": "cardNumber" },
+                          { "var": "currentSession.last_main_card" }
+                        ]
+                      },
+                      "targetValue": "none"
                     }
                   }
                 }
@@ -59,9 +64,9 @@
       }
     }
   ],
-  "csrf": "0.tjzb0k39kvf0fmQmfevGJPxig4m1u3m",
-  "updatedAt": "1/7/2024",
-  "createdAt": "1/7/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.h6s7n20c3huknsydTPSLVS5xjHn3VN-H",
+  "updatedAt": "4/29/2024",
+  "createdAt": "4/29/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
 }

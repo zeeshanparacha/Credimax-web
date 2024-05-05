@@ -1,0 +1,80 @@
+{
+  "id": "3MPDen3cm4CBKptP8Yukc",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "GENERATE_REFRESH_TOKEN_FOR_PC_N_REDIRECT",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "refresh_token_res",
+          "url": "/security/v1/refreshToken",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "refreshToken",
+              "value": "userProfile.content.refreshToken"
+            },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "dobRefreshToken",
+              "value": "userProfile.content.dobRefreshToken"
+            },
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "userIdentificationRefreshToken",
+              "value": "userProfile.content.userIdentificationRefreshToken"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 3
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "UPDATE_TOKENS_AND_TIMERS",
+            "triggerId": "ljjq4-tKdAlFoKxBp4HVV"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "SAVE_SESSION_TIME_AND_SHOW_POPUP_AFTER_DELAY_WITH_FURTHER_DELAY",
+            "triggerId": "r4xZ3kXCD9EXsavAADzda"
+          },
+          {
+            "logic": true,
+            "httpStatus": 200,
+            "triggerName": "PC_REDIRECT_TO_BENIFIT",
+            "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.e293oilzq5tKQpw91dLgBqDqvRDGfx-J",
+  "_id": "OW8iz4fwDtjQLKo8P9_XG",
+  "updatedAt": "4/30/2024",
+  "createdAt": "4/30/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

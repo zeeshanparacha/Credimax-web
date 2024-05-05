@@ -12,7 +12,7 @@
       "command": {
         "type": "2",
         "attributes": {
-          "delay": "1000",
+          "delay": "100",
           "storeType": "",
           "searchInState": false,
           "triggers": [
@@ -165,20 +165,122 @@
               "createdAt": "2/21/2024",
               "createdBy": "basitahmed1199",
               "updatedBy": "basitahmed1199"
+            },
+            {
+              "id": "OztjV0vy3b8U5ZjJbCaR3",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "DASH_SAVE_LAST_CARD_NUMBER",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "logic": {
+                            "or": [
+                              {
+                                "==": [
+                                  { "var": "currentSession.dash_type" },
+                                  "ilc other cards"
+                                ]
+                              },
+                              {
+                                "==": [
+                                  { "var": "currentSession.dash_type" },
+                                  "main dashboard"
+                                ]
+                              }
+                            ]
+                          },
+                          "triggerName": "DASH_SAVE_MAIN_CARD_NUMBER",
+                          "triggerId": "XUafjgmlBSrEE18mveoaI",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "last_main_card",
+                                      "changeValueConditonally": true,
+                                      "storeType": 3,
+                                      "logic": {
+                                        "var": "currentScreen.CURRENT_CARD.cardNumber"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "ilp child dashboard"
+                            ]
+                          },
+                          "triggerName": "DASH_SAVE_CHILD_CARD_NUMBER",
+                          "triggerId": "uxVNaaVjT9PoxmgUB9bgN",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "filterList": [
+                                    {
+                                      "key": "last_child_card",
+                                      "changeValueConditonally": true,
+                                      "storeType": 3,
+                                      "logic": {
+                                        "var": "currentScreen.CURRENT_CARD.cardNumber"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.d2u1q86dfc9NBjHbqX9xyq6VPFRP1u3",
+              "_id": "ZQorEVZlZJ2MgIvzIu2Qa",
+              "updatedAt": "4/28/2024",
+              "createdAt": "4/28/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
             }
           ],
           "triggerIds": [
             "9LHS775b0Z8GDXMCQ9pPp",
             "ViU58dxCCkpwIlu6Zt6Rs",
-            "Y4hG7exvHpfzUwF1m5Riu"
+            "Y4hG7exvHpfzUwF1m5Riu",
+            "OztjV0vy3b8U5ZjJbCaR3"
           ]
         }
       }
     }
   ],
-  "csrf": "0.e343ygnosuuWf6_EAWE72qXjaeFFoJD",
-  "updatedAt": "3/13/2024",
-  "createdAt": "3/13/2024",
+  "csrf": "0.d2u1q86dfc9NBjHbqX9xyq6VPFRP1u3",
+  "updatedAt": "4/28/2024",
+  "createdAt": "4/28/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

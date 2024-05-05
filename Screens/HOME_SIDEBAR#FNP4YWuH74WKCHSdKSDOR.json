@@ -266,6 +266,98 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "C7NEbzAYWrgxA8fiLwJPn",
+            "triggerName": "GENERATE_REFRESH_TOKEN_AFTER_DELAY",
+            "serviceType": "2",
+            "attributes": {
+              "delay": "10000",
+              "storeType": "",
+              "searchInState": false,
+              "triggers": [
+                {
+                  "id": "jo8QoCfVjyjMp54tuM4bX",
+                  "_id": "5Oc9If0I1RItoYPO_FQxn",
+                  "projectId": "652fcbce09869c3c809b3097",
+                  "gitBranchName": "master",
+                  "name": "GENERATE_REFRESH_TOKEN",
+                  "old_name": "GENERATE_REFRESH_TOKEN",
+                  "status": "ACTIVE",
+                  "services": [
+                    {
+                      "type": "8",
+                      "command": {
+                        "type": "1",
+                        "attributes": {
+                          "loaderWidgetIds": [906070],
+                          "messageWidgetIds": [906070],
+                          "responseStateKey": "refresh_token_res",
+                          "url": "/security/v1/refreshToken",
+                          "checksum": true,
+                          "encryption": true,
+                          "isDeviceDetails": true,
+                          "loginTrigger": false,
+                          "formData": false,
+                          "logoutTrigger": false,
+                          "headers": {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                            "channel_key": "002"
+                          },
+                          "requestBody": [
+                            {
+                              "type": 3,
+                              "name": "Current session",
+                              "key": "refreshToken",
+                              "value": "userProfile.content.refreshToken"
+                            },
+                            {
+                              "type": 3,
+                              "name": "Current session",
+                              "key": "dobRefreshToken",
+                              "value": "userProfile.content.dobRefreshToken"
+                            },
+                            {
+                              "type": 3,
+                              "name": "Current session",
+                              "key": "userIdentificationRefreshToken",
+                              "value": "userProfile.content.userIdentificationRefreshToken"
+                            }
+                          ],
+                          "baseURL": "656f0b4398e9df55f0499597",
+                          "storeType": 3,
+                          "hideLoading": true
+                        },
+                        "responseHandler": [
+                          {
+                            "logic": { "==": [{ "var": "code" }, 1] },
+                            "httpStatus": 200,
+                            "triggerName": "UPDATE_TOKENS_AND_TIMERS",
+                            "triggerId": "ljjq4-tKdAlFoKxBp4HVV"
+                          },
+                          {
+                            "logic": { "==": [{ "var": "code" }, 1] },
+                            "httpStatus": 200,
+                            "triggerName": "SAVE_SESSION_TIME_AND_SHOW_POPUP_AFTER_DELAY_WITH_FURTHER_DELAY",
+                            "triggerId": "r4xZ3kXCD9EXsavAADzda"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "csrf": "0.d2u1q86dfc9NBjHbqX9xyq6VPFRP1u3",
+                  "updatedAt": "4/28/2024",
+                  "createdAt": "4/28/2024",
+                  "createdBy": "talha",
+                  "updatedBy": "talha"
+                }
+              ],
+              "triggerIds": ["jo8QoCfVjyjMp54tuM4bX"]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "2"
           }
         ],
         "order": 1,
@@ -278,7 +370,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "ZW36bNLWxpTOMyr9Pxb44",
+            "id": "lf7aGFjBfIPQ08VQgktcH",
             "gridProps": [
               {
                 "id": "FZN5XJNMRzipvETtOJ0BG",
@@ -1921,9 +2013,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "FNP4YWuH74WKCHSdKSDOR",
-    "createdBy": "mubashar",
-    "updatedAt": "4/17/2024",
-    "createdAt": "4/17/2024",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1946,6 +2038,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1960,6 +2055,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1982,6 +2080,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1998,6 +2099,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2020,6 +2124,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2036,6 +2143,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2101,6 +2211,12 @@
         "triggerName": "CP_SHOW_MODAL_CONDITIONAL",
         "name": "On initialization",
         "type": "1"
+      },
+      {
+        "triggerId": "C7NEbzAYWrgxA8fiLwJPn",
+        "triggerName": "GENERATE_REFRESH_TOKEN_AFTER_DELAY",
+        "name": "On initialization",
+        "type": "1"
       }
     ],
     "subType": "component",
@@ -2108,6 +2224,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2208,6 +2327,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2224,6 +2346,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2240,6 +2365,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2320,6 +2448,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2385,6 +2516,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2430,6 +2564,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2467,8 +2604,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -2488,6 +2625,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2534,6 +2672,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2586,8 +2727,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -2600,6 +2741,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2652,6 +2794,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2684,6 +2829,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2749,6 +2897,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2781,6 +2932,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2843,6 +2997,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2891,6 +3048,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2935,6 +3095,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3000,6 +3163,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3058,6 +3224,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3093,8 +3262,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3106,6 +3275,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3157,8 +3327,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3171,6 +3341,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3206,8 +3377,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3219,6 +3390,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3429,6 +3601,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3457,6 +3632,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "4/30/2024",
+    "createdAt": "4/30/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

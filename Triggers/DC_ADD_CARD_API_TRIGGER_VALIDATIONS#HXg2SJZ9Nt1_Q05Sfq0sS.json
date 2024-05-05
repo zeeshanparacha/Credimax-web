@@ -1,0 +1,153 @@
+{
+  "id": "SLyaiWcU2eHnzbOdvYXQQ",
+  "gitBranchName": "master",
+  "name": "DC_ADD_CARD_API_TRIGGER_VALIDATIONS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "accountOrDebitCardNumber",
+              "storeType": 1,
+              "messageBindingKey": "accountOrDebitCardNumber_validations",
+              "isRequired": true,
+              "requiredMessage": "Card number is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "title",
+              "storeType": 1,
+              "messageBindingKey": "title_validations",
+              "isRequired": true,
+              "requiredMessage": "Title is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "nickName",
+              "storeType": 1,
+              "messageBindingKey": "nickName_validations",
+              "isRequired": true,
+              "requiredMessage": "Nick name is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "cardExpiry",
+              "storeType": 1,
+              "messageBindingKey": "cardExpiry_validations",
+              "isRequired": true,
+              "requiredMessage": "Date is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            }
+          ],
+          "successTrigger": {
+            "id": "vN_kkFGq-D1MDtdgJOq-z",
+            "_id": "O5zW9HcKyUsryZJ9kc-Fi",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "DC_ADD_CARD_API_TRIGGER",
+            "old_name": "DC_ADD_CARD_API_TRIGGER",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "8",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "loaderWidgetIds": [906070],
+                    "messageWidgetIds": [906070],
+                    "responseStateKey": "dcAddCardResponse",
+                    "url": "/user/debitCard/v1/saveOrUpdateCard",
+                    "checksum": true,
+                    "encryption": true,
+                    "isDeviceDetails": true,
+                    "loginTrigger": false,
+                    "formData": false,
+                    "logoutTrigger": false,
+                    "headers": {
+                      "Content-Type": "application/json",
+                      "channel_key": "002"
+                    },
+                    "requestBody": [
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "cardNumber",
+                        "value": "accountOrDebitCardNumber"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "nameOnCard",
+                        "value": "title"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "cardExpiryDate",
+                        "value": "cardExpiry"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "nickName",
+                        "value": "nickName"
+                      },
+                      {
+                        "type": 2,
+                        "name": "Current screen",
+                        "key": "cardFlag",
+                        "value": "cardFlag"
+                      }
+                    ],
+                    "baseURL": "656f0b4398e9df55f0499597",
+                    "storeType": 2,
+                    "hideLoading": true,
+                    "loadingState": "DCA_Generic_loader",
+                    "isLoadingState": true
+                  },
+                  "responseHandler": [
+                    {
+                      "logic": { "==": [{ "var": "code" }, 1] },
+                      "httpStatus": 200,
+                      "triggerName": "DC_LIST LAYOUT_NAVIGATE",
+                      "triggerId": "NpEMe_ZW9tB5EHnW61LKZ"
+                    },
+                    {
+                      "logic": { "==": [{ "var": "code" }, 0] },
+                      "httpStatus": 200,
+                      "triggerName": "DC_ERROR_TOAST",
+                      "triggerId": "V2zp5FB_qAGrw_2Uo7hSu"
+                    }
+                  ]
+                }
+              }
+            ],
+            "csrf": "0.o0ye6arymm8mQeJzXnqbNz25P2AFx_pM",
+            "updatedAt": "3/13/2024",
+            "createdAt": "3/13/2024",
+            "createdBy": "mubashar",
+            "updatedBy": "mubashar"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.talnco4hqisPsSO0qlCXKCYrF5xAMaca",
+  "_id": "HXg2SJZ9Nt1_Q05Sfq0sS",
+  "updatedAt": "5/5/2024",
+  "createdAt": "5/5/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}
