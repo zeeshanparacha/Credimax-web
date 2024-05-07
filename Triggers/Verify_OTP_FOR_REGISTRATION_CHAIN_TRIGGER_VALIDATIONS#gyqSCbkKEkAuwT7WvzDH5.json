@@ -1,0 +1,339 @@
+{
+  "id": "IJLphnfYQ2X5zNq1YtSOi",
+  "gitBranchName": "master",
+  "name": "Verify_OTP_FOR_REGISTRATION_CHAIN_TRIGGER_VALIDATIONS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "smsPin",
+              "storeType": 1,
+              "messageBindingKey": "smsPin_Validation",
+              "isRequired": true,
+              "requiredMessage": "Six digit code is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            }
+          ],
+          "successTrigger": {
+            "_id": "IQBP9k6pZRbgPpWFyacEZ",
+            "id": "XSyVQMRnGrr8G5V6dcjfZ",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "Verify_OTP_FOR_REGISTRATION_CHAIN_TRIGGER ",
+            "old_name": "Verify_OTP_FOR_REGISTRATION_CHAIN_TRIGGER",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "triggers": [
+                      {
+                        "id": "j_NTrJ0VD5sUKPQFScxhC",
+                        "name": "1503 trancode",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "6",
+                              "attributes": {
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "value",
+                                "destinationBindingKey": "tranCode",
+                                "sourceBindingKey": "trancode",
+                                "sourceStoreType": 2,
+                                "destinationStoreType": 2,
+                                "logic": { "if": [true, "1503", "1503"] },
+                                "changeValueConditonally": true,
+                                "targettedType": "value"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.q7u3tllk8fR8oErGXCGnohJOT5KKrNh",
+                        "_id": "nTBXVtlwZ336yME83utiG",
+                        "updatedAt": "11/29/2023",
+                        "createdAt": "11/29/2023",
+                        "createdBy": "masood",
+                        "updatedBy": "masood"
+                      },
+                      {
+                        "id": "r9Cc9nQwLYXRhik7ZSwKM",
+                        "_id": "4i7qlB9gqKCxY2TEuYJAa",
+                        "name": "Device_Mapping_TRIGGER",
+                        "old_name": "Device_Mapping_TRIGGER",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "6",
+                              "attributes": {
+                                "requestBody": [],
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "destinationBindingKey": "device",
+                                "sourceBindingKey": "device",
+                                "sourceStoreType": 3,
+                                "destinationStoreType": 3,
+                                "filterList": [
+                                  {
+                                    "key": "isNotificationEnabled",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, false, false] }
+                                  },
+                                  {
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [true, "123145", "123145"]
+                                    },
+                                    "key": "fcmToken"
+                                  },
+                                  {
+                                    "key": "osType",
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [true, "15.7.5", "15.7.5"]
+                                    }
+                                  },
+                                  {
+                                    "key": "os",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, "Web", "Web"] }
+                                  },
+                                  {
+                                    "key": "deviceKey",
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [true, "1231232", "1231232"]
+                                    }
+                                  },
+                                  {
+                                    "key": "imei",
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [true, "12321312321", "12321312321"]
+                                    }
+                                  },
+                                  {
+                                    "key": "deviceVersion",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, "1.2.2", "1.2.2"] }
+                                  },
+                                  {
+                                    "key": "name",
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [true, "Mozilla", "Mozilla"]
+                                    }
+                                  }
+                                ],
+                                "targettedType": "object"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+                        "updatedAt": "11/29/2023",
+                        "createdAt": "11/29/2023",
+                        "createdBy": "muhammad.asad",
+                        "updatedBy": "muhammad.asad"
+                      },
+                      {
+                        "id": "t2Nv3Et0WeTNkBPvBOvrE",
+                        "_id": "wbQP-Fp696z4hT5xssq27",
+                        "name": "Validation Values Mapping",
+                        "old_name": "Validation Values Mapping",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "6",
+                              "attributes": {
+                                "requestBody": [],
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "destinationBindingKey": "validation",
+                                "sourceBindingKey": "validation",
+                                "sourceStoreType": 2,
+                                "destinationStoreType": 2,
+                                "filterList": [
+                                  {
+                                    "key": "tranCode",
+                                    "changeValueConditonally": true,
+                                    "logic": { "var": "currentScreen.tranCode" }
+                                  },
+                                  {
+                                    "changeValueConditonally": true,
+                                    "key": "validationType",
+                                    "logic": { "if": [true, "OTP", "OTP"] }
+                                  },
+                                  {
+                                    "key": "isOtp",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, true, true] }
+                                  },
+                                  {
+                                    "key": "splitOtp",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, true, true] }
+                                  },
+                                  {
+                                    "key": "generationType",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, "2", "2"] }
+                                  },
+                                  {
+                                    "key": "otpExpiry",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, "4", "4"] }
+                                  },
+                                  {
+                                    "key": "is2FA",
+                                    "changeValueConditonally": true,
+                                    "logic": { "if": [true, "1", "1"] }
+                                  },
+                                  {
+                                    "key": "emailPin",
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.emailPin"
+                                    }
+                                  },
+                                  {
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.smsPin"
+                                    },
+                                    "key": "smsPin"
+                                  }
+                                ],
+                                "targettedType": "object"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.q7u3tllk8fR8oErGXCGnohJOT5KKrNh",
+                        "updatedAt": "11/29/2023",
+                        "createdAt": "11/29/2023",
+                        "createdBy": "masood",
+                        "updatedBy": "masood"
+                      },
+                      {
+                        "id": "9Eljfa06kZRkkFluHn2_J",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "name": "Verify_OTP_For_Registration_Trigger",
+                        "status": "ACTIVE",
+                        "services": [
+                          {
+                            "type": "8",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "loaderWidgetIds": [906070],
+                                "messageWidgetIds": [906070],
+                                "responseStateKey": "verifyOTPForRegistrationResponse",
+                                "successMessageBindingKey": "successKey",
+                                "url": "/prelogin/v1/verifyOTPForRegistration",
+                                "checksum": true,
+                                "encryption": true,
+                                "isDeviceDetails": true,
+                                "loginTrigger": false,
+                                "formData": false,
+                                "logoutTrigger": false,
+                                "headers": {
+                                  "Content-Type": "application/json",
+                                  "channel_key": "002"
+                                },
+                                "requestBody": [
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "email",
+                                    "value": "email"
+                                  },
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "mobileNumber",
+                                    "value": "number"
+                                  },
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "cpr",
+                                    "value": "cpr"
+                                  },
+                                  {
+                                    "type": 2,
+                                    "name": "Current screen",
+                                    "key": "validation",
+                                    "value": "validation"
+                                  },
+                                  {
+                                    "type": 3,
+                                    "name": "Current session",
+                                    "key": "device",
+                                    "value": "device"
+                                  }
+                                ],
+                                "baseURL": "6566efa5a131d92664c8dd76",
+                                "storeType": 2
+                              },
+                              "responseHandler": []
+                            }
+                          }
+                        ],
+                        "csrf": "0.q7u3tllk8fR8oErGXCGnohJOT5KKrNh",
+                        "_id": "uHWWSwGxS2CBUttbMAQDU",
+                        "updatedAt": "11/29/2023",
+                        "createdAt": "11/29/2023",
+                        "createdBy": "masood",
+                        "updatedBy": "masood"
+                      }
+                    ],
+                    "triggerIds": [
+                      "j_NTrJ0VD5sUKPQFScxhC",
+                      "r9Cc9nQwLYXRhik7ZSwKM",
+                      "t2Nv3Et0WeTNkBPvBOvrE",
+                      "9Eljfa06kZRkkFluHn2_J"
+                    ]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
+            "updatedAt": "11/29/2023",
+            "createdAt": "11/29/2023",
+            "createdBy": "muhammad.asad",
+            "updatedBy": "muhammad.asad"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.k075jcew6ftfGXezCzYu6In7oL9Fj1e",
+  "_id": "gyqSCbkKEkAuwT7WvzDH5",
+  "updatedAt": "5/6/2024",
+  "createdAt": "5/6/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}
