@@ -1,0 +1,56 @@
+{
+  "id": "bHu2hUmGJvdVhhD9qul5-",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CHECK_FOR_BAHRINI_IN_TO_WALLET",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "SET_BAHRINI_IN_FROM_WALLET_IF_TO_WALLET_CHANGES",
+              "triggerId": "uF2OC7zXBrBKMcnc1_bCt",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "9",
+                    "attributes": {
+                      "stateName": "none",
+                      "storeType": "",
+                      "selectedObjectBindingKey": "none",
+                      "dataType": "",
+                      "destinationBindingKey": "from_wallet",
+                      "sourceBindingKey": "balances.balanceList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 1,
+                      "logic": { "==": [{ "var": "currency" }, "BHD"] },
+                      "targetValue": "none"
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "!=": [
+                  { "var": "currentScreen.form.from_wallet.currency" },
+                  "BHD"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.w3lqz95k2azpI86sTpbFGCTmoyv1aZ3",
+  "_id": "Wiwu9rUEMJ9OMJKPS4UTN",
+  "updatedAt": "5/9/2024",
+  "createdAt": "5/9/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

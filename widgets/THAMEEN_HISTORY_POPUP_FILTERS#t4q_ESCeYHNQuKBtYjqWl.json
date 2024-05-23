@@ -73,7 +73,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "mTaPIuy7RKJXNcC1qlWeU",
+                    "id": "Qv0IFq5aIDQ1fsa5gcsTj",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -439,11 +439,205 @@
                       },
                       {
                         "type": "10001",
+                        "name": "Grid layout",
+                        "id": "PRu9zzLT3GDfKvxEu9UYt",
+                        "gridProps": [
+                          {
+                            "type": "column",
+                            "id": "znQD0GyS1YqAbdVDpz9b0",
+                            "gridProps": [
+                              {
+                                "id": "-t4xeNk330T5gr-t5ydL0",
+                                "status": "ACTIVE",
+                                "name": "Label",
+                                "attributes": {
+                                  "variant": "body1",
+                                  "name": "Label",
+                                  "mandatory": false,
+                                  "layoutProperties": {
+                                    "label": {
+                                      "//": "Use this class to style label component.",
+                                      "font-size": "14px",
+                                      "font-weight": "bolder",
+                                      "color": "#838383",
+                                      "letter-spacing": "0px",
+                                      "cursor": "pointer"
+                                    },
+                                    "prefix": {
+                                      "//": "Use this class to style prefix."
+                                    },
+                                    "postfix": {
+                                      "//": "Use this class to style postfix."
+                                    },
+                                    "mainContainer": "label",
+                                    "xl": 12,
+                                    "lg": 12,
+                                    "md": 12,
+                                    "sm": 12,
+                                    "xs": 12
+                                  },
+                                  "label": "Adjustments"
+                                },
+                                "icon": "FaFont",
+                                "group": "Form",
+                                "type": "20002",
+                                "updatedAt": "23-Aug-2021",
+                                "createdAt": "23-Aug-2021",
+                                "order": 15,
+                                "version": "1.0.0",
+                                "isLatest": true,
+                                "projectType": "web",
+                                "component": {
+                                  "content": "Label",
+                                  "type": "20002"
+                                },
+                                "events": [],
+                                "path": "0-0-0-0-2-0-0"
+                              }
+                            ],
+                            "layoutProperties": {
+                              "xl": 12,
+                              "lg": 12,
+                              "md": 12,
+                              "sm": 12,
+                              "xs": 12
+                            }
+                          }
+                        ],
+                        "allowedContainers": [
+                          "10001",
+                          "20030",
+                          "noLayout",
+                          "20010",
+                          "widget"
+                        ],
+                        "attributes": {
+                          "gridProps": [],
+                          "label": "Header",
+                          "layoutProperties": {
+                            "gridLayout": {
+                              "//": "Use this class to style grid layout component.",
+                              "spacing": 0,
+                              "padding": "5px"
+                            },
+                            "mainContainer": "gridLayout",
+                            "skeleton": {
+                              "//": "Use this class to style skeleton loading component."
+                            }
+                          },
+                          "layoutProps": {
+                            "direction": "row",
+                            "justifyContent": "flex-start",
+                            "alignItems": "flex-start"
+                          },
+                          "direction": "row",
+                          "name": "Grid layout"
+                        },
+                        "events": [
+                          {
+                            "triggerId": "cyo1BRCsvlPm_VJIvIVaX",
+                            "triggerName": "FILL_THAMEEN_HISTORY_TYPE_ADJUSTMENT",
+                            "serviceType": "11",
+                            "attributes": {
+                              "requestBody": [],
+                              "storeType": "",
+                              "selectedObjectBindingKey": "selectedObject",
+                              "dataType": "value",
+                              "destinationBindingKey": "THAMEEN_FILTER_TYPE",
+                              "sourceBindingKey": "THAMEEN_FILTER_TYPE",
+                              "sourceStoreType": 1,
+                              "destinationStoreType": 1,
+                              "logic": {
+                                "if": [
+                                  { "==": [true, true] },
+                                  "Adjustments",
+                                  ""
+                                ]
+                              },
+                              "changeValueConditonally": true,
+                              "targettedType": "value"
+                            },
+                            "type": "2",
+                            "name": "On click",
+                            "commandType": "6"
+                          },
+                          {
+                            "triggerId": "F9XFFzk8gRJVRTyzKvgym",
+                            "triggerName": "THAMEEN_TRANSACTION_HISTORY",
+                            "serviceType": "8",
+                            "attributes": {
+                              "loaderWidgetIds": [906070],
+                              "messageWidgetIds": [906070],
+                              "responseStateKey": "THAMEEN_HISTORY",
+                              "url": "/api-designer/api/loyaltyTransaction/execute",
+                              "checksum": true,
+                              "encryption": true,
+                              "isDeviceDetails": false,
+                              "loginTrigger": false,
+                              "formData": false,
+                              "logoutTrigger": false,
+                              "headers": {
+                                "Content-Type": "application/json",
+                                "Accept": "application/json",
+                                "channel_key": "002"
+                              },
+                              "requestBody": [
+                                {
+                                  "type": 4,
+                                  "name": "Static",
+                                  "key": "request.minimumDataRequired",
+                                  "value": "25"
+                                },
+                                {
+                                  "type": 1,
+                                  "name": "Form",
+                                  "key": "request.filter",
+                                  "value": "THAMEEN_FILTER_TYPE"
+                                },
+                                {
+                                  "type": 1,
+                                  "name": "Form",
+                                  "key": "request.fromDate",
+                                  "value": "THM_FILTER.startDate"
+                                },
+                                {
+                                  "type": 1,
+                                  "name": "Form",
+                                  "key": "request.toDate",
+                                  "value": "THM_FILTER.endDate"
+                                }
+                              ],
+                              "baseURL": "656f0b4398e9df55f0499597",
+                              "storeType": 2
+                            },
+                            "type": "2",
+                            "name": "On click",
+                            "commandType": "1"
+                          }
+                        ],
+                        "component": {
+                          "type": "10001",
+                          "content": "Grid layout"
+                        },
+                        "path": "0-0-0-0-2",
+                        "dimensions": {
+                          "rows": 1,
+                          "columns": 1,
+                          "colSize0xs": 12,
+                          "colSize0sm": 12,
+                          "colSize0md": 12,
+                          "colSize0lg": 12,
+                          "colSize0xl": 12
+                        },
+                        "readOnly": true
+                      },
+                      {
+                        "type": "10001",
                         "id": "YiQF2jNFOPCIjShjvldy5",
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "hDdqynhiE2Z362F80MzUf",
+                            "id": "A6IkWPkmbCimKzP1gvzAo",
                             "gridProps": [
                               {
                                 "id": "NrNnB1M05M7s-7sHRV5ui",
@@ -497,7 +691,7 @@
                             }
                           }
                         ],
-                        "path": "0-0-0-0-2",
+                        "path": "0-0-0-0-3",
                         "events": [
                           {
                             "triggerId": "ViCXcSALN1ce5ydpwl6MG",
@@ -611,7 +805,17 @@
                           "20010",
                           "widget"
                         ],
-                        "name": "Grid layout"
+                        "name": "Grid layout",
+                        "dimensions": {
+                          "rows": 1,
+                          "columns": 1,
+                          "colSize0xs": 12,
+                          "colSize0sm": 12,
+                          "colSize0md": 12,
+                          "colSize0lg": 12,
+                          "colSize0xl": 12
+                        },
+                        "readOnly": true
                       },
                       {
                         "type": "10001",
@@ -619,7 +823,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "oDFtkAgp12U21WAeFrJug",
+                            "id": "97V1h6VOOrXotN_24d0zZ",
                             "gridProps": [
                               {
                                 "id": "BNWbjPLbzfvPzbAIwDB4y",
@@ -673,7 +877,7 @@
                             }
                           }
                         ],
-                        "path": "0-0-0-0-3",
+                        "path": "0-0-0-0-4",
                         "events": [
                           {
                             "triggerId": "ckm4hKzYgctYDTYqNOOUa",
@@ -696,6 +900,59 @@
                             "type": "2",
                             "name": "On click",
                             "commandType": "6"
+                          },
+                          {
+                            "triggerId": "F9XFFzk8gRJVRTyzKvgym",
+                            "triggerName": "THAMEEN_TRANSACTION_HISTORY",
+                            "serviceType": "8",
+                            "attributes": {
+                              "loaderWidgetIds": [906070],
+                              "messageWidgetIds": [906070],
+                              "responseStateKey": "THAMEEN_HISTORY",
+                              "url": "/api-designer/api/loyaltyTransaction/execute",
+                              "checksum": true,
+                              "encryption": true,
+                              "isDeviceDetails": false,
+                              "loginTrigger": false,
+                              "formData": false,
+                              "logoutTrigger": false,
+                              "headers": {
+                                "Content-Type": "application/json",
+                                "Accept": "application/json",
+                                "channel_key": "002"
+                              },
+                              "requestBody": [
+                                {
+                                  "type": 4,
+                                  "name": "Static",
+                                  "key": "request.minimumDataRequired",
+                                  "value": "25"
+                                },
+                                {
+                                  "type": 1,
+                                  "name": "Form",
+                                  "key": "request.filter",
+                                  "value": "THAMEEN_FILTER_TYPE"
+                                },
+                                {
+                                  "type": 1,
+                                  "name": "Form",
+                                  "key": "request.fromDate",
+                                  "value": "THM_FILTER.startDate"
+                                },
+                                {
+                                  "type": 1,
+                                  "name": "Form",
+                                  "key": "request.toDate",
+                                  "value": "THM_FILTER.endDate"
+                                }
+                              ],
+                              "baseURL": "656f0b4398e9df55f0499597",
+                              "storeType": 2
+                            },
+                            "type": "2",
+                            "name": "On click",
+                            "commandType": "1"
                           }
                         ],
                         "attributes": {
@@ -752,61 +1009,7 @@
                   }
                 ],
                 "path": "0-0-0",
-                "events": [
-                  {
-                    "triggerId": "F9XFFzk8gRJVRTyzKvgym",
-                    "triggerName": "THAMEEN_TRANSACTION_HISTORY",
-                    "serviceType": "8",
-                    "attributes": {
-                      "loaderWidgetIds": [906070],
-                      "messageWidgetIds": [906070],
-                      "responseStateKey": "THAMEEN_HISTORY",
-                      "url": "/api-designer/api/loyaltyTransaction/execute",
-                      "checksum": true,
-                      "encryption": true,
-                      "isDeviceDetails": false,
-                      "loginTrigger": false,
-                      "formData": false,
-                      "logoutTrigger": false,
-                      "headers": {
-                        "Content-Type": "application/json",
-                        "Accept": "application/json",
-                        "channel_key": "002"
-                      },
-                      "requestBody": [
-                        {
-                          "type": 4,
-                          "name": "Static",
-                          "key": "request.minimumDataRequired",
-                          "value": "25"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.filter",
-                          "value": "THAMEEN_FILTER_TYPE"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.fromDate",
-                          "value": "THM_FILTER.startDate"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.toDate",
-                          "value": "THM_FILTER.endDate"
-                        }
-                      ],
-                      "baseURL": "656f0b4398e9df55f0499597",
-                      "storeType": 2
-                    },
-                    "type": "2",
-                    "name": "On click",
-                    "commandType": "1"
-                  }
-                ],
+                "events": [],
                 "attributes": {
                   "gridProps": [],
                   "label": "Header",
@@ -827,7 +1030,10 @@
                   "direction": "row",
                   "name": "Grid layout",
                   "cssClassNames": [
-                    { "cssClassName": "STATEMENT_DISPUTE_POPUP " }
+                    {
+                      "cssClassName": "STATEMENT_DISPUTE_POPUP ",
+                      "key": "STATEMENT_DISPUTE_POPUP "
+                    }
                   ]
                 },
                 "component": { "type": "10001", "content": "Grid layout" },
@@ -838,7 +1044,16 @@
                   "20010",
                   "widget"
                 ],
-                "name": "Grid layout"
+                "name": "Grid layout",
+                "dimensions": {
+                  "rows": 1,
+                  "columns": 1,
+                  "colSize0xs": 12,
+                  "colSize0sm": 12,
+                  "colSize0md": 12,
+                  "colSize0lg": 12,
+                  "colSize0xl": 12
+                }
               }
             ],
             "layoutProperties": {
@@ -870,9 +1085,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "t4q_ESCeYHNQuKBtYjqWl",
-    "createdBy": "zeeshan",
-    "updatedAt": "4/5/2024",
-    "createdAt": "4/5/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -928,6 +1143,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -961,6 +1179,25 @@
           "id": "sYle6ucFJYjaiKcp7bETK",
           "position": {
             "i": "sYle6ucFJYjaiKcp7bETK",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        },
+        {
+          "componentId": "PRu9zzLT3GDfKvxEu9UYt",
+          "componentType": "10001",
+          "id": "PRu9zzLT3GDfKvxEu9UYt",
+          "position": {
+            "i": "PRu9zzLT3GDfKvxEu9UYt",
             "x": null,
             "y": null,
             "w": null,
@@ -1030,22 +1267,23 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "cssClassNames": [{ "cssClassName": "STATEMENT_DISPUTE_POPUP " }]
+      "cssClassNames": [
+        {
+          "cssClassName": "STATEMENT_DISPUTE_POPUP ",
+          "key": "STATEMENT_DISPUTE_POPUP "
+        }
+      ]
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "F9XFFzk8gRJVRTyzKvgym",
-        "triggerName": "THAMEEN_TRANSACTION_HISTORY",
-        "name": "On click",
-        "type": "2"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "t4q_ESCeYHNQuKBtYjqWl",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1105,6 +1343,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1136,8 +1377,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1149,6 +1390,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1208,6 +1450,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1239,8 +1484,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1252,6 +1497,118 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "PRu9zzLT3GDfKvxEu9UYt",
+    "name": "Grid layout",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "-t4xeNk330T5gr-t5ydL0",
+          "componentType": "20002",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0,
+          "padding": "5px"
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout"
+    },
+    "layout": null,
+    "events": [
+      {
+        "triggerId": "cyo1BRCsvlPm_VJIvIVaX",
+        "triggerName": "FILL_THAMEEN_HISTORY_TYPE_ADJUSTMENT",
+        "name": "On click",
+        "type": "2"
+      },
+      {
+        "triggerId": "F9XFFzk8gRJVRTyzKvgym",
+        "triggerName": "THAMEEN_TRANSACTION_HISTORY",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
+    "subType": "component",
+    "screenId": "t4q_ESCeYHNQuKBtYjqWl",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "-t4xeNk330T5gr-t5ydL0",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "font-size": "14px",
+          "font-weight": "bolder",
+          "color": "#838383",
+          "letter-spacing": "0px",
+          "cursor": "pointer"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "Adjustments"
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-2-0-0",
+    "screenId": "t4q_ESCeYHNQuKBtYjqWl",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1311,6 +1668,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1342,8 +1702,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1355,6 +1715,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1401,6 +1762,12 @@
         "triggerName": "FILL_THAMEEN_HISTORY_TYPE_EXPIRED",
         "name": "On click",
         "type": "2"
+      },
+      {
+        "triggerId": "F9XFFzk8gRJVRTyzKvgym",
+        "triggerName": "THAMEEN_TRANSACTION_HISTORY",
+        "name": "On click",
+        "type": "2"
       }
     ],
     "subType": "component",
@@ -1408,6 +1775,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1439,8 +1809,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/16/2024",
+    "createdAt": "5/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1452,6 +1822,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

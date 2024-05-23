@@ -1,4 +1,5 @@
 {
+  "_id": "KFaKmxBG_QoHH2E-NQvZ9",
   "id": "xxKumA7rgccdSljdSp1Rp",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
@@ -66,130 +67,277 @@
               "updatedBy": "basitahmed1199"
             },
             {
-              "id": "wfZQ4z_p3FKw1lqngrqdV",
-              "projectId": "652fcbce09869c3c809b3097",
+              "id": "j3PWoTuLEBHEjDDfwQxlI",
               "gitBranchName": "master",
-              "name": "ILPT_EDIT_UPDATE_TASK",
-              "status": "ACTIVE",
+              "name": "ILPT_EDIT_UPDATE_TASK_VALIDATIONS",
+              "projectId": "652fcbce09869c3c809b3097",
               "services": [
                 {
-                  "type": "8",
+                  "type": "16",
                   "command": {
-                    "type": "1",
+                    "type": "2",
                     "attributes": {
-                      "loaderWidgetIds": [906070],
-                      "messageWidgetIds": [906070],
-                      "responseStateKey": "ilpt_edit_update_task",
-                      "url": "/api-designer/api/updateIleadParentTask/execute",
-                      "checksum": true,
-                      "encryption": true,
-                      "isDeviceDetails": false,
-                      "loginTrigger": false,
-                      "formData": false,
-                      "logoutTrigger": false,
-                      "headers": {
-                        "Content-Type": "application/json",
-                        "channel_key": "002"
-                      },
-                      "requestBody": [
+                      "validationList": [
                         {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.id",
-                          "value": "ilpt_selected_task.id"
+                          "bindingKey": "ilpt_selected_task.taskName",
+                          "storeType": 1,
+                          "messageBindingKey": "ilpt_selected_task.taskName_validation",
+                          "isRequired": true,
+                          "requiredMessage": "Task name is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": []
                         },
                         {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.image",
-                          "value": "ilpt_selected_task.image"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.reward",
-                          "value": "ilpt_selected_task.rewardWithOutCurrency"
-                        },
-                        {
-                          "type": 4,
-                          "name": "Static",
-                          "key": "request.rewardUnit",
-                          "value": "BHD"
-                        },
-                        {
-                          "type": 4,
-                          "name": "Static",
-                          "key": "request.currency",
-                          "value": "BHD"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.taskName",
-                          "value": "ilpt_selected_task.taskName"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.endDate",
-                          "value": "endDate"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.isRecurring",
-                          "value": "ilpt_selected_task.isRecurring"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.recuringType",
-                          "value": "ilpt_edit_selected_frequency.name"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.assignIds",
-                          "value": "edit_assign_id"
-                        },
-                        {
-                          "type": 1,
-                          "name": "Form",
-                          "key": "request.date",
-                          "value": "ilpt_selected_task.date"
+                          "bindingKey": "ilpt_selected_task.rewardWithOutCurrency",
+                          "storeType": 1,
+                          "messageBindingKey": "ilpt_selected_task.rewardWithOutCurrency_validation",
+                          "isRequired": false,
+                          "requiredMessage": "",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": []
                         }
                       ],
-                      "baseURL": "656f0b4398e9df55f0499597",
-                      "storeType": 2
-                    },
-                    "responseHandler": [
-                      {
-                        "httpStatus": 200,
-                        "triggerName": "GO_TO_ILP_TAKS_SCREEN",
-                        "triggerId": "VbfqZfOqr0HgY5PzihDTK",
-                        "logic": { "==": [{ "var": "code" }, 1] }
+                      "successTrigger": {
+                        "id": "3opv38LjcuEu1yiTzd9Am",
+                        "gitBranchName": "master",
+                        "name": "ILCG_EDIT_GOAL_VALIDATIONS",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "services": [
+                          {
+                            "type": "16",
+                            "command": {
+                              "type": "2",
+                              "attributes": {
+                                "validationList": [
+                                  {
+                                    "bindingKey": "ILCG_NAME",
+                                    "storeType": 1,
+                                    "messageBindingKey": "VALIDATIONS_ILCG_NAME",
+                                    "isRequired": true,
+                                    "requiredMessage": "Goal name is required",
+                                    "regEx": "",
+                                    "regExMessage": "",
+                                    "JSONLogic": []
+                                  },
+                                  {
+                                    "bindingKey": "ILCG_GOAL_AMOUNT",
+                                    "storeType": 1,
+                                    "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+                                    "isRequired": true,
+                                    "requiredMessage": "Goal amount is required",
+                                    "regEx": "",
+                                    "regExMessage": "",
+                                    "JSONLogic": []
+                                  },
+                                  {
+                                    "bindingKey": "ILCG_TARGET_DATE",
+                                    "storeType": 1,
+                                    "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
+                                    "isRequired": true,
+                                    "requiredMessage": "Target date is required",
+                                    "regEx": "",
+                                    "regExMessage": "",
+                                    "JSONLogic": []
+                                  },
+                                  {
+                                    "bindingKey": "ILC_FREQUENCY.name",
+                                    "storeType": 1,
+                                    "messageBindingKey": "VALIDATIONS_ILC_FREQUENCY.name",
+                                    "isRequired": true,
+                                    "requiredMessage": "Contribution frequency is required",
+                                    "regEx": "",
+                                    "regExMessage": "",
+                                    "JSONLogic": []
+                                  },
+                                  {
+                                    "bindingKey": "ILCG_AMOUNT",
+                                    "storeType": 1,
+                                    "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
+                                    "isRequired": true,
+                                    "requiredMessage": "Contribution amount is required",
+                                    "regEx": "",
+                                    "regExMessage": "",
+                                    "JSONLogic": []
+                                  },
+                                  {
+                                    "bindingKey": "ILCG_START_DATE",
+                                    "storeType": 1,
+                                    "messageBindingKey": "VALIDATIONS_ILCG_START_DATE",
+                                    "isRequired": true,
+                                    "requiredMessage": "Start date is required",
+                                    "regEx": "",
+                                    "regExMessage": "",
+                                    "JSONLogic": []
+                                  }
+                                ],
+                                "successTrigger": {
+                                  "id": "8mdApZ_-ujaxVPXrYL4Ro",
+                                  "_id": "Ty87630DL6lgPEGQw8D0U",
+                                  "projectId": "652fcbce09869c3c809b3097",
+                                  "gitBranchName": "master",
+                                  "name": "ILCG_EDIT_GOAL_API",
+                                  "old_name": "ILCG_EDIT_GOAL_API",
+                                  "status": "ACTIVE",
+                                  "services": [
+                                    {
+                                      "type": "8",
+                                      "command": {
+                                        "type": "1",
+                                        "attributes": {
+                                          "loaderWidgetIds": [906070],
+                                          "messageWidgetIds": [906070],
+                                          "responseStateKey": "REPONSE_ILCG_EDIT_GOAL",
+                                          "url": "/api-designer/api/editGoal/execute",
+                                          "checksum": true,
+                                          "encryption": true,
+                                          "isDeviceDetails": true,
+                                          "loginTrigger": false,
+                                          "formData": false,
+                                          "logoutTrigger": false,
+                                          "headers": {
+                                            "Content-Type": "application/json",
+                                            "Accept": "application/json",
+                                            "channel_key": "002"
+                                          },
+                                          "requestBody": [
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.name",
+                                              "value": "ILCG_NAME"
+                                            },
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.startDate",
+                                              "value": "ILCG_START_DATE"
+                                            },
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.amount",
+                                              "value": "ILCG_GOAL_AMOUNT"
+                                            },
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.targetDate",
+                                              "value": "ILCG_TARGET_DATE"
+                                            },
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.contributionFreq",
+                                              "value": "ILC_FREQUENCY.name"
+                                            },
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.contributionAmount",
+                                              "value": "ILCG_AMOUNT"
+                                            },
+                                            {
+                                              "type": 2,
+                                              "name": "Current screen",
+                                              "key": "request.cardNumber",
+                                              "value": "CURRENT_CARD.cardNumber"
+                                            },
+                                            {
+                                              "type": 2,
+                                              "name": "Current screen",
+                                              "key": "request.cprOfCard",
+                                              "value": "CURRENT_CARD.clientCode"
+                                            },
+                                            {
+                                              "type": 2,
+                                              "name": "Current screen",
+                                              "key": "request.image",
+                                              "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
+                                            },
+                                            {
+                                              "type": 1,
+                                              "name": "Form",
+                                              "key": "request.id",
+                                              "value": "ILCG_LIST.id"
+                                            },
+                                            {
+                                              "type": 4,
+                                              "name": "Static",
+                                              "key": "request.currency",
+                                              "value": "BHD"
+                                            }
+                                          ],
+                                          "baseURL": "656f0b4398e9df55f0499597",
+                                          "storeType": 2
+                                        },
+                                        "responseHandler": [
+                                          {
+                                            "httpStatus": 200,
+                                            "logic": {
+                                              "==": [{ "var": "code" }, 1]
+                                            },
+                                            "triggerName": "ILCG_EDIT_SUCCESS_MESSAGE",
+                                            "triggerId": "T4U7Kd-BsDHmwxKuqGf7v"
+                                          },
+                                          {
+                                            "httpStatus": 200,
+                                            "logic": {
+                                              "==": [{ "var": "code" }, 0]
+                                            },
+                                            "triggerName": "ILCG_EDIT_ERROR_MESSAGE",
+                                            "triggerId": "h9BV-ZS7U0hr6WIj5JBqD"
+                                          },
+                                          {
+                                            "httpStatus": 200,
+                                            "logic": {
+                                              "==": [{ "var": "code" }, 1]
+                                            },
+                                            "triggerName": "NVIGATE_FROM_EDIT_TO_GOAL_SCREEN",
+                                            "triggerId": "6ZhvMrlYIyIIxMFSMKjoO"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "csrf": "0.gwilhhqs16iBHgUyUvH0WQ2YqDvLp8yk",
+                                  "updatedAt": "4/3/2024",
+                                  "createdAt": "4/3/2024",
+                                  "createdBy": "talha2",
+                                  "updatedBy": "talha2"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.smph0td1pt6t-fLz-0OatJazCsQfa0j",
+                        "_id": "GCwzrV1S1dENIY7HVi-6J",
+                        "updatedAt": "4/8/2024",
+                        "createdAt": "4/8/2024",
+                        "createdBy": "mubashar",
+                        "updatedBy": "mubashar"
                       }
-                    ]
+                    }
                   }
                 }
               ],
-              "csrf": "0.tr7sxiiqz7eLjquFDi0zUEYb8YDSG7B",
-              "_id": "n3xsnc0yrLv6c40FKCKaZ",
-              "updatedAt": "4/4/2024",
-              "createdAt": "4/4/2024",
-              "createdBy": "basitahmed1199",
-              "updatedBy": "basitahmed1199"
+              "csrf": "0.wba5euu0ska6T2u514Vc3NFD4Pqkqp2R",
+              "_id": "32x9T3FMMugtbGH3hBxNS",
+              "updatedAt": "5/19/2024",
+              "createdAt": "5/19/2024",
+              "createdBy": "mubashar",
+              "updatedBy": "mubashar"
             }
           ],
-          "triggerIds": ["QFSQAdNBUU1J5n8H_KxzD", "wfZQ4z_p3FKw1lqngrqdV"]
+          "triggerIds": ["QFSQAdNBUU1J5n8H_KxzD", "j3PWoTuLEBHEjDDfwQxlI"]
         }
       }
     }
   ],
-  "csrf": "0.tr7sxiiqz7eLjquFDi0zUEYb8YDSG7B",
-  "_id": "KFaKmxBG_QoHH2E-NQvZ9",
-  "updatedAt": "4/4/2024",
-  "createdAt": "4/4/2024",
-  "createdBy": "basitahmed1199",
-  "updatedBy": "basitahmed1199"
+  "csrf": "0.wba5euu0ska6T2u514Vc3NFD4Pqkqp2R",
+  "updatedAt": "5/19/2024",
+  "createdAt": "5/19/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
 }

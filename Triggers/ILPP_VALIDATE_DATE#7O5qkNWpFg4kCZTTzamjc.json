@@ -1,0 +1,252 @@
+{
+  "id": "YCdXhE5I5YLYhhUoM2o6X",
+  "_id": "7O5qkNWpFg4kCZTTzamjc",
+  "gitBranchName": "master",
+  "name": "ILPP_VALIDATE_DATE",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "ilpp_date",
+              "storeType": 1,
+              "messageBindingKey": "ilpp_date_validation",
+              "isRequired": false,
+              "requiredMessage": "",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "if": [
+                      {
+                        "==": [{ "var": "currentScreen.ilpp_isRecurring" }, "1"]
+                      },
+                      {
+                        "if": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.form.ilpp_recuringType" },
+                              "Monthly"
+                            ]
+                          },
+                          {
+                            "!": [
+                              { "var": "currentScreen.form.ilpp_dateMinError" }
+                            ]
+                          },
+                          true
+                        ]
+                      },
+                      true
+                    ]
+                  },
+                  "logicMessage": "Start date cannot be a past date"
+                }
+              ]
+            }
+          ],
+          "successTrigger": {
+            "_id": "gIi-uRsJu9EqIUTl-2FYp",
+            "id": "5-uqiLjRyI6c1VFrb2uxp",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILPP_SAVE_RECURSIVE_DATA",
+            "old_name": "ILPP_SAVE_RECURSIVE_DATA",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "storeType": "",
+                    "searchInState": false,
+                    "triggers": [
+                      {
+                        "id": "5GPvyXR59j6mkQmrl7Od7",
+                        "name": "ILPP_TEMP_TO_PERM_VAL",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": "",
+                                "filterList": [
+                                  {
+                                    "key": "ilpp_recuringType_permanent",
+                                    "changeValueConditonally": true,
+                                    "storeType": 1,
+                                    "logic": {
+                                      "var": "currentScreen.form.ilpp_recuringType"
+                                    }
+                                  },
+                                  {
+                                    "key": "ilpp_date_permanent",
+                                    "logic": {
+                                      "var": "currentScreen.form.ilpp_date"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.bpu63lwtxtdnGFJpPyTrsIbdgz8a9EGy",
+                        "_id": "Bdr54lizdmNKv7t__tbR4",
+                        "updatedAt": "3/21/2024",
+                        "createdAt": "3/21/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      },
+                      {
+                        "id": "xNTVTH_3QN361ZTvNk3z1",
+                        "_id": "TZvpuY4CJjVXqZk8rruje",
+                        "name": "ILPP_SAVE_PAYMENT_TYPE",
+                        "old_name": "ILPP_SAVE_PAYMENT_TYPE_BONUS",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "requestBody": [],
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": "",
+                                "filterList": [
+                                  {
+                                    "key": "ilpp_payment_type",
+                                    "changeValueConditonally": true,
+                                    "storeType": 2,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.ilpp_isRecurring"
+                                            },
+                                            "0"
+                                          ]
+                                        },
+                                        "Bonus",
+                                        "Allowance"
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.bpu63lwtxtdnGFJpPyTrsIbdgz8a9EGy",
+                        "updatedAt": "3/21/2024",
+                        "createdAt": "3/21/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      },
+                      {
+                        "id": "WuhHxg90Z2anPz7DGsIrC",
+                        "gitBranchName": "master",
+                        "name": "Close Modal",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "services": [
+                          {
+                            "type": "9",
+                            "command": {
+                              "type": "2",
+                              "attributes": {
+                                "content": "",
+                                "type": "",
+                                "modalId": "ozKeLAA5SQp3bjJ9kCQQg",
+                                "toastContentType": "custom"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.jatauflq6m9OLTNIXxnsSIPkevvmnHOc",
+                        "_id": "i77CygKtRPbsSR6rKkIva",
+                        "updatedAt": "1/11/2024",
+                        "createdAt": "1/11/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      },
+                      {
+                        "id": "0lN-HSA5d6fiedTtMohbo",
+                        "_id": "fvO6E2PMxNsLw7qdRsPSG",
+                        "name": "ILPT_SELECT_PMs_WITHOUT_DC",
+                        "old_name": "ILPT_SELECT_PMs_WITHOUT_CC",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "requestBody": [],
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": "",
+                                "filterList": [
+                                  {
+                                    "key": "paymentMethods",
+                                    "changeValueConditonally": true,
+                                    "storeType": 2,
+                                    "logic": {
+                                      "var": "currentScreen.paymentMethodsWithoutDC"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.bpu63lwtxtdnGFJpPyTrsIbdgz8a9EGy",
+                        "updatedAt": "3/21/2024",
+                        "createdAt": "3/21/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      }
+                    ],
+                    "triggerIds": [
+                      "5GPvyXR59j6mkQmrl7Od7",
+                      "xNTVTH_3QN361ZTvNk3z1",
+                      "WuhHxg90Z2anPz7DGsIrC",
+                      "0lN-HSA5d6fiedTtMohbo"
+                    ]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.bpu63lwtxtdnGFJpPyTrsIbdgz8a9EGy",
+            "updatedAt": "3/21/2024",
+            "createdAt": "3/21/2024",
+            "createdBy": "talha2",
+            "updatedBy": "talha2"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.2pbvxe4jmb9qIS6pE7K9a2Jbg4DIS2a4",
+  "updatedAt": "5/15/2024",
+  "createdAt": "5/15/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

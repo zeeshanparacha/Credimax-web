@@ -1,0 +1,62 @@
+{
+  "id": "AKtXK8IDvVT71GA9LdT6z",
+  "_id": "ywKex1BwnI0S08em2lBxe",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SIGN_UP_SEND_LINK_TO_EMAIL",
+  "old_name": "SIGN_UP_SEND_LINK_TO_EMAIL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "RESPOSE_SEND_APP_LINK_TO_EMAIL",
+          "url": "/api-designer/api/sendEmail/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.email",
+              "value": "EMAIL_APPS"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "SIGN_UP_DOB_SUCESS_MESSAGE",
+            "triggerId": "F-Fmmb6Yswmy0HRfzPzL9"
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "SIGN_UP_07_DOB_TO_LOGIN_DELY",
+            "triggerId": "igDfw78S7c2fRoWIbC4-S"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.jihw1hx8qb4hMRetEu6td-Ij0FJCH7j",
+  "updatedAt": "5/8/2024",
+  "createdAt": "5/8/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

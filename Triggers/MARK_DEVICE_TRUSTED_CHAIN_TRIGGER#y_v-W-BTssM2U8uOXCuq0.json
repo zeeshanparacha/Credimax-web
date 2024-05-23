@@ -100,60 +100,6 @@
               "updatedBy": "muhammad.asad"
             },
             {
-              "id": "F6QqFonps7GmNAo8tccOe",
-              "name": "NAVIGATE_LOGIN_OTP_TO_DASHBOARD_TRIGGER",
-              "projectId": "652fcbce09869c3c809b3097",
-              "gitBranchName": "master",
-              "services": [
-                {
-                  "type": "1",
-                  "command": {
-                    "type": "2",
-                    "attributes": {
-                      "fromWidgetId": "LCEtloYlPYupeC90QckRH",
-                      "nextWidgetId": "5TkJaq2fP278MKK4LKLDy",
-                      "gridRadioValue": "Screen",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "editableForm": false
-                    }
-                  }
-                }
-              ],
-              "csrf": "0.kmqyh97ntcMDr8hriuT8ucEQns0Wt4L",
-              "_id": "srm0q-_i60VXWiw_Ai3h0",
-              "updatedAt": "12/5/2023",
-              "createdAt": "12/5/2023",
-              "createdBy": "muhammad.asad",
-              "updatedBy": "muhammad.asad"
-            },
-            {
-              "id": "GErAwZtkHwM8AqR96S-Ck",
-              "gitBranchName": "master",
-              "name": "SUCCESS_TOAST",
-              "projectId": "652fcbce09869c3c809b3097",
-              "services": [
-                {
-                  "type": "9",
-                  "command": {
-                    "type": "3",
-                    "attributes": {
-                      "type": "success",
-                      "modalId": "iGHYdoorU5umkRN8dVfc0",
-                      "toastContentType": "stateBased",
-                      "storeType": 1,
-                      "stateName": "successKey"
-                    }
-                  }
-                }
-              ],
-              "csrf": "0.0sefuvqwne2gOcgqEIFDoQ6w2ELOzX-Jp",
-              "_id": "aMpsZWiABSxwQsweS9UZb",
-              "updatedAt": "12/1/2023",
-              "createdAt": "12/1/2023",
-              "createdBy": "muhammad.asad",
-              "updatedBy": "muhammad.asad"
-            },
-            {
               "id": "5NHqs2mza0DuQEy_VB0U0",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
@@ -373,22 +319,128 @@
               "createdAt": "2/22/2024",
               "createdBy": "talha",
               "updatedBy": "talha"
+            },
+            {
+              "id": "En07_uuTX1DSU8LCrs5b5",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "IS_CARD_HOLDER_CONDITION_FOR_OTP",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "logic": {
+                            "==": [
+                              {
+                                "var": "currentSession.userProfile.content.isCardHolder"
+                              },
+                              "true"
+                            ]
+                          },
+                          "triggerName": "NAVIGATE_LOGIN_OTP_TO_SIGN_UP_DOB",
+                          "triggerId": "2vyn0jhVpN2aaG7vN_WPo",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "fromWidgetId": "LCEtloYlPYupeC90QckRH",
+                                  "nextWidgetId": "hF_0MVoDrEqRzeVc_nRaW",
+                                  "gridRadioValue": "Screen",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.jihw1hx8qb4hMRetEu6td-Ij0FJCH7j",
+              "_id": "O4TG4TJGG2YsOmrIVeOzP",
+              "updatedAt": "5/8/2024",
+              "createdAt": "5/8/2024",
+              "createdBy": "mubashar",
+              "updatedBy": "mubashar"
+            },
+            {
+              "id": "5IgyFxUkiE-WvWFts9R2u",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "SUCCESS_TOAST_CONDITIONAL",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "13",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "triggers": [
+                        {
+                          "triggerName": "SUCCESS_TOAST",
+                          "triggerId": "GErAwZtkHwM8AqR96S-Ck",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "3",
+                                "attributes": {
+                                  "type": "success",
+                                  "modalId": "iGHYdoorU5umkRN8dVfc0",
+                                  "toastContentType": "stateBased",
+                                  "storeType": 1,
+                                  "stateName": "successKey"
+                                }
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "!=": [
+                              {
+                                "var": "currentSession.userProfile.content.isCardHolder"
+                              },
+                              "true"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.jihw1hx8qb4hMRetEu6td-Ij0FJCH7j",
+              "_id": "v9E4Sjzg_IM_tGqNESbkB",
+              "updatedAt": "5/8/2024",
+              "createdAt": "5/8/2024",
+              "createdBy": "mubashar",
+              "updatedBy": "mubashar"
             }
           ],
           "triggerIds": [
             "1ZOrlfufgzgGPRYHnzaxN",
-            "F6QqFonps7GmNAo8tccOe",
-            "GErAwZtkHwM8AqR96S-Ck",
             "5NHqs2mza0DuQEy_VB0U0",
-            "oBsXlHFnITIifkPUO-CBz"
+            "oBsXlHFnITIifkPUO-CBz",
+            "En07_uuTX1DSU8LCrs5b5",
+            "5IgyFxUkiE-WvWFts9R2u"
           ]
         }
       }
     }
   ],
-  "csrf": "0.82z4vm0slmuWIfLU6zR-nTUFU_oe4uUY",
-  "updatedAt": "2/22/2024",
-  "createdAt": "2/22/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.jihw1hx8qb4hMRetEu6td-Ij0FJCH7j",
+  "updatedAt": "5/8/2024",
+  "createdAt": "5/8/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
 }

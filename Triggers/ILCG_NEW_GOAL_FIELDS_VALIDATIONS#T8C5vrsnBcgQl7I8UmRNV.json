@@ -1,5 +1,6 @@
 {
   "id": "SYxDwl7_YwkhXW3jDh7XO",
+  "_id": "T8C5vrsnBcgQl7I8UmRNV",
   "gitBranchName": "master",
   "name": "ILCG_NEW_GOAL_FIELDS_VALIDATIONS",
   "projectId": "652fcbce09869c3c809b3097",
@@ -26,16 +27,6 @@
               "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
               "isRequired": true,
               "requiredMessage": "Goal amount is required",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": []
-            },
-            {
-              "bindingKey": "ILCG_TARGET_DATE",
-              "storeType": 1,
-              "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
-              "isRequired": true,
-              "requiredMessage": "Target date is required",
               "regEx": "",
               "regExMessage": "",
               "JSONLogic": []
@@ -68,7 +59,43 @@
               "requiredMessage": "Start date is required",
               "regEx": "",
               "regExMessage": "",
-              "JSONLogic": []
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "!": [
+                      { "var": "currentScreen.form.ILCG_START_DATEMinError" }
+                    ]
+                  },
+                  "logicMessage": "Start date cannot be less than current date"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      { "var": "currentScreen.form.ILCG_START_DATEMaxError" }
+                    ]
+                  },
+                  "logicMessage": "Start date cannot be greater than target date"
+                }
+              ]
+            },
+            {
+              "bindingKey": "ILCG_TARGET_DATE",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
+              "isRequired": true,
+              "requiredMessage": "Target date is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "!": [
+                      { "var": "currentScreen.form.ILCG_TARGET_DATEMinError" }
+                    ]
+                  },
+                  "logicMessage": "Target date cannot be less than start date"
+                }
+              ]
             }
           ],
           "successTrigger": {
@@ -192,10 +219,9 @@
       }
     }
   ],
-  "csrf": "0.smph0td1pt6t-fLz-0OatJazCsQfa0j",
-  "_id": "T8C5vrsnBcgQl7I8UmRNV",
-  "updatedAt": "4/8/2024",
-  "createdAt": "4/8/2024",
-  "createdBy": "mubashar",
-  "updatedBy": "mubashar"
+  "csrf": "0.z7hjs2a6ya5X5Tm8lTK6mdWMZ-P0pU9",
+  "updatedAt": "5/16/2024",
+  "createdAt": "5/16/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }

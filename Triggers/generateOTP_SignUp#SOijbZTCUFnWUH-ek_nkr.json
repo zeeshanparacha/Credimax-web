@@ -1,0 +1,60 @@
+{
+  "id": "Hr6pngpekJplreiVnyIUZ",
+  "_id": "SOijbZTCUFnWUH-ek_nkr",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "generateOTP_SignUp",
+  "old_name": "generateOTP",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "generateOtpResponse",
+          "successMessageBindingKey": "successKey",
+          "url": "/prelogin/v1/generateOtp",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            { "type": 1, "name": "Form", "key": "email", "value": "email" },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "mobileNumber",
+              "value": "number"
+            },
+            { "type": 1, "name": "Form", "key": "cpr", "value": "cpr" },
+            { "type": 4, "name": "Static", "key": "tranCode", "value": "1111" }
+          ],
+          "baseURL": "6566efa5a131d92664c8dd76",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "Login_Error_TOAST_TRIGGER",
+            "triggerId": "l9oOTSzEMb7I3ZSguK69Z"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.hniav3nqb2byUDyFyRTouEg-AO2KGdG6",
+  "updatedAt": "5/14/2024",
+  "createdAt": "5/14/2024",
+  "createdBy": "muhammad.asad",
+  "updatedBy": "mubashar"
+}

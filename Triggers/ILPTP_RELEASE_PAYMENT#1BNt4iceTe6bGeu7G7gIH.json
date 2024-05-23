@@ -37,13 +37,17 @@
           ],
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 2,
+          "hideLoading": true,
           "loadingState": "PCRP_Loader_Generic",
           "isLoadingState": true
         },
         "responseHandler": [
           {
             "logic": {
-              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+              "and": [
+                { "!": [{ "var": "content.benefitRedirectUrl" }] },
+                { "!=": [{ "var": "content.isInValidOtp" }, "1"] }
+              ]
             },
             "httpStatus": 200,
             "triggerName": "ILPTP_SHOW_RESPONSE",
@@ -62,16 +66,16 @@
               "if": [{ "var": "content.benefitRedirectUrl" }, true, false]
             },
             "httpStatus": 200,
-            "triggerName": "PC_REDIRECT_TO_BENIFIT",
-            "triggerId": "9FGN41WEwt-ux_dXEzsVG"
+            "triggerName": "GENERATE_REFRESH_TOKEN_FOR_PC_N_REDIRECT",
+            "triggerId": "3MPDen3cm4CBKptP8Yukc"
           }
         ]
       }
     }
   ],
-  "csrf": "0.2uenp8js3aklExL1hWOAKMBUgkusGNJI",
-  "updatedAt": "5/6/2024",
-  "createdAt": "5/6/2024",
+  "csrf": "0.ue87wqvqmop2rnSRZqHXmkCM94QffmSh",
+  "updatedAt": "5/18/2024",
+  "createdAt": "5/18/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

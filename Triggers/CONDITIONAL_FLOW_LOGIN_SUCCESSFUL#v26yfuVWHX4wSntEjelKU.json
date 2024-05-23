@@ -15,11 +15,23 @@
           "triggers": [
             {
               "logic": {
-                "==": [
+                "and": [
                   {
-                    "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                      },
+                      "Y"
+                    ]
                   },
-                  "Y"
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.isCardHolder"
+                      },
+                      "true"
+                    ]
+                  }
                 ]
               },
               "triggerName": "NAVIGATE_LOGIN_TO_DASHBOARD_TRIGGER",
@@ -69,11 +81,23 @@
             },
             {
               "logic": {
-                "==": [
+                "and": [
                   {
-                    "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                      },
+                      "Y"
+                    ]
                   },
-                  "Y"
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.isCardHolder"
+                      },
+                      "true"
+                    ]
+                  }
                 ]
               },
               "triggerName": "SAVE_SESSION_TIME_AND_SHOW_POPUP_AFTER_DELAY",
@@ -232,15 +256,54 @@
                   }
                 }
               ]
+            },
+            {
+              "logic": {
+                "and": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.isTrustedDeviceOrNot"
+                      },
+                      "Y"
+                    ]
+                  },
+                  {
+                    "!=": [
+                      {
+                        "var": "currentSession.userProfile.content.isCardHolder"
+                      },
+                      "true"
+                    ]
+                  }
+                ]
+              },
+              "triggerName": "NAVIGATE_LOGIN_SCRREN_TO_SIGN_UP_07_DOB",
+              "triggerId": "PBA9dQTjqXriltC90NVA9",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "fromWidgetId": "Y8K1eost7v3cPvop6sgsG",
+                      "nextWidgetId": "hF_0MVoDrEqRzeVc_nRaW",
+                      "gridRadioValue": "Screen",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.82z4vm0slmuWIfLU6zR-nTUFU_oe4uUY",
-  "updatedAt": "2/22/2024",
-  "createdAt": "2/22/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.jihw1hx8qb4hMRetEu6td-Ij0FJCH7j",
+  "updatedAt": "5/8/2024",
+  "createdAt": "5/8/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
 }

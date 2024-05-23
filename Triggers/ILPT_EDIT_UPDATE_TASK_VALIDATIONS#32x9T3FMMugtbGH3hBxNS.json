@@ -1,0 +1,166 @@
+{
+  "id": "j3PWoTuLEBHEjDDfwQxlI",
+  "_id": "32x9T3FMMugtbGH3hBxNS",
+  "gitBranchName": "master",
+  "name": "ILPT_EDIT_UPDATE_TASK_VALIDATIONS",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "ilpt_selected_task.taskName",
+              "storeType": 1,
+              "messageBindingKey": "ilpt_selected_task.taskName_validation",
+              "isRequired": true,
+              "requiredMessage": "Task name is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            },
+            {
+              "bindingKey": "ilpt_selected_task.rewardWithOutCurrency",
+              "storeType": 1,
+              "messageBindingKey": "ilpt_selected_task.rewardWithOutCurrency_validation",
+              "isRequired": true,
+              "requiredMessage": "Task amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": []
+            }
+          ],
+          "successTrigger": {
+            "id": "wfZQ4z_p3FKw1lqngrqdV",
+            "_id": "n3xsnc0yrLv6c40FKCKaZ",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILPT_EDIT_UPDATE_TASK",
+            "old_name": "ILPT_EDIT_UPDATE_TASK",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "8",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "loaderWidgetIds": [906070],
+                    "messageWidgetIds": [906070],
+                    "responseStateKey": "ilpt_edit_update_task",
+                    "url": "/api-designer/api/updateIleadParentTask/execute",
+                    "checksum": true,
+                    "encryption": true,
+                    "isDeviceDetails": false,
+                    "loginTrigger": false,
+                    "formData": false,
+                    "logoutTrigger": false,
+                    "headers": {
+                      "Content-Type": "application/json",
+                      "channel_key": "002"
+                    },
+                    "requestBody": [
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.id",
+                        "value": "ilpt_selected_task.id"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.image",
+                        "value": "ilpt_selected_task.webImage"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.reward",
+                        "value": "ilpt_selected_task.rewardWithOutCurrency"
+                      },
+                      {
+                        "type": 4,
+                        "name": "Static",
+                        "key": "request.rewardUnit",
+                        "value": "BHD"
+                      },
+                      {
+                        "type": 4,
+                        "name": "Static",
+                        "key": "request.currency",
+                        "value": "BHD"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.taskName",
+                        "value": "ilpt_selected_task.taskName"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.endDate",
+                        "value": "endDate"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.isRecurring",
+                        "value": "ilpt_selected_task.isRecurring"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.recurringType",
+                        "value": "ilpt_edit_frequency.name"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.assignIds",
+                        "value": "ilpt_edit_assign_id"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "request.date",
+                        "value": "date"
+                      }
+                    ],
+                    "baseURL": "656f0b4398e9df55f0499597",
+                    "storeType": 2
+                  },
+                  "responseHandler": [
+                    {
+                      "httpStatus": 200,
+                      "triggerName": "GO_TO_ILP_TAKS_SCREEN",
+                      "triggerId": "VbfqZfOqr0HgY5PzihDTK",
+                      "logic": { "==": [{ "var": "code" }, 1] }
+                    },
+                    {
+                      "triggerName": "HIDE_MODAL_TRIGGER",
+                      "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+                      "httpStatus": 200,
+                      "logic": { "==": [{ "var": "code" }, 1] }
+                    }
+                  ]
+                }
+              }
+            ],
+            "csrf": "0.lp1d4ak2458F6wmPo6NMKRU4yMcaNo4",
+            "updatedAt": "4/22/2024",
+            "createdAt": "4/22/2024",
+            "createdBy": "basitahmed1199",
+            "updatedBy": "basitahmed1199"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.wba5euu0ska6T2u514Vc3NFD4Pqkqp2R",
+  "updatedAt": "5/19/2024",
+  "createdAt": "5/19/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

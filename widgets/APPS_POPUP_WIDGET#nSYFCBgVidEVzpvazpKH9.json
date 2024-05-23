@@ -1847,8 +1847,82 @@
                                                   "content": "Text Box",
                                                   "type": "20004"
                                                 },
-                                                "events": [],
+                                                "events": [
+                                                  {
+                                                    "triggerId": "BLul04Pbpz5iPf1xkXUGs",
+                                                    "triggerName": "APPS_POPUP_CLEAR_ERROR_MESSAGE",
+                                                    "serviceType": "11",
+                                                    "attributes": {
+                                                      "storeType": "",
+                                                      "selectedObjectBindingKey": "selectedObject",
+                                                      "dataType": "",
+                                                      "sourceBindingKey": "",
+                                                      "filterList": [
+                                                        {
+                                                          "key": "apps_email_validation",
+                                                          "changeValueConditonally": false,
+                                                          "storeType": 1,
+                                                          "logic": ""
+                                                        }
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click"
+                                                  }
+                                                ],
                                                 "path": "0-0-0-0-5-0-2-0-0-0-0"
+                                              },
+                                              {
+                                                "id": "HmQ-Vl7CSBqo7ph9OvHhD",
+                                                "status": "ACTIVE",
+                                                "name": "Label",
+                                                "attributes": {
+                                                  "variant": "body1",
+                                                  "name": "Label",
+                                                  "mandatory": false,
+                                                  "layoutProperties": {
+                                                    "label": {
+                                                      "//": "Use this class to style label component.",
+                                                      "margin": "9px 0px 0px 0px"
+                                                    },
+                                                    "prefix": {
+                                                      "//": "Use this class to style prefix."
+                                                    },
+                                                    "postfix": {
+                                                      "//": "Use this class to style postfix."
+                                                    },
+                                                    "mainContainer": "label",
+                                                    "xl": 12,
+                                                    "lg": 12,
+                                                    "md": 12,
+                                                    "sm": 12,
+                                                    "xs": 12
+                                                  },
+                                                  "label": "apps_email_validation",
+                                                  "searchInState": true,
+                                                  "storeType": 1,
+                                                  "cssClassNames": [
+                                                    {
+                                                      "cssClassName": "LOG_IN_EMAIL_VALIDATION ",
+                                                      "key": "LOG_IN_EMAIL_VALIDATION "
+                                                    }
+                                                  ]
+                                                },
+                                                "icon": "FaFont",
+                                                "group": "Form",
+                                                "type": "20002",
+                                                "updatedAt": "23-Aug-2021",
+                                                "createdAt": "23-Aug-2021",
+                                                "order": 15,
+                                                "version": "1.0.0",
+                                                "isLatest": true,
+                                                "projectType": "web",
+                                                "component": {
+                                                  "content": "Label",
+                                                  "type": "20002"
+                                                },
+                                                "events": [],
+                                                "path": "0-0-0-0-5-0-2-0-0-0-1"
                                               }
                                             ],
                                             "layoutProperties": {
@@ -1959,37 +2033,17 @@
                                                   "iconname": "IoArrowForwardSharp",
                                                   "cssClassNames": [
                                                     {
-                                                      "cssClassName": "BTN_ARROW "
+                                                      "cssClassName": "BTN_ARROW ",
+                                                      "key": "BTN_ARROW "
                                                     }
                                                   ],
                                                   "iconName": "IoArrowForwardSharp",
                                                   "color": "primary",
-                                                  "disableCondition": {
-                                                    "logic": {
-                                                      "if": [
-                                                        {
-                                                          "and": [
-                                                            {
-                                                              "var": "currentScreen.form.apps_email"
-                                                            },
-                                                            {
-                                                              ">": [
-                                                                {
-                                                                  "var": "currentScreen.form.apps_email.length"
-                                                                },
-                                                                0
-                                                              ]
-                                                            }
-                                                          ]
-                                                        },
-                                                        false,
-                                                        true
-                                                      ]
-                                                    }
-                                                  },
+                                                  "disableCondition": {},
                                                   "cssDisableClassNames": [
                                                     {
-                                                      "cssClassName": "BTN_ARROW_DISABLE "
+                                                      "cssClassName": "BTN_ARROW_DISABLE ",
+                                                      "key": "BTN_ARROW_DISABLE "
                                                     }
                                                   ]
                                                 },
@@ -2010,42 +2064,109 @@
                                                 },
                                                 "events": [
                                                   {
-                                                    "triggerId": "ULj0jDU6R_aUL_EAZ5l65",
-                                                    "triggerName": "SEND_LINK_TO_EMAIL",
-                                                    "serviceType": "8",
+                                                    "triggerId": "-_yd0D01r-b4_yB6lW0yH",
+                                                    "triggerName": "SEND_LINK_TO_EMAIL_VALIDATIONS",
+                                                    "serviceType": "16",
                                                     "attributes": {
-                                                      "loaderWidgetIds": [
-                                                        906070
-                                                      ],
-                                                      "messageWidgetIds": [
-                                                        906070
-                                                      ],
-                                                      "responseStateKey": "send_app_link_to_email",
-                                                      "url": "/api-designer/api/sendEmail/execute",
-                                                      "checksum": true,
-                                                      "encryption": true,
-                                                      "isDeviceDetails": false,
-                                                      "loginTrigger": false,
-                                                      "formData": false,
-                                                      "logoutTrigger": false,
-                                                      "headers": {
-                                                        "Content-Type": "application/json",
-                                                        "channel_key": "002"
-                                                      },
-                                                      "requestBody": [
+                                                      "validationList": [
                                                         {
-                                                          "type": 1,
-                                                          "name": "Form",
-                                                          "key": "request.email",
-                                                          "value": "apps_email"
+                                                          "bindingKey": "apps_email",
+                                                          "storeType": 1,
+                                                          "messageBindingKey": "apps_email_validation",
+                                                          "isRequired": true,
+                                                          "requiredMessage": "Email is required",
+                                                          "regEx": "/^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$/",
+                                                          "regExMessage": "Email format incorrect",
+                                                          "JSONLogic": []
                                                         }
                                                       ],
-                                                      "baseURL": "6566efa5a131d92664c8dd76",
-                                                      "storeType": 2
+                                                      "successTrigger": {
+                                                        "id": "ULj0jDU6R_aUL_EAZ5l65",
+                                                        "_id": "coWF0Nj53Zu8HECKzLQS6",
+                                                        "projectId": "652fcbce09869c3c809b3097",
+                                                        "gitBranchName": "master",
+                                                        "name": "SEND_LINK_TO_EMAIL",
+                                                        "old_name": "SEND_LINK_TO_EMAIL",
+                                                        "status": "ACTIVE",
+                                                        "services": [
+                                                          {
+                                                            "type": "8",
+                                                            "command": {
+                                                              "type": "1",
+                                                              "attributes": {
+                                                                "loaderWidgetIds": [
+                                                                  906070
+                                                                ],
+                                                                "messageWidgetIds": [
+                                                                  906070
+                                                                ],
+                                                                "responseStateKey": "send_app_link_to_email",
+                                                                "url": "/api-designer/api/sendEmail/execute",
+                                                                "checksum": true,
+                                                                "encryption": true,
+                                                                "isDeviceDetails": false,
+                                                                "loginTrigger": false,
+                                                                "formData": false,
+                                                                "logoutTrigger": false,
+                                                                "headers": {
+                                                                  "Content-Type": "application/json",
+                                                                  "channel_key": "002"
+                                                                },
+                                                                "requestBody": [
+                                                                  {
+                                                                    "type": 1,
+                                                                    "name": "Form",
+                                                                    "key": "request.email",
+                                                                    "value": "apps_email"
+                                                                  }
+                                                                ],
+                                                                "baseURL": "656f0b4398e9df55f0499597",
+                                                                "storeType": 2,
+                                                                "hideLoading": false,
+                                                                "loadingState": "Email_Link_generic_Loader",
+                                                                "isLoadingState": false
+                                                              },
+                                                              "responseHandler": [
+                                                                {
+                                                                  "triggerName": "SEND_APPS_LINK_ERROR_TOAST",
+                                                                  "triggerId": "uOfgfOdY3QJbYDQll6nh0",
+                                                                  "httpStatus": 200,
+                                                                  "logic": {
+                                                                    "==": [
+                                                                      {
+                                                                        "var": "code"
+                                                                      },
+                                                                      0
+                                                                    ]
+                                                                  }
+                                                                },
+                                                                {
+                                                                  "httpStatus": 200,
+                                                                  "triggerName": "SEND_APPS_STATES_SEQUENTIAL",
+                                                                  "triggerId": "fP7_fGE_Kp3JtfeEWlsYo",
+                                                                  "logic": {
+                                                                    "==": [
+                                                                      {
+                                                                        "var": "code"
+                                                                      },
+                                                                      1
+                                                                    ]
+                                                                  }
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
+                                                        ],
+                                                        "csrf": "0.hqbzw8pz0iuG15W27OIG5UDEhZ9YJcup",
+                                                        "updatedAt": "3/13/2024",
+                                                        "createdAt": "3/13/2024",
+                                                        "createdBy": "mubashar",
+                                                        "updatedBy": "mubashar"
+                                                      }
                                                     },
                                                     "type": "2",
                                                     "name": "On click",
-                                                    "commandType": "1"
+                                                    "commandType": "2"
                                                   }
                                                 ],
                                                 "path": "0-0-0-0-5-0-2-1-0-0-0"
@@ -2295,8 +2416,8 @@
     "gitBranchName": "master",
     "_id": "nSYFCBgVidEVzpvazpKH9",
     "createdBy": "mubashar",
-    "updatedAt": "3/13/2024",
-    "createdAt": "3/13/2024",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2350,6 +2471,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2501,6 +2625,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2547,6 +2674,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2598,8 +2728,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -2627,6 +2757,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2673,6 +2804,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2723,8 +2857,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -2737,6 +2871,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2808,6 +2943,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2854,6 +2992,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2884,8 +3025,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2897,6 +3038,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2954,6 +3096,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2989,6 +3134,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3019,8 +3167,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3032,6 +3180,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3092,6 +3241,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3138,6 +3290,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3185,8 +3340,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3199,6 +3354,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3244,6 +3400,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3291,8 +3450,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3305,6 +3464,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3357,6 +3517,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3392,6 +3555,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3482,6 +3648,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3567,6 +3736,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3612,6 +3784,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3659,8 +3834,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3673,6 +3848,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3719,6 +3895,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3747,8 +3926,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3760,6 +3939,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3806,6 +3986,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3856,8 +4039,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3878,6 +4061,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3930,6 +4114,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3975,6 +4162,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4009,6 +4199,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4075,6 +4268,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4093,6 +4289,18 @@
           },
           "componentId": "LmFRflLFqPuYq3z3EsWGk",
           "componentType": "20004",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "HmQ-Vl7CSBqo7ph9OvHhD",
+          "componentType": "20002",
           "order": 1
         }
       ],
@@ -4120,6 +4328,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4161,19 +4372,79 @@
     "group": "Form",
     "type": "20004",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Text Box", "type": "20004" },
-    "events": [],
+    "events": [
+      {
+        "triggerId": "BLul04Pbpz5iPf1xkXUGs",
+        "triggerName": "APPS_POPUP_CLEAR_ERROR_MESSAGE",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "11"
+      }
+    ],
     "path": "0-0-0-0-5-0-2-0-0-0-0",
     "screenId": "nSYFCBgVidEVzpvazpKH9",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "HmQ-Vl7CSBqo7ph9OvHhD",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": {
+          "//": "Use this class to style label component.",
+          "margin": "9px 0px 0px 0px"
+        },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "apps_email_validation",
+      "searchInState": true,
+      "storeType": 1,
+      "cssClassNames": [
+        {
+          "cssClassName": "LOG_IN_EMAIL_VALIDATION ",
+          "key": "LOG_IN_EMAIL_VALIDATION "
+        }
+      ]
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "subType": "component",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-0-0-5-0-2-0-0-0-1",
+    "screenId": "nSYFCBgVidEVzpvazpKH9",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4219,6 +4490,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4247,32 +4521,21 @@
       },
       "asset": null,
       "iconname": "IoArrowForwardSharp",
-      "cssClassNames": [{ "cssClassName": "BTN_ARROW " }],
+      "cssClassNames": [{ "cssClassName": "BTN_ARROW ", "key": "BTN_ARROW " }],
       "iconName": "IoArrowForwardSharp",
       "color": "primary",
-      "disableCondition": {
-        "logic": {
-          "if": [
-            {
-              "and": [
-                { "var": "currentScreen.form.apps_email" },
-                { ">": [{ "var": "currentScreen.form.apps_email.length" }, 0] }
-              ]
-            },
-            false,
-            true
-          ]
-        }
-      },
-      "cssDisableClassNames": [{ "cssClassName": "BTN_ARROW_DISABLE " }]
+      "disableCondition": {},
+      "cssDisableClassNames": [
+        { "cssClassName": "BTN_ARROW_DISABLE ", "key": "BTN_ARROW_DISABLE " }
+      ]
     },
     "name": "Button",
     "icon": "FaBimobject",
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/9/2024",
+    "createdAt": "5/9/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4280,11 +4543,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "ULj0jDU6R_aUL_EAZ5l65",
-        "triggerName": "SEND_LINK_TO_EMAIL",
+        "triggerId": "-_yd0D01r-b4_yB6lW0yH",
+        "triggerName": "SEND_LINK_TO_EMAIL_VALIDATIONS",
         "name": "On click",
         "type": "2",
-        "serviceType": "8"
+        "serviceType": "16"
       }
     ],
     "path": "0-0-0-0-5-0-2-1-0-0-0",
@@ -4292,6 +4555,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

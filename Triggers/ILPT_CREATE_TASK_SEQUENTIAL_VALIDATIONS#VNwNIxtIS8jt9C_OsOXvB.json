@@ -22,16 +22,6 @@
               "JSONLogic": []
             },
             {
-              "bindingKey": "ilpt_target_date",
-              "storeType": 1,
-              "messageBindingKey": "ilpt_target_date_validations",
-              "isRequired": true,
-              "requiredMessage": "Taget date is required",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": []
-            },
-            {
               "bindingKey": "ilp_task_reward",
               "storeType": 1,
               "messageBindingKey": "ilp_task_reward_validations",
@@ -40,6 +30,75 @@
               "regEx": "",
               "regExMessage": "",
               "JSONLogic": []
+            },
+            {
+              "bindingKey": "ilpt_date",
+              "storeType": 1,
+              "messageBindingKey": "ilpt_date_validations",
+              "isRequired": false,
+              "requiredMessage": "",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "if": [
+                      { "var": "currentScreen.form.ilpt_toggle" },
+                      { "var": "currentScreen.ilpt_date" },
+                      true
+                    ]
+                  },
+                  "logicMessage": "Target date is required"
+                },
+                {
+                  "logic": {
+                    "if": [
+                      { "var": "currentScreen.form.ilpt_toggle" },
+                      {
+                        "!": [{ "var": "currentScreen.form.ilpt_dateMinError" }]
+                      },
+                      true
+                    ]
+                  },
+                  "logicMessage": "Target date cannot be less than current date"
+                }
+              ]
+            },
+            {
+              "bindingKey": "ilpt_target_date",
+              "storeType": 1,
+              "messageBindingKey": "ilpt_target_date_validations",
+              "isRequired": false,
+              "requiredMessage": "Taget date is required",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "if": [
+                      { "var": "currentScreen.form.ilpt_toggle" },
+                      true,
+                      { "var": "currentScreen.form.ilpt_target_date" }
+                    ]
+                  },
+                  "logicMessage": "Target date is required"
+                },
+                {
+                  "logic": {
+                    "if": [
+                      { "var": "currentScreen.form.ilpt_toggle" },
+                      true,
+                      {
+                        "!": [
+                          {
+                            "var": "currentScreen.form.ilpt_target_dateMinError"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Target date cannot be less than current date"
+                }
+              ]
             }
           ],
           "successTrigger": {
@@ -249,9 +308,9 @@
       }
     }
   ],
-  "csrf": "0.d6tutwr2y4betk3GkJ79MkRPmkR2M_rt",
-  "updatedAt": "5/5/2024",
-  "createdAt": "5/5/2024",
-  "createdBy": "mubashar",
-  "updatedBy": "mubashar"
+  "csrf": "0.z7hjs2a6ya5X5Tm8lTK6mdWMZ-P0pU9",
+  "updatedAt": "5/16/2024",
+  "createdAt": "5/16/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }
