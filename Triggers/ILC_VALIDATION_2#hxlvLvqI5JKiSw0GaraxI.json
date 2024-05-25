@@ -1,0 +1,472 @@
+{
+  "id": "tu3WomaIOhEcOzU-Pn5mp",
+  "_id": "hxlvLvqI5JKiSw0GaraxI",
+  "gitBranchName": "master",
+  "name": "ILC_VALIDATION_2",
+  "old_name": "ILC_VALIDATION_2",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "pc_custom_amount_2",
+              "storeType": 1,
+              "messageBindingKey": "validation_1",
+              "isRequired": true,
+              "requiredMessage": "Amount is required",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    ">": [
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          0
+                        ]
+                      },
+                      0
+                    ]
+                  },
+                  "logicMessage": "Amount should be greater than 0"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            ">": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                  },
+                                  0
+                                ]
+                              },
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Amount cannot be greater than available balance"
+                }
+              ]
+            },
+            {
+              "bindingKey": "selected_payment_method",
+              "storeType": 1,
+              "messageBindingKey": "validation_3",
+              "isRequired": true,
+              "requiredMessage": "Payment method is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            "<=": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Account has insufficient balance"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "DebitCard"
+                            ]
+                          },
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.isExpired"
+                              },
+                              "1"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Selected debit card is expired"
+                }
+              ]
+            }
+          ],
+          "successTrigger": {
+            "_id": "MkV_b-EVHvUnkazeX4tsn",
+            "id": "9k88hZ92jQaFL4B9hxmM4",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILCT_DATA_EXT_AND_REVIEW_PAYMENT",
+            "old_name": "ILCT_DATA_EXT_AND_REVIEW_PAYMENT",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "storeType": "",
+                    "searchInState": false,
+                    "triggers": [
+                      {
+                        "id": "h0_4HPZCzWMjGAzmkZJxI",
+                        "_id": "6f4I4Q07622o9eJIurvqo",
+                        "name": "ILCT_DATA_EXTRACTION_FOR_PAYMENT",
+                        "old_name": "ILCT_DATA_EXTRACTION_FOR_PAYMENT",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "requestBody": [],
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": "",
+                                "filterList": [
+                                  {
+                                    "key": "pc_request.creditCardNumber",
+                                    "changeValueConditonally": true,
+                                    "storeType": 2,
+                                    "logic": {
+                                      "var": "currentScreen.CURRENT_CARD.cardNumber"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.type",
+                                    "changeValueConditonally": true,
+                                    "storeType": 2,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        "DebitCard",
+                                        {
+                                          "var": "currentScreen.form.selected_payment_method.type"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.accountOrDebitCardNumber",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        {
+                                          "var": "currentScreen.form.pc_card_number_2"
+                                        },
+                                        {
+                                          "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.accountType",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        null,
+                                        {
+                                          "var": "currentScreen.form.selected_payment_method.accountType"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.cardHolderName",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        {
+                                          "var": "currentScreen.form.pc_name_on_card"
+                                        },
+                                        null
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.cardNickName",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        {
+                                          "if": [
+                                            {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.save_card"
+                                                },
+                                                "1"
+                                              ]
+                                            },
+                                            {
+                                              "var": "currentScreen.form.pc_nikname"
+                                            },
+                                            null
+                                          ]
+                                        },
+                                        null
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.expiry",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        {
+                                          "var": "currentScreen.form.pc_expiry_date"
+                                        },
+                                        null
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.amount",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.pc_custom_amount_2"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.currency",
+                                    "storeType": 2,
+                                    "changeValueConditonally": false,
+                                    "logic": "BHD"
+                                  },
+                                  {
+                                    "key": "pc_request.cprOfOtherCardHolder",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentSession.userProfile.content.customer.userIdenValue"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.validation",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.pc_check_otp.content.otpRequired"
+                                            },
+                                            1
+                                          ]
+                                        },
+                                        {
+                                          "var": "currentScreen.pc_validation_object"
+                                        },
+                                        null
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.saveNewCard",
+                                    "changeValueConditonally": true,
+                                    "storeType": 2,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.page_name"
+                                            },
+                                            "Pay using debit card"
+                                          ]
+                                        },
+                                        {
+                                          "if": [
+                                            {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.save_card"
+                                                },
+                                                true
+                                              ]
+                                            },
+                                            true,
+                                            false
+                                          ]
+                                        },
+                                        null
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.2mchm6wzcilgrslcF_sswJuDPzk6avvZ",
+                        "updatedAt": "3/8/2024",
+                        "createdAt": "3/8/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      },
+                      {
+                        "id": "iOqQaI2yK_Quc4Ia4CXcd",
+                        "gitBranchName": "master",
+                        "name": "PC_SHOW_REVIEW_PAYMENT_MODAL",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "services": [
+                          {
+                            "type": "9",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "widgetId": "TLxBhe9FKBGjVomH7ojh7",
+                                "content": "",
+                                "type": "",
+                                "modalId": "3WI5u8ga4ikq4k2JCP2xh",
+                                "toastContentType": "custom"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.ma41t70l15Xzeg-BNNZGDJDtsz5fR8T",
+                        "_id": "rNzeKo5evvy7ZdtalDfcp",
+                        "updatedAt": "1/15/2024",
+                        "createdAt": "1/15/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      }
+                    ],
+                    "triggerIds": [
+                      "h0_4HPZCzWMjGAzmkZJxI",
+                      "iOqQaI2yK_Quc4Ia4CXcd"
+                    ]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.imvd355qncjyp4_kK5G7oUEUlpK4XGJT",
+            "updatedAt": "3/8/2024",
+            "createdAt": "3/8/2024",
+            "createdBy": "talha2",
+            "updatedBy": "talha2"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.l4le7b4picnwnEq2nW_x_1FDBDzteMrI",
+  "updatedAt": "5/26/2024",
+  "createdAt": "5/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

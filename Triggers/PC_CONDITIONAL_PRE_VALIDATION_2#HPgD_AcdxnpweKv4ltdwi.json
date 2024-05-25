@@ -1,0 +1,502 @@
+{
+  "_id": "HPgD_AcdxnpweKv4ltdwi",
+  "id": "O1hYqhwbXwBNdNgHoXkJT",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PC_CONDITIONAL_PRE_VALIDATION_2",
+  "old_name": "PC_CONDITIONAL_PRE_VALIDATION_2",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "==": [
+                  { "var": "currentScreen.form.current_card.cardType" },
+                  "VISA CARDY-EX"
+                ]
+              },
+              "triggerName": "PC_MY_CARDS_VALIDATION_3",
+              "triggerId": "hhgYb78lDWCoVg8uJxDok",
+              "services": [
+                {
+                  "type": "16",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "validationList": [
+                        {
+                          "bindingKey": "pc_custom_amount_2",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_1",
+                          "isRequired": true,
+                          "requiredMessage": "Amount is required",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                ">": [
+                                  {
+                                    "+": [
+                                      {
+                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                      },
+                                      0
+                                    ]
+                                  },
+                                  0
+                                ]
+                              },
+                              "logicMessage": "Amount should be greater than 0"
+                            },
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "Account"
+                                        ]
+                                      },
+                                      {
+                                        ">": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.balance"
+                                              },
+                                              0
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Amount cannot be greater than available balance"
+                            }
+                          ]
+                        },
+                        {
+                          "bindingKey": "selected_payment_method",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_3",
+                          "isRequired": true,
+                          "requiredMessage": "Payment method is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "Account"
+                                        ]
+                                      },
+                                      {
+                                        "<=": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.balance"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          0
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Account has insufficient balance"
+                            },
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "DebitCard"
+                                        ]
+                                      },
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.isExpired"
+                                          },
+                                          "1"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Selected debit card is expired"
+                            }
+                          ]
+                        }
+                      ],
+                      "successTrigger": {
+                        "id": "JwADw7eKvTCpFRU_6ADGI",
+                        "name": "GO_TO_ADD_CARD",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "1",
+                            "command": {
+                              "type": "3",
+                              "attributes": {
+                                "nextWidgetId": "GRf2mui3_rjt7EUFhwj2g",
+                                "gridRadioValue": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "editableForm": false
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.894a8rabaup3Cc153w7hTwF8oMAKX9Oa",
+                        "_id": "7EtvVqV5d52m5aF_k3yBC",
+                        "updatedAt": "1/10/2024",
+                        "createdAt": "1/10/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      }
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "!=": [
+                  { "var": "currentScreen.form.current_card.cardType" },
+                  "VISA CARDY-EX"
+                ]
+              },
+              "triggerName": "PC_MY_CARDS_VALIDATION_4",
+              "triggerId": "gMsHBcjD1tuXRXKdf3Aul",
+              "services": [
+                {
+                  "type": "16",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "validationList": [
+                        {
+                          "bindingKey": "selected_payment_method",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_3",
+                          "isRequired": true,
+                          "requiredMessage": "Payment method is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "DebitCard"
+                                        ]
+                                      },
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.isExpired"
+                                          },
+                                          "1"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Selected debit card is expired"
+                            },
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "Account"
+                                        ]
+                                      },
+                                      {
+                                        "<=": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.balance"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          0
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Account has insufficient balance"
+                            }
+                          ]
+                        },
+                        {
+                          "bindingKey": "selectedAmountType",
+                          "storeType": 2,
+                          "messageBindingKey": "validation_2",
+                          "isRequired": true,
+                          "requiredMessage": "Please select an amount",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.selectedAmountType"
+                                      },
+                                      "D"
+                                    ]
+                                  },
+                                  {
+                                    ">": [
+                                      {
+                                        "+": [
+                                          {
+                                            "var": "currentScreen.form.pc_custom_amount_2"
+                                          },
+                                          0
+                                        ]
+                                      },
+                                      0
+                                    ]
+                                  },
+                                  true
+                                ]
+                              },
+                              "logicMessage": "Amount should be greater than 0"
+                            },
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "!=": [
+                                      {
+                                        "var": "currentScreen.selectedAmountType"
+                                      },
+                                      "D"
+                                    ]
+                                  },
+                                  {
+                                    ">": [
+                                      {
+                                        "+": [
+                                          {
+                                            "var": "currentScreen.form.pc_custom_amount"
+                                          },
+                                          0
+                                        ]
+                                      },
+                                      0
+                                    ]
+                                  },
+                                  true
+                                ]
+                              },
+                              "logicMessage": "Incorrect amount, please select another option or use custom amount"
+                            },
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.selectedAmountType"
+                                      },
+                                      "D"
+                                    ]
+                                  },
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                  },
+                                  true
+                                ]
+                              },
+                              "logicMessage": "Amount is required"
+                            },
+                            {
+                              "logic": {
+                                "if": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.selectedAmountType"
+                                      },
+                                      "D"
+                                    ]
+                                  },
+                                  {
+                                    "!": [
+                                      {
+                                        "and": [
+                                          {
+                                            "==": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.type"
+                                              },
+                                              "Account"
+                                            ]
+                                          },
+                                          {
+                                            ">": [
+                                              {
+                                                "+": [
+                                                  {
+                                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                                  },
+                                                  0
+                                                ]
+                                              },
+                                              {
+                                                "+": [
+                                                  {
+                                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                                  },
+                                                  0
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "!": [
+                                      {
+                                        "and": [
+                                          {
+                                            "==": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.type"
+                                              },
+                                              "Account"
+                                            ]
+                                          },
+                                          {
+                                            ">": [
+                                              {
+                                                "+": [
+                                                  {
+                                                    "var": "currentScreen.form.pc_custom_amount"
+                                                  },
+                                                  0
+                                                ]
+                                              },
+                                              {
+                                                "+": [
+                                                  {
+                                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                                  },
+                                                  0
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Amount cannot be greater than available balance"
+                            }
+                          ]
+                        }
+                      ],
+                      "successTrigger": {
+                        "id": "JwADw7eKvTCpFRU_6ADGI",
+                        "name": "GO_TO_ADD_CARD",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "1",
+                            "command": {
+                              "type": "3",
+                              "attributes": {
+                                "nextWidgetId": "GRf2mui3_rjt7EUFhwj2g",
+                                "gridRadioValue": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "editableForm": false
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.894a8rabaup3Cc153w7hTwF8oMAKX9Oa",
+                        "_id": "7EtvVqV5d52m5aF_k3yBC",
+                        "updatedAt": "1/10/2024",
+                        "createdAt": "1/10/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.l4le7b4picnwnEq2nW_x_1FDBDzteMrI",
+  "updatedAt": "5/26/2024",
+  "createdAt": "5/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

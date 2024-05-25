@@ -13,9 +13,32 @@
         "attributes": {
           "validationList": [
             {
+              "bindingKey": "pc_cpr",
+              "storeType": 1,
+              "messageBindingKey": "validation_2",
+              "isRequired": true,
+              "requiredMessage": "CPR is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "<": [{ "var": "currentScreen.form.pc_cpr.length" }, 16]
+                  },
+                  "logicMessage": "CPR cannot be greater than 15 digits"
+                },
+                {
+                  "logic": {
+                    ">": [{ "var": "currentScreen.form.pc_cpr.length" }, 8]
+                  },
+                  "logicMessage": "CPR cannot be less than 9 digits"
+                }
+              ]
+            },
+            {
               "bindingKey": "pc_custom_amount_2",
               "storeType": 1,
-              "messageBindingKey": "pc_custom_amount_2_validation",
+              "messageBindingKey": "validation_3",
               "isRequired": true,
               "requiredMessage": "Amount is required",
               "regEx": "",
@@ -38,32 +61,9 @@
               ]
             },
             {
-              "bindingKey": "pc_cpr",
-              "storeType": 1,
-              "messageBindingKey": "pc_cpr_validation",
-              "isRequired": true,
-              "requiredMessage": "CPR is required",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": [
-                {
-                  "logic": {
-                    "<": [{ "var": "currentScreen.form.pc_cpr.length" }, 16]
-                  },
-                  "logicMessage": "CPR cannot be greater than 15 digits"
-                },
-                {
-                  "logic": {
-                    ">": [{ "var": "currentScreen.form.pc_cpr.length" }, 8]
-                  },
-                  "logicMessage": "CPR cannot be less than 9 digits"
-                }
-              ]
-            },
-            {
               "bindingKey": "pc_card_number",
               "storeType": 1,
-              "messageBindingKey": "pc_card_number_validation",
+              "messageBindingKey": "validation_1",
               "isRequired": true,
               "requiredMessage": "Card number is required",
               "regEx": "",
@@ -117,9 +117,9 @@
       }
     }
   ],
-  "csrf": "0.w69uurfuenrbDrsuyVEJMxCPZiCiiCRK",
-  "updatedAt": "5/22/2024",
-  "createdAt": "5/22/2024",
+  "csrf": "0.ahb2r397ovuxgkPIiZb2VcfsvhOmCiUF",
+  "updatedAt": "5/23/2024",
+  "createdAt": "5/23/2024",
   "createdBy": "talha2",
   "updatedBy": "talha2"
 }
