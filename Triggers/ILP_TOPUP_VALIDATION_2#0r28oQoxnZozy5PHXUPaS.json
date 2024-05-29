@@ -1,0 +1,364 @@
+{
+  "id": "dsaikIF5vvOpABGqq3hlh",
+  "_id": "0r28oQoxnZozy5PHXUPaS",
+  "gitBranchName": "master",
+  "name": "ILP_TOPUP_VALIDATION_2",
+  "old_name": "ILP_TOPUP_VALIDATION_2",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "pc_custom_amount_2",
+              "storeType": 1,
+              "messageBindingKey": "validation_1",
+              "isRequired": true,
+              "requiredMessage": "Amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    ">": [
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          0
+                        ]
+                      },
+                      0
+                    ]
+                  },
+                  "logicMessage": "Amount should be greater than 0"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            ">": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                  },
+                                  0
+                                ]
+                              },
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Amount cannot be greater than available balance"
+                }
+              ]
+            },
+            {
+              "bindingKey": "selected_payment_method",
+              "storeType": 1,
+              "messageBindingKey": "validation_3",
+              "isRequired": true,
+              "requiredMessage": "Payment method is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            "<=": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Account has insufficient balance"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "DebitCard"
+                            ]
+                          },
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.isExpired"
+                              },
+                              "1"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Selected debit card is expired"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "CreditCard"
+                            ]
+                          },
+                          {
+                            "<=": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Your card has insufficient balance"
+                }
+              ]
+            }
+          ],
+          "successTrigger": {
+            "_id": "HEojrFIvZgAw_dr8W2ZN3",
+            "id": "grwGWSouUchdNhUA-shrB",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILPP_DATA_EXT_AND_REVIEW_PAYMENT",
+            "old_name": "ILPP_DATA_EXT_AND_REVIEW_PAYMENT",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "storeType": "",
+                    "searchInState": false,
+                    "triggers": [
+                      {
+                        "id": "4078johuKwNGfg0s7GdcM",
+                        "_id": "46V5aIjNzkz9VtOZtSG6p",
+                        "name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT",
+                        "old_name": "ILPP_DATA_EXTRACTION_FOR_PAYMENT",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "requestBody": [],
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": "",
+                                "filterList": [
+                                  {
+                                    "key": "pc_request.isRecurring",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "if": [
+                                        {
+                                          "==": [
+                                            {
+                                              "var": "currentScreen.ilpp_payment_type"
+                                            },
+                                            "Allowance"
+                                          ]
+                                        },
+                                        "1",
+                                        "0"
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.recuringType",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.ilpp_recuringType_permanent"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.amount",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.pc_custom_amount_2"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.type",
+                                    "changeValueConditonally": true,
+                                    "storeType": 2,
+                                    "logic": {
+                                      "var": "currentScreen.ilpp_payment_type"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.date",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.ilpp_date_permanent"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.cardOrAccount.type",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.selected_payment_method.type"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.cardOrAccount.accountOrCardNumber",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.cardOrAccount.title",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.selected_payment_method.title"
+                                    }
+                                  },
+                                  {
+                                    "key": "pc_request.cardOrAccount.cardOrAccType",
+                                    "storeType": 2,
+                                    "changeValueConditonally": true,
+                                    "logic": {
+                                      "var": "currentScreen.form.selected_payment_method.accountType"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.lkyckeqnm6xyYYAHjjAaK1OW-hQCzLW",
+                        "updatedAt": "3/22/2024",
+                        "createdAt": "3/22/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      },
+                      {
+                        "id": "yZp9fxJVNVh7tzkOeh3hQ",
+                        "gitBranchName": "master",
+                        "name": "ILPP_SHOW_REVIEW_PAYMENT_MODAL",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "services": [
+                          {
+                            "type": "9",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "widgetId": "y4iikcZodx8nP1nqHTa4D",
+                                "content": "",
+                                "type": "",
+                                "modalId": "8ZG1RWj7H9smpIDaXIPU_",
+                                "toastContentType": "custom"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.229221f9slvV9lQyoFyrFNugfLadwKPz",
+                        "_id": "dixKGzQkHvctp4gkiDDYw",
+                        "updatedAt": "3/22/2024",
+                        "createdAt": "3/22/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      }
+                    ],
+                    "triggerIds": [
+                      "4078johuKwNGfg0s7GdcM",
+                      "yZp9fxJVNVh7tzkOeh3hQ"
+                    ]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.lkyckeqnm6xyYYAHjjAaK1OW-hQCzLW",
+            "updatedAt": "3/22/2024",
+            "createdAt": "3/22/2024",
+            "createdBy": "talha2",
+            "updatedBy": "talha2"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.l4le7b4picnwnEq2nW_x_1FDBDzteMrI",
+  "updatedAt": "5/26/2024",
+  "createdAt": "5/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

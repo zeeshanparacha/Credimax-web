@@ -1,0 +1,277 @@
+{
+  "id": "hQwrjvJO2-KjpdxSnzUTu",
+  "_id": "boxMYBbWGMCfJQdj-QD3B",
+  "gitBranchName": "master",
+  "name": "ILPGC_VALIDATION_2",
+  "old_name": "ILPGC_VALIDATION_2",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "selected_payment_method",
+              "storeType": 1,
+              "messageBindingKey": "validation_2",
+              "isRequired": true,
+              "requiredMessage": "Payment method is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            "<=": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Account has insufficient balance"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "DebitCard"
+                            ]
+                          },
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.isExpired"
+                              },
+                              "1"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Selected debit card is expired"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "CreditCard"
+                            ]
+                          },
+                          {
+                            "<=": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              },
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Your card has insufficient balance"
+                }
+              ]
+            },
+            {
+              "bindingKey": "pc_custom_amount_2",
+              "storeType": 1,
+              "messageBindingKey": "validation_1",
+              "isRequired": true,
+              "requiredMessage": "Amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    ">": [
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          0
+                        ]
+                      },
+                      0
+                    ]
+                  },
+                  "logicMessage": "Amount should be greater than 0"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            ">": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                  },
+                                  0
+                                ]
+                              },
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Amount cannot be greater than available balance"
+                }
+              ]
+            }
+          ],
+          "successTrigger": {
+            "id": "6G1VpChn_L0XeW_7K-WWt",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "ILPGC_DATA_EXT_AND_REVIEW_PAYMENT",
+            "old_name": "",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "storeType": "",
+                    "searchInState": false,
+                    "triggers": [
+                      {
+                        "id": "de9VI16yyXFiUFljk1ieI",
+                        "name": "ILPGC_DATA_EXT",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": ""
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.gqkzv92rlsp25f880Y4tYCqj9W4_gIn3",
+                        "_id": "ITjg1Zl9QqTZHp2qPs3PO",
+                        "updatedAt": "4/1/2024",
+                        "createdAt": "4/1/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      },
+                      {
+                        "id": "zkRi54Rpktu1huoKp2uBw",
+                        "gitBranchName": "master",
+                        "name": "ILPGC_SHOW_REVIEW_PAYMENT_MODAL",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "services": [
+                          {
+                            "type": "9",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "widgetId": "OTig51QNgw-4SVx4siC1T",
+                                "content": "",
+                                "type": "",
+                                "modalId": "us3QYtajY1w3bF5X9cE6F",
+                                "toastContentType": "custom"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.gqkzv92rlsp25f880Y4tYCqj9W4_gIn3",
+                        "_id": "0HOeraMnxhtE9Cz9v_bFY",
+                        "updatedAt": "4/1/2024",
+                        "createdAt": "4/1/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      }
+                    ],
+                    "triggerIds": [
+                      "de9VI16yyXFiUFljk1ieI",
+                      "zkRi54Rpktu1huoKp2uBw"
+                    ]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.gqkzv92rlsp25f880Y4tYCqj9W4_gIn3",
+            "_id": "oueDfIeG1RR6MclSLTjWO",
+            "updatedAt": "4/1/2024",
+            "createdAt": "4/1/2024",
+            "createdBy": "talha2",
+            "updatedBy": "talha2"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.l4le7b4picnwnEq2nW_x_1FDBDzteMrI",
+  "updatedAt": "5/26/2024",
+  "createdAt": "5/26/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

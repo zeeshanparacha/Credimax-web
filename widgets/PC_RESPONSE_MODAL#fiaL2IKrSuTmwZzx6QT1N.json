@@ -372,10 +372,10 @@
                                     "sm": 12,
                                     "xs": 12
                                   },
-                                  "label": "pc_release_payment.content.reference",
+                                  "label": "pc_reference",
                                   "prefix": "Reference: ",
                                   "searchInState": true,
-                                  "storeType": 2,
+                                  "storeType": 3,
                                   "cssClassNames": [
                                     {
                                       "cssClassName": "PC_SUCCESS_MODAL_MESSAGE "
@@ -385,7 +385,7 @@
                                     "logic": {
                                       "if": [
                                         {
-                                          "var": "currentScreen.pc_release_payment.content.reference"
+                                          "var": "currentSession.pc_reference"
                                         },
                                         false,
                                         true
@@ -928,19 +928,19 @@
                                   },
                                   "label": "Error Code:",
                                   "searchInState": false,
-                                  "storeType": 2,
+                                  "storeType": 3,
                                   "hideCondition": {
                                     "logic": {
                                       "if": [
                                         {
-                                          "var": "currentScreen.pc_release_payment.content.reference"
+                                          "var": "currentSession.pc_reference"
                                         },
                                         false,
                                         true
                                       ]
                                     }
                                   },
-                                  "postfix": "pc_release_payment.content.reference",
+                                  "postfix": "pc_reference",
                                   "searchInStatePostfix": true,
                                   "addSpacesPostfix": true,
                                   "prefix": "Please try again. ",
@@ -1040,9 +1040,7 @@
                           "hideCondition": {
                             "logic": {
                               "if": [
-                                {
-                                  "var": "currentScreen.pc_release_payment.content.reference"
-                                },
+                                { "var": "currentSession.pc_reference" },
                                 true,
                                 false
                               ]
@@ -1077,40 +1075,139 @@
                             "commandType": "2"
                           },
                           {
-                            "triggerId": "GSX94vgAydNxYSCnYW64E",
-                            "triggerName": "PC_CLEAR_ALL_FIELDS",
-                            "serviceType": "11",
+                            "triggerId": "t8Pdop3ytIZi0OuqoMkM-",
+                            "triggerName": "PC_CLEAR_FIELDS_CONDITIONALLY",
+                            "serviceType": "13",
                             "attributes": {
-                              "storeType": "",
-                              "selectedObjectBindingKey": "selectedObject",
-                              "dataType": "",
-                              "sourceBindingKey": "",
-                              "filterList": [
+                              "triggers": [
                                 {
-                                  "key": "selectedAmountType",
-                                  "changeValueConditonally": false,
-                                  "storeType": 2,
-                                  "logic": null
+                                  "triggerName": "PC_CLEAR_DEBIT_CARDS_FIELDS",
+                                  "triggerId": "9YzuodWiLbb8jq01EvCEW",
+                                  "services": [
+                                    {
+                                      "type": "11",
+                                      "command": {
+                                        "type": "15",
+                                        "attributes": {
+                                          "storeType": "",
+                                          "selectedObjectBindingKey": "selectedObject",
+                                          "dataType": "",
+                                          "sourceBindingKey": "",
+                                          "filterList": [
+                                            {
+                                              "key": "pc_card_number_2",
+                                              "changeValueConditonally": false,
+                                              "storeType": 1,
+                                              "logic": null
+                                            },
+                                            {
+                                              "key": "pc_name_on_card",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_nikname",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_expiry_date",
+                                              "storeType": 1,
+                                              "logic": null
+                                            },
+                                            {
+                                              "key": "save_card",
+                                              "storeType": 2,
+                                              "logic": null
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ],
+                                  "logic": {
+                                    "==": [
+                                      { "var": "currentScreen.page_name" },
+                                      "Pay using debit card"
+                                    ]
+                                  }
                                 },
-                                { "key": "pc_custom_amount", "storeType": 1 },
                                 {
-                                  "key": "selected_payment_method",
-                                  "storeType": 1
-                                },
-                                { "key": "pc_card_number", "storeType": 1 },
-                                { "key": "pc_name_on_card", "storeType": 1 },
-                                { "key": "pc_expiry_date", "storeType": 1 },
-                                { "key": "save_card", "storeType": 2 },
-                                { "key": "pc_nikname", "storeType": 1 },
-                                { "key": "pc_custom_amount_2", "storeType": 1 },
-                                { "key": "pc_card_number_2", "storeType": 1 },
-                                { "key": "pc_cpr", "storeType": 1 },
-                                { "key": "pc_request", "storeType": 2 }
+                                  "logic": {
+                                    "!=": [
+                                      { "var": "currentScreen.page_name" },
+                                      "Pay using debit card"
+                                    ]
+                                  },
+                                  "triggerName": "PC_CLEAR_ALL_FIELDS",
+                                  "triggerId": "GSX94vgAydNxYSCnYW64E",
+                                  "services": [
+                                    {
+                                      "type": "11",
+                                      "command": {
+                                        "type": "15",
+                                        "attributes": {
+                                          "storeType": "",
+                                          "selectedObjectBindingKey": "selectedObject",
+                                          "dataType": "",
+                                          "sourceBindingKey": "",
+                                          "filterList": [
+                                            {
+                                              "key": "selectedAmountType",
+                                              "changeValueConditonally": false,
+                                              "storeType": 2,
+                                              "logic": null
+                                            },
+                                            {
+                                              "key": "pc_custom_amount",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "selected_payment_method",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_card_number",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_name_on_card",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_expiry_date",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "save_card",
+                                              "storeType": 2
+                                            },
+                                            {
+                                              "key": "pc_nikname",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_custom_amount_2",
+                                              "storeType": 1
+                                            },
+                                            {
+                                              "key": "pc_card_number_2",
+                                              "storeType": 1
+                                            },
+                                            { "key": "pc_cpr", "storeType": 1 },
+                                            {
+                                              "key": "pc_request",
+                                              "storeType": 2
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
                               ]
                             },
                             "type": "2",
                             "name": "On click",
-                            "commandType": "15"
+                            "commandType": "1"
                           }
                         ],
                         "path": "0-0-1-0-2"
@@ -1122,7 +1219,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "vLBxMZ10xcWrZHbM4Ys8Y",
+                            "id": "RoVFzah11gfkFxd6K1n4m",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1395,7 +1492,7 @@
                           },
                           {
                             "type": "column",
-                            "id": "fbEEj6aZ_EXiSGeYUL_lo",
+                            "id": "sDpAoKqRLqZK_25gaEMEb",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1468,108 +1565,6 @@
                                             "type": "2",
                                             "name": "On click",
                                             "commandType": "2"
-                                          },
-                                          {
-                                            "triggerId": "elnEko_omNaCE0qTjGx8U",
-                                            "triggerName": "PC_RELEASE_PAYMENT",
-                                            "serviceType": "8",
-                                            "attributes": {
-                                              "loaderWidgetIds": [906070],
-                                              "messageWidgetIds": [906070],
-                                              "responseStateKey": "pc_release_payment",
-                                              "successMessageBindingKey": "pc_release_payment_success",
-                                              "errorMessageBindingKey": "pc_release_payment_error",
-                                              "url": "/payment/payCard/v1/pay",
-                                              "checksum": true,
-                                              "encryption": true,
-                                              "isDeviceDetails": false,
-                                              "loginTrigger": false,
-                                              "formData": false,
-                                              "logoutTrigger": false,
-                                              "headers": {
-                                                "Content-Type": "application/json",
-                                                "channel_key": "002"
-                                              },
-                                              "requestBody": [
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "amount",
-                                                  "value": "pc_request.amount"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "creditCardNumber",
-                                                  "value": "pc_request.creditCardNumber"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "type",
-                                                  "value": "pc_request.type"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "accountOrDebitCardNumber",
-                                                  "value": "pc_request.accountOrDebitCardNumber"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "cprOfOtherCardHolder",
-                                                  "value": "pc_request.cprOfOtherCardHolder"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "accountType",
-                                                  "value": "pc_request.accountType"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "saveNewCard",
-                                                  "value": "pc_request.saveNewCard"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "cardHolderName",
-                                                  "value": "pc_request.cardHolderName"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "cardNickName",
-                                                  "value": "pc_request.cardNickName"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "expiry",
-                                                  "value": "pc_request.expiry"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "currency",
-                                                  "value": "pc_request.currency"
-                                                },
-                                                {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "validation",
-                                                  "value": "pc_request.validation"
-                                                }
-                                              ],
-                                              "baseURL": "656f0b4398e9df55f0499597",
-                                              "storeType": 2
-                                            },
-                                            "type": "2",
-                                            "name": "On click",
-                                            "commandType": "1"
                                           }
                                         ],
                                         "path": "0-0-1-0-3-1-0-0-0"
@@ -1655,9 +1650,7 @@
                           "hideCondition": {
                             "logic": {
                               "if": [
-                                {
-                                  "var": "currentScreen.pc_release_payment.content.reference"
-                                },
+                                { "var": "currentSession.pc_reference" },
                                 false,
                                 true
                               ]
@@ -1724,9 +1717,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "fiaL2IKrSuTmwZzx6QT1N",
-    "createdBy": "talha2",
-    "updatedAt": "3/29/2024",
-    "createdAt": "3/29/2024",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1804,6 +1797,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1908,6 +1904,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1952,6 +1951,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2000,8 +2002,8 @@
       "cssClassNames": [{ "cssClassName": "PC_SUCCESS_MODAL_LOGO " }]
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -2014,6 +2016,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2083,6 +2086,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2108,8 +2114,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2121,6 +2127,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2146,8 +2153,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2159,6 +2166,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2178,26 +2186,22 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "pc_release_payment.content.reference",
+      "label": "pc_reference",
       "prefix": "Reference: ",
       "searchInState": true,
-      "storeType": 2,
+      "storeType": 3,
       "cssClassNames": [{ "cssClassName": "PC_SUCCESS_MODAL_MESSAGE " }],
       "hideCondition": {
         "logic": {
-          "if": [
-            { "var": "currentScreen.pc_release_payment.content.reference" },
-            false,
-            true
-          ]
+          "if": [{ "var": "currentSession.pc_reference" }, false, true]
         }
       }
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2209,6 +2213,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2241,8 +2246,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -2254,6 +2259,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2287,8 +2293,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -2315,6 +2321,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2426,6 +2433,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2470,6 +2480,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2518,8 +2531,8 @@
       "cssClassNames": [{ "cssClassName": "PC_SUCCESS_MODAL_LOGO " }]
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -2532,6 +2545,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2600,6 +2614,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2625,8 +2642,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2638,6 +2655,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2674,8 +2692,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2687,6 +2705,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2722,17 +2741,13 @@
       },
       "label": "Error Code:",
       "searchInState": false,
-      "storeType": 2,
+      "storeType": 3,
       "hideCondition": {
         "logic": {
-          "if": [
-            { "var": "currentScreen.pc_release_payment.content.reference" },
-            false,
-            true
-          ]
+          "if": [{ "var": "currentSession.pc_reference" }, false, true]
         }
       },
-      "postfix": "pc_release_payment.content.reference",
+      "postfix": "pc_reference",
       "searchInStatePostfix": true,
       "addSpacesPostfix": true,
       "prefix": "Please try again. ",
@@ -2741,8 +2756,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2754,6 +2769,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2783,11 +2799,7 @@
       "cssClassNames": [{ "cssClassName": "PC_SUCCESS_MODAL_BUTTON " }],
       "hideCondition": {
         "logic": {
-          "if": [
-            { "var": "currentScreen.pc_release_payment.content.reference" },
-            true,
-            false
-          ]
+          "if": [{ "var": "currentSession.pc_reference" }, true, false]
         }
       }
     },
@@ -2796,8 +2808,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -2812,11 +2824,11 @@
         "serviceType": "9"
       },
       {
-        "triggerId": "GSX94vgAydNxYSCnYW64E",
-        "triggerName": "PC_CLEAR_ALL_FIELDS",
+        "triggerId": "t8Pdop3ytIZi0OuqoMkM-",
+        "triggerName": "PC_CLEAR_FIELDS_CONDITIONALLY",
         "name": "On click",
         "type": "2",
-        "serviceType": "11"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-1-0-2",
@@ -2824,6 +2836,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2877,11 +2890,7 @@
       "name": "Grid layout",
       "hideCondition": {
         "logic": {
-          "if": [
-            { "var": "currentScreen.pc_release_payment.content.reference" },
-            false,
-            true
-          ]
+          "if": [{ "var": "currentSession.pc_reference" }, false, true]
         }
       }
     },
@@ -2892,6 +2901,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2937,6 +2949,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2970,8 +2985,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -2998,6 +3013,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3043,6 +3059,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3076,8 +3095,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "5/26/2024",
+    "createdAt": "5/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -3090,13 +3109,6 @@
         "name": "On click",
         "type": "2",
         "serviceType": "9"
-      },
-      {
-        "triggerId": "elnEko_omNaCE0qTjGx8U",
-        "triggerName": "PC_RELEASE_PAYMENT",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "8"
       }
     ],
     "path": "0-0-1-0-3-1-0-0-0",
@@ -3104,6 +3116,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

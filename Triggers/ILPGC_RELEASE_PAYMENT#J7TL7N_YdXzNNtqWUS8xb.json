@@ -71,27 +71,47 @@
           },
           {
             "logic": {
-              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+              "if": [
+                { "var": "content.benefitRedirectUrl" },
+                false,
+                { "==": [{ "var": "code" }, 1] }
+              ]
             },
             "httpStatus": 200,
-            "triggerName": "ILP_GOALS_GET_CARD_LIST_API",
-            "triggerId": "YRuPlcSjKgGHssvJGzzH7"
+            "triggerName": "ILP_GOALS_GET_CARD_LIST_API_SILENTLY",
+            "triggerId": "gymU7SSPlcLWCOCFke8nD"
           },
           {
             "logic": {
-              "if": [{ "var": "content.benefitRedirectUrl" }, false, true]
+              "if": [
+                { "var": "content.benefitRedirectUrl" },
+                false,
+                { "==": [{ "var": "code" }, 1] }
+              ]
             },
             "httpStatus": 200,
             "triggerName": "ILPT_GET_ALL_PMs_2",
             "triggerId": "B2UqpEhVSTzw_BZc5WsiC"
+          },
+          {
+            "logic": { "var": "content.reference" },
+            "httpStatus": 200,
+            "triggerName": "PC_SAVE_REFERENCE_IN_SESSION",
+            "triggerId": "UQJc-Ea3fhoJCSimACSgk"
+          },
+          {
+            "logic": { "==": [{ "var": "content.isInValidOtp" }, "1"] },
+            "httpStatus": 200,
+            "triggerName": "PC_SAVE_OTP_ERROR",
+            "triggerId": "3uK9gIpCMQ1k7TeGGwmrS"
           }
         ]
       }
     }
   ],
-  "csrf": "0.ue87wqvqmop2rnSRZqHXmkCM94QffmSh",
-  "updatedAt": "5/18/2024",
-  "createdAt": "5/18/2024",
+  "csrf": "0.3eroc21cfw7RvNYTWNqjiwpU55tNdkuF",
+  "updatedAt": "5/28/2024",
+  "createdAt": "5/28/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

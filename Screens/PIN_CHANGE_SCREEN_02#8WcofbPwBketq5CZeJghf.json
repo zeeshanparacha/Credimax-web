@@ -708,7 +708,6 @@
                                                                   },
                                                                   "validate": {
                                                                     "required": true,
-                                                                    "errorMsg": "Pin is required",
                                                                     "bindButton": [
                                                                       {
                                                                         "id": "UNTaItEC1vqh0ou2ZPQvX",
@@ -724,7 +723,9 @@
                                                                               "//": "Use this class to style button component.",
                                                                               "text-transform": "Capitalize",
                                                                               "font-weight": "bolder",
-                                                                              "borderRadius": "28px"
+                                                                              "borderRadius": "28px",
+                                                                              "width": "160px",
+                                                                              "height": "48px"
                                                                             },
                                                                             "iconButton": {
                                                                               "//": "Use this class to style icon button component.",
@@ -741,10 +742,14 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "cssDisableClassNames": [],
+                                                                          "cssDisableClassNames": [
+                                                                            {
+                                                                              "cssClassName": "PIN_DISABLE_BUTTON "
+                                                                            }
+                                                                          ],
                                                                           "cssClassNames": [
                                                                             {
-                                                                              "cssClassName": "Round_Button_Css "
+                                                                              "cssClassName": "PIN_CHANGE_BUTTON_STYLE "
                                                                             }
                                                                           ],
                                                                           "disableCondition": {
@@ -795,8 +800,8 @@
                                                                         "group": "Form",
                                                                         "type": "20006",
                                                                         "Documentation": "<div>components 12344</div>",
-                                                                        "updatedAt": "23-Aug-2021",
-                                                                        "createdAt": "23-Aug-2021",
+                                                                        "updatedAt": "5/28/2024",
+                                                                        "createdAt": "5/28/2024",
                                                                         "order": 1,
                                                                         "version": "1.0.0",
                                                                         "isLatest": true,
@@ -807,35 +812,31 @@
                                                                         },
                                                                         "events": [
                                                                           {
-                                                                            "triggerId": "WbvhWdSQqBlYE7q5crUyr",
-                                                                            "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_01_FROM_SCREEN_02",
+                                                                            "triggerId": "PGWeW0Lfv1X2vfcW8jnA6",
+                                                                            "triggerName": "PNC_SET_NEW_PIN_VALIDATION",
                                                                             "name": "On Submit",
                                                                             "type": "4",
-                                                                            "serviceType": "1"
+                                                                            "serviceType": "16"
                                                                           }
                                                                         ],
-                                                                        "path": "0-0-1-0-0-0-1-5-0-0-1-0-0",
+                                                                        "path": "1-0-1-0-0-0-1-5-0-0-1-0-0",
                                                                         "screenId": "8WcofbPwBketq5CZeJghf",
                                                                         "subType": "component",
                                                                         "projectId": "652fcbce09869c3c809b3097",
                                                                         "gitBranchName": "master",
-                                                                        "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+                                                                        "createdBy": "basitahmed1199",
+                                                                        "updatedTimestamp": "0000-00-00T00:00:00+00:00",
+                                                                        "key": "UNTaItEC1vqh0ou2ZPQvX"
                                                                       }
                                                                     ],
                                                                     "logic": {
-                                                                      "if": [
+                                                                      "==": [
                                                                         {
-                                                                          "!=": [
-                                                                            {
-                                                                              "var": "currentScreen.form.pinChange"
-                                                                            },
-                                                                            {
-                                                                              "var": "currentScreen.form.pinConfirm"
-                                                                            }
-                                                                          ]
+                                                                          "var": "form.pinChange"
                                                                         },
-                                                                        true,
-                                                                        false
+                                                                        {
+                                                                          "var": "form.oldPin"
+                                                                        }
                                                                       ]
                                                                     },
                                                                     "jsonLogicErrorMessage": "New PIN must be different from your existing PIN"
@@ -1011,11 +1012,11 @@
                                                                           "layoutProperties": {
                                                                             "button": {
                                                                               "//": "Use this class to style button component.",
-                                                                              "width": "160px",
-                                                                              "height": "48px",
                                                                               "text-transform": "Capitalize",
                                                                               "font-weight": "bolder",
-                                                                              "borderRadius": "28px"
+                                                                              "borderRadius": "28px",
+                                                                              "width": "160px",
+                                                                              "height": "48px"
                                                                             },
                                                                             "iconButton": {
                                                                               "//": "Use this class to style icon button component.",
@@ -1034,12 +1035,12 @@
                                                                           },
                                                                           "cssDisableClassNames": [
                                                                             {
-                                                                              "cssClassName": "Disabled_Round_Button_Css "
+                                                                              "cssClassName": "PIN_DISABLE_BUTTON "
                                                                             }
                                                                           ],
                                                                           "cssClassNames": [
                                                                             {
-                                                                              "cssClassName": "Round_Button_Css "
+                                                                              "cssClassName": "PIN_CHANGE_BUTTON_STYLE "
                                                                             }
                                                                           ],
                                                                           "disableCondition": {
@@ -1063,15 +1064,35 @@
                                                                                 }
                                                                               ]
                                                                             }
-                                                                          }
+                                                                          },
+                                                                          "icon": null,
+                                                                          "asset": {
+                                                                            "createdBy": "user",
+                                                                            "_id": "655b39a76a9c9c0f149ff8ce",
+                                                                            "name": "arrow_right_light.svg",
+                                                                            "type": "svg",
+                                                                            "projectId": "652fcbce09869c3c809b3097",
+                                                                            "id": "imPKsiUG_iL219sb0W8ef",
+                                                                            "gitBranchName": "master",
+                                                                            "folderType": "web",
+                                                                            "platform": "web",
+                                                                            "url": "652fcbce09869c3c809b3097/web/arrow_right_light.svg",
+                                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/arrow_right_light.svg",
+                                                                            "createdAt": "2023-11-20T10:49:11.895Z",
+                                                                            "updatedAt": "2023-12-21T13:01:15.668Z",
+                                                                            "__v": 0,
+                                                                            "uri": "652fcbce09869c3c809b3097/web/arrow_right_light.svg"
+                                                                          },
+                                                                          "assetId": "imPKsiUG_iL219sb0W8ef",
+                                                                          "buttonIconPosition": "end"
                                                                         },
                                                                         "name": "Button",
                                                                         "icon": "FaBimobject",
                                                                         "group": "Form",
                                                                         "type": "20006",
                                                                         "Documentation": "<div>components 12344</div>",
-                                                                        "updatedAt": "23-Aug-2021",
-                                                                        "createdAt": "23-Aug-2021",
+                                                                        "updatedAt": "5/28/2024",
+                                                                        "createdAt": "5/28/2024",
                                                                         "order": 1,
                                                                         "version": "1.0.0",
                                                                         "isLatest": true,
@@ -1082,39 +1103,34 @@
                                                                         },
                                                                         "events": [
                                                                           {
-                                                                            "triggerId": "WbvhWdSQqBlYE7q5crUyr",
-                                                                            "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_01_FROM_SCREEN_02",
+                                                                            "triggerId": "PGWeW0Lfv1X2vfcW8jnA6",
+                                                                            "triggerName": "PNC_SET_NEW_PIN_VALIDATION",
                                                                             "name": "On Submit",
                                                                             "type": "4",
-                                                                            "serviceType": "1"
+                                                                            "serviceType": "16"
                                                                           }
                                                                         ],
-                                                                        "path": "0-0-1-0-0-0-1-5-0-0-1-0-0",
+                                                                        "path": "1-0-1-0-0-0-1-5-0-0-1-0-0",
                                                                         "screenId": "8WcofbPwBketq5CZeJghf",
                                                                         "subType": "component",
                                                                         "projectId": "652fcbce09869c3c809b3097",
                                                                         "gitBranchName": "master",
-                                                                        "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+                                                                        "createdBy": "basitahmed1199",
+                                                                        "updatedTimestamp": "0000-00-00T00:00:00+00:00",
+                                                                        "key": "UNTaItEC1vqh0ou2ZPQvX"
                                                                       }
                                                                     ],
-                                                                    "errorMsg": "Confirm pin is required",
-                                                                    "jsonLogicErrorMessage": "Pin do not match",
                                                                     "logic": {
-                                                                      "if": [
+                                                                      "!=": [
                                                                         {
-                                                                          "!=": [
-                                                                            {
-                                                                              "var": "currentScreen.form.pinChange"
-                                                                            },
-                                                                            {
-                                                                              "var": "currentScreen.form.pinConfirm"
-                                                                            }
-                                                                          ]
+                                                                          "var": "form.pinChange"
                                                                         },
-                                                                        true,
-                                                                        false
+                                                                        {
+                                                                          "var": "form.pinConfirm"
+                                                                        }
                                                                       ]
-                                                                    }
+                                                                    },
+                                                                    "jsonLogicErrorMessage": "Pin do not match"
                                                                   },
                                                                   "passwordValidationType": "custom"
                                                                 },
@@ -2014,16 +2030,6 @@
                                                                     },
                                                                     1
                                                                   ]
-                                                                },
-                                                                {
-                                                                  "!=": [
-                                                                    {
-                                                                      "var": "currentScreen.form.pinChange"
-                                                                    },
-                                                                    {
-                                                                      "var": "currentScreen.form.pinConfirm"
-                                                                    }
-                                                                  ]
                                                                 }
                                                               ]
                                                             }
@@ -2293,8 +2299,8 @@
                                                                 }
                                                               ]
                                                             },
-                                                            "type": "2",
-                                                            "name": "On click",
+                                                            "type": "4",
+                                                            "name": "On Submit",
                                                             "commandType": "1"
                                                           }
                                                         ],
@@ -2629,8 +2635,8 @@
     "gitBranchName": "master",
     "_id": "8WcofbPwBketq5CZeJghf",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2654,8 +2660,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2671,8 +2677,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2754,8 +2760,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2809,8 +2815,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2894,8 +2900,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2941,8 +2947,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2991,8 +2997,8 @@
       "cssClassNames": [{ "cssClassName": "PC_ARROW_BACK " }]
     },
     "group": "Form",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3074,8 +3080,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3103,8 +3109,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3151,8 +3157,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3227,8 +3233,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3302,8 +3308,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3357,8 +3363,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3424,8 +3430,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3461,8 +3467,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3524,8 +3530,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3584,8 +3590,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3614,8 +3620,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3666,7 +3672,6 @@
       },
       "validate": {
         "required": true,
-        "errorMsg": "Pin is required",
         "bindButton": [
           {
             "id": "UNTaItEC1vqh0ou2ZPQvX",
@@ -3682,7 +3687,9 @@
                   "//": "Use this class to style button component.",
                   "text-transform": "Capitalize",
                   "font-weight": "bolder",
-                  "borderRadius": "28px"
+                  "borderRadius": "28px",
+                  "width": "160px",
+                  "height": "48px"
                 },
                 "iconButton": {
                   "//": "Use this class to style icon button component.",
@@ -3699,8 +3706,10 @@
                 "sm": 12,
                 "xs": 12
               },
-              "cssDisableClassNames": [],
-              "cssClassNames": [{ "cssClassName": "Round_Button_Css " }],
+              "cssDisableClassNames": [
+                { "cssClassName": "PIN_DISABLE_BUTTON " }
+              ],
+              "cssClassNames": [{ "cssClassName": "PIN_CHANGE_BUTTON_STYLE " }],
               "disableCondition": {
                 "logic": {
                   "or": [
@@ -3742,8 +3751,8 @@
             "group": "Form",
             "type": "20006",
             "Documentation": "<div>components 12344</div>",
-            "updatedAt": "23-Aug-2021",
-            "createdAt": "23-Aug-2021",
+            "updatedAt": "5/28/2024",
+            "createdAt": "5/28/2024",
             "order": 1,
             "version": "1.0.0",
             "isLatest": true,
@@ -3751,39 +3760,32 @@
             "component": { "content": "Button", "type": "20006" },
             "events": [
               {
-                "triggerId": "WbvhWdSQqBlYE7q5crUyr",
-                "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_01_FROM_SCREEN_02",
+                "triggerId": "PGWeW0Lfv1X2vfcW8jnA6",
+                "triggerName": "PNC_SET_NEW_PIN_VALIDATION",
                 "name": "On Submit",
                 "type": "4",
-                "serviceType": "1"
+                "serviceType": "16"
               }
             ],
-            "path": "0-0-1-0-0-0-1-5-0-0-1-0-0",
+            "path": "1-0-1-0-0-0-1-5-0-0-1-0-0",
             "screenId": "8WcofbPwBketq5CZeJghf",
             "subType": "component",
             "projectId": "652fcbce09869c3c809b3097",
             "gitBranchName": "master",
-            "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+            "createdBy": "basitahmed1199",
+            "updatedTimestamp": "0000-00-00T00:00:00+00:00",
+            "key": "UNTaItEC1vqh0ou2ZPQvX"
           }
         ],
         "logic": {
-          "if": [
-            {
-              "!=": [
-                { "var": "currentScreen.form.pinChange" },
-                { "var": "currentScreen.form.pinConfirm" }
-              ]
-            },
-            true,
-            false
-          ]
+          "==": [{ "var": "form.pinChange" }, { "var": "form.oldPin" }]
         },
         "jsonLogicErrorMessage": "New PIN must be different from your existing PIN"
       },
       "passwordValidationType": "custom"
     },
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "type": "20008",
     "order": 11,
     "version": "1.0.0",
@@ -3855,8 +3857,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3885,8 +3887,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3950,11 +3952,11 @@
               "layoutProperties": {
                 "button": {
                   "//": "Use this class to style button component.",
-                  "width": "160px",
-                  "height": "48px",
                   "text-transform": "Capitalize",
                   "font-weight": "bolder",
-                  "borderRadius": "28px"
+                  "borderRadius": "28px",
+                  "width": "160px",
+                  "height": "48px"
                 },
                 "iconButton": {
                   "//": "Use this class to style icon button component.",
@@ -3972,9 +3974,9 @@
                 "xs": 12
               },
               "cssDisableClassNames": [
-                { "cssClassName": "Disabled_Round_Button_Css " }
+                { "cssClassName": "PIN_DISABLE_BUTTON " }
               ],
-              "cssClassNames": [{ "cssClassName": "Round_Button_Css " }],
+              "cssClassNames": [{ "cssClassName": "PIN_CHANGE_BUTTON_STYLE " }],
               "disableCondition": {
                 "logic": {
                   "or": [
@@ -3989,15 +3991,35 @@
                     }
                   ]
                 }
-              }
+              },
+              "icon": null,
+              "asset": {
+                "createdBy": "user",
+                "_id": "655b39a76a9c9c0f149ff8ce",
+                "name": "arrow_right_light.svg",
+                "type": "svg",
+                "projectId": "652fcbce09869c3c809b3097",
+                "id": "imPKsiUG_iL219sb0W8ef",
+                "gitBranchName": "master",
+                "folderType": "web",
+                "platform": "web",
+                "url": "652fcbce09869c3c809b3097/web/arrow_right_light.svg",
+                "canvasUrl": "652fcbce09869c3c809b3097/web/arrow_right_light.svg",
+                "createdAt": "2023-11-20T10:49:11.895Z",
+                "updatedAt": "2023-12-21T13:01:15.668Z",
+                "__v": 0,
+                "uri": "652fcbce09869c3c809b3097/web/arrow_right_light.svg"
+              },
+              "assetId": "imPKsiUG_iL219sb0W8ef",
+              "buttonIconPosition": "end"
             },
             "name": "Button",
             "icon": "FaBimobject",
             "group": "Form",
             "type": "20006",
             "Documentation": "<div>components 12344</div>",
-            "updatedAt": "23-Aug-2021",
-            "createdAt": "23-Aug-2021",
+            "updatedAt": "5/28/2024",
+            "createdAt": "5/28/2024",
             "order": 1,
             "version": "1.0.0",
             "isLatest": true,
@@ -4005,40 +4027,32 @@
             "component": { "content": "Button", "type": "20006" },
             "events": [
               {
-                "triggerId": "WbvhWdSQqBlYE7q5crUyr",
-                "triggerName": "NAVIGATE_TO_PIN_CHANGE_SCREEN_01_FROM_SCREEN_02",
+                "triggerId": "PGWeW0Lfv1X2vfcW8jnA6",
+                "triggerName": "PNC_SET_NEW_PIN_VALIDATION",
                 "name": "On Submit",
                 "type": "4",
-                "serviceType": "1"
+                "serviceType": "16"
               }
             ],
-            "path": "0-0-1-0-0-0-1-5-0-0-1-0-0",
+            "path": "1-0-1-0-0-0-1-5-0-0-1-0-0",
             "screenId": "8WcofbPwBketq5CZeJghf",
             "subType": "component",
             "projectId": "652fcbce09869c3c809b3097",
             "gitBranchName": "master",
-            "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+            "createdBy": "basitahmed1199",
+            "updatedTimestamp": "0000-00-00T00:00:00+00:00",
+            "key": "UNTaItEC1vqh0ou2ZPQvX"
           }
         ],
-        "errorMsg": "Confirm pin is required",
-        "jsonLogicErrorMessage": "Pin do not match",
         "logic": {
-          "if": [
-            {
-              "!=": [
-                { "var": "currentScreen.form.pinChange" },
-                { "var": "currentScreen.form.pinConfirm" }
-              ]
-            },
-            true,
-            false
-          ]
-        }
+          "!=": [{ "var": "form.pinChange" }, { "var": "form.pinConfirm" }]
+        },
+        "jsonLogicErrorMessage": "Pin do not match"
       },
       "passwordValidationType": "custom"
     },
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "type": "20008",
     "order": 11,
     "version": "1.0.0",
@@ -4167,8 +4181,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4202,8 +4216,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4237,8 +4251,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4272,8 +4286,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4307,8 +4321,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4342,8 +4356,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4417,8 +4431,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4465,8 +4479,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4509,8 +4523,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4605,8 +4619,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "basitahmed1199",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4646,13 +4660,7 @@
         "logic": {
           "or": [
             { "<": [{ "var": "currentScreen.form.pinChange.length" }, 1] },
-            { "<": [{ "var": "currentScreen.form.pinConfirm.length" }, 1] },
-            {
-              "!=": [
-                { "var": "currentScreen.form.pinChange" },
-                { "var": "currentScreen.form.pinConfirm" }
-              ]
-            }
+            { "<": [{ "var": "currentScreen.form.pinConfirm.length" }, 1] }
           ]
         }
       },
@@ -4682,8 +4690,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "5/22/2024",
-    "createdAt": "5/22/2024",
+    "updatedAt": "5/28/2024",
+    "createdAt": "5/28/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4693,8 +4701,8 @@
       {
         "triggerId": "VZvWU6KcsSjoSuUbD-eqB",
         "triggerName": "PNC_CHECK_OTP_FOR_SET_NEW_PIN",
-        "name": "On click",
-        "type": "2",
+        "name": "On Submit",
+        "type": "4",
         "serviceType": "13"
       }
     ],
