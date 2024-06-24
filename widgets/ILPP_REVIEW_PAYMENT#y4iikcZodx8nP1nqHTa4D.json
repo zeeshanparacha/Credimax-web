@@ -501,7 +501,7 @@
                                             "sm": 12,
                                             "xs": 12
                                           },
-                                          "label": "CURRENT_CARD.cardNumber",
+                                          "label": "CURRENT_CARD.maskCardNumber",
                                           "searchInState": true,
                                           "storeType": 2,
                                           "cssClassNames": [
@@ -524,7 +524,7 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-0-0-1-0-0-0-1"
+                                        "path": "0-0-1-0-1-0-0-0-1"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -684,7 +684,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-0-0-1",
+                        "path": "0-0-1-0-1",
                         "dimensions": {
                           "rows": 1,
                           "columns": 2,
@@ -709,7 +709,7 @@
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "oTXMe68bL-Jqjf-rZognR",
+                            "id": "TDB6FZAAukrIFZ_VZTddm",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -859,7 +859,7 @@
                           },
                           {
                             "type": "column",
-                            "id": "zLFDVrhL1PsDQKaJLjtzg",
+                            "id": "dXLliTzV6FT4nAtFMU1yN",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -958,37 +958,14 @@
                           "cssClassNames": [
                             { "cssClassName": "PC_REVIEW_PAYMENT_LINE " }
                           ],
-                          "hideCondition": {
-                            "logic": {
-                              "if": [
-                                {
-                                  "and": [
-                                    {
-                                      "==": [
-                                        { "var": "currentScreen.page_name" },
-                                        "Pay cards"
-                                      ]
-                                    },
-                                    {
-                                      "==": [
-                                        { "var": "currentScreen.selected_tab" },
-                                        "other cards"
-                                      ]
-                                    }
-                                  ]
-                                },
-                                false,
-                                true
-                              ]
-                            }
-                          }
+                          "hideCondition": { "logic": false }
                         },
                         "events": [],
                         "component": {
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-2",
+                        "path": "0-0-1-0-2",
                         "dimensions": {
                           "rows": 1,
                           "columns": 2,
@@ -1561,7 +1538,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-0-0-4",
+                        "path": "0-0-1-0-4",
                         "dimensions": {
                           "rows": 1,
                           "columns": 2,
@@ -1589,15 +1566,15 @@
                             "gridProps": [
                               {
                                 "type": "10001",
-                                "name": "Grid layout",
-                                "id": "TzaHMb8IgnR2hhQPQG9-I",
+                                "name": "PC_CREDIT_CARDS",
+                                "id": "xYO27sV5jegqE2GSKFHrf",
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "rbijvNpH4c7ij3sAWp8-u",
+                                    "id": "kZqooIZ2H_HTP-BWR40Ff",
                                     "gridProps": [
                                       {
-                                        "id": "u_lAcVg6c1r5yeEhOJRak",
+                                        "id": "JS7pVtOEFBwftihNqbxaX",
                                         "status": "ACTIVE",
                                         "name": "Label",
                                         "attributes": {
@@ -1649,7 +1626,7 @@
                                         "path": "0-0-0-0-5-0-0-0-0"
                                       },
                                       {
-                                        "id": "W2WTfF9-JgMqtwsuJoSAs",
+                                        "id": "C5R24cJ1Y6KNL8DKiPTIF",
                                         "status": "ACTIVE",
                                         "name": "Label",
                                         "attributes": {
@@ -1701,7 +1678,7 @@
                                         "path": "0-0-0-0-5-0-0-0-1"
                                       },
                                       {
-                                        "id": "p79IMWas3PZb0o30JTTEf",
+                                        "id": "yvSl0WdGYyv-R-xVKPv1e",
                                         "status": "ACTIVE",
                                         "name": "Label",
                                         "attributes": {
@@ -1720,15 +1697,25 @@
                                             "xs": 12
                                           },
                                           "label": "pc_request.cardOrAccount.accountOrCardNumber",
-                                          "hideCondition": { "logic": false },
+                                          "hideCondition": {
+                                            "logic": {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.pc_request.cardOrAccount.type"
+                                                },
+                                                "CreditCard"
+                                              ]
+                                            }
+                                          },
                                           "searchInState": true,
                                           "storeType": 2,
-                                          "prefix": "pc_request.cardOrAccount.accountTypeName",
+                                          "prefix": "form.selected_payment_method.accountTypeName",
                                           "searchInStatePrefix": true,
                                           "addSpacesPrefix": true,
                                           "cssClassNames": [
                                             {
-                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
                                             }
                                           ]
                                         },
@@ -1746,7 +1733,71 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-1-0-5-0-0-0-2"
+                                        "path": "0-0-1-0-0-0-4-0-0-0-2"
+                                      },
+                                      {
+                                        "id": "HWMi5sVHpq150cF-FSKew",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component."
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "selected_payment_method.lastCardNumber",
+                                          "prefix": "selected_payment_method.accountTypeName",
+                                          "searchInState": true,
+                                          "searchInStatePrefix": true,
+                                          "addSpacesPrefix": true,
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                            }
+                                          ],
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.pc_request.cardOrAccount.type"
+                                                },
+                                                "CreditCard"
+                                              ]
+                                            }
+                                          },
+                                          "storeType": 1
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-1-0-0-0-4-0-0-0-3"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -1788,7 +1839,17 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "0-0-1-0-0"
+                                "path": "0-0-1-0-0-0-4-0-0",
+                                "dimensions": {
+                                  "rows": 1,
+                                  "columns": 1,
+                                  "colSize0xs": 12,
+                                  "colSize0sm": 12,
+                                  "colSize0md": 12,
+                                  "colSize0lg": 12,
+                                  "colSize0xl": 12
+                                },
+                                "readOnly": true
                               }
                             ],
                             "layoutProperties": {
@@ -2536,8 +2597,8 @@
     "gitBranchName": "master",
     "_id": "y4iikcZodx8nP1nqHTa4D",
     "createdBy": "talha",
-    "updatedAt": "3/23/2024",
-    "createdAt": "3/23/2024",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2604,6 +2665,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2620,6 +2684,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2798,6 +2865,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2862,6 +2932,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2907,6 +2980,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2932,8 +3008,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2945,6 +3021,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2989,6 +3066,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3040,8 +3120,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3062,6 +3142,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3127,6 +3208,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3183,6 +3267,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3208,8 +3295,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3221,6 +3308,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3240,7 +3328,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "CURRENT_CARD.cardNumber",
+      "label": "CURRENT_CARD.maskCardNumber",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA " }]
@@ -3248,19 +3336,20 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-0-0-1-0-0-0-1",
+    "path": "0-0-1-0-1-0-0-0-1",
     "screenId": "y4iikcZodx8nP1nqHTa4D",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3292,6 +3381,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3349,22 +3441,7 @@
       "direction": "row",
       "name": "PC_MODAL_LINE",
       "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE " }],
-      "hideCondition": {
-        "logic": {
-          "if": [
-            {
-              "and": [
-                { "==": [{ "var": "currentScreen.page_name" }, "Pay cards"] },
-                {
-                  "==": [{ "var": "currentScreen.selected_tab" }, "other cards"]
-                }
-              ]
-            },
-            false,
-            true
-          ]
-        }
-      }
+      "hideCondition": { "logic": false }
     },
     "layout": null,
     "events": [],
@@ -3373,6 +3450,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3429,6 +3509,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3454,8 +3537,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3467,6 +3550,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3494,8 +3578,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3507,6 +3591,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3538,6 +3623,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3603,6 +3691,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3659,6 +3750,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3684,8 +3778,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3697,6 +3791,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3725,8 +3820,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3738,6 +3833,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3769,6 +3865,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3839,6 +3938,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3895,6 +3997,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3920,8 +4025,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3933,6 +4038,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3966,8 +4072,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3979,6 +4085,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4010,6 +4117,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4019,11 +4129,11 @@
     "attributes": {
       "gridProps": [
         {
-          "componentId": "TzaHMb8IgnR2hhQPQG9-I",
+          "componentId": "xYO27sV5jegqE2GSKFHrf",
           "componentType": "10001",
-          "id": "TzaHMb8IgnR2hhQPQG9-I",
+          "id": "xYO27sV5jegqE2GSKFHrf",
           "position": {
-            "i": "TzaHMb8IgnR2hhQPQG9-I",
+            "i": "xYO27sV5jegqE2GSKFHrf",
             "x": null,
             "y": null,
             "w": null,
@@ -4077,11 +4187,14 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "TzaHMb8IgnR2hhQPQG9-I",
-    "name": "Grid layout",
+    "id": "xYO27sV5jegqE2GSKFHrf",
+    "name": "PC_CREDIT_CARDS",
     "type": "10001",
     "attributes": {
       "gridProps": [
@@ -4093,7 +4206,7 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "u_lAcVg6c1r5yeEhOJRak",
+          "componentId": "JS7pVtOEFBwftihNqbxaX",
           "componentType": "20002",
           "order": 1
         },
@@ -4105,7 +4218,7 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "W2WTfF9-JgMqtwsuJoSAs",
+          "componentId": "C5R24cJ1Y6KNL8DKiPTIF",
           "componentType": "20002",
           "order": 1
         },
@@ -4117,7 +4230,19 @@
             "sm": 12,
             "xs": 12
           },
-          "componentId": "p79IMWas3PZb0o30JTTEf",
+          "componentId": "yvSl0WdGYyv-R-xVKPv1e",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "HWMi5sVHpq150cF-FSKew",
           "componentType": "20002",
           "order": 1
         }
@@ -4145,10 +4270,13 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "u_lAcVg6c1r5yeEhOJRak",
+    "id": "JS7pVtOEFBwftihNqbxaX",
     "status": "ACTIVE",
     "name": "Label",
     "attributes": {
@@ -4178,8 +4306,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4191,10 +4319,11 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "W2WTfF9-JgMqtwsuJoSAs",
+    "id": "C5R24cJ1Y6KNL8DKiPTIF",
     "status": "ACTIVE",
     "name": "Label",
     "attributes": {
@@ -4224,8 +4353,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4237,10 +4366,11 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "p79IMWas3PZb0o30JTTEf",
+    "id": "yvSl0WdGYyv-R-xVKPv1e",
     "status": "ACTIVE",
     "name": "Label",
     "attributes": {
@@ -4257,30 +4387,102 @@
         "xs": 12
       },
       "label": "pc_request.cardOrAccount.accountOrCardNumber",
-      "hideCondition": { "logic": false },
+      "hideCondition": {
+        "logic": {
+          "==": [
+            { "var": "currentScreen.pc_request.cardOrAccount.type" },
+            "CreditCard"
+          ]
+        }
+      },
       "searchInState": true,
       "storeType": 2,
-      "prefix": "pc_request.cardOrAccount.accountTypeName",
+      "prefix": "form.selected_payment_method.accountTypeName",
       "searchInStatePrefix": true,
       "addSpacesPrefix": true,
-      "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA " }]
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-5-0-0-0-2",
+    "path": "0-0-1-0-0-0-4-0-0-0-2",
     "screenId": "y4iikcZodx8nP1nqHTa4D",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "HWMi5sVHpq150cF-FSKew",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "selected_payment_method.lastCardNumber",
+      "prefix": "selected_payment_method.accountTypeName",
+      "searchInState": true,
+      "searchInStatePrefix": true,
+      "addSpacesPrefix": true,
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
+      "hideCondition": {
+        "logic": {
+          "!=": [
+            { "var": "currentScreen.pc_request.cardOrAccount.type" },
+            "CreditCard"
+          ]
+        }
+      },
+      "storeType": 1
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-0-0-4-0-0-0-3",
+    "screenId": "y4iikcZodx8nP1nqHTa4D",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4350,6 +4552,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4406,8 +4611,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -4420,6 +4625,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4476,8 +4682,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -4490,6 +4696,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4549,8 +4756,8 @@
       "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_LOGO " }]
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -4563,6 +4770,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4601,8 +4809,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4629,6 +4837,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4684,6 +4893,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4724,8 +4936,8 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/23/2024",
+    "createdAt": "6/23/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -4736,6 +4948,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

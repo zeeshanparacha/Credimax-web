@@ -1,0 +1,155 @@
+{
+  "id": "67H3YqQfKel4--hESUH4-",
+  "gitBranchName": "master",
+  "name": "TBW_VALIDATION",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "validationList": [
+            {
+              "bindingKey": "source",
+              "storeType": 1,
+              "messageBindingKey": "validation_1",
+              "isRequired": false,
+              "requiredMessage": "",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "<=": [
+                      { "+": [{ "var": "currentScreen.form.source" }, 0] },
+                      {
+                        "+": [
+                          {
+                            "var": "currentScreen.form.from_wallet.balanceAmount"
+                          },
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Source amount cannot be greater than available balance"
+                },
+                {
+                  "logic": {
+                    "!=": [
+                      { "+": [{ "var": "currentScreen.form.source" }, 0] },
+                      0
+                    ]
+                  },
+                  "logicMessage": "Source amount cannot be 0"
+                }
+              ]
+            }
+          ],
+          "successTrigger": {
+            "id": "al1JtsNlV32oSyaMH_vM-",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "TBW_SUM_DESTINATION_AND_REVIEW_PAYMENT",
+            "old_name": "",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "2",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "delay": "",
+                    "triggers": [
+                      {
+                        "id": "hPodk8Vcgl8-gVSi3AgF8",
+                        "name": "TBW_SUM_DESTINATION_AMOUNT_AND_FEES",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "6",
+                              "attributes": {
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "value",
+                                "destinationBindingKey": "destinationAmountWithFees",
+                                "sourceBindingKey": "form",
+                                "sourceStoreType": 2,
+                                "destinationStoreType": 2,
+                                "logic": {
+                                  "+": [
+                                    { "var": "quotes.sourceAmount" },
+                                    { "var": "quotes.transactionFees" }
+                                  ]
+                                },
+                                "changeValueConditonally": true,
+                                "targettedType": "value"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                        "_id": "cMNXTePci_g4p5ehRpDoe",
+                        "updatedAt": "1/18/2024",
+                        "createdAt": "1/18/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      },
+                      {
+                        "id": "Wm3OjnO6DDSCkGuD3C2ih",
+                        "gitBranchName": "master",
+                        "name": "TBW_REVIEW_PAYMENT",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "services": [
+                          {
+                            "type": "9",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "widgetId": "jWHBS_7vS-CWkZWN6FnEi",
+                                "content": "",
+                                "type": "",
+                                "modalId": "oLkDgksnJERxOUhS-hmWY",
+                                "toastContentType": "custom"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                        "_id": "0xeDUU0KvtyLPCy5rMca7",
+                        "updatedAt": "1/18/2024",
+                        "createdAt": "1/18/2024",
+                        "createdBy": "talha2",
+                        "updatedBy": "talha2"
+                      }
+                    ],
+                    "triggerIds": [
+                      "hPodk8Vcgl8-gVSi3AgF8",
+                      "Wm3OjnO6DDSCkGuD3C2ih"
+                    ]
+                  }
+                }
+              }
+            ],
+            "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+            "_id": "N4hm11J5iaLe7J1F0oKQM",
+            "updatedAt": "1/18/2024",
+            "createdAt": "1/18/2024",
+            "createdBy": "talha2",
+            "updatedBy": "talha2"
+          }
+        }
+      }
+    }
+  ],
+  "csrf": "0.t2rvhfiox6baCbvcmIBgnipABglvdhG",
+  "_id": "vmntqj2USOMNu06eOBqmx",
+  "updatedAt": "6/19/2024",
+  "createdAt": "6/19/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

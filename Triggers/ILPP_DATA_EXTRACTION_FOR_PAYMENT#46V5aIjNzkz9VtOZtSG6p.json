@@ -85,21 +85,77 @@
               }
             },
             {
+              "key": "pc_request.validation",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.pc_check_otp.content.otpRequired"
+                      },
+                      "1"
+                    ]
+                  },
+                  { "var": "currentScreen.pc_validation_object" },
+                  null
+                ]
+              }
+            },
+            {
               "key": "pc_request.cardOrAccount.cardOrAccType",
               "storeType": 2,
               "changeValueConditonally": true,
               "logic": {
-                "var": "currentScreen.form.selected_payment_method.accountType"
+                "if": [
+                  {
+                    "var": "currentScreen.form.selected_payment_method.accountType"
+                  },
+                  {
+                    "var": "currentScreen.form.selected_payment_method.accountType"
+                  },
+                  { "var": "currentScreen.form.selected_payment_method.type" }
+                ]
               }
+            },
+            {
+              "key": "pc_request.cardOrAccount.currency",
+              "changeValueConditonally": false,
+              "storeType": 2,
+              "logic": "BHD"
+            },
+            {
+              "key": "pc_request.cardOrAccount.cprOfOtherCardHolder",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentSession.userProfile.content.customer.userIdenValue"
+              }
+            },
+            {
+              "key": "pc_request.userId",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "var": "currentScreen.CURRENT_CARD.ileadChild.ileadUserId"
+              }
+            },
+            {
+              "key": "pc_request.cardOrAccount.toCardNumber",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.CURRENT_CARD.cardNumber" }
             }
-          ]
+          ],
+          "gridFormRowIdBindingKey": "editFormRowId"
         }
       }
     }
   ],
-  "csrf": "0.lkyckeqnm6xyYYAHjjAaK1OW-hQCzLW",
-  "updatedAt": "3/22/2024",
-  "createdAt": "3/22/2024",
-  "createdBy": "talha2",
-  "updatedBy": "talha2"
+  "csrf": "0.z9338cgurskmic3O5xMCt76CasP3aHu",
+  "updatedAt": "6/20/2024",
+  "createdAt": "6/20/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }

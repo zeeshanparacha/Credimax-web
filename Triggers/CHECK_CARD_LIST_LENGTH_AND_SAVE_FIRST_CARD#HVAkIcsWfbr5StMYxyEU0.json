@@ -26,7 +26,8 @@
                           },
                           0
                         ]
-                      }
+                      },
+                      { "var": "currentSession.last_main_card" }
                     ]
                   },
                   true,
@@ -58,15 +59,64 @@
                   }
                 }
               ]
+            },
+            {
+              "logic": {
+                "if": [
+                  {
+                    "and": [
+                      { "var": "currentScreen.cards.content.cardList" },
+                      {
+                        ">": [
+                          {
+                            "var": "currentScreen.cards.content.cardList.length"
+                          },
+                          0
+                        ]
+                      },
+                      { "!": [{ "var": "currentSession.last_main_card" }] }
+                    ]
+                  },
+                  true,
+                  false
+                ]
+              },
+              "triggerName": "PC_SELECT_FIRST_CARD",
+              "triggerId": "5ZYgrlxKrDZY9X37hEzXQ",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "current_card",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": {
+                            "var": "currentScreen.cards.content.cardList.0"
+                          }
+                        }
+                      ],
+                      "gridFormRowIdBindingKey": "editFormRowId"
+                    }
+                  }
+                }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.h6s7n20c3huknsydTPSLVS5xjHn3VN-H",
-  "updatedAt": "4/29/2024",
-  "createdAt": "4/29/2024",
-  "createdBy": "basitahmed1199",
-  "updatedBy": "basitahmed1199"
+  "csrf": "0.z9338cgurskmic3O5xMCt76CasP3aHu",
+  "updatedAt": "6/22/2024",
+  "createdAt": "6/22/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }

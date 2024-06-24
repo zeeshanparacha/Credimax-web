@@ -1,5 +1,6 @@
 {
   "id": "S76MglR8W3-1mwzVb7UG_",
+  "_id": "wds8HolEkd65x8FeKE1od",
   "gitBranchName": "master",
   "name": "VerifyCreditCard_CHAIN_TRIGGER_Validations",
   "projectId": "652fcbce09869c3c809b3097",
@@ -14,10 +15,20 @@
               "bindingKey": "lastFourDigit",
               "storeType": 1,
               "messageBindingKey": "lastFourDigit_validation",
-              "isRequired": true,
+              "isRequired": false,
               "requiredMessage": "Last four digit are required",
               "regExMessage": "",
-              "JSONLogic": []
+              "JSONLogic": [
+                {
+                  "logic": {
+                    ">": [
+                      { "var": "currentScreen.form.lastFourDigit.length" },
+                      3
+                    ]
+                  },
+                  "logicMessage": "Please Enter last four digits of your cards"
+                }
+              ]
             }
           ],
           "successTrigger": {
@@ -230,10 +241,9 @@
       }
     }
   ],
-  "csrf": "0.obi4a4zluzyPscARLujm6Qm11bHxaih",
-  "_id": "wds8HolEkd65x8FeKE1od",
-  "updatedAt": "5/6/2024",
-  "createdAt": "5/6/2024",
+  "csrf": "0.tr7z0n0nvmTJCS4Qc8N9oPSK_WF1GlH",
+  "updatedAt": "6/19/2024",
+  "createdAt": "6/19/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }

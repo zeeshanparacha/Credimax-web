@@ -498,7 +498,7 @@
                                             "sm": 12,
                                             "xs": 12
                                           },
-                                          "label": "balances.cardNumber",
+                                          "label": "CURRENT_CARD.maskCardNumber",
                                           "searchInState": true,
                                           "storeType": 2,
                                           "cssClassNames": [
@@ -521,7 +521,7 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-1-0-0-0-1"
+                                        "path": "0-0-1-0-1-0-0-0-1"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -701,12 +701,12 @@
                       },
                       {
                         "type": "10001",
-                        "name": "PC_MODAL_LINE",
+                        "name": "TBW",
                         "id": "gKp1gk4R5QMC90iVFqqTp",
                         "gridProps": [
                           {
                             "type": "column",
-                            "id": "WuZBy8A92bTPDqdCLVBja",
+                            "id": "FBiGvoPIHASeX82ObDzAb",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -783,12 +783,25 @@
                                           "storeType": 1,
                                           "cssClassNames": [
                                             {
-                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
                                             }
                                           ],
                                           "prefix": "from_wallet.currency",
                                           "searchInStatePrefix": true,
-                                          "addSpacesPrefix": true
+                                          "addSpacesPrefix": true,
+                                          "decimalPointsAdded": true,
+                                          "decimalPoints": "2",
+                                          "hideCondition": {
+                                            "logic": {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.form.from_wallet.currency"
+                                                },
+                                                "BHD"
+                                              ]
+                                            }
+                                          }
                                         },
                                         "icon": "FaFont",
                                         "group": "Form",
@@ -804,7 +817,73 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-2-0-0-0-1"
+                                        "path": "0-0-1-0-2-0-0-0-1"
+                                      },
+                                      {
+                                        "id": "cUqi6thJv9YtYfmHErk_G",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component."
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "source",
+                                          "prefix": "from_wallet.currency",
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                            }
+                                          ],
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.from_wallet.currency"
+                                                },
+                                                "BHD"
+                                              ]
+                                            }
+                                          },
+                                          "searchInState": true,
+                                          "storeType": 1,
+                                          "searchInStatePrefix": true,
+                                          "addSpacesPrefix": true,
+                                          "decimalPointsAdded": true,
+                                          "decimalPoints": "3"
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-1-0-2-0-0-0-2"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -859,7 +938,7 @@
                           },
                           {
                             "type": "column",
-                            "id": "EKAByyrldEZWQ5wmpOz1b",
+                            "id": "Fb3ZfPK83xRHgemeJ5uRp",
                             "gridProps": [
                               {
                                 "type": "10001",
@@ -1013,7 +1092,7 @@
                           "type": "10001",
                           "content": "Grid layout"
                         },
-                        "path": "0-0-2",
+                        "path": "0-0-1-0-2",
                         "dimensions": {
                           "rows": 1,
                           "columns": 2,
@@ -1114,12 +1193,25 @@
                                           "storeType": 1,
                                           "cssClassNames": [
                                             {
-                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
                                             }
                                           ],
                                           "prefix": "to_wallet.currency",
                                           "searchInStatePrefix": true,
-                                          "addSpacesPrefix": true
+                                          "addSpacesPrefix": true,
+                                          "hideCondition": {
+                                            "logic": {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.form.to_wallet.currency"
+                                                },
+                                                "BHD"
+                                              ]
+                                            }
+                                          },
+                                          "decimalPointsAdded": true,
+                                          "decimalPoints": "2"
                                         },
                                         "icon": "FaFont",
                                         "group": "Form",
@@ -1135,7 +1227,73 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-3-0-0-0-1"
+                                        "path": "0-0-1-0-3-0-0-0-1"
+                                      },
+                                      {
+                                        "id": "kegFt--7UfuvGkE2t6mCS",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component."
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "target",
+                                          "prefix": "to_wallet.currency",
+                                          "searchInState": true,
+                                          "searchInStatePrefix": true,
+                                          "decimalPointsAdded": true,
+                                          "decimalPoints": "3",
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                            }
+                                          ],
+                                          "addSpacesPrefix": true,
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.to_wallet.currency"
+                                                },
+                                                "BHD"
+                                              ]
+                                            }
+                                          },
+                                          "storeType": 1
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-1-0-3-0-0-0-2"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -1723,12 +1881,25 @@
                                           "storeType": 2,
                                           "cssClassNames": [
                                             {
-                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
                                             }
                                           ],
                                           "prefix": "form.from_wallet.currency",
                                           "searchInStatePrefix": true,
-                                          "addSpacesPrefix": true
+                                          "addSpacesPrefix": true,
+                                          "hideCondition": {
+                                            "logic": {
+                                              "==": [
+                                                {
+                                                  "var": "currentScreen.form.from_wallet.currency"
+                                                },
+                                                "BHD"
+                                              ]
+                                            }
+                                          },
+                                          "decimalPointsAdded": true,
+                                          "decimalPoints": "2"
                                         },
                                         "icon": "FaFont",
                                         "group": "Form",
@@ -1744,7 +1915,73 @@
                                           "type": "20002"
                                         },
                                         "events": [],
-                                        "path": "0-0-5-0-0-0-1"
+                                        "path": "0-0-1-0-5-0-0-0-1"
+                                      },
+                                      {
+                                        "id": "-FenjjfwNPc3zZL4b3RWJ",
+                                        "status": "ACTIVE",
+                                        "name": "Label",
+                                        "attributes": {
+                                          "variant": "body1",
+                                          "name": "Label",
+                                          "mandatory": false,
+                                          "layoutProperties": {
+                                            "label": {
+                                              "//": "Use this class to style label component."
+                                            },
+                                            "prefix": {
+                                              "//": "Use this class to style prefix."
+                                            },
+                                            "postfix": {
+                                              "//": "Use this class to style postfix."
+                                            },
+                                            "mainContainer": "label",
+                                            "xl": 12,
+                                            "lg": 12,
+                                            "md": 12,
+                                            "sm": 12,
+                                            "xs": 12
+                                          },
+                                          "label": "destinationAmountWithFees",
+                                          "prefix": "form.from_wallet.currency",
+                                          "searchInState": true,
+                                          "storeType": 2,
+                                          "searchInStatePrefix": true,
+                                          "addSpacesPrefix": true,
+                                          "decimalPointsAdded": true,
+                                          "decimalPoints": "3",
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+                                              "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+                                            }
+                                          ],
+                                          "hideCondition": {
+                                            "logic": {
+                                              "!=": [
+                                                {
+                                                  "var": "currentScreen.form.from_wallet.currency"
+                                                },
+                                                "BHD"
+                                              ]
+                                            }
+                                          }
+                                        },
+                                        "icon": "FaFont",
+                                        "group": "Form",
+                                        "type": "20002",
+                                        "updatedAt": "23-Aug-2021",
+                                        "createdAt": "23-Aug-2021",
+                                        "order": 15,
+                                        "version": "1.0.0",
+                                        "isLatest": true,
+                                        "projectType": "web",
+                                        "component": {
+                                          "content": "Label",
+                                          "type": "20002"
+                                        },
+                                        "events": [],
+                                        "path": "0-0-1-0-5-0-0-0-2"
                                       }
                                     ],
                                     "layoutProperties": {
@@ -2231,9 +2468,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "kH96418YWv4W91eQEUbDF",
-    "createdBy": "mubashar",
-    "updatedAt": "3/13/2024",
-    "createdAt": "3/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2297,6 +2534,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2313,6 +2553,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2491,6 +2734,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2555,6 +2801,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2600,6 +2849,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2625,8 +2877,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2638,6 +2890,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2682,6 +2935,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2733,8 +2989,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -2755,6 +3011,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2820,6 +3077,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2876,6 +3136,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2901,8 +3164,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2914,6 +3177,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2933,7 +3197,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "balances.cardNumber",
+      "label": "CURRENT_CARD.maskCardNumber",
       "searchInState": true,
       "storeType": 2,
       "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA " }]
@@ -2941,19 +3205,20 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1",
+    "path": "0-0-1-0-1-0-0-0-1",
     "screenId": "kH96418YWv4W91eQEUbDF",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2985,11 +3250,14 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
     "id": "gKp1gk4R5QMC90iVFqqTp",
-    "name": "PC_MODAL_LINE",
+    "name": "TBW",
     "type": "10001",
     "attributes": {
       "gridProps": [
@@ -3051,6 +3319,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3082,6 +3353,18 @@
           "componentId": "b08IgZ0pVlhYSsht539wy",
           "componentType": "20002",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "cUqi6thJv9YtYfmHErk_G",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -3107,6 +3390,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3132,8 +3418,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3145,6 +3431,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3167,27 +3454,98 @@
       "label": "source",
       "searchInState": true,
       "storeType": 1,
-      "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA " }],
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
       "prefix": "from_wallet.currency",
       "searchInStatePrefix": true,
-      "addSpacesPrefix": true
+      "addSpacesPrefix": true,
+      "decimalPointsAdded": true,
+      "decimalPoints": "2",
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.form.from_wallet.currency" }, "BHD"]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-2-0-0-0-1",
+    "path": "0-0-1-0-2-0-0-0-1",
     "screenId": "kH96418YWv4W91eQEUbDF",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "cUqi6thJv9YtYfmHErk_G",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "source",
+      "prefix": "from_wallet.currency",
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
+      "hideCondition": {
+        "logic": {
+          "!=": [{ "var": "currentScreen.form.from_wallet.currency" }, "BHD"]
+        }
+      },
+      "searchInState": true,
+      "storeType": 1,
+      "searchInStatePrefix": true,
+      "addSpacesPrefix": true,
+      "decimalPointsAdded": true,
+      "decimalPoints": "3"
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "subType": "component",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-2-0-0-0-2",
+    "screenId": "kH96418YWv4W91eQEUbDF",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3232,6 +3590,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3265,8 +3626,8 @@
       "imageAssetIdTemp": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3279,6 +3640,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3344,6 +3706,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3375,6 +3740,18 @@
           "componentId": "Ofe2Td_r979-nrR3O1Jsj",
           "componentType": "20002",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "kegFt--7UfuvGkE2t6mCS",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -3400,6 +3777,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3425,8 +3805,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3438,6 +3818,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3460,27 +3841,98 @@
       "label": "target",
       "searchInState": true,
       "storeType": 1,
-      "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA " }],
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
       "prefix": "to_wallet.currency",
       "searchInStatePrefix": true,
-      "addSpacesPrefix": true
+      "addSpacesPrefix": true,
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.form.to_wallet.currency" }, "BHD"]
+        }
+      },
+      "decimalPointsAdded": true,
+      "decimalPoints": "2"
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-3-0-0-0-1",
+    "path": "0-0-1-0-3-0-0-0-1",
     "screenId": "kH96418YWv4W91eQEUbDF",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "kegFt--7UfuvGkE2t6mCS",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "target",
+      "prefix": "to_wallet.currency",
+      "searchInState": true,
+      "searchInStatePrefix": true,
+      "decimalPointsAdded": true,
+      "decimalPoints": "3",
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
+      "addSpacesPrefix": true,
+      "hideCondition": {
+        "logic": {
+          "!=": [{ "var": "currentScreen.form.to_wallet.currency" }, "BHD"]
+        }
+      },
+      "storeType": 1
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "subType": "component",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-3-0-0-0-2",
+    "screenId": "kH96418YWv4W91eQEUbDF",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3525,6 +3977,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3558,8 +4013,8 @@
       "imageAssetIdTemp": null
     },
     "group": "Form",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3572,6 +4027,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3637,6 +4093,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3693,6 +4152,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3718,8 +4180,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3731,6 +4193,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3758,8 +4221,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3771,6 +4234,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3802,6 +4266,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3869,6 +4336,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3900,6 +4370,18 @@
           "componentId": "UTZ1IFyR2aM-5tzo32uN7",
           "componentType": "20002",
           "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "-FenjjfwNPc3zZL4b3RWJ",
+          "componentType": "20002",
+          "order": 1
         }
       ],
       "label": "Header",
@@ -3925,6 +4407,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3950,8 +4435,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3963,6 +4448,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3985,27 +4471,98 @@
       "label": "destinationAmountWithFees",
       "searchInState": true,
       "storeType": 2,
-      "cssClassNames": [{ "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA " }],
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
       "prefix": "form.from_wallet.currency",
       "searchInStatePrefix": true,
-      "addSpacesPrefix": true
+      "addSpacesPrefix": true,
+      "hideCondition": {
+        "logic": {
+          "==": [{ "var": "currentScreen.form.from_wallet.currency" }, "BHD"]
+        }
+      },
+      "decimalPointsAdded": true,
+      "decimalPoints": "2"
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-5-0-0-0-1",
+    "path": "0-0-1-0-5-0-0-0-1",
     "screenId": "kH96418YWv4W91eQEUbDF",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "-FenjjfwNPc3zZL4b3RWJ",
+    "status": "ACTIVE",
+    "name": "Label",
+    "attributes": {
+      "variant": "body1",
+      "name": "Label",
+      "mandatory": false,
+      "layoutProperties": {
+        "label": { "//": "Use this class to style label component." },
+        "prefix": { "//": "Use this class to style prefix." },
+        "postfix": { "//": "Use this class to style postfix." },
+        "mainContainer": "label",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "label": "destinationAmountWithFees",
+      "prefix": "form.from_wallet.currency",
+      "searchInState": true,
+      "storeType": 2,
+      "searchInStatePrefix": true,
+      "addSpacesPrefix": true,
+      "decimalPointsAdded": true,
+      "decimalPoints": "3",
+      "cssClassNames": [
+        {
+          "cssClassName": "PC_REVIEW_PAYMENT_LINE_DATA ",
+          "key": "PC_REVIEW_PAYMENT_LINE_DATA "
+        }
+      ],
+      "hideCondition": {
+        "logic": {
+          "!=": [{ "var": "currentScreen.form.from_wallet.currency" }, "BHD"]
+        }
+      }
+    },
+    "icon": "FaFont",
+    "group": "Form",
+    "type": "20002",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
+    "order": 15,
+    "version": "1.0.0",
+    "isLatest": true,
+    "projectType": "web",
+    "subType": "component",
+    "component": { "content": "Label", "type": "20002" },
+    "events": [],
+    "path": "0-0-1-0-5-0-0-0-2",
+    "screenId": "kH96418YWv4W91eQEUbDF",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4037,6 +4594,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4091,6 +4651,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4131,18 +4694,19 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Lottie", "type": "20051" },
     "path": "0-0-0-0-6-0-0",
     "screenId": "kH96418YWv4W91eQEUbDF",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4179,8 +4743,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "23-Aug-2021",
-    "createdAt": "23-Aug-2021",
+    "updatedAt": "6/19/2024",
+    "createdAt": "6/19/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4207,6 +4771,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

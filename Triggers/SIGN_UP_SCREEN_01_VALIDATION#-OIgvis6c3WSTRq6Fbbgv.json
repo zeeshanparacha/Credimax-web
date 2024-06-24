@@ -42,10 +42,27 @@
               "bindingKey": "number",
               "storeType": 1,
               "messageBindingKey": "number_validation",
-              "isRequired": true,
-              "requiredMessage": "Phone number is required",
+              "isRequired": false,
+              "requiredMessage": "",
+              "regEx": "",
               "regExMessage": "",
-              "JSONLogic": []
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "==": [
+                      { "var": "currentScreen.form.password" },
+                      { "var": "currentScreen.form.cpassword" }
+                    ]
+                  },
+                  "logicMessage": "Passwords do not match"
+                },
+                {
+                  "logic": {
+                    ">": [{ "var": "currentScreen.form.number.length" }, 11]
+                  },
+                  "logicMessage": "Valid Phone number is required"
+                }
+              ]
             }
           ],
           "successTrigger": {
@@ -253,9 +270,9 @@
       }
     }
   ],
-  "csrf": "0.nssjlc5v9she9ighe-lmWe6d5dGoAH3t",
-  "updatedAt": "5/19/2024",
-  "createdAt": "5/19/2024",
+  "csrf": "0.74zv4l9sub3jmK2KidfpLKYbrAxLfXE_",
+  "updatedAt": "6/15/2024",
+  "createdAt": "6/15/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }
