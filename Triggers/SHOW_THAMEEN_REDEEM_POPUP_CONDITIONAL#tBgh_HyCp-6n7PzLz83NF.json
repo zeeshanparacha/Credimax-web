@@ -1,0 +1,82 @@
+{
+  "id": "m7OUWeaobe5NUE9Y8R3Qf",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SHOW_THAMEEN_REDEEM_POPUP_CONDITIONAL",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "!": [
+                  {
+                    "or": [
+                      {
+                        "and": [
+                          { "!!": { "var": "currentScreen.form.customMiles" } },
+                          { "var": "currentScreen.form.IS_MILES_EXCEEDS" }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "!": { "var": "currentScreen.form.SELECTED_MILE" }
+                          },
+                          { "!": { "var": "currentScreen.form.customMiles" } }
+                        ]
+                      },
+                      {
+                        "or": [
+                          {
+                            "!": {
+                              "var": "currentScreen.form.membershipNumber"
+                            }
+                          },
+                          {
+                            "and": [
+                              { "var": "currentScreen.form.membershipNumber" },
+                              { "var": "currentScreen.form.IS_MEMBERSHIP_LESS" }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "triggerName": "SHOW_THAMEEN_REDEEM_POPUP",
+              "triggerId": "hNpm2yQiFNYpcXDZ52Wpw",
+              "services": [
+                {
+                  "type": "9",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "widgetId": "lZ9mtCuZA2NWq1pHEJu_q",
+                      "content": "",
+                      "type": "",
+                      "modalId": "nIZk4yU_cflpppCkvsJOk",
+                      "toastContentType": "custom"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.21mofvjglckpEjiSpAxDG7ahcllqnLoM",
+  "_id": "tBgh_HyCp-6n7PzLz83NF",
+  "updatedAt": "6/25/2024",
+  "createdAt": "6/25/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

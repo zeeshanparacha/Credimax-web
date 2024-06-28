@@ -1,9 +1,10 @@
 {
+  "_id": "EgJItWqfAhQcO5dyfECm5",
   "id": "TFV4jTbd_5TpYXEu6KIhU",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "UP_GO_TO_HOME_FROM_SEVICES_DELAYED",
-  "old_name": "",
+  "old_name": "UP_GO_TO_HOME_FROM_SEVICES_DELAYED",
   "status": "ACTIVE",
   "services": [
     {
@@ -12,43 +13,164 @@
         "type": "2",
         "attributes": {
           "delay": "3000",
+          "storeType": "",
+          "searchInState": false,
           "triggers": [
             {
-              "id": "WNZ5B9unoq6J6EyzwJvE0",
-              "name": "UP_GO_TO_HOME_FROM_SEVICES",
+              "_id": "x1_QE89PTHlGj3VSDsIex",
+              "id": "ABoJMN3s58hiNvJvb2guH",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
+              "name": "NAVIGATE_FROM_SERVICES_CONDITIONALLY",
+              "old_name": "NAVIGATE_FROM_SERVICES_CONDITIONALLY",
+              "status": "ACTIVE",
               "services": [
                 {
-                  "type": "1",
+                  "type": "13",
                   "command": {
-                    "type": "3",
+                    "type": "1",
                     "attributes": {
-                      "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
-                      "gridRadioValue": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "editableForm": false
+                      "triggers": [
+                        {
+                          "triggerName": "GO_BACK_TO_DASHBOARD",
+                          "triggerId": "SoJkY647RyhZPvMuZIClp",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "3",
+                                "attributes": {
+                                  "nextWidgetId": "yHNYfgIiRzbDXJDQXQ2fr",
+                                  "gridRadioValue": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "main dashboard"
+                            ]
+                          }
+                        },
+                        {
+                          "triggerName": "GO_TO_SUPPLEMENTARY_SCREEN",
+                          "triggerId": "B3DCvSJAL2Z5HvEzad9np",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "3",
+                                "attributes": {
+                                  "nextWidgetId": "QPdvyRNNvuI54xiQtwD-a",
+                                  "gridRadioValue": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "supplementary card"
+                            ]
+                          }
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "ilc dashboard"
+                            ]
+                          },
+                          "triggerName": "GO_TO_OTHER_DASHBOARD",
+                          "triggerId": "1TlQ3Bx1lmkdpSeYtJ1bH",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "3",
+                                "attributes": {
+                                  "nextWidgetId": "s47LZ2E_rWcTXgCwHEWwE",
+                                  "gridRadioValue": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "ilp child dashboard"
+                            ]
+                          },
+                          "triggerName": "ILP_GO_TO_CHILD_DASHBOARD",
+                          "triggerId": "MN_UfuyweLbbNUdbpXHRi",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "3",
+                                "attributes": {
+                                  "nextWidgetId": "JpbI0pkgeKdh7jOs1vRMW",
+                                  "gridRadioValue": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              { "var": "currentSession.dash_type" },
+                              "ilc dashboard"
+                            ]
+                          },
+                          "triggerName": "ILC_GO_TO_CARD_DETAILS",
+                          "triggerId": "ih3vNCyqB_xun7IGducAp",
+                          "services": [
+                            {
+                              "type": "1",
+                              "command": {
+                                "type": "3",
+                                "attributes": {
+                                  "nextWidgetId": "BlnSGayp6sKQ6Glaj0UWP",
+                                  "gridRadioValue": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "editableForm": false
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
                     }
                   }
                 }
               ],
-              "csrf": "0.zpdx4fl42gfBlJ3HBdYX0_hD6Wp7Hitp",
-              "_id": "MlfsfxTwuihwZr7B-i5W8",
-              "updatedAt": "2/15/2024",
-              "createdAt": "2/15/2024",
-              "createdBy": "mubashar",
-              "updatedBy": "mubashar"
+              "csrf": "0.b9afrtxpxbhe1Cgoqm2BfisrONTT5lOK",
+              "updatedAt": "6/13/2024",
+              "createdAt": "6/13/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
             }
           ],
-          "triggerIds": ["WNZ5B9unoq6J6EyzwJvE0"]
+          "triggerIds": ["ABoJMN3s58hiNvJvb2guH"]
         }
       }
     }
   ],
-  "csrf": "0.l956yi8n2t1esusvSD6lT98Ogb1Zt2b",
-  "_id": "EgJItWqfAhQcO5dyfECm5",
-  "updatedAt": "2/16/2024",
-  "createdAt": "2/16/2024",
-  "createdBy": "hasnain",
-  "updatedBy": "hasnain"
+  "csrf": "0.21mofvjglckpEjiSpAxDG7ahcllqnLoM",
+  "updatedAt": "6/25/2024",
+  "createdAt": "6/25/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }
