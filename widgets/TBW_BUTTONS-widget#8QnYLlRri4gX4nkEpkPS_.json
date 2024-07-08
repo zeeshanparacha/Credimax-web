@@ -1,0 +1,620 @@
+[
+  {
+    "id": "8QnYLlRri4gX4nkEpkPS_",
+    "name": "TBW_BUTTONS widget",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "componentId": "dv4GN5imnldV5oph2qsg9",
+          "componentType": "10001",
+          "id": "dv4GN5imnldV5oph2qsg9",
+          "position": {
+            "i": "dv4GN5imnldV5oph2qsg9",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        }
+      ]
+    },
+    "layout": [
+      {
+        "type": "10001",
+        "id": "dv4GN5imnldV5oph2qsg9",
+        "gridProps": [
+          {
+            "type": "column",
+            "id": "K8Du51i2fkLKlqJ3b_fIF",
+            "gridProps": [
+              {
+                "type": "10001",
+                "name": "ARROW_BTN",
+                "id": "UNCX8stINRBa50w3zWQ_I",
+                "gridProps": [
+                  {
+                    "type": "column",
+                    "id": "jFSQE8MSFLiB4afqiqZTt",
+                    "gridProps": [
+                      {
+                        "id": "AtgntrAN5CoqxPC8Bb0ji",
+                        "type": "20006",
+                        "name": "Button",
+                        "component": { "content": "Button", "type": "20006" },
+                        "attributes": {
+                          "label": "Proceed",
+                          "variant": "contained",
+                          "name": "Button",
+                          "label-locale-key": "",
+                          "fullWidth": true,
+                          "layoutProperties": {
+                            "button": {
+                              "//": "Use this class to style button component."
+                            },
+                            "iconButton": {
+                              "//": "Use this class to style icon button component.",
+                              "width": "20px",
+                              "height": "20px"
+                            },
+                            "inputProps": {
+                              "//": "Use this class to style button element."
+                            },
+                            "mainContainer": "button",
+                            "xl": 12,
+                            "lg": 12,
+                            "md": 12,
+                            "sm": 12,
+                            "xs": 12
+                          },
+                          "buttonIconPosition": "end",
+                          "icon": null,
+                          "asset": {
+                            "createdBy": "user",
+                            "_id": "6569e606f83e303df855c83b",
+                            "name": "Arrow-right.svg",
+                            "type": "svg",
+                            "projectId": "652fcbce09869c3c809b3097",
+                            "id": "mIpUxrykayJ0VBquChK3L",
+                            "gitBranchName": "master",
+                            "folderType": "web",
+                            "platform": "web",
+                            "url": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+                            "canvasUrl": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+                            "createdAt": "2023-12-01T13:56:22.270Z",
+                            "updatedAt": "2023-12-21T13:01:15.668Z",
+                            "__v": 0,
+                            "uri": "652fcbce09869c3c809b3097/web/Arrow-right.svg"
+                          },
+                          "assetId": "mIpUxrykayJ0VBquChK3L",
+                          "cssClassNames": [
+                            {
+                              "cssClassName": "RESPONSIVE_PRIMARY_BUTTON ",
+                              "key": "RESPONSIVE_PRIMARY_BUTTON "
+                            },
+                            {
+                              "cssClassName": "BTN_FLOAT_RIGHT ",
+                              "key": "BTN_FLOAT_RIGHT "
+                            }
+                          ],
+                          "disableCondition": {
+                            "logic": {
+                              "or": [
+                                {
+                                  "!": [{ "var": "currentScreen.form.source" }]
+                                },
+                                {
+                                  "!": [{ "var": "currentScreen.form.target" }]
+                                },
+                                {
+                                  "!": [
+                                    { "var": "currentScreen.form.from_wallet" }
+                                  ]
+                                },
+                                {
+                                  "!": [
+                                    { "var": "currentScreen.form.to_wallet" }
+                                  ]
+                                },
+                                { "!": [{ "var": "currentScreen.quotes" }] }
+                              ]
+                            }
+                          },
+                          "cssDisableClassNames": [
+                            {
+                              "cssClassName": "RESPONSIVE_PRIMARY_BUTTON_DISABLED",
+                              "key": "RESPONSIVE_PRIMARY_BUTTON_DISABLED"
+                            },
+                            {
+                              "cssClassName": "BTN_FLOAT_RIGHT ",
+                              "key": "BTN_FLOAT_RIGHT "
+                            }
+                          ],
+                          "hideCondition": { "logic": false }
+                        },
+                        "events": [
+                          {
+                            "triggerId": "67H3YqQfKel4--hESUH4-",
+                            "triggerName": "TBW_VALIDATION",
+                            "serviceType": "16",
+                            "attributes": {
+                              "validationList": [
+                                {
+                                  "bindingKey": "source",
+                                  "storeType": 1,
+                                  "messageBindingKey": "validation_1",
+                                  "isRequired": false,
+                                  "requiredMessage": "",
+                                  "regEx": "",
+                                  "regExMessage": "",
+                                  "JSONLogic": [
+                                    {
+                                      "logic": {
+                                        "<=": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.source"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.from_wallet.balanceAmount"
+                                              },
+                                              0
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      "logicMessage": "Source amount cannot be greater than available balance"
+                                    },
+                                    {
+                                      "logic": {
+                                        "!=": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.source"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          0
+                                        ]
+                                      },
+                                      "logicMessage": "Source amount cannot be 0"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "successTrigger": {
+                                "id": "al1JtsNlV32oSyaMH_vM-",
+                                "projectId": "652fcbce09869c3c809b3097",
+                                "gitBranchName": "master",
+                                "name": "TBW_SUM_DESTINATION_AND_REVIEW_PAYMENT",
+                                "old_name": "",
+                                "status": "ACTIVE",
+                                "services": [
+                                  {
+                                    "type": "2",
+                                    "command": {
+                                      "type": "1",
+                                      "attributes": {
+                                        "delay": "",
+                                        "triggers": [
+                                          {
+                                            "id": "hPodk8Vcgl8-gVSi3AgF8",
+                                            "name": "TBW_SUM_DESTINATION_AMOUNT_AND_FEES",
+                                            "projectId": "652fcbce09869c3c809b3097",
+                                            "gitBranchName": "master",
+                                            "services": [
+                                              {
+                                                "type": "11",
+                                                "command": {
+                                                  "type": "6",
+                                                  "attributes": {
+                                                    "storeType": "",
+                                                    "selectedObjectBindingKey": "selectedObject",
+                                                    "dataType": "value",
+                                                    "destinationBindingKey": "destinationAmountWithFees",
+                                                    "sourceBindingKey": "form",
+                                                    "sourceStoreType": 2,
+                                                    "destinationStoreType": 2,
+                                                    "logic": {
+                                                      "+": [
+                                                        {
+                                                          "var": "quotes.sourceAmount"
+                                                        },
+                                                        {
+                                                          "var": "quotes.transactionFees"
+                                                        }
+                                                      ]
+                                                    },
+                                                    "changeValueConditonally": true,
+                                                    "targettedType": "value"
+                                                  }
+                                                }
+                                              }
+                                            ],
+                                            "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                                            "_id": "cMNXTePci_g4p5ehRpDoe",
+                                            "updatedAt": "1/18/2024",
+                                            "createdAt": "1/18/2024",
+                                            "createdBy": "talha2",
+                                            "updatedBy": "talha2"
+                                          },
+                                          {
+                                            "id": "Wm3OjnO6DDSCkGuD3C2ih",
+                                            "gitBranchName": "master",
+                                            "name": "TBW_REVIEW_PAYMENT",
+                                            "projectId": "652fcbce09869c3c809b3097",
+                                            "services": [
+                                              {
+                                                "type": "9",
+                                                "command": {
+                                                  "type": "1",
+                                                  "attributes": {
+                                                    "widgetId": "jWHBS_7vS-CWkZWN6FnEi",
+                                                    "content": "",
+                                                    "type": "",
+                                                    "modalId": "oLkDgksnJERxOUhS-hmWY",
+                                                    "toastContentType": "custom"
+                                                  }
+                                                }
+                                              }
+                                            ],
+                                            "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                                            "_id": "0xeDUU0KvtyLPCy5rMca7",
+                                            "updatedAt": "1/18/2024",
+                                            "createdAt": "1/18/2024",
+                                            "createdBy": "talha2",
+                                            "updatedBy": "talha2"
+                                          }
+                                        ],
+                                        "triggerIds": [
+                                          "hPodk8Vcgl8-gVSi3AgF8",
+                                          "Wm3OjnO6DDSCkGuD3C2ih"
+                                        ]
+                                      }
+                                    }
+                                  }
+                                ],
+                                "csrf": "0.q8zf03lsbc-rkMiU2PFXRQYN9TVbtCN",
+                                "_id": "N4hm11J5iaLe7J1F0oKQM",
+                                "updatedAt": "1/18/2024",
+                                "createdAt": "1/18/2024",
+                                "createdBy": "talha2",
+                                "updatedBy": "talha2"
+                              }
+                            },
+                            "type": "2",
+                            "name": "On click",
+                            "commandType": "2"
+                          }
+                        ],
+                        "path": "4-0-3-0-3-0-0-0-0",
+                        "version": "1.0.0"
+                      }
+                    ],
+                    "layoutProperties": {
+                      "xl": 12,
+                      "lg": 12,
+                      "md": 12,
+                      "sm": 12,
+                      "xs": 12
+                    }
+                  }
+                ],
+                "allowedContainers": [
+                  "10001",
+                  "20030",
+                  "noLayout",
+                  "20010",
+                  "widget"
+                ],
+                "attributes": {
+                  "gridProps": [],
+                  "label": "Header",
+                  "layoutProperties": {
+                    "gridLayout": {
+                      "//": "Use this class to style grid layout component.",
+                      "spacing": 0
+                    },
+                    "mainContainer": "gridLayout",
+                    "skeleton": {
+                      "//": "Use this class to style skeleton loading component."
+                    }
+                  },
+                  "layoutProps": {
+                    "direction": "row",
+                    "justifyContent": "flex-start",
+                    "alignItems": "flex-start"
+                  },
+                  "direction": "row",
+                  "name": "ARROW_BTN",
+                  "cssClassNames": []
+                },
+                "events": [],
+                "component": { "type": "10001", "content": "Grid layout" },
+                "path": "4-0-3-0-3-0-0",
+                "dimensions": {
+                  "rows": 1,
+                  "columns": 1,
+                  "colSize0xs": 12,
+                  "colSize0sm": 12,
+                  "colSize0md": 12,
+                  "colSize0lg": 12,
+                  "colSize0xl": 12,
+                  "name": null
+                },
+                "readOnly": true
+              }
+            ],
+            "layoutProperties": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            }
+          }
+        ],
+        "path": "4-0-3-0-3",
+        "events": [],
+        "attributes": {
+          "gridProps": [],
+          "label": "Header",
+          "layoutProperties": {
+            "gridLayout": {
+              "//": "Use this class to style grid layout component.",
+              "spacing": 0
+            },
+            "mainContainer": "gridLayout",
+            "skeleton": {
+              "//": "Use this class to style skeleton loading component."
+            }
+          },
+          "layoutProps": {
+            "direction": "row",
+            "justifyContent": "flex-start",
+            "alignItems": "flex-start"
+          },
+          "direction": "row",
+          "name": "RESPONSIVE_FORM_BUTTONS",
+          "cssClassNames": []
+        },
+        "component": { "type": "10001", "content": "Grid layout" },
+        "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
+        "name": "TBW_BUTTONS",
+        "dimensions": {
+          "rows": 1,
+          "columns": 1,
+          "colSize0xs": 12,
+          "colSize0sm": 12,
+          "colSize0md": 12,
+          "colSize0lg": 12,
+          "colSize0xl": 12,
+          "name": null
+        },
+        "readOnly": true
+      }
+    ],
+    "events": [],
+    "subType": "widget",
+    "screenId": "8QnYLlRri4gX4nkEpkPS_",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "_id": "8QnYLlRri4gX4nkEpkPS_",
+    "createdBy": "talha2",
+    "updatedAt": "7/8/2024",
+    "createdAt": "7/8/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "dv4GN5imnldV5oph2qsg9",
+    "name": "TBW_BUTTONS",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "componentId": "UNCX8stINRBa50w3zWQ_I",
+          "componentType": "10001",
+          "id": "UNCX8stINRBa50w3zWQ_I",
+          "position": {
+            "i": "UNCX8stINRBa50w3zWQ_I",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          }
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "RESPONSIVE_FORM_BUTTONS",
+      "cssClassNames": []
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "f13AvBz-MxRN_G3tIFHUF",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "talha2",
+    "updatedAt": "7/8/2024",
+    "createdAt": "7/8/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "UNCX8stINRBa50w3zWQ_I",
+    "name": "ARROW_BTN",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "AtgntrAN5CoqxPC8Bb0ji",
+          "componentType": "20006",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "ARROW_BTN",
+      "cssClassNames": []
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "f13AvBz-MxRN_G3tIFHUF",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "talha2",
+    "updatedAt": "7/8/2024",
+    "createdAt": "7/8/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "AtgntrAN5CoqxPC8Bb0ji",
+    "type": "20006",
+    "name": "Button",
+    "component": { "content": "Button", "type": "20006" },
+    "attributes": {
+      "label": "Proceed",
+      "variant": "contained",
+      "name": "Button",
+      "label-locale-key": "",
+      "fullWidth": true,
+      "layoutProperties": {
+        "button": { "//": "Use this class to style button component." },
+        "iconButton": {
+          "//": "Use this class to style icon button component.",
+          "width": "20px",
+          "height": "20px"
+        },
+        "inputProps": { "//": "Use this class to style button element." },
+        "mainContainer": "button",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "buttonIconPosition": "end",
+      "icon": null,
+      "asset": {
+        "createdBy": "user",
+        "_id": "6569e606f83e303df855c83b",
+        "name": "Arrow-right.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "mIpUxrykayJ0VBquChK3L",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+        "createdAt": "2023-12-01T13:56:22.270Z",
+        "updatedAt": "2023-12-21T13:01:15.668Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/Arrow-right.svg"
+      },
+      "assetId": "mIpUxrykayJ0VBquChK3L",
+      "cssClassNames": [
+        {
+          "cssClassName": "RESPONSIVE_PRIMARY_BUTTON ",
+          "key": "RESPONSIVE_PRIMARY_BUTTON "
+        },
+        { "cssClassName": "BTN_FLOAT_RIGHT ", "key": "BTN_FLOAT_RIGHT " }
+      ],
+      "disableCondition": {
+        "logic": {
+          "or": [
+            { "!": [{ "var": "currentScreen.form.source" }] },
+            { "!": [{ "var": "currentScreen.form.target" }] },
+            { "!": [{ "var": "currentScreen.form.from_wallet" }] },
+            { "!": [{ "var": "currentScreen.form.to_wallet" }] },
+            { "!": [{ "var": "currentScreen.quotes" }] }
+          ]
+        }
+      },
+      "cssDisableClassNames": [
+        {
+          "cssClassName": "RESPONSIVE_PRIMARY_BUTTON_DISABLED",
+          "key": "RESPONSIVE_PRIMARY_BUTTON_DISABLED"
+        },
+        { "cssClassName": "BTN_FLOAT_RIGHT ", "key": "BTN_FLOAT_RIGHT " }
+      ],
+      "hideCondition": { "logic": false }
+    },
+    "events": [
+      {
+        "triggerId": "67H3YqQfKel4--hESUH4-",
+        "triggerName": "TBW_VALIDATION",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "16"
+      }
+    ],
+    "path": "4-0-3-0-3-0-0-0-0",
+    "version": "1.0.0",
+    "screenId": "f13AvBz-MxRN_G3tIFHUF",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "talha2",
+    "updatedAt": "7/8/2024",
+    "createdAt": "7/8/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "id": "84L2DjS8RapFivG-4dzYU",
+  "_id": "k3FPvsSX2w1mrQYBoijke",
+  "name": "GENERIC_OTP_SET_VALIDATION",
+  "old_name": "GENERIC_OTP_SET_VALIDATION",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "6",
+        "attributes": {
+          "requestBody": [],
+          "destinationBindingKey": "generic_otp_set_validations",
+          "sourceBindingKey": "form",
+          "sourceStoreType": 2,
+          "destinationStoreType": 2,
+          "filterList": [
+            {
+              "key": "validationType",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "OTP", "OTP"] }
+            },
+            {
+              "key": "isOtp",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, true, true] }
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, true, true] },
+              "key": "splitOtp"
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "2", "2"] },
+              "key": "generationType"
+            },
+            {
+              "key": "otpExpiry",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "4", "4"] }
+            },
+            {
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "1", "1"] },
+              "key": "is2FA"
+            },
+            {
+              "key": "smsPin",
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.smsPin" }
+            },
+            {
+              "key": "emailPin",
+              "changeValueConditonally": true,
+              "logic": { "var": "currentScreen.form.smsPin" }
+            },
+            {
+              "key": "tranCode",
+              "changeValueConditonally": true,
+              "logic": { "if": [true, "1111", "1111"] }
+            }
+          ],
+          "targettedType": "object",
+          "gridFormRowIdBindingKey": "editFormRowId"
+        }
+      }
+    }
+  ],
+  "csrf": "0.cicbtxktpdiV0z6ROPbZtc6nlR08ILD",
+  "updatedAt": "7/4/2024",
+  "createdAt": "7/4/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

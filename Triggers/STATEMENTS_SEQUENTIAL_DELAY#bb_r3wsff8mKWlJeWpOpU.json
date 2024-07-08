@@ -1,9 +1,10 @@
 {
+  "_id": "bb_r3wsff8mKWlJeWpOpU",
   "id": "SbUJcpacJMXIZsjyKb06O",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "STATEMENTS_SEQUENTIAL_DELAY",
-  "old_name": "",
+  "old_name": "STATEMENTS_SEQUENTIAL_DELAY",
   "status": "ACTIVE",
   "services": [
     {
@@ -12,14 +13,15 @@
         "type": "1",
         "attributes": {
           "delay": "",
+          "storeType": "",
+          "searchInState": false,
           "triggers": [
             {
-              "_id": "HVAkIcsWfbr5StMYxyEU0",
-              "id": "4hVeehqHqTE6C4D8ETXay",
+              "id": "hG7Yp8tunE9DuR0yQQBo-",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
-              "name": "CHECK_CARD_LIST_LENGTH_AND_SAVE_FIRST_CARD",
-              "old_name": "CHECK_CARD_LIST_LENGTH_AND_SAVE_FIRST_CARD",
+              "name": "STATEMENT_SAVE_FIRST_CARD_CONDITIONAL",
+              "old_name": "",
               "status": "ACTIVE",
               "services": [
                 {
@@ -29,6 +31,33 @@
                     "attributes": {
                       "triggers": [
                         {
+                          "triggerName": "STATEMENT_SAVE_FIRST_CARD",
+                          "triggerId": "S-OeA78dn0eMT4rlCTEWh",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "CURRENT_CARD",
+                                      "changeValueConditonally": true,
+                                      "storeType": 2,
+                                      "logic": {
+                                        "var": "currentScreen.cards.cardList.0"
+                                      }
+                                    }
+                                  ],
+                                  "gridFormRowIdBindingKey": "editFormRowId"
+                                }
+                              }
+                            }
+                          ],
                           "logic": {
                             "if": [
                               {
@@ -47,42 +76,19 @@
                               true,
                               false
                             ]
-                          },
-                          "triggerName": "SAVE_FIRST_CARD_AS_CURRENT_CARD",
-                          "triggerId": "OjYjs4p88jBQR6Xr-GNqg",
-                          "services": [
-                            {
-                              "type": "11",
-                              "command": {
-                                "type": "6",
-                                "attributes": {
-                                  "storeType": "",
-                                  "selectedObjectBindingKey": "selectedObject",
-                                  "dataType": "value",
-                                  "destinationBindingKey": "current_card",
-                                  "sourceBindingKey": "form",
-                                  "sourceStoreType": 2,
-                                  "destinationStoreType": 1,
-                                  "logic": {
-                                    "var": "currentScreen.cards.cardList.0"
-                                  },
-                                  "changeValueConditonally": true,
-                                  "targettedType": "value"
-                                }
-                              }
-                            }
-                          ]
+                          }
                         }
                       ]
                     }
                   }
                 }
               ],
-              "csrf": "0.tjzb0k39kvf0fmQmfevGJPxig4m1u3m",
-              "updatedAt": "1/7/2024",
-              "createdAt": "1/7/2024",
-              "createdBy": "talha",
-              "updatedBy": "talha"
+              "csrf": "0.zbjcdyp8pkncxBgDz1yQhLMSwDV5LarJ",
+              "_id": "ssDpmkzTuOCHE4XjsODgx",
+              "updatedAt": "7/8/2024",
+              "createdAt": "7/8/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
             },
             {
               "id": "2bie3Q8uM9encsMg2pVkY",
@@ -146,24 +152,31 @@
                       },
                       "requestBody": [
                         {
-                          "type": 1,
-                          "name": "Form",
+                          "type": 2,
+                          "name": "Current screen",
                           "key": "cardNumber",
-                          "value": "current_card.cardNumber"
+                          "value": "CURRENT_CARD.cardNumber"
                         }
                       ],
                       "baseURL": "656f0b4398e9df55f0499597",
                       "storeType": 2
                     },
-                    "responseHandler": []
+                    "responseHandler": [
+                      {
+                        "triggerName": "SET_CURRENT_FILTER_STATEMENT_CONDIONAL",
+                        "triggerId": "EaXGbaqGLvQvEGWgC8neZ",
+                        "httpStatus": 200,
+                        "logic": true
+                      }
+                    ]
                   }
                 }
               ],
-              "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
-              "updatedAt": "1/11/2024",
-              "createdAt": "1/11/2024",
-              "createdBy": "zeeshan",
-              "updatedBy": "zeeshan"
+              "csrf": "0.cv9exvzl2bbbGq4rAAOA7rc8q0qvfHOc",
+              "updatedAt": "3/27/2024",
+              "createdAt": "3/27/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
             },
             {
               "id": "RFesO16-sP156pSkU3g-E",
@@ -182,8 +195,8 @@
                       "storeType": "",
                       "selectedObjectBindingKey": "selectedObject",
                       "dataType": "object",
-                      "destinationBindingKey": "current_statement_filter",
-                      "sourceBindingKey": "current_statement_filter",
+                      "destinationBindingKey": "filter",
+                      "sourceBindingKey": "filter",
                       "sourceStoreType": 1,
                       "destinationStoreType": 1,
                       "filterList": [
@@ -208,11 +221,11 @@
                   }
                 }
               ],
-              "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
-              "updatedAt": "1/11/2024",
-              "createdAt": "1/11/2024",
-              "createdBy": "zeeshan",
-              "updatedBy": "zeeshan"
+              "csrf": "0.evfdf7rtv14wsp4_hpv07cec5J0IHnd-",
+              "updatedAt": "1/18/2024",
+              "createdAt": "1/18/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
             },
             {
               "id": "h_HDXNk9RMDiEA8RtKOd0",
@@ -256,16 +269,16 @@
                           "value": "current_statement_filter.date"
                         },
                         {
-                          "type": 1,
-                          "name": "Form",
+                          "type": 2,
+                          "name": "Current screen",
                           "key": "cardNumber",
-                          "value": "current_card.cardNumber"
+                          "value": "CURRENT_CARD.cardNumber"
                         },
                         {
-                          "type": 1,
-                          "name": "Form",
+                          "type": 2,
+                          "name": "Current screen",
                           "key": "cardType",
-                          "value": "current_card.cardType"
+                          "value": "CURRENT_CARD.cardType"
                         },
                         {
                           "type": 2,
@@ -281,15 +294,15 @@
                   }
                 }
               ],
-              "csrf": "0.istioqmalbq0F-EITGUCSylw7oFszqyt",
-              "updatedAt": "1/11/2024",
-              "createdAt": "1/11/2024",
-              "createdBy": "zeeshan",
-              "updatedBy": "zeeshan"
+              "csrf": "0.cv9exvzl2bbbGq4rAAOA7rc8q0qvfHOc",
+              "updatedAt": "3/27/2024",
+              "createdAt": "3/27/2024",
+              "createdBy": "talha2",
+              "updatedBy": "talha2"
             }
           ],
           "triggerIds": [
-            "4hVeehqHqTE6C4D8ETXay",
+            "hG7Yp8tunE9DuR0yQQBo-",
             "2bie3Q8uM9encsMg2pVkY",
             "H2x9-A2OSau7vqkqfQz7U",
             "RFesO16-sP156pSkU3g-E",
@@ -299,10 +312,9 @@
       }
     }
   ],
-  "csrf": "0.1r0ixknyq2dMX6M8ftr4mK19NJxH4vT7",
-  "_id": "bb_r3wsff8mKWlJeWpOpU",
-  "updatedAt": "1/15/2024",
-  "createdAt": "1/15/2024",
-  "createdBy": "zeeshan",
-  "updatedBy": "zeeshan"
+  "csrf": "0.zbjcdyp8pkncxBgDz1yQhLMSwDV5LarJ",
+  "updatedAt": "7/8/2024",
+  "createdAt": "7/8/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
 }

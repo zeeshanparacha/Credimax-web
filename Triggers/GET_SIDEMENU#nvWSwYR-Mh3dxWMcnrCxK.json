@@ -15,7 +15,7 @@
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
           "responseStateKey": "SIDEMENU",
-          "url": "/card/v1/web/cardList",
+          "url": "/card/v1/web/cardSideMenu",
           "checksum": true,
           "encryption": true,
           "isDeviceDetails": false,
@@ -26,17 +26,31 @@
             "Content-Type": "application/json",
             "channel_key": "002"
           },
-          "requestBody": [],
+          "requestBody": [
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "customerType",
+              "value": "userProfile.content.customer.customerType"
+            }
+          ],
           "baseURL": "656f0b4398e9df55f0499597",
           "storeType": 3
         },
-        "responseHandler": []
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "DASH_CHECK_IF_THAMEEN_EXISTS",
+            "triggerId": "C6TJ6ELnvCE1-_3KAwf71"
+          }
+        ]
       }
     }
   ],
-  "csrf": "0.t7kdh01yxnhrCX3UJ6jYQMLlQHn7qaJU",
-  "updatedAt": "3/5/2024",
-  "createdAt": "3/5/2024",
-  "createdBy": "talha2",
-  "updatedBy": "talha2"
+  "csrf": "0.28lcowiwqahG4FE2VfZs_wd7We-VO4X_",
+  "updatedAt": "7/8/2024",
+  "createdAt": "7/8/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }

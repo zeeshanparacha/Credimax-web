@@ -20,8 +20,8 @@
                   "ilp child dashboard"
                 ]
               },
-              "triggerName": "GET_CHILD_CARD_WITHOUT_ACTION",
-              "triggerId": "SMDTfIDl_qm4p0ynf4qb3",
+              "triggerName": "GET_CHILD_CARD_API_WITHOUT_ACTION_SILENTLY",
+              "triggerId": "h2k8E8CqBzu-f9s9KozOc",
               "services": [
                 {
                   "type": "8",
@@ -35,12 +35,13 @@
                       "url": "/card/v1/web/getIleadCard",
                       "checksum": true,
                       "encryption": true,
-                      "isDeviceDetails": false,
+                      "isDeviceDetails": true,
                       "loginTrigger": false,
                       "formData": false,
                       "logoutTrigger": false,
                       "headers": {
                         "Content-Type": "application/json",
+                        "Accept": "application/json",
                         "channel_key": "002"
                       },
                       "requestBody": [],
@@ -87,15 +88,96 @@
                   }
                 }
               ]
+            },
+            {
+              "logic": {
+                "==": [{ "var": "currentSession.dash_type" }, "ilc dashboard"]
+              },
+              "triggerName": "ILC_DASH_GET_CARD_API_SILIENTLY",
+              "triggerId": "dLf9bCl-QqulTnSp6DQz-",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "ilc_cards",
+                      "url": "/card/child/v1/web/getIleadCard",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2,
+                      "hideLoading": true
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "ILC_DASH_SAVE_CURRENT_CARD",
+                        "triggerId": "dLcV1Qj0mI9piT52i4B6D"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "==": [{ "var": "currentSession.dash_type" }, "ilc other cards"]
+              },
+              "triggerName": "GET_CARD_SLIDER_API_CALL_SILENTLY",
+              "triggerId": "8OHP6JCRe9VmLG_CQ3hl-",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cards",
+                      "responseReturnValue": "content",
+                      "url": "/card/v1/web/cardList",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": []
+                  }
+                }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.x7iv4ivrpfqZxKu7s3NEMcfox99ietL",
-  "updatedAt": "3/20/2024",
-  "createdAt": "3/20/2024",
+  "csrf": "0.3aq78j7lk2fWsM_rcNF3YOrli8j1egzO",
+  "updatedAt": "7/1/2024",
+  "createdAt": "7/1/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }

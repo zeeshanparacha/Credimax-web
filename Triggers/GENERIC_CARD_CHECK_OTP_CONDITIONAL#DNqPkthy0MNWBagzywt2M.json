@@ -1,0 +1,114 @@
+{
+  "_id": "DNqPkthy0MNWBagzywt2M",
+  "id": "n_5-HXKNsub8Ucv_WmcB0",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "GENERIC_CARD_CHECK_OTP_CONDITIONAL",
+  "old_name": "GENERIC_CARD_CHECK_OTP_CONDITIONAL",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "!=": [
+                  {
+                    "var": "currentScreen.generic_check_otp.content.otpRequired"
+                  },
+                  1
+                ]
+              },
+              "triggerName": "CARD_DETAILS_TRIGGER",
+              "triggerId": "xhxjVYrsprTmAJhceB67E",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "cardDetails",
+                      "url": "/card/v1/getCardDetails",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "cardNumber",
+                          "value": "CURRENT_CARD.cardNumber"
+                        },
+                        {
+                          "type": 2,
+                          "name": "Current screen",
+                          "key": "request.validation",
+                          "value": "generic_otp_set_validations"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2,
+                      "hideLoading": true
+                    },
+                    "responseHandler": [
+                      {
+                        "logic": { "==": [{ "var": "code" }, 1] },
+                        "httpStatus": 200,
+                        "triggerName": "ENCRYPT_CARD_DETAIL",
+                        "triggerId": "sXg1MPusvDtBmgWpjVrSe"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "==": [
+                  {
+                    "var": "currentScreen.generic_check_otp.content.otpRequired"
+                  },
+                  1
+                ]
+              },
+              "triggerName": "GENERIC_CARD_OTP_POPUP",
+              "triggerId": "47WM7cKOCl1y4kkrvECVW",
+              "services": [
+                {
+                  "type": "9",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "widgetId": "qlNYUQLxYigENOVrYK10w",
+                      "content": "",
+                      "type": "",
+                      "modalId": "JgjNpAWrLv9Z4K__E52TH",
+                      "toastContentType": "custom"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.ccslqf195nt6nrFwbHe8RjKbYa1cRVnN",
+  "updatedAt": "7/4/2024",
+  "createdAt": "7/4/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}
