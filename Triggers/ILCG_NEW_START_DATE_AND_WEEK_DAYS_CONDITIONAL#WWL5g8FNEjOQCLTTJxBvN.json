@@ -1,0 +1,91 @@
+{
+  "id": "qlXCH0UjS_-MVN9ByGpmz",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILCG_NEW_START_DATE_AND_WEEK_DAYS_CONDITIONAL",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "==": [
+                  { "var": "currentScreen.form.ILC_FREQUENCY.name" },
+                  "Monthly"
+                ]
+              },
+              "triggerName": "ILCG_NEW_START_DATE_AND_WEEK_DAYS_FRE_MONTHLY",
+              "triggerId": "hAuCl9qqaikC1XHDP9cHl",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "startDateOrDay",
+                          "changeValueConditonally": true,
+                          "storeType": 2,
+                          "logic": {
+                            "var": "currentScreen.form.ILCG_START_DATE"
+                          }
+                        }
+                      ],
+                      "gridFormRowIdBindingKey": "editFormRowId"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": {
+                "==": [
+                  { "var": "currentScreen.form.ILC_FREQUENCY.name" },
+                  "Weekly"
+                ]
+              },
+              "triggerName": "ILCG_NEW_START_DATE_AND_WEEK_DAYS_FRE_WEEKLY",
+              "triggerId": "6_UAp5J8ARJfmKuG-WezT",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "filterList": [
+                        {
+                          "key": "startDateOrDay",
+                          "changeValueConditonally": true,
+                          "storeType": 2,
+                          "logic": {
+                            "var": "currentScreen.form.week_days.name"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.tjpu845di8iicRL57PpD-VmOcV7mMH2T",
+  "_id": "WWL5g8FNEjOQCLTTJxBvN",
+  "updatedAt": "7/9/2024",
+  "createdAt": "7/9/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
+}

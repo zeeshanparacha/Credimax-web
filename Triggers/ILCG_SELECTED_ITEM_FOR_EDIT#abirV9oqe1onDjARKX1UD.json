@@ -38,12 +38,6 @@
               "logic": { "var": "currentScreen.form.ILCG_LIST.targetDate" }
             },
             {
-              "key": "ILCG_START_DATE",
-              "storeType": 1,
-              "changeValueConditonally": true,
-              "logic": { "var": "currentScreen.form.ILCG_LIST.startDate" }
-            },
-            {
               "key": "ILC_FREQUENCY.name",
               "storeType": 1,
               "changeValueConditonally": true,
@@ -72,15 +66,106 @@
               "logic": {
                 "var": "currentScreen.form.ILCG_LIST.contributionAmountWithOutCurrency"
               }
+            },
+            {
+              "key": "ILCG_START_DATE",
+              "storeType": 1,
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ILCG_LIST.contributionFreq"
+                      },
+                      "Monthly"
+                    ]
+                  },
+                  { "var": "currentScreen.form.ILCG_LIST.startDate" }
+                ]
+              }
+            },
+            {
+              "key": "  startDateOrDay",
+              "storeType": 2,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ILCG_LIST.contributionFreq"
+                      },
+                      "Monthly"
+                    ]
+                  },
+                  { "var": "currentScreen.form.ILCG_LIST.startDate" }
+                ]
+              },
+              "changeValueConditonally": true
+            },
+            {
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ILCG_LIST.contributionFreq"
+                      },
+                      "Weekly"
+                    ]
+                  },
+                  { "var": "currentScreen.form.ILCG_LIST.startDate" }
+                ]
+              },
+              "key": "  startDateOrDay",
+              "storeType": 2,
+              "changeValueConditonally": true
+            },
+            {
+              "key": "week_days.name",
+              "storeType": 1,
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ILCG_LIST.contributionFreq"
+                      },
+                      "Weekly"
+                    ]
+                  },
+                  { "var": "currentScreen.form.ILCG_LIST.startDate" }
+                ]
+              }
+            },
+            {
+              "key": "week_days.code",
+              "storeType": 1,
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.form.ILCG_LIST.contributionFreq"
+                      },
+                      "Weekly"
+                    ]
+                  },
+                  { "var": "currentScreen.form.ILCG_LIST.startDate" }
+                ]
+              }
             }
-          ]
+          ],
+          "gridFormRowIdBindingKey": "editFormRowId"
         }
       }
     }
   ],
-  "csrf": "0.9eg1jw50rjctJLDsyMVLUzqr6AA86WpW",
-  "updatedAt": "4/4/2024",
-  "createdAt": "4/4/2024",
+  "csrf": "0.yvgakd8o7w9AOQ6uW4pLN-zBi4KpWGPY",
+  "updatedAt": "7/10/2024",
+  "createdAt": "7/10/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }
