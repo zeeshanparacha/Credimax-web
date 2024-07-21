@@ -79,57 +79,6 @@
             "commandType": "1"
           },
           {
-            "triggerId": "PlBg0XkvUhA_Z8PqiHVd0",
-            "triggerName": "MODIFY_WEEK_DAYS_DELAY",
-            "serviceType": "2",
-            "attributes": {
-              "delay": "100",
-              "storeType": "",
-              "searchInState": false,
-              "triggers": [
-                {
-                  "id": "TkrNrcl1LKJSLZ8jYGGkT",
-                  "name": "MODIFY_WEEK_DAYS",
-                  "projectId": "652fcbce09869c3c809b3097",
-                  "gitBranchName": "master",
-                  "services": [
-                    {
-                      "type": "11",
-                      "command": {
-                        "type": "15",
-                        "attributes": {
-                          "storeType": "",
-                          "selectedObjectBindingKey": "selectedObject",
-                          "dataType": "",
-                          "sourceBindingKey": "",
-                          "filterList": [
-                            {
-                              "key": "week_days",
-                              "changeValueConditonally": true,
-                              "storeType": 1,
-                              "logic": { "code": "Sunday", "name": "Sunday" }
-                            }
-                          ],
-                          "gridFormRowIdBindingKey": "editFormRowId"
-                        }
-                      }
-                    }
-                  ],
-                  "csrf": "0.92nse42ocf71bc6PPae2KOvTvBr7VGQ",
-                  "_id": "iz_wkSs-eRe7-64CHnGLO",
-                  "updatedAt": "7/8/2024",
-                  "createdAt": "7/8/2024",
-                  "createdBy": "mubashar",
-                  "updatedBy": "mubashar"
-                }
-              ],
-              "triggerIds": ["TkrNrcl1LKJSLZ8jYGGkT"]
-            },
-            "type": "1",
-            "name": "On initialization",
-            "commandType": "2"
-          },
-          {
             "triggerId": "C9VAY5AImRfVpeNy7pz65",
             "triggerName": "Clear Form Data",
             "serviceType": "14",
@@ -137,6 +86,29 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "TkrNrcl1LKJSLZ8jYGGkT",
+            "triggerName": "MODIFY_WEEK_DAYS",
+            "serviceType": "11",
+            "attributes": {
+              "storeType": "",
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "filterList": [
+                {
+                  "key": "week_days",
+                  "changeValueConditonally": true,
+                  "storeType": 1,
+                  "logic": { "code": "Sunday", "name": "Sunday" }
+                }
+              ],
+              "gridFormRowIdBindingKey": "editFormRowId"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "15"
           }
         ],
         "path": "0",
@@ -155,7 +127,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "NBeKnS1qUl3DIIZXbAC3V",
+            "id": "VneYi5nb1iD-0oEaRBwV9",
             "gridProps": [
               {
                 "id": "-e06cAfe0iFChBGdxHGof",
@@ -3611,7 +3583,12 @@
                                                               "cssClassName": "LOG_IN_EMAIL_VALIDATION ",
                                                               "key": "LOG_IN_EMAIL_VALIDATION "
                                                             }
-                                                          ]
+                                                          ],
+                                                          "hideCondition": {
+                                                            "logic": {
+                                                              "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
+                                                            }
+                                                          }
                                                         },
                                                         "events": [],
                                                         "path": "0-0-1-0-0-0-0-0-3-0-0-0-1",
@@ -3651,7 +3628,16 @@
                                                               "cssClassName": "LOG_IN_EMAIL_VALIDATION ",
                                                               "key": "LOG_IN_EMAIL_VALIDATION "
                                                             }
-                                                          ]
+                                                          ],
+                                                          "hideCondition": {
+                                                            "logic": {
+                                                              "!": [
+                                                                {
+                                                                  "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
+                                                                }
+                                                              ]
+                                                            }
+                                                          }
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -4109,7 +4095,7 @@
                                                                 "gridProps": [
                                                                   {
                                                                     "type": "column",
-                                                                    "id": "BOQ-2pCra0aUZifVFrO9V",
+                                                                    "id": "GSZosqxcSN71RBIKSMlGi",
                                                                     "gridProps": [
                                                                       {
                                                                         "type": "10001",
@@ -4125,7 +4111,7 @@
                                                                                 "gridProps": [
                                                                                   {
                                                                                     "type": "column",
-                                                                                    "id": "ZsGOAWVx-Y9apwgSw2dsS",
+                                                                                    "id": "brLqz_7lEJKf89_lVlVVI",
                                                                                     "gridProps": [
                                                                                       {
                                                                                         "id": "lKXAmNOg01TyIOJK72T1z",
@@ -4308,257 +4294,6 @@
                                                                                     "type": "2",
                                                                                     "name": "On click",
                                                                                     "commandType": "2"
-                                                                                  },
-                                                                                  {
-                                                                                    "triggerId": "5LgCPG1_1ryTSx66AK4VC",
-                                                                                    "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
-                                                                                    "serviceType": "13",
-                                                                                    "attributes": {
-                                                                                      "triggers": [
-                                                                                        {
-                                                                                          "logic": {
-                                                                                            "==": [
-                                                                                              {
-                                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name"
-                                                                                              },
-                                                                                              "Monthly"
-                                                                                            ]
-                                                                                          },
-                                                                                          "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
-                                                                                          "triggerId": "Ikrr3sjIZA4001F2hBtjT",
-                                                                                          "services": [
-                                                                                            {
-                                                                                              "type": "13",
-                                                                                              "command": {
-                                                                                                "type": "1",
-                                                                                                "attributes": {
-                                                                                                  "triggers": [
-                                                                                                    {
-                                                                                                      "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
-                                                                                                      "triggerId": "nfji7B_h9wTBrDHwEERnM",
-                                                                                                      "services": [
-                                                                                                        {
-                                                                                                          "type": "8",
-                                                                                                          "command": {
-                                                                                                            "type": "1",
-                                                                                                            "attributes": {
-                                                                                                              "loaderWidgetIds": [
-                                                                                                                906070
-                                                                                                              ],
-                                                                                                              "messageWidgetIds": [
-                                                                                                                906070
-                                                                                                              ],
-                                                                                                              "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
-                                                                                                              "url": "/api-designer/api/iLeadGoalCalculation/execute",
-                                                                                                              "checksum": true,
-                                                                                                              "encryption": true,
-                                                                                                              "isDeviceDetails": true,
-                                                                                                              "loginTrigger": false,
-                                                                                                              "formData": false,
-                                                                                                              "logoutTrigger": false,
-                                                                                                              "headers": {
-                                                                                                                "Content-Type": "application/json",
-                                                                                                                "Accept": "application/json",
-                                                                                                                "channel_key": "002"
-                                                                                                              },
-                                                                                                              "requestBody": [
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.amount",
-                                                                                                                  "value": "ILCG_GOAL_AMOUNT"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.contributionFreq",
-                                                                                                                  "value": "ILC_FREQUENCY.name"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.startDate",
-                                                                                                                  "value": "ILCG_START_DATE"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.contibutionAmount",
-                                                                                                                  "value": "ILCG_AMOUNT"
-                                                                                                                }
-                                                                                                              ],
-                                                                                                              "baseURL": "656f0b4398e9df55f0499597",
-                                                                                                              "storeType": 2
-                                                                                                            },
-                                                                                                            "responseHandler": [
-                                                                                                              {
-                                                                                                                "logic": {
-                                                                                                                  "==": [
-                                                                                                                    {
-                                                                                                                      "var": "code"
-                                                                                                                    },
-                                                                                                                    1
-                                                                                                                  ]
-                                                                                                                },
-                                                                                                                "httpStatus": 200,
-                                                                                                                "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
-                                                                                                                "triggerId": "UUE-rGmre9rrh8dWl_xff"
-                                                                                                              }
-                                                                                                            ]
-                                                                                                          }
-                                                                                                        }
-                                                                                                      ],
-                                                                                                      "logic": {
-                                                                                                        "and": [
-                                                                                                          {
-                                                                                                            ">": [
-                                                                                                              {
-                                                                                                                "var": "currentScreen.form.ILCG_START_DATE.length"
-                                                                                                              },
-                                                                                                              0
-                                                                                                            ]
-                                                                                                          },
-                                                                                                          {
-                                                                                                            "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
-                                                                                                          },
-                                                                                                          {
-                                                                                                            ">": [
-                                                                                                              {
-                                                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name.length"
-                                                                                                              },
-                                                                                                              0
-                                                                                                            ]
-                                                                                                          },
-                                                                                                          {
-                                                                                                            "var": "currentScreen.form.ILCG_AMOUNT"
-                                                                                                          }
-                                                                                                        ]
-                                                                                                      }
-                                                                                                    }
-                                                                                                  ]
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          ]
-                                                                                        },
-                                                                                        {
-                                                                                          "logic": {
-                                                                                            "==": [
-                                                                                              {
-                                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name"
-                                                                                              },
-                                                                                              "Weekly"
-                                                                                            ]
-                                                                                          },
-                                                                                          "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT_FOR_DAY_CASE",
-                                                                                          "triggerId": "BXS2z6uksgCzwDknSYfMG",
-                                                                                          "services": [
-                                                                                            {
-                                                                                              "type": "13",
-                                                                                              "command": {
-                                                                                                "type": "1",
-                                                                                                "attributes": {
-                                                                                                  "triggers": [
-                                                                                                    {
-                                                                                                      "logic": {
-                                                                                                        "and": [
-                                                                                                          {
-                                                                                                            ">": [
-                                                                                                              {
-                                                                                                                "var": "currentScreen.form.week_days.name.length"
-                                                                                                              },
-                                                                                                              0
-                                                                                                            ]
-                                                                                                          },
-                                                                                                          {
-                                                                                                            "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
-                                                                                                          },
-                                                                                                          {
-                                                                                                            ">": [
-                                                                                                              {
-                                                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name.length"
-                                                                                                              },
-                                                                                                              0
-                                                                                                            ]
-                                                                                                          },
-                                                                                                          {
-                                                                                                            "var": "currentScreen.form.ILCG_AMOUNT"
-                                                                                                          }
-                                                                                                        ]
-                                                                                                      },
-                                                                                                      "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT_FOR_DAY_CASE",
-                                                                                                      "triggerId": "RKaSy4MPGxqoJ-IKTxDte",
-                                                                                                      "services": [
-                                                                                                        {
-                                                                                                          "type": "8",
-                                                                                                          "command": {
-                                                                                                            "type": "1",
-                                                                                                            "attributes": {
-                                                                                                              "loaderWidgetIds": [
-                                                                                                                906070
-                                                                                                              ],
-                                                                                                              "messageWidgetIds": [
-                                                                                                                906070
-                                                                                                              ],
-                                                                                                              "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
-                                                                                                              "url": "/api-designer/api/iLeadGoalCalculation/execute",
-                                                                                                              "checksum": true,
-                                                                                                              "encryption": true,
-                                                                                                              "isDeviceDetails": true,
-                                                                                                              "loginTrigger": false,
-                                                                                                              "formData": false,
-                                                                                                              "logoutTrigger": false,
-                                                                                                              "headers": {
-                                                                                                                "Content-Type": "application/json",
-                                                                                                                "Accept": "application/json",
-                                                                                                                "channel_key": "002"
-                                                                                                              },
-                                                                                                              "requestBody": [
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.amount",
-                                                                                                                  "value": "ILCG_GOAL_AMOUNT"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.contributionFreq",
-                                                                                                                  "value": "ILC_FREQUENCY.name"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.startDate",
-                                                                                                                  "value": "week_days.name"
-                                                                                                                },
-                                                                                                                {
-                                                                                                                  "type": 1,
-                                                                                                                  "name": "Form",
-                                                                                                                  "key": "request.contributionAmount",
-                                                                                                                  "value": "ILCG_AMOUNT"
-                                                                                                                }
-                                                                                                              ],
-                                                                                                              "baseURL": "656f0b4398e9df55f0499597",
-                                                                                                              "storeType": 2,
-                                                                                                              "hideLoading": true
-                                                                                                            },
-                                                                                                            "responseHandler": []
-                                                                                                          }
-                                                                                                        }
-                                                                                                      ]
-                                                                                                    }
-                                                                                                  ]
-                                                                                                }
-                                                                                              }
-                                                                                            }
-                                                                                          ]
-                                                                                        }
-                                                                                      ]
-                                                                                    },
-                                                                                    "type": "2",
-                                                                                    "name": "On click",
-                                                                                    "commandType": "1"
                                                                                   }
                                                                                 ],
                                                                                 "attributes": {
@@ -4705,148 +4440,22 @@
                                                                 },
                                                                 "events": [
                                                                   {
-                                                                    "triggerId": "5LgCPG1_1ryTSx66AK4VC",
-                                                                    "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
-                                                                    "serviceType": "13",
+                                                                    "triggerId": "vguhPsj6KZrr7p4TpifUK",
+                                                                    "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT_DELAY_",
+                                                                    "serviceType": "2",
                                                                     "attributes": {
+                                                                      "delay": "2000",
+                                                                      "storeType": "",
+                                                                      "searchInState": false,
                                                                       "triggers": [
                                                                         {
-                                                                          "logic": {
-                                                                            "==": [
-                                                                              {
-                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name"
-                                                                              },
-                                                                              "Monthly"
-                                                                            ]
-                                                                          },
-                                                                          "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
-                                                                          "triggerId": "Ikrr3sjIZA4001F2hBtjT",
-                                                                          "services": [
-                                                                            {
-                                                                              "type": "13",
-                                                                              "command": {
-                                                                                "type": "1",
-                                                                                "attributes": {
-                                                                                  "triggers": [
-                                                                                    {
-                                                                                      "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
-                                                                                      "triggerId": "nfji7B_h9wTBrDHwEERnM",
-                                                                                      "services": [
-                                                                                        {
-                                                                                          "type": "8",
-                                                                                          "command": {
-                                                                                            "type": "1",
-                                                                                            "attributes": {
-                                                                                              "loaderWidgetIds": [
-                                                                                                906070
-                                                                                              ],
-                                                                                              "messageWidgetIds": [
-                                                                                                906070
-                                                                                              ],
-                                                                                              "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
-                                                                                              "url": "/api-designer/api/iLeadGoalCalculation/execute",
-                                                                                              "checksum": true,
-                                                                                              "encryption": true,
-                                                                                              "isDeviceDetails": true,
-                                                                                              "loginTrigger": false,
-                                                                                              "formData": false,
-                                                                                              "logoutTrigger": false,
-                                                                                              "headers": {
-                                                                                                "Content-Type": "application/json",
-                                                                                                "Accept": "application/json",
-                                                                                                "channel_key": "002"
-                                                                                              },
-                                                                                              "requestBody": [
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.amount",
-                                                                                                  "value": "ILCG_GOAL_AMOUNT"
-                                                                                                },
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.contributionFreq",
-                                                                                                  "value": "ILC_FREQUENCY.name"
-                                                                                                },
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.startDate",
-                                                                                                  "value": "ILCG_START_DATE"
-                                                                                                },
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.contibutionAmount",
-                                                                                                  "value": "ILCG_AMOUNT"
-                                                                                                }
-                                                                                              ],
-                                                                                              "baseURL": "656f0b4398e9df55f0499597",
-                                                                                              "storeType": 2
-                                                                                            },
-                                                                                            "responseHandler": [
-                                                                                              {
-                                                                                                "logic": {
-                                                                                                  "==": [
-                                                                                                    {
-                                                                                                      "var": "code"
-                                                                                                    },
-                                                                                                    1
-                                                                                                  ]
-                                                                                                },
-                                                                                                "httpStatus": 200,
-                                                                                                "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
-                                                                                                "triggerId": "UUE-rGmre9rrh8dWl_xff"
-                                                                                              }
-                                                                                            ]
-                                                                                          }
-                                                                                        }
-                                                                                      ],
-                                                                                      "logic": {
-                                                                                        "and": [
-                                                                                          {
-                                                                                            ">": [
-                                                                                              {
-                                                                                                "var": "currentScreen.form.ILCG_START_DATE.length"
-                                                                                              },
-                                                                                              0
-                                                                                            ]
-                                                                                          },
-                                                                                          {
-                                                                                            "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
-                                                                                          },
-                                                                                          {
-                                                                                            ">": [
-                                                                                              {
-                                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name.length"
-                                                                                              },
-                                                                                              0
-                                                                                            ]
-                                                                                          },
-                                                                                          {
-                                                                                            "var": "currentScreen.form.ILCG_AMOUNT"
-                                                                                          }
-                                                                                        ]
-                                                                                      }
-                                                                                    }
-                                                                                  ]
-                                                                                }
-                                                                              }
-                                                                            }
-                                                                          ]
-                                                                        },
-                                                                        {
-                                                                          "logic": {
-                                                                            "==": [
-                                                                              {
-                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name"
-                                                                              },
-                                                                              "Weekly"
-                                                                            ]
-                                                                          },
-                                                                          "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT_FOR_DAY_CASE",
-                                                                          "triggerId": "BXS2z6uksgCzwDknSYfMG",
+                                                                          "_id": "pM6YqEZyy7xyjwRKqn8YP",
+                                                                          "id": "5LgCPG1_1ryTSx66AK4VC",
+                                                                          "projectId": "652fcbce09869c3c809b3097",
+                                                                          "gitBranchName": "master",
+                                                                          "name": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
+                                                                          "old_name": "",
+                                                                          "status": "ACTIVE",
                                                                           "services": [
                                                                             {
                                                                               "type": "13",
@@ -4856,89 +4465,239 @@
                                                                                   "triggers": [
                                                                                     {
                                                                                       "logic": {
-                                                                                        "and": [
+                                                                                        "==": [
                                                                                           {
-                                                                                            ">": [
-                                                                                              {
-                                                                                                "var": "currentScreen.form.week_days.name.length"
-                                                                                              },
-                                                                                              0
-                                                                                            ]
+                                                                                            "var": "currentScreen.form.ILC_FREQUENCY.name"
                                                                                           },
-                                                                                          {
-                                                                                            "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
-                                                                                          },
-                                                                                          {
-                                                                                            ">": [
-                                                                                              {
-                                                                                                "var": "currentScreen.form.ILC_FREQUENCY.name.length"
-                                                                                              },
-                                                                                              0
-                                                                                            ]
-                                                                                          },
-                                                                                          {
-                                                                                            "var": "currentScreen.form.ILCG_AMOUNT"
-                                                                                          }
+                                                                                          "Monthly"
                                                                                         ]
                                                                                       },
-                                                                                      "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT_FOR_DAY_CASE",
-                                                                                      "triggerId": "RKaSy4MPGxqoJ-IKTxDte",
+                                                                                      "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
+                                                                                      "triggerId": "Ikrr3sjIZA4001F2hBtjT",
                                                                                       "services": [
                                                                                         {
-                                                                                          "type": "8",
+                                                                                          "type": "13",
                                                                                           "command": {
                                                                                             "type": "1",
                                                                                             "attributes": {
-                                                                                              "loaderWidgetIds": [
-                                                                                                906070
-                                                                                              ],
-                                                                                              "messageWidgetIds": [
-                                                                                                906070
-                                                                                              ],
-                                                                                              "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
-                                                                                              "url": "/api-designer/api/iLeadGoalCalculation/execute",
-                                                                                              "checksum": true,
-                                                                                              "encryption": true,
-                                                                                              "isDeviceDetails": true,
-                                                                                              "loginTrigger": false,
-                                                                                              "formData": false,
-                                                                                              "logoutTrigger": false,
-                                                                                              "headers": {
-                                                                                                "Content-Type": "application/json",
-                                                                                                "Accept": "application/json",
-                                                                                                "channel_key": "002"
-                                                                                              },
-                                                                                              "requestBody": [
+                                                                                              "triggers": [
                                                                                                 {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.amount",
-                                                                                                  "value": "ILCG_GOAL_AMOUNT"
-                                                                                                },
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.contributionFreq",
-                                                                                                  "value": "ILC_FREQUENCY.name"
-                                                                                                },
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.startDate",
-                                                                                                  "value": "week_days.name"
-                                                                                                },
-                                                                                                {
-                                                                                                  "type": 1,
-                                                                                                  "name": "Form",
-                                                                                                  "key": "request.contributionAmount",
-                                                                                                  "value": "ILCG_AMOUNT"
+                                                                                                  "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
+                                                                                                  "triggerId": "nfji7B_h9wTBrDHwEERnM",
+                                                                                                  "services": [
+                                                                                                    {
+                                                                                                      "type": "8",
+                                                                                                      "command": {
+                                                                                                        "type": "1",
+                                                                                                        "attributes": {
+                                                                                                          "loaderWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "messageWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
+                                                                                                          "url": "/api-designer/api/iLeadGoalCalculation/execute",
+                                                                                                          "checksum": true,
+                                                                                                          "encryption": true,
+                                                                                                          "isDeviceDetails": true,
+                                                                                                          "loginTrigger": false,
+                                                                                                          "formData": false,
+                                                                                                          "logoutTrigger": false,
+                                                                                                          "headers": {
+                                                                                                            "Content-Type": "application/json",
+                                                                                                            "Accept": "application/json",
+                                                                                                            "channel_key": "002"
+                                                                                                          },
+                                                                                                          "requestBody": [
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.amount",
+                                                                                                              "value": "ILCG_GOAL_AMOUNT"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.contributionFreq",
+                                                                                                              "value": "ILC_FREQUENCY.name"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.startDate",
+                                                                                                              "value": "ILCG_START_DATE"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.contibutionAmount",
+                                                                                                              "value": "ILCG_AMOUNT"
+                                                                                                            }
+                                                                                                          ],
+                                                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                          "storeType": 2
+                                                                                                        },
+                                                                                                        "responseHandler": [
+                                                                                                          {
+                                                                                                            "logic": {
+                                                                                                              "==": [
+                                                                                                                {
+                                                                                                                  "var": "code"
+                                                                                                                },
+                                                                                                                1
+                                                                                                              ]
+                                                                                                            },
+                                                                                                            "httpStatus": 200,
+                                                                                                            "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
+                                                                                                            "triggerId": "UUE-rGmre9rrh8dWl_xff"
+                                                                                                          }
+                                                                                                        ]
+                                                                                                      }
+                                                                                                    }
+                                                                                                  ],
+                                                                                                  "logic": {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        ">": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.ILCG_START_DATE.length"
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        ">": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.ILC_FREQUENCY.name.length"
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILCG_AMOUNT"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
                                                                                                 }
-                                                                                              ],
-                                                                                              "baseURL": "656f0b4398e9df55f0499597",
-                                                                                              "storeType": 2,
-                                                                                              "hideLoading": true
-                                                                                            },
-                                                                                            "responseHandler": []
+                                                                                              ]
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      ]
+                                                                                    },
+                                                                                    {
+                                                                                      "logic": {
+                                                                                        "==": [
+                                                                                          {
+                                                                                            "var": "currentScreen.form.ILC_FREQUENCY.name"
+                                                                                          },
+                                                                                          "Weekly"
+                                                                                        ]
+                                                                                      },
+                                                                                      "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT_FOR_DAY_CASE",
+                                                                                      "triggerId": "BXS2z6uksgCzwDknSYfMG",
+                                                                                      "services": [
+                                                                                        {
+                                                                                          "type": "13",
+                                                                                          "command": {
+                                                                                            "type": "1",
+                                                                                            "attributes": {
+                                                                                              "triggers": [
+                                                                                                {
+                                                                                                  "logic": {
+                                                                                                    "and": [
+                                                                                                      {
+                                                                                                        ">": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.week_days.name.length"
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
+                                                                                                      },
+                                                                                                      {
+                                                                                                        ">": [
+                                                                                                          {
+                                                                                                            "var": "currentScreen.form.ILC_FREQUENCY.name.length"
+                                                                                                          },
+                                                                                                          0
+                                                                                                        ]
+                                                                                                      },
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILCG_AMOUNT"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT_FOR_DAY_CASE",
+                                                                                                  "triggerId": "RKaSy4MPGxqoJ-IKTxDte",
+                                                                                                  "services": [
+                                                                                                    {
+                                                                                                      "type": "8",
+                                                                                                      "command": {
+                                                                                                        "type": "1",
+                                                                                                        "attributes": {
+                                                                                                          "loaderWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "messageWidgetIds": [
+                                                                                                            906070
+                                                                                                          ],
+                                                                                                          "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
+                                                                                                          "url": "/api-designer/api/iLeadGoalCalculation/execute",
+                                                                                                          "checksum": true,
+                                                                                                          "encryption": true,
+                                                                                                          "isDeviceDetails": true,
+                                                                                                          "loginTrigger": false,
+                                                                                                          "formData": false,
+                                                                                                          "logoutTrigger": false,
+                                                                                                          "headers": {
+                                                                                                            "Content-Type": "application/json",
+                                                                                                            "Accept": "application/json",
+                                                                                                            "channel_key": "002"
+                                                                                                          },
+                                                                                                          "requestBody": [
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.amount",
+                                                                                                              "value": "ILCG_GOAL_AMOUNT"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.contributionFreq",
+                                                                                                              "value": "ILC_FREQUENCY.name"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.startDate",
+                                                                                                              "value": "week_days.name"
+                                                                                                            },
+                                                                                                            {
+                                                                                                              "type": 1,
+                                                                                                              "name": "Form",
+                                                                                                              "key": "request.contributionAmount",
+                                                                                                              "value": "ILCG_AMOUNT"
+                                                                                                            }
+                                                                                                          ],
+                                                                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                          "storeType": 2,
+                                                                                                          "hideLoading": true
+                                                                                                        },
+                                                                                                        "responseHandler": []
+                                                                                                      }
+                                                                                                    }
+                                                                                                  ]
+                                                                                                }
+                                                                                              ]
+                                                                                            }
                                                                                           }
                                                                                         }
                                                                                       ]
@@ -4947,13 +4706,21 @@
                                                                                 }
                                                                               }
                                                                             }
-                                                                          ]
+                                                                          ],
+                                                                          "csrf": "0.huapv0o6idiMitawwi86dWxAUWynWHjR",
+                                                                          "updatedAt": "7/15/2024",
+                                                                          "createdAt": "7/15/2024",
+                                                                          "createdBy": "talha",
+                                                                          "updatedBy": "talha"
                                                                         }
+                                                                      ],
+                                                                      "triggerIds": [
+                                                                        "5LgCPG1_1ryTSx66AK4VC"
                                                                       ]
                                                                     },
                                                                     "type": "2",
                                                                     "name": "On click",
-                                                                    "commandType": "1"
+                                                                    "commandType": "2"
                                                                   }
                                                                 ],
                                                                 "component": {
@@ -7472,7 +7239,258 @@
                                                                           "disableUnderline": true
                                                                         },
                                                                         "type": "20003",
-                                                                        "events": [],
+                                                                        "events": [
+                                                                          {
+                                                                            "triggerId": "5LgCPG1_1ryTSx66AK4VC",
+                                                                            "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
+                                                                            "serviceType": "13",
+                                                                            "attributes": {
+                                                                              "triggers": [
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "==": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.ILC_FREQUENCY.name"
+                                                                                      },
+                                                                                      "Monthly"
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT",
+                                                                                  "triggerId": "Ikrr3sjIZA4001F2hBtjT",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "13",
+                                                                                      "command": {
+                                                                                        "type": "1",
+                                                                                        "attributes": {
+                                                                                          "triggers": [
+                                                                                            {
+                                                                                              "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT",
+                                                                                              "triggerId": "nfji7B_h9wTBrDHwEERnM",
+                                                                                              "services": [
+                                                                                                {
+                                                                                                  "type": "8",
+                                                                                                  "command": {
+                                                                                                    "type": "1",
+                                                                                                    "attributes": {
+                                                                                                      "loaderWidgetIds": [
+                                                                                                        906070
+                                                                                                      ],
+                                                                                                      "messageWidgetIds": [
+                                                                                                        906070
+                                                                                                      ],
+                                                                                                      "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
+                                                                                                      "url": "/api-designer/api/iLeadGoalCalculation/execute",
+                                                                                                      "checksum": true,
+                                                                                                      "encryption": true,
+                                                                                                      "isDeviceDetails": true,
+                                                                                                      "loginTrigger": false,
+                                                                                                      "formData": false,
+                                                                                                      "logoutTrigger": false,
+                                                                                                      "headers": {
+                                                                                                        "Content-Type": "application/json",
+                                                                                                        "Accept": "application/json",
+                                                                                                        "channel_key": "002"
+                                                                                                      },
+                                                                                                      "requestBody": [
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.amount",
+                                                                                                          "value": "ILCG_GOAL_AMOUNT"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.contributionFreq",
+                                                                                                          "value": "ILC_FREQUENCY.name"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.startDate",
+                                                                                                          "value": "ILCG_START_DATE"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.contibutionAmount",
+                                                                                                          "value": "ILCG_AMOUNT"
+                                                                                                        }
+                                                                                                      ],
+                                                                                                      "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                      "storeType": 2
+                                                                                                    },
+                                                                                                    "responseHandler": [
+                                                                                                      {
+                                                                                                        "logic": {
+                                                                                                          "==": [
+                                                                                                            {
+                                                                                                              "var": "code"
+                                                                                                            },
+                                                                                                            1
+                                                                                                          ]
+                                                                                                        },
+                                                                                                        "httpStatus": 200,
+                                                                                                        "triggerName": "ILP_SAVE_TAGETED_DATE_AFTER_DELAY",
+                                                                                                        "triggerId": "UUE-rGmre9rrh8dWl_xff"
+                                                                                                      }
+                                                                                                    ]
+                                                                                                  }
+                                                                                                }
+                                                                                              ],
+                                                                                              "logic": {
+                                                                                                "and": [
+                                                                                                  {
+                                                                                                    ">": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILCG_START_DATE.length"
+                                                                                                      },
+                                                                                                      0
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
+                                                                                                  },
+                                                                                                  {
+                                                                                                    ">": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILC_FREQUENCY.name.length"
+                                                                                                      },
+                                                                                                      0
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "var": "currentScreen.form.ILCG_AMOUNT"
+                                                                                                  }
+                                                                                                ]
+                                                                                              }
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "==": [
+                                                                                      {
+                                                                                        "var": "currentScreen.form.ILC_FREQUENCY.name"
+                                                                                      },
+                                                                                      "Weekly"
+                                                                                    ]
+                                                                                  },
+                                                                                  "triggerName": "ILC_CONDITIONAL_FOR_GOAL_CALCULATION_API_FOR_AMOUNT_FOR_DAY_CASE",
+                                                                                  "triggerId": "BXS2z6uksgCzwDknSYfMG",
+                                                                                  "services": [
+                                                                                    {
+                                                                                      "type": "13",
+                                                                                      "command": {
+                                                                                        "type": "1",
+                                                                                        "attributes": {
+                                                                                          "triggers": [
+                                                                                            {
+                                                                                              "logic": {
+                                                                                                "and": [
+                                                                                                  {
+                                                                                                    ">": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.week_days.name.length"
+                                                                                                      },
+                                                                                                      0
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "var": "currentScreen.form.ILCG_GOAL_AMOUNT"
+                                                                                                  },
+                                                                                                  {
+                                                                                                    ">": [
+                                                                                                      {
+                                                                                                        "var": "currentScreen.form.ILC_FREQUENCY.name.length"
+                                                                                                      },
+                                                                                                      0
+                                                                                                    ]
+                                                                                                  },
+                                                                                                  {
+                                                                                                    "var": "currentScreen.form.ILCG_AMOUNT"
+                                                                                                  }
+                                                                                                ]
+                                                                                              },
+                                                                                              "triggerName": "ILC_GOAL_CALCULATION_API_FOR_AMOUT_FOR_DAY_CASE",
+                                                                                              "triggerId": "RKaSy4MPGxqoJ-IKTxDte",
+                                                                                              "services": [
+                                                                                                {
+                                                                                                  "type": "8",
+                                                                                                  "command": {
+                                                                                                    "type": "1",
+                                                                                                    "attributes": {
+                                                                                                      "loaderWidgetIds": [
+                                                                                                        906070
+                                                                                                      ],
+                                                                                                      "messageWidgetIds": [
+                                                                                                        906070
+                                                                                                      ],
+                                                                                                      "responseStateKey": "RESPONSE_ILC_GOAL_CALCULATION",
+                                                                                                      "url": "/api-designer/api/iLeadGoalCalculation/execute",
+                                                                                                      "checksum": true,
+                                                                                                      "encryption": true,
+                                                                                                      "isDeviceDetails": true,
+                                                                                                      "loginTrigger": false,
+                                                                                                      "formData": false,
+                                                                                                      "logoutTrigger": false,
+                                                                                                      "headers": {
+                                                                                                        "Content-Type": "application/json",
+                                                                                                        "Accept": "application/json",
+                                                                                                        "channel_key": "002"
+                                                                                                      },
+                                                                                                      "requestBody": [
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.amount",
+                                                                                                          "value": "ILCG_GOAL_AMOUNT"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.contributionFreq",
+                                                                                                          "value": "ILC_FREQUENCY.name"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.startDate",
+                                                                                                          "value": "week_days.name"
+                                                                                                        },
+                                                                                                        {
+                                                                                                          "type": 1,
+                                                                                                          "name": "Form",
+                                                                                                          "key": "request.contributionAmount",
+                                                                                                          "value": "ILCG_AMOUNT"
+                                                                                                        }
+                                                                                                      ],
+                                                                                                      "baseURL": "656f0b4398e9df55f0499597",
+                                                                                                      "storeType": 2,
+                                                                                                      "hideLoading": true
+                                                                                                    },
+                                                                                                    "responseHandler": []
+                                                                                                  }
+                                                                                                }
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  ]
+                                                                                }
+                                                                              ]
+                                                                            },
+                                                                            "type": "3",
+                                                                            "name": "On change"
+                                                                          }
+                                                                        ],
                                                                         "order": 10,
                                                                         "version": "1.0.0",
                                                                         "isLatest": true,
@@ -9309,8 +9327,8 @@
     "gitBranchName": "master",
     "_id": "pnSMYMGVGo2fTHMOf5fwd",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9388,14 +9406,14 @@
         "type": "1"
       },
       {
-        "triggerId": "PlBg0XkvUhA_Z8PqiHVd0",
-        "triggerName": "MODIFY_WEEK_DAYS_DELAY",
+        "triggerId": "C9VAY5AImRfVpeNy7pz65",
+        "triggerName": "Clear Form Data",
         "name": "On initialization",
         "type": "1"
       },
       {
-        "triggerId": "C9VAY5AImRfVpeNy7pz65",
-        "triggerName": "Clear Form Data",
+        "triggerId": "TkrNrcl1LKJSLZ8jYGGkT",
+        "triggerName": "MODIFY_WEEK_DAYS",
         "name": "On initialization",
         "type": "1"
       }
@@ -9406,8 +9424,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9466,8 +9484,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9533,8 +9551,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9600,8 +9618,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9640,8 +9658,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9726,8 +9744,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9789,8 +9807,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10033,8 +10051,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10086,8 +10104,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10115,8 +10133,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -10194,8 +10212,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10270,8 +10288,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10323,8 +10341,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10352,8 +10370,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -10429,8 +10447,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10467,8 +10485,8 @@
     "group": "Form",
     "type": "20004",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -10528,8 +10546,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -10616,8 +10634,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10669,8 +10687,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10698,8 +10716,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -10775,8 +10793,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -10814,8 +10832,8 @@
     "group": "Form",
     "type": "20004",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -10882,8 +10900,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -10957,8 +10975,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11004,8 +11022,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11033,8 +11051,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -11109,8 +11127,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11196,8 +11214,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11246,8 +11264,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11256,8 +11274,8 @@
     "name": "Date picker",
     "icon": "FaCalendarDay",
     "group": "Form",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 3,
     "type": "20027",
     "attributes": {
@@ -11355,7 +11373,12 @@
           "cssClassName": "LOG_IN_EMAIL_VALIDATION ",
           "key": "LOG_IN_EMAIL_VALIDATION "
         }
-      ]
+      ],
+      "hideCondition": {
+        "logic": {
+          "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
+        }
+      }
     },
     "events": [],
     "path": "0-0-1-0-0-0-0-0-3-0-0-0-1",
@@ -11365,8 +11388,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11399,22 +11422,31 @@
           "cssClassName": "LOG_IN_EMAIL_VALIDATION ",
           "key": "LOG_IN_EMAIL_VALIDATION "
         }
-      ]
+      ],
+      "hideCondition": {
+        "logic": {
+          "!": [
+            {
+              "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
+            }
+          ]
+        }
+      }
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
     "path": "0-0-1-0-0-0-0-0-3-0-0-0-2",
     "screenId": "pnSMYMGVGo2fTHMOf5fwd",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
@@ -11450,8 +11482,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11503,8 +11535,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11532,8 +11564,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -11591,8 +11623,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11620,8 +11652,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -11695,8 +11727,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11752,8 +11784,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11808,8 +11840,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11861,8 +11893,8 @@
     "layout": null,
     "events": [
       {
-        "triggerId": "5LgCPG1_1ryTSx66AK4VC",
-        "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
+        "triggerId": "vguhPsj6KZrr7p4TpifUK",
+        "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT_DELAY_",
         "name": "On click",
         "type": "2"
       }
@@ -11873,8 +11905,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11929,8 +11961,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -11999,12 +12031,6 @@
         "triggerName": "ILCG_FREQUENCY_DELAY_EVENT",
         "name": "On click",
         "type": "2"
-      },
-      {
-        "triggerId": "5LgCPG1_1ryTSx66AK4VC",
-        "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
-        "name": "On click",
-        "type": "2"
       }
     ],
     "subType": "component",
@@ -12013,8 +12039,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12049,8 +12075,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -12128,8 +12154,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12204,8 +12230,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12251,8 +12277,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12286,8 +12312,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12351,8 +12377,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12391,8 +12417,8 @@
     "group": "Form",
     "type": "20004",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -12465,8 +12491,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -12553,8 +12579,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12652,8 +12678,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12706,8 +12732,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12740,8 +12766,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -12805,8 +12831,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12867,8 +12893,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12903,8 +12929,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13014,8 +13040,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13070,8 +13096,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13104,8 +13130,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13169,8 +13195,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13179,8 +13205,8 @@
     "name": "Drop down",
     "icon": "FaCaretSquareDown",
     "group": "Form",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "attributes": {
       "name": "Drop down",
       "stateName": "week_days",
@@ -13225,7 +13251,15 @@
       "disableUnderline": true
     },
     "type": "20003",
-    "events": [],
+    "events": [
+      {
+        "triggerId": "5LgCPG1_1ryTSx66AK4VC",
+        "triggerName": "LCG_CHECK_FREQUECY_FOR_GOAL_CALCULATION_CONDITIONALLY_FOR_AMOUNT",
+        "name": "On change",
+        "type": "3",
+        "serviceType": "13"
+      }
+    ],
     "order": 10,
     "version": "1.0.0",
     "isLatest": true,
@@ -13274,8 +13308,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13323,8 +13357,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13384,8 +13418,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13463,8 +13497,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13552,8 +13586,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13629,8 +13663,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13677,8 +13711,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13731,8 +13765,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13793,8 +13827,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13827,8 +13861,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13896,8 +13930,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13980,8 +14014,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14040,8 +14074,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -14098,8 +14132,8 @@
       ]
     },
     "group": "Form",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -14145,8 +14179,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14193,8 +14227,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14250,8 +14284,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "7/14/2024",
-    "createdAt": "7/14/2024",
+    "updatedAt": "7/15/2024",
+    "createdAt": "7/15/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,

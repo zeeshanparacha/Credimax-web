@@ -1,0 +1,933 @@
+[
+  {
+    "id": "sInLaMYCtOAETMjbrsX07",
+    "name": "PC_ACTION_BUTTON widget",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "componentId": "kHMNXOXIeobQSec1Y-ox-",
+          "componentType": "10001",
+          "id": "kHMNXOXIeobQSec1Y-ox-",
+          "position": {
+            "i": "kHMNXOXIeobQSec1Y-ox-",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
+          "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+        }
+      ]
+    },
+    "layout": [
+      {
+        "type": "10001",
+        "id": "kHMNXOXIeobQSec1Y-ox-",
+        "gridProps": [
+          {
+            "type": "column",
+            "id": "uGB_hkJyg3pr3XgaXoWpx",
+            "gridProps": [
+              {
+                "id": "l-cIGAn3TqXFXhjzHSAg5",
+                "type": "20006",
+                "name": "Button",
+                "component": { "content": "Button", "type": "20006" },
+                "attributes": {
+                  "label": "Proceed",
+                  "variant": "contained",
+                  "name": "Button",
+                  "label-locale-key": "",
+                  "fullWidth": true,
+                  "layoutProperties": {
+                    "button": {
+                      "//": "Use this class to style button component.",
+                      "float": "right"
+                    },
+                    "iconButton": {
+                      "//": "Use this class to style icon button component.",
+                      "width": "20px",
+                      "height": "20px"
+                    },
+                    "inputProps": {
+                      "//": "Use this class to style button element."
+                    },
+                    "mainContainer": "button",
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  },
+                  "buttonIconPosition": "end",
+                  "icon": null,
+                  "asset": {
+                    "createdBy": "user",
+                    "_id": "6569e606f83e303df855c83b",
+                    "name": "Arrow-right.svg",
+                    "type": "svg",
+                    "projectId": "652fcbce09869c3c809b3097",
+                    "id": "mIpUxrykayJ0VBquChK3L",
+                    "gitBranchName": "master",
+                    "folderType": "web",
+                    "platform": "web",
+                    "url": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+                    "canvasUrl": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+                    "createdAt": "2023-12-01T13:56:22.270Z",
+                    "updatedAt": "2023-12-21T13:01:15.668Z",
+                    "__v": 0,
+                    "uri": "652fcbce09869c3c809b3097/web/Arrow-right.svg"
+                  },
+                  "assetId": "mIpUxrykayJ0VBquChK3L",
+                  "cssClassNames": [
+                    {
+                      "cssClassName": "RESPONSIVE_PRIMARY_BUTTON ",
+                      "key": "RESPONSIVE_PRIMARY_BUTTON "
+                    }
+                  ],
+                  "disableCondition": {
+                    "logic": {
+                      "!": [
+                        {
+                          "and": [
+                            { "var": "currentScreen.form.pc_custom_amount_2" },
+                            { "var": "currentScreen.form.pc_cpr" },
+                            { "var": "currentScreen.form.pc_card_number" },
+                            {
+                              "var": "currentScreen.form.selected_payment_method"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "cssDisableClassNames": [
+                    {
+                      "cssClassName": "RESPONSIVE_PRIMARY_BUTTON_DISABLED",
+                      "key": "RESPONSIVE_PRIMARY_BUTTON_DISABLED"
+                    }
+                  ],
+                  "hideCondition": {}
+                },
+                "events": [
+                  {
+                    "triggerId": "LdJc2oa8JdEqYNNcKn8Vl",
+                    "triggerName": "PC_OTHER_CARDS_VALIDATION_1",
+                    "serviceType": "16",
+                    "attributes": {
+                      "validationList": [
+                        {
+                          "bindingKey": "selected_payment_method",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_4",
+                          "isRequired": true,
+                          "requiredMessage": "Payment method is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "Account"
+                                        ]
+                                      },
+                                      {
+                                        "<=": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.balance"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          0
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Account has insufficient balance"
+                            },
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "DebitCard"
+                                        ]
+                                      },
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.isExpired"
+                                          },
+                                          "1"
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Selected debit card is expired"
+                            }
+                          ]
+                        },
+                        {
+                          "bindingKey": "pc_custom_amount_2",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_3",
+                          "isRequired": true,
+                          "requiredMessage": "Amount is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                ">": [
+                                  {
+                                    "+": [
+                                      {
+                                        "var": "currentScreen.form.pc_custom_amount_2"
+                                      },
+                                      0
+                                    ]
+                                  },
+                                  0
+                                ]
+                              },
+                              "logicMessage": "Amount should be greater than 0"
+                            },
+                            {
+                              "logic": {
+                                "!": [
+                                  {
+                                    "and": [
+                                      {
+                                        "==": [
+                                          {
+                                            "var": "currentScreen.form.selected_payment_method.type"
+                                          },
+                                          "Account"
+                                        ]
+                                      },
+                                      {
+                                        ">": [
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.pc_custom_amount_2"
+                                              },
+                                              0
+                                            ]
+                                          },
+                                          {
+                                            "+": [
+                                              {
+                                                "var": "currentScreen.form.selected_payment_method.balance"
+                                              },
+                                              0
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Amount cannot be greater than available balance"
+                            }
+                          ]
+                        },
+                        {
+                          "bindingKey": "pc_cpr",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_2",
+                          "isRequired": true,
+                          "requiredMessage": "CPR is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "<": [
+                                  { "var": "currentScreen.form.pc_cpr.length" },
+                                  16
+                                ]
+                              },
+                              "logicMessage": "CPR cannot be greater than 15 digits"
+                            },
+                            {
+                              "logic": {
+                                ">": [
+                                  { "var": "currentScreen.form.pc_cpr.length" },
+                                  8
+                                ]
+                              },
+                              "logicMessage": "CPR cannot be less than 9 digits"
+                            }
+                          ]
+                        },
+                        {
+                          "bindingKey": "pc_card_number",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_1",
+                          "isRequired": true,
+                          "requiredMessage": "Card number is required",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.form.pc_card_number.length"
+                                  },
+                                  16
+                                ]
+                              },
+                              "logicMessage": "Card number should consist of 16 digits"
+                            },
+                            {
+                              "logic": {
+                                "==": [
+                                  { "var": "currentScreen.validate_card.code" },
+                                  1
+                                ]
+                              },
+                              "logicMessage": "Card number or CPR is incorrect"
+                            }
+                          ]
+                        }
+                      ],
+                      "successTrigger": {
+                        "_id": "HGXib7IkJpztYNU2-DSNW",
+                        "id": "iURAigA6NRiOh2i-5iCxv",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "name": "PC_DATA_EXTRACTION_AND_REVIEW_PAYMENT",
+                        "old_name": "PC_DATA_EXTRACTION_AND_REVIEW_PAYMENT",
+                        "status": "ACTIVE",
+                        "services": [
+                          {
+                            "type": "2",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "delay": "",
+                                "triggers": [
+                                  {
+                                    "id": "d1CIMs_GuPR1t1d3RvvpI",
+                                    "_id": "VifWa7CKTLc6XSWNvuu3N",
+                                    "name": "PC_PAY_API_DATA_EXTRACTION",
+                                    "old_name": "PC_PAY_API_DATA_EXTRACTION",
+                                    "projectId": "652fcbce09869c3c809b3097",
+                                    "gitBranchName": "master",
+                                    "services": [
+                                      {
+                                        "type": "11",
+                                        "command": {
+                                          "type": "6",
+                                          "attributes": {
+                                            "requestBody": [],
+                                            "storeType": "",
+                                            "selectedObjectBindingKey": "selectedObject",
+                                            "dataType": "object",
+                                            "destinationBindingKey": "pc_request",
+                                            "sourceBindingKey": "form",
+                                            "sourceStoreType": 2,
+                                            "destinationStoreType": 2,
+                                            "filterList": [
+                                              {
+                                                "key": "amount",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "if": [
+                                                        {
+                                                          "==": [
+                                                            {
+                                                              "var": "currentScreen.selected_tab"
+                                                            },
+                                                            "other cards"
+                                                          ]
+                                                        },
+                                                        {
+                                                          "var": "currentScreen.pc_custom_amount_2"
+                                                        },
+                                                        {
+                                                          "if": [
+                                                            {
+                                                              "==": [
+                                                                {
+                                                                  "var": "currentScreen.form.current_card.cardType"
+                                                                },
+                                                                "VISA CARDY-EX"
+                                                              ]
+                                                            },
+                                                            {
+                                                              "var": "currentScreen.form.pc_custom_amount_2"
+                                                            },
+                                                            {
+                                                              "if": [
+                                                                {
+                                                                  "==": [
+                                                                    {
+                                                                      "var": "currentScreen.selectedAmountType"
+                                                                    },
+                                                                    "D"
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "var": "currentScreen.form.pc_custom_amount_2"
+                                                                },
+                                                                {
+                                                                  "var": "currentScreen.form.pc_custom_amount"
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.pc_custom_amount_2"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "creditCardNumber",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.selected_tab"
+                                                        },
+                                                        "my cards"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.current_card.cardNumber"
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.pc_card_number"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "type",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.selected_payment_method.type"
+                                                    },
+                                                    "DebitCard"
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "accountOrDebitCardNumber",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.selected_payment_method.accountOrDebitCardNumber"
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.pc_card_number_2"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "cprOfOtherCardHolder",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.selected_tab"
+                                                        },
+                                                        "other cards"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.pc_cpr"
+                                                    },
+                                                    null
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "accountType",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    {
+                                                      "var": "currentScreen.form.selected_payment_method.accountType"
+                                                    },
+                                                    null
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "saveNewCard",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    null,
+                                                    {
+                                                      "if": [
+                                                        {
+                                                          "==": [
+                                                            {
+                                                              "var": "currentScreen.save_card"
+                                                            },
+                                                            "1"
+                                                          ]
+                                                        },
+                                                        "1",
+                                                        null
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "cardHolderName",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    null,
+                                                    {
+                                                      "var": "currentScreen.form.pc_name_on_card"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "cardNickName",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    null,
+                                                    {
+                                                      "if": [
+                                                        {
+                                                          "==": [
+                                                            {
+                                                              "var": "currentScreen.save_card"
+                                                            },
+                                                            "1"
+                                                          ]
+                                                        },
+                                                        {
+                                                          "var": "currentScreen.form.pc_nikname"
+                                                        },
+                                                        null
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "expiry",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.page_name"
+                                                        },
+                                                        "Pay cards"
+                                                      ]
+                                                    },
+                                                    null,
+                                                    {
+                                                      "var": "currentScreen.form.pc_expiry_date"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "key": "currency",
+                                                "changeValueConditonally": true,
+                                                "logic": {
+                                                  "if": [
+                                                    {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.selected_tab"
+                                                        },
+                                                        "other cards"
+                                                      ]
+                                                    },
+                                                    null,
+                                                    {
+                                                      "var": "currentScreen.form.current_card.cardCurrencyType"
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ],
+                                            "targettedType": "value"
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "csrf": "0.hbfw8rscq1cIqFRy6iHheKl--XcuZt_U",
+                                    "updatedAt": "1/11/2024",
+                                    "createdAt": "1/11/2024",
+                                    "createdBy": "talha",
+                                    "updatedBy": "talha"
+                                  },
+                                  {
+                                    "id": "iOqQaI2yK_Quc4Ia4CXcd",
+                                    "gitBranchName": "master",
+                                    "name": "PC_SHOW_REVIEW_PAYMENT_MODAL",
+                                    "projectId": "652fcbce09869c3c809b3097",
+                                    "services": [
+                                      {
+                                        "type": "9",
+                                        "command": {
+                                          "type": "1",
+                                          "attributes": {
+                                            "widgetId": "TLxBhe9FKBGjVomH7ojh7",
+                                            "content": "",
+                                            "type": "",
+                                            "modalId": "3WI5u8ga4ikq4k2JCP2xh",
+                                            "toastContentType": "custom"
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "csrf": "0.ma41t70l15Xzeg-BNNZGDJDtsz5fR8T",
+                                    "_id": "rNzeKo5evvy7ZdtalDfcp",
+                                    "updatedAt": "1/15/2024",
+                                    "createdAt": "1/15/2024",
+                                    "createdBy": "talha",
+                                    "updatedBy": "talha"
+                                  }
+                                ],
+                                "triggerIds": [
+                                  "d1CIMs_GuPR1t1d3RvvpI",
+                                  "iOqQaI2yK_Quc4Ia4CXcd"
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.ma41t70l15Xzeg-BNNZGDJDtsz5fR8T",
+                        "updatedAt": "1/15/2024",
+                        "createdAt": "1/15/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      }
+                    },
+                    "type": "2",
+                    "name": "On click",
+                    "commandType": "2"
+                  }
+                ],
+                "path": "3-0-2-0-2-0-1-0-2-0-1-0-1-0-0",
+                "version": "1.0.0"
+              }
+            ],
+            "layoutProperties": {
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            }
+          }
+        ],
+        "path": "3-0-2-0-2-0-1-0-2-0-1-0-1",
+        "events": [],
+        "attributes": {
+          "gridProps": [],
+          "label": "Header",
+          "layoutProperties": {
+            "gridLayout": {
+              "//": "Use this class to style grid layout component.",
+              "spacing": 0
+            },
+            "mainContainer": "gridLayout",
+            "skeleton": {
+              "//": "Use this class to style skeleton loading component."
+            }
+          },
+          "layoutProps": {
+            "direction": "row",
+            "justifyContent": "flex-start",
+            "alignItems": "flex-start"
+          },
+          "direction": "row",
+          "name": "Grid layout",
+          "cssClassNames": [
+            {
+              "cssClassName": "PAYMENT_BUTTON_GRID ",
+              "key": "PAYMENT_BUTTON_GRID "
+            }
+          ]
+        },
+        "component": { "type": "10001", "content": "Grid layout" },
+        "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
+        "name": "PC_ACTION_BUTTON",
+        "dimensions": {
+          "rows": 1,
+          "columns": 1,
+          "colSize0xs": 12,
+          "colSize0sm": 12,
+          "colSize0md": 12,
+          "colSize0lg": 12,
+          "colSize0xl": 12,
+          "name": null
+        },
+        "readOnly": true
+      }
+    ],
+    "events": [],
+    "subType": "widget",
+    "screenId": "sInLaMYCtOAETMjbrsX07",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "_id": "sInLaMYCtOAETMjbrsX07",
+    "createdBy": "talha2",
+    "updatedAt": "7/21/2024",
+    "createdAt": "7/21/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "kHMNXOXIeobQSec1Y-ox-",
+    "name": "PC_ACTION_BUTTON",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "l-cIGAn3TqXFXhjzHSAg5",
+          "componentType": "20006",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "Grid layout",
+      "cssClassNames": [
+        {
+          "cssClassName": "PAYMENT_BUTTON_GRID ",
+          "key": "PAYMENT_BUTTON_GRID "
+        }
+      ]
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "talha2",
+    "updatedAt": "7/21/2024",
+    "createdAt": "7/21/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "l-cIGAn3TqXFXhjzHSAg5",
+    "type": "20006",
+    "name": "Button",
+    "component": { "content": "Button", "type": "20006" },
+    "attributes": {
+      "label": "Proceed",
+      "variant": "contained",
+      "name": "Button",
+      "label-locale-key": "",
+      "fullWidth": true,
+      "layoutProperties": {
+        "button": {
+          "//": "Use this class to style button component.",
+          "float": "right"
+        },
+        "iconButton": {
+          "//": "Use this class to style icon button component.",
+          "width": "20px",
+          "height": "20px"
+        },
+        "inputProps": { "//": "Use this class to style button element." },
+        "mainContainer": "button",
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "buttonIconPosition": "end",
+      "icon": null,
+      "asset": {
+        "createdBy": "user",
+        "_id": "6569e606f83e303df855c83b",
+        "name": "Arrow-right.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "mIpUxrykayJ0VBquChK3L",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/Arrow-right.svg",
+        "createdAt": "2023-12-01T13:56:22.270Z",
+        "updatedAt": "2023-12-21T13:01:15.668Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/Arrow-right.svg"
+      },
+      "assetId": "mIpUxrykayJ0VBquChK3L",
+      "cssClassNames": [
+        {
+          "cssClassName": "RESPONSIVE_PRIMARY_BUTTON ",
+          "key": "RESPONSIVE_PRIMARY_BUTTON "
+        }
+      ],
+      "disableCondition": {
+        "logic": {
+          "!": [
+            {
+              "and": [
+                { "var": "currentScreen.form.pc_custom_amount_2" },
+                { "var": "currentScreen.form.pc_cpr" },
+                { "var": "currentScreen.form.pc_card_number" },
+                { "var": "currentScreen.form.selected_payment_method" }
+              ]
+            }
+          ]
+        }
+      },
+      "cssDisableClassNames": [
+        {
+          "cssClassName": "RESPONSIVE_PRIMARY_BUTTON_DISABLED",
+          "key": "RESPONSIVE_PRIMARY_BUTTON_DISABLED"
+        }
+      ],
+      "hideCondition": {}
+    },
+    "events": [
+      {
+        "triggerId": "LdJc2oa8JdEqYNNcKn8Vl",
+        "triggerName": "PC_OTHER_CARDS_VALIDATION_1",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "16"
+      }
+    ],
+    "path": "3-0-2-0-2-0-1-0-2-0-1-0-1-0-0",
+    "version": "1.0.0",
+    "screenId": "_IlGsB-95yo7FYr3ysZwT",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "talha2",
+    "updatedAt": "7/21/2024",
+    "createdAt": "7/21/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  }
+]
