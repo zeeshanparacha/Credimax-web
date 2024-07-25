@@ -1,9 +1,10 @@
 {
+  "_id": "IwWeJC43QyFsqkRrnTA8a",
   "id": "mGqRLjnNogZOU7I4xR8fo",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
   "name": "DELAY_GULF_AIR_NAVIGATION_TRIGGER",
-  "old_name": "",
+  "old_name": "DELAY_GULF_AIR_NAVIGATION_TRIGGER",
   "status": "ACTIVE",
   "services": [
     {
@@ -15,40 +16,6 @@
           "storeType": "",
           "searchInState": false,
           "triggers": [
-            {
-              "id": "2t-q_IAezgJJofhcw3gdV",
-              "_id": "yy9zNLARPm9s6pVuVtniW",
-              "name": "ADD_GULF_ITEM",
-              "old_name": "ADD_GULF_ITEM",
-              "projectId": "652fcbce09869c3c809b3097",
-              "gitBranchName": "master",
-              "services": [
-                {
-                  "type": "11",
-                  "command": {
-                    "type": "6",
-                    "attributes": {
-                      "requestBody": [],
-                      "storeType": "",
-                      "selectedObjectBindingKey": "selectedObject",
-                      "dataType": "value",
-                      "destinationBindingKey": "CATELOGITEM",
-                      "sourceBindingKey": "CATELOGITEM",
-                      "sourceStoreType": 1,
-                      "destinationStoreType": 1,
-                      "logic": { "if": [{ "==": [true, true] }, "GULF", ""] },
-                      "changeValueConditonally": true,
-                      "targettedType": "value"
-                    }
-                  }
-                }
-              ],
-              "csrf": "0.ewwdayg5zdc7H335RVKBiPJ7yFpjuhkp",
-              "updatedAt": "4/7/2024",
-              "createdAt": "4/7/2024",
-              "createdBy": "zeeshan",
-              "updatedBy": "zeeshan"
-            },
             {
               "id": "t1jtgaw-AjqYQ4HiB_pUd",
               "_id": "Pyt4ohdizehadioqsVDDH",
@@ -74,17 +41,139 @@
               "createdAt": "6/25/2024",
               "createdBy": "talha",
               "updatedBy": "talha"
+            },
+            {
+              "id": "S29u8pTMMGEzaVeOfcxNj",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "THM_MILES_NAVIGATE",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "2t-q_IAezgJJofhcw3gdV",
+                          "_id": "yy9zNLARPm9s6pVuVtniW",
+                          "name": "ADD_GULF_ITEM",
+                          "old_name": "ADD_GULF_ITEM",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "6",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "value",
+                                  "destinationBindingKey": "CATELOGITEM",
+                                  "sourceBindingKey": "CATELOGITEM",
+                                  "sourceStoreType": 1,
+                                  "destinationStoreType": 1,
+                                  "logic": {
+                                    "if": [{ "==": [true, true] }, "GULF", ""]
+                                  },
+                                  "changeValueConditonally": true,
+                                  "targettedType": "value"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.ewwdayg5zdc7H335RVKBiPJ7yFpjuhkp",
+                          "updatedAt": "4/7/2024",
+                          "createdAt": "4/7/2024",
+                          "createdBy": "zeeshan",
+                          "updatedBy": "zeeshan"
+                        },
+                        {
+                          "id": "bdkAx5daGv-NiHaRwW3BZ",
+                          "_id": "hDRlvOlR-0hxMVKF0M7Bj",
+                          "name": "APPLY_GULF_AIR_SELECTED_MILES",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "10",
+                                "attributes": {
+                                  "stateName": "none",
+                                  "requestBody": [],
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "none",
+                                  "dataType": "",
+                                  "destinationBindingKey": "SELECTED_MILE",
+                                  "sourceBindingKey": "SELECTED_CATELOG",
+                                  "sourceStoreType": 1,
+                                  "destinationStoreType": 1,
+                                  "logic": {
+                                    "if": [
+                                      {
+                                        "all": [
+                                          {
+                                            "var": "currentScreen.form.SELECTED_CATELOG.rewardItemsList"
+                                          },
+                                          {
+                                            "==": [
+                                              {
+                                                "var": "shortDescriptionValue"
+                                              },
+                                              {
+                                                "var": "SELECTED_CATELOG.dashboardItem.shortDescriptionValue"
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "targetValue": "none",
+                                  "gridFormRowIdBindingKey": "editFormRowId"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.xnm8p2kjeyk16US8cbKe3x3MhL9wKfjn",
+                          "updatedAt": "7/22/2024",
+                          "createdAt": "7/22/2024",
+                          "createdBy": "kelashk",
+                          "updatedBy": "kelashk"
+                        }
+                      ],
+                      "triggerIds": [
+                        "2t-q_IAezgJJofhcw3gdV",
+                        "bdkAx5daGv-NiHaRwW3BZ"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.xnm8p2kjeyk16US8cbKe3x3MhL9wKfjn",
+              "_id": "TebUwbZvzPlr1m3DQu4R9",
+              "updatedAt": "7/22/2024",
+              "createdAt": "7/22/2024",
+              "createdBy": "kelashk",
+              "updatedBy": "kelashk"
             }
           ],
-          "triggerIds": ["2t-q_IAezgJJofhcw3gdV", "t1jtgaw-AjqYQ4HiB_pUd"]
+          "triggerIds": ["t1jtgaw-AjqYQ4HiB_pUd", "S29u8pTMMGEzaVeOfcxNj"]
         }
       }
     }
   ],
-  "csrf": "0.736dkni3yef8Zepuch6sJB9RRjsXYwX6",
-  "_id": "IwWeJC43QyFsqkRrnTA8a",
-  "updatedAt": "7/21/2024",
-  "createdAt": "7/21/2024",
+  "csrf": "0.xnm8p2kjeyk16US8cbKe3x3MhL9wKfjn",
+  "updatedAt": "7/22/2024",
+  "createdAt": "7/22/2024",
   "createdBy": "kelashk",
   "updatedBy": "kelashk"
 }
