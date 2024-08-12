@@ -85,25 +85,6 @@
               }
             },
             {
-              "key": "pc_request.validation",
-              "changeValueConditonally": true,
-              "storeType": 2,
-              "logic": {
-                "if": [
-                  {
-                    "==": [
-                      {
-                        "var": "currentScreen.pc_check_otp.content.otpRequired"
-                      },
-                      "1"
-                    ]
-                  },
-                  { "var": "currentScreen.pc_validation_object" },
-                  null
-                ]
-              }
-            },
-            {
               "key": "pc_request.cardOrAccount.cardOrAccType",
               "storeType": 2,
               "changeValueConditonally": true,
@@ -152,6 +133,91 @@
               "changeValueConditonally": true,
               "storeType": 2,
               "logic": { "var": "currentScreen.CURRENT_CARD.cprId" }
+            },
+            {
+              "key": "pc_request.validation",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": {
+                "if": [
+                  {
+                    "or": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpAccountAllowed"
+                          },
+                          {
+                            "!=": [
+                              { "var": "currentScreen.page_name" },
+                              "Pay using debit card"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "CreditCard"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpCreditCardAllowed"
+                          },
+                          {
+                            "!=": [
+                              { "var": "currentScreen.page_name" },
+                              "Pay using debit card"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "DebitCard"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpDebitCardAllowed"
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.page_name" },
+                              "Pay using debit card"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpDebitCardAllowed"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  { "var": "currentScreen.pc_validation_object" },
+                  null
+                ]
+              }
             }
           ],
           "gridFormRowIdBindingKey": "editFormRowId"
@@ -159,9 +225,9 @@
       }
     }
   ],
-  "csrf": "0.0lajb8czd6udMWBtUK-N1hSzPIu8PVB7a",
-  "updatedAt": "7/10/2024",
-  "createdAt": "7/10/2024",
+  "csrf": "0.va6k8mg4ga_oKCofnQzyfvUag0mQ7gq",
+  "updatedAt": "8/12/2024",
+  "createdAt": "8/12/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

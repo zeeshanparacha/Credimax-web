@@ -1,0 +1,122 @@
+{
+  "id": "1zWa-2h2LKXgjjqQPr9xD",
+  "gitBranchName": "master",
+  "name": "LOGIN_PWD_EXC",
+  "projectId": "652fcbce09869c3c809b3097",
+  "services": [
+    {
+      "type": "16",
+      "command": {
+        "type": "7",
+        "attributes": {
+          "cipherKeys": [
+            {
+              "sourceBindingKey": "password",
+              "destinationBindingKey": "password_enc",
+              "sourceStoreType": 1,
+              "destinationStoreType": 1
+            }
+          ],
+          "completionTrigger": {
+            "id": "rQqjnRJ9i1K_xIDWJlZ7m",
+            "_id": "NLMr8WqgXidtA0wzLrzZl",
+            "projectId": "652fcbce09869c3c809b3097",
+            "gitBranchName": "master",
+            "name": "LOGIN_TRIGGER",
+            "old_name": "LOGIN_TRIGGER",
+            "status": "ACTIVE",
+            "services": [
+              {
+                "type": "8",
+                "command": {
+                  "type": "1",
+                  "attributes": {
+                    "loaderWidgetIds": [906070],
+                    "messageWidgetIds": [906070],
+                    "responseStateKey": "userProfile",
+                    "successMessageBindingKey": "successKey",
+                    "url": "/security/v6/validateLoginPassword",
+                    "checksum": true,
+                    "encryption": true,
+                    "isDeviceDetails": true,
+                    "loginTrigger": "loginTrigger",
+                    "formData": false,
+                    "logoutTrigger": false,
+                    "headers": {
+                      "Content-Type": "application/json",
+                      "channel_key": "002"
+                    },
+                    "requestBody": [
+                      {
+                        "type": 4,
+                        "name": "Static",
+                        "key": "loginType",
+                        "value": "CREDENTIALS"
+                      },
+                      { "type": 4, "name": "Static", "key": "loginPin" },
+                      {
+                        "type": 3,
+                        "name": "Current session",
+                        "key": "device",
+                        "value": "device"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "password",
+                        "value": "password_enc"
+                      },
+                      {
+                        "type": 1,
+                        "name": "Form",
+                        "key": "username",
+                        "value": "email"
+                      }
+                    ],
+                    "baseURL": "6566efa5a131d92664c8dd76",
+                    "storeType": 3,
+                    "hideLoading": true,
+                    "loadingState": "cm_generic_loading",
+                    "isLoadingState": true
+                  },
+                  "responseHandler": [
+                    {
+                      "httpStatus": 200,
+                      "logic": {
+                        "and": [
+                          { "==": [{ "var": "code" }, 1] },
+                          { "var": "content.isCardHolder" }
+                        ]
+                      },
+                      "triggerName": "CONDITIONAL_FLOW_LOGIN_SUCCESSFUL",
+                      "triggerId": "YSFJGiyJZH9XMGTuvQyvZ"
+                    },
+                    {
+                      "httpStatus": 200,
+                      "triggerName": "SAVE_PASSWORD_IN_CURRENT_SESSION",
+                      "triggerId": "F6JZB59WB-wtDRnWxcpsg",
+                      "logic": { "==": [{ "var": "code" }, 1] }
+                    }
+                  ]
+                }
+              }
+            ],
+            "csrf": "0.447958og32tah-60v6229_HJSHiH1oiU",
+            "updatedAt": "8/6/2024",
+            "createdAt": "8/6/2024",
+            "createdBy": "talha",
+            "updatedBy": "talha"
+          },
+          "encryptionType": "encryption",
+          "secretKey": "5938471620348710"
+        }
+      }
+    }
+  ],
+  "csrf": "0.447958og32tah-60v6229_HJSHiH1oiU",
+  "_id": "-48LfC5ZYAswDxlLliEWO",
+  "updatedAt": "8/6/2024",
+  "createdAt": "8/6/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

@@ -94,6 +94,22 @@
             "id": "6l-1ypCDCmES0OrseT5FI",
             "gridProps": [
               {
+                "id": "3MV1xtNnI9sQ4X4JpCtyV",
+                "type": "20031",
+                "name": "FC_CHECK_FOR_OTP",
+                "attributes": {
+                  "widgetId": "j10e6GMO7SmkkmlN5zN5V",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
                 "type": "10001",
                 "name": "Grid layout",
                 "id": "DCkLxESZyyUOD_KHsIVnW",
@@ -471,8 +487,8 @@
                                           },
                                           "cssClassNames": [
                                             {
-                                              "cssClassName": "GENERIC_SECONDARY_BUTTON ",
-                                              "key": "GENERIC_SECONDARY_BUTTON "
+                                              "cssClassName": "FREEZ_CARD_NO_BUTTON ",
+                                              "key": "FREEZ_CARD_NO_BUTTON "
                                             }
                                           ]
                                         },
@@ -614,13 +630,19 @@
                                           "loadingKey": "FC_GENERIC_LOADER",
                                           "loadingKeyStoreType": 2,
                                           "loader": {
-                                            "loader": "d2wkTonf83IX4gA9Y5zpN",
-                                            "loaderName": "button_loading_lottie.json"
+                                            "loader": "bjchzK6CmoTvhNjETB254",
+                                            "loaderName": "button-lottie.json"
                                           },
                                           "buttonLoadingClass": [
                                             {
                                               "cssClassName": "GENERIC_LOTTIE_HEIGHT ",
                                               "key": "GENERIC_LOTTIE_HEIGHT "
+                                            }
+                                          ],
+                                          "cssDisableClassNames": [
+                                            {
+                                              "cssClassName": "GENERIC_POPUP_DISABLE_BUTTONS ",
+                                              "key": "GENERIC_POPUP_DISABLE_BUTTONS "
                                             }
                                           ]
                                         },
@@ -641,48 +663,180 @@
                                         },
                                         "events": [
                                           {
-                                            "triggerId": "K8FQZghDW-FwpupAjrN0C",
-                                            "triggerName": "FC_FREEZE_OR_UNFREEZE_CARD",
-                                            "serviceType": "8",
+                                            "triggerId": "8srBekR1e93JdlMEVAaaK",
+                                            "triggerName": "FC_CHECK_FOR_OTP",
+                                            "serviceType": "13",
                                             "attributes": {
-                                              "loaderWidgetIds": [906070],
-                                              "messageWidgetIds": [906070],
-                                              "responseStateKey": "fc_freeze_card",
-                                              "url": "/card/v1/updateCardStatus",
-                                              "checksum": true,
-                                              "encryption": true,
-                                              "isDeviceDetails": false,
-                                              "loginTrigger": false,
-                                              "formData": false,
-                                              "logoutTrigger": false,
-                                              "headers": {
-                                                "Content-Type": "application/json",
-                                                "Accept": "application/json",
-                                                "channel_key": "002"
-                                              },
-                                              "requestBody": [
+                                              "triggers": [
                                                 {
-                                                  "type": 4,
-                                                  "name": "Static",
-                                                  "key": "status",
-                                                  "value": "Deactivate"
+                                                  "triggerName": "FC_FREEZE_OR_UNFREEZE_CARD",
+                                                  "triggerId": "K8FQZghDW-FwpupAjrN0C",
+                                                  "services": [
+                                                    {
+                                                      "type": "8",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "loaderWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "messageWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "responseStateKey": "fc_freeze_card",
+                                                          "url": "/card/v1/updateCardStatus",
+                                                          "checksum": true,
+                                                          "encryption": true,
+                                                          "isDeviceDetails": false,
+                                                          "loginTrigger": false,
+                                                          "formData": false,
+                                                          "logoutTrigger": false,
+                                                          "headers": {
+                                                            "Content-Type": "application/json",
+                                                            "Accept": "application/json",
+                                                            "channel_key": "002"
+                                                          },
+                                                          "requestBody": [
+                                                            {
+                                                              "type": 1,
+                                                              "name": "Form",
+                                                              "key": "status",
+                                                              "value": "fc_status"
+                                                            },
+                                                            {
+                                                              "type": 2,
+                                                              "name": "Current screen",
+                                                              "key": "cardNumber",
+                                                              "value": "CURRENT_CARD.cardNumber"
+                                                            },
+                                                            {
+                                                              "type": 2,
+                                                              "name": "Current screen",
+                                                              "key": "validation",
+                                                              "value": "generic_otp_set_validations"
+                                                            }
+                                                          ],
+                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                          "storeType": 2,
+                                                          "hideLoading": true,
+                                                          "loadingState": "FC_GENERIC_LOADER",
+                                                          "isLoadingState": true
+                                                        },
+                                                        "responseHandler": [
+                                                          {
+                                                            "logic": true,
+                                                            "httpStatus": 200,
+                                                            "triggerName": "Close Modal",
+                                                            "triggerId": "WuhHxg90Z2anPz7DGsIrC"
+                                                          },
+                                                          {
+                                                            "logic": {
+                                                              "==": [
+                                                                {
+                                                                  "var": "code"
+                                                                },
+                                                                1
+                                                              ]
+                                                            },
+                                                            "httpStatus": 200,
+                                                            "triggerName": "FC_STATUS_SUCCESS",
+                                                            "triggerId": "hY8YlsJDsHS9_8OSIQtvd"
+                                                          },
+                                                          {
+                                                            "logic": {
+                                                              "==": [
+                                                                {
+                                                                  "var": "code"
+                                                                },
+                                                                0
+                                                              ]
+                                                            },
+                                                            "httpStatus": 200,
+                                                            "triggerName": "FC_FAILURE_STATUS",
+                                                            "triggerId": "78VAuaT6eKWoIBQfC112M"
+                                                          },
+                                                          {
+                                                            "logic": {
+                                                              "==": [
+                                                                {
+                                                                  "var": "code"
+                                                                },
+                                                                1
+                                                              ]
+                                                            },
+                                                            "httpStatus": 200,
+                                                            "triggerName": "FC_INVERT_TOGGLE",
+                                                            "triggerId": "9TzRIvgmH2v1WPzYAgkCA"
+                                                          },
+                                                          {
+                                                            "logic": {
+                                                              "==": [
+                                                                {
+                                                                  "var": "code"
+                                                                },
+                                                                1
+                                                              ]
+                                                            },
+                                                            "httpStatus": 200,
+                                                            "triggerName": "REFETCH_CARD_LIST",
+                                                            "triggerId": "FmodegyvEGKO4ckjzSlTl"
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ],
+                                                  "logic": {
+                                                    "if": [
+                                                      {
+                                                        "==": [
+                                                          {
+                                                            "var": "currentScreen.FC_CHECK_OTP.content.otpRequired"
+                                                          },
+                                                          0
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
                                                 },
                                                 {
-                                                  "type": 2,
-                                                  "name": "Current screen",
-                                                  "key": "cardNumber",
-                                                  "value": "CURRENT_CARD.cardNumber"
+                                                  "logic": {
+                                                    "if": [
+                                                      {
+                                                        "==": [
+                                                          {
+                                                            "var": "currentScreen.FC_CHECK_OTP.content.otpRequired"
+                                                          },
+                                                          1
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  "triggerName": "FC_OTP_POPUP",
+                                                  "triggerId": "RSvk7TurPO7cXPj3Q6Ivz",
+                                                  "services": [
+                                                    {
+                                                      "type": "9",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "widgetId": "j10e6GMO7SmkkmlN5zN5V",
+                                                          "content": "",
+                                                          "type": "",
+                                                          "modalId": "3MV1xtNnI9sQ4X4JpCtyV",
+                                                          "toastContentType": "custom"
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
                                                 }
-                                              ],
-                                              "baseURL": "656f0b4398e9df55f0499597",
-                                              "storeType": 2
+                                              ]
                                             },
                                             "type": "2",
                                             "name": "On click",
                                             "commandType": "1"
                                           }
                                         ],
-                                        "path": "0-0-0-0-3-1-0-0-0"
+                                        "path": "0-0-1-0-3-1-0-0-0"
                                       },
                                       {
                                         "type": "10001",
@@ -984,9 +1138,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "D8v90BeMfQ3vQsoUow1nR",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -995,6 +1149,18 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "3MV1xtNnI9sQ4X4JpCtyV",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "componentId": "DCkLxESZyyUOD_KHsIVnW",
           "componentType": "10001",
@@ -1046,9 +1212,28 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "3MV1xtNnI9sQ4X4JpCtyV",
+    "type": "20031",
+    "name": "FC_CHECK_FOR_OTP",
+    "attributes": {
+      "widgetId": "j10e6GMO7SmkkmlN5zN5V",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "D8v90BeMfQ3vQsoUow1nR",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1164,9 +1349,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1213,9 +1398,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1263,8 +1448,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -1277,7 +1462,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1324,9 +1509,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1355,8 +1540,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1368,7 +1553,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1415,9 +1600,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1446,8 +1631,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1459,7 +1644,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1519,9 +1704,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1567,9 +1752,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1602,8 +1787,8 @@
       },
       "cssClassNames": [
         {
-          "cssClassName": "GENERIC_SECONDARY_BUTTON ",
-          "key": "GENERIC_SECONDARY_BUTTON "
+          "cssClassName": "FREEZ_CARD_NO_BUTTON ",
+          "key": "FREEZ_CARD_NO_BUTTON "
         }
       ]
     },
@@ -1612,8 +1797,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -1633,7 +1818,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1698,9 +1883,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1742,13 +1927,19 @@
       "loadingKey": "FC_GENERIC_LOADER",
       "loadingKeyStoreType": 2,
       "loader": {
-        "loader": "d2wkTonf83IX4gA9Y5zpN",
-        "loaderName": "button_loading_lottie.json"
+        "loader": "bjchzK6CmoTvhNjETB254",
+        "loaderName": "button-lottie.json"
       },
       "buttonLoadingClass": [
         {
           "cssClassName": "GENERIC_LOTTIE_HEIGHT ",
           "key": "GENERIC_LOTTIE_HEIGHT "
+        }
+      ],
+      "cssDisableClassNames": [
+        {
+          "cssClassName": "GENERIC_POPUP_DISABLE_BUTTONS ",
+          "key": "GENERIC_POPUP_DISABLE_BUTTONS "
         }
       ]
     },
@@ -1757,8 +1948,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -1766,19 +1957,19 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "K8FQZghDW-FwpupAjrN0C",
-        "triggerName": "FC_FREEZE_OR_UNFREEZE_CARD",
+        "triggerId": "8srBekR1e93JdlMEVAaaK",
+        "triggerName": "FC_CHECK_FOR_OTP",
         "name": "On click",
         "type": "2",
-        "serviceType": "8"
+        "serviceType": "13"
       }
     ],
-    "path": "0-0-0-0-3-1-0-0-0",
+    "path": "0-0-1-0-3-1-0-0-0",
     "screenId": "D8v90BeMfQ3vQsoUow1nR",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1834,9 +2025,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1877,8 +2068,8 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/2/2024",
-    "createdAt": "8/2/2024",
+    "updatedAt": "8/7/2024",
+    "createdAt": "8/7/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -1889,7 +2080,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

@@ -148,25 +148,6 @@
               "logic": "BHD"
             },
             {
-              "key": "pc_request.validation",
-              "storeType": 2,
-              "changeValueConditonally": true,
-              "logic": {
-                "if": [
-                  {
-                    "==": [
-                      {
-                        "var": "currentScreen.pc_check_otp.content.otpRequired"
-                      },
-                      1
-                    ]
-                  },
-                  { "var": "currentScreen.pc_validation_object" },
-                  null
-                ]
-              }
-            },
-            {
               "key": "pc_request.saveNewCard",
               "changeValueConditonally": true,
               "storeType": 2,
@@ -194,15 +175,80 @@
               "storeType": 2,
               "changeValueConditonally": true,
               "logic": { "var": "currentSession.CURRENT_CARD.clientCode" }
+            },
+            {
+              "key": "pc_request.validation",
+              "storeType": 2,
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "or": [
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "Account"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpAccountAllowed"
+                          },
+                          {
+                            "!=": [
+                              { "var": "currentScreen.page_name" },
+                              "Pay using debit card"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              "DebitCard"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpDebitCardAllowed"
+                          }
+                        ]
+                      },
+                      {
+                        "and": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.page_name" },
+                              "Pay using debit card"
+                            ]
+                          },
+                          {
+                            "var": "currentScreen.pc_check_otp.content.otpDebitCardAllowed"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  { "var": "currentScreen.pc_validation_object" },
+                  null
+                ]
+              }
             }
-          ]
+          ],
+          "gridFormRowIdBindingKey": "editFormRowId"
         }
       }
     }
   ],
-  "csrf": "0.imvd355qncjyp4_kK5G7oUEUlpK4XGJT",
-  "updatedAt": "3/8/2024",
-  "createdAt": "3/8/2024",
-  "createdBy": "talha2",
-  "updatedBy": "talha2"
+  "csrf": "0.va6k8mg4ga_oKCofnQzyfvUag0mQ7gq",
+  "updatedAt": "8/12/2024",
+  "createdAt": "8/12/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
 }
