@@ -169,15 +169,60 @@
                   }
                 }
               ]
+            },
+            {
+              "triggerName": "GET_SUPPLEMENTARY_CARDS",
+              "triggerId": "-g_VOqrDX3hMbuEBUIGYG",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "getSupplementaryCard",
+                      "url": "/card/v1/web/getSupplementaryCard",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": false,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "triggerName": "CHECK_SAVE_FIRST_CARD_AS_CURRENT_CARD_SUPPLEMENTARY_DELAY",
+                        "triggerId": "u7m1_FQpQ9iIv4KTyZAU4",
+                        "httpStatus": 200,
+                        "logic": true
+                      }
+                    ]
+                  }
+                }
+              ],
+              "logic": {
+                "==": [
+                  { "var": "currentSession.dash_type" },
+                  "supplementary card"
+                ]
+              }
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.3aq78j7lk2fWsM_rcNF3YOrli8j1egzO",
-  "updatedAt": "7/1/2024",
-  "createdAt": "7/1/2024",
-  "createdBy": "mubashar",
-  "updatedBy": "mubashar"
+  "csrf": "0.9i9zcjkonsvII08fYZEK1k7eA_4vc34J",
+  "updatedAt": "8/21/2024",
+  "createdAt": "8/21/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
 }

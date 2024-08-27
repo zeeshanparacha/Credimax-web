@@ -115,71 +115,6 @@
             "commandType": "1"
           },
           {
-            "triggerId": "0ZbxBIbQe-kc1jzAlHypC",
-            "triggerName": "VALIDATION_FOR_SUPPLEMENTARY_LIMIT",
-            "serviceType": "11",
-            "attributes": {
-              "storeType": "",
-              "selectedObjectBindingKey": "selectedObject",
-              "dataType": "",
-              "destinationBindingKey": "validation",
-              "sourceBindingKey": "validation",
-              "sourceStoreType": 1,
-              "destinationStoreType": 1,
-              "filterList": [
-                {
-                  "key": "tranCode",
-                  "changeValueConditonally": true,
-                  "logic": { "if": [true, "1546", "1546"] }
-                },
-                {
-                  "key": "validationType",
-                  "changeValueConditonally": true,
-                  "logic": { "if": [true, "OTP", "OTP"] }
-                },
-                {
-                  "key": "isOtp",
-                  "changeValueConditonally": true,
-                  "logic": { "if": [true, true, true] }
-                },
-                {
-                  "key": "splitOtp",
-                  "changeValueConditonally": true,
-                  "logic": { "if": [true, true, true] }
-                },
-                {
-                  "key": "generationType",
-                  "changeValueConditonally": true,
-                  "logic": { "if": [true, "2", "2"] }
-                },
-                {
-                  "changeValueConditonally": true,
-                  "logic": { "if": [true, "4", "4"] },
-                  "key": "otpExpiry"
-                },
-                {
-                  "key": "smsPin",
-                  "changeValueConditonally": true,
-                  "logic": { "var": "currentScreen.form.smsPin" }
-                },
-                {
-                  "changeValueConditonally": true,
-                  "key": "emailPin",
-                  "logic": { "var": "currentScreen.form.smsPin" }
-                },
-                {
-                  "changeValueConditonally": true,
-                  "key": "is2FA",
-                  "logic": { "if": [true, "1", "1"] }
-                }
-              ],
-              "targettedType": "object"
-            },
-            "type": "1",
-            "name": "On initialization",
-            "commandType": "6"
-          },
-          {
             "triggerId": "unDzpsn5MLYrtNUDyjJcP",
             "triggerName": "SC_SAVE_CARD_LIMIT",
             "serviceType": "11",
@@ -206,6 +141,22 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "15"
+          },
+          {
+            "triggerId": "CaVz86KRLOqoQu7KxsJUF",
+            "triggerName": "SC_CLEAR_VALIDATION_OBJECT",
+            "serviceType": "11",
+            "attributes": {
+              "stateName": "setLimitValidation",
+              "storeType": 2,
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": "",
+              "gridFormRowIdBindingKey": "editFormRowId"
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "4"
           }
         ],
         "order": 1,
@@ -214,11 +165,11 @@
         "projectType": "web",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "component": { "content": "Grid layout", "type": "10001" },
-        "path": 0,
+        "path": "0",
         "gridProps": [
           {
             "type": "column",
-            "id": "tPabAOfiSez8DLf8D8mVT",
+            "id": "nymUwzHhte37m4QiSPrlB",
             "gridProps": [
               {
                 "id": "bRVFVAoUBncQpcSu0o1TQ",
@@ -957,7 +908,13 @@
                                             "sm": 12,
                                             "xs": 12
                                           },
-                                          "label": "Current limit"
+                                          "label": "Current limit",
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "Font-Montserrat-Regular ",
+                                              "key": "Font-Montserrat-Regular "
+                                            }
+                                          ]
                                         },
                                         "icon": "FaFont",
                                         "group": "Form",
@@ -2060,7 +2017,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "0iwgqECN1oa_xWbJ-tXe5",
+                                            "id": "crnpKNZBfyp0DuoSgyJZW",
                                             "gridProps": [],
                                             "layoutProperties": {
                                               "xl": 12,
@@ -2068,8 +2025,7 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-5-0-0-0-2-2-0-0"
+                                            }
                                           }
                                         ],
                                         "allowedContainers": [
@@ -2411,7 +2367,7 @@
                                                       "//": "Use this class to style label component.",
                                                       "color": "#838383",
                                                       "font-size": "14px",
-                                                      "font-weight": "bolder"
+                                                      "font-weight": "bold"
                                                     },
                                                     "prefix": {
                                                       "//": "Use this class to style prefix."
@@ -2429,7 +2385,13 @@
                                                   "label": "CURRENT_CARD.cardMinLimit",
                                                   "prefix": "BHD ",
                                                   "searchInState": true,
-                                                  "storeType": 2
+                                                  "storeType": 2,
+                                                  "cssClassNames": [
+                                                    {
+                                                      "cssClassName": "Font-Montserrat-Regular ",
+                                                      "key": "Font-Montserrat-Regular "
+                                                    }
+                                                  ]
                                                 },
                                                 "icon": "FaFont",
                                                 "group": "Form",
@@ -2525,7 +2487,7 @@
                                                       "//": "Use this class to style label component.",
                                                       "color": "#838383",
                                                       "font-size": "14px",
-                                                      "font-weight": "bolder"
+                                                      "font-weight": "bold"
                                                     },
                                                     "prefix": {
                                                       "//": "Use this class to style prefix."
@@ -2543,7 +2505,13 @@
                                                   "label": "CURRENT_CARD.cardMaxLimit",
                                                   "prefix": "BHD ",
                                                   "searchInState": true,
-                                                  "storeType": 2
+                                                  "storeType": 2,
+                                                  "cssClassNames": [
+                                                    {
+                                                      "cssClassName": "Font-Montserrat-Regular ",
+                                                      "key": "Font-Montserrat-Regular "
+                                                    }
+                                                  ]
                                                 },
                                                 "icon": "FaFont",
                                                 "group": "Form",
@@ -3087,8 +3055,7 @@
               "md": 12,
               "sm": 12,
               "xs": 12
-            },
-            "path": "0-0"
+            }
           }
         ],
         "layoutProperties": { "lg": 12, "md": 12, "sm": 12, "xs": 12 },
@@ -3112,9 +3079,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "Q5DvqqpFOHcqGNNnOLDXR",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3235,14 +3202,14 @@
         "type": "1"
       },
       {
-        "triggerId": "0ZbxBIbQe-kc1jzAlHypC",
-        "triggerName": "VALIDATION_FOR_SUPPLEMENTARY_LIMIT",
+        "triggerId": "unDzpsn5MLYrtNUDyjJcP",
+        "triggerName": "SC_SAVE_CARD_LIMIT",
         "name": "On initialization",
         "type": "1"
       },
       {
-        "triggerId": "unDzpsn5MLYrtNUDyjJcP",
-        "triggerName": "SC_SAVE_CARD_LIMIT",
+        "triggerId": "CaVz86KRLOqoQu7KxsJUF",
+        "triggerName": "SC_CLEAR_VALIDATION_OBJECT",
         "name": "On initialization",
         "type": "1"
       }
@@ -3252,9 +3219,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3272,9 +3239,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3292,9 +3259,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3312,9 +3279,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3367,9 +3334,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3446,9 +3413,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3493,9 +3460,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3546,8 +3513,8 @@
       ]
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3568,7 +3535,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3629,9 +3596,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3676,9 +3643,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3720,9 +3687,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3754,9 +3721,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3837,9 +3804,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3968,9 +3935,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4016,9 +3983,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4050,8 +4017,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4063,7 +4030,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4132,9 +4099,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4160,13 +4127,19 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Current limit"
+      "label": "Current limit",
+      "cssClassNames": [
+        {
+          "cssClassName": "Font-Montserrat-Regular ",
+          "key": "Font-Montserrat-Regular "
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4178,7 +4151,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4213,8 +4186,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4226,7 +4199,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4265,8 +4238,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4278,7 +4251,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4352,9 +4325,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4399,9 +4372,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4433,8 +4406,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4446,7 +4419,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4517,9 +4490,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4598,9 +4571,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4667,9 +4640,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4707,8 +4680,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4720,7 +4693,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4760,8 +4733,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4773,7 +4746,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4838,9 +4811,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4872,9 +4845,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4935,9 +4908,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4983,9 +4956,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5022,9 +4995,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5070,9 +5043,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5127,9 +5100,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5161,9 +5134,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5222,9 +5195,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5272,9 +5245,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5301,8 +5274,8 @@
     "group": "Form",
     "type": "20061",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -5314,7 +5287,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5346,9 +5319,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5421,9 +5394,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5468,9 +5441,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5486,7 +5459,7 @@
           "//": "Use this class to style label component.",
           "color": "#838383",
           "font-size": "14px",
-          "font-weight": "bolder"
+          "font-weight": "bold"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -5500,13 +5473,19 @@
       "label": "CURRENT_CARD.cardMinLimit",
       "prefix": "BHD ",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "cssClassNames": [
+        {
+          "cssClassName": "Font-Montserrat-Regular ",
+          "key": "Font-Montserrat-Regular "
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -5518,7 +5497,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5564,9 +5543,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5582,7 +5561,7 @@
           "//": "Use this class to style label component.",
           "color": "#838383",
           "font-size": "14px",
-          "font-weight": "bolder"
+          "font-weight": "bold"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -5596,13 +5575,19 @@
       "label": "CURRENT_CARD.cardMaxLimit",
       "prefix": "BHD ",
       "searchInState": true,
-      "storeType": 2
+      "storeType": 2,
+      "cssClassNames": [
+        {
+          "cssClassName": "Font-Montserrat-Regular ",
+          "key": "Font-Montserrat-Regular "
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -5614,7 +5599,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5646,9 +5631,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5697,9 +5682,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5772,8 +5757,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "8/26/2024",
+    "createdAt": "8/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -5793,7 +5778,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

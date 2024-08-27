@@ -15,11 +15,23 @@
           "triggers": [
             {
               "logic": {
-                "==": [
+                "and": [
                   {
-                    "var": "currentSession.userProfile.content.customer.customerType"
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.customer.customerType"
+                      },
+                      "MAIN"
+                    ]
                   },
-                  "MAIN"
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.hasMainCard"
+                      },
+                      "1"
+                    ]
+                  }
                 ]
               },
               "triggerName": "LOAD_NORMAL_DASHBOARD",
@@ -42,11 +54,23 @@
             },
             {
               "logic": {
-                "==": [
+                "and": [
                   {
-                    "var": "currentSession.userProfile.content.customer.customerType"
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.customer.customerType"
+                      },
+                      "ILEAD"
+                    ]
                   },
-                  "ILEAD"
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.hasMainCard"
+                      },
+                      "1"
+                    ]
+                  }
                 ]
               },
               "triggerName": "LOAD_ILEAD_CHILD_DASHBOARD",
@@ -68,11 +92,23 @@
             },
             {
               "logic": {
-                "==": [
+                "and": [
                   {
-                    "var": "currentSession.userProfile.content.customer.customerType"
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.customer.customerType"
+                      },
+                      "MAIN"
+                    ]
                   },
-                  "MAIN"
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.hasMainCard"
+                      },
+                      "1"
+                    ]
+                  }
                 ]
               },
               "triggerName": "GET_SLIDER_CARDS",
@@ -116,11 +152,23 @@
             },
             {
               "logic": {
-                "==": [
+                "and": [
                   {
-                    "var": "currentSession.userProfile.content.customer.customerType"
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.customer.customerType"
+                      },
+                      "ILEAD"
+                    ]
                   },
-                  "ILEAD"
+                  {
+                    "==": [
+                      {
+                        "var": "currentSession.userProfile.content.hasMainCard"
+                      },
+                      "1"
+                    ]
+                  }
                 ]
               },
               "triggerName": "ILC_DASH_GET_CARD_API",
@@ -161,15 +209,39 @@
                   }
                 }
               ]
+            },
+            {
+              "logic": {
+                "!=": [
+                  { "var": "currentSession.userProfile.content.hasMainCard" },
+                  "1"
+                ]
+              },
+              "triggerName": "GO_TO_NO_CARDS_SCREEN",
+              "triggerId": "27_I5K37s27lv8bb9oQUo",
+              "services": [
+                {
+                  "type": "1",
+                  "command": {
+                    "type": "3",
+                    "attributes": {
+                      "nextWidgetId": "wTpGjBZicTL01M7UoVbJG",
+                      "gridRadioValue": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "editableForm": false
+                    }
+                  }
+                }
+              ]
             }
           ]
         }
       }
     }
   ],
-  "csrf": "0.l1jd5l6dom5DXs6HEpPGC0xI2X35E7T",
-  "updatedAt": "3/13/2024",
-  "createdAt": "3/13/2024",
+  "csrf": "0.oi977y6zb9TqEa_koJelnAjKKwE6Dx-",
+  "updatedAt": "8/26/2024",
+  "createdAt": "8/26/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }
