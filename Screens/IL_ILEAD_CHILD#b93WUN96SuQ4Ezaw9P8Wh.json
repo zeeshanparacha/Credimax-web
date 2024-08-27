@@ -259,7 +259,7 @@
             "commandType": "1"
           }
         ],
-        "path": 0,
+        "path": "0",
         "version": "1.0.0",
         "allowedContainers": ["10001", "20030", "noLayout", "20010", "widget"],
         "dimensions": {
@@ -3342,13 +3342,13 @@
                                                                 "attributes": {
                                                                   "variant": "body1",
                                                                   "name": "Progress",
-                                                                  "totalValue": "100",
+                                                                  "totalValue": "ilc_profile_res.content.monthlyBalance",
                                                                   "mandatory": false,
                                                                   "height": "10px",
                                                                   "width": "100%",
                                                                   "progressType": "linear",
-                                                                  "storeType": 4,
-                                                                  "bindingKey": "30",
+                                                                  "storeType": 2,
+                                                                  "bindingKey": "ilc_profile_res.content.monthlySpending",
                                                                   "splitLinearProgress": true,
                                                                   "progressColor": "CURRENT_CARD.colorCode",
                                                                   "colorWhenCompleted": "CURRENT_CARD.colorCode",
@@ -3359,7 +3359,8 @@
                                                                   "storeTypeTrackingColor": 2,
                                                                   "storeTypeSecondaryProgressColor": 4,
                                                                   "trackingColor": "CURRENT_CARD.colorCode",
-                                                                  "hideCondition": {}
+                                                                  "hideCondition": {},
+                                                                  "searchTotalValueInState": true
                                                                 },
                                                                 "icon": "AiOutlineLoading3Quarters",
                                                                 "group": "Advanced",
@@ -3473,7 +3474,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "BHD 10.120",
+                                                                          "label": "ilc_profile_res.content.monthlySpending",
                                                                           "cssClassNames": [
                                                                             {
                                                                               "cssClassName": "IL_CHILD_BHD_CURRENCY_1 ",
@@ -3481,7 +3482,10 @@
                                                                             }
                                                                           ],
                                                                           "decimalPointsAdded": true,
-                                                                          "decimalPoints": "3"
+                                                                          "decimalPoints": "3",
+                                                                          "searchInState": true,
+                                                                          "storeType": 2,
+                                                                          "prefix": "BHD "
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -3626,7 +3630,7 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "BHD 40.000",
+                                                                          "label": "ilc_profile_res.content.monthlyBalance",
                                                                           "cssClassNames": [
                                                                             {
                                                                               "cssClassName": "IL_BHD_CURRENCY_LABEL_2 ",
@@ -3634,7 +3638,10 @@
                                                                             }
                                                                           ],
                                                                           "decimalPointsAdded": true,
-                                                                          "decimalPoints": "3"
+                                                                          "decimalPoints": "3",
+                                                                          "searchInState": true,
+                                                                          "storeType": 2,
+                                                                          "prefix": "BHD "
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -6974,7 +6981,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "vxuNVyV-_sgQE0-_wkHK2",
+                                                            "id": "hZjJeoySPNiuj2E1YSGRx",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -7499,8 +7506,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-4-0-0-0-1-0-0-0-3-0-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -7530,11 +7536,22 @@
                                                           "name": "Grid layout",
                                                           "hideCondition": {
                                                             "logic": {
-                                                              "==": [
+                                                              "or": [
                                                                 {
-                                                                  "var": "currentScreen.ilc_profile_res.content.allowanceBalanceWithOutCurrency"
+                                                                  "!": [
+                                                                    {
+                                                                      "var": "currentScreen.ilc_profile_res.content.allowanceBalanceWithOutCurrency"
+                                                                    }
+                                                                  ]
                                                                 },
-                                                                "-"
+                                                                {
+                                                                  "==": [
+                                                                    {
+                                                                      "var": "currentScreen.ilc_profile_res.content.allowanceBalanceWithOutCurrency"
+                                                                    },
+                                                                    "-"
+                                                                  ]
+                                                                }
                                                               ]
                                                             }
                                                           }
@@ -7577,7 +7594,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "7uSSNI2PrtfFWhjM3E25-",
+                                                            "id": "7EvCz1jRyZc7q0Qy_Jihj",
                                                             "gridProps": [
                                                               {
                                                                 "type": "10001",
@@ -8088,8 +8105,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-4-0-0-0-1-0-0-0-3-1-0-0"
+                                                            }
                                                           }
                                                         ],
                                                         "allowedContainers": [
@@ -8119,11 +8135,22 @@
                                                           "name": "Grid layout",
                                                           "hideCondition": {
                                                             "logic": {
-                                                              "==": [
+                                                              "or": [
                                                                 {
-                                                                  "var": "currentScreen.ilc_profile_res.content.spendAmountWithCurrency"
+                                                                  "!": [
+                                                                    {
+                                                                      "var": "currentScreen.ilc_profile_res.content.spendAmountWithCurrency"
+                                                                    }
+                                                                  ]
                                                                 },
-                                                                "-"
+                                                                {
+                                                                  "==": [
+                                                                    {
+                                                                      "var": "currentScreen.ilc_profile_res.content.spendAmountWithCurrency"
+                                                                    },
+                                                                    "-"
+                                                                  ]
+                                                                }
                                                               ]
                                                             }
                                                           }
@@ -12171,8 +12198,8 @@
     "gitBranchName": "master",
     "_id": "b93WUN96SuQ4Ezaw9P8Wh",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12282,8 +12309,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12302,8 +12329,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12322,8 +12349,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12342,8 +12369,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12417,8 +12444,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12496,8 +12523,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12575,8 +12602,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12673,8 +12700,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12727,8 +12754,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12782,8 +12809,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12820,8 +12847,8 @@
       "selectedConfiguration": "65f69489b8665034f406ba58"
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -12881,8 +12908,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -12919,8 +12946,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13024,8 +13051,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13095,8 +13122,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13153,8 +13180,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13227,8 +13254,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13301,8 +13328,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13361,8 +13388,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13398,8 +13425,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13481,8 +13508,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13539,8 +13566,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13613,8 +13640,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13687,8 +13714,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -13748,8 +13775,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13784,8 +13811,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -13866,8 +13893,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13918,8 +13945,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -13975,8 +14002,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14073,8 +14100,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14138,8 +14165,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14197,8 +14224,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -14277,8 +14304,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -14382,8 +14409,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14411,8 +14438,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14469,8 +14496,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14522,8 +14549,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14618,8 +14645,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14689,8 +14716,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14718,8 +14745,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14771,8 +14798,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14824,8 +14851,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14907,8 +14934,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -14936,8 +14963,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -14987,8 +15014,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -15040,8 +15067,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -15100,8 +15127,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15149,8 +15176,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -15217,8 +15244,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15353,8 +15380,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15451,8 +15478,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15499,8 +15526,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15528,8 +15555,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -15588,8 +15615,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15599,13 +15626,13 @@
     "attributes": {
       "variant": "body1",
       "name": "Progress",
-      "totalValue": "100",
+      "totalValue": "ilc_profile_res.content.monthlyBalance",
       "mandatory": false,
       "height": "10px",
       "width": "100%",
       "progressType": "linear",
-      "storeType": 4,
-      "bindingKey": "30",
+      "storeType": 2,
+      "bindingKey": "ilc_profile_res.content.monthlySpending",
       "splitLinearProgress": true,
       "progressColor": "CURRENT_CARD.colorCode",
       "colorWhenCompleted": "CURRENT_CARD.colorCode",
@@ -15616,13 +15643,14 @@
       "storeTypeTrackingColor": 2,
       "storeTypeSecondaryProgressColor": 4,
       "trackingColor": "CURRENT_CARD.colorCode",
-      "hideCondition": {}
+      "hideCondition": {},
+      "searchTotalValueInState": true
     },
     "icon": "AiOutlineLoading3Quarters",
     "group": "Advanced",
     "type": "20060",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -15694,8 +15722,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15773,8 +15801,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15796,7 +15824,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "BHD 10.120",
+      "label": "ilc_profile_res.content.monthlySpending",
       "cssClassNames": [
         {
           "cssClassName": "IL_CHILD_BHD_CURRENCY_1 ",
@@ -15804,13 +15832,16 @@
         }
       ],
       "decimalPointsAdded": true,
-      "decimalPoints": "3"
+      "decimalPoints": "3",
+      "searchInState": true,
+      "storeType": 2,
+      "prefix": "BHD "
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -15868,8 +15899,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -15891,7 +15922,7 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "BHD 40.000",
+      "label": "ilc_profile_res.content.monthlyBalance",
       "cssClassNames": [
         {
           "cssClassName": "IL_BHD_CURRENCY_LABEL_2 ",
@@ -15899,13 +15930,16 @@
         }
       ],
       "decimalPointsAdded": true,
-      "decimalPoints": "3"
+      "decimalPoints": "3",
+      "searchInState": true,
+      "storeType": 2,
+      "prefix": "BHD "
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -15978,8 +16012,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16033,8 +16067,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16103,8 +16137,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16153,8 +16187,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16206,8 +16240,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -16279,8 +16313,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16308,8 +16342,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -16354,8 +16388,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -16421,8 +16455,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16491,8 +16525,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16541,8 +16575,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16594,8 +16628,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -16667,8 +16701,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16696,8 +16730,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -16742,8 +16776,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -16809,8 +16843,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -16895,8 +16929,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -17009,8 +17043,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -17068,8 +17102,8 @@
       "showOverlay": true
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -17142,8 +17176,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -17216,8 +17250,8 @@
       }
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -17271,8 +17305,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -17331,8 +17365,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -17429,8 +17463,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -17503,8 +17537,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -17567,8 +17601,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -17651,8 +17685,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -17735,8 +17769,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -17802,8 +17836,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -17834,8 +17868,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -17908,8 +17942,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -17963,8 +17997,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18025,8 +18059,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18073,8 +18107,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18108,8 +18142,8 @@
       "selectedConfiguration": "660b3cd596973234b81fdcd4"
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -18195,8 +18229,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18276,8 +18310,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18335,8 +18369,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18379,8 +18413,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -18434,8 +18468,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -18504,8 +18538,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18553,8 +18587,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -18625,8 +18659,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18669,8 +18703,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -18723,8 +18757,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -18796,8 +18830,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18844,11 +18878,22 @@
       "name": "Grid layout",
       "hideCondition": {
         "logic": {
-          "==": [
+          "or": [
             {
-              "var": "currentScreen.ilc_profile_res.content.allowanceBalanceWithOutCurrency"
+              "!": [
+                {
+                  "var": "currentScreen.ilc_profile_res.content.allowanceBalanceWithOutCurrency"
+                }
+              ]
             },
-            "-"
+            {
+              "==": [
+                {
+                  "var": "currentScreen.ilc_profile_res.content.allowanceBalanceWithOutCurrency"
+                },
+                "-"
+              ]
+            }
           ]
         }
       }
@@ -18861,8 +18906,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18921,8 +18966,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -18988,8 +19033,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19038,8 +19083,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19091,8 +19136,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -19178,8 +19223,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19225,8 +19270,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19261,8 +19306,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -19320,8 +19365,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19353,8 +19398,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -19413,11 +19458,22 @@
       "name": "Grid layout",
       "hideCondition": {
         "logic": {
-          "==": [
+          "or": [
             {
-              "var": "currentScreen.ilc_profile_res.content.spendAmountWithCurrency"
+              "!": [
+                {
+                  "var": "currentScreen.ilc_profile_res.content.spendAmountWithCurrency"
+                }
+              ]
             },
-            "-"
+            {
+              "==": [
+                {
+                  "var": "currentScreen.ilc_profile_res.content.spendAmountWithCurrency"
+                },
+                "-"
+              ]
+            }
           ]
         }
       }
@@ -19430,8 +19486,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19490,8 +19546,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19557,8 +19613,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19607,8 +19663,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19660,8 +19716,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -19747,8 +19803,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19794,8 +19850,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19823,8 +19879,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -19882,8 +19938,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -19915,8 +19971,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -19988,8 +20044,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20045,8 +20101,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20119,8 +20175,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20166,8 +20222,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20219,8 +20275,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -20306,8 +20362,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20354,8 +20410,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20385,8 +20441,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -20445,8 +20501,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20476,8 +20532,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -20537,8 +20593,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20573,8 +20629,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -20645,8 +20701,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20701,8 +20757,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20834,8 +20890,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20896,8 +20952,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20944,8 +21000,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -20974,8 +21030,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -21034,8 +21090,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21067,8 +21123,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -21145,8 +21201,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21193,8 +21249,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21248,8 +21304,8 @@
     "group": "Form",
     "type": "20004",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -21315,8 +21371,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21363,8 +21419,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21407,8 +21463,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21482,8 +21538,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21577,8 +21633,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21628,8 +21684,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21683,8 +21739,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -21747,8 +21803,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21781,8 +21837,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -21844,8 +21900,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -21877,8 +21933,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -21954,8 +22010,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22036,8 +22092,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22141,8 +22197,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22213,8 +22269,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22273,8 +22329,8 @@
       ]
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -22346,8 +22402,8 @@
       ]
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -22419,8 +22475,8 @@
       ]
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -22506,8 +22562,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22582,8 +22638,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22634,8 +22690,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22668,8 +22724,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -22741,8 +22797,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22808,8 +22864,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22875,8 +22931,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22923,8 +22979,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -22960,8 +23016,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -23036,8 +23092,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -23085,8 +23141,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -23125,8 +23181,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -23186,8 +23242,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -23226,8 +23282,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -23286,8 +23342,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "talha",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -23320,8 +23376,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -23358,8 +23414,8 @@
     "icon": "AiOutlineLoading3Quarters",
     "group": "Advanced",
     "type": "20060",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/27/2024",
+    "createdAt": "8/27/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,

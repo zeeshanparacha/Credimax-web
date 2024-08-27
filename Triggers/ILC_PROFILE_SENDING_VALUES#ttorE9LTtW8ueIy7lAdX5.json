@@ -1,0 +1,53 @@
+{
+  "id": "vBfQvW7Nj-4r6GU6CbPxb",
+  "name": "ILC_PROFILE_SENDING_VALUES",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "services": [
+    {
+      "type": "11",
+      "command": {
+        "type": "15",
+        "attributes": {
+          "storeType": "",
+          "selectedObjectBindingKey": "selectedObject",
+          "dataType": "",
+          "sourceBindingKey": "",
+          "filterList": [
+            {
+              "logic": {
+                "if": [
+                  { "var": "ilc_profile_res.content.monthlySpending" },
+                  { "var": "ilc_profile_res.content.monthlySpending" },
+                  "10.120"
+                ]
+              },
+              "storeType": 2,
+              "key": "ilc_profile_res.content.monthlySpending",
+              "changeValueConditonally": true
+            },
+            {
+              "key": "ilc_profile_res.content.monthlyBalance",
+              "changeValueConditonally": true,
+              "storeType": 2,
+              "logic": {
+                "if": [
+                  { "var": "ilc_profile_res.content.monthlyBalance" },
+                  { "var": "ilc_profile_res.content.monthlyBalance" },
+                  "40.000"
+                ]
+              }
+            }
+          ],
+          "gridFormRowIdBindingKey": "editFormRowId"
+        }
+      }
+    }
+  ],
+  "csrf": "0.o4bo9bcov88Tsha4Yqu7pTVFiE-jeXEv",
+  "_id": "ttorE9LTtW8ueIy7lAdX5",
+  "updatedAt": "8/27/2024",
+  "createdAt": "8/27/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}
