@@ -70,6 +70,22 @@
             "id": "Y76nYLVPfg70D09iRPbZ8",
             "gridProps": [
               {
+                "id": "bRVFVAoUBncQpcSu0o1TQ",
+                "type": "20031",
+                "name": "SUPPLEMENTARY_CHECK_FOR_OTP",
+                "attributes": {
+                  "widgetId": "9VsstU7G4g6f-3rq-7b5w",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
                 "id": "2GUVphobOrhW7tzzmOSR7",
                 "type": "20031",
                 "triggerName": "SUPPLEMENTARY_CARD_LIMITE_SUCCES_POPUP",
@@ -1034,305 +1050,374 @@
                                 },
                                 "events": [
                                   {
-                                    "triggerId": "NTvnaCb-nbd_l_fnszski",
-                                    "triggerName": "SET_SUPPLEMENTARY_CARD_LIMIT_CONDITIONALLY",
-                                    "serviceType": "2",
+                                    "triggerId": "wJddo3ctwKCnnZEniWXXv",
+                                    "triggerName": "SUPPLEMENTARY_CHECK_FOR_OTP",
+                                    "serviceType": "13",
                                     "attributes": {
-                                      "delay": "",
-                                      "storeType": "",
-                                      "searchInState": false,
                                       "triggers": [
                                         {
-                                          "id": "B552qo4G3RfoXd1ZFFKhA",
-                                          "projectId": "652fcbce09869c3c809b3097",
-                                          "gitBranchName": "master",
-                                          "name": "SC_SET_VALIDATION_CONDITIONAL",
-                                          "old_name": "",
-                                          "status": "ACTIVE",
+                                          "triggerName": "SUPPLEMENTARY_CARD_OTP_POPUP",
+                                          "triggerId": "lpWw1Z4b-uObF-tT-KLft",
                                           "services": [
                                             {
-                                              "type": "13",
+                                              "type": "9",
                                               "command": {
                                                 "type": "1",
                                                 "attributes": {
+                                                  "widgetId": "9VsstU7G4g6f-3rq-7b5w",
+                                                  "content": "",
+                                                  "type": "",
+                                                  "modalId": "bRVFVAoUBncQpcSu0o1TQ",
+                                                  "toastContentType": "custom"
+                                                }
+                                              }
+                                            }
+                                          ],
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
+                                                  },
+                                                  1
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "triggerName": "SET_SUPPLEMENTARY_CARD_LIMIT_CONDITIONALLY",
+                                          "triggerId": "NTvnaCb-nbd_l_fnszski",
+                                          "services": [
+                                            {
+                                              "type": "2",
+                                              "command": {
+                                                "type": "1",
+                                                "attributes": {
+                                                  "delay": "",
+                                                  "storeType": "",
+                                                  "searchInState": false,
                                                   "triggers": [
                                                     {
-                                                      "triggerName": "SC_SET_LIMIT_VALIDATION",
-                                                      "triggerId": "rZWUVc3Yzz_CxB1Amsmwt",
+                                                      "id": "B552qo4G3RfoXd1ZFFKhA",
+                                                      "projectId": "652fcbce09869c3c809b3097",
+                                                      "gitBranchName": "master",
+                                                      "name": "SC_SET_VALIDATION_CONDITIONAL",
+                                                      "old_name": "",
+                                                      "status": "ACTIVE",
                                                       "services": [
                                                         {
-                                                          "type": "16",
+                                                          "type": "13",
                                                           "command": {
-                                                            "type": "2",
+                                                            "type": "1",
                                                             "attributes": {
-                                                              "validationList": [
+                                                              "triggers": [
                                                                 {
-                                                                  "bindingKey": "newLimit",
-                                                                  "storeType": 1,
-                                                                  "messageBindingKey": "newLimit_validation",
-                                                                  "isRequired": false,
-                                                                  "requiredMessage": "",
-                                                                  "regEx": "",
-                                                                  "regExMessage": "",
-                                                                  "JSONLogic": [
+                                                                  "triggerName": "SC_SET_LIMIT_VALIDATION",
+                                                                  "triggerId": "rZWUVc3Yzz_CxB1Amsmwt",
+                                                                  "services": [
                                                                     {
-                                                                      "logic": {
-                                                                        "==": [
-                                                                          {
-                                                                            "%": [
-                                                                              {
-                                                                                "var": "currentScreen.form.newLimit"
-                                                                              },
-                                                                              50
-                                                                            ]
-                                                                          },
-                                                                          0
-                                                                        ]
-                                                                      },
-                                                                      "logicMessage": "Limit should be in multiples of 50"
-                                                                    },
-                                                                    {
-                                                                      "logic": {
-                                                                        "<=": [
-                                                                          {
-                                                                            "+": [
-                                                                              {
-                                                                                "var": "currentScreen.form.newLimit"
-                                                                              },
-                                                                              0
-                                                                            ]
-                                                                          },
-                                                                          {
-                                                                            "+": [
-                                                                              {
-                                                                                "var": "currentScreen.form.current_card.cardMaxLimit"
-                                                                              },
-                                                                              0
-                                                                            ]
-                                                                          }
-                                                                        ]
-                                                                      },
-                                                                      "logicMessage": "Limit cannot exceed max limit"
-                                                                    }
-                                                                  ]
-                                                                }
-                                                              ],
-                                                              "successTrigger": {
-                                                                "id": "wJddo3ctwKCnnZEniWXXv",
-                                                                "projectId": "652fcbce09869c3c809b3097",
-                                                                "gitBranchName": "master",
-                                                                "name": "SUPPLEMENTARY_CHECK_FOR_OTP",
-                                                                "old_name": "",
-                                                                "status": "ACTIVE",
-                                                                "services": [
-                                                                  {
-                                                                    "type": "13",
-                                                                    "command": {
-                                                                      "type": "1",
-                                                                      "attributes": {
-                                                                        "triggers": [
-                                                                          {
-                                                                            "triggerName": "SUPPLEMENTARY_CARD_OTP_POPUP",
-                                                                            "triggerId": "lpWw1Z4b-uObF-tT-KLft",
+                                                                      "type": "16",
+                                                                      "command": {
+                                                                        "type": "2",
+                                                                        "attributes": {
+                                                                          "validationList": [
+                                                                            {
+                                                                              "bindingKey": "newLimit",
+                                                                              "storeType": 1,
+                                                                              "messageBindingKey": "newLimit_validation",
+                                                                              "isRequired": false,
+                                                                              "requiredMessage": "",
+                                                                              "regEx": "",
+                                                                              "regExMessage": "",
+                                                                              "JSONLogic": [
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "==": [
+                                                                                      {
+                                                                                        "%": [
+                                                                                          {
+                                                                                            "var": "currentScreen.form.newLimit"
+                                                                                          },
+                                                                                          50
+                                                                                        ]
+                                                                                      },
+                                                                                      0
+                                                                                    ]
+                                                                                  },
+                                                                                  "logicMessage": "Limit should be in multiples of 50"
+                                                                                },
+                                                                                {
+                                                                                  "logic": {
+                                                                                    "<=": [
+                                                                                      {
+                                                                                        "+": [
+                                                                                          {
+                                                                                            "var": "currentScreen.form.newLimit"
+                                                                                          },
+                                                                                          0
+                                                                                        ]
+                                                                                      },
+                                                                                      {
+                                                                                        "+": [
+                                                                                          {
+                                                                                            "var": "currentScreen.form.current_card.cardMaxLimit"
+                                                                                          },
+                                                                                          0
+                                                                                        ]
+                                                                                      }
+                                                                                    ]
+                                                                                  },
+                                                                                  "logicMessage": "Limit cannot exceed max limit"
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          ],
+                                                                          "successTrigger": {
+                                                                            "id": "wJddo3ctwKCnnZEniWXXv",
+                                                                            "projectId": "652fcbce09869c3c809b3097",
+                                                                            "gitBranchName": "master",
+                                                                            "name": "SUPPLEMENTARY_CHECK_FOR_OTP",
+                                                                            "old_name": "",
+                                                                            "status": "ACTIVE",
                                                                             "services": [
                                                                               {
-                                                                                "type": "9",
+                                                                                "type": "13",
                                                                                 "command": {
                                                                                   "type": "1",
                                                                                   "attributes": {
-                                                                                    "widgetId": "9VsstU7G4g6f-3rq-7b5w",
-                                                                                    "content": "",
-                                                                                    "type": "",
-                                                                                    "modalId": "bRVFVAoUBncQpcSu0o1TQ",
-                                                                                    "toastContentType": "custom"
+                                                                                    "triggers": [
+                                                                                      {
+                                                                                        "triggerName": "SUPPLEMENTARY_CARD_OTP_POPUP",
+                                                                                        "triggerId": "lpWw1Z4b-uObF-tT-KLft",
+                                                                                        "services": [
+                                                                                          {
+                                                                                            "type": "9",
+                                                                                            "command": {
+                                                                                              "type": "1",
+                                                                                              "attributes": {
+                                                                                                "widgetId": "9VsstU7G4g6f-3rq-7b5w",
+                                                                                                "content": "",
+                                                                                                "type": "",
+                                                                                                "modalId": "bRVFVAoUBncQpcSu0o1TQ",
+                                                                                                "toastContentType": "custom"
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        ],
+                                                                                        "logic": {
+                                                                                          "if": [
+                                                                                            {
+                                                                                              "==": [
+                                                                                                {
+                                                                                                  "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
+                                                                                                },
+                                                                                                1
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      },
+                                                                                      {
+                                                                                        "triggerName": "SUPPLEMENTARY_REVIEW_REQUEST_POPUP",
+                                                                                        "triggerId": "ZXt_toFaTvIa8Yc3Dnlm9",
+                                                                                        "services": [
+                                                                                          {
+                                                                                            "type": "9",
+                                                                                            "command": {
+                                                                                              "type": "1",
+                                                                                              "attributes": {
+                                                                                                "widgetId": "5OlaAcsGHc1mKockVguQP",
+                                                                                                "modalId": "qrOeUIRUvpvtmZY_JFG5Q"
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        ],
+                                                                                        "logic": {
+                                                                                          "if": [
+                                                                                            {
+                                                                                              "==": [
+                                                                                                {
+                                                                                                  "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
+                                                                                                },
+                                                                                                0
+                                                                                              ]
+                                                                                            }
+                                                                                          ]
+                                                                                        }
+                                                                                      }
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
                                                                             ],
-                                                                            "logic": {
-                                                                              "if": [
-                                                                                {
-                                                                                  "==": [
-                                                                                    {
-                                                                                      "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
-                                                                                    },
-                                                                                    1
-                                                                                  ]
-                                                                                }
-                                                                              ]
-                                                                            }
-                                                                          },
-                                                                          {
-                                                                            "triggerName": "SUPPLEMENTARY_REVIEW_REQUEST_POPUP",
-                                                                            "triggerId": "ZXt_toFaTvIa8Yc3Dnlm9",
-                                                                            "services": [
-                                                                              {
-                                                                                "type": "9",
-                                                                                "command": {
-                                                                                  "type": "1",
-                                                                                  "attributes": {
-                                                                                    "widgetId": "5OlaAcsGHc1mKockVguQP",
-                                                                                    "modalId": "qrOeUIRUvpvtmZY_JFG5Q"
-                                                                                  }
-                                                                                }
-                                                                              }
-                                                                            ],
-                                                                            "logic": {
-                                                                              "if": [
-                                                                                {
-                                                                                  "==": [
-                                                                                    {
-                                                                                      "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
-                                                                                    },
-                                                                                    0
-                                                                                  ]
-                                                                                }
-                                                                              ]
-                                                                            }
+                                                                            "csrf": "0.84fseufbxdxgRnsCihVjpeCEZWZybyFx",
+                                                                            "_id": "7D0GKWG_8-VZDqLNeM-EK",
+                                                                            "updatedAt": "2/10/2024",
+                                                                            "createdAt": "2/10/2024",
+                                                                            "createdBy": "basitahmed1199",
+                                                                            "updatedBy": "basitahmed1199"
                                                                           }
-                                                                        ]
+                                                                        }
                                                                       }
                                                                     }
+                                                                  ],
+                                                                  "logic": {
+                                                                    "if": [
+                                                                      {
+                                                                        "==": [
+                                                                          {
+                                                                            "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
+                                                                          },
+                                                                          1
+                                                                        ]
+                                                                      }
+                                                                    ]
                                                                   }
-                                                                ],
-                                                                "csrf": "0.84fseufbxdxgRnsCihVjpeCEZWZybyFx",
-                                                                "_id": "7D0GKWG_8-VZDqLNeM-EK",
-                                                                "updatedAt": "2/10/2024",
-                                                                "createdAt": "2/10/2024",
-                                                                "createdBy": "basitahmed1199",
-                                                                "updatedBy": "basitahmed1199"
-                                                              }
+                                                                }
+                                                              ]
                                                             }
                                                           }
                                                         }
                                                       ],
-                                                      "logic": {
-                                                        "if": [
-                                                          {
-                                                            "==": [
-                                                              {
-                                                                "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
+                                                      "csrf": "0.ajb96wix32gsRXaADYSHYHYu0EBtroLq",
+                                                      "_id": "rdkcyUHEWIr0dQbp8Q1-H",
+                                                      "updatedAt": "8/25/2024",
+                                                      "createdAt": "8/25/2024",
+                                                      "createdBy": "basitahmed1199",
+                                                      "updatedBy": "basitahmed1199"
+                                                    },
+                                                    {
+                                                      "id": "GkwL0R3MEqTC6JyMAMcUW",
+                                                      "_id": "En3dCVutziJrg-6GGxpCy",
+                                                      "projectId": "652fcbce09869c3c809b3097",
+                                                      "gitBranchName": "master",
+                                                      "name": "SET_SUPPLEMENTARY_CARD_LIMIT",
+                                                      "old_name": "SET_SUPPLEMENTARY_CARD_LIMIT",
+                                                      "status": "ACTIVE",
+                                                      "services": [
+                                                        {
+                                                          "type": "8",
+                                                          "command": {
+                                                            "type": "1",
+                                                            "attributes": {
+                                                              "loaderWidgetIds": [
+                                                                906070
+                                                              ],
+                                                              "messageWidgetIds": [
+                                                                906070
+                                                              ],
+                                                              "responseStateKey": "setSupplementaryCardLimit",
+                                                              "url": "/api-designer/api/setSupplementaryCardLimit/execute",
+                                                              "checksum": true,
+                                                              "encryption": true,
+                                                              "isDeviceDetails": false,
+                                                              "loginTrigger": false,
+                                                              "formData": false,
+                                                              "logoutTrigger": false,
+                                                              "headers": {
+                                                                "Content-Type": "application/json",
+                                                                "channel_key": "002"
                                                               },
-                                                              1
+                                                              "requestBody": [
+                                                                {
+                                                                  "type": 1,
+                                                                  "name": "Form",
+                                                                  "key": "request.cardNumber",
+                                                                  "value": "current_card.cardNumber"
+                                                                },
+                                                                {
+                                                                  "type": 1,
+                                                                  "name": "Form",
+                                                                  "key": "request.currentlimit",
+                                                                  "value": "newLimit"
+                                                                },
+                                                                {
+                                                                  "type": 2,
+                                                                  "name": "Current screen",
+                                                                  "key": "request.validation",
+                                                                  "value": "setLimitValidation"
+                                                                }
+                                                              ],
+                                                              "baseURL": "656f0b4398e9df55f0499597",
+                                                              "storeType": 2,
+                                                              "hideLoading": true,
+                                                              "loadingState": "SCL_Generic_loader",
+                                                              "isLoadingState": true
+                                                            },
+                                                            "responseHandler": [
+                                                              {
+                                                                "httpStatus": 200,
+                                                                "triggerName": "SUPPLEMENTARY_CARD_LIMITE_SUCCES_POPUP",
+                                                                "triggerId": "s6tgNfdkUE9waYAMjkzly",
+                                                                "logic": {
+                                                                  "==": [
+                                                                    {
+                                                                      "var": "code"
+                                                                    },
+                                                                    1
+                                                                  ]
+                                                                }
+                                                              },
+                                                              {
+                                                                "triggerName": "SUPPLEMENTARY_SET_LIMIT_ERROR_TOAST",
+                                                                "triggerId": "7sUGiOlOK-xRxcNY1_IMF",
+                                                                "logic": {
+                                                                  "==": [
+                                                                    {
+                                                                      "var": "code"
+                                                                    },
+                                                                    0
+                                                                  ]
+                                                                },
+                                                                "httpStatus": 200
+                                                              },
+                                                              {
+                                                                "logic": {
+                                                                  "==": [
+                                                                    {
+                                                                      "var": "code"
+                                                                    },
+                                                                    1
+                                                                  ]
+                                                                },
+                                                                "httpStatus": 200,
+                                                                "triggerName": "GENERAL_CLEAR_CACHE",
+                                                                "triggerId": "1D7ugBJk5g1PUavcboBpb"
+                                                              }
                                                             ]
                                                           }
-                                                        ]
-                                                      }
+                                                        }
+                                                      ],
+                                                      "csrf": "0.4bo88mtu7bkKxmDHQBOL3kLSt40QszbO",
+                                                      "updatedAt": "3/13/2024",
+                                                      "createdAt": "3/13/2024",
+                                                      "createdBy": "mubashar",
+                                                      "updatedBy": "mubashar"
                                                     }
+                                                  ],
+                                                  "triggerIds": [
+                                                    "B552qo4G3RfoXd1ZFFKhA",
+                                                    "GkwL0R3MEqTC6JyMAMcUW"
                                                   ]
                                                 }
                                               }
                                             }
                                           ],
-                                          "csrf": "0.ajb96wix32gsRXaADYSHYHYu0EBtroLq",
-                                          "_id": "rdkcyUHEWIr0dQbp8Q1-H",
-                                          "updatedAt": "8/25/2024",
-                                          "createdAt": "8/25/2024",
-                                          "createdBy": "basitahmed1199",
-                                          "updatedBy": "basitahmed1199"
-                                        },
-                                        {
-                                          "id": "GkwL0R3MEqTC6JyMAMcUW",
-                                          "_id": "En3dCVutziJrg-6GGxpCy",
-                                          "projectId": "652fcbce09869c3c809b3097",
-                                          "gitBranchName": "master",
-                                          "name": "SET_SUPPLEMENTARY_CARD_LIMIT",
-                                          "old_name": "SET_SUPPLEMENTARY_CARD_LIMIT",
-                                          "status": "ACTIVE",
-                                          "services": [
-                                            {
-                                              "type": "8",
-                                              "command": {
-                                                "type": "1",
-                                                "attributes": {
-                                                  "loaderWidgetIds": [906070],
-                                                  "messageWidgetIds": [906070],
-                                                  "responseStateKey": "setSupplementaryCardLimit",
-                                                  "url": "/api-designer/api/setSupplementaryCardLimit/execute",
-                                                  "checksum": true,
-                                                  "encryption": true,
-                                                  "isDeviceDetails": false,
-                                                  "loginTrigger": false,
-                                                  "formData": false,
-                                                  "logoutTrigger": false,
-                                                  "headers": {
-                                                    "Content-Type": "application/json",
-                                                    "channel_key": "002"
-                                                  },
-                                                  "requestBody": [
-                                                    {
-                                                      "type": 1,
-                                                      "name": "Form",
-                                                      "key": "request.cardNumber",
-                                                      "value": "current_card.cardNumber"
-                                                    },
-                                                    {
-                                                      "type": 1,
-                                                      "name": "Form",
-                                                      "key": "request.currentlimit",
-                                                      "value": "newLimit"
-                                                    },
-                                                    {
-                                                      "type": 2,
-                                                      "name": "Current screen",
-                                                      "key": "request.validation",
-                                                      "value": "setLimitValidation"
-                                                    }
-                                                  ],
-                                                  "baseURL": "656f0b4398e9df55f0499597",
-                                                  "storeType": 2,
-                                                  "hideLoading": true,
-                                                  "loadingState": "SCL_Generic_loader",
-                                                  "isLoadingState": true
-                                                },
-                                                "responseHandler": [
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
                                                   {
-                                                    "httpStatus": 200,
-                                                    "triggerName": "SUPPLEMENTARY_CARD_LIMITE_SUCCES_POPUP",
-                                                    "triggerId": "s6tgNfdkUE9waYAMjkzly",
-                                                    "logic": {
-                                                      "==": [
-                                                        { "var": "code" },
-                                                        1
-                                                      ]
-                                                    }
+                                                    "var": "currentScreen.supplementaryCheckOTP.content.otpRequired"
                                                   },
-                                                  {
-                                                    "triggerName": "SUPPLEMENTARY_SET_LIMIT_ERROR_TOAST",
-                                                    "triggerId": "7sUGiOlOK-xRxcNY1_IMF",
-                                                    "logic": {
-                                                      "==": [
-                                                        { "var": "code" },
-                                                        0
-                                                      ]
-                                                    },
-                                                    "httpStatus": 200
-                                                  },
-                                                  {
-                                                    "logic": {
-                                                      "==": [
-                                                        { "var": "code" },
-                                                        1
-                                                      ]
-                                                    },
-                                                    "httpStatus": 200,
-                                                    "triggerName": "GENERAL_CLEAR_CACHE",
-                                                    "triggerId": "1D7ugBJk5g1PUavcboBpb"
-                                                  }
+                                                  0
                                                 ]
                                               }
-                                            }
-                                          ],
-                                          "csrf": "0.4bo88mtu7bkKxmDHQBOL3kLSt40QszbO",
-                                          "updatedAt": "3/13/2024",
-                                          "createdAt": "3/13/2024",
-                                          "createdBy": "mubashar",
-                                          "updatedBy": "mubashar"
+                                            ]
+                                          }
                                         }
-                                      ],
-                                      "triggerIds": [
-                                        "B552qo4G3RfoXd1ZFFKhA",
-                                        "GkwL0R3MEqTC6JyMAMcUW"
                                       ]
                                     },
                                     "type": "2",
@@ -1476,9 +1561,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "5OlaAcsGHc1mKockVguQP",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1487,6 +1572,18 @@
     "type": "10001",
     "attributes": {
       "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "bRVFVAoUBncQpcSu0o1TQ",
+          "componentType": "20031",
+          "order": 1
+        },
         {
           "layoutProperties": {
             "xl": 12,
@@ -1548,9 +1645,28 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "bRVFVAoUBncQpcSu0o1TQ",
+    "type": "20031",
+    "name": "SUPPLEMENTARY_CHECK_FOR_OTP",
+    "attributes": {
+      "widgetId": "9VsstU7G4g6f-3rq-7b5w",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "5OlaAcsGHc1mKockVguQP",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1567,9 +1683,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1698,9 +1814,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1760,9 +1876,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1807,9 +1923,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1841,8 +1957,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1854,7 +1970,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1900,9 +2016,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1953,8 +2069,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -1982,7 +2098,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2041,9 +2157,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2078,8 +2194,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2091,7 +2207,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2124,8 +2240,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2137,7 +2253,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2196,9 +2312,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2233,8 +2349,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2246,7 +2362,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2282,8 +2398,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2295,7 +2411,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2353,9 +2469,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2390,8 +2506,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2403,7 +2519,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2439,8 +2555,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -2452,7 +2568,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2498,9 +2614,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2563,8 +2679,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/26/2024",
-    "createdAt": "8/26/2024",
+    "updatedAt": "8/29/2024",
+    "createdAt": "8/29/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -2572,11 +2688,11 @@
     "component": { "content": "Button", "type": "20006" },
     "events": [
       {
-        "triggerId": "NTvnaCb-nbd_l_fnszski",
-        "triggerName": "SET_SUPPLEMENTARY_CARD_LIMIT_CONDITIONALLY",
+        "triggerId": "wJddo3ctwKCnnZEniWXXv",
+        "triggerName": "SUPPLEMENTARY_CHECK_FOR_OTP",
         "name": "On click",
         "type": "2",
-        "serviceType": "2"
+        "serviceType": "13"
       }
     ],
     "path": "0-0-1-0-4-0-0",
@@ -2584,7 +2700,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]
