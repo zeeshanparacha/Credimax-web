@@ -447,8 +447,8 @@
                                     "uri": "652fcbce09869c3c809b3097/web/otp.json"
                                   },
                                   "layoutProperties": {
-                                    "layout_height": "130",
-                                    "layout_width": "130",
+                                    "layout_height": "165",
+                                    "layout_width": "165",
                                     "xl": 12,
                                     "lg": 12,
                                     "md": 12,
@@ -745,179 +745,6 @@
                                     },
                                     "type": "2",
                                     "name": "On click",
-                                    "commandType": "1"
-                                  },
-                                  {
-                                    "triggerId": "9uJIaSmyc95_LVajGkZz2",
-                                    "triggerName": "VALIDATE_PIN_CHANGE_OTP_SEQUENTIONAL",
-                                    "serviceType": "2",
-                                    "attributes": {
-                                      "delay": "",
-                                      "triggers": [
-                                        {
-                                          "id": "t2Nv3Et0WeTNkBPvBOvrE",
-                                          "_id": "wbQP-Fp696z4hT5xssq27",
-                                          "name": "Validation Values Mapping",
-                                          "old_name": "Validation Values Mapping",
-                                          "projectId": "652fcbce09869c3c809b3097",
-                                          "gitBranchName": "master",
-                                          "services": [
-                                            {
-                                              "type": "11",
-                                              "command": {
-                                                "type": "6",
-                                                "attributes": {
-                                                  "requestBody": [],
-                                                  "storeType": "",
-                                                  "selectedObjectBindingKey": "selectedObject",
-                                                  "dataType": "",
-                                                  "destinationBindingKey": "validation",
-                                                  "sourceBindingKey": "validation",
-                                                  "sourceStoreType": 2,
-                                                  "destinationStoreType": 2,
-                                                  "filterList": [
-                                                    {
-                                                      "key": "tranCode",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "var": "currentScreen.tranCode"
-                                                      }
-                                                    },
-                                                    {
-                                                      "changeValueConditonally": true,
-                                                      "key": "validationType",
-                                                      "logic": {
-                                                        "if": [
-                                                          true,
-                                                          "OTP",
-                                                          "OTP"
-                                                        ]
-                                                      }
-                                                    },
-                                                    {
-                                                      "key": "isOtp",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "if": [true, true, true]
-                                                      }
-                                                    },
-                                                    {
-                                                      "key": "splitOtp",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "if": [true, true, true]
-                                                      }
-                                                    },
-                                                    {
-                                                      "key": "generationType",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "if": [true, "2", "2"]
-                                                      }
-                                                    },
-                                                    {
-                                                      "key": "otpExpiry",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "if": [true, "4", "4"]
-                                                      }
-                                                    },
-                                                    {
-                                                      "key": "is2FA",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "if": [true, "1", "1"]
-                                                      }
-                                                    },
-                                                    {
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "var": "currentScreen.form.smsPin"
-                                                      },
-                                                      "key": "smsPin"
-                                                    },
-                                                    {
-                                                      "key": "emailPin",
-                                                      "changeValueConditonally": true,
-                                                      "logic": {
-                                                        "var": "currentScreen.form.smsPin"
-                                                      }
-                                                    }
-                                                  ],
-                                                  "targettedType": "object"
-                                                }
-                                              }
-                                            }
-                                          ],
-                                          "csrf": "0.tc338c2qwvbY71y3oTUbi9_GakJTVS9i",
-                                          "updatedAt": "11/29/2023",
-                                          "createdAt": "11/29/2023",
-                                          "createdBy": "muhammad.asad",
-                                          "updatedBy": "muhammad.asad"
-                                        },
-                                        {
-                                          "id": "BzV19ja-lgLH9eeAkaOua",
-                                          "_id": "awUpKjNH8Y9FdfPshIWQ5",
-                                          "projectId": "652fcbce09869c3c809b3097",
-                                          "gitBranchName": "master",
-                                          "name": "VALIDATE_PIN_CHANGE_OTP",
-                                          "old_name": "VALIDATE_PIN_CHANGE_OTP",
-                                          "status": "ACTIVE",
-                                          "services": [
-                                            {
-                                              "type": "8",
-                                              "command": {
-                                                "type": "1",
-                                                "attributes": {
-                                                  "loaderWidgetIds": [906070],
-                                                  "messageWidgetIds": [906070],
-                                                  "responseStateKey": "pinChangeValidationResponse",
-                                                  "url": "/card/v1/verifyChangeOrGeneratePin",
-                                                  "checksum": true,
-                                                  "encryption": true,
-                                                  "isDeviceDetails": false,
-                                                  "loginTrigger": false,
-                                                  "formData": false,
-                                                  "logoutTrigger": false,
-                                                  "headers": {
-                                                    "Content-Type": "application/json",
-                                                    "channel_key": "002"
-                                                  },
-                                                  "requestBody": [
-                                                    {
-                                                      "type": 2,
-                                                      "name": "Current screen",
-                                                      "key": "cardNumber",
-                                                      "value": "CURRENT_CARD.cardNumber"
-                                                    },
-                                                    {
-                                                      "type": 2,
-                                                      "name": "Current screen",
-                                                      "key": "validation",
-                                                      "value": "validation"
-                                                    }
-                                                  ],
-                                                  "baseURL": "656f0b4398e9df55f0499597",
-                                                  "storeType": 2
-                                                },
-                                                "responseHandler": []
-                                              }
-                                            }
-                                          ],
-                                          "csrf": "0.7dbrupfivzRhVvEPCEwP5Ta8nO-bBaC",
-                                          "updatedAt": "1/27/2024",
-                                          "createdAt": "1/27/2024",
-                                          "createdBy": "basitahmed1199",
-                                          "updatedBy": "basitahmed1199"
-                                        }
-                                      ],
-                                      "triggerIds": [
-                                        "t2Nv3Et0WeTNkBPvBOvrE",
-                                        "BzV19ja-lgLH9eeAkaOua"
-                                      ]
-                                    },
-                                    "type": "3",
-                                    "name": "On change",
                                     "commandType": "1"
                                   },
                                   {
@@ -2808,9 +2635,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "KSHSwla05UroT5UF8gh5r",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2867,9 +2694,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3073,9 +2900,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3135,9 +2962,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3169,9 +2996,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3218,9 +3045,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3272,8 +3099,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3294,7 +3121,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3353,9 +3180,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3410,8 +3237,8 @@
       "hideComponent": true
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3424,7 +3251,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3451,8 +3278,8 @@
         "uri": "652fcbce09869c3c809b3097/web/otp.json"
       },
       "layoutProperties": {
-        "layout_height": "130",
-        "layout_width": "130",
+        "layout_height": "165",
+        "layout_width": "165",
         "xl": 12,
         "lg": 12,
         "md": 12,
@@ -3465,8 +3292,8 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -3478,7 +3305,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3524,9 +3351,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3557,8 +3384,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3570,7 +3397,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3615,9 +3442,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3627,8 +3454,8 @@
     "name": "OTP",
     "icon": "FaLock",
     "group": "Security",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "type": "20052",
     "attributes": {
       "smsOtpLabel": "Sms Otp",
@@ -3670,13 +3497,6 @@
         "serviceType": "13"
       },
       {
-        "triggerId": "9uJIaSmyc95_LVajGkZz2",
-        "triggerName": "VALIDATE_PIN_CHANGE_OTP_SEQUENTIONAL",
-        "name": "On change",
-        "type": "3",
-        "serviceType": "2"
-      },
-      {
         "triggerId": "l-ah9nDLHD8TUcJ4XPbhU",
         "triggerName": "PNC_GENERATE_OTP_CLEAR_ERROR_MESSAGE",
         "name": "On click",
@@ -3689,7 +3509,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3743,9 +3563,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3783,8 +3603,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3796,7 +3616,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3850,9 +3670,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3898,8 +3718,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3911,7 +3731,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3969,9 +3789,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4062,9 +3882,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4113,9 +3933,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4157,9 +3977,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4241,9 +4061,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4295,9 +4115,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4330,8 +4150,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4343,7 +4163,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4395,9 +4215,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4432,8 +4252,8 @@
     "icon": "AiOutlineLoading3Quarters",
     "group": "Advanced",
     "type": "20060",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4445,7 +4265,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4500,9 +4320,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4554,9 +4374,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4622,9 +4442,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4680,9 +4500,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "createdBy": "talha",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4723,8 +4543,8 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -4735,7 +4555,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4803,8 +4623,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/11/2024",
+    "createdAt": "9/11/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4824,7 +4644,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

@@ -15,15 +15,19 @@
           "triggers": [
             {
               "logic": {
-                "if": [
+                "and": [
                   {
                     ">": [
                       { "+": [{ "var": "currentScreen.form.target" }, 0] },
                       0
                     ]
                   },
-                  true,
-                  false
+                  {
+                    "!=": [
+                      { "var": "currentScreen.form.target" },
+                      { "var": "currentScreen.quotes.exchangeAmount" }
+                    ]
+                  }
                 ]
               },
               "triggerName": "CLEAR_SOURCE_AND_GET_QUOTES",
@@ -234,9 +238,9 @@
       }
     }
   ],
-  "csrf": "0.w2cg4r7qalceisxXNibrPR4AwlSH4YA6",
-  "updatedAt": "2/18/2024",
-  "createdAt": "2/18/2024",
+  "csrf": "0.xws01o93i7f3R84k_mwdbzygGJGzG2a2",
+  "updatedAt": "9/18/2024",
+  "createdAt": "9/18/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

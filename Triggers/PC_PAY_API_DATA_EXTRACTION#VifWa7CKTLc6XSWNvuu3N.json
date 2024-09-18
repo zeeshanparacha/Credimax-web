@@ -21,19 +21,6 @@
           "destinationStoreType": 2,
           "filterList": [
             {
-              "key": "creditCardNumber",
-              "changeValueConditonally": true,
-              "logic": {
-                "if": [
-                  {
-                    "==": [{ "var": "currentScreen.selected_tab" }, "my cards"]
-                  },
-                  { "var": "currentScreen.form.current_card.cardNumber" },
-                  { "var": "currentScreen.form.pc_card_number" }
-                ]
-              }
-            },
-            {
               "key": "type",
               "changeValueConditonally": true,
               "logic": {
@@ -106,54 +93,6 @@
                   { "==": [{ "var": "currentScreen.page_name" }, "Pay cards"] },
                   null,
                   { "var": "currentScreen.form.pc_expiry_date" }
-                ]
-              }
-            },
-            {
-              "key": "amount",
-              "changeValueConditonally": true,
-              "logic": {
-                "if": [
-                  { "==": [{ "var": "currentScreen.page_name" }, "Pay cards"] },
-                  {
-                    "if": [
-                      {
-                        "==": [
-                          { "var": "currentScreen.selected_tab" },
-                          "other cards"
-                        ]
-                      },
-                      { "var": "currentScreen.form.pc_custom_amount_2" },
-                      {
-                        "if": [
-                          {
-                            "==": [
-                              {
-                                "var": "currentScreen.form.current_card.cardType"
-                              },
-                              "VISA CARDY-EX"
-                            ]
-                          },
-                          { "var": "currentScreen.form.pc_custom_amount_2" },
-                          {
-                            "if": [
-                              {
-                                "==": [
-                                  { "var": "currentScreen.selectedAmountType" },
-                                  "D"
-                                ]
-                              },
-                              {
-                                "var": "currentScreen.form.pc_custom_amount_2"
-                              },
-                              { "var": "currentScreen.form.pc_custom_amount" }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  { "var": "currentScreen.form.pc_custom_amount_2" }
                 ]
               }
             },
@@ -343,6 +282,65 @@
                   }
                 ]
               }
+            },
+            {
+              "key": "creditCardNumber",
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  {
+                    "==": [{ "var": "currentScreen.selected_tab" }, "my cards"]
+                  },
+                  { "var": "currentScreen.CURRENT_CARD.cardNumber" },
+                  { "var": "currentScreen.form.pc_card_number" }
+                ]
+              }
+            },
+            {
+              "key": "amount",
+              "changeValueConditonally": true,
+              "logic": {
+                "if": [
+                  { "==": [{ "var": "currentScreen.page_name" }, "Pay cards"] },
+                  {
+                    "if": [
+                      {
+                        "==": [
+                          { "var": "currentScreen.selected_tab" },
+                          "other cards"
+                        ]
+                      },
+                      { "var": "currentScreen.form.pc_custom_amount_2" },
+                      {
+                        "if": [
+                          {
+                            "==": [
+                              { "var": "currentScreen.CURRENT_CARD.cardType" },
+                              "VISA CARDY-EX"
+                            ]
+                          },
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          {
+                            "if": [
+                              {
+                                "==": [
+                                  { "var": "currentScreen.selectedAmountType" },
+                                  "D"
+                                ]
+                              },
+                              {
+                                "var": "currentScreen.form.pc_custom_amount_2"
+                              },
+                              { "var": "currentScreen.form.pc_custom_amount" }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  { "var": "currentScreen.form.pc_custom_amount_2" }
+                ]
+              }
             }
           ],
           "targettedType": "value",
@@ -351,9 +349,9 @@
       }
     }
   ],
-  "csrf": "0.va6k8mg4ga_oKCofnQzyfvUag0mQ7gq",
-  "updatedAt": "8/12/2024",
-  "createdAt": "8/12/2024",
+  "csrf": "0.dsw06fvt378E75Z0ZaEHZbLN22xY42H8",
+  "updatedAt": "9/5/2024",
+  "createdAt": "9/5/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

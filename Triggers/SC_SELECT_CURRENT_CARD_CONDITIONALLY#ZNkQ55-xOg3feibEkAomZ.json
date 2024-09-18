@@ -1,0 +1,62 @@
+{
+  "id": "qlTFZl8SspcqwJXPOinCE",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "SC_SELECT_CURRENT_CARD_CONDITIONALLY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "!=": [
+                  { "var": "currentScreen.CURRENT_CARD.cardNumber" },
+                  { "var": "currentSession.last_main_card" }
+                ]
+              },
+              "triggerName": "SC_FIND_CURRENT_CARD",
+              "triggerId": "L7H9mSBxexNP9iA4IZ7X9",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "9",
+                    "attributes": {
+                      "stateName": "none",
+                      "storeType": "",
+                      "selectedObjectBindingKey": "none",
+                      "dataType": "",
+                      "destinationBindingKey": "CURRENT_CARD",
+                      "sourceBindingKey": "cards.cardList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "logic": {
+                        "==": [
+                          { "var": "cardNumber" },
+                          { "var": "currentSession.last_main_card" }
+                        ]
+                      },
+                      "targetValue": "none",
+                      "gridFormRowIdBindingKey": "editFormRowId"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.m2mv5iy32x408Atg21LSMqu1RLwTDv-",
+  "_id": "ZNkQ55-xOg3feibEkAomZ",
+  "updatedAt": "9/9/2024",
+  "createdAt": "9/9/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

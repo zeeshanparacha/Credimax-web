@@ -1,4 +1,5 @@
 {
+  "_id": "0qOY3dMySetZ3DJZLBPwr",
   "id": "m_l7JYDef_1Hd7DrakPkt",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
@@ -12,80 +13,115 @@
         "type": "1",
         "attributes": {
           "delay": "",
+          "storeType": "",
+          "searchInState": false,
           "triggers": [
             {
-              "id": "No2fyE3CD5UYrlGyCm-q7",
-              "_id": "TOo9ZcOh4LnBg8dBZ60lA",
-              "name": "BC_SET_VALIDATION",
-              "old_name": "BC_SET_VALIDATION",
+              "id": "oz0HYpJAyEmE7RS7XidSc",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
+              "name": "BC_SET_VALIDATION_CONDITIONAL",
+              "old_name": "",
+              "status": "ACTIVE",
               "services": [
                 {
-                  "type": "11",
+                  "type": "13",
                   "command": {
-                    "type": "6",
+                    "type": "1",
                     "attributes": {
-                      "requestBody": [],
-                      "destinationBindingKey": "bc_set_validations",
-                      "sourceBindingKey": "form",
-                      "sourceStoreType": 2,
-                      "destinationStoreType": 2,
-                      "filterList": [
+                      "triggers": [
                         {
-                          "key": "validationType",
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, "OTP", "OTP"] }
-                        },
-                        {
-                          "key": "isOtp",
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, true, true] }
-                        },
-                        {
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, true, true] },
-                          "key": "splitOtp"
-                        },
-                        {
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, "2", "2"] },
-                          "key": "generationType"
-                        },
-                        {
-                          "key": "otpExpiry",
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, "4", "4"] }
-                        },
-                        {
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, "1", "1"] },
-                          "key": "is2FA"
-                        },
-                        {
-                          "key": "tranCode",
-                          "changeValueConditonally": true,
-                          "logic": { "if": [true, "1216", "1216"] }
-                        },
-                        {
-                          "key": "smsPin",
-                          "changeValueConditonally": true,
-                          "logic": { "var": "currentScreen.form.smsPin" }
-                        },
-                        {
-                          "key": "emailPin",
-                          "changeValueConditonally": true,
-                          "logic": { "var": "currentScreen.form.smsPin" }
+                          "logic": {
+                            "if": [
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.bc_check_otp.content.otpRequired"
+                                  },
+                                  1
+                                ]
+                              }
+                            ]
+                          },
+                          "triggerName": "BC_SET_VALIDATION",
+                          "triggerId": "No2fyE3CD5UYrlGyCm-q7",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "6",
+                                "attributes": {
+                                  "requestBody": [],
+                                  "destinationBindingKey": "bc_set_validations",
+                                  "sourceBindingKey": "form",
+                                  "sourceStoreType": 2,
+                                  "destinationStoreType": 2,
+                                  "filterList": [
+                                    {
+                                      "key": "validationType",
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, "OTP", "OTP"] }
+                                    },
+                                    {
+                                      "key": "isOtp",
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, true, true] }
+                                    },
+                                    {
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, true, true] },
+                                      "key": "splitOtp"
+                                    },
+                                    {
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, "2", "2"] },
+                                      "key": "generationType"
+                                    },
+                                    {
+                                      "key": "otpExpiry",
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, "4", "4"] }
+                                    },
+                                    {
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, "1", "1"] },
+                                      "key": "is2FA"
+                                    },
+                                    {
+                                      "key": "tranCode",
+                                      "changeValueConditonally": true,
+                                      "logic": { "if": [true, "1216", "1216"] }
+                                    },
+                                    {
+                                      "key": "smsPin",
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.smsPin"
+                                      }
+                                    },
+                                    {
+                                      "key": "emailPin",
+                                      "changeValueConditonally": true,
+                                      "logic": {
+                                        "var": "currentScreen.form.smsPin"
+                                      }
+                                    }
+                                  ],
+                                  "targettedType": "object"
+                                }
+                              }
+                            }
+                          ]
                         }
-                      ],
-                      "targettedType": "object"
+                      ]
                     }
                   }
                 }
               ],
-              "csrf": "0.nnwr23x4ogvLE3ij4KM_FtJpbLOd6s9",
-              "updatedAt": "2/18/2024",
-              "createdAt": "2/18/2024",
+              "csrf": "0.q6c3gsuogduXxOa9ZxqrwxgQJRvMFFo",
+              "_id": "PiTsCRpLgF8weYtVKY5zl",
+              "updatedAt": "8/30/2024",
+              "createdAt": "8/30/2024",
               "createdBy": "basitahmed1199",
               "updatedBy": "basitahmed1199"
             },
@@ -225,15 +261,14 @@
               "updatedBy": "basitahmed1199"
             }
           ],
-          "triggerIds": ["No2fyE3CD5UYrlGyCm-q7", "eKgOYOEyfpQyj-CbIc97X"]
+          "triggerIds": ["oz0HYpJAyEmE7RS7XidSc", "eKgOYOEyfpQyj-CbIc97X"]
         }
       }
     }
   ],
-  "csrf": "0.p032x0m0f7lQaschoPcHAJkyfvDzyxWM",
-  "_id": "0qOY3dMySetZ3DJZLBPwr",
-  "updatedAt": "2/18/2024",
-  "createdAt": "2/18/2024",
+  "csrf": "0.q6c3gsuogduXxOa9ZxqrwxgQJRvMFFo",
+  "updatedAt": "8/30/2024",
+  "createdAt": "8/30/2024",
   "createdBy": "basitahmed1199",
   "updatedBy": "basitahmed1199"
 }

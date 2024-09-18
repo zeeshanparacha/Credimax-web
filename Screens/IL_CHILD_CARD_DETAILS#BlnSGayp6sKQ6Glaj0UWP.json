@@ -85,6 +85,21 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "1"
+          },
+          {
+            "triggerId": "-RlS5EOIBY_ULEN2E3rMk",
+            "triggerName": "DELETE_CARD_DETAILS_FROM_CURRENT_SCREEN",
+            "serviceType": "11",
+            "attributes": {
+              "stateName": "cardDetails",
+              "storeType": 2,
+              "selectedObjectBindingKey": "selectedObject",
+              "dataType": "",
+              "sourceBindingKey": ""
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "4"
           }
         ],
         "path": "0",
@@ -105,7 +120,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "wxLuec8_twqCHE13vIFDk",
+            "id": "9m0rp0inrli6WinrNZfRM",
             "gridProps": [
               {
                 "id": "JgjNpAWrLv9Z4K__E52TH",
@@ -750,7 +765,7 @@
                                   "type": "10001",
                                   "content": "Grid layout"
                                 },
-                                "path": "0-0-1-0-0-0-0"
+                                "path": "0-0-3-0-0-0-0"
                               },
                               {
                                 "type": "10001",
@@ -903,7 +918,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "aJXsPXm0BbUpyi3_kOt8b",
+                                                    "id": "3OZNRF4XhNIuvoStbk3yd",
                                                     "gridProps": [
                                                       {
                                                         "id": "POKPOSh7ItJxhza5oeiFN",
@@ -1189,8 +1204,7 @@
                                                       "md": 12,
                                                       "sm": 12,
                                                       "xs": 12
-                                                    },
-                                                    "path": "0-0-1-0-0-0-1-0-0-1-0-0"
+                                                    }
                                                   }
                                                 ],
                                                 "allowedContainers": [
@@ -1218,14 +1232,24 @@
                                                   },
                                                   "direction": "row",
                                                   "name": "Grid layout",
-                                                  "cssClassNames": []
+                                                  "cssClassNames": [],
+                                                  "hideCondition": {
+                                                    "logic": {
+                                                      "==": [
+                                                        {
+                                                          "var": "currentScreen.CURRENT_CARD.navigationAccess.showCardNumber"
+                                                        },
+                                                        "1"
+                                                      ]
+                                                    }
+                                                  }
                                                 },
                                                 "events": [],
                                                 "component": {
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-1-0-0-0-1-0-0-1-0"
+                                                "path": "0-0-3-0-0-0-1-0-0-1-0"
                                               }
                                             ],
                                             "layoutProperties": {
@@ -1313,6 +1337,23 @@
                                                     {
                                                       "cssClassName": "MARGIN_BOTTOM_1 ",
                                                       "key": "MARGIN_BOTTOM_1 "
+                                                    },
+                                                    {
+                                                      "cssClassName": "Font-Montserrat-Regular ",
+                                                      "key": "Font-Montserrat-Regular "
+                                                    }
+                                                  ],
+                                                  "conditionalClasses": [
+                                                    {
+                                                      "cssClassName": "ILC_MARGIN_BOTTOM_CONDITIONAL ",
+                                                      "logic": {
+                                                        ">": [
+                                                          {
+                                                            "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+                                                          },
+                                                          0
+                                                        ]
+                                                      }
                                                     }
                                                   ]
                                                 },
@@ -1330,7 +1371,7 @@
                                                   "type": "20002"
                                                 },
                                                 "events": [],
-                                                "path": "0-0-1-0-0-0-1-0-1-0-0"
+                                                "path": "0-0-3-0-0-0-1-0-1-0-0"
                                               },
                                               {
                                                 "id": "Le0Oj0_-Hi_9VFD4qZAU3",
@@ -1392,69 +1433,215 @@
                                                   "type": "20002"
                                                 },
                                                 "events": [],
-                                                "path": "0-0-1-0-0-0-1-0-1-0-1"
+                                                "path": "0-0-3-0-0-0-1-0-1-0-1"
                                               },
                                               {
-                                                "id": "EMwEaEWic_DhqEng_lHkq",
-                                                "status": "ACTIVE",
-                                                "name": "Label",
-                                                "attributes": {
-                                                  "variant": "body1",
-                                                  "name": "Label",
-                                                  "mandatory": false,
-                                                  "layoutProperties": {
-                                                    "label": {
-                                                      "//": "Use this class to style label component.",
-                                                      "margin-top": "-5px"
-                                                    },
-                                                    "prefix": {
-                                                      "//": "Use this class to style prefix."
-                                                    },
-                                                    "postfix": {
-                                                      "//": "Use this class to style postfix."
-                                                    },
-                                                    "mainContainer": "label",
-                                                    "xl": 12,
-                                                    "lg": 12,
-                                                    "md": 12,
-                                                    "sm": 12,
-                                                    "xs": 12
-                                                  },
-                                                  "label": "cardDetails.content.cardDetail.realCardNumber",
-                                                  "searchInState": true,
-                                                  "storeType": 2,
-                                                  "hideCondition": {
-                                                    "logic": {
-                                                      "<": [
-                                                        {
-                                                          "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+                                                "type": "10001",
+                                                "id": "UVLwtA2twl087y0US4kf-",
+                                                "gridProps": [
+                                                  {
+                                                    "type": "column",
+                                                    "id": "7Zhkj4390Od_KGtcqpjYI",
+                                                    "gridProps": [
+                                                      {
+                                                        "id": "TJ4tRe0l4xREJect7zfBv",
+                                                        "type": "20002",
+                                                        "name": "Label",
+                                                        "component": {
+                                                          "content": "Label",
+                                                          "type": "20002"
                                                         },
-                                                        1
-                                                      ]
+                                                        "attributes": {
+                                                          "variant": "body1",
+                                                          "name": "Label",
+                                                          "mandatory": false,
+                                                          "layoutProperties": {
+                                                            "label": {
+                                                              "//": "Use this class to style label component.",
+                                                              "color": "#FFFFFF !important",
+                                                              "white-space": "nowrap",
+                                                              "font-size": "16px",
+                                                              "line-height": "19px"
+                                                            },
+                                                            "prefix": {
+                                                              "//": "Use this class to style prefix."
+                                                            },
+                                                            "postfix": {
+                                                              "//": "Use this class to style postfix."
+                                                            },
+                                                            "mainContainer": "label",
+                                                            "xl": 12,
+                                                            "lg": 12,
+                                                            "md": 12,
+                                                            "sm": 12,
+                                                            "xs": 12,
+                                                            "compnentStyles": {
+                                                              "max-width": "fit-content"
+                                                            }
+                                                          },
+                                                          "label": "cardDetails.content.cardDetail.realCardNumber",
+                                                          "searchInState": true,
+                                                          "storeType": 2,
+                                                          "cssClassNames": [],
+                                                          "hideCondition": {}
+                                                        },
+                                                        "events": [],
+                                                        "path": "0-0-3-0-0-0-1-0-1-0-2-0-0",
+                                                        "version": "1.0.0"
+                                                      },
+                                                      {
+                                                        "id": "3PQrCx-PHMMsoeeCFKgyI",
+                                                        "type": "20012",
+                                                        "name": "Image",
+                                                        "component": {
+                                                          "content": "Image",
+                                                          "type": "20012"
+                                                        },
+                                                        "attributes": {
+                                                          "name": "Image",
+                                                          "contentType": false,
+                                                          "defaultImageAssetIdTemp": {
+                                                            "name": "dracaena-cinnabari.jpg",
+                                                            "id": "CNIz67fi824LHr0ae-pOV"
+                                                          },
+                                                          "layoutProperties": {
+                                                            "image": {
+                                                              "//": "Use this class to style image component.",
+                                                              "cursor": "pointer"
+                                                            },
+                                                            "mainContainer": "image",
+                                                            "overlay": {
+                                                              "//": "Only applicable if overlay is enabled from basic details"
+                                                            },
+                                                            "xl": 12,
+                                                            "lg": 12,
+                                                            "md": 12,
+                                                            "sm": 12,
+                                                            "xs": 12
+                                                          },
+                                                          "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
+                                                          "imageAssetIdTemp": {
+                                                            "createdBy": "user",
+                                                            "_id": "66d84202c8984440d05b4f26",
+                                                            "name": "copy_icon.svg",
+                                                            "type": "svg",
+                                                            "projectId": "652fcbce09869c3c809b3097",
+                                                            "id": "176UGz-AkzvvPmtbpXnQP",
+                                                            "gitBranchName": "master",
+                                                            "folderType": "web",
+                                                            "platform": "web",
+                                                            "url": "652fcbce09869c3c809b3097/web/copy_icon.svg",
+                                                            "canvasUrl": "652fcbce09869c3c809b3097/web/copy_icon.svg",
+                                                            "createdAt": "2024-09-04T11:18:26.649Z",
+                                                            "updatedAt": "2024-09-04T11:18:26.649Z",
+                                                            "__v": 0,
+                                                            "uri": "652fcbce09869c3c809b3097/web/copy_icon.svg"
+                                                          },
+                                                          "imageAssetId": "176UGz-AkzvvPmtbpXnQP",
+                                                          "stateName": null,
+                                                          "storeType": null,
+                                                          "useFullLink": null,
+                                                          "hideCondition": {},
+                                                          "cssClassNames": [
+                                                            {
+                                                              "cssClassName": "CARD_NUMBER_CLIPBAORD ",
+                                                              "key": "CARD_NUMBER_CLIPBAORD "
+                                                            }
+                                                          ]
+                                                        },
+                                                        "events": [
+                                                          {
+                                                            "triggerId": "XJmvanXallNApxedZFKhu",
+                                                            "triggerName": "CARD_COPY_CLIPBOARD",
+                                                            "serviceType": "16",
+                                                            "attributes": {
+                                                              "bindingKey": "cardDetails.content.cardDetail.realCardNumber",
+                                                              "storeType": 2,
+                                                              "dataType": "dynamic",
+                                                              "encryptionType": "encryption"
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "3"
+                                                          }
+                                                        ],
+                                                        "path": "0-0-3-0-0-0-1-0-1-0-2-0-1",
+                                                        "version": "1.0.0"
+                                                      }
+                                                    ],
+                                                    "layoutProperties": {
+                                                      "xl": 12,
+                                                      "lg": 12,
+                                                      "md": 12,
+                                                      "sm": 12,
+                                                      "xs": 12
+                                                    }
+                                                  }
+                                                ],
+                                                "path": "0-0-3-0-0-0-1-0-1-0-2",
+                                                "events": [],
+                                                "attributes": {
+                                                  "gridProps": [],
+                                                  "label": "Header",
+                                                  "layoutProperties": {
+                                                    "gridLayout": {
+                                                      "//": "Use this class to style grid layout component.",
+                                                      "spacing": 0
+                                                    },
+                                                    "mainContainer": "gridLayout",
+                                                    "skeleton": {
+                                                      "//": "Use this class to style skeleton loading component."
+                                                    },
+                                                    "imageStyles": {
+                                                      "//": "Use this class to style image component."
                                                     }
                                                   },
+                                                  "layoutProps": {
+                                                    "direction": "row",
+                                                    "justifyContent": "flex-start",
+                                                    "alignItems": "flex-start"
+                                                  },
+                                                  "direction": "row",
+                                                  "name": "CARD_COPY_CLIPBOARD",
                                                   "cssClassNames": [
                                                     {
-                                                      "cssClassName": "IL_CARD_NUMBER_LABEL ",
-                                                      "key": "IL_CARD_NUMBER_LABEL "
+                                                      "cssClassName": "FLEX_ROW_CENTER ",
+                                                      "key": "FLEX_ROW_CENTER "
                                                     }
-                                                  ]
+                                                  ],
+                                                  "hideCondition": {
+                                                    "logic": {
+                                                      "!": [
+                                                        {
+                                                          "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
                                                 },
-                                                "icon": "FaFont",
-                                                "group": "Form",
-                                                "type": "20002",
-                                                "updatedAt": "23-Aug-2021",
-                                                "createdAt": "23-Aug-2021",
-                                                "order": 15,
-                                                "version": "1.0.0",
-                                                "isLatest": true,
-                                                "projectType": "web",
                                                 "component": {
-                                                  "content": "Label",
-                                                  "type": "20002"
+                                                  "type": "10001",
+                                                  "content": "Grid layout"
                                                 },
-                                                "events": [],
-                                                "path": "0-0-1-0-0-0-1-0-1-0-2"
+                                                "allowedContainers": [
+                                                  "10001",
+                                                  "20030",
+                                                  "noLayout",
+                                                  "20010",
+                                                  "widget"
+                                                ],
+                                                "name": "CARD_COPY_CLIPBOARD",
+                                                "dimensions": {
+                                                  "rows": 1,
+                                                  "columns": 1,
+                                                  "colSize0xs": 12,
+                                                  "colSize0sm": 12,
+                                                  "colSize0md": 12,
+                                                  "colSize0lg": 12,
+                                                  "colSize0xl": 12,
+                                                  "name": null
+                                                },
+                                                "readOnly": true
                                               }
                                             ],
                                             "layoutProperties": {
@@ -1521,7 +1708,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "yJfBBzB2XibvjSmG0HNO6",
+                                            "id": "dnsrWhWm9sdtKT7JGLqC4",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -1567,6 +1754,19 @@
                                                               "cssClassName": "MARGIN_BOTTOM_1 ",
                                                               "key": "MARGIN_BOTTOM_1 "
                                                             }
+                                                          ],
+                                                          "conditionalClasses": [
+                                                            {
+                                                              "cssClassName": "ILC_MARGIN_BOTTOM_CONDITIONAL ",
+                                                              "logic": {
+                                                                ">": [
+                                                                  {
+                                                                    "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+                                                                  },
+                                                                  0
+                                                                ]
+                                                              }
+                                                            }
                                                           ]
                                                         },
                                                         "icon": "FaFont",
@@ -1583,7 +1783,7 @@
                                                           "type": "20002"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-1-0-0-0-1-0-2-0-0-0-0"
+                                                        "path": "0-0-3-0-0-0-1-0-2-0-0-0-0"
                                                       },
                                                       {
                                                         "id": "Kw8vqOg8NTvV29DQW4z_M",
@@ -1758,7 +1958,7 @@
                                           },
                                           {
                                             "type": "column",
-                                            "id": "KnvciYf34yfiFX2FdY7pI",
+                                            "id": "6m6ybwhRwxrWikZbmqNnf",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -1805,7 +2005,20 @@
                                                               "key": "MARGIN_BOTTOM_1 "
                                                             }
                                                           ],
-                                                          "hideCondition": {}
+                                                          "hideCondition": {},
+                                                          "conditionalClasses": [
+                                                            {
+                                                              "cssClassName": "ILC_MARGIN_BOTTOM_CONDITIONAL ",
+                                                              "logic": {
+                                                                ">": [
+                                                                  {
+                                                                    "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+                                                                  },
+                                                                  0
+                                                                ]
+                                                              }
+                                                            }
+                                                          ]
                                                         },
                                                         "icon": "FaFont",
                                                         "group": "Form",
@@ -1821,7 +2034,7 @@
                                                           "type": "20002"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-1-0-0-0-1-0-2-1-0-0-0"
+                                                        "path": "0-0-3-0-0-0-1-0-2-1-0-0-0"
                                                       },
                                                       {
                                                         "id": "MNaFHmT6yNO4itq3z90_f",
@@ -1921,7 +2134,8 @@
                                                           },
                                                           "cssClassNames": [
                                                             {
-                                                              "cssClassName": "IL_VALID_LABEL "
+                                                              "cssClassName": "IL_VALID_LABEL ",
+                                                              "key": "IL_VALID_LABEL "
                                                             }
                                                           ]
                                                         },
@@ -1995,7 +2209,7 @@
                                           },
                                           {
                                             "type": "column",
-                                            "id": "aX7wpb0MfHCjt0LyIMETi",
+                                            "id": "TuTJUB7IsDW4FFUgLf7jX",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -2110,7 +2324,7 @@
                                                   "type": "10001",
                                                   "content": "Grid layout"
                                                 },
-                                                "path": "0-0-1-0-0-0-1-0-2-2-0",
+                                                "path": "0-0-3-0-0-0-1-0-2-2-0",
                                                 "dimensions": {
                                                   "rows": 1,
                                                   "columns": 1,
@@ -2254,7 +2468,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "bzlbC18lNoZq6VBEeb0dE",
+                                    "id": "wbvMrugrVnZbhmbMOylVD",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -3438,8 +3652,7 @@
                                       "md": 12,
                                       "sm": 12,
                                       "xs": 12
-                                    },
-                                    "path": "0-0-1-0-0-0-2-0"
+                                    }
                                   }
                                 ],
                                 "allowedContainers": [
@@ -3585,7 +3798,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "NuaYXkiAiPuOlCA8-EeGS",
+                                            "id": "KqKKiIW5Nx6tmxhvWg4Z2",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -3593,7 +3806,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "KIBCV1y2_9CRkn1kiInBB",
+                                                    "id": "R-YWhxs7mZ_k7dz7Nbzrb",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -3718,12 +3931,11 @@
                                                       "md": 2,
                                                       "sm": 2,
                                                       "xs": 2
-                                                    },
-                                                    "path": "0-0-1-1-0-0-0-0-0-0-0-0"
+                                                    }
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "fzfxSxExDh6cp7KuMtrwt",
+                                                    "id": "ZZJJ6HVLUO3bS6kmI7Eez",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -4009,12 +4221,11 @@
                                                       "md": 8,
                                                       "sm": 8,
                                                       "xs": 8
-                                                    },
-                                                    "path": "0-0-1-1-0-0-0-0-0-0-0-1"
+                                                    }
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "QYzNB9PHHw9qNEpbLJan6",
+                                                    "id": "naDjAqY803jj64D7TVyEp",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -4459,87 +4670,11 @@
                                                       "md": 2,
                                                       "sm": 2,
                                                       "xs": 2
-                                                    },
-                                                    "path": "0-0-1-1-0-0-0-0-0-0-0-2"
+                                                    }
                                                   }
                                                 ],
                                                 "path": "0-0-3-1-0-0-0-0-0-0-0",
-                                                "events": [
-                                                  {
-                                                    "triggerId": "d_L2BM8sSljDdvQQu7WBj",
-                                                    "triggerName": "GO_TO_SERVICE_AFTER_DELAY",
-                                                    "serviceType": "2",
-                                                    "attributes": {
-                                                      "delay": "500",
-                                                      "triggers": [
-                                                        {
-                                                          "id": "nkKMY7wCFEMiiS41dvaRh",
-                                                          "projectId": "652fcbce09869c3c809b3097",
-                                                          "gitBranchName": "master",
-                                                          "name": "CHECK_FOR_SERVICE",
-                                                          "old_name": "",
-                                                          "status": "ACTIVE",
-                                                          "services": [
-                                                            {
-                                                              "type": "13",
-                                                              "command": {
-                                                                "type": "1",
-                                                                "attributes": {
-                                                                  "triggers": [
-                                                                    {
-                                                                      "logic": {
-                                                                        "if": [
-                                                                          {
-                                                                            "==": [
-                                                                              {
-                                                                                "var": "currentScreen.form.selected_service.transCode"
-                                                                              },
-                                                                              "1507"
-                                                                            ]
-                                                                          },
-                                                                          true,
-                                                                          false
-                                                                        ]
-                                                                      },
-                                                                      "triggerName": "GO_TO_TRANSFER_BETWEEN_WALLETS_SCREEN",
-                                                                      "triggerId": "t5ENAZYpqR7R7nlO-h7k-",
-                                                                      "services": [
-                                                                        {
-                                                                          "type": "1",
-                                                                          "command": {
-                                                                            "type": "3",
-                                                                            "attributes": {
-                                                                              "nextWidgetId": "f13AvBz-MxRN_G3tIFHUF",
-                                                                              "gridRadioValue": "",
-                                                                              "selectedObjectBindingKey": "selectedObject",
-                                                                              "editableForm": false
-                                                                            }
-                                                                          }
-                                                                        }
-                                                                      ]
-                                                                    }
-                                                                  ]
-                                                                }
-                                                              }
-                                                            }
-                                                          ],
-                                                          "csrf": "0.8lody1rhin9UwMLRfxmO_HDk0P0bBvRy",
-                                                          "_id": "838d5cdQfnds2Asw0S8f9",
-                                                          "updatedAt": "1/17/2024",
-                                                          "createdAt": "1/17/2024",
-                                                          "createdBy": "talha",
-                                                          "updatedBy": "talha"
-                                                        }
-                                                      ],
-                                                      "triggerIds": [
-                                                        "nkKMY7wCFEMiiS41dvaRh"
-                                                      ]
-                                                    },
-                                                    "type": "2",
-                                                    "name": "On click",
-                                                    "commandType": "2"
-                                                  }
-                                                ],
+                                                "events": [],
                                                 "attributes": {
                                                   "gridProps": [],
                                                   "label": "Header",
@@ -4583,12 +4718,11 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-1-1-0-0-0-0-0-0"
+                                            }
                                           },
                                           {
                                             "type": "column",
-                                            "id": "xPPge8LidD15vTvyKmJy-",
+                                            "id": "ZmbBRyzAf2FQSty7xdfce",
                                             "isMultiLevelColumn": true,
                                             "gridProps": [
                                               {
@@ -4687,8 +4821,7 @@
                                                 "name": "Grid layout"
                                               }
                                             ],
-                                            "layoutProperties": { "md": 12 },
-                                            "path": "0-0-1-1-0-0-0-0-0-1"
+                                            "layoutProperties": { "md": 12 }
                                           }
                                         ],
                                         "allowedContainers": [
@@ -4717,7 +4850,72 @@
                                           "dataSource": "CURRENT_CARD.actionList",
                                           "isMultiLevel": true,
                                           "multiLevelData": "list",
-                                          "bindingKey": "selected_service"
+                                          "bindingKey": "selected_service",
+                                          "listType": "flatList",
+                                          "listVersion": "2.0.0",
+                                          "enableSidebarNavigations": true,
+                                          "navigations": [
+                                            {
+                                              "key": "transCode",
+                                              "value": "0016",
+                                              "screen": {
+                                                "id": "_CY4dDGCfaHTJz9uvNeZI",
+                                                "name": "PIN_CHANGE_SCREEN_1"
+                                              }
+                                            },
+                                            {
+                                              "key": "transCode",
+                                              "value": "1216",
+                                              "screen": {
+                                                "id": "4827veG4ydHZM3VYdeP-_",
+                                                "name": "BLOCK_CARD_SCREEN"
+                                              }
+                                            },
+                                            {
+                                              "key": "transCode",
+                                              "value": "878635",
+                                              "screen": {
+                                                "id": "QPdvyRNNvuI54xiQtwD-a",
+                                                "name": "SUPPLEMENTARY_SCREEN"
+                                              }
+                                            },
+                                            {
+                                              "key": "transCode",
+                                              "value": "1507",
+                                              "screen": {
+                                                "id": "f13AvBz-MxRN_G3tIFHUF",
+                                                "name": "TRANSFER_BETWEEN_WALLETS"
+                                              }
+                                            },
+                                            {
+                                              "key": "transCode",
+                                              "value": "878694",
+                                              "screen": {
+                                                "id": "g9pVlU9Npy5sblkkKXbjB9fhutf",
+                                                "name": "ILP_TOP_UP"
+                                              }
+                                            },
+                                            {
+                                              "key": "transCode",
+                                              "value": "878681",
+                                              "screen": {
+                                                "id": "qRv1lYx8136QQug8Klbsw",
+                                                "name": "ILP_TASKS"
+                                              }
+                                            },
+                                            {
+                                              "key": "transCode",
+                                              "value": "878680",
+                                              "screen": {
+                                                "id": "mBisiE55RGjCQpDXB5lsF",
+                                                "name": "ILP_ILEAD_GOALS"
+                                              }
+                                            }
+                                          ],
+                                          "currentScreen": {
+                                            "id": "BlnSGayp6sKQ6Glaj0UWP",
+                                            "name": "IL_CHILD_CARD_DETAILS"
+                                          }
                                         },
                                         "events": [],
                                         "component": {
@@ -4912,8 +5110,8 @@
     "gitBranchName": "master",
     "_id": "BlnSGayp6sKQ6Glaj0UWP",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5001,6 +5199,12 @@
         "triggerName": "FC_CHECK_OTP",
         "name": "On initialization",
         "type": "1"
+      },
+      {
+        "triggerId": "-RlS5EOIBY_ULEN2E3rMk",
+        "triggerName": "DELETE_CARD_DETAILS_FROM_CURRENT_SCREEN",
+        "name": "On initialization",
+        "type": "1"
       }
     ],
     "subType": "component",
@@ -5009,8 +5213,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5028,8 +5232,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5082,8 +5286,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5150,8 +5354,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5213,8 +5417,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5280,8 +5484,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5318,8 +5522,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -5387,8 +5591,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5444,8 +5648,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -5538,8 +5742,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5633,8 +5837,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5683,8 +5887,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5733,8 +5937,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5830,8 +6034,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5892,8 +6096,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5940,8 +6144,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5971,8 +6175,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6034,7 +6238,17 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "cssClassNames": []
+      "cssClassNames": [],
+      "hideCondition": {
+        "logic": {
+          "==": [
+            {
+              "var": "currentScreen.CURRENT_CARD.navigationAccess.showCardNumber"
+            },
+            "1"
+          ]
+        }
+      }
     },
     "layout": null,
     "events": [],
@@ -6044,8 +6258,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6110,8 +6324,8 @@
       "cssClassNames": []
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -6194,8 +6408,8 @@
       "cssClassNames": []
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -6250,16 +6464,23 @@
           "order": 1
         },
         {
+          "componentId": "UVLwtA2twl087y0US4kf-",
+          "componentType": "10001",
+          "id": "UVLwtA2twl087y0US4kf-",
+          "position": {
+            "i": "UVLwtA2twl087y0US4kf-",
+            "x": null,
+            "y": null,
+            "w": null,
+            "h": null
+          },
           "layoutProperties": {
             "xl": 12,
             "lg": 12,
             "md": 12,
             "sm": 12,
             "xs": 12
-          },
-          "componentId": "EMwEaEWic_DhqEng_lHkq",
-          "componentType": "20002",
-          "order": 1
+          }
         }
       ],
       "label": "Header",
@@ -6289,8 +6510,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6315,21 +6536,38 @@
       "label": "iLead",
       "cssClassNames": [
         { "cssClassName": "IL_LABEL ", "key": "IL_LABEL " },
-        { "cssClassName": "MARGIN_BOTTOM_1 ", "key": "MARGIN_BOTTOM_1 " }
+        { "cssClassName": "MARGIN_BOTTOM_1 ", "key": "MARGIN_BOTTOM_1 " },
+        {
+          "cssClassName": "Font-Montserrat-Regular ",
+          "key": "Font-Montserrat-Regular "
+        }
+      ],
+      "conditionalClasses": [
+        {
+          "cssClassName": "ILC_MARGIN_BOTTOM_CONDITIONAL ",
+          "logic": {
+            ">": [
+              {
+                "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+              },
+              0
+            ]
+          }
+        }
       ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-1-0-0",
+    "path": "0-0-3-0-0-0-1-0-1-0-0",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6382,15 +6620,15 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-1-0-1",
+    "path": "0-0-3-0-0-0-1-0-1-0-1",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6399,9 +6637,85 @@
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
-    "id": "EMwEaEWic_DhqEng_lHkq",
-    "status": "ACTIVE",
+    "id": "UVLwtA2twl087y0US4kf-",
+    "name": "CARD_COPY_CLIPBOARD",
+    "type": "10001",
+    "attributes": {
+      "gridProps": [
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "TJ4tRe0l4xREJect7zfBv",
+          "componentType": "20002",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "3PQrCx-PHMMsoeeCFKgyI",
+          "componentType": "20012",
+          "order": 1
+        }
+      ],
+      "label": "Header",
+      "layoutProperties": {
+        "gridLayout": {
+          "//": "Use this class to style grid layout component.",
+          "spacing": 0
+        },
+        "mainContainer": "gridLayout",
+        "skeleton": {
+          "//": "Use this class to style skeleton loading component."
+        },
+        "imageStyles": { "//": "Use this class to style image component." }
+      },
+      "layoutProps": {
+        "direction": "row",
+        "justifyContent": "flex-start",
+        "alignItems": "flex-start"
+      },
+      "direction": "row",
+      "name": "CARD_COPY_CLIPBOARD",
+      "cssClassNames": [
+        { "cssClassName": "FLEX_ROW_CENTER ", "key": "FLEX_ROW_CENTER " }
+      ],
+      "hideCondition": {
+        "logic": {
+          "!": [
+            {
+              "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber"
+            }
+          ]
+        }
+      }
+    },
+    "layout": null,
+    "events": [],
+    "subType": "component",
+    "screenId": "BlnSGayp6sKQ6Glaj0UWP",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "TJ4tRe0l4xREJect7zfBv",
+    "type": "20002",
     "name": "Label",
+    "component": { "content": "Label", "type": "20002" },
     "attributes": {
       "variant": "body1",
       "name": "Label",
@@ -6409,7 +6723,10 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "margin-top": "-5px"
+          "color": "#FFFFFF !important",
+          "white-space": "nowrap",
+          "font-size": "16px",
+          "line-height": "19px"
         },
         "prefix": { "//": "Use this class to style prefix." },
         "postfix": { "//": "Use this class to style postfix." },
@@ -6418,45 +6735,102 @@
         "lg": 12,
         "md": 12,
         "sm": 12,
-        "xs": 12
+        "xs": 12,
+        "compnentStyles": { "max-width": "fit-content" }
       },
       "label": "cardDetails.content.cardDetail.realCardNumber",
       "searchInState": true,
       "storeType": 2,
-      "hideCondition": {
-        "logic": {
-          "<": [
-            {
-              "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
-            },
-            1
-          ]
-        }
-      },
-      "cssClassNames": [
-        {
-          "cssClassName": "IL_CARD_NUMBER_LABEL ",
-          "key": "IL_CARD_NUMBER_LABEL "
-        }
-      ]
+      "cssClassNames": [],
+      "hideCondition": {}
     },
-    "icon": "FaFont",
-    "group": "Form",
-    "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
-    "order": 15,
-    "version": "1.0.0",
-    "isLatest": true,
-    "projectType": "web",
-    "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-1-0-2",
+    "path": "0-0-3-0-0-0-1-0-1-0-2-0-0",
+    "version": "1.0.0",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "3PQrCx-PHMMsoeeCFKgyI",
+    "type": "20012",
+    "name": "Image",
+    "component": { "content": "Image", "type": "20012" },
+    "attributes": {
+      "name": "Image",
+      "contentType": false,
+      "defaultImageAssetIdTemp": {
+        "name": "dracaena-cinnabari.jpg",
+        "id": "CNIz67fi824LHr0ae-pOV"
+      },
+      "layoutProperties": {
+        "image": {
+          "//": "Use this class to style image component.",
+          "cursor": "pointer"
+        },
+        "mainContainer": "image",
+        "overlay": {
+          "//": "Only applicable if overlay is enabled from basic details"
+        },
+        "xl": 12,
+        "lg": 12,
+        "md": 12,
+        "sm": 12,
+        "xs": 12
+      },
+      "defaultImageAssetId": "CNIz67fi824LHr0ae-pOV",
+      "imageAssetIdTemp": {
+        "createdBy": "user",
+        "_id": "66d84202c8984440d05b4f26",
+        "name": "copy_icon.svg",
+        "type": "svg",
+        "projectId": "652fcbce09869c3c809b3097",
+        "id": "176UGz-AkzvvPmtbpXnQP",
+        "gitBranchName": "master",
+        "folderType": "web",
+        "platform": "web",
+        "url": "652fcbce09869c3c809b3097/web/copy_icon.svg",
+        "canvasUrl": "652fcbce09869c3c809b3097/web/copy_icon.svg",
+        "createdAt": "2024-09-04T11:18:26.649Z",
+        "updatedAt": "2024-09-04T11:18:26.649Z",
+        "__v": 0,
+        "uri": "652fcbce09869c3c809b3097/web/copy_icon.svg"
+      },
+      "imageAssetId": "176UGz-AkzvvPmtbpXnQP",
+      "stateName": null,
+      "storeType": null,
+      "useFullLink": null,
+      "hideCondition": {},
+      "cssClassNames": [
+        {
+          "cssClassName": "CARD_NUMBER_CLIPBAORD ",
+          "key": "CARD_NUMBER_CLIPBAORD "
+        }
+      ]
+    },
+    "events": [
+      {
+        "triggerId": "XJmvanXallNApxedZFKhu",
+        "triggerName": "CARD_COPY_CLIPBOARD",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "16"
+      }
+    ],
+    "path": "0-0-3-0-0-0-1-0-1-0-2-0-1",
+    "version": "1.0.0",
+    "screenId": "BlnSGayp6sKQ6Glaj0UWP",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "gitBranchName": "master",
+    "createdBy": "mubashar",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6532,8 +6906,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6603,8 +6977,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6630,20 +7004,33 @@
       "cssClassNames": [
         { "cssClassName": "IL_VALID_LABEL ", "key": "IL_VALID_LABEL " },
         { "cssClassName": "MARGIN_BOTTOM_1 ", "key": "MARGIN_BOTTOM_1 " }
+      ],
+      "conditionalClasses": [
+        {
+          "cssClassName": "ILC_MARGIN_BOTTOM_CONDITIONAL ",
+          "logic": {
+            ">": [
+              {
+                "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+              },
+              0
+            ]
+          }
+        }
       ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-2-0-0-0-0",
+    "path": "0-0-3-0-0-0-1-0-2-0-0-0-0",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6686,8 +7073,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6741,8 +7128,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6824,8 +7211,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6852,20 +7239,33 @@
         { "cssClassName": "IL_VALID_LABEL ", "key": "IL_VALID_LABEL " },
         { "cssClassName": "MARGIN_BOTTOM_1 ", "key": "MARGIN_BOTTOM_1 " }
       ],
-      "hideCondition": {}
+      "hideCondition": {},
+      "conditionalClasses": [
+        {
+          "cssClassName": "ILC_MARGIN_BOTTOM_CONDITIONAL ",
+          "logic": {
+            ">": [
+              {
+                "var": "currentScreen.cardDetails.content.cardDetail.realCardNumber.length"
+              },
+              0
+            ]
+          }
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Label", "type": "20002" },
     "events": [],
-    "path": "0-0-1-0-0-0-1-0-2-1-0-0-0",
+    "path": "0-0-3-0-0-0-1-0-2-1-0-0-0",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -6908,8 +7308,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6956,13 +7356,15 @@
           ]
         }
       },
-      "cssClassNames": [{ "cssClassName": "IL_VALID_LABEL " }]
+      "cssClassNames": [
+        { "cssClassName": "IL_VALID_LABEL ", "key": "IL_VALID_LABEL " }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7020,8 +7422,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7073,8 +7475,8 @@
       "cssClassNames": []
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -7278,8 +7680,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7326,8 +7728,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7355,8 +7757,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7426,8 +7828,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7455,8 +7857,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7498,8 +7900,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7570,8 +7972,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7599,8 +8001,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7642,8 +8044,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7702,8 +8104,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7731,8 +8133,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7791,8 +8193,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7850,8 +8252,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7881,8 +8283,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7953,8 +8355,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7982,8 +8384,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8025,8 +8427,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8085,8 +8487,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8114,8 +8516,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8185,8 +8587,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8244,8 +8646,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8275,8 +8677,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8345,8 +8747,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8401,8 +8803,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8461,7 +8863,66 @@
       "dataSource": "CURRENT_CARD.actionList",
       "isMultiLevel": true,
       "multiLevelData": "list",
-      "bindingKey": "selected_service"
+      "bindingKey": "selected_service",
+      "listType": "flatList",
+      "listVersion": "2.0.0",
+      "enableSidebarNavigations": true,
+      "navigations": [
+        {
+          "key": "transCode",
+          "value": "0016",
+          "screen": {
+            "id": "_CY4dDGCfaHTJz9uvNeZI",
+            "name": "PIN_CHANGE_SCREEN_1"
+          }
+        },
+        {
+          "key": "transCode",
+          "value": "1216",
+          "screen": {
+            "id": "4827veG4ydHZM3VYdeP-_",
+            "name": "BLOCK_CARD_SCREEN"
+          }
+        },
+        {
+          "key": "transCode",
+          "value": "878635",
+          "screen": {
+            "id": "QPdvyRNNvuI54xiQtwD-a",
+            "name": "SUPPLEMENTARY_SCREEN"
+          }
+        },
+        {
+          "key": "transCode",
+          "value": "1507",
+          "screen": {
+            "id": "f13AvBz-MxRN_G3tIFHUF",
+            "name": "TRANSFER_BETWEEN_WALLETS"
+          }
+        },
+        {
+          "key": "transCode",
+          "value": "878694",
+          "screen": {
+            "id": "g9pVlU9Npy5sblkkKXbjB9fhutf",
+            "name": "ILP_TOP_UP"
+          }
+        },
+        {
+          "key": "transCode",
+          "value": "878681",
+          "screen": { "id": "qRv1lYx8136QQug8Klbsw", "name": "ILP_TASKS" }
+        },
+        {
+          "key": "transCode",
+          "value": "878680",
+          "screen": { "id": "mBisiE55RGjCQpDXB5lsF", "name": "ILP_ILEAD_GOALS" }
+        }
+      ],
+      "currentScreen": {
+        "id": "BlnSGayp6sKQ6Glaj0UWP",
+        "name": "IL_CHILD_CARD_DETAILS"
+      }
     },
     "layout": null,
     "events": [],
@@ -8471,8 +8932,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8540,22 +9001,15 @@
       ]
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "d_L2BM8sSljDdvQQu7WBj",
-        "triggerName": "GO_TO_SERVICE_AFTER_DELAY",
-        "name": "On click",
-        "type": "2"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8603,8 +9057,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8636,8 +9090,8 @@
       "cssClassNames": [{ "cssClassName": "CARD_SERVICES_OPTION_IMAGE" }]
     },
     "group": "Form",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -8723,8 +9177,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8771,8 +9225,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8800,8 +9254,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8860,8 +9314,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8889,8 +9343,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8968,8 +9422,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9023,8 +9477,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9095,8 +9549,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9141,8 +9595,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9188,8 +9642,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9217,8 +9671,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/13/2024",
-    "createdAt": "8/13/2024",
+    "updatedAt": "9/10/2024",
+    "createdAt": "9/10/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,

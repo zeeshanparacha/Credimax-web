@@ -112,288 +112,624 @@
               "updatedBy": "mubashar"
             },
             {
-              "id": "WVrhpw_awQ16HgMAQsOvq",
-              "_id": "UHnmWrRrkEczz6eUt1Bnb",
-              "gitBranchName": "master",
-              "name": "ILCG_EDIT_GOAL_FIELDS_VALIDATIONS_TRIG",
+              "id": "Rsx4eZ-K5cLWHVDBxDjHJ",
               "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "ICG_UPDATE_GOAL_CONDITIONAL",
+              "old_name": "",
+              "status": "ACTIVE",
               "services": [
                 {
-                  "type": "16",
+                  "type": "13",
                   "command": {
-                    "type": "2",
+                    "type": "1",
                     "attributes": {
-                      "validationList": [
+                      "triggers": [
                         {
-                          "bindingKey": "ILCG_NAME",
-                          "storeType": 1,
-                          "messageBindingKey": "VALIDATIONS_ILCG_NAME",
-                          "isRequired": true,
-                          "requiredMessage": "Goal name is required",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": []
-                        },
-                        {
-                          "bindingKey": "ILCG_GOAL_AMOUNT",
-                          "storeType": 1,
-                          "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
-                          "isRequired": true,
-                          "requiredMessage": "Goal amount is required",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": []
-                        },
-                        {
-                          "bindingKey": "ILC_FREQUENCY.name",
-                          "storeType": 1,
-                          "messageBindingKey": "VALIDATIONS_ILC_FREQUENCY.name",
-                          "isRequired": true,
-                          "requiredMessage": "Contribution frequency is required ",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": []
-                        },
-                        {
-                          "bindingKey": "ILCG_AMOUNT",
-                          "storeType": 1,
-                          "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
-                          "isRequired": true,
-                          "requiredMessage": "Contribution amount is required",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": []
-                        },
-                        {
-                          "bindingKey": "ILCG_START_DATE",
-                          "storeType": 1,
-                          "messageBindingKey": "VALIDATIONS_ILCG_START_DATE",
-                          "isRequired": true,
-                          "requiredMessage": "Start date is required",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": [
-                            {
-                              "logic": {
-                                "!": [
-                                  {
-                                    "var": "currentScreen.form.ILCG_START_DATEMinError"
-                                  }
-                                ]
+                          "logic": {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.ILC_FREQUENCY.code"
                               },
-                              "logicMessage": "Start date cannot be less than current date"
-                            },
+                              "Monthly"
+                            ]
+                          },
+                          "triggerName": "ILCG_EDIT_GOAL_FIELDS_VALIDATIONS_TRIG",
+                          "triggerId": "WVrhpw_awQ16HgMAQsOvq",
+                          "services": [
                             {
-                              "logic": {
-                                "!": [
-                                  {
-                                    "var": "currentScreen.form.ILCG_START_DATEMaxError"
-                                  }
-                                ]
-                              },
-                              "logicMessage": "Start date cannot be greater than target date"
-                            }
-                          ]
-                        },
-                        {
-                          "bindingKey": "week_days",
-                          "storeType": 1,
-                          "messageBindingKey": "week_days_validation",
-                          "isRequired": false,
-                          "requiredMessage": "",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": [
-                            {
-                              "logic": {
-                                "if": [
-                                  {
-                                    "==": [
+                              "type": "16",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "validationList": [
+                                    {
+                                      "bindingKey": "ILCG_NAME",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_NAME",
+                                      "isRequired": true,
+                                      "requiredMessage": "Goal name is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_GOAL_AMOUNT",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+                                      "isRequired": true,
+                                      "requiredMessage": "Goal amount is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILC_FREQUENCY.name",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILC_FREQUENCY.name",
+                                      "isRequired": true,
+                                      "requiredMessage": "Contribution frequency is required ",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_AMOUNT",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
+                                      "isRequired": true,
+                                      "requiredMessage": "Contribution amount is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_START_DATE",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_START_DATE",
+                                      "isRequired": true,
+                                      "requiredMessage": "Start date is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": [
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.form.ILCG_START_DATEMinError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "Start date cannot be less than current date"
+                                        },
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.form.ILCG_START_DATEMaxError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "Start date cannot be greater than target date"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "bindingKey": "week_days",
+                                      "storeType": 1,
+                                      "messageBindingKey": "week_days_validation",
+                                      "isRequired": false,
+                                      "requiredMessage": "",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": [
+                                        {
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.form.ILC_FREQUENCY.name"
+                                                  },
+                                                  "Weekly"
+                                                ]
+                                              },
+                                              {
+                                                "var": "currentScreen.form.week_days.name"
+                                              },
+                                              true
+                                            ]
+                                          },
+                                          "logicMessage": "Day is required"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_TARGET_DATE",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
+                                      "isRequired": true,
+                                      "requiredMessage": "Target date is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": [
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.form.ILCG_TARGET_DATEMinError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "Target date cannot be less than start date"
+                                        },
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "TARGET DATE ERROR"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "successTrigger": {
+                                    "id": "8mdApZ_-ujaxVPXrYL4Ro",
+                                    "_id": "Ty87630DL6lgPEGQw8D0U",
+                                    "projectId": "652fcbce09869c3c809b3097",
+                                    "gitBranchName": "master",
+                                    "name": "ILCG_EDIT_GOAL_API",
+                                    "old_name": "ILCG_EDIT_GOAL_API",
+                                    "status": "ACTIVE",
+                                    "services": [
                                       {
-                                        "var": "currentScreen.form.ILC_FREQUENCY.name"
-                                      },
-                                      "Weekly"
-                                    ]
+                                        "type": "8",
+                                        "command": {
+                                          "type": "1",
+                                          "attributes": {
+                                            "loaderWidgetIds": [906070],
+                                            "messageWidgetIds": [906070],
+                                            "responseStateKey": "REPONSE_ILCG_EDIT_GOAL",
+                                            "url": "/api-designer/api/editGoal/execute",
+                                            "checksum": true,
+                                            "encryption": true,
+                                            "isDeviceDetails": true,
+                                            "loginTrigger": false,
+                                            "formData": false,
+                                            "logoutTrigger": false,
+                                            "headers": {
+                                              "Content-Type": "application/json",
+                                              "Accept": "application/json",
+                                              "channel_key": "002"
+                                            },
+                                            "requestBody": [
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.name",
+                                                "value": "ILCG_NAME"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.startDate",
+                                                "value": "ILCG_START_DATE"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.amount",
+                                                "value": "ILCG_GOAL_AMOUNT"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.targetDate",
+                                                "value": "ILCG_TARGET_DATE"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.contributionFreq",
+                                                "value": "ILC_FREQUENCY.name"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.contributionAmount",
+                                                "value": "ILCG_AMOUNT"
+                                              },
+                                              {
+                                                "type": 2,
+                                                "name": "Current screen",
+                                                "key": "request.cardNumber",
+                                                "value": "CURRENT_CARD.cardNumber"
+                                              },
+                                              {
+                                                "type": 2,
+                                                "name": "Current screen",
+                                                "key": "request.cprOfCard",
+                                                "value": "CURRENT_CARD.clientCode"
+                                              },
+                                              {
+                                                "type": 2,
+                                                "name": "Current screen",
+                                                "key": "request.image",
+                                                "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.id",
+                                                "value": "ILCG_LIST.id"
+                                              },
+                                              {
+                                                "type": 4,
+                                                "name": "Static",
+                                                "key": "request.currency",
+                                                "value": "BHD"
+                                              }
+                                            ],
+                                            "baseURL": "656f0b4398e9df55f0499597",
+                                            "storeType": 2
+                                          },
+                                          "responseHandler": [
+                                            {
+                                              "httpStatus": 200,
+                                              "logic": {
+                                                "==": [{ "var": "code" }, 1]
+                                              },
+                                              "triggerName": "ILCG_EDIT_SUCCESS_MESSAGE",
+                                              "triggerId": "T4U7Kd-BsDHmwxKuqGf7v"
+                                            },
+                                            {
+                                              "httpStatus": 200,
+                                              "logic": {
+                                                "==": [{ "var": "code" }, 0]
+                                              },
+                                              "triggerName": "ILCG_EDIT_ERROR_MESSAGE",
+                                              "triggerId": "h9BV-ZS7U0hr6WIj5JBqD"
+                                            },
+                                            {
+                                              "httpStatus": 200,
+                                              "logic": {
+                                                "==": [{ "var": "code" }, 1]
+                                              },
+                                              "triggerName": "NVIGATE_FROM_EDIT_TO_GOAL_SCREEN",
+                                              "triggerId": "6ZhvMrlYIyIIxMFSMKjoO"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "csrf": "0.gwilhhqs16iBHgUyUvH0WQ2YqDvLp8yk",
+                                    "updatedAt": "4/3/2024",
+                                    "createdAt": "4/3/2024",
+                                    "createdBy": "talha2",
+                                    "updatedBy": "talha2"
                                   },
-                                  {
-                                    "var": "currentScreen.form.week_days.name"
-                                  },
-                                  true
-                                ]
-                              },
-                              "logicMessage": "Day is required"
+                                  "encryptionType": "encryption"
+                                }
+                              }
                             }
                           ]
                         },
                         {
-                          "bindingKey": "ILCG_TARGET_DATE",
-                          "storeType": 1,
-                          "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
-                          "isRequired": true,
-                          "requiredMessage": "Target date is required",
-                          "regEx": "",
-                          "regExMessage": "",
-                          "JSONLogic": [
-                            {
-                              "logic": {
-                                "!": [
-                                  {
-                                    "var": "currentScreen.form.ILCG_TARGET_DATEMinError"
-                                  }
-                                ]
+                          "logic": {
+                            "==": [
+                              {
+                                "var": "currentScreen.form.ILC_FREQUENCY.name"
                               },
-                              "logicMessage": "Target date cannot be less than start date"
-                            },
+                              "Weekly"
+                            ]
+                          },
+                          "triggerName": "ILCG_EDIT_GOAL_FIELDS_VALIDATIONS_",
+                          "triggerId": "XoIqvn2WZVrdRixSdaFyV",
+                          "services": [
                             {
-                              "logic": {
-                                "!": [
-                                  {
-                                    "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
-                                  }
-                                ]
-                              },
-                              "logicMessage": "TARGET DATE ERROR"
+                              "type": "16",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "validationList": [
+                                    {
+                                      "bindingKey": "ILCG_NAME",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_NAME",
+                                      "isRequired": true,
+                                      "requiredMessage": "Goal name is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_GOAL_AMOUNT",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_GOAL_AMOUNT",
+                                      "isRequired": true,
+                                      "requiredMessage": "Goal amount is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILC_FREQUENCY.name",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILC_FREQUENCY.name",
+                                      "isRequired": true,
+                                      "requiredMessage": "Contribution frequency is required ",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_AMOUNT",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
+                                      "isRequired": true,
+                                      "requiredMessage": "Contribution amount is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": []
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_START_DATE",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_START_DATE",
+                                      "isRequired": true,
+                                      "requiredMessage": "Start date is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": [
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.form.ILCG_START_DATEMinError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "Start date cannot be less than current date"
+                                        },
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.form.ILCG_START_DATEMaxError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "Start date cannot be greater than target date"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "bindingKey": "week_days",
+                                      "storeType": 1,
+                                      "messageBindingKey": "week_days_validation",
+                                      "isRequired": false,
+                                      "requiredMessage": "",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": [
+                                        {
+                                          "logic": {
+                                            "if": [
+                                              {
+                                                "==": [
+                                                  {
+                                                    "var": "currentScreen.form.ILC_FREQUENCY.name"
+                                                  },
+                                                  "Weekly"
+                                                ]
+                                              },
+                                              {
+                                                "var": "currentScreen.form.week_days.name"
+                                              },
+                                              true
+                                            ]
+                                          },
+                                          "logicMessage": "Day is required"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "bindingKey": "ILCG_TARGET_DATE",
+                                      "storeType": 1,
+                                      "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
+                                      "isRequired": true,
+                                      "requiredMessage": "Target date is required",
+                                      "regEx": "",
+                                      "regExMessage": "",
+                                      "JSONLogic": [
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.form.ILCG_TARGET_DATEMinError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "Target date cannot be less than start date"
+                                        },
+                                        {
+                                          "logic": {
+                                            "!": [
+                                              {
+                                                "var": "currentScreen.RESPONSE_ILC_GOAL_CALCULATION.content.targetDateError"
+                                              }
+                                            ]
+                                          },
+                                          "logicMessage": "TARGET DATE ERROR"
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "successTrigger": {
+                                    "id": "8mdApZ_-ujaxVPXrYL4Ro",
+                                    "_id": "Ty87630DL6lgPEGQw8D0U",
+                                    "projectId": "652fcbce09869c3c809b3097",
+                                    "gitBranchName": "master",
+                                    "name": "ILCG_EDIT_GOAL_API",
+                                    "old_name": "ILCG_EDIT_GOAL_API",
+                                    "status": "ACTIVE",
+                                    "services": [
+                                      {
+                                        "type": "8",
+                                        "command": {
+                                          "type": "1",
+                                          "attributes": {
+                                            "loaderWidgetIds": [906070],
+                                            "messageWidgetIds": [906070],
+                                            "responseStateKey": "REPONSE_ILCG_EDIT_GOAL",
+                                            "url": "/api-designer/api/editGoal/execute",
+                                            "checksum": true,
+                                            "encryption": true,
+                                            "isDeviceDetails": true,
+                                            "loginTrigger": false,
+                                            "formData": false,
+                                            "logoutTrigger": false,
+                                            "headers": {
+                                              "Content-Type": "application/json",
+                                              "Accept": "application/json",
+                                              "channel_key": "002"
+                                            },
+                                            "requestBody": [
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.name",
+                                                "value": "ILCG_NAME"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.startDate",
+                                                "value": "ILCG_START_DATE"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.amount",
+                                                "value": "ILCG_GOAL_AMOUNT"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.targetDate",
+                                                "value": "ILCG_TARGET_DATE"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.contributionFreq",
+                                                "value": "ILC_FREQUENCY.name"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.contributionAmount",
+                                                "value": "ILCG_AMOUNT"
+                                              },
+                                              {
+                                                "type": 2,
+                                                "name": "Current screen",
+                                                "key": "request.cardNumber",
+                                                "value": "CURRENT_CARD.cardNumber"
+                                              },
+                                              {
+                                                "type": 2,
+                                                "name": "Current screen",
+                                                "key": "request.cprOfCard",
+                                                "value": "CURRENT_CARD.clientCode"
+                                              },
+                                              {
+                                                "type": 2,
+                                                "name": "Current screen",
+                                                "key": "request.image",
+                                                "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
+                                              },
+                                              {
+                                                "type": 1,
+                                                "name": "Form",
+                                                "key": "request.id",
+                                                "value": "ILCG_LIST.id"
+                                              },
+                                              {
+                                                "type": 4,
+                                                "name": "Static",
+                                                "key": "request.currency",
+                                                "value": "BHD"
+                                              }
+                                            ],
+                                            "baseURL": "656f0b4398e9df55f0499597",
+                                            "storeType": 2
+                                          },
+                                          "responseHandler": [
+                                            {
+                                              "httpStatus": 200,
+                                              "logic": {
+                                                "==": [{ "var": "code" }, 1]
+                                              },
+                                              "triggerName": "ILCG_EDIT_SUCCESS_MESSAGE",
+                                              "triggerId": "T4U7Kd-BsDHmwxKuqGf7v"
+                                            },
+                                            {
+                                              "httpStatus": 200,
+                                              "logic": {
+                                                "==": [{ "var": "code" }, 0]
+                                              },
+                                              "triggerName": "ILCG_EDIT_ERROR_MESSAGE",
+                                              "triggerId": "h9BV-ZS7U0hr6WIj5JBqD"
+                                            },
+                                            {
+                                              "httpStatus": 200,
+                                              "logic": {
+                                                "==": [{ "var": "code" }, 1]
+                                              },
+                                              "triggerName": "NVIGATE_FROM_EDIT_TO_GOAL_SCREEN",
+                                              "triggerId": "6ZhvMrlYIyIIxMFSMKjoO"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    ],
+                                    "csrf": "0.gwilhhqs16iBHgUyUvH0WQ2YqDvLp8yk",
+                                    "updatedAt": "4/3/2024",
+                                    "createdAt": "4/3/2024",
+                                    "createdBy": "talha2",
+                                    "updatedBy": "talha2"
+                                  },
+                                  "encryptionType": "encryption"
+                                }
+                              }
                             }
                           ]
                         }
-                      ],
-                      "successTrigger": {
-                        "id": "ut0p1yEMeQYIewGlEdNvq",
-                        "_id": "OHv7niBiMvoWyfn3wj9l9",
-                        "projectId": "652fcbce09869c3c809b3097",
-                        "gitBranchName": "master",
-                        "name": "ILC_CREATE_NEW_GOALAS_API",
-                        "old_name": "ILC_CREATE_NEW_GOALAS_API",
-                        "status": "ACTIVE",
-                        "services": [
-                          {
-                            "type": "8",
-                            "command": {
-                              "type": "1",
-                              "attributes": {
-                                "loaderWidgetIds": [906070],
-                                "messageWidgetIds": [906070],
-                                "responseStateKey": "RESPONSE_CREATE_NEW_GOALS",
-                                "url": "/api-designer/api/createNewGoal/execute",
-                                "checksum": true,
-                                "encryption": true,
-                                "isDeviceDetails": true,
-                                "loginTrigger": false,
-                                "formData": false,
-                                "logoutTrigger": false,
-                                "headers": {
-                                  "Content-Type": "application/json",
-                                  "Accept": "application/json",
-                                  "channel_key": "002"
-                                },
-                                "requestBody": [
-                                  {
-                                    "type": 1,
-                                    "name": "Form",
-                                    "key": "request.name",
-                                    "value": "ILCG_NAME"
-                                  },
-                                  {
-                                    "type": 1,
-                                    "name": "Form",
-                                    "key": "request.startDate",
-                                    "value": "ILCG_START_DATE"
-                                  },
-                                  {
-                                    "type": 1,
-                                    "name": "Form",
-                                    "key": "request.amount",
-                                    "value": "ILCG_GOAL_AMOUNT"
-                                  },
-                                  {
-                                    "type": 1,
-                                    "name": "Form",
-                                    "key": "request.targetDate",
-                                    "value": "ILCG_TARGET_DATE"
-                                  },
-                                  {
-                                    "type": 1,
-                                    "name": "Form",
-                                    "key": "request.contributionFreq",
-                                    "value": "ILC_FREQUENCY.name"
-                                  },
-                                  {
-                                    "type": 1,
-                                    "name": "Form",
-                                    "key": "request.contributionAmount",
-                                    "value": "ILCG_AMOUNT"
-                                  },
-                                  {
-                                    "type": 2,
-                                    "name": "Current screen",
-                                    "key": "request.cardNumber",
-                                    "value": "CURRENT_CARD.cardNumber"
-                                  },
-                                  {
-                                    "type": 2,
-                                    "name": "Current screen",
-                                    "key": "request.cprOfCard",
-                                    "value": "CURRENT_CARD.clientCode"
-                                  },
-                                  {
-                                    "type": 2,
-                                    "name": "Current screen",
-                                    "key": "request.image",
-                                    "value": "ILCG_IMAGE_UPLOAD_RESPONSE.body.docId"
-                                  }
-                                ],
-                                "baseURL": "656f0b4398e9df55f0499597",
-                                "storeType": 2
-                              },
-                              "responseHandler": [
-                                {
-                                  "logic": { "==": [{ "var": "code" }, 1] },
-                                  "httpStatus": 200,
-                                  "triggerName": "ILCG_CREATE_GOAL_SUCCESS_MESSAGE",
-                                  "triggerId": "SyIBo7HY40Z8JTC2MNAYJ"
-                                },
-                                {
-                                  "logic": { "==": [{ "var": "code" }, 0] },
-                                  "httpStatus": 200,
-                                  "triggerName": "ILCG_CREATE_GOAL_ERROR_MESSAGE",
-                                  "triggerId": "7ubebU8IrQBx0xn7fRnfZ"
-                                },
-                                {
-                                  "triggerName": "ILCG_NAVIGATE_TO_ILC_CHILD_GOALS_AFTER_DELAY",
-                                  "triggerId": "jbmm-eHgh97VV-0SST6GN",
-                                  "logic": { "==": [{ "var": "code" }, 1] },
-                                  "httpStatus": 200
-                                }
-                              ]
-                            }
-                          }
-                        ],
-                        "csrf": "0.41hskwbvoipt_Ja7fMLrFhHvcqe4xw5K",
-                        "updatedAt": "4/2/2024",
-                        "createdAt": "4/2/2024",
-                        "createdBy": "mubashar",
-                        "updatedBy": "mubashar"
-                      },
-                      "encryptionType": "encryption"
+                      ]
                     }
                   }
                 }
               ],
-              "csrf": "0.pm0sr0y37ug4JB5lOok16MugjceFJVp",
-              "updatedAt": "7/14/2024",
-              "createdAt": "7/14/2024",
+              "csrf": "0.kvnbqonhshn_mMs8G9bjX9OB2SGaVcBN",
+              "_id": "NaAum-jImh0gwxtOmqPfj",
+              "updatedAt": "9/1/2024",
+              "createdAt": "9/1/2024",
               "createdBy": "mubashar",
               "updatedBy": "mubashar"
             }
           ],
-          "triggerIds": ["qlXCH0UjS_-MVN9ByGpmz", "WVrhpw_awQ16HgMAQsOvq"]
+          "triggerIds": ["qlXCH0UjS_-MVN9ByGpmz", "Rsx4eZ-K5cLWHVDBxDjHJ"]
         }
       }
     }
   ],
-  "csrf": "0.pm0sr0y37ug4JB5lOok16MugjceFJVp",
-  "updatedAt": "7/14/2024",
-  "createdAt": "7/14/2024",
+  "csrf": "0.kvnbqonhshn_mMs8G9bjX9OB2SGaVcBN",
+  "updatedAt": "9/1/2024",
+  "createdAt": "9/1/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }

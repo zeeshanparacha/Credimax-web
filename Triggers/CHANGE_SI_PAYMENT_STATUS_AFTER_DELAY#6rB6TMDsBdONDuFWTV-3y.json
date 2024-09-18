@@ -1,0 +1,98 @@
+{
+  "_id": "6rB6TMDsBdONDuFWTV-3y",
+  "id": "aJHA919iTBfajftZH03cs",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CHANGE_SI_PAYMENT_STATUS_AFTER_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "100",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "JSOhmm5SvR9rw_gDksjKU",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "CHANGE_SI_PAYMENT_STATUS",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "8",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "loaderWidgetIds": [906070],
+                      "messageWidgetIds": [906070],
+                      "responseStateKey": "change_si_status_res",
+                      "url": "/api-designer/api/updateIleadPaymentStatus/execute",
+                      "checksum": true,
+                      "encryption": true,
+                      "isDeviceDetails": true,
+                      "loginTrigger": false,
+                      "formData": false,
+                      "logoutTrigger": false,
+                      "headers": {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "channel_key": "002"
+                      },
+                      "requestBody": [
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "siID",
+                          "value": "ilp_selected_child_payment.id"
+                        },
+                        {
+                          "type": 1,
+                          "name": "Form",
+                          "key": "siStatus",
+                          "value": "ilp_selected_child_payment.enable"
+                        }
+                      ],
+                      "baseURL": "656f0b4398e9df55f0499597",
+                      "storeType": 2
+                    },
+                    "responseHandler": [
+                      {
+                        "triggerName": "ILP_GET_CHILD_PAYMENTS",
+                        "triggerId": "oY0ECjHLP_BZNfoc4eS2U",
+                        "httpStatus": 200,
+                        "logic": { "==": [{ "var": "code" }, 1] }
+                      },
+                      {
+                        "logic": { "==": [{ "var": "code" }, 0] },
+                        "httpStatus": 200,
+                        "triggerName": "CHANGE_SI_PAYMENT_STATUS_FAILED",
+                        "triggerId": "d89Y7ZY6pjoBG_4ouGnyN"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "csrf": "0.xx7qkt7lnuh1GFYLW1oz4ctKf3Rw5Cr0",
+              "_id": "ktfPSylb05DJfvq3QzEnm",
+              "updatedAt": "9/18/2024",
+              "createdAt": "9/18/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["JSOhmm5SvR9rw_gDksjKU"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.xx7qkt7lnuh1GFYLW1oz4ctKf3Rw5Cr0",
+  "updatedAt": "9/18/2024",
+  "createdAt": "9/18/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

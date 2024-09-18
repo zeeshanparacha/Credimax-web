@@ -1,0 +1,69 @@
+{
+  "id": "JSOhmm5SvR9rw_gDksjKU",
+  "_id": "ktfPSylb05DJfvq3QzEnm",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CHANGE_SI_PAYMENT_STATUS",
+  "old_name": "CHANGE_SI_PAYMENT_STATUS",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "change_si_status_res",
+          "url": "/api-designer/api/updateIleadPaymentStatus/execute",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": false,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.siID",
+              "value": "ilp_selected_child_payment.id"
+            },
+            {
+              "type": 1,
+              "name": "Form",
+              "key": "request.siStatus",
+              "value": "ilp_selected_child_payment.enable"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "triggerName": "ILP_GET_CHILD_PAYMENTS",
+            "triggerId": "oY0ECjHLP_BZNfoc4eS2U",
+            "httpStatus": 200,
+            "logic": { "==": [{ "var": "code" }, 1] }
+          },
+          {
+            "logic": { "==": [{ "var": "code" }, 0] },
+            "httpStatus": 200,
+            "triggerName": "CHANGE_SI_PAYMENT_STATUS_FAILED",
+            "triggerId": "d89Y7ZY6pjoBG_4ouGnyN"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.9l5e94w42h89RF3Yk1EZOPduqe7ziwQ",
+  "updatedAt": "9/18/2024",
+  "createdAt": "9/18/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

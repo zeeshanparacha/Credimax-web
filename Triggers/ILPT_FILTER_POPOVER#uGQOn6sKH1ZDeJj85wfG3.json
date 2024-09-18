@@ -1,0 +1,126 @@
+{
+  "id": "5--E2v6qS74MKYXjZhyMU",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILPT_FILTER_POPOVER",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "300",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "_Yqj_pxZj5b9xKpo46hVJ",
+              "_id": "OI6eGyMnPT2KXXwetl5RL",
+              "name": "ILPT_FILTER_LIST",
+              "old_name": "ILPT_FILTER_LIST",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "10",
+                    "attributes": {
+                      "stateName": "none",
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "none",
+                      "dataType": "",
+                      "destinationBindingKey": "ilpt_children_tasks_filter",
+                      "sourceBindingKey": "ilpt_fetch_tasks.content.taskList",
+                      "sourceStoreType": 2,
+                      "destinationStoreType": 2,
+                      "logic": {
+                        "if": [
+                          { "var": "currentScreen.ilpt_filter_key_word" },
+                          {
+                            "or": [
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.ilpt_filter_key_word"
+                                  },
+                                  "All tasks"
+                                ]
+                              },
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.ilpt_filter_key_word"
+                                      },
+                                      "Waiting approval"
+                                    ]
+                                  },
+                                  {
+                                    "==": [
+                                      { "var": "status" },
+                                      "Waiting approval"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.ilpt_filter_key_word"
+                                      },
+                                      "Completed"
+                                    ]
+                                  },
+                                  { "==": [{ "var": "status" }, "Done"] }
+                                ]
+                              },
+                              {
+                                "and": [
+                                  {
+                                    "==": [
+                                      {
+                                        "var": "currentScreen.ilpt_filter_key_word"
+                                      },
+                                      "Incomplete"
+                                    ]
+                                  },
+                                  { "==": [{ "var": "status" }, "Active"] }
+                                ]
+                              }
+                            ]
+                          },
+                          true
+                        ]
+                      },
+                      "targetValue": "none",
+                      "gridFormRowIdBindingKey": "editFormRowId"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.0x03kz9htpolzAWesBmbgLHWFpsdnPP5P",
+              "updatedAt": "9/12/2024",
+              "createdAt": "9/12/2024",
+              "createdBy": "basitahmed1199",
+              "updatedBy": "basitahmed1199"
+            }
+          ],
+          "triggerIds": ["_Yqj_pxZj5b9xKpo46hVJ"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.0x03kz9htpolzAWesBmbgLHWFpsdnPP5P",
+  "_id": "uGQOn6sKH1ZDeJj85wfG3",
+  "updatedAt": "9/12/2024",
+  "createdAt": "9/12/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

@@ -83,6 +83,49 @@
             "type": "1",
             "name": "On initialization",
             "commandType": "4"
+          },
+          {
+            "triggerId": "DXZgM_TWf0E7xUd_3ionz",
+            "triggerName": "SC_PIN_CHANGE_OVERWRITE_CARD",
+            "serviceType": "13",
+            "attributes": {
+              "triggers": [
+                {
+                  "triggerName": "OVERWRITE_CURRENT_CARD",
+                  "triggerId": "1DI-99EsYLipr14wFJFHN",
+                  "services": [
+                    {
+                      "type": "11",
+                      "command": {
+                        "type": "6",
+                        "attributes": {
+                          "requestBody": [],
+                          "storeType": "",
+                          "selectedObjectBindingKey": "selectedObject",
+                          "dataType": "value",
+                          "destinationBindingKey": "CURRENT_CARD",
+                          "sourceBindingKey": "current_card",
+                          "sourceStoreType": 1,
+                          "destinationStoreType": 2,
+                          "filterList": [],
+                          "changeValueConditonally": false,
+                          "targettedType": "value"
+                        }
+                      }
+                    }
+                  ],
+                  "logic": {
+                    "==": [
+                      { "var": "currentSession.dash_type" },
+                      "supplementary card"
+                    ]
+                  }
+                }
+              ]
+            },
+            "type": "1",
+            "name": "On initialization",
+            "commandType": "1"
           }
         ],
         "order": 1,
@@ -95,7 +138,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "fqllHjLgizGdku8vPBgYE",
+            "id": "AsCL9dlVfmq_wdWlnLM3W",
             "gridProps": [
               {
                 "id": "esI_KCav1cOVk1Z5y-g3v",
@@ -338,105 +381,6 @@
                                                     "type": "2",
                                                     "name": "On click",
                                                     "commandType": "1"
-                                                  },
-                                                  {
-                                                    "triggerId": "ApWpqmHIskyMW28smVzkE",
-                                                    "triggerName": "DELETE_DASHBOARD_STORED_CARDS",
-                                                    "serviceType": "2",
-                                                    "attributes": {
-                                                      "delay": "",
-                                                      "triggers": [
-                                                        {
-                                                          "id": "giawnPmONPfjaqE9fC2_w",
-                                                          "name": "DELETE_SLIDER_CARD_INDEX",
-                                                          "projectId": "652fcbce09869c3c809b3097",
-                                                          "gitBranchName": "master",
-                                                          "services": [
-                                                            {
-                                                              "type": "11",
-                                                              "command": {
-                                                                "type": "4",
-                                                                "attributes": {
-                                                                  "stateName": "SLIDER_CARD_INDEX",
-                                                                  "storeType": 2,
-                                                                  "selectedObjectBindingKey": "selectedObject",
-                                                                  "dataType": "",
-                                                                  "sourceBindingKey": ""
-                                                                }
-                                                              }
-                                                            }
-                                                          ],
-                                                          "csrf": "0.ovrn7u3oa6kDVgnBjYRV_6m8EkmSzhSS",
-                                                          "_id": "fnlog5zNfA6dbDjZUnk0R",
-                                                          "updatedAt": "1/9/2024",
-                                                          "createdAt": "1/9/2024",
-                                                          "createdBy": "zeeshan",
-                                                          "updatedBy": "zeeshan"
-                                                        },
-                                                        {
-                                                          "id": "5gLM4iFRSRC5KbXyV5eeV",
-                                                          "name": "DELETE_CARDS_FROM_STORE",
-                                                          "projectId": "652fcbce09869c3c809b3097",
-                                                          "gitBranchName": "master",
-                                                          "services": [
-                                                            {
-                                                              "type": "11",
-                                                              "command": {
-                                                                "type": "4",
-                                                                "attributes": {
-                                                                  "stateName": "cards",
-                                                                  "storeType": 2,
-                                                                  "selectedObjectBindingKey": "selectedObject",
-                                                                  "dataType": "",
-                                                                  "sourceBindingKey": ""
-                                                                }
-                                                              }
-                                                            }
-                                                          ],
-                                                          "csrf": "0.kurvtdmt9gt2rjr1x34JfscYCeSj0N2",
-                                                          "_id": "n3KeuN-S12LnZxXym-KYU",
-                                                          "updatedAt": "1/10/2024",
-                                                          "createdAt": "1/10/2024",
-                                                          "createdBy": "zeeshan",
-                                                          "updatedBy": "zeeshan"
-                                                        },
-                                                        {
-                                                          "id": "eII9KAfDNJ0r1qSADurxN",
-                                                          "name": "DELETE_CURRENT_CARD_FROM_STORE",
-                                                          "projectId": "652fcbce09869c3c809b3097",
-                                                          "gitBranchName": "master",
-                                                          "services": [
-                                                            {
-                                                              "type": "11",
-                                                              "command": {
-                                                                "type": "4",
-                                                                "attributes": {
-                                                                  "stateName": "CURRENT_CARD",
-                                                                  "storeType": 2,
-                                                                  "selectedObjectBindingKey": "selectedObject",
-                                                                  "dataType": "",
-                                                                  "sourceBindingKey": ""
-                                                                }
-                                                              }
-                                                            }
-                                                          ],
-                                                          "csrf": "0.kurvtdmt9gt2rjr1x34JfscYCeSj0N2",
-                                                          "_id": "kIdMB_pindMqVKLEAgfL-",
-                                                          "updatedAt": "1/10/2024",
-                                                          "createdAt": "1/10/2024",
-                                                          "createdBy": "zeeshan",
-                                                          "updatedBy": "zeeshan"
-                                                        }
-                                                      ],
-                                                      "triggerIds": [
-                                                        "giawnPmONPfjaqE9fC2_w",
-                                                        "5gLM4iFRSRC5KbXyV5eeV",
-                                                        "eII9KAfDNJ0r1qSADurxN"
-                                                      ]
-                                                    },
-                                                    "type": "2",
-                                                    "name": "On click",
-                                                    "commandType": "1"
                                                   }
                                                 ],
                                                 "path": "0-0-4-0-0-0-0-0-0-0-0"
@@ -573,12 +517,16 @@
                                                   "prefix": "Card ending ",
                                                   "cssClassNames": [
                                                     {
-                                                      "cssClassName": "GENERIC_HEADER_SECOND_LABEL ",
-                                                      "key": "GENERIC_HEADER_SECOND_LABEL "
-                                                    },
-                                                    {
                                                       "cssClassName": "Font-Montserrat-Regular ",
                                                       "key": "Font-Montserrat-Regular "
+                                                    },
+                                                    {
+                                                      "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLUE ",
+                                                      "key": "GENERIC_FONT_SIZE_FOURTEEN_BLUE "
+                                                    },
+                                                    {
+                                                      "cssClassName": "PIN_HEADER_THIRD_LABEL ",
+                                                      "key": "PIN_HEADER_THIRD_LABEL "
                                                     }
                                                   ]
                                                 },
@@ -789,7 +737,7 @@
                                 "gridProps": [
                                   {
                                     "type": "column",
-                                    "id": "qObhVR2u3FDDIEF69oEUz",
+                                    "id": "D3qqbFV5zyNCYYhAZNA2n",
                                     "gridProps": [
                                       {
                                         "type": "10001",
@@ -797,7 +745,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "_U02Qu8EHvpyxiGmoe6Fy",
+                                            "id": "evFTunFjSUAevh10lVAhE",
                                             "gridProps": [
                                               {
                                                 "type": "10001",
@@ -977,9 +925,6 @@
                                                                           "layoutProperties": {
                                                                             "label": {
                                                                               "//": "Use this class to style label component.",
-                                                                              "font-size": "14px",
-                                                                              "color": "#004986",
-                                                                              "font-weight": "bolder",
                                                                               "padding": "0px 0px 0px 5px"
                                                                             },
                                                                             "mainContainer": "label",
@@ -989,7 +934,17 @@
                                                                             "sm": 12,
                                                                             "xs": 12
                                                                           },
-                                                                          "label": "Change PIN"
+                                                                          "label": "Change PIN",
+                                                                          "cssClassNames": [
+                                                                            {
+                                                                              "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLUE ",
+                                                                              "key": "GENERIC_FONT_SIZE_FOURTEEN_BLUE "
+                                                                            },
+                                                                            {
+                                                                              "cssClassName": "Font-Montserrat-Bold ",
+                                                                              "key": "Font-Montserrat-Bold "
+                                                                            }
+                                                                          ]
                                                                         },
                                                                         "icon": "FaFont",
                                                                         "group": "Form",
@@ -1417,10 +1372,7 @@
                                                           "mandatory": false,
                                                           "layoutProperties": {
                                                             "label": {
-                                                              "//": "Use this class to style label component.",
-                                                              "font-size": "16px",
-                                                              "font-weight": "bolder",
-                                                              "padding": "0px 5px"
+                                                              "//": "Use this class to style label component."
                                                             },
                                                             "mainContainer": "label",
                                                             "xl": 12,
@@ -1429,7 +1381,13 @@
                                                             "sm": 12,
                                                             "xs": 12
                                                           },
-                                                          "label": "Enter your existing PIN"
+                                                          "label": "Enter your existing PIN",
+                                                          "cssClassNames": [
+                                                            {
+                                                              "cssClassName": "GENERIC_FONT_SIZE_SIXTEEN_BLACK ",
+                                                              "key": "GENERIC_FONT_SIZE_SIXTEEN_BLACK "
+                                                            }
+                                                          ]
                                                         },
                                                         "events": [],
                                                         "path": "0-0-4-0-1-0-0-0-0-0-1-0-0",
@@ -1441,7 +1399,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "adm1-kvrpta65pBlCCMs2",
+                                                            "id": "4VzpYREI0cLzW7K2UJJvE",
                                                             "gridProps": [
                                                               {
                                                                 "id": "0pTDUl88uAXappgC5XPw8",
@@ -1454,9 +1412,7 @@
                                                                   "layoutProperties": {
                                                                     "label": {
                                                                       "//": "Use this class to style label component.",
-                                                                      "font-weight": "bolder",
-                                                                      "font-size": "14px",
-                                                                      "padding": "10px 0px 5px 0px"
+                                                                      "padding": "24px 0px 8px 0px"
                                                                     },
                                                                     "mainContainer": "label",
                                                                     "xl": 12,
@@ -1466,7 +1422,12 @@
                                                                     "xs": 12
                                                                   },
                                                                   "label": "PIN code",
-                                                                  "cssClassNames": []
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLACK ",
+                                                                      "key": "GENERIC_FONT_SIZE_FOURTEEN_BLACK "
+                                                                    }
+                                                                  ]
                                                                 },
                                                                 "icon": "FaFont",
                                                                 "group": "Form",
@@ -1574,8 +1535,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-4-0-1-0-0-0-0-0-1-0-1-0"
+                                                            }
                                                           }
                                                         ],
                                                         "path": "0-0-4-0-1-0-0-0-0-0-1-0-1",
@@ -1586,7 +1546,6 @@
                                                           "layoutProperties": {
                                                             "gridLayout": {
                                                               "//": "Use this class to style grid layout component.",
-                                                              "padding": "5px",
                                                               "text-align": "left",
                                                               "spacing": 0
                                                             },
@@ -1611,7 +1570,17 @@
                                                           "20010",
                                                           "widget"
                                                         ],
-                                                        "name": "Grid layout"
+                                                        "name": "Grid layout",
+                                                        "dimensions": {
+                                                          "rows": 1,
+                                                          "columns": 1,
+                                                          "colSize0xs": 12,
+                                                          "colSize0sm": 12,
+                                                          "colSize0md": 12,
+                                                          "colSize0lg": 12,
+                                                          "colSize0xl": 12
+                                                        },
+                                                        "readOnly": true
                                                       },
                                                       {
                                                         "type": "10001",
@@ -1619,7 +1588,7 @@
                                                         "gridProps": [
                                                           {
                                                             "type": "column",
-                                                            "id": "u81VRkxtMluaD_Lk3WwV4",
+                                                            "id": "ziNVDCdJYk0U3leJtJYpF",
                                                             "gridProps": [
                                                               {
                                                                 "id": "nKSOMuD4ctw7g6LuNY_9v",
@@ -1632,8 +1601,6 @@
                                                                   "layoutProperties": {
                                                                     "label": {
                                                                       "//": "Use this class to style label component.",
-                                                                      "font-size": "14px",
-                                                                      "color": "#838383",
                                                                       "margin": "0px 5px 0px 0px"
                                                                     },
                                                                     "mainContainer": "label",
@@ -1651,6 +1618,10 @@
                                                                     {
                                                                       "cssClassName": "Font-Montserrat-Regular ",
                                                                       "key": "Font-Montserrat-Regular "
+                                                                    },
+                                                                    {
+                                                                      "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_GRAY ",
+                                                                      "key": "GENERIC_FONT_SIZE_FOURTEEN_GRAY "
                                                                     }
                                                                   ]
                                                                 },
@@ -1684,11 +1655,7 @@
                                                                   "mandatory": false,
                                                                   "layoutProperties": {
                                                                     "label": {
-                                                                      "//": "Use this class to style label component.",
-                                                                      "font-size": "14px",
-                                                                      "cursor": "pointer",
-                                                                      "color": "#004986",
-                                                                      "font-weight": "bolder"
+                                                                      "//": "Use this class to style label component."
                                                                     },
                                                                     "mainContainer": "label",
                                                                     "xl": 12,
@@ -1697,7 +1664,13 @@
                                                                     "sm": 12,
                                                                     "xs": 12
                                                                   },
-                                                                  "label": "Generate new PIN"
+                                                                  "label": "Generate new PIN",
+                                                                  "cssClassNames": [
+                                                                    {
+                                                                      "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLUE ",
+                                                                      "key": "GENERIC_FONT_SIZE_FOURTEEN_BLUE "
+                                                                    }
+                                                                  ]
                                                                 },
                                                                 "events": [
                                                                   {
@@ -1726,8 +1699,7 @@
                                                               "md": 12,
                                                               "sm": 12,
                                                               "xs": 12
-                                                            },
-                                                            "path": "0-0-4-0-1-0-0-0-0-0-1-0-2-0"
+                                                            }
                                                           }
                                                         ],
                                                         "path": "0-0-4-0-1-0-0-0-0-0-1-0-2",
@@ -1738,7 +1710,7 @@
                                                           "layoutProperties": {
                                                             "gridLayout": {
                                                               "//": "Use this class to style grid layout component.",
-                                                              "padding": "5px",
+                                                              "padding-top": "16px",
                                                               "text-align": "left",
                                                               "white-space": "nowrap",
                                                               "spacing": 0
@@ -1754,7 +1726,8 @@
                                                           "name": "Grid layout",
                                                           "cssClassNames": [
                                                             {
-                                                              "cssClassName": "FLEX_ROW_CENTER "
+                                                              "cssClassName": "FLEX_ROW_CENTER ",
+                                                              "key": "FLEX_ROW_CENTER "
                                                             }
                                                           ]
                                                         },
@@ -1834,8 +1807,7 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-4-0-1-0-0-0-0-0"
+                                            }
                                           }
                                         ],
                                         "path": "0-0-4-0-1-0-0-0-0",
@@ -1846,7 +1818,6 @@
                                           "layoutProperties": {
                                             "gridLayout": {
                                               "//": "Use this class to style grid layout component.",
-                                              "padding": "5px",
                                               "spacing": 0
                                             },
                                             "mainContainer": "gridLayout"
@@ -1889,7 +1860,7 @@
                                         "gridProps": [
                                           {
                                             "type": "column",
-                                            "id": "2MKMx5VCidQFT7awcCmV8",
+                                            "id": "KzmIB-1x71sYi4kTIyOBo",
                                             "gridProps": [
                                               {
                                                 "id": "ItJ3qjktfFjVzTCpia0es",
@@ -2089,8 +2060,7 @@
                                               "md": 12,
                                               "sm": 12,
                                               "xs": 12
-                                            },
-                                            "path": "0-0-4-0-1-0-0-0-1-0"
+                                            }
                                           }
                                         ],
                                         "allowedContainers": [
@@ -2105,14 +2075,7 @@
                                           "label": "Header",
                                           "layoutProperties": {
                                             "gridLayout": {
-                                              "//": "Use this class to style grid layout component.",
-                                              "padding": "5px",
-                                              "spacing": 0,
-                                              "position": "absolute !important",
-                                              "bottom": "25px",
-                                              "right": "0px",
-                                              "text-align": "right",
-                                              "margin": "0px 25px 0px 0px"
+                                              "//": "Use this class to style grid layout component."
                                             },
                                             "mainContainer": "gridLayout"
                                           },
@@ -2123,7 +2086,12 @@
                                           },
                                           "direction": "row",
                                           "name": "Grid layout",
-                                          "cssClassNames": []
+                                          "cssClassNames": [
+                                            {
+                                              "cssClassName": "PIN_CHANGE_BUTTON_POSITION ",
+                                              "key": "PIN_CHANGE_BUTTON_POSITION "
+                                            }
+                                          ]
                                         },
                                         "events": [],
                                         "component": {
@@ -2550,9 +2518,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "_CY4dDGCfaHTJz9uvNeZI",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2659,6 +2627,12 @@
         "triggerName": "PNC_VALIDATE_PIN_CLEAR_STATES",
         "name": "On initialization",
         "type": "1"
+      },
+      {
+        "triggerId": "DXZgM_TWf0E7xUd_3ionz",
+        "triggerName": "SC_PIN_CHANGE_OVERWRITE_CARD",
+        "name": "On initialization",
+        "type": "1"
       }
     ],
     "subType": "component",
@@ -2666,9 +2640,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2685,9 +2659,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2705,9 +2679,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2725,9 +2699,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2745,9 +2719,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2862,9 +2836,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -2922,9 +2896,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3002,9 +2976,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3049,9 +3023,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3102,8 +3076,8 @@
       ]
     },
     "group": "Form",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3117,13 +3091,6 @@
         "name": "On click",
         "type": "2",
         "serviceType": "13"
-      },
-      {
-        "triggerId": "ApWpqmHIskyMW28smVzkE",
-        "triggerName": "DELETE_DASHBOARD_STORED_CARDS",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "2"
       }
     ],
     "path": "0-0-4-0-0-0-0-0-0-0-0",
@@ -3131,7 +3098,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3189,9 +3156,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3228,8 +3195,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3241,7 +3208,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3269,20 +3236,24 @@
       "prefix": "Card ending ",
       "cssClassNames": [
         {
-          "cssClassName": "GENERIC_HEADER_SECOND_LABEL ",
-          "key": "GENERIC_HEADER_SECOND_LABEL "
-        },
-        {
           "cssClassName": "Font-Montserrat-Regular ",
           "key": "Font-Montserrat-Regular "
+        },
+        {
+          "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLUE ",
+          "key": "GENERIC_FONT_SIZE_FOURTEEN_BLUE "
+        },
+        {
+          "cssClassName": "PIN_HEADER_THIRD_LABEL ",
+          "key": "PIN_HEADER_THIRD_LABEL "
         }
       ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3294,7 +3265,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3348,9 +3319,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3427,9 +3398,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3481,7 +3452,6 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px",
           "spacing": 0
         },
         "mainContainer": "gridLayout"
@@ -3501,9 +3471,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3563,9 +3533,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3643,9 +3613,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3692,9 +3662,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3742,8 +3712,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3756,7 +3726,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3816,9 +3786,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3832,9 +3802,6 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "14px",
-          "color": "#004986",
-          "font-weight": "bolder",
           "padding": "0px 0px 0px 5px"
         },
         "mainContainer": "label",
@@ -3844,13 +3811,23 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Change PIN"
+      "label": "Change PIN",
+      "cssClassNames": [
+        {
+          "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLUE ",
+          "key": "GENERIC_FONT_SIZE_FOURTEEN_BLUE "
+        },
+        {
+          "cssClassName": "Font-Montserrat-Bold ",
+          "key": "Font-Montserrat-Bold "
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3862,7 +3839,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3903,9 +3880,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3954,9 +3931,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4007,8 +3984,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -4029,7 +4006,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4113,9 +4090,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4128,12 +4105,7 @@
       "name": "Label",
       "mandatory": false,
       "layoutProperties": {
-        "label": {
-          "//": "Use this class to style label component.",
-          "font-size": "16px",
-          "font-weight": "bolder",
-          "padding": "0px 5px"
-        },
+        "label": { "//": "Use this class to style label component." },
         "mainContainer": "label",
         "xl": 12,
         "lg": 12,
@@ -4141,7 +4113,13 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Enter your existing PIN"
+      "label": "Enter your existing PIN",
+      "cssClassNames": [
+        {
+          "cssClassName": "GENERIC_FONT_SIZE_SIXTEEN_BLACK ",
+          "key": "GENERIC_FONT_SIZE_SIXTEEN_BLACK "
+        }
+      ]
     },
     "events": [],
     "path": "0-0-4-0-1-0-0-0-0-0-1-0-0",
@@ -4150,9 +4128,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4190,7 +4168,6 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px",
           "text-align": "left",
           "spacing": 0
         },
@@ -4211,9 +4188,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4227,9 +4204,7 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-weight": "bolder",
-          "font-size": "14px",
-          "padding": "10px 0px 5px 0px"
+          "padding": "24px 0px 8px 0px"
         },
         "mainContainer": "label",
         "xl": 12,
@@ -4239,13 +4214,18 @@
         "xs": 12
       },
       "label": "PIN code",
-      "cssClassNames": []
+      "cssClassNames": [
+        {
+          "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLACK ",
+          "key": "GENERIC_FONT_SIZE_FOURTEEN_BLACK "
+        }
+      ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4257,7 +4237,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4321,8 +4301,8 @@
         }
       ]
     },
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "type": "20008",
     "order": 11,
     "version": "1.0.0",
@@ -4335,7 +4315,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4373,7 +4353,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "padding": "5px",
+          "padding-top": "16px",
           "text-align": "left",
           "white-space": "nowrap",
           "spacing": 0
@@ -4387,7 +4367,9 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "cssClassNames": [{ "cssClassName": "FLEX_ROW_CENTER " }]
+      "cssClassNames": [
+        { "cssClassName": "FLEX_ROW_CENTER ", "key": "FLEX_ROW_CENTER " }
+      ]
     },
     "layout": null,
     "events": [],
@@ -4396,9 +4378,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4412,8 +4394,6 @@
       "layoutProperties": {
         "label": {
           "//": "Use this class to style label component.",
-          "font-size": "14px",
-          "color": "#838383",
           "margin": "0px 5px 0px 0px"
         },
         "mainContainer": "label",
@@ -4429,14 +4409,18 @@
         {
           "cssClassName": "Font-Montserrat-Regular ",
           "key": "Font-Montserrat-Regular "
+        },
+        {
+          "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_GRAY ",
+          "key": "GENERIC_FONT_SIZE_FOURTEEN_GRAY "
         }
       ]
     },
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4448,7 +4432,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4461,13 +4445,7 @@
       "name": "Label",
       "mandatory": false,
       "layoutProperties": {
-        "label": {
-          "//": "Use this class to style label component.",
-          "font-size": "14px",
-          "cursor": "pointer",
-          "color": "#004986",
-          "font-weight": "bolder"
-        },
+        "label": { "//": "Use this class to style label component." },
         "mainContainer": "label",
         "xl": 12,
         "lg": 12,
@@ -4475,7 +4453,13 @@
         "sm": 12,
         "xs": 12
       },
-      "label": "Generate new PIN"
+      "label": "Generate new PIN",
+      "cssClassNames": [
+        {
+          "cssClassName": "GENERIC_FONT_SIZE_FOURTEEN_BLUE ",
+          "key": "GENERIC_FONT_SIZE_FOURTEEN_BLUE "
+        }
+      ]
     },
     "events": [
       {
@@ -4492,9 +4476,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4519,14 +4503,7 @@
       "label": "Header",
       "layoutProperties": {
         "gridLayout": {
-          "//": "Use this class to style grid layout component.",
-          "padding": "5px",
-          "spacing": 0,
-          "position": "absolute !important",
-          "bottom": "25px",
-          "right": "0px",
-          "text-align": "right",
-          "margin": "0px 25px 0px 0px"
+          "//": "Use this class to style grid layout component."
         },
         "mainContainer": "gridLayout"
       },
@@ -4537,7 +4514,12 @@
       },
       "direction": "row",
       "name": "Grid layout",
-      "cssClassNames": []
+      "cssClassNames": [
+        {
+          "cssClassName": "PIN_CHANGE_BUTTON_POSITION ",
+          "key": "PIN_CHANGE_BUTTON_POSITION "
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -4546,9 +4528,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "mubashar",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4622,8 +4604,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "9/16/2024",
+    "createdAt": "9/16/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -4643,7 +4625,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "basitahmed1199",
+    "createdBy": "mubashar",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]
