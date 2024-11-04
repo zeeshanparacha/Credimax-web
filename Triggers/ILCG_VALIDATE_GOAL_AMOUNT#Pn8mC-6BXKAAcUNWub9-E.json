@@ -1,0 +1,70 @@
+{
+  "id": "qnBKoR5x3o77bJjJAZ7Fv",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "ILCG_VALIDATE_GOAL_AMOUNT",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "logic": {
+                "and": [
+                  { "var": "currentScreen.form.ILCG_GOAL_AMOUNT" },
+                  { "var": "currentScreen.form.ILCG_AMOUNT" },
+                  {
+                    ">": [
+                      { "+": [{ "var": "currentScreen.form.ILCG_AMOUNT" }, 0] },
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.ILCG_GOAL_AMOUNT" },
+                          0
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "triggerName": "ILCG_AMOUNT_ERROR",
+              "triggerId": "w9Y6mnekM8gcIXC6no8oO",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "VALIDATIONS_ILCG_AMOUNT",
+                          "changeValueConditonally": false,
+                          "storeType": 1,
+                          "logic": "Amount cannot be greater than goal amount"
+                        }
+                      ],
+                      "gridFormRowIdBindingKey": "editFormRowId"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.34av2lowszq1zOep_yobe8mWWvfetJaE",
+  "_id": "Pn8mC-6BXKAAcUNWub9-E",
+  "updatedAt": "10/28/2024",
+  "createdAt": "10/28/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

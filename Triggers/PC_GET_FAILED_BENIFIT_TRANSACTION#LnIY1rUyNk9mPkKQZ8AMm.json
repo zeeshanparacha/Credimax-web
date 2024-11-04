@@ -1,0 +1,56 @@
+{
+  "id": "j5YLbDVcronMBIS7wRYQU",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "PC_GET_FAILED_BENIFIT_TRANSACTION",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "8",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "loaderWidgetIds": [906070],
+          "messageWidgetIds": [906070],
+          "responseStateKey": "pc_release_payment",
+          "url": "/prelogin/v1/getBenefitStatus",
+          "checksum": true,
+          "encryption": true,
+          "isDeviceDetails": true,
+          "loginTrigger": false,
+          "formData": false,
+          "logoutTrigger": false,
+          "headers": {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "channel_key": "002"
+          },
+          "requestBody": [
+            {
+              "type": 3,
+              "name": "Current session",
+              "key": "paymentId",
+              "value": "pc_reference"
+            }
+          ],
+          "baseURL": "656f0b4398e9df55f0499597",
+          "storeType": 2
+        },
+        "responseHandler": [
+          {
+            "logic": { "==": [{ "var": "code" }, 1] },
+            "httpStatus": 200,
+            "triggerName": "PC_BENIFIT_FAIED_CHANGE_CODE_TO_ZERO_AFTER_DELAY",
+            "triggerId": "KWqpvrdd4OxwVBtaRMEo6"
+          }
+        ]
+      }
+    }
+  ],
+  "csrf": "0.an24y2yovgmfdOFf6fm-K1g6dAr2Ovqc",
+  "_id": "LnIY1rUyNk9mPkKQZ8AMm",
+  "updatedAt": "10/11/2024",
+  "createdAt": "10/11/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

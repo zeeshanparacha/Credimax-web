@@ -1,4 +1,5 @@
 {
+  "_id": "eFtwHhGPSiaxQx5Kl1chS",
   "id": "xj5oVogiaea2dHpIRHuTO",
   "projectId": "652fcbce09869c3c809b3097",
   "gitBranchName": "master",
@@ -11,14 +12,17 @@
       "command": {
         "type": "2",
         "attributes": {
-          "delay": "500",
+          "delay": "100",
+          "storeType": "",
+          "searchInState": false,
           "triggers": [
             {
-              "id": "8vPbPNMJtLx5Un3kTczsJ",
+              "_id": "71pPKFaN8MpQYhSuEdBu_",
+              "id": "JcHE2UFFtqqB8XUxV7owW",
               "projectId": "652fcbce09869c3c809b3097",
               "gitBranchName": "master",
-              "name": "DASHBOARD_TOGGLE_ACTION_CONDITIONALLY",
-              "old_name": "",
+              "name": "FREEZE_CARD_MODAL_CONDITIONAL",
+              "old_name": "FREEZE_CARD_MODAL_CONDITIONAL",
               "status": "ACTIVE",
               "services": [
                 {
@@ -28,82 +32,72 @@
                     "attributes": {
                       "triggers": [
                         {
-                          "logic": {
-                            "==": [
-                              {
-                                "var": "currentScreen.form.selected_service.transCode"
-                              },
-                              "1207"
-                            ]
-                          },
-                          "triggerName": "FREEZE_CARD_MODAL_CONDITIONAL",
-                          "triggerId": "JcHE2UFFtqqB8XUxV7owW",
+                          "triggerName": "FREEZE_CARD_POPUP_MODAL",
+                          "triggerId": "OQ0YbfHvEli3cScK6XriY",
                           "services": [
                             {
-                              "type": "13",
+                              "type": "9",
                               "command": {
                                 "type": "1",
                                 "attributes": {
-                                  "triggers": [
-                                    {
-                                      "triggerName": "FREEZE_CARD_POPUP_MODAL",
-                                      "triggerId": "OQ0YbfHvEli3cScK6XriY",
-                                      "services": [
-                                        {
-                                          "type": "9",
-                                          "command": {
-                                            "type": "1",
-                                            "attributes": {
-                                              "widgetId": "5iALODlMr3toZKc0zG6eP",
-                                              "content": "",
-                                              "type": "",
-                                              "modalId": "S3tJdrzRaJuogH7w8ZwYa",
-                                              "toastContentType": "custom"
-                                            }
-                                          }
-                                        }
-                                      ],
-                                      "logic": {
-                                        "if": {
-                                          "==": [
-                                            {
-                                              "var": "currentScreen.form.freezeToggle"
-                                            },
-                                            true
-                                          ]
-                                        }
-                                      }
-                                    },
-                                    {
-                                      "triggerName": "UNFREEZE_CARD_POPUP_MODAL",
-                                      "triggerId": "6YiZwxCTdaLuwchtlSHlA",
-                                      "services": [
-                                        {
-                                          "type": "9",
-                                          "command": {
-                                            "type": "1",
-                                            "attributes": {
-                                              "widgetId": "D8v90BeMfQ3vQsoUow1nR",
-                                              "content": "",
-                                              "type": "",
-                                              "modalId": "O9tJFiz5ckEACUA2TF7Sv",
-                                              "toastContentType": "custom"
-                                            }
-                                          }
-                                        }
-                                      ],
-                                      "logic": {
-                                        "if": {
-                                          "==": [
-                                            {
-                                              "var": "currentScreen.form.freezeToggle"
-                                            },
-                                            false
-                                          ]
-                                        }
-                                      }
-                                    }
-                                  ]
+                                  "widgetId": "5iALODlMr3toZKc0zG6eP",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "S3tJdrzRaJuogH7w8ZwYa",
+                                  "toastContentType": "custom"
+                                }
+                              }
+                            }
+                          ],
+                          "logic": {
+                            "and": [
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.form.selected_service.transCode"
+                                  },
+                                  "1207"
+                                ]
+                              },
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.CURRENT_CARD.isFreeze"
+                                  },
+                                  false
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "logic": {
+                            "==": [
+                              {
+                                "==": [
+                                  {
+                                    "var": "currentScreen.form.selected_service.transCode"
+                                  },
+                                  "1207"
+                                ]
+                              },
+                              { "var": "currentScreen.CURRENT_CARD.isFreeze" },
+                              true
+                            ]
+                          },
+                          "triggerName": "UNFREEZE_CARD_POPUP_MODAL",
+                          "triggerId": "6YiZwxCTdaLuwchtlSHlA",
+                          "services": [
+                            {
+                              "type": "9",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "widgetId": "D8v90BeMfQ3vQsoUow1nR",
+                                  "content": "",
+                                  "type": "",
+                                  "modalId": "O9tJFiz5ckEACUA2TF7Sv",
+                                  "toastContentType": "custom"
                                 }
                               }
                             }
@@ -114,23 +108,21 @@
                   }
                 }
               ],
-              "csrf": "0.ugif0c8p9tzjMjKOJ8juqsTCV742Cy_",
-              "_id": "xD3N1rqiMhklhNxnoM3xS",
-              "updatedAt": "2/9/2024",
-              "createdAt": "2/9/2024",
+              "csrf": "0.bk4pzdv0li6IHqxrUoViquBOdlH66xfV",
+              "updatedAt": "9/24/2024",
+              "createdAt": "9/24/2024",
               "createdBy": "talha",
               "updatedBy": "talha"
             }
           ],
-          "triggerIds": ["8vPbPNMJtLx5Un3kTczsJ"]
+          "triggerIds": ["JcHE2UFFtqqB8XUxV7owW"]
         }
       }
     }
   ],
-  "csrf": "0.ugif0c8p9tzjMjKOJ8juqsTCV742Cy_",
-  "_id": "eFtwHhGPSiaxQx5Kl1chS",
-  "updatedAt": "2/9/2024",
-  "createdAt": "2/9/2024",
+  "csrf": "0.bk4pzdv0li6IHqxrUoViquBOdlH66xfV",
+  "updatedAt": "9/24/2024",
+  "createdAt": "9/24/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

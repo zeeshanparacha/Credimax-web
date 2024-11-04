@@ -12,16 +12,6 @@
         "attributes": {
           "validationList": [
             {
-              "bindingKey": "accountOrDebitCardNumber",
-              "storeType": 1,
-              "messageBindingKey": "accountOrDebitCardNumber_validations",
-              "isRequired": true,
-              "requiredMessage": "Card number is required",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": []
-            },
-            {
               "bindingKey": "title",
               "storeType": 1,
               "messageBindingKey": "title_validations",
@@ -55,6 +45,28 @@
                     "!": [{ "var": "currentScreen.form.cardExpiryMinError" }]
                   },
                   "logicMessage": "Expiry date cannot be less than current date"
+                }
+              ]
+            },
+            {
+              "bindingKey": "accountOrDebitCardNumber",
+              "storeType": 1,
+              "messageBindingKey": "accountOrDebitCardNumber_validations",
+              "isRequired": true,
+              "requiredMessage": "Card number is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    "!=": [
+                      {
+                        "var": "currentScreen.form.accountOrDebitCardNumber.length"
+                      },
+                      16
+                    ]
+                  },
+                  "logicMessage": "Invalid card number"
                 }
               ]
             }
@@ -147,14 +159,15 @@
             "createdAt": "3/13/2024",
             "createdBy": "mubashar",
             "updatedBy": "mubashar"
-          }
+          },
+          "encryptionType": "encryption"
         }
       }
     }
   ],
-  "csrf": "0.z9338cgurskmic3O5xMCt76CasP3aHu",
-  "updatedAt": "6/19/2024",
-  "createdAt": "6/19/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.o664sn2ah28i7qASk_-avxj7QnFVJ7g",
+  "updatedAt": "10/28/2024",
+  "createdAt": "10/28/2024",
+  "createdBy": "mubashar",
+  "updatedBy": "mubashar"
 }

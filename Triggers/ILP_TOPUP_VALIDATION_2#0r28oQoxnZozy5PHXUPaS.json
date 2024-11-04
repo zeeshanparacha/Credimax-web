@@ -13,70 +13,6 @@
         "attributes": {
           "validationList": [
             {
-              "bindingKey": "pc_custom_amount_2",
-              "storeType": 1,
-              "messageBindingKey": "validation_1",
-              "isRequired": true,
-              "requiredMessage": "Amount is required",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": [
-                {
-                  "logic": {
-                    ">": [
-                      {
-                        "+": [
-                          { "var": "currentScreen.form.pc_custom_amount_2" },
-                          0
-                        ]
-                      },
-                      0
-                    ]
-                  },
-                  "logicMessage": "Amount should be greater than 0"
-                },
-                {
-                  "logic": {
-                    "!": [
-                      {
-                        "and": [
-                          {
-                            "==": [
-                              {
-                                "var": "currentScreen.form.selected_payment_method.type"
-                              },
-                              "Account"
-                            ]
-                          },
-                          {
-                            ">": [
-                              {
-                                "+": [
-                                  {
-                                    "var": "currentScreen.form.pc_custom_amount_2"
-                                  },
-                                  0
-                                ]
-                              },
-                              {
-                                "+": [
-                                  {
-                                    "var": "currentScreen.form.selected_payment_method.balance"
-                                  },
-                                  0
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  "logicMessage": "Amount cannot be greater than available balance"
-                }
-              ]
-            },
-            {
               "bindingKey": "selected_payment_method",
               "storeType": 1,
               "messageBindingKey": "validation_3",
@@ -175,6 +111,70 @@
                     ]
                   },
                   "logicMessage": "Your card has insufficient balance"
+                }
+              ]
+            },
+            {
+              "bindingKey": "pc_custom_amount_2",
+              "storeType": 1,
+              "messageBindingKey": "validation_1",
+              "isRequired": true,
+              "requiredMessage": "Amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    ">": [
+                      {
+                        "+": [
+                          { "var": "currentScreen.form.pc_custom_amount_2" },
+                          0
+                        ]
+                      },
+                      0
+                    ]
+                  },
+                  "logicMessage": "Amount should be greater than 0"
+                },
+                {
+                  "logic": {
+                    "!": [
+                      {
+                        "and": [
+                          {
+                            "in": [
+                              {
+                                "var": "currentScreen.form.selected_payment_method.type"
+                              },
+                              ["Account", "CreditCard"]
+                            ]
+                          },
+                          {
+                            ">": [
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.pc_custom_amount_2"
+                                  },
+                                  0
+                                ]
+                              },
+                              {
+                                "+": [
+                                  {
+                                    "var": "currentScreen.form.selected_payment_method.balance"
+                                  },
+                                  0
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "logicMessage": "Amount cannot be greater than available balance"
                 }
               ]
             }
@@ -351,14 +351,15 @@
             "createdAt": "3/22/2024",
             "createdBy": "talha2",
             "updatedBy": "talha2"
-          }
+          },
+          "encryptionType": "encryption"
         }
       }
     }
   ],
-  "csrf": "0.l4le7b4picnwnEq2nW_x_1FDBDzteMrI",
-  "updatedAt": "5/26/2024",
-  "createdAt": "5/26/2024",
+  "csrf": "0.an24y2yovgmfdOFf6fm-K1g6dAr2Ovqc",
+  "updatedAt": "10/14/2024",
+  "createdAt": "10/14/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

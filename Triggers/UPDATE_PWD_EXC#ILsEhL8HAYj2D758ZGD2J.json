@@ -1,7 +1,9 @@
 {
   "id": "xZF7vID6TPG2bUe9xVN5q",
+  "_id": "ILsEhL8HAYj2D758ZGD2J",
   "gitBranchName": "master",
   "name": "UPDATE_PWD_EXC",
+  "old_name": "UPDATE_PWD_EXC",
   "projectId": "652fcbce09869c3c809b3097",
   "services": [
     {
@@ -18,82 +20,141 @@
             }
           ],
           "completionTrigger": {
-            "id": "9uGqmvEuVEcFjk6mMeVIG",
-            "_id": "tmrcy5phJKNn8Z11fjhpi",
+            "_id": "6F39May-tFrrzBamM9Qk2",
+            "id": "qEffdTmUc_1By2MRl4qcu",
             "projectId": "652fcbce09869c3c809b3097",
             "gitBranchName": "master",
-            "name": "UP_UDTAE_PASSWORD_API",
-            "old_name": "UP_UDTAE_PASSWORD_API",
+            "name": "UP_CHECK_FOR_OTP",
+            "old_name": "UP_CHECK_FOR_OTP",
             "status": "ACTIVE",
             "services": [
               {
-                "type": "8",
+                "type": "13",
                 "command": {
                   "type": "1",
                   "attributes": {
-                    "loaderWidgetIds": [906070],
-                    "messageWidgetIds": [906070],
-                    "responseStateKey": "UP_API_RESPONSE",
-                    "url": "/user/v1/changePassword",
-                    "checksum": true,
-                    "encryption": true,
-                    "isDeviceDetails": false,
-                    "loginTrigger": false,
-                    "formData": false,
-                    "logoutTrigger": false,
-                    "headers": {
-                      "Content-Type": "application/json",
-                      "Accept": "application/json",
-                      "channel_key": "002"
-                    },
-                    "requestBody": [
+                    "triggers": [
                       {
-                        "type": 1,
-                        "name": "Form",
-                        "key": "oldPassword",
-                        "value": "UP_OLD_PASS"
+                        "triggerName": "UP_OTP_POPUP",
+                        "triggerId": "pKC2le0zfoGbeQB4Jujl9",
+                        "services": [
+                          {
+                            "type": "9",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "widgetId": "MYtaMsHBIpwSRXYGMEoem",
+                                "content": "",
+                                "type": "",
+                                "modalId": "7V_ptV6onZB6m2D3auS9T",
+                                "toastContentType": "custom"
+                              }
+                            }
+                          }
+                        ],
+                        "logic": {
+                          "if": [
+                            {
+                              "==": [
+                                {
+                                  "var": "currentScreen.up_check_otp.content.otpRequired"
+                                },
+                                1
+                              ]
+                            }
+                          ]
+                        }
                       },
                       {
-                        "type": 1,
-                        "name": "Form",
-                        "key": "newPassword",
-                        "value": "UP_RESET_PASSWORD"
+                        "triggerName": "UP_UDTAE_PASSWORD_API",
+                        "triggerId": "9uGqmvEuVEcFjk6mMeVIG",
+                        "services": [
+                          {
+                            "type": "8",
+                            "command": {
+                              "type": "1",
+                              "attributes": {
+                                "loaderWidgetIds": [906070],
+                                "messageWidgetIds": [906070],
+                                "responseStateKey": "UP_API_RESPONSE",
+                                "url": "/user/v1/changePassword",
+                                "checksum": true,
+                                "encryption": true,
+                                "isDeviceDetails": false,
+                                "loginTrigger": false,
+                                "formData": false,
+                                "logoutTrigger": false,
+                                "headers": {
+                                  "Content-Type": "application/json",
+                                  "Accept": "application/json",
+                                  "channel_key": "002"
+                                },
+                                "requestBody": [
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "oldPassword",
+                                    "value": "UP_OLD_PWD_ENC"
+                                  },
+                                  {
+                                    "type": 1,
+                                    "name": "Form",
+                                    "key": "newPassword",
+                                    "value": "RESET_PWD_ENC"
+                                  }
+                                ],
+                                "baseURL": "656f0b4398e9df55f0499597",
+                                "storeType": 2,
+                                "hideLoading": true,
+                                "loadingState": "UDP_Generic_Loader",
+                                "isLoadingState": true
+                              },
+                              "responseHandler": [
+                                {
+                                  "triggerName": "UP_SUCCESS_MESSAGE",
+                                  "triggerId": "0bxEclb_Ff_aIJ95pYbwj",
+                                  "httpStatus": 200,
+                                  "logic": { "==": [{ "var": "code" }, 1] }
+                                },
+                                {
+                                  "triggerName": "UP_GO_TO_HOME_FROM_SEVICES_DELAYED",
+                                  "triggerId": "TFV4jTbd_5TpYXEu6KIhU",
+                                  "httpStatus": 200,
+                                  "logic": { "==": [{ "var": "code" }, 1] }
+                                },
+                                {
+                                  "triggerName": "UP_FAILURE_MESSAGE",
+                                  "triggerId": "U1tCKYB1wYrziZb8toDQ4",
+                                  "httpStatus": 200,
+                                  "logic": { "==": [{ "var": "code" }, 0] }
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "logic": {
+                          "if": [
+                            {
+                              "==": [
+                                {
+                                  "var": "currentScreen.up_check_otp.content.otpRequired"
+                                },
+                                0
+                              ]
+                            }
+                          ]
+                        }
                       }
-                    ],
-                    "baseURL": "656f0b4398e9df55f0499597",
-                    "storeType": 2,
-                    "hideLoading": true,
-                    "loadingState": "UDP_Generic_Loader",
-                    "isLoadingState": true
-                  },
-                  "responseHandler": [
-                    {
-                      "triggerName": "UP_SUCCESS_MESSAGE",
-                      "triggerId": "0bxEclb_Ff_aIJ95pYbwj",
-                      "httpStatus": 200,
-                      "logic": { "==": [{ "var": "code" }, 1] }
-                    },
-                    {
-                      "triggerName": "UP_GO_TO_HOME_FROM_SEVICES_DELAYED",
-                      "triggerId": "TFV4jTbd_5TpYXEu6KIhU",
-                      "httpStatus": 200,
-                      "logic": { "==": [{ "var": "code" }, 1] }
-                    },
-                    {
-                      "triggerName": "UP_FAILURE_MESSAGE",
-                      "triggerId": "U1tCKYB1wYrziZb8toDQ4",
-                      "httpStatus": 200,
-                      "logic": { "==": [{ "var": "code" }, 0] }
-                    }
-                  ]
+                    ]
+                  }
                 }
               }
             ],
-            "csrf": "0.l218gzf6p4gfBzSpxyzVclZd0-uIUc99",
-            "updatedAt": "3/13/2024",
-            "createdAt": "3/13/2024",
-            "createdBy": "mubashar",
-            "updatedBy": "mubashar"
+            "csrf": "0.edgdq6xvaahjCv2lZRgwCVcFZC_GtZbh",
+            "updatedAt": "10/21/2024",
+            "createdAt": "10/21/2024",
+            "createdBy": "basitahmed1199",
+            "updatedBy": "basitahmed1199"
           },
           "encryptionType": "encryption",
           "secretKey": "5938471620348710"
@@ -101,10 +162,9 @@
       }
     }
   ],
-  "csrf": "0.yre9k0mcudW2fSIn3KiVuzV2kDQ_Ps",
-  "_id": "ILsEhL8HAYj2D758ZGD2J",
-  "updatedAt": "8/15/2024",
-  "createdAt": "8/15/2024",
-  "createdBy": "mubashar",
-  "updatedBy": "mubashar"
+  "csrf": "0.edgdq6xvaahjCv2lZRgwCVcFZC_GtZbh",
+  "updatedAt": "10/21/2024",
+  "createdAt": "10/21/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
 }

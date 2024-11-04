@@ -1,0 +1,193 @@
+{
+  "_id": "PhEwsjUpI8pqSlnKm7Sj0",
+  "id": "4pf2V5fZTJdCkBQLZRUCP",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "CONDITIONALLY_VALIDATE_SOURCE",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "TBW_VALIDATION",
+              "triggerId": "67H3YqQfKel4--hESUH4-",
+              "services": [
+                {
+                  "type": "16",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "validationList": [
+                        {
+                          "bindingKey": "source",
+                          "storeType": 1,
+                          "messageBindingKey": "validation_1",
+                          "isRequired": false,
+                          "requiredMessage": "",
+                          "regEx": "",
+                          "regExMessage": "",
+                          "JSONLogic": [
+                            {
+                              "logic": {
+                                "<=": [
+                                  {
+                                    "+": [
+                                      { "var": "currentScreen.form.source" },
+                                      0
+                                    ]
+                                  },
+                                  {
+                                    "+": [
+                                      {
+                                        "var": "currentScreen.form.from_wallet.balanceAmount"
+                                      },
+                                      0
+                                    ]
+                                  }
+                                ]
+                              },
+                              "logicMessage": "Source amount cannot be greater than available balance"
+                            },
+                            {
+                              "logic": {
+                                "!=": [
+                                  {
+                                    "+": [
+                                      { "var": "currentScreen.form.source" },
+                                      0
+                                    ]
+                                  },
+                                  0
+                                ]
+                              },
+                              "logicMessage": "Source amount cannot be 0"
+                            }
+                          ]
+                        }
+                      ],
+                      "successTrigger": {
+                        "id": "iPN1K7P7PY6BXhKSqxt_v",
+                        "name": "DUMMY_TRIGGER_DO_NOT_DELETE",
+                        "projectId": "652fcbce09869c3c809b3097",
+                        "gitBranchName": "master",
+                        "services": [
+                          {
+                            "type": "11",
+                            "command": {
+                              "type": "15",
+                              "attributes": {
+                                "storeType": "",
+                                "selectedObjectBindingKey": "selectedObject",
+                                "dataType": "",
+                                "sourceBindingKey": "",
+                                "filterList": [
+                                  {
+                                    "key": "abcdefg",
+                                    "changeValueConditonally": false,
+                                    "storeType": 2,
+                                    "logic": "Dummy"
+                                  }
+                                ],
+                                "gridFormRowIdBindingKey": "editFormRowId"
+                              }
+                            }
+                          }
+                        ],
+                        "csrf": "0.i1lcgzji571TxgucK8Pae8ke6s1EnzE",
+                        "_id": "9xZhISBZN90RolfBkyF2y",
+                        "updatedAt": "10/7/2024",
+                        "createdAt": "10/7/2024",
+                        "createdBy": "talha",
+                        "updatedBy": "talha"
+                      },
+                      "encryptionType": "encryption"
+                    }
+                  }
+                }
+              ],
+              "logic": { "var": "currentScreen.form.source" }
+            },
+            {
+              "logic": { "!": [{ "var": "currentScreen.form.source" }] },
+              "triggerName": "TBW_CLEAR_STATES",
+              "triggerId": "wRzWGOnNZdQBDuq7w28TS",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "target",
+                          "storeType": 1,
+                          "changeValueConditonally": true,
+                          "logic": { "if": [true, "", ""] }
+                        },
+                        {
+                          "key": "source",
+                          "storeType": 1,
+                          "logic": { "if": [true, "", ""] },
+                          "changeValueConditonally": true
+                        },
+                        {
+                          "key": "quotes",
+                          "changeValueConditonally": true,
+                          "storeType": 2,
+                          "logic": { "if": [true, "", ""] }
+                        }
+                      ],
+                      "gridFormRowIdBindingKey": "editFormRowId"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "logic": { "!": [{ "var": "currentScreen.form.source" }] },
+              "triggerName": "CLEAR_VALIDATION_1",
+              "triggerId": "hsjnpyOFtBjKYt8RO7I3l",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "15",
+                    "attributes": {
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "",
+                      "sourceBindingKey": "",
+                      "filterList": [
+                        {
+                          "key": "validation_1",
+                          "changeValueConditonally": true,
+                          "storeType": 1,
+                          "logic": { "if": [true, "", ""] }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.i1lcgzji571TxgucK8Pae8ke6s1EnzE",
+  "updatedAt": "10/7/2024",
+  "createdAt": "10/7/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

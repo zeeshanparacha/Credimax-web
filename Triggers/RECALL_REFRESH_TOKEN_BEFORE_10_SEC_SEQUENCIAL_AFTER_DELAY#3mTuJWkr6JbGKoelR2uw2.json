@@ -1,0 +1,248 @@
+{
+  "id": "U_J_sT0rIV5J3hPjGkwOY",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "RECALL_REFRESH_TOKEN_BEFORE_10_SEC_SEQUENCIAL_AFTER_DELAY",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "2",
+        "attributes": {
+          "delay": "1000",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "c_G8ZUaX3Qt5upd4SC9RV",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "name": "RECALL_REFRESH_TOKEN_BEFORE_10_SEC_SEQUENCIAL",
+              "old_name": "",
+              "status": "ACTIVE",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "delay": "",
+                      "storeType": "",
+                      "searchInState": false,
+                      "triggers": [
+                        {
+                          "id": "RWtTseSJP8lYQepiZnv7Z",
+                          "name": "SAVE_TOKEN_EXPIRY_TIME_MINUS_10_SEC",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "services": [
+                            {
+                              "type": "11",
+                              "command": {
+                                "type": "15",
+                                "attributes": {
+                                  "storeType": "",
+                                  "selectedObjectBindingKey": "selectedObject",
+                                  "dataType": "",
+                                  "sourceBindingKey": "",
+                                  "filterList": [
+                                    {
+                                      "key": "tokenTimeoutDurationMinusTenSec",
+                                      "changeValueConditonally": true,
+                                      "storeType": 3,
+                                      "logic": {
+                                        "-": [
+                                          {
+                                            "var": "currentSession.userProfile.content.tokenTimeoutDuration"
+                                          },
+                                          10000
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "gridFormRowIdBindingKey": "editFormRowId"
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.3vwkdlhmmibUSJBC8IGrw1VBNJaJ-CB3",
+                          "_id": "g2pjLSl4RqXRQ5si8HVtW",
+                          "updatedAt": "9/30/2024",
+                          "createdAt": "9/30/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        },
+                        {
+                          "id": "5OYtFQmuOX-ExvU5qS-t1",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "CALL_DELAY_TRIGGER_FOR_REFRESH_TOKEN_AFTER_DELAY",
+                          "old_name": "",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "2",
+                              "command": {
+                                "type": "2",
+                                "attributes": {
+                                  "delay": "1000",
+                                  "storeType": "",
+                                  "searchInState": false,
+                                  "triggers": [
+                                    {
+                                      "id": "XCQrMVvmiMBtkxu6_dHUC",
+                                      "projectId": "652fcbce09869c3c809b3097",
+                                      "gitBranchName": "master",
+                                      "name": "CALL_DELAY_TRIGGER_FOR_REFRESH_TOKEN",
+                                      "old_name": "",
+                                      "status": "ACTIVE",
+                                      "services": [
+                                        {
+                                          "type": "2",
+                                          "command": {
+                                            "type": "2",
+                                            "attributes": {
+                                              "delay": "tokenTimeoutDurationMinusTenSec",
+                                              "storeType": 3,
+                                              "searchInState": true,
+                                              "triggers": [
+                                                {
+                                                  "id": "jo8QoCfVjyjMp54tuM4bX",
+                                                  "_id": "5Oc9If0I1RItoYPO_FQxn",
+                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                  "gitBranchName": "master",
+                                                  "name": "GENERATE_REFRESH_TOKEN",
+                                                  "old_name": "GENERATE_REFRESH_TOKEN",
+                                                  "status": "ACTIVE",
+                                                  "services": [
+                                                    {
+                                                      "type": "8",
+                                                      "command": {
+                                                        "type": "1",
+                                                        "attributes": {
+                                                          "loaderWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "messageWidgetIds": [
+                                                            906070
+                                                          ],
+                                                          "responseStateKey": "refresh_token_res",
+                                                          "url": "/security/v1/refreshToken",
+                                                          "checksum": true,
+                                                          "encryption": true,
+                                                          "isDeviceDetails": true,
+                                                          "loginTrigger": false,
+                                                          "formData": false,
+                                                          "logoutTrigger": false,
+                                                          "headers": {
+                                                            "Content-Type": "application/json",
+                                                            "Accept": "application/json",
+                                                            "channel_key": "002"
+                                                          },
+                                                          "requestBody": [
+                                                            {
+                                                              "type": 3,
+                                                              "name": "Current session",
+                                                              "key": "refreshToken",
+                                                              "value": "userProfile.content.refreshToken"
+                                                            },
+                                                            {
+                                                              "type": 3,
+                                                              "name": "Current session",
+                                                              "key": "dobRefreshToken",
+                                                              "value": "userProfile.content.dobRefreshToken"
+                                                            },
+                                                            {
+                                                              "type": 3,
+                                                              "name": "Current session",
+                                                              "key": "userIdentificationRefreshToken",
+                                                              "value": "userProfile.content.userIdentificationRefreshToken"
+                                                            }
+                                                          ],
+                                                          "baseURL": "656f0b4398e9df55f0499597",
+                                                          "storeType": 3,
+                                                          "hideLoading": true
+                                                        },
+                                                        "responseHandler": [
+                                                          {
+                                                            "logic": {
+                                                              "==": [
+                                                                {
+                                                                  "var": "code"
+                                                                },
+                                                                1
+                                                              ]
+                                                            },
+                                                            "httpStatus": 200,
+                                                            "triggerName": "UPDATE_TOKENS_AND_TIMERS",
+                                                            "triggerId": "ljjq4-tKdAlFoKxBp4HVV"
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ],
+                                                  "csrf": "0.ctm22w9yrlIIGFXx5L3A5oDVbhTeTOQ",
+                                                  "updatedAt": "6/27/2024",
+                                                  "createdAt": "6/27/2024",
+                                                  "createdBy": "talha",
+                                                  "updatedBy": "talha"
+                                                }
+                                              ],
+                                              "triggerIds": [
+                                                "jo8QoCfVjyjMp54tuM4bX"
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ],
+                                      "csrf": "0.3vwkdlhmmibUSJBC8IGrw1VBNJaJ-CB3",
+                                      "_id": "SopUmHqfVw1wKOiI4sZMB",
+                                      "updatedAt": "9/30/2024",
+                                      "createdAt": "9/30/2024",
+                                      "createdBy": "talha",
+                                      "updatedBy": "talha"
+                                    }
+                                  ],
+                                  "triggerIds": ["XCQrMVvmiMBtkxu6_dHUC"]
+                                }
+                              }
+                            }
+                          ],
+                          "csrf": "0.3vwkdlhmmibUSJBC8IGrw1VBNJaJ-CB3",
+                          "_id": "I0CnBMUJKJI4RHxel2w3A",
+                          "updatedAt": "9/30/2024",
+                          "createdAt": "9/30/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        }
+                      ],
+                      "triggerIds": [
+                        "RWtTseSJP8lYQepiZnv7Z",
+                        "5OYtFQmuOX-ExvU5qS-t1"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.3vwkdlhmmibUSJBC8IGrw1VBNJaJ-CB3",
+              "_id": "ZJ0FLQBfClJ3NfMjoo6Cw",
+              "updatedAt": "9/30/2024",
+              "createdAt": "9/30/2024",
+              "createdBy": "talha",
+              "updatedBy": "talha"
+            }
+          ],
+          "triggerIds": ["c_G8ZUaX3Qt5upd4SC9RV"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.3vwkdlhmmibUSJBC8IGrw1VBNJaJ-CB3",
+  "_id": "3mTuJWkr6JbGKoelR2uw2",
+  "updatedAt": "9/30/2024",
+  "createdAt": "9/30/2024",
+  "createdBy": "talha",
+  "updatedBy": "talha"
+}

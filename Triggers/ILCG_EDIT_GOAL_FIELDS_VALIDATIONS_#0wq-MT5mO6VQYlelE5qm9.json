@@ -42,42 +42,6 @@
               "JSONLogic": []
             },
             {
-              "bindingKey": "ILCG_AMOUNT",
-              "storeType": 1,
-              "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
-              "isRequired": true,
-              "requiredMessage": "Contribution amount is required",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": []
-            },
-            {
-              "bindingKey": "week_days",
-              "storeType": 1,
-              "messageBindingKey": "week_days_validation",
-              "isRequired": false,
-              "requiredMessage": "",
-              "regEx": "",
-              "regExMessage": "",
-              "JSONLogic": [
-                {
-                  "logic": {
-                    "if": [
-                      {
-                        "==": [
-                          { "var": "currentScreen.form.ILC_FREQUENCY.name" },
-                          "Weekly"
-                        ]
-                      },
-                      { "var": "currentScreen.form.week_days.name" },
-                      true
-                    ]
-                  },
-                  "logicMessage": "Day is required"
-                }
-              ]
-            },
-            {
               "bindingKey": "ILCG_TARGET_DATE",
               "storeType": 1,
               "messageBindingKey": "VALIDATIONS_ILCG_TARGET_DATE",
@@ -103,6 +67,26 @@
                     ]
                   },
                   "logicMessage": "TARGET DATE ERROR"
+                }
+              ]
+            },
+            {
+              "bindingKey": "ILCG_AMOUNT",
+              "storeType": 1,
+              "messageBindingKey": "VALIDATIONS_ILCG_AMOUNT",
+              "isRequired": true,
+              "requiredMessage": "Contribution amount is required",
+              "regEx": "",
+              "regExMessage": "",
+              "JSONLogic": [
+                {
+                  "logic": {
+                    ">": [
+                      { "var": "currentScreen.form.ILCG_AMOUNT" },
+                      { "var": "currentScreen.form.ILCG_GOAL_AMOUNT" }
+                    ]
+                  },
+                  "logicMessage": "Contribution amount cannot exceeds goal amount"
                 }
               ]
             }
@@ -241,9 +225,9 @@
       }
     }
   ],
-  "csrf": "0.kvnbqonhshn_mMs8G9bjX9OB2SGaVcBN",
-  "updatedAt": "9/1/2024",
-  "createdAt": "9/1/2024",
+  "csrf": "0.jlb9uanc76aqBMtomveCEm6ObRzzirBQ",
+  "updatedAt": "10/27/2024",
+  "createdAt": "10/27/2024",
   "createdBy": "mubashar",
   "updatedBy": "mubashar"
 }

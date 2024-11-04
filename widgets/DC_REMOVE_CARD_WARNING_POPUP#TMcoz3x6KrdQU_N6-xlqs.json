@@ -33,8 +33,7 @@
           "layoutProperties": {
             "gridLayout": {
               "//": "Use this class to style grid layout component.",
-              "spacing": 0,
-              "width": "356px"
+              "spacing": 0
             },
             "mainContainer": "gridLayout"
           },
@@ -46,7 +45,10 @@
           "direction": "row",
           "name": "DC_REMOVE_CARD_WARNING_POPUP",
           "cssClassNames": [
-            { "cssClassName": "DC_REMOVE_CARD_WARNING_POPUP_CSS " }
+            {
+              "cssClassName": "DC_REMOVE_CARD_WARNING_POPUP_CSS ",
+              "key": "DC_REMOVE_CARD_WARNING_POPUP_CSS "
+            }
           ]
         },
         "group": "Layout",
@@ -65,7 +67,7 @@
         "gridProps": [
           {
             "type": "column",
-            "id": "iK3KdDPGU9fVq7LGaMS9n",
+            "id": "OXphnLlroxMKqRVmniXni",
             "gridProps": [
               {
                 "type": "10001",
@@ -127,7 +129,8 @@
                               "cssClassName": "DISPLAY_NONE ",
                               "key": "DISPLAY_NONE "
                             }
-                          ]
+                          ],
+                          "hideComponent": true
                         },
                         "group": "Form",
                         "updatedAt": "23-Aug-2021",
@@ -186,7 +189,8 @@
                         "isLatest": true,
                         "projectType": "web",
                         "component": { "content": "Lottie", "type": "20051" },
-                        "path": "0-0-0-0-1"
+                        "path": "0-0-0-0-1",
+                        "events": []
                       },
                       {
                         "id": "5Tv-WzFTsNjxNLZALpNGn",
@@ -364,7 +368,7 @@
                                   "type": "20006"
                                 },
                                 "attributes": {
-                                  "label": "No",
+                                  "label": "Yes",
                                   "variant": "contained",
                                   "name": "Button",
                                   "label-locale-key": "",
@@ -398,22 +402,64 @@
                                       "cssClassName": "DC_REMOVE_BUTTON_CSS ",
                                       "key": "DC_REMOVE_BUTTON_CSS "
                                     }
+                                  ],
+                                  "enableLoadingState": true,
+                                  "loadingKey": "dc_remove_card_loader",
+                                  "loadingKeyStoreType": 2,
+                                  "loader": {
+                                    "loader": "dsyxp-GZonK1-3rL4wy0I",
+                                    "loaderName": "button-lottie.json"
+                                  },
+                                  "buttonLoadingClass": [
+                                    {
+                                      "cssClassName": "BC_LOTTIE_HEIGHT ",
+                                      "key": "BC_LOTTIE_HEIGHT "
+                                    }
+                                  ],
+                                  "cssDisableClassNames": [
+                                    {
+                                      "cssClassName": "GENERIC_REJECT_DISABLE ",
+                                      "key": "GENERIC_REJECT_DISABLE "
+                                    }
                                   ]
                                 },
                                 "events": [
                                   {
-                                    "triggerId": "WuhHxg90Z2anPz7DGsIrC",
-                                    "triggerName": "Close Modal",
-                                    "serviceType": "9",
+                                    "triggerId": "RboCwZzZ5RS5Ri9oM9zY9",
+                                    "triggerName": "DC_REMOVE_CARD_API_TRIGGER",
+                                    "serviceType": "8",
                                     "attributes": {
-                                      "content": "",
-                                      "type": "",
-                                      "modalId": "ozKeLAA5SQp3bjJ9kCQQg",
-                                      "toastContentType": "custom"
+                                      "loaderWidgetIds": [906070],
+                                      "messageWidgetIds": [906070],
+                                      "responseStateKey": "dc_remove_card",
+                                      "url": "/user/debitCard/v1/deleteCard",
+                                      "checksum": true,
+                                      "encryption": true,
+                                      "isDeviceDetails": false,
+                                      "loginTrigger": false,
+                                      "formData": false,
+                                      "logoutTrigger": false,
+                                      "headers": {
+                                        "Content-Type": "application/json",
+                                        "channel_key": "002"
+                                      },
+                                      "requestBody": [
+                                        {
+                                          "type": 1,
+                                          "name": "Form",
+                                          "key": "id",
+                                          "value": "selectedRow.id"
+                                        }
+                                      ],
+                                      "baseURL": "656f0b4398e9df55f0499597",
+                                      "storeType": 2,
+                                      "hideLoading": true,
+                                      "loadingState": "dc_remove_card_loader",
+                                      "isLoadingState": true
                                     },
                                     "type": "2",
                                     "name": "On click",
-                                    "commandType": "2"
+                                    "commandType": "1"
                                   }
                                 ],
                                 "path": "0-0-1-0-0-0-0",
@@ -503,7 +549,7 @@
                                   "type": "20006"
                                 },
                                 "attributes": {
-                                  "label": "Yes",
+                                  "label": "No",
                                   "variant": "outlined",
                                   "name": "Button",
                                   "label-locale-key": "",
@@ -512,7 +558,11 @@
                                     "button": {
                                       "//": "Use this class to style button component.",
                                       "width": "100%",
-                                      "text-transform": "capatalize"
+                                      "text-transform": "capatalize",
+                                      "background": "#004986 0% 0% no-repeat padding-box !important",
+                                      "height": "48px",
+                                      "color": "white !important",
+                                      "borderRadius": "32px"
                                     },
                                     "iconButton": {
                                       "//": "Use this class to style icon button component.",
@@ -529,47 +579,31 @@
                                     "sm": 12,
                                     "xs": 12
                                   },
-                                  "cssClassNames": [
-                                    {
-                                      "cssClassName": "GENERIC_PRIMARY_BUTTON ",
-                                      "key": "GENERIC_PRIMARY_BUTTON "
-                                    }
-                                  ]
+                                  "cssClassNames": [],
+                                  "enableLoadingState": false,
+                                  "loadingKey": "dc_remove_card_loader",
+                                  "loadingKeyStoreType": 2,
+                                  "loader": {
+                                    "loader": "dsyxp-GZonK1-3rL4wy0I",
+                                    "loaderName": "button-lottie.json"
+                                  },
+                                  "buttonLoadingClass": [],
+                                  "cssDisableClassNames": []
                                 },
                                 "events": [
                                   {
-                                    "triggerId": "RboCwZzZ5RS5Ri9oM9zY9",
-                                    "triggerName": "DC_REMOVE_CARD_API_TRIGGER",
-                                    "serviceType": "8",
+                                    "triggerId": "WuhHxg90Z2anPz7DGsIrC",
+                                    "triggerName": "Close Modal",
+                                    "serviceType": "9",
                                     "attributes": {
-                                      "loaderWidgetIds": [906070],
-                                      "messageWidgetIds": [906070],
-                                      "responseStateKey": "dc_remove_card",
-                                      "url": "/user/debitCard/v1/deleteCard",
-                                      "checksum": true,
-                                      "encryption": true,
-                                      "isDeviceDetails": false,
-                                      "loginTrigger": false,
-                                      "formData": false,
-                                      "logoutTrigger": false,
-                                      "headers": {
-                                        "Content-Type": "application/json",
-                                        "channel_key": "002"
-                                      },
-                                      "requestBody": [
-                                        {
-                                          "type": 1,
-                                          "name": "Form",
-                                          "key": "id",
-                                          "value": "id"
-                                        }
-                                      ],
-                                      "baseURL": "656f0b4398e9df55f0499597",
-                                      "storeType": 2
+                                      "content": "",
+                                      "type": "",
+                                      "modalId": "ozKeLAA5SQp3bjJ9kCQQg",
+                                      "toastContentType": "custom"
                                     },
                                     "type": "2",
                                     "name": "On click",
-                                    "commandType": "1"
+                                    "commandType": "2"
                                   }
                                 ],
                                 "path": "0-0-1-1-0-0-0",
@@ -714,9 +748,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "TMcoz3x6KrdQU_N6-xlqs",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -768,8 +802,7 @@
       "layoutProperties": {
         "gridLayout": {
           "//": "Use this class to style grid layout component.",
-          "spacing": 0,
-          "width": "356px"
+          "spacing": 0
         },
         "mainContainer": "gridLayout"
       },
@@ -780,7 +813,12 @@
       },
       "direction": "row",
       "name": "DC_REMOVE_CARD_WARNING_POPUP",
-      "cssClassNames": [{ "cssClassName": "DC_REMOVE_CARD_WARNING_POPUP_CSS " }]
+      "cssClassNames": [
+        {
+          "cssClassName": "DC_REMOVE_CARD_WARNING_POPUP_CSS ",
+          "key": "DC_REMOVE_CARD_WARNING_POPUP_CSS "
+        }
+      ]
     },
     "layout": null,
     "events": [],
@@ -789,9 +827,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -874,9 +912,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -927,11 +965,12 @@
       "useFullLink": null,
       "cssClassNames": [
         { "cssClassName": "DISPLAY_NONE ", "key": "DISPLAY_NONE " }
-      ]
+      ],
+      "hideComponent": true
     },
     "group": "Form",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -944,7 +983,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -985,19 +1024,20 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
-    "subType": "component",
     "component": { "content": "Lottie", "type": "20051" },
     "path": "0-0-0-0-1",
+    "events": [],
     "screenId": "TMcoz3x6KrdQU_N6-xlqs",
+    "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1043,9 +1083,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1085,8 +1125,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -1098,7 +1138,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
+    "createdBy": "basitahmed1199",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1158,9 +1198,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1206,9 +1246,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1217,7 +1257,7 @@
     "name": "Button",
     "component": { "content": "Button", "type": "20006" },
     "attributes": {
-      "label": "No",
+      "label": "Yes",
       "variant": "contained",
       "name": "Button",
       "label-locale-key": "",
@@ -1249,15 +1289,31 @@
           "cssClassName": "DC_REMOVE_BUTTON_CSS ",
           "key": "DC_REMOVE_BUTTON_CSS "
         }
+      ],
+      "enableLoadingState": true,
+      "loadingKey": "dc_remove_card_loader",
+      "loadingKeyStoreType": 2,
+      "loader": {
+        "loader": "dsyxp-GZonK1-3rL4wy0I",
+        "loaderName": "button-lottie.json"
+      },
+      "buttonLoadingClass": [
+        { "cssClassName": "BC_LOTTIE_HEIGHT ", "key": "BC_LOTTIE_HEIGHT " }
+      ],
+      "cssDisableClassNames": [
+        {
+          "cssClassName": "GENERIC_REJECT_DISABLE ",
+          "key": "GENERIC_REJECT_DISABLE "
+        }
       ]
     },
     "events": [
       {
-        "triggerId": "WuhHxg90Z2anPz7DGsIrC",
-        "triggerName": "Close Modal",
+        "triggerId": "RboCwZzZ5RS5Ri9oM9zY9",
+        "triggerName": "DC_REMOVE_CARD_API_TRIGGER",
         "name": "On click",
         "type": "2",
-        "serviceType": "9"
+        "serviceType": "8"
       }
     ],
     "path": "0-0-1-0-0-0-0",
@@ -1266,9 +1322,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1314,9 +1370,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -1325,7 +1381,7 @@
     "name": "Button",
     "component": { "content": "Button", "type": "20006" },
     "attributes": {
-      "label": "Yes",
+      "label": "No",
       "variant": "outlined",
       "name": "Button",
       "label-locale-key": "",
@@ -1334,7 +1390,11 @@
         "button": {
           "//": "Use this class to style button component.",
           "width": "100%",
-          "text-transform": "capatalize"
+          "text-transform": "capatalize",
+          "background": "#004986 0% 0% no-repeat padding-box !important",
+          "height": "48px",
+          "color": "white !important",
+          "borderRadius": "32px"
         },
         "iconButton": {
           "//": "Use this class to style icon button component.",
@@ -1349,20 +1409,24 @@
         "sm": 12,
         "xs": 12
       },
-      "cssClassNames": [
-        {
-          "cssClassName": "GENERIC_PRIMARY_BUTTON ",
-          "key": "GENERIC_PRIMARY_BUTTON "
-        }
-      ]
+      "cssClassNames": [],
+      "enableLoadingState": false,
+      "loadingKey": "dc_remove_card_loader",
+      "loadingKeyStoreType": 2,
+      "loader": {
+        "loader": "dsyxp-GZonK1-3rL4wy0I",
+        "loaderName": "button-lottie.json"
+      },
+      "buttonLoadingClass": [],
+      "cssDisableClassNames": []
     },
     "events": [
       {
-        "triggerId": "RboCwZzZ5RS5Ri9oM9zY9",
-        "triggerName": "DC_REMOVE_CARD_API_TRIGGER",
+        "triggerId": "WuhHxg90Z2anPz7DGsIrC",
+        "triggerName": "Close Modal",
         "name": "On click",
         "type": "2",
-        "serviceType": "8"
+        "serviceType": "9"
       }
     ],
     "path": "0-0-1-1-0-0-0",
@@ -1371,9 +1435,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "kelashk",
-    "updatedAt": "8/27/2024",
-    "createdAt": "8/27/2024",
+    "createdBy": "basitahmed1199",
+    "updatedAt": "11/3/2024",
+    "createdAt": "11/3/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

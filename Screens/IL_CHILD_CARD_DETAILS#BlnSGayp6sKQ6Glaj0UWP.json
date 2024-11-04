@@ -123,6 +123,21 @@
             "id": "9m0rp0inrli6WinrNZfRM",
             "gridProps": [
               {
+                "id": "YqTHJVpUql348kpegbpQR",
+                "type": "TOAST",
+                "triggerName": "COPY_CARD_SUCCESS_TOAST",
+                "attributes": {
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "TOAST" }
+              },
+              {
                 "id": "JgjNpAWrLv9Z4K__E52TH",
                 "type": "20031",
                 "name": "GENERIC_CARD_CHECK_OTP_CONDITIONAL",
@@ -144,6 +159,38 @@
                 "type": "20031",
                 "attributes": {
                   "widgetId": "qlNYUQLxYigENOVrYK10w",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
+                "id": "O9tJFiz5ckEACUA2TF7Sv",
+                "name": "UNFREEZE_CARD_POPUP_MODAL",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "D8v90BeMfQ3vQsoUow1nR",
+                  "layoutProperties": {
+                    "xl": 12,
+                    "lg": 12,
+                    "md": 12,
+                    "sm": 12,
+                    "xs": 12
+                  }
+                },
+                "component": { "type": "20031" }
+              },
+              {
+                "id": "S3tJdrzRaJuogH7w8ZwYa",
+                "name": "FREEZE_CARD_POPUP_MODAL",
+                "type": "20031",
+                "attributes": {
+                  "widgetId": "5iALODlMr3toZKc0zG6eP",
                   "layoutProperties": {
                     "xl": 12,
                     "lg": 12,
@@ -180,7 +227,7 @@
                   ]
                 },
                 "events": [],
-                "path": "0-0-2",
+                "path": "0-0-5",
                 "version": "1.0.0",
                 "allowedContainers": [
                   "10001",
@@ -202,7 +249,7 @@
                 "gridProps": [
                   {
                     "type": "column",
-                    "id": "_54umoXpAugRq2FwFPw-y",
+                    "id": "a6I6Zvc60QFfhiwmMNmHs",
                     "gridProps": [
                       {
                         "type": "10001",
@@ -918,7 +965,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "3OZNRF4XhNIuvoStbk3yd",
+                                                    "id": "JmUhux9VV5h-vj3adtiZl",
                                                     "gridProps": [
                                                       {
                                                         "id": "POKPOSh7ItJxhza5oeiFN",
@@ -1235,7 +1282,7 @@
                                                   "cssClassNames": [],
                                                   "hideCondition": {
                                                     "logic": {
-                                                      "==": [
+                                                      "!=": [
                                                         {
                                                           "var": "currentScreen.CURRENT_CARD.navigationAccess.showCardNumber"
                                                         },
@@ -1551,21 +1598,96 @@
                                                         },
                                                         "events": [
                                                           {
-                                                            "triggerId": "XJmvanXallNApxedZFKhu",
-                                                            "triggerName": "CARD_COPY_CLIPBOARD",
-                                                            "serviceType": "16",
+                                                            "triggerId": "np4DY1cRVrNQ_iOIjHjXB",
+                                                            "triggerName": "COPY_CARD_SUCCESS_TOAST",
+                                                            "serviceType": "9",
                                                             "attributes": {
-                                                              "bindingKey": "cardDetails.content.cardDetail.realCardNumber",
-                                                              "storeType": 2,
-                                                              "dataType": "dynamic",
-                                                              "encryptionType": "encryption"
+                                                              "content": "Card number copied successfully.",
+                                                              "type": "success",
+                                                              "modalId": "YqTHJVpUql348kpegbpQR",
+                                                              "toastContentType": "custom"
                                                             },
                                                             "type": "2",
                                                             "name": "On click",
                                                             "commandType": "3"
+                                                          },
+                                                          {
+                                                            "triggerId": "N9NRzYNDfx7uKwfdJ8jAR",
+                                                            "triggerName": "COPY_CARD_AFTER_FORMATING",
+                                                            "serviceType": "2",
+                                                            "attributes": {
+                                                              "delay": "",
+                                                              "storeType": "",
+                                                              "searchInState": false,
+                                                              "triggers": [
+                                                                {
+                                                                  "id": "BMvA8mY2ewBVwhMEp8VRy",
+                                                                  "gitBranchName": "master",
+                                                                  "name": "REMOVE_SPACES_FROM_CARD_NO",
+                                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "15",
+                                                                      "command": {
+                                                                        "type": "3",
+                                                                        "attributes": {
+                                                                          "destinationBindingKey": "realCardNumber",
+                                                                          "sourceBindingKey": "cardDetails.content.cardDetail.realCardNumber",
+                                                                          "sourceStoreType": 2,
+                                                                          "destinationStoreType": 2,
+                                                                          "splittingValue": "",
+                                                                          "replacingValue": " ",
+                                                                          "replacedFromValue": "",
+                                                                          "replaceAll": true
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "csrf": "0.bj0v65g41p6K3xCz_H5VDZBDPYkjdQ-_",
+                                                                  "_id": "LOEeDnaPrsTJyaF6ChCiR",
+                                                                  "updatedAt": "10/9/2024",
+                                                                  "createdAt": "10/9/2024",
+                                                                  "createdBy": "talha",
+                                                                  "updatedBy": "talha"
+                                                                },
+                                                                {
+                                                                  "id": "XJmvanXallNApxedZFKhu",
+                                                                  "_id": "BqgSb3frhU1quOBqcgNS3",
+                                                                  "gitBranchName": "master",
+                                                                  "name": "CARD_COPY_CLIPBOARD",
+                                                                  "projectId": "652fcbce09869c3c809b3097",
+                                                                  "services": [
+                                                                    {
+                                                                      "type": "16",
+                                                                      "command": {
+                                                                        "type": "3",
+                                                                        "attributes": {
+                                                                          "bindingKey": "realCardNumber",
+                                                                          "storeType": 2,
+                                                                          "dataType": "dynamic",
+                                                                          "encryptionType": "encryption"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ],
+                                                                  "csrf": "0.bj0v65g41p6K3xCz_H5VDZBDPYkjdQ-_",
+                                                                  "updatedAt": "10/9/2024",
+                                                                  "createdAt": "10/9/2024",
+                                                                  "createdBy": "talha",
+                                                                  "updatedBy": "talha"
+                                                                }
+                                                              ],
+                                                              "triggerIds": [
+                                                                "BMvA8mY2ewBVwhMEp8VRy",
+                                                                "XJmvanXallNApxedZFKhu"
+                                                              ]
+                                                            },
+                                                            "type": "2",
+                                                            "name": "On click",
+                                                            "commandType": "1"
                                                           }
                                                         ],
-                                                        "path": "0-0-3-0-0-0-1-0-1-0-2-0-1",
+                                                        "path": "0-0-6-0-0-0-1-0-1-0-2-0-1",
                                                         "version": "1.0.0"
                                                       }
                                                     ],
@@ -3806,7 +3928,7 @@
                                                 "gridProps": [
                                                   {
                                                     "type": "column",
-                                                    "id": "R-YWhxs7mZ_k7dz7Nbzrb",
+                                                    "id": "ozy8vipj6GQvRVjPoPtwZ",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -3935,7 +4057,7 @@
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "ZZJJ6HVLUO3bS6kmI7Eez",
+                                                    "id": "Cw1Ms_kkZw2imxtaZxZ30",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -4225,7 +4347,7 @@
                                                   },
                                                   {
                                                     "type": "column",
-                                                    "id": "naDjAqY803jj64D7TVyEp",
+                                                    "id": "vidL28vzVFDT_FzckGq9L",
                                                     "gridProps": [
                                                       {
                                                         "type": "10001",
@@ -4251,7 +4373,7 @@
                                                                         "gridProps": [
                                                                           {
                                                                             "type": "column",
-                                                                            "id": "ObLyG_VAgUv_bpPktmoJc",
+                                                                            "id": "W-LHBlk-14UOdhrFvOLLE",
                                                                             "gridProps": [
                                                                               {
                                                                                 "type": "10001",
@@ -4378,137 +4500,12 @@
                                                                             }
                                                                           ]
                                                                         },
-                                                                        "events": [
-                                                                          {
-                                                                            "triggerId": "xj5oVogiaea2dHpIRHuTO",
-                                                                            "triggerName": "DASHBOARD_TOGGLE_ACTION_CONDITIONALLY_AFTER_DELAY",
-                                                                            "serviceType": "2",
-                                                                            "attributes": {
-                                                                              "delay": "500",
-                                                                              "triggers": [
-                                                                                {
-                                                                                  "id": "8vPbPNMJtLx5Un3kTczsJ",
-                                                                                  "projectId": "652fcbce09869c3c809b3097",
-                                                                                  "gitBranchName": "master",
-                                                                                  "name": "DASHBOARD_TOGGLE_ACTION_CONDITIONALLY",
-                                                                                  "old_name": "",
-                                                                                  "status": "ACTIVE",
-                                                                                  "services": [
-                                                                                    {
-                                                                                      "type": "13",
-                                                                                      "command": {
-                                                                                        "type": "1",
-                                                                                        "attributes": {
-                                                                                          "triggers": [
-                                                                                            {
-                                                                                              "logic": {
-                                                                                                "==": [
-                                                                                                  {
-                                                                                                    "var": "currentScreen.form.selected_service.transCode"
-                                                                                                  },
-                                                                                                  "1207"
-                                                                                                ]
-                                                                                              },
-                                                                                              "triggerName": "FREEZE_CARD_MODAL_CONDITIONAL",
-                                                                                              "triggerId": "JcHE2UFFtqqB8XUxV7owW",
-                                                                                              "services": [
-                                                                                                {
-                                                                                                  "type": "13",
-                                                                                                  "command": {
-                                                                                                    "type": "1",
-                                                                                                    "attributes": {
-                                                                                                      "triggers": [
-                                                                                                        {
-                                                                                                          "triggerName": "FREEZE_CARD_POPUP_MODAL",
-                                                                                                          "triggerId": "OQ0YbfHvEli3cScK6XriY",
-                                                                                                          "services": [
-                                                                                                            {
-                                                                                                              "type": "9",
-                                                                                                              "command": {
-                                                                                                                "type": "1",
-                                                                                                                "attributes": {
-                                                                                                                  "widgetId": "5iALODlMr3toZKc0zG6eP",
-                                                                                                                  "content": "",
-                                                                                                                  "type": "",
-                                                                                                                  "modalId": "S3tJdrzRaJuogH7w8ZwYa",
-                                                                                                                  "toastContentType": "custom"
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          ],
-                                                                                                          "logic": {
-                                                                                                            "if": {
-                                                                                                              "==": [
-                                                                                                                {
-                                                                                                                  "var": "currentScreen.form.freezeToggle"
-                                                                                                                },
-                                                                                                                true
-                                                                                                              ]
-                                                                                                            }
-                                                                                                          }
-                                                                                                        },
-                                                                                                        {
-                                                                                                          "triggerName": "UNFREEZE_CARD_POPUP_MODAL",
-                                                                                                          "triggerId": "6YiZwxCTdaLuwchtlSHlA",
-                                                                                                          "services": [
-                                                                                                            {
-                                                                                                              "type": "9",
-                                                                                                              "command": {
-                                                                                                                "type": "1",
-                                                                                                                "attributes": {
-                                                                                                                  "widgetId": "D8v90BeMfQ3vQsoUow1nR",
-                                                                                                                  "content": "",
-                                                                                                                  "type": "",
-                                                                                                                  "modalId": "O9tJFiz5ckEACUA2TF7Sv",
-                                                                                                                  "toastContentType": "custom"
-                                                                                                                }
-                                                                                                              }
-                                                                                                            }
-                                                                                                          ],
-                                                                                                          "logic": {
-                                                                                                            "if": {
-                                                                                                              "==": [
-                                                                                                                {
-                                                                                                                  "var": "currentScreen.form.freezeToggle"
-                                                                                                                },
-                                                                                                                false
-                                                                                                              ]
-                                                                                                            }
-                                                                                                          }
-                                                                                                        }
-                                                                                                      ]
-                                                                                                    }
-                                                                                                  }
-                                                                                                }
-                                                                                              ]
-                                                                                            }
-                                                                                          ]
-                                                                                        }
-                                                                                      }
-                                                                                    }
-                                                                                  ],
-                                                                                  "csrf": "0.ugif0c8p9tzjMjKOJ8juqsTCV742Cy_",
-                                                                                  "_id": "xD3N1rqiMhklhNxnoM3xS",
-                                                                                  "updatedAt": "2/9/2024",
-                                                                                  "createdAt": "2/9/2024",
-                                                                                  "createdBy": "talha",
-                                                                                  "updatedBy": "talha"
-                                                                                }
-                                                                              ],
-                                                                              "triggerIds": [
-                                                                                "8vPbPNMJtLx5Un3kTczsJ"
-                                                                              ]
-                                                                            },
-                                                                            "type": "2",
-                                                                            "name": "On click",
-                                                                            "commandType": "2"
-                                                                          }
-                                                                        ],
+                                                                        "events": [],
                                                                         "component": {
                                                                           "type": "10001",
                                                                           "content": "Grid layout"
                                                                         },
-                                                                        "path": "0-0-3-1-0-0-0-0-0-0-0-2-0-0-0-0-0",
+                                                                        "path": "0-0-6-1-0-0-0-0-0-0-0-2-0-0-0-0-0",
                                                                         "dimensions": {
                                                                           "rows": 1,
                                                                           "columns": 1,
@@ -4673,8 +4670,95 @@
                                                     }
                                                   }
                                                 ],
-                                                "path": "0-0-3-1-0-0-0-0-0-0-0",
-                                                "events": [],
+                                                "path": "0-0-6-1-0-0-0-0-0-0-0",
+                                                "events": [
+                                                  {
+                                                    "triggerId": "JcHE2UFFtqqB8XUxV7owW",
+                                                    "triggerName": "FREEZE_CARD_MODAL_CONDITIONAL",
+                                                    "serviceType": "13",
+                                                    "attributes": {
+                                                      "triggers": [
+                                                        {
+                                                          "triggerName": "FREEZE_CARD_POPUP_MODAL",
+                                                          "triggerId": "OQ0YbfHvEli3cScK6XriY",
+                                                          "services": [
+                                                            {
+                                                              "type": "9",
+                                                              "command": {
+                                                                "type": "1",
+                                                                "attributes": {
+                                                                  "widgetId": "5iALODlMr3toZKc0zG6eP",
+                                                                  "content": "",
+                                                                  "type": "",
+                                                                  "modalId": "S3tJdrzRaJuogH7w8ZwYa",
+                                                                  "toastContentType": "custom"
+                                                                }
+                                                              }
+                                                            }
+                                                          ],
+                                                          "logic": {
+                                                            "and": [
+                                                              {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentScreen.form.selected_service.transCode"
+                                                                  },
+                                                                  "1207"
+                                                                ]
+                                                              },
+                                                              {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentScreen.CURRENT_CARD.isFreeze"
+                                                                  },
+                                                                  false
+                                                                ]
+                                                              }
+                                                            ]
+                                                          }
+                                                        },
+                                                        {
+                                                          "logic": {
+                                                            "==": [
+                                                              {
+                                                                "==": [
+                                                                  {
+                                                                    "var": "currentScreen.form.selected_service.transCode"
+                                                                  },
+                                                                  "1207"
+                                                                ]
+                                                              },
+                                                              {
+                                                                "var": "currentScreen.CURRENT_CARD.isFreeze"
+                                                              },
+                                                              true
+                                                            ]
+                                                          },
+                                                          "triggerName": "UNFREEZE_CARD_POPUP_MODAL",
+                                                          "triggerId": "6YiZwxCTdaLuwchtlSHlA",
+                                                          "services": [
+                                                            {
+                                                              "type": "9",
+                                                              "command": {
+                                                                "type": "1",
+                                                                "attributes": {
+                                                                  "widgetId": "D8v90BeMfQ3vQsoUow1nR",
+                                                                  "content": "",
+                                                                  "type": "",
+                                                                  "modalId": "O9tJFiz5ckEACUA2TF7Sv",
+                                                                  "toastContentType": "custom"
+                                                                }
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    "type": "2",
+                                                    "name": "On click",
+                                                    "commandType": "1"
+                                                  }
+                                                ],
                                                 "attributes": {
                                                   "gridProps": [],
                                                   "label": "Header",
@@ -5109,9 +5193,9 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "_id": "BlnSGayp6sKQ6Glaj0UWP",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5128,7 +5212,43 @@
             "sm": 12,
             "xs": 12
           },
+          "componentId": "YqTHJVpUql348kpegbpQR",
+          "componentType": "TOAST",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
           "componentId": "JgjNpAWrLv9Z4K__E52TH",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "O9tJFiz5ckEACUA2TF7Sv",
+          "componentType": "20031",
+          "order": 1
+        },
+        {
+          "layoutProperties": {
+            "xl": 12,
+            "lg": 12,
+            "md": 12,
+            "sm": 12,
+            "xs": 12
+          },
+          "componentId": "S3tJdrzRaJuogH7w8ZwYa",
           "componentType": "20031",
           "order": 1
         },
@@ -5212,9 +5332,27 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "YqTHJVpUql348kpegbpQR",
+    "type": "TOAST",
+    "triggerName": "COPY_CARD_SUCCESS_TOAST",
+    "attributes": {
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "TOAST" },
+    "screenId": "BlnSGayp6sKQ6Glaj0UWP",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5231,9 +5369,47 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "O9tJFiz5ckEACUA2TF7Sv",
+    "name": "UNFREEZE_CARD_POPUP_MODAL",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "D8v90BeMfQ3vQsoUow1nR",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "BlnSGayp6sKQ6Glaj0UWP",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
+    "updatedTimestamp": "0000-00-00T00:00:00+00:00"
+  },
+  {
+    "id": "S3tJdrzRaJuogH7w8ZwYa",
+    "name": "FREEZE_CARD_POPUP_MODAL",
+    "type": "20031",
+    "attributes": {
+      "widgetId": "5iALODlMr3toZKc0zG6eP",
+      "layoutProperties": { "xl": 12, "lg": 12, "md": 12, "sm": 12, "xs": 12 }
+    },
+    "component": { "type": "20031" },
+    "screenId": "BlnSGayp6sKQ6Glaj0UWP",
+    "subType": "component",
+    "projectId": "652fcbce09869c3c809b3097",
+    "version": "1.0.0",
+    "gitBranchName": "master",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5285,9 +5461,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5353,9 +5529,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5416,9 +5592,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5483,9 +5659,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5522,8 +5698,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -5535,7 +5711,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5590,9 +5766,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5648,8 +5824,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
@@ -5676,7 +5852,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5741,9 +5917,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5836,9 +6012,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5886,9 +6062,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5936,9 +6112,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6033,9 +6209,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6095,9 +6271,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6143,9 +6319,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6175,8 +6351,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6188,7 +6364,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6241,7 +6417,7 @@
       "cssClassNames": [],
       "hideCondition": {
         "logic": {
-          "==": [
+          "!=": [
             {
               "var": "currentScreen.CURRENT_CARD.navigationAccess.showCardNumber"
             },
@@ -6257,9 +6433,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6324,8 +6500,8 @@
       "cssClassNames": []
     },
     "group": "Form",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -6346,7 +6522,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6408,8 +6584,8 @@
       "cssClassNames": []
     },
     "group": "Form",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -6430,7 +6606,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6509,9 +6685,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6559,8 +6735,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6572,7 +6748,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6620,8 +6796,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -6633,7 +6809,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6706,9 +6882,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6751,9 +6927,9 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6815,22 +6991,29 @@
     },
     "events": [
       {
-        "triggerId": "XJmvanXallNApxedZFKhu",
-        "triggerName": "CARD_COPY_CLIPBOARD",
+        "triggerId": "np4DY1cRVrNQ_iOIjHjXB",
+        "triggerName": "COPY_CARD_SUCCESS_TOAST",
         "name": "On click",
         "type": "2",
-        "serviceType": "16"
+        "serviceType": "9"
+      },
+      {
+        "triggerId": "N9NRzYNDfx7uKwfdJ8jAR",
+        "triggerName": "COPY_CARD_AFTER_FORMATING",
+        "name": "On click",
+        "type": "2",
+        "serviceType": "2"
       }
     ],
-    "path": "0-0-3-0-0-0-1-0-1-0-2-0-1",
+    "path": "0-0-6-0-0-0-1-0-1-0-2-0-1",
     "version": "1.0.0",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6905,9 +7088,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -6976,9 +7159,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7022,8 +7205,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7035,7 +7218,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7073,8 +7256,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7086,7 +7269,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7128,8 +7311,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7141,7 +7324,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7210,9 +7393,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7257,8 +7440,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7270,7 +7453,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7308,8 +7491,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7321,7 +7504,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7363,8 +7546,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7376,7 +7559,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7421,9 +7604,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7475,8 +7658,8 @@
       "cssClassNames": []
     },
     "group": "Form",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -7489,7 +7672,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7679,9 +7862,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7727,9 +7910,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7757,8 +7940,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7770,7 +7953,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7827,9 +8010,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7857,8 +8040,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7870,7 +8053,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7900,8 +8083,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -7913,7 +8096,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -7971,9 +8154,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8001,8 +8184,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8014,7 +8197,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8044,8 +8227,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8057,7 +8240,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8103,9 +8286,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8133,8 +8316,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8146,7 +8329,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8192,9 +8375,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8251,9 +8434,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8283,8 +8466,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8296,7 +8479,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8354,9 +8537,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8384,8 +8567,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8397,7 +8580,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8427,8 +8610,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8440,7 +8623,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8486,9 +8669,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8516,8 +8699,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8529,7 +8712,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8586,9 +8769,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8645,9 +8828,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8677,8 +8860,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -8690,7 +8873,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8746,9 +8929,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8802,9 +8985,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -8931,9 +9114,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9001,15 +9184,22 @@
       ]
     },
     "layout": null,
-    "events": [],
+    "events": [
+      {
+        "triggerId": "JcHE2UFFtqqB8XUxV7owW",
+        "triggerName": "FREEZE_CARD_MODAL_CONDITIONAL",
+        "name": "On click",
+        "type": "2"
+      }
+    ],
     "subType": "component",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9056,9 +9246,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9090,8 +9280,8 @@
       "cssClassNames": [{ "cssClassName": "CARD_SERVICES_OPTION_IMAGE" }]
     },
     "group": "Form",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -9104,7 +9294,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9176,9 +9366,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9224,9 +9414,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9254,8 +9444,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -9267,7 +9457,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9313,9 +9503,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9343,8 +9533,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -9356,7 +9546,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9421,9 +9611,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9476,9 +9666,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9535,22 +9725,15 @@
       ]
     },
     "layout": null,
-    "events": [
-      {
-        "triggerId": "xj5oVogiaea2dHpIRHuTO",
-        "triggerName": "DASHBOARD_TOGGLE_ACTION_CONDITIONALLY_AFTER_DELAY",
-        "name": "On click",
-        "type": "2"
-      }
-    ],
+    "events": [],
     "subType": "component",
     "screenId": "BlnSGayp6sKQ6Glaj0UWP",
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9594,9 +9777,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9641,9 +9824,9 @@
     "projectId": "652fcbce09869c3c809b3097",
     "version": "1.0.0",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "createdBy": "talha",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -9671,8 +9854,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/10/2024",
-    "createdAt": "9/10/2024",
+    "updatedAt": "10/9/2024",
+    "createdAt": "10/9/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -9684,7 +9867,7 @@
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
-    "createdBy": "mubashar",
+    "createdBy": "talha",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   }
 ]

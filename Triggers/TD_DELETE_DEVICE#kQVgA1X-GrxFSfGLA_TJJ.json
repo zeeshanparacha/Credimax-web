@@ -15,6 +15,7 @@
           "loaderWidgetIds": [906070],
           "messageWidgetIds": [906070],
           "responseStateKey": "td_delete_device_res",
+          "successMessageBindingKey": "trusted_device_error",
           "url": "/security/v1/deleteDevices",
           "checksum": true,
           "encryption": true,
@@ -38,11 +39,14 @@
               "type": 2,
               "name": "Current screen",
               "key": "validation",
-              "value": "pc_validation_object"
+              "value": "td_otp_validations"
             }
           ],
           "baseURL": "656f0b4398e9df55f0499597",
-          "storeType": 2
+          "storeType": 2,
+          "hideLoading": true,
+          "loadingState": "TD_LOADER",
+          "isLoadingState": true
         },
         "responseHandler": [
           {
@@ -62,14 +66,20 @@
             "httpStatus": 200,
             "triggerName": "TD_SHOW_ERROR_MODAL",
             "triggerId": "HLVXwA2m5ABjTBNBzdi9R"
+          },
+          {
+            "httpStatus": 200,
+            "triggerName": "HIDE_MODAL_TRIGGER",
+            "triggerId": "0jfXBfYTEBK8TaReZW9Xd",
+            "logic": { "==": [{ "var": "code" }, 1] }
           }
         ]
       }
     }
   ],
-  "csrf": "0.1gcnyqr2zq8U1YziJ5XLUZ3i7E7vKQ1T",
-  "updatedAt": "2/19/2024",
-  "createdAt": "2/19/2024",
-  "createdBy": "talha",
-  "updatedBy": "talha"
+  "csrf": "0.z4q1cgypbmCZbU2-GECxh3y6LzUfa3j",
+  "updatedAt": "10/20/2024",
+  "createdAt": "10/20/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
 }

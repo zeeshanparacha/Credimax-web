@@ -15,9 +15,19 @@
           "triggers": [
             {
               "logic": {
-                "==": [
-                  { "var": "currentScreen.CURRENT_CARD.cardType" },
-                  "VISA CARDY-EX"
+                "or": [
+                  {
+                    "==": [
+                      { "var": "currentScreen.CURRENT_CARD.cardType" },
+                      "VISA CARDY-EX"
+                    ]
+                  },
+                  {
+                    "==": [
+                      { "var": "currentScreen.CURRENT_CARD.productType" },
+                      "SUPP"
+                    ]
+                  }
                 ]
               },
               "triggerName": "PC_MY_CARDS_VALIDATION_3",
@@ -198,9 +208,19 @@
             },
             {
               "logic": {
-                "!=": [
-                  { "var": "currentScreen.CURRENT_CARD.cardType" },
-                  "VISA CARDY-EX"
+                "and": [
+                  {
+                    "!=": [
+                      { "var": "currentScreen.CURRENT_CARD.cardType" },
+                      "VISA CARDY-EX"
+                    ]
+                  },
+                  {
+                    "!=": [
+                      { "var": "currentScreen.CURRENT_CARD.productType" },
+                      "SUPP"
+                    ]
+                  }
                 ]
               },
               "triggerName": "PC_MY_CARDS_VALIDATION_4",
@@ -494,9 +514,9 @@
       }
     }
   ],
-  "csrf": "0.dsw06fvt378E75Z0ZaEHZbLN22xY42H8",
-  "updatedAt": "9/5/2024",
-  "createdAt": "9/5/2024",
+  "csrf": "0.bj0v65g41p6K3xCz_H5VDZBDPYkjdQ-_",
+  "updatedAt": "10/9/2024",
+  "createdAt": "10/9/2024",
   "createdBy": "talha",
   "updatedBy": "talha"
 }

@@ -1,0 +1,149 @@
+{
+  "_id": "kM6FwOrMG415DsbFHUKCC",
+  "id": "Ya9U93mRlsM0atqdtvFUF",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "TD_CHECK_FOR_OTP",
+  "old_name": "TD_CHECK_FOR_OTP",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "13",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "triggers": [
+            {
+              "triggerName": "TD_OTP_POPUP",
+              "triggerId": "Uj8rAH2I1lAO7tNRNBqpL",
+              "services": [
+                {
+                  "type": "9",
+                  "command": {
+                    "type": "1",
+                    "attributes": {
+                      "widgetId": "IwAR7joJfOOaLH0o4vwan",
+                      "content": "",
+                      "type": "",
+                      "modalId": "TaJCr88YPqpPJ36Z9DdDP",
+                      "toastContentType": "custom"
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.td_check_otp.content.otpRequired"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "triggerName": "TD_DELETE_DEVICE_AFTER_DELAY",
+              "triggerId": "EsKPdEjdz-r2bsQD9fhPG",
+              "services": [
+                {
+                  "type": "2",
+                  "command": {
+                    "type": "2",
+                    "attributes": {
+                      "delay": "500",
+                      "triggers": [
+                        {
+                          "id": "zZsPG2wx64Tf9g4aSV5DW",
+                          "projectId": "652fcbce09869c3c809b3097",
+                          "gitBranchName": "master",
+                          "name": "TD_DELETE_DEVICE",
+                          "status": "ACTIVE",
+                          "services": [
+                            {
+                              "type": "8",
+                              "command": {
+                                "type": "1",
+                                "attributes": {
+                                  "loaderWidgetIds": [906070],
+                                  "messageWidgetIds": [906070],
+                                  "responseStateKey": "td_delete_device_res",
+                                  "url": "/security/v1/deleteDevices",
+                                  "checksum": true,
+                                  "encryption": true,
+                                  "isDeviceDetails": false,
+                                  "loginTrigger": false,
+                                  "formData": false,
+                                  "logoutTrigger": false,
+                                  "headers": {
+                                    "Content-Type": "application/json",
+                                    "Accept": "application/json",
+                                    "channel_key": "002"
+                                  },
+                                  "requestBody": [
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "deviceList",
+                                      "value": "td_delete_device_list"
+                                    },
+                                    {
+                                      "type": 2,
+                                      "name": "Current screen",
+                                      "key": "validation",
+                                      "value": "pc_validation_object"
+                                    }
+                                  ],
+                                  "baseURL": "656f0b4398e9df55f0499597",
+                                  "storeType": 2
+                                },
+                                "responseHandler": [
+                                  {
+                                    "logic": { "==": [{ "var": "code" }, 1] },
+                                    "triggerName": "TD_GET_ALL_DEVICES",
+                                    "triggerId": "dL8SWmkinxQ6rORf4l4Ma",
+                                    "httpStatus": 200
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "csrf": "0.9q98t1cjjcwT8TVMGzUpv0I6IqNQ3E5l",
+                          "_id": "kQVgA1X-GrxFSfGLA_TJJ",
+                          "updatedAt": "2/9/2024",
+                          "createdAt": "2/9/2024",
+                          "createdBy": "talha",
+                          "updatedBy": "talha"
+                        }
+                      ],
+                      "triggerIds": ["zZsPG2wx64Tf9g4aSV5DW"]
+                    }
+                  }
+                }
+              ],
+              "logic": {
+                "if": [
+                  {
+                    "==": [
+                      {
+                        "var": "currentScreen.td_check_otp.content.otpRequired"
+                      },
+                      0
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "csrf": "0.4fzw8it90aak-GceIapI-sC9kNYPBHJd",
+  "updatedAt": "10/17/2024",
+  "createdAt": "10/17/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

@@ -1,0 +1,113 @@
+{
+  "id": "QHUgRIwcLTnptwS_eWFUB",
+  "projectId": "652fcbce09869c3c809b3097",
+  "gitBranchName": "master",
+  "name": "THM_DONATION_CALCULATE_SEQUENTIAL",
+  "old_name": "",
+  "status": "ACTIVE",
+  "services": [
+    {
+      "type": "2",
+      "command": {
+        "type": "1",
+        "attributes": {
+          "delay": "",
+          "storeType": "",
+          "searchInState": false,
+          "triggers": [
+            {
+              "id": "E2aik97Xdf3hA9-NdgTaw",
+              "_id": "vNte6kJqxdKjFxmkXt7Mj",
+              "name": "CALCULATE_CUSTOM_AMOUNT",
+              "old_name": "CALCULATE_CUSTOM_AMOUNT",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "customPoints",
+                      "sourceBindingKey": "customPoints",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        "round": [
+                          {
+                            "*": [
+                              { "var": "customAmount" },
+                              { "var": "SELECTED_CATELOG.divider" }
+                            ]
+                          },
+                          2
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.h9guirlnw1WRzJZ4PtKFyWlmo5KCoFt",
+              "updatedAt": "4/16/2024",
+              "createdAt": "4/16/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            },
+            {
+              "id": "Ecq05q2WKZZ6IreG8KdA-",
+              "_id": "7q-VRalRfRc8Walc8hBRS",
+              "name": "IS_DONATION_AMOUNT_EXCEEDS_ON_CUSTOM_AMOUNT",
+              "old_name": "IS_DONATION_AMOUNT_EXCEEDS_ON_CUSTOM_AMOUNT",
+              "projectId": "652fcbce09869c3c809b3097",
+              "gitBranchName": "master",
+              "services": [
+                {
+                  "type": "11",
+                  "command": {
+                    "type": "6",
+                    "attributes": {
+                      "requestBody": [],
+                      "storeType": "",
+                      "selectedObjectBindingKey": "selectedObject",
+                      "dataType": "value",
+                      "destinationBindingKey": "IS_CUSTOM_AMOUNT_EXCEEDS",
+                      "sourceBindingKey": "IS_CUSTOM_AMOUNT_EXCEEDS",
+                      "sourceStoreType": 1,
+                      "destinationStoreType": 1,
+                      "logic": {
+                        ">": [
+                          { "parseNumber": { "var": "customPoints" } },
+                          { "var": "AVAILABLE_POINTS" }
+                        ]
+                      },
+                      "changeValueConditonally": true,
+                      "targettedType": "value"
+                    }
+                  }
+                }
+              ],
+              "csrf": "0.9hm7g1tyu5wpoZxfiYvUFw_MqI0J0_vu",
+              "updatedAt": "4/8/2024",
+              "createdAt": "4/8/2024",
+              "createdBy": "zeeshan",
+              "updatedBy": "zeeshan"
+            }
+          ],
+          "triggerIds": ["E2aik97Xdf3hA9-NdgTaw", "Ecq05q2WKZZ6IreG8KdA-"]
+        }
+      }
+    }
+  ],
+  "csrf": "0.edgdq6xvaahjCv2lZRgwCVcFZC_GtZbh",
+  "_id": "KA3VEXlDXEKTvv2ZiCpbz",
+  "updatedAt": "10/21/2024",
+  "createdAt": "10/21/2024",
+  "createdBy": "basitahmed1199",
+  "updatedBy": "basitahmed1199"
+}

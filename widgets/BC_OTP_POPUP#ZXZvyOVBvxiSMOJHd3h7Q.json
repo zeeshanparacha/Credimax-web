@@ -250,66 +250,6 @@
                                             "type": "2",
                                             "name": "On click",
                                             "commandType": "2"
-                                          },
-                                          {
-                                            "triggerId": "rU3UbHP7ZHplE1MwFgvQo",
-                                            "triggerName": "BC_DELETE_AND_SET_STATES_TO_DEFAULT",
-                                            "serviceType": "11",
-                                            "attributes": {
-                                              "requestBody": [],
-                                              "storeType": "",
-                                              "selectedObjectBindingKey": "selectedObject",
-                                              "dataType": "",
-                                              "sourceBindingKey": "",
-                                              "filterList": [
-                                                {
-                                                  "key": "generateOTP",
-                                                  "storeType": 2,
-                                                  "changeValueConditonally": true
-                                                },
-                                                {
-                                                  "key": "bc_selected_branch",
-                                                  "storeType": 1,
-                                                  "changeValueConditonally": true
-                                                },
-                                                {
-                                                  "storeType": 1,
-                                                  "changeValueConditonally": true,
-                                                  "key": "bc_reason_selected"
-                                                },
-                                                {
-                                                  "key": "bc_selected_address",
-                                                  "storeType": 2,
-                                                  "changeValueConditonally": true,
-                                                  "logic": "registered"
-                                                },
-                                                {
-                                                  "key": "bc_block_card_replacement",
-                                                  "storeType": 2,
-                                                  "changeValueConditonally": true,
-                                                  "logic": null
-                                                },
-                                                {
-                                                  "key": "bc_block_card",
-                                                  "storeType": 2,
-                                                  "changeValueConditonally": true
-                                                },
-                                                {
-                                                  "key": "bc_replacement",
-                                                  "changeValueConditonally": true,
-                                                  "storeType": 2,
-                                                  "logic": "0"
-                                                },
-                                                {
-                                                  "key": "replaceToggle",
-                                                  "changeValueConditonally": true,
-                                                  "storeType": 1
-                                                }
-                                              ]
-                                            },
-                                            "type": "2",
-                                            "name": "On click",
-                                            "commandType": "15"
                                           }
                                         ],
                                         "path": "0-0-1-0-0-1-0-0-0"
@@ -1741,18 +1681,21 @@
                                                           "storeType": 2,
                                                           "progressColor": "#004986",
                                                           "colorWhenCompleted": "#004986",
-                                                          "searchTotalValueInState": true,
+                                                          "searchTotalValueInState": false,
                                                           "progressDependencyType": "Time bound",
                                                           "storeTypeProgressColor": 4,
                                                           "storeTypeColorWhenCompleted": 4,
                                                           "storeTypeTrackingColor": 4,
                                                           "storeTypeSecondaryProgressColor": 4,
                                                           "storeTypeStartTime": 4,
-                                                          "storeTypeEndTime": 4,
+                                                          "storeTypeEndTime": 2,
                                                           "storeTypeTimeCount": 2,
                                                           "trackingColor": "#CCDAE7",
-                                                          "endTimeKey": "60000",
-                                                          "startTimeKey": "10"
+                                                          "endTimeKey": "blockCardOTP.content.otpExpiryWeb",
+                                                          "startTimeKey": "10",
+                                                          "storeTypeCompletionState": 2,
+                                                          "completionStateKey": "allowResend2",
+                                                          "selectedTriggerId": "tfDJyWf0qBwXsr_jLlN9V"
                                                         },
                                                         "icon": "AiOutlineLoading3Quarters",
                                                         "group": "Advanced",
@@ -1768,7 +1711,7 @@
                                                           "type": "20060"
                                                         },
                                                         "events": [],
-                                                        "path": "0-0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-4-0-0-0-1-0-1-0-0"
+                                                        "path": "0-0-1-0-6-0-0-0-1-0-1-0-0"
                                                       }
                                                     ],
                                                     "layoutProperties": {
@@ -2457,9 +2400,7 @@
                                   "fullWidth": true,
                                   "layoutProperties": {
                                     "button": {
-                                      "//": "Use this class to style button component.",
-                                      "width": "100%",
-                                      "text-transform": "capitalize"
+                                      "//": "Use this class to style button component."
                                     },
                                     "iconButton": {
                                       "//": "Use this class to style icon button component.",
@@ -2492,28 +2433,28 @@
                                   },
                                   "cssDisableClassNames": [
                                     {
-                                      "cssClassName": "GENERIC_DISABLE_PRIMARY_BUTTON ",
-                                      "key": "GENERIC_DISABLE_PRIMARY_BUTTON "
+                                      "cssClassName": "BC_OTP_DISABLE_BUTTON ",
+                                      "key": "BC_OTP_DISABLE_BUTTON "
                                     }
                                   ],
                                   "hideCondition": {},
                                   "cssClassNames": [
                                     {
-                                      "cssClassName": "GENERIC_PRIMARY_BUTTON ",
-                                      "key": "GENERIC_PRIMARY_BUTTON "
+                                      "cssClassName": "LOGIN_GENERIC_BUTTON_CLASS ",
+                                      "key": "LOGIN_GENERIC_BUTTON_CLASS "
                                     }
                                   ],
                                   "enableLoadingState": true,
                                   "loadingKeyStoreType": 2,
                                   "loadingKey": "BC_BLOCK_GENERIC_LOADER",
                                   "loader": {
-                                    "loader": "bjchzK6CmoTvhNjETB254",
+                                    "loader": "dsyxp-GZonK1-3rL4wy0I",
                                     "loaderName": "button-lottie.json"
                                   },
                                   "buttonLoadingClass": [
                                     {
-                                      "cssClassName": "GENERIC_LOTTIE_HEIGHT ",
-                                      "key": "GENERIC_LOTTIE_HEIGHT "
+                                      "cssClassName": "BC_LOTTIE_HEIGHT ",
+                                      "key": "BC_LOTTIE_HEIGHT "
                                     }
                                   ]
                                 },
@@ -3075,8 +3016,8 @@
     "gitBranchName": "master",
     "_id": "ZXZvyOVBvxiSMOJHd3h7Q",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3147,8 +3088,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3167,8 +3108,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3367,8 +3308,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3429,8 +3370,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3463,8 +3404,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3512,8 +3453,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3565,8 +3506,8 @@
       "useFullLink": null
     },
     "group": "Form",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3580,13 +3521,6 @@
         "name": "On click",
         "type": "2",
         "serviceType": "9"
-      },
-      {
-        "triggerId": "rU3UbHP7ZHplE1MwFgvQo",
-        "triggerName": "BC_DELETE_AND_SET_STATES_TO_DEFAULT",
-        "name": "On click",
-        "type": "2",
-        "serviceType": "11"
       }
     ],
     "path": "0-0-1-0-0-1-0-0-0",
@@ -3654,8 +3588,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3710,8 +3644,8 @@
       "hideComponent": true
     },
     "group": "Form",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 0,
     "type": "20012",
     "version": "1.0.0",
@@ -3765,8 +3699,8 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -3825,8 +3759,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3861,8 +3795,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -3920,8 +3854,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -3931,8 +3865,8 @@
     "name": "OTP",
     "icon": "FaLock",
     "group": "Security",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "type": "20052",
     "attributes": {
       "smsOtpLabel": "Sms Otp",
@@ -4055,8 +3989,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4098,8 +4032,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4166,8 +4100,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4217,8 +4151,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4289,8 +4223,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4382,8 +4316,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4433,8 +4367,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4475,8 +4409,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4559,8 +4493,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4613,8 +4547,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4651,8 +4585,8 @@
     "icon": "FaFont",
     "group": "Form",
     "type": "20002",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
@@ -4717,8 +4651,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4737,31 +4671,34 @@
       "storeType": 2,
       "progressColor": "#004986",
       "colorWhenCompleted": "#004986",
-      "searchTotalValueInState": true,
+      "searchTotalValueInState": false,
       "progressDependencyType": "Time bound",
       "storeTypeProgressColor": 4,
       "storeTypeColorWhenCompleted": 4,
       "storeTypeTrackingColor": 4,
       "storeTypeSecondaryProgressColor": 4,
       "storeTypeStartTime": 4,
-      "storeTypeEndTime": 4,
+      "storeTypeEndTime": 2,
       "storeTypeTimeCount": 2,
       "trackingColor": "#CCDAE7",
-      "endTimeKey": "60000",
-      "startTimeKey": "10"
+      "endTimeKey": "blockCardOTP.content.otpExpiryWeb",
+      "startTimeKey": "10",
+      "storeTypeCompletionState": 2,
+      "completionStateKey": "allowResend2",
+      "selectedTriggerId": "tfDJyWf0qBwXsr_jLlN9V"
     },
     "icon": "AiOutlineLoading3Quarters",
     "group": "Advanced",
     "type": "20060",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 15,
     "version": "1.0.0",
     "isLatest": true,
     "projectType": "web",
     "component": { "content": "Progress", "type": "20060" },
     "events": [],
-    "path": "0-0-0-1-0-0-0-0-0-0-0-0-0-0-1-0-4-0-0-0-1-0-1-0-0",
+    "path": "0-0-1-0-6-0-0-0-1-0-1-0-0",
     "screenId": "ZXZvyOVBvxiSMOJHd3h7Q",
     "subType": "component",
     "projectId": "652fcbce09869c3c809b3097",
@@ -4822,8 +4759,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4880,8 +4817,8 @@
     "projectId": "652fcbce09869c3c809b3097",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -4948,8 +4885,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5006,8 +4943,8 @@
     "version": "1.0.0",
     "gitBranchName": "master",
     "createdBy": "mubashar",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "updatedTimestamp": "0000-00-00T00:00:00+00:00"
   },
   {
@@ -5048,8 +4985,8 @@
     "group": "Advanced",
     "type": "20051",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 20,
     "version": "1.0.0",
     "isLatest": true,
@@ -5073,11 +5010,7 @@
       "label-locale-key": "",
       "fullWidth": true,
       "layoutProperties": {
-        "button": {
-          "//": "Use this class to style button component.",
-          "width": "100%",
-          "text-transform": "capitalize"
-        },
+        "button": { "//": "Use this class to style button component." },
         "iconButton": {
           "//": "Use this class to style icon button component.",
           "width": "20px",
@@ -5098,29 +5031,26 @@
       },
       "cssDisableClassNames": [
         {
-          "cssClassName": "GENERIC_DISABLE_PRIMARY_BUTTON ",
-          "key": "GENERIC_DISABLE_PRIMARY_BUTTON "
+          "cssClassName": "BC_OTP_DISABLE_BUTTON ",
+          "key": "BC_OTP_DISABLE_BUTTON "
         }
       ],
       "hideCondition": {},
       "cssClassNames": [
         {
-          "cssClassName": "GENERIC_PRIMARY_BUTTON ",
-          "key": "GENERIC_PRIMARY_BUTTON "
+          "cssClassName": "LOGIN_GENERIC_BUTTON_CLASS ",
+          "key": "LOGIN_GENERIC_BUTTON_CLASS "
         }
       ],
       "enableLoadingState": true,
       "loadingKeyStoreType": 2,
       "loadingKey": "BC_BLOCK_GENERIC_LOADER",
       "loader": {
-        "loader": "bjchzK6CmoTvhNjETB254",
+        "loader": "dsyxp-GZonK1-3rL4wy0I",
         "loaderName": "button-lottie.json"
       },
       "buttonLoadingClass": [
-        {
-          "cssClassName": "GENERIC_LOTTIE_HEIGHT ",
-          "key": "GENERIC_LOTTIE_HEIGHT "
-        }
+        { "cssClassName": "BC_LOTTIE_HEIGHT ", "key": "BC_LOTTIE_HEIGHT " }
       ]
     },
     "name": "Button",
@@ -5128,8 +5058,8 @@
     "group": "Form",
     "type": "20006",
     "Documentation": "<div>components 12344</div>",
-    "updatedAt": "9/9/2024",
-    "createdAt": "9/9/2024",
+    "updatedAt": "9/26/2024",
+    "createdAt": "9/26/2024",
     "order": 1,
     "version": "1.0.0",
     "isLatest": true,
